@@ -14,7 +14,6 @@
         <file>Fonts/segoeuib.ttf</file>
         <file>Fonts/segoeuil.ttf</file>
         <file>Fonts/Yekan.ttf</file>
-        <file>Codes/Utils/Enum.js</file>
         <file>Fonts/Nunito/Nunito-Black.ttf</file>
         <file>Fonts/Nunito/Nunito-BlackItalic.ttf</file>
         <file>Fonts/Nunito/Nunito-Bold.ttf</file>
@@ -51,7 +50,6 @@
         <file>Fonts/MaterialDesign-Webfont-master/package.json</file>
         <file>Fonts/MaterialDesign-Webfont-master/preview.html</file>
         <file>Fonts/MaterialDesign-Webfont-master/README.md</file>
-        <file>Codes/Utils/Utils.js</file>
         <file>Codes/Modules/HeaderButton.qml</file>
         <file>Codes/Modules/FilterPanel.qml</file>
         <file>Codes/Modules/FilterDisplayPanel.qml</file>
@@ -60,5 +58,38 @@
         <file>Codes/Modules/RightPanel.qml</file>
         <file>Codes/Modules/HomeModule.qml</file>
         <file>Images/logo1.jpg</file>
+        <file>Codes/Modules/RegistrationForm.qml</file>
+        <file>Codes/Modules/M_inputText.qml</file>
+        <file>Codes/Modules/LoadingSpinner.qml</file>
+        <file>Codes/Modules/Countdown_Timer.qml</file>
+        <file>Fonts/fontawesome-webfont.ttf</file>
+        <file>Codes/Modules/LoginForm.qml</file>
+        <file>Codes/Modules/EditForm.qml</file>
+        <file>Codes/Modules/AccountPopup.qml</file>
+        <file>Codes/Modules/RowsofAccountPop.qml</file>
+        <file>Utils/Enum.js</file>
+        <file>Utils/Utils.js</file>
+        <file>Codes/LocalDatabase/LocalDatabase.qml</file>
+        <file>Codes/Modules/SpecialCategory.qml</file>
+        <file>Codes/Modules/Home.qml</file>
+        <file>Codes/Modules/BestCategory.qml</file>
+        <file>Codes/Modules/Rating.qml</file>
+        <file>Images/book.png</file>
+        <file>Codes/Modules/BestCollection.qml</file>
+        <file>Images/finalfantasy.jpg</file>
+        <file>Images/lordofrings.jpg</file>
+        <file>Codes/Modules/BooksList.qml</file>
+        <file>Codes/Modules/Advertisement.qml</file>
+        <file>Images/Adver1.jpg</file>
+        <file>Images/Adver2.jpg</file>
+        <file>Codes/Modules/SerialBook.qml</file>
+        <file>Codes/Modules/TopSlider.qml</file>
+        <file>Codes/Modules/TopSliderPage1.qml</file>
+        <file>Images/callofduty.jpg</file>
+        <file>Images/Adver3.jpg</file>
+        <file>Images/Battleground.jpg</file>
+        <file>Images/mebeforeyou.jpg</file>
+        <file>Images/time.jpg</file>
+        <file>Images/newsroom.jpg</file>
     </qresource>
 </RCC>

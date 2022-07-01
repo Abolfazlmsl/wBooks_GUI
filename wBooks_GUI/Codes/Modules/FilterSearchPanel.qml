@@ -92,6 +92,7 @@ Item {
                     selectedTextColor: "#3399ff"
 
                     selectByMouse: true
+                    horizontalAlignment: TextInput.AlignRight
 
 
                     //-- placeholder --//

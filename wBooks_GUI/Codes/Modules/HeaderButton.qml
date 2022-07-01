@@ -62,7 +62,7 @@ Rectangle{
         cursorShape: Qt.PointingHandCursor
 
         onClicked: {
-            isClick = !isClick
+//            isClick = !isClick
             btnClicked()
         }
     }

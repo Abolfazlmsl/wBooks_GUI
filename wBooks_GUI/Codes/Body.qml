@@ -1,10 +1,11 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
+import QtQuick.Controls.Material 2.12
 
 import "./../Fonts/Icon.js" as Icons
-import "./Utils/Enum.js" as Enum
-import "./Utils/Utils.js" as Util
+import "./../Utils/Enum.js" as Enum
+import "./../Utils/Utils.js" as Util
 
 import "./Modules"
 
@@ -93,6 +94,172 @@ Rectangle{
         }
     }
 
+    ListModel{
+        id: specialCatModel
+        ListElement{
+            items: "خانواده, ایران شناسی, آشپزی"
+            text: "داستان و رمان"
+//            icon: "Icons.book_open_page_variant"
+        }
+        ListElement{
+            items: "خانواده, ایران شناسی, آشپزی"
+            text: "سبک زندگی"
+//            icon: "Icons.heart_box"
+        }
+        ListElement{
+            items: "خانواده, ایران شناسی, آشپزی"
+            text: "مدیریت بازاریابی"
+//            icon: "Icons.heart_box"
+        }
+        ListElement{
+            items: "خانواده, ایران شناسی, آشپزی"
+            text: "روانشناسی"
+//            icon: "Icons.heart_box"
+        }
+        ListElement{
+            items: "خانواده, ایران شناسی, آشپزی"
+            text: "هنر"
+//            icon: "Icons.heart_box"
+        }
+        ListElement{
+            items: "خانواده, ایران شناسی, آشپزی"
+            text: "علوم تجربی"
+//            icon: "Icons.heart_box"
+        }
+        ListElement{
+            items: "خانواده, ایران شناسی, آشپزی"
+            text: "دین و عرفان"
+//            icon: "Icons.heart_box"
+        }
+        ListElement{
+            items: "خانواده, ایران شناسی, آشپزی"
+            text: "فلسفه و هنر"
+//            icon: "Icons.heart_box"
+        }
+        ListElement{
+            items: "خانواده, ایران شناسی, آشپزی"
+            text: "علم و فناوری"
+//            icon: "Icons.heart_box"
+        }
+        ListElement{
+            items: "خانواده, ایران شناسی, آشپزی"
+            text: "کودک و نوجوان"
+//            icon: "Icons.heart_box"
+        }
+
+    }
+
+    ListModel{
+        id: bestCatModel
+        ListElement{
+            source: "qrc:/Images/mebeforeyou.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            rank: 1
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/callofduty.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/time.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+    }
+
+    ListModel{
+        id: bestCollectionModel
+        ListElement{
+            source: "qrc:/Images/lordofrings.jpg"
+            text1: "ارباب حلقه ها"
+            booksNumber: 15
+            rate: 37
+            off: "off35"
+        }
+        ListElement{
+            source: "qrc:/Images/finalfantasy.jpg"
+            text1: "تصور نهایی"
+            booksNumber: 17
+            rate: 25
+            off: "T6032"
+        }
+    }
+
+    ListModel{
+        id: offerBooksModel
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/mebeforeyou.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/time.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+    }
+
 
     RowLayout{
         anchors.fill: parent
@@ -100,12 +267,22 @@ Rectangle{
         layoutDirection: Qt.RightToLeft
 
         RightPanel{
-            Layout.preferredWidth: parent.width * 0.15
+            Layout.preferredWidth: inHomeMode * parent.width * 0.15
+//            Behavior on Layout.preferredWidth{
+//                NumberAnimation{duration: 300}
+//            }
+
             Layout.fillHeight: true
         }
 
+//        RightEditPanel{
+//            Layout.preferredWidth: inHomeMode * parent.width * 0.15
+
+//            Layout.fillHeight: true
+//        }
+
         Item{
-            Layout.preferredWidth: parent.width * 0.85
+            Layout.fillWidth: true
             Layout.fillHeight: true
             ColumnLayout{
                 anchors.fill: parent
@@ -191,16 +368,141 @@ Rectangle{
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     color: "#50d3d3d3"
-                    //-- Pages --//
-                    StackLayout {
-                        id: sView
 
-                        currentIndex: 0
+                    //-- Pages --//
+                    SwipeView {
+                        id: sView
+                        anchors.fill: parent
+                        interactive: false
+                        clip: true
+                        currentIndex: mainView
 
                         Item {
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true
+                            Home{
+                                anchors.fill: parent
+                                specialCatModel: specialCatModel
+                                bestCatModel: bestCatModel
+                                bestCollectionModel: bestCollectionModel
+                                offerBooksModel: offerBooksModel
+                            }
+                        }
 
+                        Item{
+                            RegistrationForm{
+                                anchors.fill: parent
+                                anchors.topMargin: parent.height * 0.05
+                                anchors.leftMargin: parent.width * 0.3
+                                anchors.rightMargin: parent.width * 0.3
+
+                                onGetMessage: {
+                                    alarmRegisteWin.msg = signalmsg
+                                }
+                            }
+                            //-- Alarm --//
+                            Rectangle{
+                                id: alarmRegisteWin
+
+                                property string msg: ""
+
+                                width: parent.width
+                                height: lblAlarm2.implicitHeight * 2.5
+                                anchors.bottom: parent.bottom
+
+                                color: msg === "" ? "transparent" : "#E91E63"
+
+                                Label{
+                                    id: lblAlarm2
+                                    text: alarmRegisteWin.msg
+                                    anchors.centerIn: parent
+                                    color: "white"
+
+                                }
+                            }
+
+                        }
+
+                        Item{
+                            LoginForm{
+                                anchors.fill: parent
+                                anchors.topMargin: parent.height * 0.2
+                                anchors.leftMargin: parent.width * 0.3
+                                anchors.rightMargin: parent.width * 0.3
+
+                                onGetMessage: {
+                                    alarmLoginWin.msg = signalmsg
+                                }
+                            }
+                            //-- Alarm --//
+                            Rectangle{
+                                id: alarmLoginWin
+
+                                property string msg: ""
+
+                                width: parent.width
+                                height: lblAlarm3.implicitHeight * 2.5
+                                anchors.bottom: parent.bottom
+
+                                color: msg === "" ? "transparent" : "#E91E63"
+
+                                Label{
+                                    id: lblAlarm3
+                                    text: alarmLoginWin.msg
+                                    anchors.centerIn: parent
+                                    color: "white"
+
+                                }
+                            }
+
+                        }
+                        Item{
+                            EditForm{
+                                anchors.fill: parent
+                                anchors.topMargin: parent.height * 0.2
+                                anchors.leftMargin: parent.width * 0.3
+                                anchors.rightMargin: parent.width * 0.3
+
+                                onGetMessage: {
+                                    alarmEditWin.msg = signalmsg
+                                }
+                            }
+                            //-- Alarm --//
+                            Rectangle{
+                                id: alarmEditWin
+
+                                property string msg: ""
+
+                                width: parent.width
+                                height: lblAlarm4.implicitHeight * 2.5
+                                anchors.bottom: parent.bottom
+
+                                color: msg === "" ? "transparent" : "#E91E63"
+
+                                Label{
+                                    id: lblAlarm4
+                                    text: alarmEditWin.msg
+                                    anchors.centerIn: parent
+                                    color: "white"
+
+                                }
+                            }
+
+                        }
+
+                        Item {
+
+                        }
+
+                        Item {
+                            SerialBook{
+                                anchors.fill: parent
+                            }
+                        }
+
+                        Item {
+
+                        }
+
+                        Item {
 
                         }
 
