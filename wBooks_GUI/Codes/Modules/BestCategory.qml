@@ -29,7 +29,7 @@ Item {
                     Layout.fillHeight: true
                     text: ""
                     font.family: iranSans.name
-                    color: "black"
+                    color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.7
                     verticalAlignment: Qt.AlignVCenter
                     elide: Text.ElideRight
@@ -40,7 +40,7 @@ Item {
                     Layout.preferredWidth: moretxt.contentWidth
                     Layout.fillHeight: true
                     font.family: iranSans.name
-                    color: "#990000"
+                    color: color2
                     text: "(مشاهده بیشتر)"
                     font.pixelSize: Qt.application.font.pixelSize * 1.7
                     verticalAlignment: Qt.AlignVCenter
@@ -70,7 +70,7 @@ Item {
             clip: false
             focus: true
             spacing: 50
-            interactive: false
+            interactive: true
             layoutDirection: Qt.RightToLeft
             orientation: ListView.Horizontal
             model: itemModel
@@ -85,7 +85,7 @@ Item {
                     width: parent.width
                     height: parent.height * 0.6
 
-                    color: "#211D1D"
+                    color: color8
                     Image {
                         anchors.fill: parent
                         anchors.verticalCenter: parent.verticalCenter
@@ -116,7 +116,7 @@ Item {
                                 context.fill()
                                 context.font='12px ' + nameFont
                                 context.textAlign = "center";
-                                context.fillStyle="white"
+                                context.fillStyle="#ffffff"
                                 var centerX = parent.width * 0.8;
                                 var centerY = 3*parent.height / 20+parent.height * 0.08;
                                 context.save()
@@ -129,7 +129,7 @@ Item {
 //                                anchors.fill: parent
 //                                text: "رتبه " + (index+1)
 //                                font.family: iranSansFAnum.name
-//                                color: "white"
+//                                color: "#ffffff"
 //                                verticalAlignment: Qt.AlignVCenter
 //                                horizontalAlignment: Qt.AlignHCenter
 //                                font.pixelSize: Qt.application.font.pixelSize
@@ -149,7 +149,7 @@ Item {
                         anchors.fill: parent
                         text: model.text1
                         font.family: iranSans.name
-                        color: "black"
+                        color: color4
                         verticalAlignment: Qt.AlignVCenter
                     }
                 }
@@ -165,7 +165,7 @@ Item {
                         anchors.fill: parent
                         text: model.text2
                         font.family: iranSans.name
-                        color: "#778899"
+                        color: color9
                         verticalAlignment: Qt.AlignVCenter
                         font.pixelSize: Qt.application.font.pixelSize
                     }
@@ -201,7 +201,7 @@ Item {
                                 anchors.fill: parent
                                 text: "(" + model.rate + " رای)"
                                 font.family: iranSansFAnum.name
-                                color: "#778899"
+                                color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 font.pixelSize: Qt.application.font.pixelSize * 0.7
                                 elide: Text.ElideRight
@@ -225,7 +225,7 @@ Item {
                             Layout.fillHeight: true
                             Layout.preferredWidth: parent.width * 0.5
 
-                            color: "#211D1D"
+                            color: color8
 
                             Label{
                                 anchors.centerIn: parent
@@ -233,7 +233,7 @@ Item {
                                 text: "خرید کتاب"
                                 font.family: iranSans.name
                                 font.pixelSize: Qt.application.font.pixelSize * 1
-                                color: "#ffffff"
+                                color: color3
                             }
 
                             MouseArea{
@@ -257,7 +257,7 @@ Item {
                                 height: parent.height / 2
                                 text: "تاریخ انتشار"
                                 font.family: iranSans.name
-                                color: "#778899"
+                                color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
                                 font.pixelSize: Qt.application.font.pixelSize
@@ -277,7 +277,7 @@ Item {
                                 anchors.top: recspacer.bottom
                                 text: model.date
                                 font.family: iranSansFAnum.name
-                                color: "#778899"
+                                color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
                                 font.pixelSize: Qt.application.font.pixelSize

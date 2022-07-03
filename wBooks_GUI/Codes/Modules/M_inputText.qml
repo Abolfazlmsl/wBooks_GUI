@@ -1,6 +1,7 @@
-import QtQuick 2.9
+import QtQuick 2.15
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import QtQuick.Controls.Styles 1.4
 
 import "./../../Fonts/Icon.js" as Icons
 
@@ -16,7 +17,7 @@ Rectangle{
     property alias placeholder: lbl_placeholder.text
     property alias echoMode: txf_main.echoMode
     property alias clearEnable: lbl_clear.visible
-    property string borderColor: "#444444"
+    property string borderColor: color12
     property bool enterAsAccept: false
 
     signal acceptedLogin()
@@ -25,7 +26,7 @@ Rectangle{
     property int selectEnd
     property int curPos
 
-    color: "#f7f7f7"
+    color: color13
 
     Layout.fillWidth: true
     Layout.preferredHeight: 45 * ratio
@@ -35,76 +36,67 @@ Rectangle{
     RowLayout{
 
         anchors.fill: parent
-        anchors.leftMargin: 15 * ratio
-        anchors.rightMargin: 5 * ratio
 
-        //-- TextField --//
-        TextInput{
-            id:txf_main
-
-            clip: true
+        Rectangle {
             Layout.fillHeight: true
             Layout.fillWidth: true
-//            width: parent.width - lbl_icon.implicitWidth - lbl_clear.implicitWidth  // Width of Rect - Width of Magnify
-//            height: parent.height
 
-            verticalAlignment: Qt.AlignVCenter
+            color: color_input
+            border.color: "#ffffff"
+            //-- TextField --//
+            TextInput{
+                id:txf_main
+                anchors.fill: parent
+                clip: true
 
-            rightPadding: 10 * ratio
-            leftPadding: 10 * ratio
+                //            width: parent.width - lbl_icon.implicitWidth - lbl_clear.implicitWidth  // Width of Rect - Width of Magnify
+                //            height: parent.height
 
+                verticalAlignment: Qt.AlignVCenter
 
-            font.pixelSize: Qt.application.font.pixelSize
-            selectedTextColor: "#3399ff"
-
-            selectByMouse: true
-            horizontalAlignment: TextInput.AlignRight
-
-
-            //-- placeholder --//
-            Label{
-                id: lbl_placeholder
-
-                visible: (txf_main.length >= 1) ? false : true
-
-                text: "متن پیش فرض"
-
-                anchors.right: parent.right
-                anchors.rightMargin: 10 * ratio
-                anchors.verticalCenter: parent.verticalCenter
-
+                rightPadding: 30 * ratio
+//                            leftPadding: 10 * ratio
 
                 font.pixelSize: Qt.application.font.pixelSize
+                selectedTextColor: color14
+                color: color4
 
-                color: "gray"
+                selectByMouse: true
+                horizontalAlignment: TextInput.AlignRight
 
-                background: Rectangle{
-                    color: "transparent"
+
+                //-- placeholder --//
+                Label{
+                    id: lbl_placeholder
+
+                    visible: (txf_main.length >= 1) ? false : true
+
+                    text: "متن پیش فرض"
+
+                    anchors.right: parent.right
+                    anchors.rightMargin: 40 * ratio
+                    anchors.verticalCenter: parent.verticalCenter
+
+
+                    font.pixelSize: Qt.application.font.pixelSize
+
+                    color: color18
+
+                    background: Rectangle{
+                        color: "transparent"
+                    }
+
                 }
 
-            }
 
+                //-- Cut Copy Paste => MouseArea --//
+                MouseArea {
+                    anchors.fill: parent
+                    acceptedButtons: Qt.RightButton
+                    hoverEnabled: true
 
-            //-- Cut Copy Paste => MouseArea --//
-            MouseArea {
-                anchors.fill: parent
-                acceptedButtons: Qt.RightButton
-                hoverEnabled: true
+                    onClicked: {
 
-                onClicked: {
-
-                    selectStart = txf_main.selectionStart
-                    selectEnd = txf_main.selectionEnd
-                    curPos = txf_main.positionAt(mouse.x)
-                    copyPaste_Menu.x = mouse.x
-                    copyPaste_Menu.y = mouse.y
-                    txf_main.cursorPosition = curPos
-                    copyPaste_Menu.open()
-
-                    txf_main.select(selectStart,selectEnd)
-                }
-                onPressAndHold: {
-                    if (mouse.source === Qt.MouseEventNotSynthesized) {
                         selectStart = txf_main.selectionStart
                         selectEnd = txf_main.selectionEnd
                         curPos = txf_main.positionAt(mouse.x)
@@ -115,89 +107,102 @@ Rectangle{
 
                         txf_main.select(selectStart,selectEnd)
                     }
-                }
+                    onPressAndHold: {
+                        if (mouse.source === Qt.MouseEventNotSynthesized) {
+                            selectStart = txf_main.selectionStart
+                            selectEnd = txf_main.selectionEnd
+                            curPos = txf_main.positionAt(mouse.x)
+                            copyPaste_Menu.x = mouse.x
+                            copyPaste_Menu.y = mouse.y
+                            txf_main.cursorPosition = curPos
+                            copyPaste_Menu.open()
 
-                //-- Cut Copy Paste => Menu --//
-                Menu {
-                    id: copyPaste_Menu
-                    topPadding: 0
-                    bottomPadding: 0
-                    width: 150 * ratio
-                    height: 150 * ratio
-                    MenuItem {
-                        text: "Cut"
-
-                        font.pixelSize: 15 * ratio
-
-                        enabled: (selectEnd - selectStart !== 0) ? true : false
-
-                        width: 150 * ratio
-                        height: 50 * ratio
-
-                        onTriggered: {
                             txf_main.select(selectStart,selectEnd)
-                            txf_main.cut()
                         }
                     }
-                    MenuItem {
-                        text: "Copy"
 
-                        font.pixelSize: 15 * ratio
-
-                        enabled: (selectEnd - selectStart !== 0) ? true : false
-
+                    //-- Cut Copy Paste => Menu --//
+                    Menu {
+                        id: copyPaste_Menu
+                        topPadding: 0
+                        bottomPadding: 0
                         width: 150 * ratio
-                        height: 50 * ratio
+                        height: 150 * ratio
+                        MenuItem {
+                            text: "Cut"
 
-                        onTriggered: {
+                            font.pixelSize: 15 * ratio
+
+                            enabled: (selectEnd - selectStart !== 0) ? true : false
+
+                            width: 150 * ratio
+                            height: 50 * ratio
+
+                            onTriggered: {
+                                txf_main.select(selectStart,selectEnd)
+                                txf_main.cut()
+                            }
+                        }
+                        MenuItem {
+                            text: "Copy"
+
+                            font.pixelSize: 15 * ratio
+
+                            enabled: (selectEnd - selectStart !== 0) ? true : false
+
+                            width: 150 * ratio
+                            height: 50 * ratio
+
+                            onTriggered: {
+                                txf_main.select(selectStart,selectEnd)
+                                txf_main.copy()
+                            }
+                        }
+                        MenuItem {
+                            text: "Paste"
+
+
+                            font.pixelSize: Qt.application.font.pixelSize
+                            enabled:txtTemp.text != "" ? true : false
+
+                            width : 150 * ratio
+                            height : 50 * ratio
+
+                            onTriggered: {
+                                txf_main.paste()
+                            }
+
+                            TextInput {
+                                id: txtTemp
+                                visible: false
+                            }
+                        }
+                        onOpened: {
+
                             txf_main.select(selectStart,selectEnd)
-                            txf_main.copy()
-                        }
-                    }
-                    MenuItem {
-                        text: "Paste"
+                            txf_main.cursorPosition = curPos
 
-
-                        font.pixelSize: Qt.application.font.pixelSize
-                        enabled:txtTemp.text != "" ? true : false
-
-                        width : 150 * ratio
-                        height : 50 * ratio
-
-                        onTriggered: {
-                            txf_main.paste()
+                            //console.log(txf_Search.cursorPosition)
                         }
 
-                        TextInput {
-                            id: txtTemp
-                            visible: false
+                        onAboutToShow: {
+                            //-- paste enable check --//
+                            txtTemp.text = ""
+                            txtTemp.paste()
                         }
-                    }
-                    onOpened: {
-
-                        txf_main.select(selectStart,selectEnd)
-                        txf_main.cursorPosition = curPos
-
-                        //console.log(txf_Search.cursorPosition)
-                    }
-
-                    onAboutToShow: {
-                        //-- paste enable check --//
-                        txtTemp.text = ""
-                        txtTemp.paste()
                     }
                 }
-            }
 
-            onAccepted: {
+                onAccepted: {
 
-                if(enterAsAccept){
-                    acceptedLogin()
+                    if(enterAsAccept){
+                        acceptedLogin()
+
+                    }
 
                 }
 
             }
-
         }
 
 
@@ -210,7 +215,7 @@ Rectangle{
             font.family: webfont.name
             font.pixelSize: (isClearIcon) ? Qt.application.font.pixelSize * 1.5:Qt.application.font.pixelSize * 0.5
 
-//            color: Util.color_RightMenu
+            //            color: Util.color_RightMenu
 
             verticalAlignment: Qt.AlignVCenter
             Layout.alignment: Qt.AlignRight
@@ -233,9 +238,10 @@ Rectangle{
         width: 10
         height: parent.height
         anchors.right: parent.right
+        anchors.rightMargin: 15
 
         text: Icons.key
-
+        color: color4
         font.family: webfont.name
         font.pixelSize: Qt.application.font.pixelSize * 1.5
 

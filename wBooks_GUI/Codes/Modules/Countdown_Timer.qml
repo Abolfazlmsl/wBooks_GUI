@@ -1,4 +1,4 @@
-import QtQuick 2.9
+import QtQuick 2.15
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
@@ -112,7 +112,7 @@ Rectangle{
             font.pixelSize: Qt.application.font.pixelSize * 1.4 * timerScale
             //font.bold: true
 
-            color: "#ffffff"
+            color: color3
 
         }
 

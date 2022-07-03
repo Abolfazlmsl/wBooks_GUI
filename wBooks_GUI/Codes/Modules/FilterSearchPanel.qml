@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.15
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Styles 1.4
@@ -16,7 +16,7 @@ Item {
     property alias placeholder: lbl_placeholder.text
     property alias echoMode: txf_main.echoMode
     property alias clearEnable: lbl_clear.visible
-    property string borderColor: "#444444"
+    property string borderColor: color12
     property bool enterAsAccept: false
 
     signal acceptedLogin()
@@ -49,7 +49,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 1.3
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: "black"
+                    color: color4
                 }
 
                 Item{Layout.fillWidth: true}
@@ -61,7 +61,7 @@ Item {
         Rectangle{
             id: root_txf
 
-            color: "#f7f7f7"
+            color: color13
 
             Layout.fillWidth: true
             Layout.preferredHeight: parent.height * 0.4
@@ -89,7 +89,7 @@ Item {
 
 
                     font.pixelSize: Qt.application.font.pixelSize
-                    selectedTextColor: "#3399ff"
+                    selectedTextColor: color14
 
                     selectByMouse: true
                     horizontalAlignment: TextInput.AlignRight
@@ -110,7 +110,7 @@ Item {
 
                         font.pixelSize: Qt.application.font.pixelSize
 
-                        color: "gray"
+                        color: color18
 
                         background: Rectangle{
                             color: "transparent"
@@ -244,8 +244,6 @@ Item {
                     font.family: webfont.name
                     font.pixelSize: (isClearIcon) ? Qt.application.font.pixelSize * 1.5:Qt.application.font.pixelSize * 0.5
 
-        //            color: Util.color_RightMenu
-
                     verticalAlignment: Qt.AlignVCenter
                     Layout.alignment: Qt.AlignRight
 
@@ -268,6 +266,7 @@ Item {
                 height: parent.height
                 anchors.right: parent.right
                 anchors.rightMargin: 10
+                color: "#000000"
 
                 text: Icons.key
 

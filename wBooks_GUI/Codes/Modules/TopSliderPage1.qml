@@ -92,7 +92,7 @@ Item {
                                 anchors.fill: parent
                                 text: "(" + rate + " رای)"
                                 font.family: iranSansFAnum.name
-                                color: "#778899"
+                                color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 font.pixelSize: Qt.application.font.pixelSize * 0.9
                                 elide: Text.ElideRight
@@ -115,13 +115,13 @@ Item {
                         Rectangle{
                             Layout.fillHeight: true
                             Layout.preferredWidth: parent.width * 0.45
-                            color: "#990000"
+                            color: color2
                             Label{
                                 id: text1
                                 anchors.fill: parent
                                 text: rightText
                                 font.family: iranSans.name
-                                color: "white"
+                                color: "#ffffff"
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
                                 font.pixelSize: Qt.application.font.pixelSize
@@ -138,13 +138,13 @@ Item {
                         Rectangle{
                             Layout.fillHeight: true
                             Layout.preferredWidth: parent.width * 0.45
-                            color: "white"
+                            color: "#ffffff"
                             Label{
                                 id: text2
                                 anchors.fill: parent
                                 text: leftText
                                 font.family: iranSans.name
-                                color: "#990000"
+                                color: color2
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
                                 font.pixelSize: Qt.application.font.pixelSize

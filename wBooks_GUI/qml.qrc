@@ -91,5 +91,9 @@
         <file>Images/mebeforeyou.jpg</file>
         <file>Images/time.jpg</file>
         <file>Images/newsroom.jpg</file>
+        <file>Codes/Modules/EditRightPanel.qml</file>
+        <file>Codes/Modules/ButtonPanel.qml</file>
+        <file>Codes/Modules/EditAccount.qml</file>
+        <file>Codes/Modules/Footer.qml</file>
     </qresource>
 </RCC>

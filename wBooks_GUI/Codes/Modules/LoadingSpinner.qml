@@ -1,4 +1,4 @@
-import QtQuick 2.14
+import QtQuick 2.15
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 
@@ -17,7 +17,7 @@ Row
         text: "\uf110"
         font.family: awesome.name
         font.pixelSize: 18
-        color: "#0091f8";
+        color: color17;
         NumberAnimation on rotation {
             from: 0; to: 360; running: loadingSpinner.visible == true;
             loops: Animation.Infinite; duration: 700;

@@ -1,4 +1,4 @@
-import QtQuick 2.14
+import QtQuick 2.15
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 
@@ -8,7 +8,7 @@ Rectangle{
     property alias text: rightMenu_DashboardLabel.text
 
     property bool isClick: false
-    property string itemColor: "#a9a9a9"
+    property string itemColor: color15
 
     property real iconWidth: rightMenu_DashboardIcon.width + (24 * ratio)
 
@@ -29,7 +29,7 @@ Rectangle{
         fontSizeMode: Text.Fit
         font.pixelSize: Qt.application.font.pixelSize * 1.3
 
-        color: (isClick) ? "white" : "#a9a9a9"
+        color: (isClick) ? "#ffffff" : color15
         clip: true
         elide: Text.ElideRight
     }
@@ -49,7 +49,7 @@ Rectangle{
         anchors.left: spacer.right
         anchors.verticalCenter: parent.verticalCenter
         width: Text.width
-        color: (isClick) ? "white" : "#a9a9a9"
+        color: (isClick) ? "#ffffff" : color15
 
         font.family: webfont.name
         font.pixelSize: Qt.application.font.pixelSize * 2

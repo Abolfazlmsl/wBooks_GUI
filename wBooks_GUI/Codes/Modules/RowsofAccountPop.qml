@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.15
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.12
@@ -25,7 +25,7 @@ Rectangle {
                 Layout.fillHeight: true
 
                 text: ""
-                color: "white"
+                color: "#ffffff"
 
                 font.family: webfont.name
                 font.pixelSize: Qt.application.font.pixelSize * 1.5
@@ -38,7 +38,7 @@ Rectangle {
                 Layout.fillHeight: true
                 text: setting.userName
                 font.family: iranSans.name
-                color: "white"
+                color: "#ffffff"
 
                 font.pixelSize: Qt.application.font.pixelSize * 1.3
                 horizontalAlignment: Qt.AlignHCenter
@@ -56,13 +56,13 @@ Rectangle {
                 Layout.preferredWidth: 20
                 Layout.preferredHeight: width
                 radius: width/2
-                color: "white"
+                color: "#ffffff"
                 visible: false
 
                 Label{
                     id: rectxt
                     anchors.fill: parent
-                    color: "red"
+                    color: color16
                     text: ""
                     font.family: iranSansFAnum.name
                     verticalAlignment: Qt.AlignVCenter
@@ -90,7 +90,7 @@ Rectangle {
                     id: txt1
                     width: parent.width
                     height: parent.height * 0.9
-                    color: "white"
+                    color: "#ffffff"
                     text: "مشاهده"
                     font.family: iranSans.name
                     verticalAlignment: Qt.AlignVCenter
@@ -100,7 +100,7 @@ Rectangle {
                     width: parent.width
                     height: 1
                     anchors.top: txt1.bottom
-                    color: "white"
+                    color: "#ffffff"
                 }
 
                 MouseArea{

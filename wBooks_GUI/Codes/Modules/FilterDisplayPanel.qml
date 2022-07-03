@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.15
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Styles 1.4
@@ -22,21 +22,21 @@ Item {
             name: "Icon_1"
             PropertyChanges {
                 target: lbl_lay1
-                color: "blue"
+                color: color5
             }
         },
         State {
             name: "Icon_2"
             PropertyChanges {
                 target: lbl_lay2
-                color: "blue"
+                color: color5
             }
         },
         State {
             name: "Icon_3"
             PropertyChanges {
                 target: lbl_lay3
-                color: "blue"
+                color: color5
             }
         }
     ]
@@ -63,7 +63,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 1.3
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: "black"
+                    color: color4
                 }
 
                 Rectangle {
@@ -83,7 +83,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: "#778899"
+                    color: color9
                 }
 
                 Rectangle {
@@ -100,7 +100,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 1.6
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: "#778899"
+                    color: color9
                 }
 
                 Item{Layout.fillWidth: true}
@@ -126,7 +126,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 2
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: "#778899"
+                    color: color9
                     MouseArea{
                         anchors.fill: parent
                         onClicked: {
@@ -149,7 +149,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 2
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: "#778899"
+                    color: color9
                     MouseArea{
                         anchors.fill: parent
                         onClicked: {
@@ -172,7 +172,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 2
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: "#778899"
+                    color: color9
 
                     MouseArea{
                         anchors.fill: parent

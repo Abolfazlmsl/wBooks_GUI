@@ -1,4 +1,4 @@
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 
@@ -8,7 +8,7 @@ import "./../../Utils/Utils.js" as Util
 
 Rectangle{
 
-    color: "#d3d3d3"
+    color: color1
     Flickable{
         anchors.fill: parent
         contentHeight: rightPanelItem.height
@@ -32,13 +32,13 @@ Rectangle{
                 font.family: iranSans.name
                 font.pixelSize: Qt.application.font.pixelSize * 1.3
                 verticalAlignment: Qt.AlignVCenter
-                color: "#778899"
+                color: color9
             }
 
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 2
-                color: "white"
+                color: "#ffffff"
             }
 
             FilterPanel{
@@ -53,7 +53,7 @@ Rectangle{
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 2
-                color: "white"
+                color: "#ffffff"
             }
 
             FilterPanel{
@@ -68,7 +68,7 @@ Rectangle{
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 2
-                color: "white"
+                color: "#ffffff"
             }
 
             FilterDisplayPanel{
@@ -82,7 +82,7 @@ Rectangle{
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 2
-                color: "white"
+                color: "#ffffff"
             }
 
             FilterSearchPanel{
@@ -102,7 +102,7 @@ Rectangle{
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 2
-                color: "white"
+                color: "#ffffff"
             }
 
             FilterPanel{
@@ -117,7 +117,7 @@ Rectangle{
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 2
-                color: "white"
+                color: "#ffffff"
             }
 
             FilterPanel{
@@ -132,7 +132,7 @@ Rectangle{
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 2
-                color: "white"
+                color: "#ffffff"
             }
 
             FilterPanel{
@@ -147,7 +147,7 @@ Rectangle{
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 2
-                color: "white"
+                color: "#ffffff"
             }
 
             Item{Layout.fillHeight: true}

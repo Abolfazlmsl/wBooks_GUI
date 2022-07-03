@@ -1,4 +1,4 @@
-import QtQuick 2.7
+import QtQuick 2.15
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 
@@ -12,7 +12,7 @@ Item {
 //    Rectangle{
 //        width: parent.width
 //        height: 2
-//        color: "#dddddd"
+//        color: color19
 //        anchors.top: parent.top
 
 //        visible: selectable
@@ -39,7 +39,7 @@ Item {
             text: Icons.star_outline
             font.family: webfont.name
             font.pixelSize: Qt.application.font.pixelSize * 1.5
-            color: (isclicked) ? "#E0EA65":"#778899"
+            color: (isclicked) ? color10:color9
 
             MouseArea{
                 anchors.fill: parent
@@ -74,7 +74,7 @@ Item {
             text: Icons.star_outline
             font.family: webfont.name
             font.pixelSize: Qt.application.font.pixelSize * 1.5
-            color:(isclicked) ? "#E0EA65":"#778899"
+            color:(isclicked) ? color10:color9
 
             MouseArea{
                 anchors.fill: parent
@@ -109,7 +109,7 @@ Item {
             text: Icons.star_outline
             font.family: webfont.name
             font.pixelSize: Qt.application.font.pixelSize * 1.5
-            color: (isclicked) ? "#E0EA65":"#778899"
+            color: (isclicked) ? color10:color9
 
             MouseArea{
                 anchors.fill: parent
@@ -144,7 +144,7 @@ Item {
             text: Icons.star_outline
             font.family: webfont.name
             font.pixelSize: Qt.application.font.pixelSize * 1.5
-            color: (isclicked) ? "#E0EA65":"#778899"
+            color: (isclicked) ? color10:color9
 
             MouseArea{
                 anchors.fill: parent
@@ -179,7 +179,7 @@ Item {
             text: Icons.star_outline
             font.family: webfont.name
             font.pixelSize: Qt.application.font.pixelSize * 1.5
-            color: (isclicked) ? "#E0EA65":"#778899"
+            color: (isclicked) ? color10:color9
 
             MouseArea{
                 anchors.fill: parent
@@ -208,7 +208,7 @@ Item {
             Layout.preferredWidth: 2
             Layout.preferredHeight: parent.height - (parent.height * 0.2)
             Layout.leftMargin: 20 * ratio
-            color: "#dddddd"
+            color: color19
 
             visible: !selectable
         }
@@ -227,7 +227,7 @@ Item {
             font.family: segoeUI.name
             font.pixelSize: Qt.application.font.pixelSize * 1.3
             font.bold: true
-            color: "#1777c4"
+            color: color20
         }
 
         //-- Averages star --//
@@ -242,7 +242,7 @@ Item {
             text: Icons.star
             font.family: webfont.name
             font.pixelSize: Qt.application.font.pixelSize * 1.8
-            color: "#1777c4"
+            color: color20
         }
 
         Item {

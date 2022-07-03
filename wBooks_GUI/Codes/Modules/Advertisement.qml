@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.15
 
 Item {
     property alias source: image.source
@@ -10,7 +10,7 @@ Item {
         id: iconRec
         width: parent.width
         height: 220
-        color: "#211D1D"
+        color: color8
         Image {
             id: image
             anchors.fill: parent

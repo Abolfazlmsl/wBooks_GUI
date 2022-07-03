@@ -7,10 +7,10 @@ Item {
 
     //-- create database --//
     function initDatabase() {
-        console.log('initDatabase()')
+//        console.log('initDatabase()')
         db = LocalStorage.openDatabaseSync("CrazyBox", "1.0", "A box who remembers its position", 100000);
         db.transaction( function(tx) {
-            print('... create table')
+//            print('... create table')
             tx.executeSql('CREATE TABLE IF NOT EXISTS books(id INTEGER, VALUE TEXT, image TEXT)');
         });
 

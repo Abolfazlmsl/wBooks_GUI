@@ -39,7 +39,7 @@ Flickable {
 
                         verticalAlignment: Qt.AlignVCenter
 
-                        color: "red"
+                        color: color16
                     }
 
                     ListView{
@@ -58,11 +58,11 @@ Flickable {
                             Rectangle{
                                 width: parent.width
                                 height: 30
-                                color: "#d3d3d3"
+                                color: color1
                                 Rectangle{
                                     anchors.fill: parent
                                     anchors.margins: 2
-                                    color: "black"
+                                    color: color4
                                 }
 
                             }

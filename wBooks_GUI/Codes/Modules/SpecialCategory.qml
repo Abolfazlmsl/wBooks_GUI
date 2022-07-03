@@ -21,7 +21,7 @@ Item {
             anchors.rightMargin: 15
             text: ""
             font.family: iranSans.name
-            color: "#990000"
+            color: color2
 
             font.pixelSize: Qt.application.font.pixelSize * 1.7
             verticalAlignment: Qt.AlignVCenter
@@ -55,7 +55,7 @@ Item {
                         NumberAnimation{duration:300}
                     }
 
-                    color: (isClicked) ? "#990000":"#d3d3d3"
+                    color: (isClicked) ? color2:color1
                     Rectangle{
                         anchors.fill: parent
                         anchors.margins: 8
@@ -63,7 +63,7 @@ Item {
                         Label{
                             anchors.fill: parent
                             text: Icons.book_open_page_variant
-                            color: "white"
+                            color: "#ffffff"
 
                             font.family: webfont.name
                             font.pixelSize: Qt.application.font.pixelSize * 3
@@ -83,7 +83,7 @@ Item {
                         anchors.fill: parent
                         text: model.text
                         font.family: iranSans.name
-                        color: "black"
+                        color: color4
                         verticalAlignment: Qt.AlignVCenter
                     }
                 }
@@ -111,7 +111,7 @@ Item {
                                 width: 50
                                 height: Text.contentHeight
                                 text: (index===3)? "...":title3Rec.itemArray[index]
-                                color: "#778899"
+                                color: color9
                                 font.family: iranSans.name
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft

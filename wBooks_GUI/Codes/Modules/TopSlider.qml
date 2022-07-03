@@ -85,7 +85,7 @@ Item {
                 width: 15
                 height: width
                 radius: width/2
-                color: (view.currentIndex===index) ? "#990000":"white"
+                color: (view.currentIndex===index) ? color2:"#ffffff"
                 MouseArea{
                     anchors.fill: parent
                     cursorShape: Qt.PointingHandCursor

@@ -1,4 +1,4 @@
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 
@@ -19,7 +19,7 @@ Rectangle{
 
         Item{
             id: homeItem
-            implicitHeight: childrenRect.height + 40
+            implicitHeight: childrenRect.height
             implicitWidth: parent.width
             ColumnLayout{
                 width: parent.width
@@ -42,6 +42,12 @@ Rectangle{
                     onBtnClicked: {
                         print("clicked")
                     }
+                }
+
+                Footer{
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 270
+                    Layout.topMargin: 50
                 }
             }
         }

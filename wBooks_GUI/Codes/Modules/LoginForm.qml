@@ -1,4 +1,4 @@
-import QtQuick 2.14
+import QtQuick 2.15
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.12
@@ -38,8 +38,8 @@ Item{
         property real lastMouseX: 0
         property real lastMouseY: 0
         acceptedButtons: Qt.LeftButton
-        onMouseXChanged: root_register.x += (mouseX - lastMouseX)
-        onMouseYChanged: root_register.y += (mouseY - lastMouseY)
+        onMouseXChanged: root_login.x += (mouseX - lastMouseX)
+        onMouseYChanged: root_login.y += (mouseY - lastMouseY)
         onPressed: {
             if(mouse.button == Qt.LeftButton){
                 parent.forceActiveFocus()
@@ -67,7 +67,7 @@ Item{
                 Layout.preferredHeight: implicitHeight
                 text: "لطفا اطلاعات خود را وارد کنید"
                 font.family: iranSans.name
-                color: "#211D1D"
+                color: color8
 
                 font.pixelSize: Qt.application.font.pixelSize * 1.3
                 horizontalAlignment: Qt.AlignHCenter
@@ -119,6 +119,7 @@ Item{
                 radius: height / 2
 
                 color: "#211D1D"
+                border.color: color8
 
                 Label{
                     anchors.centerIn: parent
@@ -137,10 +138,36 @@ Item{
                         if (parseInt(phone.length) === 0){
                             getMessage("شماره تماس خود را وارد کنید")
                         }else if (parseInt(password.length) === 0){
-                            getMessage("پسورد خود را وارد کنید")
+                            getMessage("رمز عبور خود را وارد کنید")
                         }else{
-                            setting.isLogined = true
-                            mainView = home
+                            var obj = db.readAllData("users")
+                            var data
+                            var isUser = false
+                            for(var i=0 ; i< obj.length ; i++){
+                                data = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
+                                if (data.phone === phone.text){
+                                    isUser = true
+                                    break;
+                                }
+                            }
+
+                            if (isUser){
+                                if (data.password === password.text){
+                                    setting.isLogined = true
+                                    setting.userName = data.name
+                                    setting.userEmail = data.email
+                                    setting.userPhone = data.phone
+                                    setting.gender = data.gender
+                                    setting.profile = JSON.parse(JSON.stringify(obj[i])).image
+                                    setting.user_id = JSON.parse(JSON.stringify(obj[i])).id
+                                    setting.password = data.password
+                                    mainPage.state = "Home"
+                                }else{
+                                    getMessage("رمز عبور اشتباه است")
+                                }
+                            }else{
+                                getMessage("کاربری با این مشخصات یافت نشد")
+                            }
                         }
                     }
                 }

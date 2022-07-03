@@ -1,10 +1,12 @@
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQuick.Controls 2.2
 import QtQuick.Window 2.2
 import QtQuick.Controls.Material 2.2
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 import Qt.labs.settings 1.1
+
+import com.desktopFunctions 1.0
 
 import "./Fonts/Icon.js" as Icons
 import "./Utils/Enum.js" as Enum
@@ -16,9 +18,9 @@ import "./Codes"
 
 Window {
     id: win
-    width: 800
+    width: 1000
     height: 600
-    minimumWidth: 800
+    minimumWidth: 1000
     minimumHeight: 600
     visibility: Qt.WindowFullScreen
     visible: true
@@ -28,25 +30,205 @@ Window {
 
     // Theme props
     property bool lightTheme: true
-    property string lightColor: "#f0ffff"
-    property string darkColor: "#444444"
-
     property bool accountPopEnabled: false
     property bool inHomeMode: true
     property int mainView: 0
+    property int rightView: 0
     property bool homeClick: true
     property bool membershipClick: false
     property bool serialBookClick: false
     property bool audioBookClick: false
     property bool yourLibraryClick: false
 
+    // Colors //
+    property string color0: "#50d3d3d3"
+    property string color1: "#d3d3d3"
+    property string color2: "#990000"
+    property string color3: "#ffffff"
+    property string color4: "#000000"
+    property string color5: "#0000ff"
+    property string color6: "#E91E63"
+    property string color7: "green"
+    property string color8: "#211D1D"
+    property string color9: "#778899"
+    property string color10: "#E0EA65"
+    property string color11: "darkblue"
+    property string color12: "#444444"
+    property string color13: "#f7f7f7"
+    property string color14: "#3399ff"
+    property string color15: "#a9a9a9"
+    property string color16: "red"
+    property string color17: "#0091f8"
+    property string color18: "gray"
+    property string color19: "#dddddd"
+    property string color20: "#1777c4"
+    property string color21: "#6d8517"
+    property string color22: "lawngreen"
+    property string color23: "#9F9F9F"
+    property string color_input: "#ffffff"
+
+    // Theme of the software //
+    property var changeTheme: Item{
+        id: theme
+        visible: false
+
+        state: setting.themeState
+        states: [
+            State{
+                name: "Light"
+                PropertyChanges {
+                    target: win
+                    color0: "#50d3d3d3"
+                    color1: "#d3d3d3"
+                    color2: "#990000"
+                    color3: "#ffffff"
+                    color4: "#000000"
+                    color5: "#0000ff"
+                    color6: "#E91E63"
+                    color7: "green"
+                    color8: "#211D1D"
+                    color9: "#778899"
+                    color10: "#E0EA65"
+                    color11: "darkblue"
+                    color12: "#444444"
+                    color13: "#f7f7f7"
+                    color14: "#3399ff"
+                    color15: "#a9a9a9"
+                    color16: "red"
+                    color17: "#0091f8"
+                    color18: "gray"
+                    color19: "#dddddd"
+                    color20: "#1777c4"
+                    color21: "#6d8517"
+                    color22: "lawngreen"
+                    color23: "#9F9F9F"
+                    color_input: "#ffffff"
+                    Material.theme: Material.Light
+                }
+            },
+            State{
+                name: "SemiLight"
+                PropertyChanges {
+                    target: win
+                    color0: "#50d3d3d3"
+                    color1: "#d3d3d3"
+                    color2: "#990000"
+                    color3: "#ffffff"
+                    color4: "#000000"
+                    color5: "#0000ff"
+                    color6: "#E91E63"
+                    color7: "green"
+                    color8: "#211D1D"
+                    color9: "#778899"
+                    color10: "#E0EA65"
+                    color11: "darkblue"
+                    color12: "#444444"
+                    color13: "#f7f7f7"
+                    color14: "#3399ff"
+                    color15: "#a9a9a9"
+                    color16: "red"
+                    color17: "#0091f8"
+                    color18: "gray"
+                    color19: "#dddddd"
+                    color20: "#1777c4"
+                    color21: "#6d8517"
+                    color22: "lawngreen"
+                    color23: "#9F9F9F"
+                    color_input: "#ffffff"
+                    Material.theme: Material.Light
+                }
+            },
+            State{
+                name: "SemiDark"
+                PropertyChanges {
+                    target: win
+                    color0: "#50d3d3d3"
+                    color1: "#d3d3d3"
+                    color2: "#990000"
+                    color3: "#ffffff"
+                    color4: "#000000"
+                    color5: "#0000ff"
+                    color6: "#E91E63"
+                    color7: "green"
+                    color8: "#211D1D"
+                    color9: "#778899"
+                    color10: "#E0EA65"
+                    color11: "darkblue"
+                    color12: "#444444"
+                    color13: "#f7f7f7"
+                    color14: "#3399ff"
+                    color15: "#a9a9a9"
+                    color16: "red"
+                    color17: "#0091f8"
+                    color18: "gray"
+                    color19: "#dddddd"
+                    color20: "#1777c4"
+                    color21: "#6d8517"
+                    color22: "lawngreen"
+                    color23: "#9F9F9F"
+                    color_input: "#ffffff"
+                    Material.theme: Material.Light
+                }
+            },
+            State{
+                name: "Dark"
+                PropertyChanges {
+                    target: win
+                    color0: "#0E0F10" //
+                    color1: "#121315" //
+                    color2: "#990000"
+                    color3: "#000000" //
+                    color4: "#ffffff" //
+                    color5: "green" //
+                    color6: "#E91E63"
+                    color7: "green"
+                    color8: "#C7C4B7" //
+                    color9: "#778899"
+                    color10: "#E0EA65"
+                    color11: "green" //
+                    color12: "green" //
+                    color13: "#f7f7f7"
+                    color14: "#3399ff"
+                    color15: "#a9a9a9"
+                    color16: "red"
+                    color17: "#0091f8"
+                    color18: "gray"
+                    color19: "#000000" //
+                    color20: "#1777c4"
+                    color21: "#6d8517"
+                    color22: "lawngreen"
+                    color23: "#1B1B1B" //
+                    color_input: "#211D1D" //
+                    Material.theme: Material.Dark //
+                }
+            }
+        ]
+
+    }
+
+
     property var localdb: LocalDatabase{
         id: db
         visible: false
     }
 
+    property var desktopfunctions: Desktopfunctions{
+        id: desktopfunctions
+    }
+
     Component.onCompleted: {
         db.initDatabase();
+    }
+
+    function resetSetting(){
+        setting.isLogined = false
+        setting.userName = ""
+        setting.userEmail = ""
+        setting.userPhone = ""
+        setting.password = ""
+        setting.user_id = 0
+        setting.profile = ""
+        setting.gender = ""
     }
 
     //-- save app setting --//
@@ -60,7 +242,12 @@ Window {
         property string userName: ""
         property string userPhone: ""
         property string userEmail: ""
+        property int user_id: 0
+        property string password: ""
+        property string profile: ""
+        property string gender: ""
         property bool isLogined: false
+        property string themeState: "Light"
     }
 
     //flags: Qt.WindowCloseButtonHint
@@ -93,11 +280,13 @@ Window {
                     target: win
                     inHomeMode: true
                     mainView: 0
+                    rightView: 0
                     homeClick: true
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
                     yourLibraryClick: false
+                    accountPopEnabled: false
                 }
             },
             State{
@@ -106,11 +295,13 @@ Window {
                     target: win
                     inHomeMode: false
                     mainView: 1
+                    rightView: 0
                     homeClick: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
                     yourLibraryClick: false
+                    accountPopEnabled: false
                 }
             },
             State{
@@ -119,24 +310,28 @@ Window {
                     target: win
                     inHomeMode: false
                     mainView: 2
+                    rightView: 0
                     homeClick: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
                     yourLibraryClick: false
+                    accountPopEnabled: false
                 }
             },
             State{
                 name: "Edit"
                 PropertyChanges {
                     target: win
-                    inHomeMode: false
+                    inHomeMode: true
                     mainView: 3
+                    rightView: 1
                     homeClick: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
                     yourLibraryClick: false
+                    accountPopEnabled: false
                 }
             },
             State{
@@ -145,11 +340,13 @@ Window {
                     target: win
                     inHomeMode: true
                     mainView: 4
+                    rightView: 0
                     homeClick: false
                     membershipClick: true
                     serialBookClick: false
                     audioBookClick: false
                     yourLibraryClick: false
+                    accountPopEnabled: false
                 }
             },
             State{
@@ -158,11 +355,13 @@ Window {
                     target: win
                     inHomeMode: true
                     mainView: 5
+                    rightView: 0
                     homeClick: false
                     membershipClick: false
                     serialBookClick: true
                     audioBookClick: false
                     yourLibraryClick: false
+                    accountPopEnabled: false
                 }
             },
             State{
@@ -171,11 +370,13 @@ Window {
                     target: win
                     inHomeMode: true
                     mainView: 6
+                    rightView: 0
                     homeClick: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: true
                     yourLibraryClick: false
+                    accountPopEnabled: false
                 }
             },
             State{
@@ -184,11 +385,13 @@ Window {
                     target: win
                     inHomeMode: true
                     mainView: 7
+                    rightView: 0
                     homeClick: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
                     yourLibraryClick: true
+                    accountPopEnabled: false
                 }
             }
 
@@ -201,7 +404,7 @@ Window {
             width: parent.width
             height: 60 //* ratio
 
-            color: "black"
+            color: "#000000"
 
             RowLayout{
                 anchors.fill: parent
@@ -223,7 +426,7 @@ Window {
                     Layout.preferredHeight: parent.height * 0.7
                     Layout.preferredWidth: 1
 
-                    color: "white"
+                    color: "#ffffff"
 
                     Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 }
@@ -233,7 +436,7 @@ Window {
                     Layout.fillHeight: true
                     Layout.preferredWidth: parent.width * 0.015
 
-                    color: "black"
+                    color: "#000000"
                 }
 
                 //- navbar --//
@@ -385,7 +588,7 @@ Window {
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
 
-                            color: "red"
+                            color: color16
                             clip: true
                             elide: Text.ElideRight
 
@@ -415,7 +618,7 @@ Window {
 
                             verticalAlignment: Qt.AlignVCenter
 
-                            color: "red"
+                            color: color16
                             clip: true
                             elide: Text.ElideRight
                             MouseArea{
@@ -444,7 +647,7 @@ Window {
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
 
-                            color: "red"
+                            color: color16
                             clip: true
                             elide: Text.ElideRight
                             MouseArea{
@@ -474,11 +677,11 @@ Window {
                             horizontalAlignment: Qt.AlignHCenter
                             background: Rectangle{
                                 radius: 20
-                                color: "lawngreen"
+                                color: color22
                                 width: parent.width
                                 height: parent.height
                             }
-                            color: "black"
+                            color: "#000000"
                             clip: true
                             elide: Text.ElideRight
 
@@ -517,11 +720,11 @@ Window {
                             horizontalAlignment: Qt.AlignHCenter
                             background: Rectangle{
                                 radius: 20
-                                color: "red"
+                                color: color16
                                 width: parent.width
                                 height: parent.height
                             }
-                            color: "white"
+                            color: "#ffffff"
                             clip: true
                             elide: Text.ElideRight
 
@@ -566,7 +769,7 @@ Window {
             width: parent.width
             height: 80
 
-            color: darkColor
+            color: "#444444"
 
             //-- Right Menu Items --//
             RowLayout{
@@ -575,7 +778,98 @@ Window {
                 spacing: 0
                 layoutDirection: Qt.RightToLeft
 
-                Item{Layout.preferredWidth: parent.width * 0.15}
+                Item{
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: parent.width * 0.15
+                    RowLayout{
+                        anchors.fill: parent
+                        anchors.rightMargin: 50
+                        anchors.leftMargin: 50
+                        spacing: 0
+                        layoutDirection: Qt.RightToLeft
+
+                        Rectangle{
+                            Layout.preferredWidth: 20
+                            Layout.preferredHeight: width
+                            radius: width / 2
+                            color: "black"
+                            ToolTip.text: "تاریک"
+                            ToolTip.visible: "تاریک" ? theme1.containsMouse : false
+                            MouseArea{
+                                id: theme1
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                hoverEnabled: true
+                                onClicked: {
+                                    setting.themeState = "Dark"
+                                }
+                            }
+                        }
+
+                        Rectangle{
+                            Layout.preferredWidth: 20
+                            Layout.preferredHeight: width
+                            radius: width / 2
+                            color: "#25252C"
+                            ToolTip.text: "نیمه تاریک"
+                            ToolTip.visible: "نیمه تاریک" ? theme2.containsMouse : false
+                            MouseArea{
+                                id: theme2
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                hoverEnabled: true
+                                onClicked: {
+                                    setting.themeState = "SemiDark"
+                                }
+                            }
+                        }
+
+                        Rectangle{
+                            Layout.preferredWidth: 20
+                            Layout.preferredHeight: width
+                            radius: width / 2
+                            ToolTip.text: "نیمه روشن"
+                            ToolTip.visible: "نیمه روشن" ? theme3.containsMouse : false
+                            color: "#B2B2B2"
+                            MouseArea{
+                                id: theme3
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                hoverEnabled: true
+                                onClicked: {
+                                    setting.themeState = "SemiLight"
+                                }
+                            }
+                        }
+
+                        Rectangle{
+                            Layout.preferredWidth: 20
+                            Layout.preferredHeight: width
+                            radius: width / 2
+                            ToolTip.text: "روشن"
+                            ToolTip.visible: "روشن" ? theme4.containsMouse : false
+                            color: "white"
+                            MouseArea{
+                                id: theme4
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                hoverEnabled: true
+                                onClicked: {
+                                    setting.themeState = "Light"
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+                Rectangle{
+                    Layout.preferredWidth: 1
+                    Layout.fillHeight: true
+                    Layout.topMargin: 20
+                    Layout.bottomMargin: 20
+                    color: "#ffffff"
+                }
 
                 //-- social media icons --//
                 Item{
@@ -684,7 +978,7 @@ Window {
 
                         Rectangle{
                             radius: width * 0.5
-                            color: "white"
+                            color: "#ffffff"
                             Layout.preferredWidth: parent.height * 0.75
                             Layout.preferredHeight: width
 
@@ -709,7 +1003,7 @@ Window {
                         }
                         Rectangle{
                             radius: width * 0.5
-                            color: "white"
+                            color: "#ffffff"
                             Layout.preferredWidth: parent.height * 0.75
                             Layout.preferredHeight: width
 
@@ -735,7 +1029,7 @@ Window {
 
                         Rectangle{
                             radius: width * 0.5
-                            color: "white"
+                            color: "#ffffff"
                             Layout.preferredWidth: parent.height * 0.75
                             Layout.preferredHeight: width
 
@@ -761,7 +1055,7 @@ Window {
 
                         Rectangle{
                             radius: width * 0.5
-                            color: "white"
+                            color: "#ffffff"
                             Layout.preferredWidth: parent.height * 0.75
                             Layout.preferredHeight: width
 
@@ -788,7 +1082,7 @@ Window {
 
                         Rectangle{
                             radius: width * 0.5
-                            color: "white"
+                            color: "#ffffff"
                             Layout.preferredWidth: parent.height * 0.75
                             Layout.preferredHeight: width
 

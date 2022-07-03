@@ -3,6 +3,8 @@
 #include <QFontDatabase>
 #include <QQmlContext>
 
+#include "desktopfunctions.h"
+
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -21,6 +23,8 @@ int main(int argc, char *argv[])
 
     auto offlineStoragePath = engine.offlineStoragePath();
     engine.rootContext()->setContextProperty("offlineStoragePath", offlineStoragePath);
+
+    qmlRegisterType<desktopFunctions>("com.desktopFunctions", 1, 0, "Desktopfunctions");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

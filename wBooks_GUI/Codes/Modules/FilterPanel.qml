@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.15
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Styles 1.4
@@ -38,7 +38,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 1.3
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: "black"
+                    color: color4
                 }
 
                 Rectangle {
@@ -58,7 +58,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: "#778899"
+                    color: color9
                 }
 
                 Rectangle {
@@ -75,7 +75,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 1.6
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: "#778899"
+                    color: color9
                 }
 
                 Item{Layout.fillWidth: true}
@@ -111,15 +111,15 @@ Item {
                     implicitHeight: 20
                     y: parent.height / 2
                     radius: 10
-                    color: "white"
-                    border.color: "#d3d3d3"
+                    color: "#ffffff"
+                    border.color: color1
 
                     Rectangle {
                         width: parent.width
                         height: parent.height
                         radius: width/2
                         color: "transparent"
-                        border.color: "blue"
+                        border.color: color5
                         border.width: 3
                         visible: control.checked
                     }
@@ -137,7 +137,7 @@ Item {
                     font.family: iranSansFAnum.name
                     font.bold: true
                     font.pixelSize: Qt.application.font.pixelSize * 1.6
-                    color: "#778899"
+                    color: color9
 
                 }
 

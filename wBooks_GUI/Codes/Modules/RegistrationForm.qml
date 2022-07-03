@@ -15,7 +15,6 @@ Item{
     property alias email              : input_Email.inputText
     property alias password           : input_password.inputText
     property alias password_repeat    : input_password_repeat.inputText
-    property string gender            : ""
 
 //    function isEmailExist(data, email){
 //        for(var i=0; i<data.length; i++){
@@ -103,7 +102,7 @@ Item{
                     Layout.preferredHeight: implicitHeight
                     text: "لطفا اطلاعات خود را وارد کنید"
                     font.family: iranSans.name
-                    color: "#211D1D"
+                    color: color8
 
                     font.pixelSize: Qt.application.font.pixelSize * 1.3
                     horizontalAlignment: Qt.AlignHCenter
@@ -161,33 +160,95 @@ Item{
                 //-- spacer --//
                 Item{Layout.preferredHeight: 10}
 
+                //-- password --//
                 M_inputText{
                     id: input_password
-                    label: "پسورد"
-                    icon: Icons.key
-                    placeholder: "پسورد"
+
+                    label: "رمز عبور"
+                    icon: Icons.lock_outline
+                    placeholder: "رمز عبور (8 حرف)"
                     echoMode: TextInput.Password
+                    clearEnable: false
+                    inputText.maximumLength: 16
+
+                    Label{
+                        id: lbl_eyeIcon
+                        width: implicitWidth
+                        height: parent.height
+                        anchors.left: parent.left
+                        anchors.leftMargin: 10 * ratio
+                        verticalAlignment: Qt.AlignVCenter
+                        text: Icons.eye_off
+                        font.family: webfont.name
+                        font.pixelSize: Qt.application.font.pixelSize * 2
+
+                        MouseArea{
+
+                            property bool passViewHandler: false
+
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+
+
+                            onClicked: {
+                                if(passViewHandler){
+                                    lbl_eyeIcon.text = Icons.eye_off
+                                    input_password.echoMode = TextInput.Password
+                                    input_password_repeat.echoMode = TextInput.Password
+                                }
+                                else{
+                                    lbl_eyeIcon.text = Icons.eye
+                                    input_password.echoMode = TextInput.Normal
+                                    input_password_repeat.echoMode = TextInput.Normal
+                                }
+                                passViewHandler = !passViewHandler
+                            }
+                        }
+                    }
+
+
                     Keys.onTabPressed: {
                         input_password_repeat.inputText.forceActiveFocus()
                     }
 
-                    //            inputText.validator: RegularExpressionValidator { regularExpression: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ }
                 }
 
                 //-- spacer --//
                 Item{Layout.preferredHeight: 10}
 
+                //-- Confirm password --//
                 M_inputText{
                     id: input_password_repeat
-                    label: "پسورد"
-                    icon: Icons.key
-                    placeholder: "پسورد"
+
+                    label: "تایید رمز عبور"
+                    icon: Icons.lock
+                    placeholder: "تایید رمز عبور"
                     echoMode: TextInput.Password
+                    clearEnable: false
+                    inputText.maximumLength: 16
+
                     Keys.onTabPressed: {
                         input_name.inputText.forceActiveFocus()
                     }
 
-                    //            inputText.validator: RegularExpressionValidator { regularExpression: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ }
+                    Label{
+                        id: lbl_confirmIcon
+
+                        visible: (input_password.inputText.text === input_password_repeat.inputText.text) &&
+                                 (input_password.inputText.text !== "" && input_password_repeat.inputText.text !== "") ? true : false
+                        width: implicitWidth
+                        height: parent.height
+                        anchors.left: parent.left
+                        anchors.leftMargin: 10 * ratio
+                        verticalAlignment: Qt.AlignVCenter
+                        text: Icons.check
+                        color: color21
+                        font.family: webfont.name
+                        font.pixelSize: Qt.application.font.pixelSize * 2
+
+                    }
+
+
                 }
 
                 //-- spacer --//
@@ -202,6 +263,7 @@ Item{
                     radius: height / 2
 
                     color: "#211D1D"
+                    border.color: color8
 
                     Label{
                         anchors.centerIn: parent
@@ -225,11 +287,11 @@ Item{
                             }else if (parseInt(phone.length) === 0){
                                 getMessage("شماره تماس خود را وارد کنید")
                             }else if (parseInt(password.length) === 0){
-                                getMessage("پسورد خود را وارد کنید")
+                                getMessage("رمز عبور خود را وارد کنید")
                             }else if (parseInt(password_repeat.length) === 0){
-                                getMessage("پسورد خود دوباره وارد نمایید")
+                                getMessage("تایی رمز عبور خود را وارد نمایید")
                             }else if (password.text != password_repeat.text){
-                                getMessage("پسورد یکی نمی باشد")
+                                getMessage("رمز عبور و تایید رمز عبور یکی نمی باشد")
                             }else{
 //                                MainPython.sendSMS(phone.text)
                                 timer_confirmSMS.visible = true
@@ -277,7 +339,7 @@ Item{
                         Layout.preferredHeight: implicitHeight
                         text: "پیامک فعالسازی به شماره زیر ارسال شده است:"
                         font.family: iranSans.name
-                        color: "#211D1D"
+                        color: color8
                         font.pixelSize: Qt.application.font.pixelSize * 1.3
                         horizontalAlignment: Qt.AlignHCenter
 
@@ -302,9 +364,9 @@ Item{
                                 Layout.preferredHeight: implicitHeight
                                 text: input_phone.inputText.text
                                 font.family: iranSans.name
-                                color: "#444444"
+                                color: color12
 
-                                font.pixelSize: Qt.application.font.pixelSize * 1.3
+                                font.pixelSize: Qt.application.font.pixelSize * 1.5
                                 horizontalAlignment: Qt.AlignHCenter
 
                             }
@@ -314,7 +376,7 @@ Item{
                                 Layout.preferredWidth: implicitWidth
                                 Layout.preferredHeight: implicitHeight
                                 text: "تغییر شماره همراه"
-                                color: "#211D1D"
+                                color: color8
                                 font.family: iranSans.name
 
                                 font.pixelSize: Qt.application.font.pixelSize * 1.1
@@ -390,7 +452,7 @@ Item{
 
                                 font.pixelSize: Qt.application.font.pixelSize
 
-                                color: "#dddddd"
+                                color: color19
 
                                 background: Rectangle{
                                     color: "transparent"
@@ -413,6 +475,7 @@ Item{
                         radius: height / 2
 
                         color: "#211D1D"
+                        border.color: color8
 
                         Label{
                             anchors.centerIn: parent
@@ -444,11 +507,23 @@ Item{
                             cursorShape: Qt.PointingHandCursor
 
                             onClicked: {
+                                var data = {
+                                    "name": name.text,
+                                    "email": email.text,
+                                    "phone": phone.text,
+                                    "password": password.text,
+                                    "gender": ""
+                                }
+
+                                db.addTable("users", true)
+                                db.storeData("users", data, "")
+
                                 setting.userName = name.text
                                 setting.userPhone = phone.text
                                 setting.userEmail = email.text
+                                setting.password = password.text
                                 setting.isLogined = true
-                                mainView = home
+                                mainPage.state = "Home"
 //                                if (txf_confirm.text === smsCode){
 //                                    spinner.visible = true
 ////                                    MainPython.makeTrialData(15, setting.tokenAccess, Service.BASE, Service.url_license, Service.url_device)
@@ -459,11 +534,33 @@ Item{
                             }
 
                             Keys.onEnterPressed: {
+                                var data = {
+                                    "name": name.text,
+                                    "email": email.text,
+                                    "phone": phone.text,
+                                    "password": password.text,
+                                    "gender": ""
+                                }
+
+                                db.addTable("users", true)
+                                db.storeData("users", data, "")
+
+                                var obj = db.readAllData("users")
+                                var data2
+                                for(var i=0 ; i< obj.length ; i++){
+                                    data2 = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
+                                    if (data2.phone === phone.text){
+                                        break;
+                                    }
+                                }
+
+                                setting.user_id = data2.id
                                 setting.userName = name.text
                                 setting.userPhone = phone.text
                                 setting.userEmail = email.text
+                                setting.password = password.text
                                 setting.isLogined = true
-                                mainView = home
+                                mainPage.state = "Home"
 //                                if (txf_confirm.text === smsCode){
 //                                    spinner.visible = true
 ////                                    MainPython.makeTrialData(15, setting.tokenAccess, Service.BASE, Service.url_license, Service.url_device)
@@ -485,7 +582,7 @@ Item{
                         minutes: 1
 
                         //color: "#55ff0000"
-                        lblTimer.color: "#000000"
+                        lblTimer.color: color4
 
                         onSecondChanged: {
                             if(minutes === 0 && second === 0){
@@ -502,7 +599,7 @@ Item{
                         Layout.preferredHeight: implicitHeight
                         text: "ارسال مجدد کد"
                         font.family: iranSans.name
-                        color: "#211D1D"
+                        color: color8
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.1
                         horizontalAlignment: Qt.AlignHCenter
@@ -511,7 +608,6 @@ Item{
                             anchors.fill: parent
                             cursorShape: Qt.PointingHandCursor
                             onClicked: {
-                                MainPython.sendSMS(phone.text)
                                 timer_confirmSMS.resetTimer()
                                 timer_confirmSMS.minutes = 1
                                 timer_confirmSMS.startTimer()

@@ -28,7 +28,7 @@ Item {
                     Layout.fillHeight: true
                     text: ""
                     font.family: iranSans.name
-                    color: "black"
+                    color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.7
                     verticalAlignment: Qt.AlignVCenter
                     elide: Text.ElideRight
@@ -39,7 +39,7 @@ Item {
                     Layout.preferredWidth: moretxt.contentWidth
                     Layout.fillHeight: true
                     font.family: iranSans.name
-                    color: "#990000"
+                    color: color2
                     text: "(مشاهده بیشتر)"
                     font.pixelSize: Qt.application.font.pixelSize * 1.7
                     verticalAlignment: Qt.AlignVCenter
@@ -69,7 +69,7 @@ Item {
             clip: false
             focus: true
             spacing: 50
-            interactive: false
+            interactive: true
             layoutDirection: Qt.RightToLeft
             orientation: ListView.Horizontal
             model: itemModel
@@ -84,7 +84,7 @@ Item {
                     width: parent.width
                     height: parent.height * 0.7
 
-                    color: "#211D1D"
+                    color: color8
                     Image {
                         anchors.fill: parent
                         anchors.verticalCenter: parent.verticalCenter
@@ -121,7 +121,7 @@ Item {
                                 anchors.fill: parent
                                 text: model.text1
                                 font.family: iranSans.name
-                                color: "black"
+                                color: color4
                                 verticalAlignment: Qt.AlignVCenter
                                 font.pixelSize: Qt.application.font.pixelSize * 1.5
                             }
@@ -131,7 +131,7 @@ Item {
                             Layout.fillHeight: true
                             Layout.fillWidth: true
                             clip: true
-                            color: "#990000"
+                            color: color2
 
                             RowLayout{
                                 id: offrec
@@ -147,7 +147,7 @@ Item {
                                         anchors.fill: parent
                                         text: model.off
                                         font.family: iranSans.name
-                                        color: "white"
+                                        color: "#ffffff"
                                         verticalAlignment: Qt.AlignVCenter
                                         horizontalAlignment: Qt.AlignHCenter
                                         font.pixelSize: Qt.application.font.pixelSize * 1.2
@@ -163,7 +163,7 @@ Item {
                                         clip: true
                                         text: "کد تخفیف"
                                         font.family: iranSans.name
-                                        color: "#990000"
+                                        color: color2
                                         verticalAlignment: Qt.AlignVCenter
                                         horizontalAlignment: Qt.AlignHCenter
                                         font.pixelSize: Qt.application.font.pixelSize
@@ -191,7 +191,7 @@ Item {
                         anchors.fill: parent
                         text: " شامل " + model.booksNumber + " جلد کتاب"
                         font.family: iranSansFAnum.name
-                        color: "#778899"
+                        color: color9
                         verticalAlignment: Qt.AlignVCenter
                         font.pixelSize: Qt.application.font.pixelSize
                     }
@@ -227,7 +227,7 @@ Item {
                                 anchors.fill: parent
                                 text: "(" + model.rate + " رای)"
                                 font.family: iranSansFAnum.name
-                                color: "#778899"
+                                color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 font.pixelSize: Qt.application.font.pixelSize * 0.7
                                 elide: Text.ElideRight
