@@ -8,7 +8,7 @@ import "./../../Fonts/Icon.js" as Icons
 Item {
     id: collect_item
     property alias title: titletxt.text
-    property alias itemModel: lview.model
+    property var itemModel: []
 
     Rectangle{
         anchors.fill: parent
@@ -72,7 +72,7 @@ Item {
             interactive: true
             layoutDirection: Qt.RightToLeft
             orientation: ListView.Horizontal
-            model: itemModel
+            model: (itemModel.count > 5) ? 5:itemModel.count
 
             delegate: Rectangle{
                 id: itemRec
@@ -90,7 +90,8 @@ Item {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.margins: 8
-                        source: model.source
+                        source: itemModel.get(index).source
+
 //                        sourceSize.width: width /2
 //                        sourceSize.height: height
 //                        fillMode: Image.PreserveAspectFit
@@ -119,7 +120,7 @@ Item {
                             Label{
                                 id: txt2
                                 anchors.fill: parent
-                                text: model.text1
+                                text: itemModel.get(index).text1
                                 font.family: iranSans.name
                                 color: color4
                                 verticalAlignment: Qt.AlignVCenter
@@ -145,7 +146,7 @@ Item {
                                     Label{
                                         id: offtxt
                                         anchors.fill: parent
-                                        text: model.off
+                                        text: itemModel.get(index).off
                                         font.family: iranSans.name
                                         color: "#ffffff"
                                         verticalAlignment: Qt.AlignVCenter
@@ -189,7 +190,7 @@ Item {
                     Label{
                         id: txt3
                         anchors.fill: parent
-                        text: " شامل " + model.booksNumber + " جلد کتاب"
+                        text: " شامل " + itemModel.get(index).booksNumber + " جلد کتاب"
                         font.family: iranSansFAnum.name
                         color: color9
                         verticalAlignment: Qt.AlignVCenter
@@ -225,7 +226,7 @@ Item {
                             color: "transparent"
                             Label{
                                 anchors.fill: parent
-                                text: "(" + model.rate + " رای)"
+                                text: "(" + itemModel.get(index).rate + " رای)"
                                 font.family: iranSansFAnum.name
                                 color: color9
                                 verticalAlignment: Qt.AlignVCenter

@@ -95,5 +95,10 @@
         <file>Codes/Modules/ButtonPanel.qml</file>
         <file>Codes/Modules/EditAccount.qml</file>
         <file>Codes/Modules/Footer.qml</file>
+        <file>Codes/Modules/MoreBooksPage.qml</file>
+        <file>Images/warriorqueen.jpg</file>
+        <file>Codes/Modules/Writers.qml</file>
+        <file>Images/Adel.jpg</file>
+        <file>Codes/Modules/Prepurchase.qml</file>
     </qresource>
 </RCC>

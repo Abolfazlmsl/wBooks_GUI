@@ -393,6 +393,21 @@ Window {
                     yourLibraryClick: true
                     accountPopEnabled: false
                 }
+            },
+            State{
+                name: "More Books"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 8
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                }
             }
 
         ]

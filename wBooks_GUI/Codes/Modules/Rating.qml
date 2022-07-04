@@ -8,6 +8,7 @@ Item {
 
     property int selectedRate: 0
     property bool selectable: true
+    property double scale: 1.5
 
 //    Rectangle{
 //        width: parent.width
@@ -38,7 +39,7 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             text: Icons.star_outline
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * 1.5
+            font.pixelSize: Qt.application.font.pixelSize * scale
             color: (isclicked) ? color10:color9
 
             MouseArea{
@@ -73,7 +74,7 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             text: Icons.star_outline
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * 1.5
+            font.pixelSize: Qt.application.font.pixelSize * scale
             color:(isclicked) ? color10:color9
 
             MouseArea{
@@ -108,7 +109,7 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             text: Icons.star_outline
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * 1.5
+            font.pixelSize: Qt.application.font.pixelSize * scale
             color: (isclicked) ? color10:color9
 
             MouseArea{
@@ -143,7 +144,7 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             text: Icons.star_outline
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * 1.5
+            font.pixelSize: Qt.application.font.pixelSize * scale
             color: (isclicked) ? color10:color9
 
             MouseArea{
@@ -178,7 +179,7 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             text: Icons.star_outline
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * 1.5
+            font.pixelSize: Qt.application.font.pixelSize * scale
             color: (isclicked) ? color10:color9
 
             MouseArea{

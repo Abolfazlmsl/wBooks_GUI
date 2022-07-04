@@ -32,7 +32,7 @@ Item {
         }
         SwipeView {
             id: view
-
+            clip: true
             currentIndex: 0
             anchors.fill: parent
 

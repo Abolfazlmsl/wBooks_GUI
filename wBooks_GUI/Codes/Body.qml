@@ -275,6 +275,9 @@ Rectangle{
                         Item {
                             SerialBook{
                                 anchors.fill: parent
+                                specialBooksModel: specialBooksModel
+                                writersModel: writersModel
+                                prepurchaseModel: prepurchaseModel
                             }
                         }
 
@@ -284,6 +287,14 @@ Rectangle{
 
                         Item {
 
+                        }
+
+                        Item{
+                            MoreBooksPage{
+                                id: morebooks
+                                anchors.fill: parent
+                                anchors.topMargin: 20
+                            }
                         }
 
                     }
@@ -507,7 +518,6 @@ Rectangle{
             text1: "داستان و رمان"
             text2: "داستان و رمان"
             rate: 37
-            rank: 1
             date: "1399/02/14"
         }
         ListElement{
@@ -526,6 +536,97 @@ Rectangle{
         }
         ListElement{
             source: "qrc:/Images/time.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
             rate: 37
@@ -610,6 +711,122 @@ Rectangle{
             date: "1399/02/14"
         }
     }
+
+
+    ListModel{
+        id: specialBooksModel
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "تلاش در مسیر"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/warriorqueen.jpg"
+            text1: "مروری بر خاطرات"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/mebeforeyou.jpg"
+            text1: "رمان حکومت نظامی"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/warriorqueen.jpg"
+            text1: "خوشه های خشم"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/warriorqueen.jpg"
+            text1: "سفرهای گالیور"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/warriorqueen.jpg"
+            text1: "ولورانت گیمز"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+            date: "1399/02/14"
+        }
+    }
+
+    ListModel{
+        id: writersModel
+        ListElement{
+            source: "qrc:/Images/Adel.jpg"
+            text1: "عادل فردوسی پور"
+        }
+        ListElement{
+            source: "qrc:/Images/Adel.jpg"
+            text1: "امیر قاسمی"
+        }
+        ListElement{
+            source: "qrc:/Images/Adel.jpg"
+            text1: "متین کریم زاده"
+        }
+        ListElement{
+            source: "qrc:/Images/Adel.jpg"
+            text1: "علی نظری زاده"
+        }
+        ListElement{
+            source: "qrc:/Images/Adel.jpg"
+            text1: "یاسین ترکی"
+        }
+        ListElement{
+            source: "qrc:/Images/Adel.jpg"
+            text1: "امیرعلی یاسر"
+        }
+    }
+
+    ListModel{
+        id: prepurchaseModel
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "تلاش در مسیر"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+        }
+        ListElement{
+            source: "qrc:/Images/warriorqueen.jpg"
+            text1: "مروری بر خاطرات"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+        }
+        ListElement{
+            source: "qrc:/Images/mebeforeyou.jpg"
+            text1: "رمان حکومت نظامی"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+        }
+        ListElement{
+            source: "qrc:/Images/warriorqueen.jpg"
+            text1: "خوشه های خشم"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+        }
+        ListElement{
+            source: "qrc:/Images/warriorqueen.jpg"
+            text1: "سفرهای گالیور"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+        }
+        ListElement{
+            source: "qrc:/Images/warriorqueen.jpg"
+            text1: "ولورانت گیمز"
+            text2: "نوشته کیگو هیکاشینو"
+            rate: 37
+        }
+    }
+
 
 }
 

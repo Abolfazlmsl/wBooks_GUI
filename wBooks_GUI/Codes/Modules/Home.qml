@@ -47,6 +47,10 @@ Rectangle{
 //                    Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "برترین کتاب های ماه"
+                    onMoreBtnClicked: {
+                        morebooks.itemModel = bestCatModel
+                        morebooks.title = best_cat.title
+                    }
                 }
 
                 BestCollection{
@@ -67,6 +71,11 @@ Rectangle{
 //                    Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "پیشنهادی برای شما"
+
+                    onMoreBtnClicked: {
+                        morebooks.itemModel = offerBooksModel
+                        morebooks.title = offer_books.title
+                    }
                 }
 
                 Advertisement{
@@ -78,7 +87,7 @@ Rectangle{
                     source: "qrc:/Images/Adver1.jpg"
                     selectable: true
                     onBtnClicked: {
-                        print("clicked")
+
                     }
                 }
 
