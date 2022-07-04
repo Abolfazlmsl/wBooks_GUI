@@ -88,7 +88,7 @@ Item {
                             cursorShape: Qt.PointingHandCursor
                             onClicked: {
                                 moreBtnClicked()
-                                mainPage.state = "More Books"
+
                             }
                         }
                     }
