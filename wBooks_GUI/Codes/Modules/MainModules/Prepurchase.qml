@@ -5,10 +5,10 @@ import QtQuick.Controls.Styles 1.4
 import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 
-import "./../../Fonts/Icon.js" as Icons
+import "./../../../Fonts/Icon.js" as Icons
 
 Item {
-    id: writers_item
+    id: prepurchase_item
     property alias title: titletxt.text
     property var itemModel: []
 
@@ -56,7 +56,7 @@ Item {
             Item{
                 id: titleItem
                 width: parent.width
-                height: 70
+                height: 100
                 anchors.right: parent.right
                 RowLayout{
                     anchors.fill: parent
@@ -106,7 +106,7 @@ Item {
                 height: parent.height - titleItem.height
                 anchors.top: titleItem.bottom
                 anchors.right: parent.right
-                clip: true
+                clip: false
                 focus: true
                 cacheBuffer: 1000
                 spacing: 50
@@ -120,24 +120,79 @@ Item {
                     width: 130
                     height: 220
                     color: "transparent"
+                    property bool isClicked: false
+
                     Rectangle{
                         id: iconRec
                         width: parent.width
-                        height: width
-                        radius: width / 2
+                        height: parent.height * 0.6
+
                         color: color8
                         Image {
+                            id: image
                             anchors.fill: parent
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.margins: 8
-                            //                        source: model.source
+                            anchors.topMargin: (itemRec.isClicked) ? -20:8
+                            anchors.bottomMargin: (itemRec.isClicked) ? 30:8
+                            Behavior on anchors.topMargin {
+                                NumberAnimation{duration: 300}
+                            }
+                            Behavior on anchors.bottomMargin {
+                                NumberAnimation{duration: 300}
+                            }
                             source: itemModel.get(index).source
                             mipmap: true
-                            fillMode: Image.PreserveAspectFit
-                            layer.enabled: true
-                            layer.effect: OpacityMask {
-                                maskSource: iconRec
+
+                            MouseArea{
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                onClicked: {
+                                    itemRec.isClicked = !itemRec.isClicked
+                                }
+                            }
+                        }
+                        Item{
+                            id: rating
+                            width: parent.width
+                            height: (itemRec.isClicked) ? 30:0
+                            visible: (itemRec.isClicked)
+                            Behavior on height {
+                                NumberAnimation{duration: 300}
+                            }
+
+                            anchors.top: image.bottom
+                            RowLayout{
+                                width: parent.width * 0.9
+                                height: parent.height
+                                layoutDirection: Qt.RightToLeft
+
+                                Rectangle{
+                                    Layout.fillHeight: true
+                                    Layout.preferredWidth: parent.width * 0.6
+                                    color: "transparent"
+                                    Rating{
+                                        anchors.fill: parent
+                                        selectable: true
+                                        scale: 1.3
+                                    }
+                                }
+
+                                Rectangle{
+                                    Layout.fillHeight: true
+                                    Layout.fillWidth: true
+                                    color: "transparent"
+                                    Label{
+                                        anchors.fill: parent
+                                        text: "(" + itemModel.get(index).rate + " رای)"
+                                        font.family: iranSansFAnum.name
+                                        color: color9
+                                        verticalAlignment: Qt.AlignVCenter
+                                        font.pixelSize: Qt.application.font.pixelSize * 0.7
+                                        elide: Text.ElideRight
+                                    }
+                                }
                             }
                         }
                     }
@@ -168,9 +223,34 @@ Item {
                         Label{
                             id: txt3
                             anchors.fill: parent
-                            text: "مشاهده"
+                            text: itemModel.get(index).text2
                             font.family: iranSans.name
                             color: color9
+                            verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
+                            font.pixelSize: Qt.application.font.pixelSize
+                        }
+                    }
+
+                    Item{
+                        id: spacer
+                        width: parent.width
+                        height: parent.height * 0.05
+                        anchors.top: title3Rec.bottom
+                    }
+
+                    Rectangle{
+                        id: btnpurchase
+                        width: parent.width
+                        height: parent.height * 0.15
+                        anchors.top: spacer.bottom
+                        color: color2
+                        Label{
+                            id: txt4
+                            anchors.fill: parent
+                            text: "پیش خرید"
+                            font.family: iranSans.name
+                            color: "#ffffff"
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
                             font.pixelSize: Qt.application.font.pixelSize

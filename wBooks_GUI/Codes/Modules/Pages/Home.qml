@@ -2,9 +2,11 @@ import QtQuick 2.15
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 
-import "./../../Fonts/Icon.js" as Icons
-import "./../../Utils/Enum.js" as Enum
-import "./../../Utils/Utils.js" as Util
+import "./../../../Fonts/Icon.js" as Icons
+import "./../../../Utils/Enum.js" as Enum
+import "./../../../Utils/Utils.js" as Util
+
+import "./../MainModules"
 
 Rectangle{
 

@@ -12,7 +12,8 @@ import "./Fonts/Icon.js" as Icons
 import "./Utils/Enum.js" as Enum
 import "./Utils/Utils.js" as Util
 
-import "./Codes/Modules"
+import "./Codes/Modules/Account/Popups"
+import "./Codes/Modules/Items"
 import "./Codes/LocalDatabase"
 import "./Codes"
 

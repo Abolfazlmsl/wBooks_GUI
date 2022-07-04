@@ -3,7 +3,7 @@ import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Styles 1.4
 
-import "./../../Fonts/Icon.js" as Icons
+import "./../../../Fonts/Icon.js" as Icons
 
 //-- InputBox For Search --//
 Rectangle{

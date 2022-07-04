@@ -4,8 +4,7 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.15
 
-import "./../../Fonts/Icon.js" as Icons
-
+import "./../../../../Fonts/Icon.js" as Icons
 
 Rectangle {
 

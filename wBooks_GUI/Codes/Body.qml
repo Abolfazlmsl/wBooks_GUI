@@ -7,7 +7,10 @@ import "./../Fonts/Icon.js" as Icons
 import "./../Utils/Enum.js" as Enum
 import "./../Utils/Utils.js" as Util
 
-import "./Modules"
+import "./Modules/Account/Forms"
+import "./Modules/Account/Panels"
+import "./Modules/Pages"
+import "./Modules/FilterPanel"
 
 //-- Body --//
 Rectangle{

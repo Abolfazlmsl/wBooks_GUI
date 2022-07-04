@@ -3,7 +3,7 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 
-import "./../../Fonts/Icon.js" as Icons
+import "./../../../Fonts/Icon.js" as Icons
 
 
 Rectangle{

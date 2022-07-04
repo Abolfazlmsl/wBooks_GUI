@@ -3,7 +3,9 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Styles 1.4
 
-import "./../../Fonts/Icon.js" as Icons
+import "./../../../Fonts/Icon.js" as Icons
+
+import "./../MainModules"
 
 Item {
     id: more_item

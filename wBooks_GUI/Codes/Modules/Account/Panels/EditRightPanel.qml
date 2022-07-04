@@ -5,7 +5,9 @@ import QtQuick.Layouts 1.12
 import Qt.labs.platform 1.1
 import QtGraphicalEffects 1.15
 
-import "./../../Fonts/Icon.js" as Icons
+import "./../../../../Fonts/Icon.js" as Icons
+
+import "./../../Items"
 
 Rectangle{
     id: editRightPanel

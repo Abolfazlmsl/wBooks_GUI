@@ -3,43 +3,18 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Styles 1.4
 
-import "./../../Fonts/Icon.js" as Icons
+import "./../../../Fonts/Icon.js" as Icons
 
 Item {
-    id: panel
+
     property bool isShowAll: false
     property bool showAll: false
     property bool chevron: false
     property bool isChevron: false
     property alias title: lbl_title.text
+    property alias lModel: lview.model
 
     clip: true
-
-    state: "Icon_1"
-
-    states: [
-        State {
-            name: "Icon_1"
-            PropertyChanges {
-                target: lbl_lay1
-                color: color5
-            }
-        },
-        State {
-            name: "Icon_2"
-            PropertyChanges {
-                target: lbl_lay2
-                color: color5
-            }
-        },
-        State {
-            name: "Icon_3"
-            PropertyChanges {
-                target: lbl_lay3
-                color: color5
-            }
-        }
-    ]
 
     ColumnLayout{
         anchors.fill: parent
@@ -47,7 +22,7 @@ Item {
 
         Item{
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.5
+            Layout.preferredHeight: parent.height * 0.15
 
             RowLayout{
                 anchors.fill: parent
@@ -108,84 +83,67 @@ Item {
             }
         }
 
-        Item{
+        ListView{
+            id: lview
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.5
+            Layout.preferredHeight: parent.height * 0.85
+            clip: true
+            spacing: 0
+            interactive: false
 
-            RowLayout{
-                anchors.fill: parent
-                spacing: 0
-                layoutDirection: Qt.RightToLeft
+            delegate: RadioButton{
+                id: control
+                width: parent.width
+                height: 30
+                anchors.right: parent.right
+                rightPadding: 15
+                scale: 0.7
+                checked: (model.index === 0)
+                text: model.text
 
-                Label {
-                    id: lbl_lay1
-                    Layout.fillHeight: true
-                    Layout.rightMargin: 20
-                    text: Icons.page_layout_header
-                    font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
-                    verticalAlignment: Qt.AlignVCenter
-                    horizontalAlignment: Qt.AlignHCenter
-                    color: color9
-                    MouseArea{
-                        anchors.fill: parent
-                        onClicked: {
-                            panel.state = "Icon_1"
-                        }
+                onClicked: {
+                    control.checked = true
+                }
+
+                indicator: Rectangle {
+                    anchors.left: parent.right
+                    implicitWidth: 20
+                    implicitHeight: 20
+                    y: parent.height / 2
+                    radius: 10
+                    color: "#ffffff"
+                    border.color: color1
+
+                    Rectangle {
+                        width: parent.width
+                        height: parent.height
+                        radius: width/2
+                        color: "transparent"
+                        border.color: color5
+                        border.width: 3
+                        visible: control.checked
                     }
-                }
-
-                Rectangle {
-                    Layout.preferredWidth: 5
-                    Layout.fillHeight: true
-                    color: "transparent"
-                }
-
-                Label {
-                    id: lbl_lay2
-                    Layout.fillHeight: true
-                    text: Icons.page_layout_body
-                    font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
-                    verticalAlignment: Qt.AlignVCenter
-                    horizontalAlignment: Qt.AlignHCenter
-                    color: color9
-                    MouseArea{
-                        anchors.fill: parent
-                        onClicked: {
-                            panel.state = "Icon_2"
-                        }
-                    }
-                }
-
-                Rectangle {
-                    Layout.preferredWidth: 5
-                    Layout.fillHeight: true
-                    color: "transparent"
-                }
-
-                Label {
-                    id: lbl_lay3
-                    Layout.fillHeight: true
-                    text: Icons.page_layout_footer
-                    font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
-                    verticalAlignment: Qt.AlignVCenter
-                    horizontalAlignment: Qt.AlignHCenter
-                    color: color9
 
                     MouseArea{
                         anchors.fill: parent
                         onClicked: {
-                            panel.state = "Icon_3"
+                            control.checked = true
                         }
                     }
                 }
 
-                Item{Layout.fillWidth: true}
+                contentItem: Label {
+                    text: control.text
+                    font.family: iranSansFAnum.name
+                    font.bold: true
+                    font.pixelSize: Qt.application.font.pixelSize * 1.6
+                    color: color9
+
+                }
 
             }
         }
+
     }
 }
 
