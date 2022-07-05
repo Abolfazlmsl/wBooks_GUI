@@ -22,7 +22,7 @@ Item {
             Layout.fillHeight: true
             Layout.preferredWidth: parent.width * 0.05
             Layout.topMargin: titleItem.height
-            color: color0
+            color: "transparent"
             Label{
                 anchors.fill: parent
                 font.family: webfont.name
@@ -174,6 +174,14 @@ Item {
                                 //                                horizontalAlignment: Qt.AlignHCenter
                                 //                                font.pixelSize: Qt.application.font.pixelSize
                                 //                            }
+                            }
+
+                            MouseArea{
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                onClicked: {
+                                    mainPage.state = "Book Page"
+                                }
                             }
                         }
                     }
@@ -334,7 +342,7 @@ Item {
             Layout.fillHeight: true
             Layout.preferredWidth: parent.width * 0.05
             Layout.topMargin: titleItem.height
-            color: color0
+            color: "transparent"
             Label{
                 anchors.fill: parent
                 font.family: webfont.name

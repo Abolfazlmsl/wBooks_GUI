@@ -23,7 +23,7 @@ Item {
             Layout.fillHeight: true
             Layout.preferredWidth: parent.width * 0.05
             Layout.topMargin: titleItem.height
-            color: color0
+            color: "transparent"
             Label{
                 anchors.fill: parent
                 font.family: webfont.name
@@ -272,7 +272,7 @@ Item {
             Layout.fillHeight: true
             Layout.preferredWidth: parent.width * 0.05
             Layout.topMargin: titleItem.height
-            color: color0
+            color: "transparent"
             Label{
                 anchors.fill: parent
                 font.family: webfont.name

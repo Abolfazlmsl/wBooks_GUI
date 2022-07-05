@@ -46,7 +46,7 @@ Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 300
                     Layout.topMargin: 50
-//                    Layout.leftMargin: parent.width * 0.05
+                    Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "برترین کتاب های ماه"
                     onMoreBtnClicked: {
@@ -60,7 +60,7 @@ Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 300
                     Layout.topMargin: 50
-//                    Layout.leftMargin: parent.width * 0.05
+                    Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "مجموعه های برتر"
                 }
@@ -70,13 +70,13 @@ Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 300
                     Layout.topMargin: 50
-//                    Layout.leftMargin: parent.width * 0.05
+                    Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "پیشنهادی برای شما"
 
                     onMoreBtnClicked: {
-                        morebooks.itemModel = offerBooksModel
-                        morebooks.title = offer_books.title
+//                        morebooks.itemModel = offerBooksModel
+//                        morebooks.title = offer_books.title
                     }
                 }
 

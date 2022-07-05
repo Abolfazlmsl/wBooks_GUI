@@ -49,12 +49,12 @@ Rectangle{
                     }
                 }
 
-                BooksList{
+                SpecialOffer{
                     id: specialBooks
                     Layout.fillWidth: true
                     Layout.preferredHeight: 300
                     Layout.topMargin: 50
-//                    Layout.leftMargin: parent.width * 0.05
+                    Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "ویژه (پرفروش ها)"
                     onMoreBtnClicked: {
@@ -68,12 +68,12 @@ Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 250
                     Layout.topMargin: 50
-//                    Layout.leftMargin: parent.width * 0.05
+                    Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "نویسندگان و مترجمین برتر"
                     onMoreBtnClicked: {
-                        morebooks.itemModel = writersModel
-                        morebooks.title = writers.title
+//                        morebooks.itemModel = writersModel
+//                        morebooks.title = writers.title
                     }
                 }
 
@@ -82,12 +82,12 @@ Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 350
                     Layout.topMargin: 50
-//                    Layout.leftMargin: parent.width * 0.05
+                    Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "آنچه شما خواسته اید"
                     onMoreBtnClicked: {
-                        morebooks.itemModel = prepurchaseModel
-                        morebooks.title = prepurchase.title
+//                        morebooks.itemModel = prepurchaseModel
+//                        morebooks.title = prepurchase.title
                     }
                 }
 

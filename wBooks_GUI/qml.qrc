@@ -100,5 +100,10 @@
         <file>Codes/Modules/Account/Panels/EditRightPanel.qml</file>
         <file>Codes/Modules/Account/Popups/AccountPopup.qml</file>
         <file>Codes/Modules/Account/Popups/RowsofAccountPop.qml</file>
+        <file>Codes/Modules/MainModules/Book.qml</file>
+        <file>Codes/Modules/MainModules/BookIntroduction.qml</file>
+        <file>Codes/Modules/MainModules/BookPropsCol.qml</file>
+        <file>Codes/Modules/MainModules/SpecialOffer.qml</file>
+        <file>Images/Wbooks1.png</file>
     </qresource>
 </RCC>

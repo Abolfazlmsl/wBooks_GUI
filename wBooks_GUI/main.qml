@@ -42,24 +42,24 @@ Window {
     property bool yourLibraryClick: false
 
     // Colors //
-    property string color0: "#50d3d3d3"
-    property string color1: "#d3d3d3"
-    property string color2: "#990000"
-    property string color3: "#ffffff"
-    property string color4: "#000000"
-    property string color5: "#0000ff"
-    property string color6: "#E91E63"
+    property string color0: "#50d3d3d3" //main page color
+    property string color1: "#d3d3d3" //Right panel color
+    property string color2: "#990000" //Red colors
+    property string color3: "#ffffff" //White color
+    property string color4: "#000000" //Black color
+    property string color5: "#0000ff" //Blue color
+    property string color6: "#E91E63" //Pink
     property string color7: "green"
-    property string color8: "#211D1D"
-    property string color9: "#778899"
-    property string color10: "#E0EA65"
+    property string color8: "#211D1D" //light black
+    property string color9: "#778899" //blue-gray
+    property string color10: "#E0EA65" //yellow
     property string color11: "darkblue"
-    property string color12: "#444444"
-    property string color13: "#f7f7f7"
-    property string color14: "#3399ff"
-    property string color15: "#a9a9a9"
+    property string color12: "#444444" //light gray
+    property string color13: "#f7f7f7" //white
+    property string color14: "#3399ff" //light blue
+    property string color15: "#a9a9a9" //very light gray
     property string color16: "red"
-    property string color17: "#0091f8"
+    property string color17: "#0091f8" //light blue
     property string color18: "gray"
     property string color19: "#dddddd"
     property string color20: "#1777c4"
@@ -409,6 +409,21 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                 }
+            },
+            State{
+                name: "Book Page"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 9
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                }
             }
 
         ]
@@ -430,9 +445,9 @@ Window {
                 Image {
                     Layout.margins: 10
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.1
+                    Layout.preferredWidth: parent.width * 0.07
                     Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-                    source: "qrc:/Images/logo1.jpg"
+                    source: "qrc:/Images/Wbooks1.png"
                     fillMode: Image.PreserveAspectFit
                     mipmap: true
                 }
@@ -469,7 +484,7 @@ Window {
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.02
+                    Layout.preferredWidth: parent.width * 0.015
 
                     color: "transparent"
                 }
@@ -486,7 +501,7 @@ Window {
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.02
+                    Layout.preferredWidth: parent.width * 0.015
 
                     color: "transparent"
                 }
@@ -503,7 +518,7 @@ Window {
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.02
+                    Layout.preferredWidth: parent.width * 0.015
 
                     color: "transparent"
                 }
@@ -520,7 +535,7 @@ Window {
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.02
+                    Layout.preferredWidth: parent.width * 0.015
 
                     color: "transparent"
                 }
@@ -537,7 +552,7 @@ Window {
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.02
+                    Layout.preferredWidth: parent.width * 0.015
 
                     color: "transparent"
                 }
@@ -547,15 +562,16 @@ Window {
                     text: "جستجو"
                 }
 
-                //-- Vertical Line After Profile Name --//
-                Rectangle{
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: (setting.isLogined)? parent.width * 0.28 * ratio:parent.width * 0.1 * ratio
+//                //-- Vertical Line After Profile Name --//
+//                Rectangle{
+//                    Layout.fillHeight: true
+//                    Layout.preferredWidth: (setting.isLogined)? parent.width * 0.28 * ratio:parent.width * 0.1 * ratio
 
-                    color: "transparent"
+//                    color: "transparent"
 
-                    Layout.alignment: Qt.AlignVCenter
-                }
+//                    Layout.alignment: Qt.AlignVCenter
+//                }
+                Item { Layout.fillWidth: true }
 
 
                 //-- account / login/ register --//
@@ -757,7 +773,7 @@ Window {
 
                 }
 
-                Item { Layout.fillWidth: true } //-- filler --//
+                Item { Layout.preferredWidth: parent.width * 0.05 } //-- filler --//
 
             }
         }
