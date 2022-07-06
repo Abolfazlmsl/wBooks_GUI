@@ -10,6 +10,8 @@ Rectangle{
     property alias text2: txt3.text
     property alias text3: txt4.text
 
+    Layout.preferredHeight: txt2.contentHeight + txt3.contentHeight + txt4.contentHeight
+
     color: "transparent"
     Label{
         id: txt2

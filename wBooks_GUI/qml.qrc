@@ -105,5 +105,6 @@
         <file>Codes/Modules/MainModules/BookPropsCol.qml</file>
         <file>Codes/Modules/MainModules/SpecialOffer.qml</file>
         <file>Images/Wbooks1.png</file>
+        <file>Codes/Modules/Pages/AudioBook.qml</file>
     </qresource>
 </RCC>

@@ -27,8 +27,8 @@ Rectangle {
         Rectangle{
             id: title1Rec
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.025
-//            Layout.preferredHeight: 20
+//            Layout.preferredHeight: parent.height * 0.025
+            Layout.preferredHeight: txt1.contentHeight
             color: "transparent"
             Label{
                 id: txt1
@@ -45,15 +45,16 @@ Rectangle {
         Item{
             id: itemProps
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.05
-//            Layout.preferredHeight: 40
+//            Layout.preferredHeight: parent.height * 0.05
+            Layout.preferredHeight: block.height
             RowLayout{
                 anchors.fill: parent
                 layoutDirection: Qt.RightToLeft
 
                 BookPropsCol{
+                    id: block
                     Layout.preferredWidth: parent.width /6
-                    Layout.fillHeight: true
+//                    Layout.fillHeight: true
                     text1: "تعداد صفحات"
                     text2: "224"
                     text3: "صفحه"
@@ -67,7 +68,7 @@ Rectangle {
 
                 BookPropsCol{
                     Layout.preferredWidth: parent.width /6
-                    Layout.fillHeight: true
+//                    Layout.fillHeight: true
                     text1: "قیمت نسخه چاپی"
                     text2: "18500"
                     text3: "تومان"
@@ -80,7 +81,7 @@ Rectangle {
 
                 BookPropsCol{
                     Layout.preferredWidth: parent.width /6
-                    Layout.fillHeight: true
+//                    Layout.fillHeight: true
                     text1: "نوع فایل"
                     text2: "EPUB"
                 }
@@ -93,7 +94,7 @@ Rectangle {
 
                 BookPropsCol{
                     Layout.preferredWidth: parent.width /6
-                    Layout.fillHeight: true
+//                    Layout.fillHeight: true
                     text1: "تاریخ انتشار"
                     text2: "1398/06/25"
                 }
@@ -106,7 +107,7 @@ Rectangle {
 
                 BookPropsCol{
                     Layout.preferredWidth: parent.width /6
-                    Layout.fillHeight: true
+//                    Layout.fillHeight: true
                     text1: "شابک"
                     text2: "978-622-254-334-1"
                 }
@@ -118,8 +119,8 @@ Rectangle {
         Rectangle{
             id: title2Rec
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.025
-//            Layout.preferredHeight: 20
+//            Layout.preferredHeight: parent.height * 0.025
+            Layout.preferredHeight: txt2.contentHeight
             color: "transparent"
             Label{
                 id: txt2
@@ -136,7 +137,8 @@ Rectangle {
         Rectangle{
             id: introItem
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.05
+//            Layout.preferredHeight: parent.height * 0.05
+            Layout.preferredHeight: txt3.contentHeight
             color: "transparent"
 
             Label{
@@ -186,7 +188,8 @@ Rectangle {
         Rectangle{
             id: title4Rec
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.025
+//            Layout.preferredHeight: parent.height * 0.025
+            Layout.preferredHeight: txt4.contentHeight
             color: "transparent"
             Label{
                 id: txt4
@@ -213,7 +216,7 @@ Rectangle {
                 model: (allComment)? commentModel.count:5
                 delegate: Rectangle{
                     width: commentView.width
-                    height: 200
+                    height: commenttxt.contentHeight + 90
                     color: color1
 
                     ColumnLayout{
@@ -261,7 +264,7 @@ Rectangle {
                                     Layout.preferredWidth: 50
                                     Layout.fillHeight: true
 
-                                    Layout.rightMargin: 15
+                                    Layout.rightMargin: 30
 
                                     text: commentModel.get(index).date
                                     color: color15
@@ -375,16 +378,28 @@ Rectangle {
                             Layout.fillHeight: true
                             Layout.topMargin: 20
                             color: "transparent"
+                            property bool fullText: false
 
                             Label{
                                 id: commenttxt
                                 anchors.fill: parent
                                 anchors.rightMargin: 30
                                 anchors.leftMargin: 50
-                                text: commentModel.get(index).comment
+                                text: (commentItem.fullText) ? commentModel.get(index).comment:
+                                                               substring(commentModel.get(index).comment, 350) + "  " +
+                                                               '<html><style type="text/css">
+                                                                        a:link, a:visited {
+                                                                          color: #3399ff;
+                                                                        }
+                                                                        a:hover {
+                                                                          cursor:pointer;
+                                                                         }
+                                                                        </style><a href="بیشتر">بیشتر</a></html>'
                                 font.family: iranSansFAnum.name
+                                textFormat: Text.RichText
                                 color: color4
                                 wrapMode: Text.WordWrap
+                                onLinkActivated: commentItem.fullText = true
                             }
                         }
                     }
@@ -462,5 +477,9 @@ Rectangle {
                 }
             }
         }
+    }
+
+    function substring(str, charNumbers) {
+        return str.substring(0, charNumbers);
     }
 }

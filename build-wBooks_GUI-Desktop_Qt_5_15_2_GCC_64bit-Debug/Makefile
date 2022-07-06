@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = wBooks_GUI1.0.0
-DISTDIR = /media/abolfazl/Local\ Disk1/QtTest/wBooks_GUI/wbooks_gui/build-wBooks_GUI-Desktop_Qt_5_15_2_GCC_64bit-Debug/.tmp/wBooks_GUI1.0.0
+DISTDIR = /media/abolfazl/Local\ Disk2/QtTest/wBooks_GUI/wbooks_gui/build-wBooks_GUI-Desktop_Qt_5_15_2_GCC_64bit-Debug/.tmp/wBooks_GUI1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/abolfazl/Qt5/5.15.2/gcc_64/lib
 LIBS          = $(SUBLIBS) /home/abolfazl/Qt5/5.15.2/gcc_64/lib/libQt5Quick.so /home/abolfazl/Qt5/5.15.2/gcc_64/lib/libQt5Gui.so /home/abolfazl/Qt5/5.15.2/gcc_64/lib/libQt5QmlModels.so /home/abolfazl/Qt5/5.15.2/gcc_64/lib/libQt5Qml.so /home/abolfazl/Qt5/5.15.2/gcc_64/lib/libQt5Network.so /home/abolfazl/Qt5/5.15.2/gcc_64/lib/libQt5Core.so -lGL -lpthread   
@@ -52,9 +52,13 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../wBooks_GUI/main.cpp qrc_qml.cpp
-OBJECTS       = main.o \
-		qrc_qml.o
+SOURCES       = ../wBooks_GUI/desktopfunctions.cpp \
+		../wBooks_GUI/main.cpp qrc_qml.cpp \
+		moc_desktopfunctions.cpp
+OBJECTS       = desktopfunctions.o \
+		main.o \
+		qrc_qml.o \
+		moc_desktopfunctions.o
 DIST          = /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/common/unix.conf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/common/linux.conf \
@@ -241,6 +245,7 @@ DIST          = /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/qt_config.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/spec_post.prf \
+		../wBooks_GUI/.qmake.stash \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/toolchain.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -260,7 +265,8 @@ DIST          = /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/exceptions.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/yacc.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/lex.prf \
-		../wBooks_GUI/wBooks_GUI.pro  ../wBooks_GUI/main.cpp
+		../wBooks_GUI/wBooks_GUI.pro ../wBooks_GUI/desktopfunctions.h ../wBooks_GUI/desktopfunctions.cpp \
+		../wBooks_GUI/main.cpp
 QMAKE_TARGET  = wBooks_GUI
 DESTDIR       = 
 TARGET        = wBooks_GUI
@@ -458,6 +464,7 @@ Makefile: ../wBooks_GUI/wBooks_GUI.pro /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/qt_config.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/toolchain.prf \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -666,6 +673,7 @@ Makefile: ../wBooks_GUI/wBooks_GUI.pro /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/
 /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/qt_config.prf:
 /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/toolchain.prf:
 /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -703,7 +711,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../wBooks_GUI/qml.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../wBooks_GUI/main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../wBooks_GUI/desktopfunctions.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../wBooks_GUI/desktopfunctions.cpp ../wBooks_GUI/main.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -734,14 +743,42 @@ qrc_qml.cpp: ../wBooks_GUI/qml.qrc \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/bin/rcc \
 		../wBooks_GUI/main.qml \
 		../wBooks_GUI/Codes/Body.qml \
-		../wBooks_GUI/Codes/Modules/FilterDisplayPanel.qml \
-		../wBooks_GUI/Codes/Modules/RightPanel.qml \
-		../wBooks_GUI/Codes/Modules/FilterSearchPanel.qml \
-		../wBooks_GUI/Codes/Modules/HomeModule.qml \
-		../wBooks_GUI/Codes/Modules/FilterPanel.qml \
-		../wBooks_GUI/Codes/Modules/HeaderButton.qml \
-		../wBooks_GUI/Codes/Utils/Utils.js \
-		../wBooks_GUI/Codes/Utils/Enum.js \
+		../wBooks_GUI/Codes/LocalDatabase/LocalDatabase.qml \
+		../wBooks_GUI/Codes/Modules/Pages/MoreBooksPage.qml \
+		../wBooks_GUI/Codes/Modules/Pages/SerialBook.qml \
+		../wBooks_GUI/Codes/Modules/Pages/Home.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/Book.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/Rating.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/HomeModule.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/TopSlider.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/Advertisement.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/Prepurchase.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/SpecialOffer.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/BooksList.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/BookPropsCol.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/SpecialCategory.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/Writers.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/BookIntroduction.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/BestCategory.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/BestCollection.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/Footer.qml \
+		../wBooks_GUI/Codes/Modules/MainModules/TopSliderPage1.qml \
+		../wBooks_GUI/Codes/Modules/Items/M_inputText.qml \
+		../wBooks_GUI/Codes/Modules/Items/Countdown_Timer.qml \
+		../wBooks_GUI/Codes/Modules/Items/LoadingSpinner.qml \
+		../wBooks_GUI/Codes/Modules/Items/HeaderButton.qml \
+		../wBooks_GUI/Codes/Modules/Items/ButtonPanel.qml \
+		../wBooks_GUI/Codes/Modules/FilterPanel/FilterDisplayPanel.qml \
+		../wBooks_GUI/Codes/Modules/FilterPanel/RightPanel.qml \
+		../wBooks_GUI/Codes/Modules/FilterPanel/FilterSearchPanel.qml \
+		../wBooks_GUI/Codes/Modules/FilterPanel/FilterPanel.qml \
+		../wBooks_GUI/Codes/Modules/Account/Popups/AccountPopup.qml \
+		../wBooks_GUI/Codes/Modules/Account/Popups/RowsofAccountPop.qml \
+		../wBooks_GUI/Codes/Modules/Account/Panels/EditRightPanel.qml \
+		../wBooks_GUI/Codes/Modules/Account/Panels/EditAccount.qml \
+		../wBooks_GUI/Codes/Modules/Account/Forms/RegistrationForm.qml \
+		../wBooks_GUI/Codes/Modules/Account/Forms/EditForm.qml \
+		../wBooks_GUI/Codes/Modules/Account/Forms/LoginForm.qml \
 		../wBooks_GUI/Fonts/Fonts.js \
 		../wBooks_GUI/Fonts/Icon.js \
 		../wBooks_GUI/Fonts/segoeuil.ttf \
@@ -755,6 +792,7 @@ qrc_qml.cpp: ../wBooks_GUI/qml.qrc \
 		../wBooks_GUI/Fonts/segoeuib.ttf \
 		../wBooks_GUI/Fonts/IRYekan.ttf \
 		../wBooks_GUI/Fonts/OpenSans-Regular.ttf \
+		../wBooks_GUI/Fonts/fontawesome-webfont.ttf \
 		../wBooks_GUI/Fonts/Nunito/Nunito-ExtraBoldItalic.ttf \
 		../wBooks_GUI/Fonts/Nunito/Nunito-Regular.ttf \
 		../wBooks_GUI/Fonts/Nunito/Nunito-ExtraLightItalic.ttf \
@@ -791,7 +829,23 @@ qrc_qml.cpp: ../wBooks_GUI/qml.qrc \
 		../wBooks_GUI/Fonts/MaterialDesign-Webfont-master/fonts/materialdesignicons-webfont.woff2 \
 		../wBooks_GUI/Fonts/MaterialDesign-Webfont-master/fonts/materialdesignicons-webfont.woff \
 		../wBooks_GUI/Fonts/MaterialDesign-Webfont-master/fonts/materialdesignicons-webfont.eot \
-		../wBooks_GUI/Images/logo1.jpg
+		../wBooks_GUI/Images/callofduty.jpg \
+		../wBooks_GUI/Images/Adver2.jpg \
+		../wBooks_GUI/Images/Battleground.jpg \
+		../wBooks_GUI/Images/mebeforeyou.jpg \
+		../wBooks_GUI/Images/time.jpg \
+		../wBooks_GUI/Images/logo1.jpg \
+		../wBooks_GUI/Images/book.png \
+		../wBooks_GUI/Images/Adver1.jpg \
+		../wBooks_GUI/Images/finalfantasy.jpg \
+		../wBooks_GUI/Images/newsroom.jpg \
+		../wBooks_GUI/Images/warriorqueen.jpg \
+		../wBooks_GUI/Images/lordofrings.jpg \
+		../wBooks_GUI/Images/Adel.jpg \
+		../wBooks_GUI/Images/Wbooks1.png \
+		../wBooks_GUI/Images/Adver3.jpg \
+		../wBooks_GUI/Utils/Utils.js \
+		../wBooks_GUI/Utils/Enum.js
 	/home/abolfazl/Qt5/5.15.2/gcc_64/bin/rcc -name qml ../wBooks_GUI/qml.qrc -o qrc_qml.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -800,8 +854,86 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -Wall -Wextra -dM -E -o moc_predefs.h /home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all:
+compiler_moc_header_make_all: moc_desktopfunctions.cpp
 compiler_moc_header_clean:
+	-$(DEL_FILE) moc_desktopfunctions.cpp
+moc_desktopfunctions.cpp: ../wBooks_GUI/desktopfunctions.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QObject \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qobject.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qglobal.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qconfig.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qlogging.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qflags.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qatomic.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qmutex.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstring.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qchar.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringview.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qlist.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qiterator.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qpair.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qvector.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qpoint.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qregexp.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QDir \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qdir.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qfile.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qhash.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QFile \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QDebug \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qdebug.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qmap.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qlocale.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qvariant.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qset.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		moc_predefs.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/bin/moc
+	/home/abolfazl/Qt5/5.15.2/gcc_64/bin/moc $(DEFINES) --include '/media/abolfazl/Local Disk2/QtTest/wBooks_GUI/wbooks_gui/build-wBooks_GUI-Desktop_Qt_5_15_2_GCC_64bit-Debug/moc_predefs.h' -I/home/abolfazl/Qt5/5.15.2/gcc_64/mkspecs/linux-g++ -I'/media/abolfazl/Local Disk2/QtTest/wBooks_GUI/wbooks_gui/wBooks_GUI' -I/home/abolfazl/Qt5/5.15.2/gcc_64/include -I/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtQuick -I/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtGui -I/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtQmlModels -I/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtQml -I/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtNetwork -I/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../wBooks_GUI/desktopfunctions.h -o moc_desktopfunctions.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
@@ -812,9 +944,84 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean 
 
 ####### Compile
+
+desktopfunctions.o: ../wBooks_GUI/desktopfunctions.cpp ../wBooks_GUI/desktopfunctions.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QObject \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qobject.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qglobal.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qconfig.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qlogging.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qflags.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qatomic.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qmutex.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstring.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qchar.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringview.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qlist.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qiterator.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qpair.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qvector.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qpoint.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qregexp.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QDir \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qdir.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qfile.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qhash.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QFile \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QDebug \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qdebug.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qmap.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qlocale.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qvariant.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qset.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o desktopfunctions.o ../wBooks_GUI/desktopfunctions.cpp
 
 main.o: ../wBooks_GUI/main.cpp /home/abolfazl/Qt5/5.15.2/gcc_64/include/QtGui/QGuiApplication \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
@@ -913,11 +1120,25 @@ main.o: ../wBooks_GUI/main.cpp /home/abolfazl/Qt5/5.15.2/gcc_64/include/QtGui/QG
 		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtQml/qqmlerror.h \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtGui/QFontDatabase \
 		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtGui/qfontdatabase.h \
-		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtGui/qfont.h
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtGui/qfont.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtQml/QQmlContext \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtQml/qqmlcontext.h \
+		../wBooks_GUI/desktopfunctions.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QObject \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QDir \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qdir.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qfile.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QFile \
+		/home/abolfazl/Qt5/5.15.2/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../wBooks_GUI/main.cpp
 
 qrc_qml.o: qrc_qml.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_qml.o qrc_qml.cpp
+
+moc_desktopfunctions.o: moc_desktopfunctions.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_desktopfunctions.o moc_desktopfunctions.cpp
 
 ####### Install
 
