@@ -369,7 +369,7 @@ Window {
                 name: "Audio Book"
                 PropertyChanges {
                     target: win
-                    inHomeMode: true
+                    inHomeMode: false
                     mainView: 6
                     rightView: 0
                     homeClick: false
@@ -796,7 +796,7 @@ Window {
 
         //-- Right Menu --//
         footer: Rectangle{
-            id: rightMenu
+            id: mainFooter
 
             width: parent.width
             height: 80

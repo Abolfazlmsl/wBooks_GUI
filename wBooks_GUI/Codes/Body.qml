@@ -67,6 +67,7 @@ Rectangle{
                 spacing: 0
 
                 Rectangle{
+                    id: header2
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50
                     color: color0
@@ -286,6 +287,9 @@ Rectangle{
                         }
 
                         Item {
+                            AudioBook{
+                                anchors.fill: parent
+                            }
 
                         }
 
@@ -312,8 +316,6 @@ Rectangle{
                 }
                 //-- FOOTER --//
                 Rectangle{
-                    id: mainFooter
-
                     visible: false
                     Layout.fillWidth: true
                     Layout.preferredHeight: 40 * ratio

@@ -106,5 +106,8 @@
         <file>Codes/Modules/MainModules/SpecialOffer.qml</file>
         <file>Images/Wbooks1.png</file>
         <file>Codes/Modules/Pages/AudioBook.qml</file>
+        <file>Codes/Modules/MainModules/Player.qml</file>
+        <file>Images/music.png</file>
+        <file>REST/apiService.js</file>
     </qresource>
 </RCC>

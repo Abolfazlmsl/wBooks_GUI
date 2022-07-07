@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QFontDatabase>
 #include <QQmlContext>
+#include <QIcon>
 
 #include "desktopfunctions.h"
 
@@ -33,6 +34,9 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
+
+    //-- windows icon --//
+    app.setWindowIcon(QIcon(":/Images/Wbooks1.png"));
 
     return app.exec();
 }
