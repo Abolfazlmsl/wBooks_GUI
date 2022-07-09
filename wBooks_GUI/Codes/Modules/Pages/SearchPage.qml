@@ -171,7 +171,7 @@ Rectangle {
                     GridView{
                         id: lview
                         Layout.fillWidth: true
-                        Layout.preferredHeight: Math.floor((itemModel.count * cellWidth)/(parent.width-220)) * cellHeight + 20
+                        Layout.preferredHeight: Math.ceil(lview.count/Math.floor((parent.width-120)/cellWidth)) * cellHeight + 20
                         Layout.rightMargin: 70
                         Layout.leftMargin: 50
                         clip: true
@@ -180,7 +180,7 @@ Rectangle {
                         cellHeight: 250
                         interactive: true
                         layoutDirection: Qt.RightToLeft
-                        model: itemModel.count
+                        model: (itemModel.count >= (currentPage+1)*21) ? 21:itemModel.count-currentPage*21
                         visible: (totalPages===0) ? false:true
 
                         delegate: Rectangle{
@@ -199,7 +199,7 @@ Rectangle {
                                     anchors.verticalCenter: parent.verticalCenter
                                     anchors.horizontalCenter: parent.horizontalCenter
                                     anchors.margins: 8
-                                    source: itemModel.get(index).source
+                                    source: itemModel.get(index+currentPage*21).source
                                     mipmap: true
                                 }
                             }
@@ -213,7 +213,7 @@ Rectangle {
                                 Label{
                                     id: txt2
                                     anchors.fill: parent
-                                    text:itemModel.get(index).text1
+                                    text:itemModel.get(index+currentPage*21).text1
                                     font.family: iranSans.name
                                     color: color4
                                     verticalAlignment: Qt.AlignVCenter
@@ -229,7 +229,7 @@ Rectangle {
                                 Label{
                                     id: txt3
                                     anchors.fill: parent
-                                    text: itemModel.get(index).text2
+                                    text: itemModel.get(index+currentPage*21).text2
                                     font.family: iranSans.name
                                     color: color9
                                     verticalAlignment: Qt.AlignVCenter
@@ -265,7 +265,7 @@ Rectangle {
                                         color: "transparent"
                                         Label{
                                             anchors.fill: parent
-                                            text: "(" + itemModel.get(index).rate + " رای)"
+                                            text: "(" + itemModel.get(index+currentPage*21).rate + " رای)"
                                             font.family: iranSansFAnum.name
                                             color: color9
                                             verticalAlignment: Qt.AlignVCenter
@@ -341,7 +341,7 @@ Rectangle {
                                             width: parent.width
                                             height: parent.height / 2
                                             anchors.top: recspacer.bottom
-                                            text: itemModel.get(index).date
+                                            text: itemModel.get(index+currentPage*21).date
                                             font.family: iranSansFAnum.name
                                             color: color9
                                             verticalAlignment: Qt.AlignVCenter

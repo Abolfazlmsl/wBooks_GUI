@@ -1383,6 +1383,76 @@ Window {
                 rate: 37
                 date: "1399/02/14"
             }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
         }
 
     }
