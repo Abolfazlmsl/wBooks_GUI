@@ -109,5 +109,12 @@
         <file>Codes/Modules/MainModules/Player.qml</file>
         <file>Images/music.png</file>
         <file>REST/apiService.js</file>
+        <file>Codes/Modules/Pages/SearchPage.qml</file>
+        <file>Codes/Modules/MainModules/SearchTopItem.qml</file>
+        <file>Codes/Modules/Pages/BookReader.qml</file>
+        <file>Codes/Modules/MainModules/DownloadPanel.qml</file>
+        <file>Codes/Modules/MainModules/FilePanel.qml</file>
+        <file>Codes/Modules/MainModules/TreeView.qml</file>
+        <file>Codes/Modules/MainModules/TreeViewItem.qml</file>
     </qresource>
 </RCC>

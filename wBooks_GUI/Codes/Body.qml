@@ -312,6 +312,14 @@ Rectangle{
                             }
                         }
 
+                        Item{
+                            SearchPage{
+                                id: searchpage
+                                anchors.fill: parent
+                                anchors.topMargin: 20
+                                itemModel: searchModelBottom
+                            }
+                        }
                     }
                 }
                 //-- FOOTER --//

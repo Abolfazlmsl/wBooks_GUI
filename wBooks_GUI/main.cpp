@@ -5,6 +5,9 @@
 #include <QIcon>
 
 #include "desktopfunctions.h"
+#include <Headers/widget.h>
+#include <Headers/Downloader/downloadcontroller.h>
+#include <Headers/PdfHandler/pdfModel.h>
 
 int main(int argc, char *argv[])
 {
@@ -17,13 +20,19 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+    qmlRegisterType<Widget>("com.EpubWidget", 1, 0, "EpubWidget");
+    qmlRegisterType<PdfModel>("org.pdfviewer.poppler", 1, 0, "Poppler");
+
+    downloadcontroller downloader;
+    engine.rootContext()->setContextProperty("downloader", &downloader);
+
+    auto offlineStoragePath = engine.offlineStoragePath();
+    engine.rootContext()->setContextProperty("offlineStoragePath", offlineStoragePath);
+
     //-- QSetting configuration --//
     QCoreApplication::setOrganizationName("wBooks_GUI");
     QCoreApplication::setOrganizationDomain("");
     QCoreApplication::setApplicationName("wBooks_GUI");
-
-    auto offlineStoragePath = engine.offlineStoragePath();
-    engine.rootContext()->setContextProperty("offlineStoragePath", offlineStoragePath);
 
     qmlRegisterType<desktopFunctions>("com.desktopFunctions", 1, 0, "Desktopfunctions");
 

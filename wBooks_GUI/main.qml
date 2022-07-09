@@ -16,6 +16,7 @@ import "./Codes/Modules/Account/Popups"
 import "./Codes/Modules/Items"
 import "./Codes/LocalDatabase"
 import "./Codes"
+import "./Codes/Modules/Pages"
 
 Window {
     id: win
@@ -24,7 +25,6 @@ Window {
     minimumWidth: 1000
     minimumHeight: 600
     visibility: Qt.WindowFullScreen
-    visible: true
     title: qsTr("wBooks_GUI")
 
     property double ratio: 1
@@ -40,6 +40,12 @@ Window {
     property bool serialBookClick: false
     property bool audioBookClick: false
     property bool yourLibraryClick: false
+    property bool searchClick: false
+    property string theme: "Light"
+
+    onThemeChanged: {
+        bookreader.changeReaderTheme(win.theme)
+    }
 
     // Colors //
     property string color0: "#50d3d3d3" //main page color
@@ -79,6 +85,7 @@ Window {
                 name: "Light"
                 PropertyChanges {
                     target: win
+                    theme: "Light"
                     color0: "#50d3d3d3"
                     color1: "#d3d3d3"
                     color2: "#990000"
@@ -111,6 +118,7 @@ Window {
                 name: "SemiLight"
                 PropertyChanges {
                     target: win
+                    theme: "SemiLight"
                     color0: "#50d3d3d3"
                     color1: "#d3d3d3"
                     color2: "#990000"
@@ -143,6 +151,7 @@ Window {
                 name: "SemiDark"
                 PropertyChanges {
                     target: win
+                    theme: "SemiDark"
                     color0: "#50d3d3d3"
                     color1: "#d3d3d3"
                     color2: "#990000"
@@ -175,6 +184,7 @@ Window {
                 name: "Dark"
                 PropertyChanges {
                     target: win
+                    theme: "Dark"
                     color0: "#0E0F10" //
                     color1: "#121315" //
                     color2: "#990000"
@@ -238,6 +248,18 @@ Window {
 
         fileName: "setting"
 
+        //reader properties
+        property string cPath: ""
+        property string openFileName: ""
+        property bool lightMode: true
+        property string font: "Times New Roman"
+        property int fontCurrentIndex: 0
+        property int fontSize: 15
+        property real sliderValue: 1
+        property int onepageHeight: 1
+        property real stepSize: 1
+        property bool isEpubViewer: true
+
         //-- information of user in profile page --//
         property var userInfo: []
         property string userName: ""
@@ -268,6 +290,11 @@ Window {
         font.pixelSize: Qt.application.font.pixelSize
     }
 
+    BookReader{
+        id: bookreader
+        visible: false
+    }
+
     Page{
         id: mainPage
 
@@ -288,6 +315,7 @@ Window {
                     audioBookClick: false
                     yourLibraryClick: false
                     accountPopEnabled: false
+                    searchClick: false
                 }
             },
             State{
@@ -303,6 +331,7 @@ Window {
                     audioBookClick: false
                     yourLibraryClick: false
                     accountPopEnabled: false
+                    searchClick: false
                 }
             },
             State{
@@ -318,6 +347,7 @@ Window {
                     audioBookClick: false
                     yourLibraryClick: false
                     accountPopEnabled: false
+                    searchClick: false
                 }
             },
             State{
@@ -333,6 +363,7 @@ Window {
                     audioBookClick: false
                     yourLibraryClick: false
                     accountPopEnabled: false
+                    searchClick: false
                 }
             },
             State{
@@ -348,6 +379,7 @@ Window {
                     audioBookClick: false
                     yourLibraryClick: false
                     accountPopEnabled: false
+                    searchClick: false
                 }
             },
             State{
@@ -363,6 +395,7 @@ Window {
                     audioBookClick: false
                     yourLibraryClick: false
                     accountPopEnabled: false
+                    searchClick: false
                 }
             },
             State{
@@ -378,6 +411,7 @@ Window {
                     audioBookClick: true
                     yourLibraryClick: false
                     accountPopEnabled: false
+                    searchClick: false
                 }
             },
             State{
@@ -393,6 +427,7 @@ Window {
                     audioBookClick: false
                     yourLibraryClick: true
                     accountPopEnabled: false
+                    searchClick: false
                 }
             },
             State{
@@ -408,6 +443,7 @@ Window {
                     audioBookClick: false
                     yourLibraryClick: false
                     accountPopEnabled: false
+                    searchClick: false
                 }
             },
             State{
@@ -423,6 +459,23 @@ Window {
                     audioBookClick: false
                     yourLibraryClick: false
                     accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "Search Page"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 10
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: true
                 }
             }
 
@@ -560,6 +613,10 @@ Window {
                 HeaderButton{
                     icon: Icons.magnify
                     text: "جستجو"
+                    isClick: searchClick
+                    onBtnClicked: {
+                        mainPage.state = "Search Page"
+                    }
                 }
 
 //                //-- Vertical Line After Profile Name --//
@@ -782,6 +839,27 @@ Window {
         Body{
             id: mainBody
             anchors.fill: parent
+
+            Rectangle{
+                width: 50
+                height: 50
+                color: color12
+                Label{
+                    anchors.fill: parent
+                    text: "Reader"
+                    color: "white"
+                    verticalAlignment: Qt.AlignVCenter
+                    horizontalAlignment: Qt.AlignHCenter
+                }
+                MouseArea{
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        bookreader.visible = true
+                    }
+                }
+            }
+
 
 //            MouseArea {
 //                id: mainArea
@@ -1143,9 +1221,169 @@ Window {
 
                     }
                 }
-
-
             }
         }
+
+        ListModel{
+            id: searchModelTop
+            ListElement{
+                text: "مشاهده کتاب های سلامت و بهداشت"
+            }
+            ListElement{
+                text: "کتاب های انتشارات دهکده سلامت"
+            }
+        }
+
+        ListModel{
+            id: searchModelBottom
+            ListElement{
+                source: "qrc:/Images/book.png"
+                text1: "تلاش در مسیر"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "مروری بر خاطرات"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                text1: "رمان حکومت نظامی"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "خوشه های خشم"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "سفرهای گالیور"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "سفرهای گالیور"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/warriorqueen.jpg"
+                text1: "ولورانت گیمز"
+                text2: "نوشته کیگو هیکاشینو"
+                rate: 37
+                date: "1399/02/14"
+            }
+        }
+
     }
 }
