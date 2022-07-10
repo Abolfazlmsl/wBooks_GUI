@@ -9,7 +9,7 @@ import "./../Utils/Utils.js" as Util
 
 import "./Modules/Account/Forms"
 import "./Modules/Account/Panels"
-import "./Modules/MainModules"
+import "./Modules/MainModules/BookModule"
 import "./Modules/Pages"
 import "./Modules/FilterPanel"
 

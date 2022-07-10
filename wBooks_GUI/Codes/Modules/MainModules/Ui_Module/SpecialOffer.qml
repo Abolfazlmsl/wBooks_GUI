@@ -2,11 +2,15 @@ import QtQuick 2.15
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Styles 1.4
+import QtQuick.Shapes 1.15
+import QtGraphicalEffects 1.15
 
-import "./../../../Fonts/Icon.js" as Icons
+import "./../../../../Fonts/Icon.js" as Icons
+
+import "./../../Items"
 
 Item {
-    id: list_item
+    id: prepurchase_item
     property alias title: titletxt.text
     property var itemModel: []
 
@@ -49,12 +53,12 @@ Item {
             Layout.fillHeight: true
             Layout.preferredWidth: parent.width * 0.9
             color: "transparent"
+            //            anchors.rightMargin:
             clip: true
-            //        anchors.rightMargin: 15
             Item{
                 id: titleItem
                 width: parent.width
-                height: 70
+                height: 100
                 anchors.right: parent.right
                 RowLayout{
                     anchors.fill: parent
@@ -104,7 +108,7 @@ Item {
                 height: parent.height - titleItem.height
                 anchors.top: titleItem.bottom
                 anchors.right: parent.right
-                clip: true
+                clip: false
                 focus: true
                 cacheBuffer: 1000
                 spacing: 50
@@ -118,6 +122,8 @@ Item {
                     width: 130
                     height: 220
                     color: "transparent"
+                    property bool isClicked: false
+
                     Rectangle{
                         id: iconRec
                         width: parent.width
@@ -125,19 +131,74 @@ Item {
 
                         color: color8
                         Image {
+                            id: image
                             anchors.fill: parent
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
                             anchors.margins: 8
+                            anchors.topMargin: (itemRec.isClicked) ? -20:8
+                            anchors.bottomMargin: (itemRec.isClicked) ? 30:8
+                            Behavior on anchors.topMargin {
+                                NumberAnimation{duration: 300}
+                            }
+                            Behavior on anchors.bottomMargin {
+                                NumberAnimation{duration: 300}
+                            }
                             source: itemModel.get(index).source
                             mipmap: true
-                            //                        sourceSize.width: width /2
-                            //                        sourceSize.height: height
-                            //                        fillMode: Image.PreserveAspectFit
 
-                            //                        Rectangle{
+                            MouseArea{
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                onClicked: {
+                                    itemRec.isClicked = !itemRec.isClicked
+                                }
+                                onDoubleClicked: {
+                                    mainPage.state = "Book Page"
+                                }
+                            }
+                        }
+                        Item{
+                            id: rating
+                            width: parent.width
+                            height: (itemRec.isClicked) ? 30:0
+                            visible: (itemRec.isClicked)
+                            Behavior on height {
+                                NumberAnimation{duration: 300}
+                            }
 
-                            //                        }
+                            anchors.top: image.bottom
+                            RowLayout{
+                                width: parent.width * 0.9
+                                height: parent.height
+                                layoutDirection: Qt.RightToLeft
+
+                                Rectangle{
+                                    Layout.fillHeight: true
+                                    Layout.preferredWidth: parent.width * 0.6
+                                    color: "transparent"
+                                    Rating{
+                                        anchors.fill: parent
+                                        selectable: true
+                                        scale: 1.3
+                                    }
+                                }
+
+                                Rectangle{
+                                    Layout.fillHeight: true
+                                    Layout.fillWidth: true
+                                    color: "transparent"
+                                    Label{
+                                        anchors.fill: parent
+                                        text: "(" + itemModel.get(index).rate + " رای)"
+                                        font.family: iranSansFAnum.name
+                                        color: color9
+                                        verticalAlignment: Qt.AlignVCenter
+                                        font.pixelSize: Qt.application.font.pixelSize * 0.7
+                                        elide: Text.ElideRight
+                                    }
+                                }
+                            }
                         }
                     }
 
@@ -150,10 +211,11 @@ Item {
                         Label{
                             id: txt2
                             anchors.fill: parent
-                            text:itemModel.get(index).text1
+                            text: itemModel.get(index).text1
                             font.family: iranSans.name
                             color: color4
                             verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
                         }
                     }
 
@@ -170,129 +232,15 @@ Item {
                             font.family: iranSans.name
                             color: color9
                             verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
                             font.pixelSize: Qt.application.font.pixelSize
-                        }
-                    }
-
-                    Item{
-                        id: rating
-                        width: parent.width
-                        height: parent.height * 0.1
-                        anchors.top: title3Rec.bottom
-                        RowLayout{
-                            anchors.fill: parent
-                            layoutDirection: Qt.RightToLeft
-
-                            Rectangle{
-                                Layout.fillHeight: true
-                                Layout.preferredWidth: parent.width * 0.7
-                                color: "transparent"
-                                Rating{
-                                    anchors.fill: parent
-                                    //                                anchors.right: parent.right
-
-                                    selectable: true
-
-                                }
-                            }
-
-                            Rectangle{
-                                Layout.fillHeight: true
-                                Layout.fillWidth: true
-                                color: "transparent"
-                                Label{
-                                    anchors.fill: parent
-                                    text: "(" + itemModel.get(index).rate + " رای)"
-                                    font.family: iranSansFAnum.name
-                                    color: color9
-                                    verticalAlignment: Qt.AlignVCenter
-                                    font.pixelSize: Qt.application.font.pixelSize * 0.7
-                                    elide: Text.ElideRight
-                                }
-                            }
-                        }
-                    }
-
-                    Item{
-                        id: purchaseItem
-                        width: parent.width
-                        height: parent.height * 0.1
-                        anchors.top: rating.bottom
-                        RowLayout{
-                            anchors.fill: parent
-                            layoutDirection: Qt.RightToLeft
-
-                            //-- Button purchase --//
-                            Rectangle{
-                                id: purchase
-                                Layout.fillHeight: true
-                                Layout.preferredWidth: parent.width * 0.5
-
-                                color: color8
-
-                                Label{
-                                    anchors.centerIn: parent
-                                    anchors.margins: 5
-                                    text: "خرید کتاب"
-                                    font.family: iranSans.name
-                                    font.pixelSize: Qt.application.font.pixelSize * 1
-                                    color: color3
-                                }
-
-                                MouseArea{
-                                    id: btn_purchase
-                                    anchors.fill: parent
-                                    cursorShape: Qt.PointingHandCursor
-
-                                    onClicked: {
-
-                                    }
-                                }
-                            }
-
-                            Rectangle{
-                                Layout.fillHeight: true
-                                Layout.fillWidth: true
-                                color: "transparent"
-                                Label{
-                                    id: txt4
-                                    width: parent.width
-                                    height: parent.height / 2
-                                    text: "تاریخ انتشار"
-                                    font.family: iranSans.name
-                                    color: color9
-                                    verticalAlignment: Qt.AlignVCenter
-                                    horizontalAlignment: Qt.AlignHCenter
-                                    font.pixelSize: Qt.application.font.pixelSize
-                                }
-
-                                Rectangle{
-                                    id: recspacer
-                                    width: parent.width
-                                    anchors.top: txt4.bottom
-                                    height: 3
-                                    color: "transparent"
-                                }
-
-                                Label{
-                                    width: parent.width
-                                    height: parent.height / 2
-                                    anchors.top: recspacer.bottom
-                                    text: itemModel.get(index).date
-                                    font.family: iranSansFAnum.name
-                                    color: color9
-                                    verticalAlignment: Qt.AlignVCenter
-                                    horizontalAlignment: Qt.AlignHCenter
-                                    font.pixelSize: Qt.application.font.pixelSize
-                                }
-                            }
                         }
                     }
                 }
 
             }
-
         }
+
         Rectangle{
             Layout.fillHeight: true
             Layout.preferredWidth: parent.width * 0.05
@@ -325,3 +273,5 @@ Item {
     }
 
 }
+
+

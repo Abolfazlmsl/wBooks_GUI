@@ -42,10 +42,8 @@ Rectangle{
             }
 
             FilterPanel{
-                Layout.fillWidth: true
-                Layout.preferredHeight: categoryModel.count * 20 + 80
                 title: "دسته بندی ها"
-                showAll: true
+                showAll: false
                 chevron: true
                 lModel: categoryModel
             }
@@ -57,11 +55,9 @@ Rectangle{
             }
 
             FilterPanel{
-                Layout.fillWidth: true
-                Layout.preferredHeight: certificateModel.count * 20 + 80
                 title: "مجوزها"
                 showAll: false
-                chevron: false
+                chevron: true
                 lModel: certificateModel
             }
 
@@ -72,8 +68,6 @@ Rectangle{
             }
 
             FilterDisplayPanel{
-                Layout.fillWidth: true
-                Layout.preferredHeight: 80
                 title: "نحوه نمایش"
                 showAll: false
                 chevron: true
@@ -106,11 +100,9 @@ Rectangle{
             }
 
             FilterPanel{
-                Layout.fillWidth: true
-                Layout.preferredHeight: ageModel.count * 20 + 80
                 title: "محدوده سنی"
                 showAll: false
-                chevron: false
+                chevron: true
                 lModel: ageModel
             }
 
@@ -121,8 +113,6 @@ Rectangle{
             }
 
             FilterPanel{
-                Layout.fillWidth: true
-                Layout.preferredHeight: dateModel.count * 20 + 80
                 title: "تاریخ نشر"
                 showAll: false
                 chevron: true
@@ -136,8 +126,6 @@ Rectangle{
             }
 
             FilterPanel{
-                Layout.fillWidth: true
-                Layout.preferredHeight: bookTypeModel.count * 20 + 80
                 title: "نوع کتاب"
                 showAll: false
                 chevron: true

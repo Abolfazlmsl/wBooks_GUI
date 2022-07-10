@@ -6,7 +6,7 @@ import "./../../../Fonts/Icon.js" as Icons
 import "./../../../Utils/Enum.js" as Enum
 import "./../../../Utils/Utils.js" as Util
 
-import "./../MainModules"
+import "./../MainModules/Ui_Module"
 
 Rectangle{
 

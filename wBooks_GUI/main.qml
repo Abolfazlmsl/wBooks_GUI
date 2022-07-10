@@ -840,7 +840,9 @@ Window {
             id: mainBody
             anchors.fill: parent
 
+            // Test open reader
             Rectangle{
+                visible: false
                 width: 50
                 height: 50
                 color: color12

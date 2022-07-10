@@ -4,8 +4,10 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls.Material 2.12
 import QtQuick.Controls.Styles 1.4
 
-import "./../../../Fonts/Icon.js" as Icons
+import "./../../../../Fonts/Icon.js" as Icons
 
+import "./../../Items"
+import "./../Ui_Module"
 
 Flickable {
     anchors.fill: parent
@@ -170,8 +172,32 @@ Flickable {
                                         layoutDirection: Qt.RightToLeft
 
                                         Rectangle{
+                                            id: btnview
+                                            Layout.preferredWidth: parent.width * 0.25
+                                            Layout.fillHeight: true
+                                            color: color2
+                                            Label{
+                                                id: txtview
+                                                anchors.fill: parent
+                                                text: "مشاهده کتاب"
+                                                font.family: iranSans.name
+                                                color: "#ffffff"
+                                                verticalAlignment: Qt.AlignVCenter
+                                                horizontalAlignment: Qt.AlignHCenter
+                                                font.pixelSize: Qt.application.font.pixelSize
+                                            }
+                                            MouseArea{
+                                                anchors.fill: parent
+                                                cursorShape: Qt.PointingHandCursor
+                                                onClicked: {
+                                                    bookreader.visible = true
+                                                }
+                                            }
+                                        }
+
+                                        Rectangle{
                                             id: btnpurchase
-                                            Layout.preferredWidth: parent.width * 0.5
+                                            Layout.preferredWidth: parent.width * 0.25
                                             Layout.fillHeight: true
                                             color: color2
                                             Label{

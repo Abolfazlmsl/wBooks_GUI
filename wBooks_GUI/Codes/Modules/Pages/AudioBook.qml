@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtMultimedia 5.9
 
-import "./../MainModules"
+import "./../MainModules/Player"
 
 Item {
     //-- video player --//
@@ -11,5 +11,6 @@ Item {
         anchors.fill: parent
         isTopToolsVisible: false
         isIgnoreOffset: false
+        clip: true
     }
 }

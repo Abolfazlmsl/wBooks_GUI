@@ -3,6 +3,8 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Styles 1.4
 
+import "./../../Items"
+
 Item {
     id: topSliderItem
     property alias source: image.source

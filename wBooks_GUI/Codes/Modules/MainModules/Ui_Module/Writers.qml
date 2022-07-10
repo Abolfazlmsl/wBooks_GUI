@@ -5,7 +5,7 @@ import QtQuick.Controls.Styles 1.4
 import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 
-import "./../../../Fonts/Icon.js" as Icons
+import "./../../../../Fonts/Icon.js" as Icons
 
 Item {
     id: writers_item

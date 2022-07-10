@@ -8,7 +8,8 @@ import Qt.labs.settings 1.1
 import com.EpubWidget 1.0
 import org.pdfviewer.poppler 1.0
 
-import "./../../Modules/MainModules"
+import "./../../Modules/MainModules/DownloadManager"
+import "./../../Modules/MainModules/TreeModule"
 import "./../../Modules/Items"
 
 import "./../../../Fonts/Icon.js" as Icons

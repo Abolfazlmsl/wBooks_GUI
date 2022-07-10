@@ -36,4 +36,4 @@ HEADERS += \
     $$files(Headers/TreeItem/*.h)\
     desktopfunctions.h
 
-win32: LIBS += "G:/QtTest/wBooks/wbooks/build-wBooks-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/libpoppler-qt5-1.dll"
+win32: LIBS += $$PWD/libpoppler-qt5-1.dll

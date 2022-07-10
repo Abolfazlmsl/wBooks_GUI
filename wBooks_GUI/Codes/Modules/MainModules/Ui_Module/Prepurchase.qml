@@ -5,7 +5,9 @@ import QtQuick.Controls.Styles 1.4
 import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 
-import "./../../../Fonts/Icon.js" as Icons
+import "./../../../../Fonts/Icon.js" as Icons
+
+import "./../../Items"
 
 Item {
     id: prepurchase_item
@@ -151,6 +153,9 @@ Item {
                                 onClicked: {
                                     itemRec.isClicked = !itemRec.isClicked
                                 }
+                                onDoubleClicked: {
+                                    mainPage.state = "Book Page"
+                                }
                             }
                         }
                         Item{
@@ -229,6 +234,38 @@ Item {
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
                             font.pixelSize: Qt.application.font.pixelSize
+                        }
+                    }
+
+                    Item{
+                        id: spacer
+                        width: parent.width
+                        height: parent.height * 0.05
+                        anchors.top: title3Rec.bottom
+                    }
+
+                    Rectangle{
+                        id: btnpurchase
+                        width: parent.width
+                        height: parent.height * 0.15
+                        anchors.top: spacer.bottom
+                        color: color2
+                        Label{
+                            id: txt4
+                            anchors.fill: parent
+                            text: "پیش خرید"
+                            font.family: iranSans.name
+                            color: "#ffffff"
+                            verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
+                            font.pixelSize: Qt.application.font.pixelSize
+                        }
+                        MouseArea{
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: {
+                                mainPage.state = "Book Page"
+                            }
                         }
                     }
                 }

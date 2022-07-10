@@ -78,18 +78,6 @@
         <file>Codes/Modules/Items/HeaderButton.qml</file>
         <file>Codes/Modules/Items/LoadingSpinner.qml</file>
         <file>Codes/Modules/Items/M_inputText.qml</file>
-        <file>Codes/Modules/MainModules/Advertisement.qml</file>
-        <file>Codes/Modules/MainModules/BestCategory.qml</file>
-        <file>Codes/Modules/MainModules/BestCollection.qml</file>
-        <file>Codes/Modules/MainModules/BooksList.qml</file>
-        <file>Codes/Modules/MainModules/Footer.qml</file>
-        <file>Codes/Modules/MainModules/HomeModule.qml</file>
-        <file>Codes/Modules/MainModules/Prepurchase.qml</file>
-        <file>Codes/Modules/MainModules/Rating.qml</file>
-        <file>Codes/Modules/MainModules/SpecialCategory.qml</file>
-        <file>Codes/Modules/MainModules/TopSlider.qml</file>
-        <file>Codes/Modules/MainModules/TopSliderPage1.qml</file>
-        <file>Codes/Modules/MainModules/Writers.qml</file>
         <file>Codes/Modules/Pages/Home.qml</file>
         <file>Codes/Modules/Pages/MoreBooksPage.qml</file>
         <file>Codes/Modules/Pages/SerialBook.qml</file>
@@ -100,21 +88,33 @@
         <file>Codes/Modules/Account/Panels/EditRightPanel.qml</file>
         <file>Codes/Modules/Account/Popups/AccountPopup.qml</file>
         <file>Codes/Modules/Account/Popups/RowsofAccountPop.qml</file>
-        <file>Codes/Modules/MainModules/Book.qml</file>
-        <file>Codes/Modules/MainModules/BookIntroduction.qml</file>
-        <file>Codes/Modules/MainModules/BookPropsCol.qml</file>
-        <file>Codes/Modules/MainModules/SpecialOffer.qml</file>
         <file>Images/Wbooks1.png</file>
         <file>Codes/Modules/Pages/AudioBook.qml</file>
-        <file>Codes/Modules/MainModules/Player.qml</file>
         <file>Images/music.png</file>
         <file>REST/apiService.js</file>
         <file>Codes/Modules/Pages/SearchPage.qml</file>
-        <file>Codes/Modules/MainModules/SearchTopItem.qml</file>
         <file>Codes/Modules/Pages/BookReader.qml</file>
-        <file>Codes/Modules/MainModules/DownloadPanel.qml</file>
-        <file>Codes/Modules/MainModules/FilePanel.qml</file>
-        <file>Codes/Modules/MainModules/TreeView.qml</file>
-        <file>Codes/Modules/MainModules/TreeViewItem.qml</file>
+        <file>Codes/Modules/Items/Rating.qml</file>
+        <file>Codes/Modules/MainModules/BookModule/Book.qml</file>
+        <file>Codes/Modules/MainModules/BookModule/BookIntroduction.qml</file>
+        <file>Codes/Modules/MainModules/BookModule/BookPropsCol.qml</file>
+        <file>Codes/Modules/MainModules/DownloadManager/DownloadPanel.qml</file>
+        <file>Codes/Modules/MainModules/Player/Player.qml</file>
+        <file>Codes/Modules/MainModules/SearchModule/SearchTopItem.qml</file>
+        <file>Codes/Modules/MainModules/TreeModule/FilePanel.qml</file>
+        <file>Codes/Modules/MainModules/TreeModule/TreeView.qml</file>
+        <file>Codes/Modules/MainModules/TreeModule/TreeViewItem.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/Advertisement.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/BestCategory.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/BestCollection.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/BooksList.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/Footer.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/HomeModule.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/Prepurchase.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/SpecialCategory.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/SpecialOffer.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/TopSlider.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/TopSliderPage1.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/Writers.qml</file>
     </qresource>
 </RCC>

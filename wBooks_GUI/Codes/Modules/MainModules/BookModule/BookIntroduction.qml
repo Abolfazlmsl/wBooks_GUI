@@ -4,7 +4,9 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls.Material 2.12
 import QtQuick.Controls.Styles 1.4
 
-import "./../../../Fonts/Icon.js" as Icons
+import "./../../../../Fonts/Icon.js" as Icons
+
+import "./../Ui_Module"
 
 Rectangle {
 

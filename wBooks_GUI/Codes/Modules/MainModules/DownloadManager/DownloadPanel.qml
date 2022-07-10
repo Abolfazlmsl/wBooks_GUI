@@ -5,9 +5,9 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.12
 import QtGraphicalEffects 1.0
 
-import "./../../Modules/Items"
+import "./../../../Modules/Items"
 
-import "./../../../Fonts/Icon.js" as Icons
+import "./../../../../Fonts/Icon.js" as Icons
 
 ApplicationWindow{
     id: root_auth

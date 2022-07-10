@@ -1,13 +1,10 @@
 .pragma library
 
-//var BASE = 'http://127.0.0.1:8000'
-//var BASE = 'http://porox.ir'
-var BASE = 'https://digitalrockphysics.ir'
+var BASE = 'http://127.0.0.1:8000'
 
 //-- api urls --//
-var url_license = '/license/license/'
-var url_device = '/license/device/'
-var url_token = 'api/token/'
+var url = ''
+
 
 function get_all(endpoint, cb) {
     request(null, 'GET', endpoint/*null*/, null, cb)

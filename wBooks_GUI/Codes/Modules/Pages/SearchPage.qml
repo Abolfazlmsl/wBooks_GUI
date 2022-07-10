@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.3
 
 import "./../../../Fonts/Icon.js" as Icons
 import "./../Items"
-import "./../MainModules"
+import "./../MainModules/SearchModule"
 
 Rectangle {
     color: "transparent"
@@ -446,7 +446,6 @@ Rectangle {
                             Item{Layout.fillWidth: true}
                         }
                     }
-
                 }
             }
         }

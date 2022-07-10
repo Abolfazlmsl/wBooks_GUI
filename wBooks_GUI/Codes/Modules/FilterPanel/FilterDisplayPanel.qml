@@ -15,8 +15,14 @@ Item {
 
     clip: true
 
-    state: "Icon_1"
+    Layout.fillWidth: true
+    Layout.preferredHeight: (isChevron) ? 40:80
 
+    Behavior on Layout.preferredHeight{
+        NumberAnimation{duration: 300}
+    }
+
+    state: "Icon_1"
     states: [
         State {
             name: "Icon_1"
@@ -41,13 +47,13 @@ Item {
         }
     ]
 
-    ColumnLayout{
+    Column{
         anchors.fill: parent
         spacing: 0
 
         Item{
-            Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.5
+            width: parent.width
+            height: 40
 
             RowLayout{
                 anchors.fill: parent
@@ -95,12 +101,23 @@ Item {
                 Label {
                     Layout.fillHeight: true
                     visible: chevron
-                    text: (isChevron) ? Icons.chevron_up : Icons.chevron_down
+                    text: Icons.chevron_down
+                    rotation: (isChevron) ? 0:180
+                    Behavior on rotation {
+                        NumberAnimation{duration: 300}
+                    }
                     font.family: webfont.name
                     font.pixelSize: Qt.application.font.pixelSize * 1.6
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: color9
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: {
+                            isChevron = !isChevron
+                        }
+                    }
                 }
 
                 Item{Layout.fillWidth: true}
@@ -109,8 +126,9 @@ Item {
         }
 
         Item{
-            Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.5
+            width: parent.width
+            height: (isChevron) ? 0:40
+            visible: (!isChevron)
 
             RowLayout{
                 anchors.fill: parent
@@ -129,6 +147,7 @@ Item {
                     color: color9
                     MouseArea{
                         anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
                         onClicked: {
                             panel.state = "Icon_1"
                         }
@@ -152,6 +171,7 @@ Item {
                     color: color9
                     MouseArea{
                         anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
                         onClicked: {
                             panel.state = "Icon_2"
                         }
@@ -176,6 +196,7 @@ Item {
 
                     MouseArea{
                         anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
                         onClicked: {
                             panel.state = "Icon_3"
                         }
@@ -183,7 +204,6 @@ Item {
                 }
 
                 Item{Layout.fillWidth: true}
-
             }
         }
     }

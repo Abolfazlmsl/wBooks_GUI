@@ -86,7 +86,7 @@ Item {
                     Layout.fillWidth: true
 
                     verticalAlignment: Qt.AlignVCenter
-
+                    rightPadding: 10 * ratio
 
                     font.pixelSize: Qt.application.font.pixelSize
                     selectedTextColor: color14
