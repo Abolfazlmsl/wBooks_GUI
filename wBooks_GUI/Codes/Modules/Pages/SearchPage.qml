@@ -10,7 +10,7 @@ Rectangle {
     color: "transparent"
     property var itemModel: []
 
-    property int totalPages: 2000
+    property int totalPages: 31
     property int maxPages: 9
     property int currentPage: 0
 

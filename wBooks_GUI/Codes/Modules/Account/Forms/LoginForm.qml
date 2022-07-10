@@ -29,7 +29,7 @@ Item{
 
     }
 
-    objectName: "Logimn"
+    objectName: "Login"
 
     MouseArea {
         //            anchors.fill: parent
@@ -58,22 +58,43 @@ Item{
 
     ColumnLayout{
             width: parent.width
-            height: parent.height * 0.5
+            height: parent.height
 
 
             //-- spacer --//
-            Item{Layout.preferredHeight: 20}
+            Item{Layout.preferredHeight: 10}
 
-            Label{
+            Rectangle{
                 Layout.fillWidth: true
-                Layout.preferredHeight: implicitHeight
-                text: "لطفا اطلاعات خود را وارد کنید"
-                font.family: iranSans.name
-                color: color8
+                Layout.preferredHeight: 50
+                color: "transparent"
+                Image{
+                    id: image
+                    width: 50
+                    height: parent.height
+                    anchors.left: titletxt.right
+                    anchors.leftMargin: 10
+                    source: "qrc:/Images/Wbooks1.png"
+                    mipmap: true
+                    fillMode: Image.PreserveAspectFit
+                    layer.enabled: true
+                    layer.effect: OpacityMask {
+                        maskSource: mask
+                    }
+                }
 
-                font.pixelSize: Qt.application.font.pixelSize * 1.3
-                horizontalAlignment: Qt.AlignHCenter
-
+                Label{
+                    id: titletxt
+                    width: Text.contentWidth
+                    height: parent.height
+                    anchors.centerIn: parent
+                    text: "به wBooks خوش آمدید"
+                    font.family: iranSans.name
+                    color: color8
+                    font.pixelSize: Qt.application.font.pixelSize * 1.5
+                    horizontalAlignment: Qt.AlignHCenter
+                    verticalAlignment: Qt.AlignVCenter
+                }
             }
 
             //-- spacer --//
@@ -82,6 +103,7 @@ Item{
             //-- Email --//
             M_inputText{
                 id: input_phone
+                Layout.rightMargin: 0
                 label: "شماره تماس"
                 icon: Icons.cellphone
                 placeholder: "09xxxxxxxxx"
@@ -98,6 +120,7 @@ Item{
             //-- Email --//
             M_inputText{
                 id: input_password
+                Layout.rightMargin: 0
                 label: "پسورد"
                 icon: Icons.email_outline
                 placeholder: "پسورد"
@@ -109,6 +132,32 @@ Item{
                 //            inputText.validator: RegularExpressionValidator { regularExpression: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ }
             }
 
+            //-- spacer --//
+            Item{Layout.preferredHeight: 5}
+
+            Rectangle{
+                Layout.fillWidth: true
+                Layout.preferredHeight: 20
+                color: "transparent"
+                Label{
+                    id: forgotPassword
+                    anchors.fill: parent
+                    anchors.right: parent.right
+                    anchors.rightMargin: 10
+                    text: "رمز عبور خود را فراموش کرده ام"
+                    font.family: iranSans.name
+                    font.pixelSize: Qt.application.font.pixelSize
+                    color: color4
+                    verticalAlignment: Qt.AlignVCenter
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: {
+
+                        }
+                    }
+                }
+            }
             //-- spacer --//
             Item{Layout.preferredHeight: 10}
 
@@ -176,7 +225,219 @@ Item{
             }
 
             //-- spacer --//
-            Item{Layout.preferredHeight: 15}
+            Item{Layout.preferredHeight: 10}
+
+            Label{
+                Layout.fillWidth: true
+                Layout.preferredHeight: 38
+                text: "یا"
+                font.family: iranSans.name
+                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                color: color4
+                verticalAlignment: Qt.AlignVCenter
+                horizontalAlignment: Qt.AlignHCenter
+            }
+
+            //-- spacer --//
+            Item{Layout.preferredHeight: 10}
+
+            Item{
+                Layout.fillWidth: true
+                Layout.preferredHeight: 38
+                RowLayout{
+                    anchors.fill: parent
+                    spacing: 10
+                    //-- Button login facebook --//
+                    Rectangle{
+                        id: loginfacebook
+                        Layout.preferredWidth: parent.width * 0.3
+                        Layout.fillHeight: parent
+
+                        radius: height / 2
+
+                        color: color17
+                        border.color: color8
+
+                        Label{
+                            id: facebookIcon
+                            width: 40
+                            height: parent.height
+                            anchors.right: parent.right
+                            anchors.rightMargin: 5
+                            text: Icons.facebook
+                            font.family: webfont.name
+                            font.pixelSize: Qt.application.font.pixelSize * 3
+                            color: "#ffffff"
+                            verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
+                        }
+
+                        Label{
+                            id: facebookText
+                            width: Text.contentWidth
+                            height: parent.height
+                            anchors.right: facebookIcon.left
+                            anchors.rightMargin: 5
+                            text: "ورود با فیس بوک"
+                            font.family: iranSans.name
+                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            color: "#ffffff"
+                            verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
+                        }
+
+                        MouseArea{
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+
+                            onClicked: {
+
+                            }
+                        }
+                    }
+
+                    //-- Button login gmail --//
+                    Rectangle{
+                        id: logingmail
+                        Layout.preferredWidth: parent.width * 0.3
+                        Layout.fillHeight: parent
+
+                        radius: height / 2
+
+                        color: color14
+                        border.color: color8
+
+                        Label{
+                            id: gmailIcon
+                            width: 40
+                            height: parent.height
+                            anchors.right: parent.right
+                            anchors.rightMargin: 5
+                            text: Icons.gmail
+                            font.family: webfont.name
+                            font.pixelSize: Qt.application.font.pixelSize * 3
+                            color: "#ffffff"
+                            verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
+                        }
+
+                        Label{
+                            id: gmailText
+                            width: Text.contentWidth
+                            height: parent.height
+                            anchors.right: gmailIcon.left
+                            anchors.rightMargin: 5
+                            text: "ورود با جیمیل"
+                            font.family: iranSans.name
+                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            color: "#ffffff"
+                            verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
+                        }
+
+                        MouseArea{
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+
+                            onClicked: {
+
+                            }
+                        }
+                    }
+
+                    //-- Button login github --//
+                    Rectangle{
+                        id: logingithub
+                        Layout.preferredWidth: parent.width * 0.3
+                        Layout.fillHeight: parent
+
+                        radius: height / 2
+
+                        color: color2
+                        border.color: color8
+
+                        Label{
+                            id: githubIcon
+                            width: 40
+                            height: parent.height
+                            anchors.right: parent.right
+                            anchors.rightMargin: 5
+                            text: Icons.github_box
+                            font.family: webfont.name
+                            font.pixelSize: Qt.application.font.pixelSize * 3
+                            color: "#ffffff"
+                            verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
+                        }
+
+                        Label{
+                            id: githubText
+                            width: Text.contentWidth
+                            height: parent.height
+                            anchors.right: githubIcon.left
+                            anchors.rightMargin: 5
+                            text: "ورود با گیت هاب"
+                            font.family: iranSans.name
+                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            color: "#ffffff"
+                            verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
+                        }
+
+                        MouseArea{
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+
+                            onClicked: {
+
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            //-- spacer --//
+            Item{Layout.preferredHeight: 5}
+
+            Rectangle{
+                Layout.fillWidth: true
+                Layout.preferredHeight: 38
+                color: "transparent"
+                Label{
+                    id: txtregiste
+                    width: Text.contentWidth
+                    height: parent.height
+                    anchors.right: parent.right
+                    anchors.rightMargin: 10
+                    text: "آیا تا به حال ثبت نام نکرده اید؟"
+                    font.family: iranSans.name
+                    font.pixelSize: Qt.application.font.pixelSize * 1.2
+                    color: color4
+                    verticalAlignment: Qt.AlignVCenter
+                    horizontalAlignment: Qt.AlignHCenter
+                }
+                Label{
+                    width: Text.contentWidth
+                    height: parent.height
+                    anchors.right: txtregiste.left
+                    anchors.rightMargin: 10
+                    text: "ثبت نام کنید"
+                    font.family: iranSans.name
+                    font.underline: true
+                    font.pixelSize: Qt.application.font.pixelSize * 1.2
+                    color: color14
+                    verticalAlignment: Qt.AlignVCenter
+                    horizontalAlignment: Qt.AlignHCenter
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: {
+                            mainPage.state = "Registration"
+                        }
+                    }
+                }
+            }
 
             LoadingSpinner{
                 id: spinner

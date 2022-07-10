@@ -46,6 +46,7 @@ Item {
         //-- Email --//
         M_inputText{
             id: input_name
+            Layout.rightMargin: 0
             label: "نام"
             icon: Icons.account
             placeholder: "نام"
@@ -74,6 +75,7 @@ Item {
         //-- Phone --//
         M_inputText{
             id: input_phone
+            Layout.rightMargin: 0
             label: "شماره تماس"
             icon: Icons.cellphone
             placeholder: "09xxxxxxxxx"
@@ -101,6 +103,7 @@ Item {
         //-- Email --//
         M_inputText{
             id: input_Email
+            Layout.rightMargin: 0
             label: "ایمیل"
             icon: Icons.email_outline
             placeholder: "ایمیل"
