@@ -34,6 +34,14 @@ ApplicationWindow{
             success = true
             popup.state = "downloaded"
             alarmSignupWin.msg = "دانلود با موفقیت به اتمام رسید"
+
+            //var data = {
+            //    "url": "",
+            //    "id": setting.user_id
+            //}
+
+            //db.addTable("myBooks", true)
+            //db.storeData("myBooks", data, "")
         }
 
         function onSendError(){

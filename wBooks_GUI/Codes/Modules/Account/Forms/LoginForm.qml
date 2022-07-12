@@ -77,10 +77,6 @@ Item{
                     source: "qrc:/Images/Wbooks1.png"
                     mipmap: true
                     fillMode: Image.PreserveAspectFit
-                    layer.enabled: true
-                    layer.effect: OpacityMask {
-                        maskSource: mask
-                    }
                 }
 
                 Label{
@@ -227,15 +223,29 @@ Item{
             //-- spacer --//
             Item{Layout.preferredHeight: 10}
 
-            Label{
+            RowLayout{
                 Layout.fillWidth: true
                 Layout.preferredHeight: 38
-                text: "یا"
-                font.family: iranSans.name
-                font.pixelSize: Qt.application.font.pixelSize * 1.5
-                color: color4
-                verticalAlignment: Qt.AlignVCenter
-                horizontalAlignment: Qt.AlignHCenter
+                Rectangle{
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 1
+                    color: color4
+                }
+                Label{
+                    Layout.preferredWidth: Text.contentWidth + 10
+                    Layout.preferredHeight: 38
+                    text: "یا"
+                    font.family: iranSans.name
+                    font.pixelSize: Qt.application.font.pixelSize * 1.5
+                    color: color4
+                    verticalAlignment: Qt.AlignVCenter
+                    horizontalAlignment: Qt.AlignHCenter
+                }
+                Rectangle{
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 1
+                    color: color4
+                }
             }
 
             //-- spacer --//
@@ -247,55 +257,8 @@ Item{
                 RowLayout{
                     anchors.fill: parent
                     spacing: 10
-                    //-- Button login facebook --//
-                    Rectangle{
-                        id: loginfacebook
-                        Layout.preferredWidth: parent.width * 0.3
-                        Layout.fillHeight: parent
-
-                        radius: height / 2
-
-                        color: color17
-                        border.color: color8
-
-                        Label{
-                            id: facebookIcon
-                            width: 40
-                            height: parent.height
-                            anchors.right: parent.right
-                            anchors.rightMargin: 5
-                            text: Icons.facebook
-                            font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 3
-                            color: "#ffffff"
-                            verticalAlignment: Qt.AlignVCenter
-                            horizontalAlignment: Qt.AlignHCenter
-                        }
-
-                        Label{
-                            id: facebookText
-                            width: Text.contentWidth
-                            height: parent.height
-                            anchors.right: facebookIcon.left
-                            anchors.rightMargin: 5
-                            text: "ورود با فیس بوک"
-                            font.family: iranSans.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.2
-                            color: "#ffffff"
-                            verticalAlignment: Qt.AlignVCenter
-                            horizontalAlignment: Qt.AlignHCenter
-                        }
-
-                        MouseArea{
-                            anchors.fill: parent
-                            cursorShape: Qt.PointingHandCursor
-
-                            onClicked: {
-
-                            }
-                        }
-                    }
-
+                    layoutDirection: Qt.RightToLeft
+                    Item{Layout.fillWidth: true}
                     //-- Button login gmail --//
                     Rectangle{
                         id: logingmail
@@ -394,6 +357,56 @@ Item{
                         }
                     }
 
+                    //-- Button login facebook --//
+                    Rectangle{
+                        id: loginfacebook
+                        Layout.preferredWidth: parent.width * 0.3
+                        Layout.fillHeight: parent
+
+                        radius: height / 2
+
+                        color: color17
+                        border.color: color8
+
+                        Label{
+                            id: facebookIcon
+                            width: 40
+                            height: parent.height
+                            anchors.right: parent.right
+                            anchors.rightMargin: 5
+                            text: Icons.facebook
+                            font.family: webfont.name
+                            font.pixelSize: Qt.application.font.pixelSize * 3
+                            color: "#ffffff"
+                            verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
+                        }
+
+                        Label{
+                            id: facebookText
+                            width: Text.contentWidth
+                            height: parent.height
+                            anchors.right: facebookIcon.left
+                            anchors.rightMargin: 5
+                            text: "ورود با فیس بوک"
+                            font.family: iranSans.name
+                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            color: "#ffffff"
+                            verticalAlignment: Qt.AlignVCenter
+                            horizontalAlignment: Qt.AlignHCenter
+                        }
+
+                        MouseArea{
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+
+                            onClicked: {
+
+                            }
+                        }
+                    }
+
+                    Item{Layout.fillWidth: true}
                 }
             }
 

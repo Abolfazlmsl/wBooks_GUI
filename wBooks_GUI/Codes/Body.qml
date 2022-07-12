@@ -55,7 +55,6 @@ Rectangle{
 
 //        RightEditPanel{
 //            Layout.preferredWidth: inHomeMode * parent.width * 0.15
-
 //            Layout.fillHeight: true
 //        }
 
@@ -172,10 +171,10 @@ Rectangle{
                             }
                         }
 
-                        Item{
+                        Item {
                             RegistrationForm{
                                 anchors.fill: parent
-                                anchors.topMargin: parent.height * 0.05
+//                                anchors.topMargin: parent.height * 0.05
                                 anchors.leftMargin: parent.width * 0.3
                                 anchors.rightMargin: parent.width * 0.3
 
@@ -206,7 +205,7 @@ Rectangle{
 
                         }
 
-                        Item{
+                        Item {
                             LoginForm{
                                 anchors.fill: parent
 //                                anchors.topMargin: parent.height * 0.05
@@ -239,12 +238,10 @@ Rectangle{
                             }
 
                         }
-                        Item{
+
+                        Item {
                             EditForm{
                                 anchors.fill: parent
-                                anchors.topMargin: parent.height * 0.1
-                                anchors.leftMargin: parent.width * 0.3
-                                anchors.rightMargin: parent.width * 0.3
 
                                 onGetMessage: {
                                     alarmEditWin.msg = signalmsg
@@ -294,10 +291,12 @@ Rectangle{
                         }
 
                         Item {
-
+                            MyLibrary{
+                                anchors.fill: parent
+                            }
                         }
 
-                        Item{
+                        Item {
                             MoreBooksPage{
                                 id: morebooks
                                 anchors.fill: parent
@@ -305,14 +304,14 @@ Rectangle{
                             }
                         }
 
-                        Item{
+                        Item {
                             Book{
                                 id: bookpage
                                 anchors.fill: parent
                             }
                         }
 
-                        Item{
+                        Item {
                             SearchPage{
                                 id: searchpage
                                 anchors.fill: parent
@@ -393,10 +392,10 @@ Rectangle{
                     }
 
                 }
-
             }
         }
     }
+
     ListModel{
         id: categoryModel
         ListElement{
@@ -733,7 +732,6 @@ Rectangle{
         }
     }
 
-
     ListModel{
         id: specialBooksModel
         ListElement{
@@ -968,6 +966,5 @@ Rectangle{
         }
 
     }
-
 }
 

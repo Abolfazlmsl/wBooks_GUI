@@ -9,6 +9,7 @@ import "./../../../../Fonts/Icon.js" as Icons
 import "./../../../../Utils/Utils.js" as Util
 
 import "./../Panels"
+import "./../../MainModules/Ui_Module"
 
 Item{
     id: root_edit
@@ -55,6 +56,9 @@ Item{
         Item {
             EditAccount{
                 anchors.fill: parent
+                anchors.topMargin: parent.height * 0.1
+                anchors.leftMargin: parent.width * 0.3
+                anchors.rightMargin: parent.width * 0.3
                 onGetMessage: {
                     getMessage(signalmsg)
                 }
@@ -66,11 +70,17 @@ Item{
         }
 
         Item {
-
+            MyBooksList{
+                anchors.fill: parent
+                back: false
+            }
         }
 
         Item {
-
+            MyAudioBooksList{
+                anchors.fill: parent
+                back: false
+            }
         }
 
         Item {

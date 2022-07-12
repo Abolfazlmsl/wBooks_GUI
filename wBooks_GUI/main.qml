@@ -34,6 +34,7 @@ Window {
     property bool accountPopEnabled: false
     property bool inHomeMode: true
     property int mainView: 0
+    property int myBooksView: 0
     property int rightView: 0
     property bool homeClick: true
     property bool membershipClick: false
@@ -415,7 +416,7 @@ Window {
                 }
             },
             State{
-                name: "Your Library"
+                name: "My Library"
                 PropertyChanges {
                     target: win
                     inHomeMode: true
@@ -598,7 +599,8 @@ Window {
                     text: "کتابخانه ی شما"
                     isClick: yourLibraryClick
                     onBtnClicked: {
-                        mainPage.state = "Your Library"
+                        myBooksView = 0
+                        mainPage.state = "My Library"
                     }
                 }
 
@@ -1225,6 +1227,88 @@ Window {
                 }
             }
         }
+        ListModel{
+            id: myBooksModel
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+            }
+        }
+
+        ListModel{
+            id: myAudioBooksModel
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+                speaker: "عادل فردوسی پور"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+                speaker: "عادل فردوسی پور"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+                speaker: "عادل فردوسی پور"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+                speaker: "عادل فردوسی پور"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+                speaker: "عادل فردوسی پور"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+                author: "عادل فردوسی پور"
+                speaker: "عادل فردوسی پور"
+            }
+        }
+
+        ListModel{
+            id: myVideosModel
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+            }
+            ListElement{
+                title: "مشاهده کتاب های سلامت و بهداشت"
+            }
+        }
 
         ListModel{
             id: searchModelTop
@@ -1456,6 +1540,5 @@ Window {
                 date: "1399/02/14"
             }
         }
-
     }
 }

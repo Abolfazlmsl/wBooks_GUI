@@ -96,19 +96,35 @@ Item{
 
 
                 //-- spacer --//
-                Item{Layout.preferredHeight: 20}
+                Item{Layout.preferredHeight: 10}
 
-                //-- "purchase PoroX license key --//
-                Label{
+                Rectangle{
                     Layout.fillWidth: true
-                    Layout.preferredHeight: implicitHeight
-                    text: "لطفا اطلاعات خود را وارد کنید"
-                    font.family: iranSans.name
-                    color: color8
+                    Layout.preferredHeight: 50
+                    color: "transparent"
+                    Image{
+                        id: image
+                        width: 50
+                        height: parent.height
+                        anchors.left: titletxt.right
+                        anchors.leftMargin: 10
+                        source: "qrc:/Images/Wbooks1.png"
+                        mipmap: true
+                        fillMode: Image.PreserveAspectFit
+                    }
 
-                    font.pixelSize: Qt.application.font.pixelSize * 1.3
-                    horizontalAlignment: Qt.AlignHCenter
-
+                    Label{
+                        id: titletxt
+                        width: Text.contentWidth
+                        height: parent.height
+                        anchors.centerIn: parent
+                        text: "لطفا اطلاعات خود را وارد کنید"
+                        font.family: iranSans.name
+                        color: color8
+                        font.pixelSize: Qt.application.font.pixelSize * 1.5
+                        horizontalAlignment: Qt.AlignHCenter
+                        verticalAlignment: Qt.AlignVCenter
+                    }
                 }
 
                 //-- spacer --//
