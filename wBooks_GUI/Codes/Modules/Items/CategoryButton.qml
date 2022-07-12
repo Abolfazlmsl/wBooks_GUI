@@ -36,7 +36,7 @@ Rectangle{
         spread: btn_ShadowSpread
         radius: btn_ShadowRadius
         samples: 14
-        color: "#40000000"
+        color: addOpacity(color4, 40)
         source: dashboard_btn
     }
     //-- Practice Square --//

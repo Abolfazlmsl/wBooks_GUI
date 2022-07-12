@@ -75,6 +75,12 @@ Window {
     property string color23: "#9F9F9F"
     property string color_input: "#ffffff"
 
+    function addOpacity(color, opacity){
+        var color2 = color.split("#")
+        var oColor = "#" + opacity + color2[1]
+        return oColor
+    }
+
     // Theme of the software //
     property var changeTheme: Item{
         id: theme
