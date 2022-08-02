@@ -23,9 +23,6 @@ Item {
     //-- margin offset --//
     property bool isIgnoreOffset: false
 
-    //-- Media type --//
-    property string mediaType: "Video"
-
     function play_pause() {
         console.log("player.playbackState: " + player.playbackState + MediaPlayer.PlayingState + MediaPlayer.PlayingState)
         if(player.playbackState === MediaPlayer.PlayingState){
@@ -78,7 +75,6 @@ Item {
         }
     }
 
-
     Pane {
         id: popup
 
@@ -93,9 +89,9 @@ Item {
 
         Image{
             id: image
-            visible: (mediaType === "Video") ? player.playbackState === MediaPlayer.PlayingState ? false : true : true
+            visible: (playerMediaType === "Video") ? player.playbackState === MediaPlayer.PlayingState ? false : true : true
             anchors.centerIn: parent
-            source: (mediaType === "Video") ? 'qrc:/Images/Wbooks1.png' : 'qrc:/Images/music.png'
+            source: (playerMediaType === "Video") ? 'qrc:/Images/Wbooks1.png' : 'qrc:/Images/music.png'
             sourceSize: Qt.size(300,300)
             verticalAlignment: Image.AlignVCenter
             horizontalAlignment: Image.AlignHCenter
@@ -104,7 +100,8 @@ Item {
         MediaPlayer {
             id: player
             //notifyInterval: 100
-            source: ""
+            source: playerSource
+            onSourceChanged: player.play()
 
             onPositionChanged: {
                 var min = Math.floor(player.position/60000)
@@ -316,7 +313,7 @@ Item {
                                 property var lURL: vURL[vURL.length-1]
                                 onAccepted: {
                                     if (fileDialog.selectedNameFilter.name === "Media files"){
-                                        mediaType = "Video"
+                                        playerMediaType = "Video"
                                         player.source = currentFile
                                         player.play()
                                         if (maximize.state === true){
@@ -324,7 +321,7 @@ Item {
                                             topGroup.visible = false
                                         }
                                     }else{
-                                        mediaType = "Audio"
+                                        playerMediaType = "Audio"
                                         player.source = currentFile
                                         player.play()
                                         if (maximize.state === true){

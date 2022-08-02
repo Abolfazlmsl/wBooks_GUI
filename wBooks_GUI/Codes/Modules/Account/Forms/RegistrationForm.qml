@@ -6,6 +6,7 @@ import QtQuick.Controls.Material 2.12
 import QtGraphicalEffects 1.0
 
 import "./../../../../Fonts/Icon.js" as Icons
+import "./../../../../REST/apiService.js" as Service
 
 import "./../../Items"
 
@@ -533,7 +534,15 @@ Item{
                                     "email": email.text,
                                     "phone": phone.text,
                                     "password": password.text,
-                                    "gender": ""
+                                    "gender": "",
+                                    "mybooks": "",
+                                    "myaudiobooks": "",
+                                    "myvideos": "",
+                                    "mywallet": "",
+                                    "mylicense": "",
+                                    "profile": "",
+                                    "user_id": "",
+                                    "basket": ""
                                 }
 
                                 db.addTable("users", true)
@@ -552,6 +561,19 @@ Item{
 //                                    getMessage("کد وارد شده اشتباه است")
 //                                    spinner.visible = false
 //                                }
+
+//                                var endpoint = Service.url_user
+
+//                                Service.create_item(_token_access, endpoint, data, function(resp, http) {
+
+//                                    setting.userName = name.text
+//                                    setting.userPhone = phone.text
+//                                    setting.userEmail = email.text
+//                                    setting.password = password.text
+//                                    setting.isLogined = true
+//                                    mainPage.state = "Home"
+
+//                                })
                             }
 
                             Keys.onEnterPressed: {
@@ -560,7 +582,15 @@ Item{
                                     "email": email.text,
                                     "phone": phone.text,
                                     "password": password.text,
-                                    "gender": ""
+                                    "gender": "",
+                                    "mybooks": "",
+                                    "myaudiobooks": "",
+                                    "myvideos": "",
+                                    "mywallet": "",
+                                    "mylicense": "",
+                                    "profile": "",
+                                    "user_id": "",
+                                    "basket": ""
                                 }
 
                                 db.addTable("users", true)
@@ -589,6 +619,19 @@ Item{
 //                                    getMessage("کد وارد شده اشتباه است")
 //                                    spinner.visible = false
 //                                }
+
+//                                var endpoint = Service.url_user
+
+//                                Service.create_item(_token_access, endpoint, data, function(resp, http) {
+
+//                                    setting.userName = name.text
+//                                    setting.userPhone = phone.text
+//                                    setting.userEmail = email.text
+//                                    setting.password = password.text
+//                                    setting.isLogined = true
+//                                    mainPage.state = "Home"
+
+//                                })
                             }
 
                         }

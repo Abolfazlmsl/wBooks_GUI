@@ -32,7 +32,7 @@ signals:
   void receivedData(QString data);
   void percentage(int percent);
   void sendError();
-  void sendFinish();
+  void sendFinish(QString path);
 
 private:
   DownloadManager *mManager;

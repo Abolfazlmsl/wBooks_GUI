@@ -7,6 +7,7 @@ import QtGraphicalEffects 1.0
 
 import "./../../../../Fonts/Icon.js" as Icons
 import "./../../../../Utils/Utils.js" as Util
+import "./../../../../REST/apiService.js" as Service
 
 import "./../../Items"
 
@@ -252,6 +253,7 @@ Item {
                             "phone": phone.text,
                             "password": password.text,
                             "gender": gender
+//                            "mybooks": setting.mybooks
                         }
                         db.storeData("users", data, setting.profile)
 
@@ -259,6 +261,18 @@ Item {
                         setting.userEmail = email.text
                         setting.userPhone = phone.text
                         setting.gender = gender
+
+//                        var endpoint = Service.url_user
+
+//                        Service.update_item(_token_access, endpoint, data, function(resp, http) {
+
+//                            setting.userName = name.text
+//                            setting.userEmail = email.text
+//                            setting.userPhone = phone.text
+//                            setting.gender = gender
+
+
+//                        })
                     }
                 }
             }

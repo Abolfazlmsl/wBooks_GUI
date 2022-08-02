@@ -6,6 +6,8 @@ import QtQuick.Controls.Material 2.12
 import "./../Fonts/Icon.js" as Icons
 import "./../Utils/Enum.js" as Enum
 import "./../Utils/Utils.js" as Util
+import "./../REST/apiService.js" as Service
+import "./../Functions/Funcs.js" as Functions
 
 import "./Modules/Account/Forms"
 import "./Modules/Account/Panels"
@@ -317,6 +319,16 @@ Rectangle{
                                 anchors.fill: parent
                                 anchors.topMargin: 20
                                 itemModel: searchModelBottom
+                            }
+                        }
+
+                        Item{
+                            BasketPage{
+                                id: basketpage
+                                anchors.fill: parent
+                                anchors.leftMargin: 10
+                                anchors.rightMargin: 10
+                                anchors.topMargin: 10
                             }
                         }
                     }
@@ -964,7 +976,155 @@ Rectangle{
             like: 22
             dislike: 5
         }
+    }
 
+    ListModel{
+        id: document_booksModel
+    }
+
+    ListModel{
+        id: audio_booksModel
+    }
+
+    ListModel{
+        id: video_booksModel
+    }
+
+    Component.onCompleted:{
+//        var d  = Service.get_all(Service.document_books , function(data){
+//            var allbooks = data.length
+//            for(var i=0 ; i< data.length ; i++){
+//                document_booksModel.append({
+//                                               "writer": "",
+//                                               "publisher":"",
+//                                               "pages":"",
+//                                               "price":"",
+//                                               "filetype":"",
+//                                               "isbn":"",
+//                                               "introduction":"",
+//                                               "comments":"",
+//                                               "publish_date":"",
+//                                               "score":"",
+//                                               "votes":"",
+//                                               "age_limit":"",
+//                                               "purchase_count":"",
+//                                               "category":"",
+//                                               "user_request": ""
+
+//                                           })
+//            }
+//            Functions.listModelSort(model, (a, b) => (b.grade - a.grade), (a, b) => (b.minute - a.minute), (a, b) => (b.second - a.second))
+
+//        })
+
+//        var d1  = Service.get_all(Service.audio_books , function(data1){
+//            var allAudiobooks = data1.length
+//            for(var i=0 ; i< data1.length ; i++){
+//                audio_booksModel.append({
+//                                               "writer": "",
+//                                               "speaker":"",
+//                                               "publisher":"",
+//                                               "time":"",
+//                                               "price":"",
+//                                               "filetype":"",
+//                                               "isbn": "",
+//                                               "introduction":"",
+//                                               "comments":"",
+//                                               "publish_date":"",
+//                                               "score":"",
+//                                               "votes":"",
+//                                               "age_limit":"",
+//                                               "purchase_count":"",
+//                                               "category":"",
+//                                               "user_request": ""
+
+//                                           })
+//            }
+//            Functions.listModelSort(model, (a, b) => (b.grade - a.grade), (a, b) => (b.minute - a.minute), (a, b) => (b.second - a.second))
+
+//        })
+
+//        var d2  = Service.get_all(Service.audio_books , function(data2){
+//            var allVideobooks = data2.length
+//            for(var i=0 ; i< data2.length ; i++){
+//                video_booksModel.append({
+//                                               "writer": "",
+//                                               "publisher":"",
+//                                               "time":"",
+//                                               "price":"",
+//                                               "filetype":"",
+//                                               "isbn": "",
+//                                               "introduction":"",
+//                                               "comments":"",
+//                                               "publish_date":"",
+//                                               "score":"",
+//                                               "votes":"",
+//                                               "age_limit":"",
+//                                               "purchase_count":"",
+//                                               "category":"",
+//                                               "user_request": ""
+//                                           })
+//            }
+//            Functions.listModelSort(model, (a, b) => (b.grade - a.grade), (a, b) => (b.minute - a.minute), (a, b) => (b.second - a.second))
+
+//        })
+
+//        var d3  = Service.get_all(Service.category , function(data3){
+//            var categories = data3.length
+//            for(var i=0 ; i< data3.length ; i++){
+//                specialCatModel.append({
+//                                               "text": data3[i].name,
+//                                               "items":""
+//                                           })
+//            }
+//            Functions.listModelSort(model, (a, b) => (b.grade - a.grade), (a, b) => (b.minute - a.minute), (a, b) => (b.second - a.second))
+
+//        })
+
+//        var d4  = Service.get_all(Service.writers , function(data4){
+//            var writers = data4.length
+//            for(var i=0 ; i< data4.length ; i++){
+//                 writersModel.append({
+//                                               "source": data4[i].name,
+//                                               "text1":"",
+//                                               "purchase_count": "",
+//                                               "votes": ""
+//                                           })
+//            }
+//            Functions.listModelSort(model, (a, b) => (b.grade - a.grade), (a, b) => (b.minute - a.minute), (a, b) => (b.second - a.second))
+
+//        })
+
+//        var d5  = Service.get_all(Service.speakers , function(data5){
+//            var speakers = data5.length
+//            for(var i=0 ; i< data5.length ; i++){
+////                 speakersModel.append({
+////                                               "source": data4[i].name,
+////                                               "text1":"",
+////                                               "purchase_count": "",
+////                                               "votes": ""
+////                                           })
+//            }
+//            Functions.listModelSort(model, (a, b) => (b.grade - a.grade), (a, b) => (b.minute - a.minute), (a, b) => (b.second - a.second))
+
+//        })
+
+//        var d6  = Service.get_all(Service.publishers , function(data6){
+//            var publishers = data6.length
+//            for(var i=0 ; i< data6.length ; i++){
+////                 publishersModel.append({
+////                                               "source": data4[i].name,
+////                                               "text1":"",
+////                                               "purchase_count": "",
+////                                               "votes": ""
+////                                           })
+//            }
+//            Functions.listModelSort(model, (a, b) => (b.grade - a.grade), (a, b) => (b.minute - a.minute), (a, b) => (b.second - a.second))
+
+//        })
+
+        //Sample
+//        Functions.listModelSort(model, (a, b) => (b.grade - a.grade), (a, b) => (b.minute - a.minute), (a, b) => (b.second - a.second))
     }
 }
 

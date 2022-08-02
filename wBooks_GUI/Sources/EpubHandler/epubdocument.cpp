@@ -5,10 +5,18 @@ EPubDocument::EPubDocument(QObject *parent) : QTextDocument(parent),
     m_loaded(false)
 {
     setUndoRedoEnabled(false);
-    connect(documentLayout(), &QAbstractTextDocumentLayout::documentSizeChanged, this, [=](const QSizeF &newSize) {
-            qDebug() << "doc size changed" << newSize;
-            m_docSize = newSize;
-            });
+    //    connect(documentLayout(), &QAbstractTextDocumentLayout::documentSizeChanged, this, [=](const QSizeF &newSize) {
+    //        qDebug() << "doc size changed" << m_docSize;
+    //        qDebug() << "doc size changed" << newSize;
+    //        qDebug() << "----------------------------";
+    //        m_docSize = newSize;
+    //    });
+
+    connect(documentLayout(), &QAbstractTextDocumentLayout::pageCountChanged, this, [=](const int &newPage) {
+        m_page = newPage;
+        m_loaded = true;
+        emit loadCompleted();
+    });
 
 }
 
@@ -245,7 +253,7 @@ void EPubDocument::loadDocument()
     textCursor.endEditBlock();
     readContents();
 
-    m_loaded = true;
+//    m_loaded = true;
 //    emit loadCompleted();
 
 }

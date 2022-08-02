@@ -5,6 +5,17 @@ var BASE = 'http://127.0.0.1:8000'
 //-- api urls --//
 var url = ''
 
+//---------------------------------------------------------
+//These functions can be used for getting the specific data from api
+//and can be modified later for specific purposes
+function getPassages(subject, book, passage, question_type){
+    return 'reading/reading/?subject=' + subject + "&book=" + book + "&passage=" + passage + "&question_type=" + question_type
+}
+
+function getFulltext(subject, book, passage, question_type){
+    return 'reading/exam/?subject=' + subject + "&book=" + book + "&passage=" + passage + "&question_type=" + question_type
+}
+//---------------------------------------------------------
 
 function get_all(endpoint, cb) {
     request(null, 'GET', endpoint/*null*/, null, cb)

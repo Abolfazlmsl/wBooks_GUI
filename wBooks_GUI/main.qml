@@ -43,6 +43,8 @@ Window {
     property bool yourLibraryClick: false
     property bool searchClick: false
     property string theme: "Light"
+    property string playerSource: ""
+    property string playerMediaType: "Video"
 
     onThemeChanged: {
         bookreader.changeReaderTheme(win.theme)
@@ -236,6 +238,51 @@ Window {
 
     Component.onCompleted: {
         db.initDatabase();
+
+        // Read My Audio Books
+        var obj = db.readAllData("myAudioBooks")
+        var data
+        for(var i=0 ; i< obj.length ; i++){
+            data = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
+            if (data.id === setting.user_id){
+                myAudioBooksModel.append({
+                                         "path": data.path,
+                                             // Other props will be read from the database (api)
+                                         "title": "",
+                                         "author": "",
+                                         "speaker": ""
+                                         })
+            }
+        }
+
+        // Read My Audio Books
+        obj = db.readAllData("myBooks")
+        for(i=0 ; i< obj.length ; i++){
+            data = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
+            if (data.id === setting.user_id){
+                myAudioBooksModel.append({
+                                         "path": data.path,
+                                         "title": "",
+                                         "author": "",
+                                         "speaker": ""
+                                         })
+            }
+        }
+
+
+        // Read My Audio Books
+        db.readAllData("myVideos")
+        for(i=0 ; i< obj.length ; i++){
+            data = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
+            if (data.id === setting.user_id){
+                myAudioBooksModel.append({
+                                         "path": data.path,
+                                         "title": "",
+                                         "author": "",
+                                         "speaker": ""
+                                         })
+            }
+        }
     }
 
     function resetSetting(){
@@ -276,6 +323,14 @@ Window {
         property string password: ""
         property string profile: ""
         property string gender: ""
+//        property string mybooks: ""
+//        property string myaudiobooks: ""
+//        property string myvideos: ""
+//        property string mywallet: ""
+//        property string mylicense: ""
+//        property string profile: ""
+//        property string user_id: ""
+//        property string basket: ""
         property bool isLogined: false
         property string themeState: "Light"
     }
@@ -484,6 +539,22 @@ Window {
                     accountPopEnabled: false
                     searchClick: true
                 }
+            },
+            State{
+                name: "Basket"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 11
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                }
             }
 
         ]
@@ -636,14 +707,14 @@ Window {
 
 //                    Layout.alignment: Qt.AlignVCenter
 //                }
-                Item { Layout.fillWidth: true }
 
+                Item { Layout.fillWidth: true }
 
                 //-- account / login/ register --//
                 Item{
                     id: accountItemHeader
                     Layout.preferredWidth: (setting.isLogined)?implicitWidth: parent.width * 0.2
-                    Layout.fillHeight: parent.height
+                    Layout.fillHeight: true
                     MouseArea{
                         id: accountPop
                         width: 300
@@ -664,7 +735,7 @@ Window {
                         anchors.fill: parent
                         spacing: 0
 
-                        //-- Account Icon --//
+                        //-- chevron Icon --//
                         Label{
                             visible: (setting.isLogined)
                             id: header_AccountICONArrow
@@ -756,6 +827,68 @@ Window {
                             }
                         }
 
+                        Item { Layout.preferredWidth: 10 } //-- filler --//
+
+                        Rectangle{
+                            visible: (setting.isLogined)
+                            Layout.preferredWidth: 40
+                            Layout.fillHeight: true
+                            Layout.topMargin: 10
+                            Layout.bottomMargin: 10
+                            color: "transparent"
+                            Label{
+                                id: header_basket
+                                anchors.fill: parent
+                                text: Icons.basket
+                                font.family: webfont.name
+                                font.pixelSize: Qt.application.font.pixelSize *3 //Qt.application.font.pixelSize
+
+                                verticalAlignment: Qt.AlignVCenter
+                                horizontalAlignment: Qt.AlignHCenter
+
+                                color: color16
+                                clip: true
+
+                                MouseArea{
+                                    anchors.fill: parent
+                                    cursorShape: Qt.PointingHandCursor
+                                    onClicked: {
+
+                                    }
+                                }
+                            }
+
+                            Rectangle{
+                                visible: (basketModel.count > 0)
+                                width: 22
+                                height: width
+                                radius: width / 2
+                                anchors.right: parent.right
+                                anchors.top: parent.top
+                                anchors.topMargin: -3
+                                anchors.rightMargin: -3
+                                color: color15
+                                Label{
+                                    anchors.fill: parent
+                                    text: basketModel.count
+                                    font.family: iranSansFAnum.name
+                                    font.pixelSize: Qt.application.font.pixelSize * 1.2 //Qt.application.font.pixelSize
+
+                                    verticalAlignment: Qt.AlignVCenter
+                                    horizontalAlignment: Qt.AlignHCenter
+
+                                    color: "#ffffff"
+                                    clip: true
+                                }
+                            }
+                            MouseArea{
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                onClicked: {
+                                    mainPage.state = "Basket"
+                                }
+                            }
+                        }
                         //-- Account login --//
                         Label{
                             id: header_AccountLogin
@@ -1233,6 +1366,17 @@ Window {
                 }
             }
         }
+
+        ListModel{
+            id: basketModel
+            ListElement{
+                book: 1 //the id of book in database
+            }
+            ListElement{
+                book: 1
+            }
+        }
+
         ListModel{
             id: myBooksModel
             ListElement{

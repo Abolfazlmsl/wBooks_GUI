@@ -19,6 +19,7 @@ Rectangle{
     property alias clearEnable: lbl_clear.visible
     property string borderColor: color12
     property bool enterAsAccept: false
+    property int itemRadius: 10
 
     signal acceptedLogin()
 
@@ -26,7 +27,7 @@ Rectangle{
     property int selectEnd
     property int curPos
 
-    color: color13
+    color: "transparent"
 
     Layout.fillWidth: true
     Layout.preferredHeight: 45 * ratio
@@ -43,6 +44,8 @@ Rectangle{
 
             color: color_input
             border.color: "#ffffff"
+            radius: itemRadius
+
             //-- TextField --//
             TextInput{
                 id:txf_main
@@ -53,10 +56,10 @@ Rectangle{
                 //            height: parent.height
 
                 verticalAlignment: Qt.AlignVCenter
-
                 rightPadding: 30 * ratio
 //                            leftPadding: 10 * ratio
 
+                font.family: iranSans.name
                 font.pixelSize: Qt.application.font.pixelSize
                 selectedTextColor: color14
                 color: color4
@@ -74,10 +77,10 @@ Rectangle{
                     text: "متن پیش فرض"
 
                     anchors.right: parent.right
-                    anchors.rightMargin: 40 * ratio
+                    anchors.rightMargin: 30 * ratio
                     anchors.verticalCenter: parent.verticalCenter
 
-
+                    font.family: iranSans.name
                     font.pixelSize: Qt.application.font.pixelSize
 
                     color: color18

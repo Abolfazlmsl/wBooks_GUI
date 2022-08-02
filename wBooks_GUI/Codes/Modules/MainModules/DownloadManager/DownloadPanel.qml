@@ -13,6 +13,8 @@ ApplicationWindow{
     id: root_auth
 
     property bool success: true
+    property string filePath: ""
+    property string format: ""
 
     //-- Get the percentage of download from Qt --//
     Connections {
@@ -30,18 +32,27 @@ ApplicationWindow{
             progressbar.value = value
         }
 
-        function onSendFinish(){
+        function onSendFinish(fPath){
+            filePath = fPath
+            format = filePath.slice(filePath.lastIndexOf(".")+1)
             success = true
             popup.state = "downloaded"
             alarmSignupWin.msg = "دانلود با موفقیت به اتمام رسید"
 
-            //var data = {
-            //    "url": "",
-            //    "id": setting.user_id
-            //}
-
-            //db.addTable("myBooks", true)
-            //db.storeData("myBooks", data, "")
+            var data = {
+                "path": filePath,
+                "id": setting.user_id
+            }
+            if (format == "epub" || format == "pdf"){
+                db.addTable("myBooks", true)
+                db.storeData("myBooks", data, "")
+            }else if (format == "mp3"){
+                db.addTable("myAudioBooks", true)
+                db.storeData("myAudioBooks", data, "")
+            }else if (format == "mkv" || format == "mp4"){
+                db.addTable("myVideos", true)
+                db.storeData("myVideos", data, "")
+            }
         }
 
         function onSendError(){
@@ -54,8 +65,7 @@ ApplicationWindow{
     //-- when open LoginPage inputs most be Empty --//
     signal resetForm()
     onResetForm: {
-        input_License.inputText.text = ""
-        input_License.inputText.forceActiveFocus()
+
     }
 
     visible: true//false//
@@ -405,7 +415,18 @@ ApplicationWindow{
                                             anchors.fill: parent
                                             cursorShape: Qt.PointingHandCursor
                                             onClicked: {
-                                                downloader.openFile()
+                                                if (format == "mp3"){
+                                                    mainPage.state = "Audio Book"
+                                                    playerMediaType = "Audio"
+                                                    playerSource = filePath
+                                                    // downloader.openFile()
+                                                }else if (format == "mkv" || format == "mp4"){
+                                                    mainPage.state = "Audio Book"
+                                                    playerMediaType = "Video"
+                                                    playerSource = filePath
+                                                }else if (format == "epub" || format == "pdf"){
+
+                                                }
                                             }
                                         }
                                     }
@@ -553,14 +574,9 @@ ApplicationWindow{
                                 }
                             }
                         }
-
-
                     }
                 }
             }
-
         }
-
     }
-
 }

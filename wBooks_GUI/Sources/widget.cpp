@@ -23,7 +23,9 @@ Widget::~Widget()
 
 void Widget::setFont(QString font, int fontSize)
 {
-    QFont serifFont(font, fontSize);
+    m_font = font;
+    m_fontSize = fontSize;
+    QFont serifFont(m_font, m_fontSize);
     m_document->setDefaultFont(serifFont);
     update();
 }
@@ -60,11 +62,12 @@ bool Widget::loadFile(const QString &path)
 
     m_path = path;
 
-    QFont serifFont(m_font, m_fontSize);
+    m_document->setLoaded(false);
     m_document->clear();
     m_document->clearCache();
     m_document->openDocument(path);
     m_document->setPageSize(size());
+    QFont serifFont(m_font, m_fontSize);
     m_document->setDefaultFont(serifFont);
 
     return true;
@@ -99,7 +102,6 @@ void Widget::scrollPage(int amount)
 
 void Widget::paint(QPainter *painter)
 {
-
     if (themeMode == "Light"){
         painter->fillRect(boundingRect(), Qt::white);
     }else if (themeMode == "Dark"){
@@ -116,10 +118,10 @@ void Widget::paint(QPainter *painter)
 //        }
         return;
     }
-    int page_number = qCeil(m_document->docSize().height()/m_document->pageSize().height());
+    int page_number = m_document->docPage();
     setPageNumber(page_number);
     setBlockNumber(m_document->blockCount());
-    setSliderHeight(m_document->docSize().height());
+    setSliderHeight(page_number * m_document->pageSize().height());
     setPageHeight(m_document->pageSize().height());
 
     QAbstractTextDocumentLayout::PaintContext paintContext;
@@ -160,8 +162,6 @@ void Widget::paint(QPainter *painter)
 //    m_document->drawContents(painter, rect);
 
     m_document->documentLayout()->draw(painter, paintContext);
-    update();
-
 }
 
 //void Widget::keyPressEvent(QKeyEvent *event)

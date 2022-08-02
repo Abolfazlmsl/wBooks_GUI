@@ -124,5 +124,8 @@
         <file>Codes/Modules/MainModules/Ui_Module/MyVideos.qml</file>
         <file>Images/music2.png</file>
         <file>Images/video.jpg</file>
+        <file>Codes/Modules/Pages/BasketPage.qml</file>
+        <file>Images/Emptybasket.png</file>
+        <file>Functions/Funcs.js</file>
     </qresource>
 </RCC>

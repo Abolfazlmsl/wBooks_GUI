@@ -66,7 +66,7 @@ void downloadcontroller::progress(int nPercentage)
 
 void downloadcontroller::finished()
 {
-    emit sendFinish();
+    emit sendFinish(fPath);
 }
 
 void downloadcontroller::getError()
@@ -88,7 +88,7 @@ QString downloadcontroller::size_human(float num)
     QString unit("bytes");
 
     while(num >= 1024.0 && i.hasNext())
-     {
+    {
         unit = i.next();
         num /= 1024.0;
     }

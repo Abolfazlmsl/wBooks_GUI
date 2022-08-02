@@ -6,6 +6,7 @@ import QtQuick.Controls.Material 2.12
 import QtGraphicalEffects 1.0
 
 import "./../../../../Fonts/Icon.js" as Icons
+import "./../../../../REST/apiService.js" as Service
 
 import "./../../Items"
 
@@ -215,6 +216,36 @@ Item{
                             }else{
                                 getMessage("کاربری با این مشخصات یافت نشد")
                             }
+
+//                            var d  = Service.get_all(Service.url_user , function(data){
+//                                for(var i=0 ; i< data.length ; i++){
+//                                    if (data[i].phone === phone.text){
+//                                        isUser = true
+//                                        break;
+//                                    }
+//                                }
+
+//                                if (isUser){
+//                                    if (data[i].password === password.text){
+//                                        setting.isLogined = true
+//                                        setting.userName = data[i].name
+//                                        setting.userEmail = data[i].email
+//                                        setting.userPhone = data[i].phone
+//                                        setting.gender = data[i].gender
+//                                          setting.mybooks = data[i].mybooks
+                                          //اضافه کردن بقیه
+//                                        setting.profile = JSON.parse(JSON.stringify(obj[i])).image
+//                                        setting.user_id = JSON.parse(JSON.stringify(obj[i])).id
+//                                        setting.password = data.password
+//                                        mainPage.state = "Home"
+//                                    }else{
+//                                        getMessage("رمز عبور اشتباه است")
+//                                    }
+//                                }else{
+//                                    getMessage("کاربری با این مشخصات یافت نشد")
+//                                }
+//                            })
+
                         }
                     }
                 }
