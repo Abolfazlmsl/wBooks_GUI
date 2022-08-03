@@ -151,7 +151,7 @@ Rectangle {
         RowsofAccountPop{
             Layout.fillWidth: true
             Layout.preferredHeight: parent.height * 0.1
-            icon: Icons.account
+            icon: Icons.wallet
             text: "کیف پول شما"
             counter: false
         }
@@ -167,7 +167,7 @@ Rectangle {
         RowsofAccountPop{
             Layout.fillWidth: true
             Layout.preferredHeight: parent.height * 0.1
-            icon: Icons.account
+            icon: Icons.library_books
             text: "کتاب های من"
             counter: true
             recText: "13"
@@ -177,7 +177,7 @@ Rectangle {
         RowsofAccountPop{
             Layout.fillWidth: true
             Layout.preferredHeight: parent.height * 0.1
-            icon: Icons.account
+            icon: Icons.audiobook
             text: "کتاب های صوتی من"
             counter: true
             recText: "9"
