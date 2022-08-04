@@ -177,8 +177,7 @@ Item {
 
                   TapHandler {
                      onDoubleTapped: {
-                         var block_num = epub.findBlockNumber(index)
-                         epubslider.value = Math.floor(block_num*sliderTotalHeight/blocksNumber)
+                         epubslider.value = epub.getContentPageNumber(_prop.currentIndex) + 1
                          _prop.toggle()
                      }
                      onSingleTapped: {

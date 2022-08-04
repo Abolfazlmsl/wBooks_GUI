@@ -91,7 +91,7 @@ public:
     QString pdfPath() const { return m_pdfPath; }
 
 public slots:
-    void setFont(QString font, int fontSize, QString type);
+    void setFont(QString font, int fontSize);
     void changeTheme(bool isLight);
     void scroll(int amount);
     void scrollSlider(int amount);

@@ -25,7 +25,7 @@ Widget::~Widget()
 
 }
 
-void Widget::setFont(QString font, int fontSize, QString type)
+void Widget::setFont(QString font, int fontSize)
 {
     m_document->setLoaded(false);
     m_font = font;

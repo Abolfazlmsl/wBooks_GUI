@@ -482,7 +482,8 @@ Window {
                                     Label{
                                         width: epubview.width
                                         visible: mainRow.isImagesOpen
-                                        color: (setting.lightMode) ? "black":"white"
+//                                        color: (setting.lightMode) ? "black":"white"
+                                        color: color4
                                         text: index+1
                                         horizontalAlignment: Qt.AlignHCenter
                                     }
@@ -583,7 +584,8 @@ Window {
                                     Label{
                                         width: pdfview.width
                                         visible: mainRow.isImagesOpen
-                                        color: (setting.lightMode) ? "black":"white"
+//                                        color: (setting.lightMode) ? "black":"white"
+                                        color: color4
                                         text: index+1
                                         horizontalAlignment: Qt.AlignHCenter
                                     }
@@ -611,7 +613,7 @@ Window {
                         width: 30
                         height: width
                         radius: width/2
-                        color: (setting.lightMode) ? (previousPage.enabled) ? "#E9E9E9":"#C2C2C2" : (previousPage.enabled) ? "#C2C2C2":"#E9E9E9"
+                        color: (previousPage.enabled) ? color12:color15
                         Label{
                             id: previousPage
                             anchors.fill: parent
@@ -680,7 +682,7 @@ Window {
                         width: 30
                         height: width
                         radius: width/2
-                        color: (setting.lightMode) ? (nextPage.enabled) ? "#E9E9E9":"#C2C2C2" : (nextPage.enabled) ? "#C2C2C2":"#E9E9E9"
+                        color: (nextPage.enabled) ? color12:color15
                         Label{
                             id: nextPage
                             anchors.fill: parent
@@ -888,8 +890,8 @@ Window {
         return decodeURIComponent(s);
     }
 
-    Component.onCompleted: {
-        epub.setSetting(setting.font, setting.fontSize, setting.lightMode)
+//    Component.onCompleted: {
+//        epub.setSetting(setting.font, setting.fontSize, setting.lightMode)
 //        if (setting.cPath !== ""){
 //            var result = epub.loadFile(setting.cPath)
 //            if (result){
@@ -899,6 +901,6 @@ Window {
 //            }
 //        }
 
-        db.initDatabase();
-    }
+//        db.initDatabase();
+//    }
 }
