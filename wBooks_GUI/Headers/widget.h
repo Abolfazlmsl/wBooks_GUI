@@ -92,7 +92,7 @@ public:
 
 public slots:
     void setFont(QString font, int fontSize);
-    void changeTheme(bool isLight);
+    void changeTheme(QString mode);
     void scroll(int amount);
     void scrollSlider(int amount);
     void scrollPage(int amount);
@@ -137,6 +137,7 @@ private:
     int currentPage = 1;
     float pageSize;
     int addHeight;
+    QString themeMode;
 
 signals:
     void contentsChanged(TreeModel *model);

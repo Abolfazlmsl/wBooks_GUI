@@ -39,13 +39,13 @@ Window {
             epub.setSetting(setting.font, setting.fontSize, setting.themeState)
             if (setting.cPath !== ""){
                 if (setting.isEpubViewer) {
-                    var result = epub.loadFile(setting.cPath)
-                    if (result){
-                        fileUploaded = true
-                        browseText.text = setting.openFileName
-                        epubslider.value = setting.sliderValue
-                        mainStack.currentIndex = 1
-                    }
+//                    var result = epub.loadFile(setting.cPath)
+//                    if (result){
+//                        fileUploaded = true
+//                        browseText.text = setting.openFileName
+//                        epubslider.value = setting.sliderValue
+//                        mainStack.currentIndex = 1
+//                    }
                 }else{
                     mainStack.currentIndex = 2
                 }
@@ -184,7 +184,7 @@ Window {
 
                     Keys.onEnterPressed: {
                         if (parseInt(input_search.inputText.text) > 0 && parseInt(input_search.inputText.text) <= pagesNumber){
-                            epubslider.value = parseInt(input_search.inputText.text) * setting.onepageHeight * setting.stepSize
+                            epubslider.value = parseInt(input_search.inputText.text)
                         }
                     }
                 }
