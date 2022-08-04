@@ -6,8 +6,6 @@
 #include <QTextDocument>
 #include <QImage>
 #include <QWidget>
-
-#include "epubcontainer.h"
 #include <QIODevice>
 #include <QDebug>
 #include <QDir>
@@ -24,6 +22,7 @@
 #include <QList>
 #include <QAbstractItemModel>
 #include <QElapsedTimer>
+#include <QPrinter>
 #include <qmath.h>
 #include "Headers/TreeItem/tree_model.h"
 
@@ -43,23 +42,38 @@ public:
     explicit EPubDocument(QObject *parent = nullptr);
     virtual ~EPubDocument();
 
+    enum FileType { epub1, epub2 };
     bool loaded() { return m_loaded; }
     void setLoaded(bool isLoad) { m_loaded = isLoad; }
 
     QSizeF docSize() {return m_docSize;}
+    int docNewPage() {return m_newpage;}
     int docPage() {return m_page;}
+    FileType getFiletype() {return filetype;}
+    bool getpdfLoaded() { return m_pdfLoaded; }
+    void setpdfLoaded(bool isload) {m_pdfLoaded = isload;}
+
+    QStringList getItemsPath() {return itemsPath;}
+    QStringList getItemsSource() {return itemsSource;}
 
     void openDocument(const QString &path);
+    int itemSpacing = 1;
 
     void readContents();
+    void updateDocument(int page);
 
     void clearCache() {m_renderedSvgs.clear();}
+    void exportOnePagePdf();
+    void exportPdf();
 
-    QVariant getModelData(int index);
+    QString getModelSource(QModelIndex index);
+    QVariant getModelData(QModelIndex index);
+    QList<int> getContentBlocks() {return contentBlocks;}
 
 
 signals:
     void loadCompleted();
+    void loadPdfFile();
     void loadContents(TreeModel *model);
 
 protected:
@@ -83,9 +97,18 @@ private:
 
     QSizeF m_docSize;
     int m_page;
+    int m_newpage;
     bool m_loaded;
+    QStringList items;
+    QStringList itemsPath;
+    QStringList itemsSource;
+    QList<int> contentBlocks;
+    int blockInEachIterate = 0;
+    QString cover;
+    FileType filetype = epub1;
+    bool m_pdfLoaded = false;
 
-    TreeModel *tModel_content = new TreeModel();
+    TreeModel *tModel = new TreeModel();
 };
 
 #endif // EPUBDOCUMENT_H

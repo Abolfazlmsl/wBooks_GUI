@@ -4,16 +4,20 @@ EPubDocument::EPubDocument(QObject *parent) : QTextDocument(parent),
     m_container(nullptr),
     m_loaded(false)
 {
-    setUndoRedoEnabled(false);
-    //    connect(documentLayout(), &QAbstractTextDocumentLayout::documentSizeChanged, this, [=](const QSizeF &newSize) {
-    //        qDebug() << "doc size changed" << m_docSize;
-    //        qDebug() << "doc size changed" << newSize;
-    //        qDebug() << "----------------------------";
-    //        m_docSize = newSize;
-    //    });
+    setUndoRedoEnabled(true);
+//    connect(documentLayout(), &QAbstractTextDocumentLayout::documentSizeChanged, this, [=](const QSizeF &newSize) {
+//        qDebug() << "doc size changed";
+//        qDebug() << "doc size changed" << newSize;
+//        qDebug() << "----------------------------";
+//        m_docSize = newSize;
+//    });
 
     connect(documentLayout(), &QAbstractTextDocumentLayout::pageCountChanged, this, [=](const int &newPage) {
-        m_page = newPage;
+        if (filetype == epub2 && m_page==1){
+            m_page = newPage;
+            emit loadPdfFile();
+        }
+        m_newpage = newPage;
         m_loaded = true;
         emit loadCompleted();
     });
@@ -35,7 +39,7 @@ void EPubDocument::openDocument(const QString &path)
 
 void EPubDocument::readContents()
 {
-    TreeModel *tModel = new TreeModel();
+//    TreeModel *tModel = new TreeModel();
 
     QString cover = m_container->getStandardPage(EpubPageReference::TableOfContents);
     EpubItem contentItem = m_container->getEpubItem(cover);
@@ -63,14 +67,17 @@ void EPubDocument::readContents()
     QDomNodeList Labels1 = document.elementsByTagName("navLabel");
     QDomNodeList content_NodeList1 = document.elementsByTagName("content");
 
+    tModel->clear();
+    itemsSource.clear();
     for (int i=0; i<Labels1.count(); i++) {
         QDomNode nodeLabels1 = Labels1.at(i);
         QDomElement ElementLabels1 = nodeLabels1.toElement();
 
-        auto text_content = new TreeItem(readContentText(content_NodeList1, i));
-        tModel_content->addTopLevelItem(text_content);
+//        auto text_content = new TreeItem(readContentText(content_NodeList1, i));
+//        tModel_content->addTopLevelItem(text_content);
 
-        auto text_main = new TreeItem(ElementLabels1.text());
+        itemsSource.append(readContentText(content_NodeList1, i).split("#").last());
+        auto text_main = new TreeItem(ElementLabels1.text(), readContentText(content_NodeList1, i));
         tModel->addTopLevelItem(text_main);
 
         QDomNode nodePoints1 = Points1.at(i);
@@ -83,10 +90,11 @@ void EPubDocument::readContents()
             QDomNode nodeLabels2 = Labels2.at(j);
             QDomElement ElementLabels2 = nodeLabels2.toElement();
 
-            auto text_content2 = new TreeItem(readContentText(content_NodeList2, j));
-            tModel_content->addItem(text_content, text_content2);
+//            auto text_content2 = new TreeItem(readContentText(content_NodeList2, j));
+//            tModel_content->addItem(text_content, text_content2);
 
-            auto text_main2 = new TreeItem(ElementLabels2.text());
+            itemsSource.append(readContentText(content_NodeList2, j).split("#").last());
+            auto text_main2 = new TreeItem(ElementLabels2.text(), readContentText(content_NodeList2, j));
             tModel->addItem(text_main, text_main2);
 
             QDomNode nodePoints2 = Points2.at(j-1);
@@ -100,10 +108,11 @@ void EPubDocument::readContents()
                 QDomNode nodeLabels3 = Labels3.at(k);
                 QDomElement ElementLabels3 = nodeLabels3.toElement();
 
-                auto text_content3 = new TreeItem(readContentText(content_NodeList3, k));
-                tModel_content->addItem(text_content2, text_content3);
+//                auto text_content3 = new TreeItem(readContentText(content_NodeList3, k));
+//                tModel_content->addItem(text_content2, text_content3);
 
-                auto text_main3 = new TreeItem(ElementLabels3.text());
+                itemsSource.append(readContentText(content_NodeList3, k).split("#").last());
+                auto text_main3 = new TreeItem(ElementLabels3.text(), readContentText(content_NodeList3, k));
                 tModel->addItem(text_main2, text_main3);
 
                 QDomNode nodePoints3 = Points3.at(k-1);
@@ -117,10 +126,11 @@ void EPubDocument::readContents()
                     QDomNode nodeLabels4 = Labels4.at(f);
                     QDomElement ElementLabels4 = nodeLabels4.toElement();
 
-                    auto text_content4 = new TreeItem(readContentText(content_NodeList4, f));
-                    tModel_content->addItem(text_content3, text_content4);
+//                    auto text_content4 = new TreeItem(readContentText(content_NodeList4, f));
+//                    tModel_content->addItem(text_content3, text_content4);
 
-                    auto text_main4 = new TreeItem(ElementLabels4.text());
+                    itemsSource.append(readContentText(content_NodeList4, f).split("#").last());
+                    auto text_main4 = new TreeItem(ElementLabels4.text(), readContentText(content_NodeList4, f));
                     tModel->addItem(text_main3, text_main4);
 
                     i++;
@@ -137,10 +147,18 @@ void EPubDocument::readContents()
     emit loadContents(tModel);
 }
 
-QVariant EPubDocument::getModelData(int index)
+QString EPubDocument::getModelSource(QModelIndex index)
 {
-    const QModelIndex &idx = tModel_content->index(index, 0, tModel_content->rootIndex());
-    return tModel_content->data(idx);
+//    const QModelIndex &idx = tModel->index(row, column, tModel_content->rootIndex());
+//    qDebug() << tModel_content->data(index);
+    return tModel->source(index);
+}
+
+QVariant EPubDocument::getModelData(QModelIndex index)
+{
+//    const QModelIndex &idx = tModel->index(row, column, tModel_content->rootIndex());
+//    qDebug() << tModel_content->data(index);
+    return tModel->data(index);
 }
 
 QString EPubDocument::readContentText(QDomNodeList list, int counter)
@@ -148,22 +166,23 @@ QString EPubDocument::readContentText(QDomNodeList list, int counter)
     //*******************************Content-Click*************************//
     QDomNode content_node = list.at(counter);
     QDomElement content_element = content_node.toElement();
-    EpubItem toc_Item = m_container->getEpubItem(content_element.attribute("src").split('.')[0]);
-    if (!toc_Item.path.isEmpty()){
-        QSharedPointer<QIODevice> content_ioDevice = m_container->getIoDevice(toc_Item.path);
+    return content_element.attribute("src");
+//    EpubItem toc_Item = m_container->getEpubItem(content_element.attribute("src").split('.')[0]);
+//    if (!toc_Item.path.isEmpty()){
+//        QSharedPointer<QIODevice> content_ioDevice = m_container->getIoDevice(toc_Item.path);
 
-        QDomDocument content_itemDoc;
-        content_itemDoc.setContent(content_ioDevice.data());
-        QDomNodeList content_text = content_itemDoc.elementsByTagName("article");
+//        QDomDocument content_itemDoc;
+//        content_itemDoc.setContent(content_ioDevice.data());
+//        QDomNodeList content_text = content_itemDoc.elementsByTagName("article");
 
-        QDomNode content_itemnode = content_text.at(0);
-        QDomElement content_itemelement = content_itemnode.toElement();
+//        QDomNode content_itemnode = content_text.at(0);
+//        QDomElement content_itemelement = content_itemnode.toElement();
 
 
-        return content_itemelement.text();
-    }else{
-        return "";
-    }
+//        return content_itemelement.text();
+//    }else{
+//        return "";
+//    }
     //***************************************************************//
 }
 
@@ -181,14 +200,26 @@ void EPubDocument::loadDocument()
     if (!m_container->openFile(m_documentPath)) {
         return;
     }
-    qDebug() << "Opened in" << timer.restart() << "ms";
 
-    QStringList items = m_container->getItems();
+    qDebug() << "Time restarted in " << timer.restart() << "ms";
 
-    QString cover = m_container->getStandardPage(EpubPageReference::CoverPage);
+    items.clear();
+    items = m_container->getItems();
+
+    cover = m_container->getStandardPage(EpubPageReference::CoverPage);
     if (!cover.isEmpty()) {
         items.prepend(cover);
     }
+
+    m_page = qCeil(items.length() / itemSpacing) - 1;
+
+    if (m_page > 10){filetype = epub1;}
+    else{
+        filetype = epub2;
+        m_page = 1;
+    }
+
+    readContents();
 
     QDomDocument domDoc;
     QTextCursor textCursor(this);
@@ -196,19 +227,67 @@ void EPubDocument::loadDocument()
     textCursor.movePosition(QTextCursor::End);
 
     QTextBlockFormat pageBreak;
-    pageBreak.setPageBreakPolicy(QTextFormat::PageBreak_AlwaysBefore);
-    //for (const QString &chapter : items) {
+//    pageBreak.setPageBreakPolicy(QTextFormat::PageBreak_AlwaysBefore);
+
+    int start = 1;
+    int end = items.length();
+
+//    if (filetype == epub1){
+//        start = 1;
+//        end = items.length();
+//    }else{
+//        start = 0;
+//        end = items.length();
+//    }
+
     int num = 0;
-    while(!items.isEmpty()) {
-        const QString &chapter = items.takeFirst();
+    itemsPath.clear();
+    contentBlocks.clear();
+    blockInEachIterate = 0;
+    for (int i=start; i<end;i++){
+        const QString &chapter = items[i];
         m_currentItem = m_container->getEpubItem(chapter);
         if (m_currentItem.path.isEmpty()) {
             continue;
         }
 
+        itemsPath.append(m_currentItem.path);
+
         QSharedPointer<QIODevice> ioDevice = m_container->getIoDevice(m_currentItem.path);
 
         domDoc.setContent(ioDevice.data());
+
+        if (filetype == epub2){
+            QDomNodeList Points = domDoc.elementsByTagName("p");
+            for (int j=blockInEachIterate;j<Points.length()+blockInEachIterate;j++){
+                QDomNode nodeLabels = Points.at(j-blockInEachIterate);
+                QDomElement ElementLabels = nodeLabels.toElement();
+                QDomNodeList Points2 = ElementLabels.elementsByTagName("a");
+                QDomNodeList Points3 = ElementLabels.elementsByTagName("b");
+                for (int k=0;k<Points2.length();k++){
+                    QDomNode nodeLabels2 = Points2.at(k);
+                    QDomElement ElementLabels2 = nodeLabels2.toElement();
+                    if (ElementLabels2.attribute("id") != ""){
+                        if (itemsSource.contains(ElementLabels2.attribute("id"))){
+//                            QDomNode nodeLabels3 = Points3.at(k);
+//                            QDomElement ElementLabels3 = nodeLabels3.toElement();
+                            contentBlocks.append(j+1);
+                            qsizetype index = itemsSource.indexOf(ElementLabels2.attribute("id"));
+                            int p_index = j+1;
+                            int counter = index+1;
+                            if (counter < itemsSource.length()){
+                                while (itemsSource[counter] == ElementLabels2.attribute("id")){
+                                    contentBlocks.append(p_index);
+                                    if (counter < itemsSource.length()-1) {counter++;}
+                                    p_index++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            blockInEachIterate = Points.length();
+        }
 
         if (!cover.isEmpty() && num==0){
             fixImages(domDoc);
@@ -251,11 +330,71 @@ void EPubDocument::loadDocument()
     qDebug() << "Adjust size done in" << timer.elapsed() << "ms";
 
     textCursor.endEditBlock();
-    readContents();
 
-//    m_loaded = true;
-//    emit loadCompleted();
+    if (filetype == epub1){
+        m_loaded = true;
+        emit loadCompleted();
+        emit loadPdfFile();
+    }
 
+}
+
+void EPubDocument::updateDocument(int page)
+{
+    QDomDocument domDoc;
+    QTextCursor textCursor(this);
+    setBaseUrl(QUrl());
+    textCursor.beginEditBlock();
+    textCursor.movePosition(QTextCursor::End);
+
+    QTextBlockFormat pageBreak;
+//    pageBreak.setPageBreakPolicy(QTextFormat::PageBreak_AlwaysBefore);
+
+    int num = (page-1);
+    for (int i=(page)*itemSpacing; i<(page+1)*itemSpacing;i++){
+        if (i>=items.length()){break;}
+        const QString &chapter = items[i];
+        m_currentItem = m_container->getEpubItem(chapter);
+        if (m_currentItem.path.isEmpty()) {
+            continue;
+        }
+
+        QSharedPointer<QIODevice> ioDevice = m_container->getIoDevice(m_currentItem.path);
+
+        domDoc.setContent(ioDevice.data());
+
+        if (!cover.isEmpty() && num==0){
+            fixImages(domDoc);
+        }
+        textCursor.insertFragment(QTextDocumentFragment::fromHtml(domDoc.toString()));
+        textCursor.insertBlock(pageBreak);
+        num++;
+    }
+
+    setBaseUrl(QUrl(m_currentItem.path));
+//    qDebug() << "Base url:" << baseUrl();
+    textCursor.endEditBlock();
+
+    //    emit loadCompleted();
+}
+
+void EPubDocument::exportOnePagePdf()
+{
+    this->setPageSize(size());
+    this->exportPdf();
+}
+
+
+void EPubDocument::exportPdf()
+{
+    QPrinter MyPrinter(QPrinter::HighResolution);
+    MyPrinter.setOutputFormat(QPrinter::PdfFormat);
+    MyPrinter.setOutputFileName("test.pdf");
+    MyPrinter.setPageSize(QPrinter::Letter);
+    MyPrinter.setColorMode(QPrinter::Color);
+    MyPrinter.setOrientation(QPrinter::Landscape);
+
+    this->print(&MyPrinter);
 }
 
 void EPubDocument::fixImages(QDomDocument &newDocument)

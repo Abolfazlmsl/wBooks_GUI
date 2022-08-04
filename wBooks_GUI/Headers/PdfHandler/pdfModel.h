@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QQmlContext>
 #include <QQmlEngine>
+#include <QDir>
 
 #define DEBUG                                                                  \
   if (qgetenv("POPPLERPLUGIN_DEBUG") == "1")                                   \
@@ -21,9 +22,10 @@ public:
 
   Q_PROPERTY(QString path READ getPath WRITE setPath NOTIFY pathChanged)
   Q_PROPERTY(int numPages READ getNumPages NOTIFY numPagesChanged)
-  Q_PROPERTY(bool loaded READ getLoaded NOTIFY loadedChanged)
+  Q_PROPERTY(bool loaded READ getLoaded WRITE setLoaded NOTIFY loadedChanged)
 
   void setPath(QString &pathName);
+  void setLoaded(bool isLoad) {loaded = isLoad;}
   QString getPath() const { return path; }
   int getNumPages();
   bool getLoaded() const;
@@ -31,6 +33,9 @@ public:
   QString path;
   int numPages;
   bool loaded;
+
+public slots:
+  QString saveImages(int pageNumber, QString path);
 
 private:
   int loadDocument(QString &pathNAme);
