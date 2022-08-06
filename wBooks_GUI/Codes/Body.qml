@@ -176,7 +176,7 @@ Rectangle{
 
 
                         Item{
-                            MediaPlayer{
+                            MediaPlayerPage{
                                 id: mediapage
                                 anchors.fill: parent
                                 anchors.leftMargin: 10

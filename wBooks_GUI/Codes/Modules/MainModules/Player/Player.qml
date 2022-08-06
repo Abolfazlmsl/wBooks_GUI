@@ -97,33 +97,33 @@ Item {
             horizontalAlignment: Image.AlignHCenter
         }
 
-        MediaPlayer {
-            id: player
-            //notifyInterval: 100
-            source: playerSource
-            onSourceChanged: player.play()
+//        MediaPlayer {
+//            id: player
+//            //notifyInterval: 100
+//            source: playerSource
+//            onSourceChanged: player.play()
 
-            onPositionChanged: {
-                var min = Math.floor(player.position/60000)
-                var sec = ((player.position - (min*60000))/1000).toFixed(0)
+//            onPositionChanged: {
+//                var min = Math.floor(player.position/60000)
+//                var sec = ((player.position - (min*60000))/1000).toFixed(0)
 
-                var total_min = Math.floor(player.duration/60000)
-                var total_sec = ((player.duration - (total_min*60000))/1000).toFixed(0)
+//                var total_min = Math.floor(player.duration/60000)
+//                var total_sec = ((player.duration - (total_min*60000))/1000).toFixed(0)
 
-                lblTimeSpend.text = (min<10 ? "0"+min : min) + ":" + (sec<10 ? "0"+sec : sec) + " / " + (total_min) + ":" + (total_sec)
+//                lblTimeSpend.text = (min<10 ? "0"+min : min) + ":" + (sec<10 ? "0"+sec : sec) + " / " + (total_min) + ":" + (total_sec)
 
-                var lackTime = player.duration - player.position
-                min = Math.floor(lackTime/60000)
-                sec = ((lackTime - (min*60000))/1000).toFixed(0)
+//                var lackTime = player.duration - player.position
+//                min = Math.floor(lackTime/60000)
+//                sec = ((lackTime - (min*60000))/1000).toFixed(0)
 
-                lblTimeLack.text = (min<10 ? "0"+min : min) + ":" + (sec<10 ? "0"+sec : sec)
-                if (player.position === player.duration){
-                    topGroup.visible = true
-                    toolsGroup.visible = true
-                }
-            }
+//                lblTimeLack.text = (min<10 ? "0"+min : min) + ":" + (sec<10 ? "0"+sec : sec)
+//                if (player.position === player.duration){
+//                    topGroup.visible = true
+//                    toolsGroup.visible = true
+//                }
+//            }
 
-        }
+//        }
 
         VideoOutput {
             id: vidOut
@@ -158,7 +158,7 @@ Item {
         //-- tools section --//
         Rectangle{
             id: toolsGroup
-
+            visible: toolsVisibility
             width: parent.width
             height: Math.max(parent.height * 0.1 , 60)
             color: "#7726252a"
@@ -197,14 +197,14 @@ Item {
                     Label{
                         id: lblTimeSpend
 
-                        text: "00:00"
+                        text: lblTimeSpendmain
                         font.pixelSize: Qt.application.font.pixelSize * 1
                     }
 
                     Label{
                         id: lblTimeLack
 
-                        text: "00:00"
+                        text: lblTimeLackmain
                         font.pixelSize: Qt.application.font.pixelSize * 1
                         anchors.right: parent.right
                     }
@@ -498,7 +498,7 @@ Item {
 
         Rectangle{
             id: topGroup
-            visible: true
+            visible: topVisibility
 
             width: parent.width
             height: Math.max(parent.height * 0.04 , 35)

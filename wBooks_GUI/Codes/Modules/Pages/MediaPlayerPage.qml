@@ -139,7 +139,7 @@ Item {
 
         //-- video player --//
         Player{
-            id: player
+            id: mplayer
 
             Layout.fillHeight: true
             Layout.fillWidth: true

@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.2
 import QtQuick.Window 2.2
+import QtMultimedia 5.15
 import QtQuick.Controls.Material 2.2
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
@@ -17,6 +18,7 @@ import "./Codes/Modules/Items"
 import "./Codes/LocalDatabase"
 import "./Codes"
 import "./Codes/Modules/Pages"
+import "./Codes/Modules/MainModules/Player"
 
 Window {
     id: win
@@ -226,7 +228,6 @@ Window {
 
     }
 
-
     property var localdb: LocalDatabase{
         id: db
         visible: false
@@ -357,6 +358,43 @@ Window {
         visible: false
     }
 
+
+    //Player props
+    property string lblTimeSpendmain: "00:00"
+    property string lblTimeLackmain: "00:00"
+    property bool topVisibility: true
+    property bool toolsVisibility: true
+
+    MediaPlayer {
+        id: player
+        //notifyInterval: 100
+        source: playerSource
+        onSourceChanged: {
+            smallPlayer.visible = true
+            player.play()
+        }
+
+        onPositionChanged: {
+            var min = Math.floor(player.position/60000)
+            var sec = ((player.position - (min*60000))/1000).toFixed(0)
+
+            var total_min = Math.floor(player.duration/60000)
+            var total_sec = ((player.duration - (total_min*60000))/1000).toFixed(0)
+
+            lblTimeSpendmain = (min<10 ? "0"+min : min) + ":" + (sec<10 ? "0"+sec : sec) + " / " + (total_min) + ":" + (total_sec)
+
+            var lackTime = player.duration - player.position
+            min = Math.floor(lackTime/60000)
+            sec = ((lackTime - (min*60000))/1000).toFixed(0)
+
+            lblTimeLackmain = (min<10 ? "0"+min : min) + ":" + (sec<10 ? "0"+sec : sec)
+            if (player.position === player.duration){
+                topVisibility = true
+                toolsVisibility = true
+            }
+        }
+    }
+
     Page{
         id: mainPage
 
@@ -464,7 +502,7 @@ Window {
                 name: "Audio Book"
                 PropertyChanges {
                     target: win
-                    inHomeMode: false
+                    inHomeMode: true
                     mainView: 7
                     rightView: 0
                     homeClick: false
@@ -1013,12 +1051,22 @@ Window {
             id: mainBody
             anchors.fill: parent
 
+            PlayerSmallPanel{
+                id: smallPlayer
+                visible: false
+                width: parent.width
+                height: 100
+                clip: true
+                anchors.bottom: mainBody.bottom
+            }
+
             // Test open reader
             Rectangle{
                 visible: false
                 width: 50
                 height: 50
                 color: color12
+
                 Label{
                     anchors.fill: parent
                     text: "Reader"
@@ -1034,17 +1082,6 @@ Window {
                     }
                 }
             }
-
-
-//            MouseArea {
-//                id: mainArea
-//                anchors.fill: parent
-//                hoverEnabled: true
-//                propagateComposedEvents: true
-//                onClicked: {
-//                    accountPopEnabled = false
-//                }
-//            }
         }
 
         //-- Right Menu --//
