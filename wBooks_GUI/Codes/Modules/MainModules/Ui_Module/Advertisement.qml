@@ -9,7 +9,7 @@ Item {
     Rectangle{
         id: iconRec
         width: parent.width
-        height: 220
+        height: parent.height
         color: color8
         Image {
             id: image

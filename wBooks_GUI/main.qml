@@ -369,7 +369,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: false
-                    mainView: 9
+                    mainView: 11
                     rightView: 0
                     homeClick: false
                     membershipClick: false
@@ -385,7 +385,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: false
-                    mainView: 10
+                    mainView: 12
                     rightView: 0
                     homeClick: false
                     membershipClick: false
@@ -401,7 +401,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: true
-                    mainView: 11
+                    mainView: 13
                     rightView: 1
                     homeClick: false
                     membershipClick: false
@@ -417,7 +417,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: true
-                    mainView: 8
+                    mainView: 10
                     rightView: 0
                     homeClick: true
                     membershipClick: false
@@ -433,7 +433,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: true
-                    mainView: 7
+                    mainView: 9
                     rightView: 0
                     homeClick: false
                     membershipClick: true
@@ -449,7 +449,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: true
-                    mainView: 6
+                    mainView: 8
                     rightView: 0
                     homeClick: false
                     membershipClick: false
@@ -465,7 +465,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: false
-                    mainView: 5
+                    mainView: 7
                     rightView: 0
                     homeClick: false
                     membershipClick: false
@@ -481,7 +481,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: true
-                    mainView: 4
+                    mainView: 6
                     rightView: 0
                     homeClick: false
                     membershipClick: false
@@ -497,7 +497,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: false
-                    mainView: 2
+                    mainView: 4
                     rightView: 0
                     homeClick: false
                     membershipClick: false
@@ -513,7 +513,23 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: false
-                    mainView: 1
+                    mainView: 2
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "Audio Book Page"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 3
                     rightView: 0
                     homeClick: false
                     membershipClick: false
@@ -529,7 +545,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: false
-                    mainView: 3
+                    mainView: 5
                     rightView: 0
                     homeClick: false
                     membershipClick: false
@@ -538,6 +554,22 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: true
+                }
+            },
+            State{
+                name: "Media Page"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 1
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
                 }
             },
             State{

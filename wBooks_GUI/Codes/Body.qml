@@ -12,6 +12,7 @@ import "./../Functions/Funcs.js" as Functions
 import "./Modules/Account/Forms"
 import "./Modules/Account/Panels"
 import "./Modules/MainModules/BookModule"
+import "./Modules/MainModules/AudioBookModule"
 import "./Modules/Pages"
 import "./Modules/FilterPanel"
 
@@ -174,6 +175,16 @@ Rectangle{
                         }
 
 
+                        Item{
+                            MediaPlayer{
+                                id: mediapage
+                                anchors.fill: parent
+                                anchors.leftMargin: 10
+                                anchors.rightMargin: 10
+                                anchors.topMargin: 10
+                            }
+                        }
+
                         Item {
                             Book{
                                 id: bookpage
@@ -181,6 +192,12 @@ Rectangle{
                             }
                         }
 
+                        Item {
+                            AudioBookPage{
+                                id: audiobookpage
+                                anchors.fill: parent
+                            }
+                        }
 
                         Item {
                             MoreBooksPage{
@@ -209,6 +226,9 @@ Rectangle{
                         Item {
                             AudioBook{
                                 anchors.fill: parent
+                                newBooksModel: newAudioBooksModel
+                                mostSellModel: mostSellAudioBooksModel
+                                speakerModel: speakerAudioBooksModel
                             }
 
                         }
@@ -707,6 +727,145 @@ Rectangle{
 
     ListModel{
         id: offerBooksModel
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/mebeforeyou.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/time.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+    }
+
+    ListModel{
+        id: newAudioBooksModel
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/mebeforeyou.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/time.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+    }
+
+    ListModel{
+        id: mostSellAudioBooksModel
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/mebeforeyou.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/time.jpg"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            rate: 37
+            date: "1399/02/14"
+        }
+    }
+
+
+    ListModel{
+        id: speakerAudioBooksModel
         ListElement{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"

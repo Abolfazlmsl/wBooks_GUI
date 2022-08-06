@@ -230,7 +230,7 @@ Rectangle {
                     anchors.fill: parent
                     cursorShape: Qt.PointingHandCursor
                     onClicked: {
-
+                        mainPage.state = "Membership"
                     }
                 }
             }

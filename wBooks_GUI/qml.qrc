@@ -129,5 +129,12 @@
         <file>Functions/Funcs.js</file>
         <file>Codes/Modules/Items/MembershipItem.qml</file>
         <file>Codes/Modules/Pages/MembershipPage.qml</file>
+        <file>Images/Adver4.jpg</file>
+        <file>Images/Adver5.jpg</file>
+        <file>Codes/Modules/Pages/MediaPlayer.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/AudioBookList.qml</file>
+        <file>Codes/Modules/MainModules/AudioBookModule/AudioBookIntroduction.qml</file>
+        <file>Codes/Modules/MainModules/AudioBookModule/AudioBookPage.qml</file>
+        <file>Codes/Modules/MainModules/AudioBookModule/AudioBookPropsCol.qml</file>
     </qresource>
 </RCC>
