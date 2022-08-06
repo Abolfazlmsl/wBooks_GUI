@@ -199,7 +199,7 @@ Rectangle {
                     anchors.rightMargin: 10
                     anchors.topMargin: 10
                     color: "#ffffff"
-                    text: "32 روز از اشتراک شما باقی مانده است"
+                    text: (myMembershipModel.count > 0)? myMembershipModel.get(0).remaining + " روز از اشتراک شما باقی مانده است" : "شما اشتراک فعالی ندارید"
                     font.family: iranSansFAnum.name
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter

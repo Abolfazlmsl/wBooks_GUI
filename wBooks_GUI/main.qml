@@ -33,7 +33,7 @@ Window {
     property bool lightTheme: true
     property bool accountPopEnabled: false
     property bool inHomeMode: true
-    property int mainView: 0
+    property int mainView: 8 // Home page
     property int myBooksView: 0
     property int rightView: 0
     property bool homeClick: true
@@ -365,151 +365,7 @@ Window {
         state: "Home"
         states: [
             State{
-                name: "Home"
-                PropertyChanges {
-                    target: win
-                    inHomeMode: true
-                    mainView: 0
-                    rightView: 0
-                    homeClick: true
-                    membershipClick: false
-                    serialBookClick: false
-                    audioBookClick: false
-                    yourLibraryClick: false
-                    accountPopEnabled: false
-                    searchClick: false
-                }
-            },
-            State{
-                name: "Registration"
-                PropertyChanges {
-                    target: win
-                    inHomeMode: false
-                    mainView: 1
-                    rightView: 0
-                    homeClick: false
-                    membershipClick: false
-                    serialBookClick: false
-                    audioBookClick: false
-                    yourLibraryClick: false
-                    accountPopEnabled: false
-                    searchClick: false
-                }
-            },
-            State{
                 name: "Login"
-                PropertyChanges {
-                    target: win
-                    inHomeMode: false
-                    mainView: 2
-                    rightView: 0
-                    homeClick: false
-                    membershipClick: false
-                    serialBookClick: false
-                    audioBookClick: false
-                    yourLibraryClick: false
-                    accountPopEnabled: false
-                    searchClick: false
-                }
-            },
-            State{
-                name: "Edit"
-                PropertyChanges {
-                    target: win
-                    inHomeMode: true
-                    mainView: 3
-                    rightView: 1
-                    homeClick: false
-                    membershipClick: false
-                    serialBookClick: false
-                    audioBookClick: false
-                    yourLibraryClick: false
-                    accountPopEnabled: false
-                    searchClick: false
-                }
-            },
-            State{
-                name: "Membership"
-                PropertyChanges {
-                    target: win
-                    inHomeMode: true
-                    mainView: 4
-                    rightView: 0
-                    homeClick: false
-                    membershipClick: true
-                    serialBookClick: false
-                    audioBookClick: false
-                    yourLibraryClick: false
-                    accountPopEnabled: false
-                    searchClick: false
-                }
-            },
-            State{
-                name: "Serial Book"
-                PropertyChanges {
-                    target: win
-                    inHomeMode: true
-                    mainView: 5
-                    rightView: 0
-                    homeClick: false
-                    membershipClick: false
-                    serialBookClick: true
-                    audioBookClick: false
-                    yourLibraryClick: false
-                    accountPopEnabled: false
-                    searchClick: false
-                }
-            },
-            State{
-                name: "Audio Book"
-                PropertyChanges {
-                    target: win
-                    inHomeMode: false
-                    mainView: 6
-                    rightView: 0
-                    homeClick: false
-                    membershipClick: false
-                    serialBookClick: false
-                    audioBookClick: true
-                    yourLibraryClick: false
-                    accountPopEnabled: false
-                    searchClick: false
-                }
-            },
-            State{
-                name: "My Library"
-                PropertyChanges {
-                    target: win
-                    inHomeMode: true
-                    mainView: 7
-                    rightView: 0
-                    homeClick: false
-                    membershipClick: false
-                    serialBookClick: false
-                    audioBookClick: false
-                    yourLibraryClick: true
-                    accountPopEnabled: false
-                    searchClick: false
-                }
-            },
-            State{
-                name: "More Books"
-                PropertyChanges {
-                    target: win
-                    inHomeMode: false
-                    mainView: 8
-                    rightView: 0
-                    homeClick: false
-                    membershipClick: false
-                    serialBookClick: false
-                    audioBookClick: false
-                    yourLibraryClick: false
-                    accountPopEnabled: false
-                    searchClick: false
-                }
-            },
-            State{
-                name: "Book Page"
                 PropertyChanges {
                     target: win
                     inHomeMode: false
@@ -525,11 +381,155 @@ Window {
                 }
             },
             State{
-                name: "Search Page"
+                name: "Registration"
                 PropertyChanges {
                     target: win
                     inHomeMode: false
                     mainView: 10
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "Edit"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: true
+                    mainView: 11
+                    rightView: 1
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "Home"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: true
+                    mainView: 8
+                    rightView: 0
+                    homeClick: true
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "Membership"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: true
+                    mainView: 7
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: true
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "Serial Book"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: true
+                    mainView: 6
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: true
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "Audio Book"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 5
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: true
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "My Library"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: true
+                    mainView: 4
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: true
+                    accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "More Books"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 2
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "Book Page"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 1
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                }
+            },
+            State{
+                name: "Search Page"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 3
                     rightView: 0
                     homeClick: false
                     membershipClick: false
@@ -545,7 +545,7 @@ Window {
                 PropertyChanges {
                     target: win
                     inHomeMode: false
-                    mainView: 11
+                    mainView: 0
                     rightView: 0
                     homeClick: false
                     membershipClick: false
@@ -1364,6 +1364,38 @@ Window {
 
                     }
                 }
+            }
+        }
+
+        ListModel{
+            id: myMembershipModel
+            ListElement{
+                time: 3
+                remaining: 32
+            }
+        }
+
+        ListModel{
+            id: membershipModel
+            ListElement{
+                time: 1
+                price: 100000
+                color: "#00adb3"
+            }
+            ListElement{
+                time: 3
+                price: 300000
+                color: "#D5D739"
+            }
+            ListElement{
+                time: 6
+                price: 600000
+                color: "#25B767"
+            }
+            ListElement{
+                time: 12
+                price: 1200000
+                color: "#D65524"
             }
         }
 

@@ -163,6 +163,72 @@ Rectangle{
                         clip: true
                         currentIndex: mainView
 
+                        Item{
+                            BasketPage{
+                                id: basketpage
+                                anchors.fill: parent
+                                anchors.leftMargin: 10
+                                anchors.rightMargin: 10
+                                anchors.topMargin: 10
+                            }
+                        }
+
+
+                        Item {
+                            Book{
+                                id: bookpage
+                                anchors.fill: parent
+                            }
+                        }
+
+
+                        Item {
+                            MoreBooksPage{
+                                id: morebooks
+                                anchors.fill: parent
+                                anchors.topMargin: 20
+                            }
+                        }
+
+                        Item {
+                            SearchPage{
+                                id: searchpage
+                                anchors.fill: parent
+                                anchors.topMargin: 20
+                                itemModel: searchModelBottom
+                            }
+                        }
+
+
+                        Item {
+                            MyLibrary{
+                                anchors.fill: parent
+                            }
+                        }
+
+                        Item {
+                            AudioBook{
+                                anchors.fill: parent
+                            }
+
+                        }
+
+
+                        Item {
+                            SerialBook{
+                                anchors.fill: parent
+                                specialBooksModel: specialBooksModel
+                                writersModel: writersModel
+                                prepurchaseModel: prepurchaseModel
+                            }
+                        }
+
+                        Item {
+                            MembershipPage{
+                                anchors.fill: parent
+                            }
+                        }
+
                         Item {
                             Home{
                                 anchors.fill: parent
@@ -171,40 +237,6 @@ Rectangle{
                                 bestCollectionModel: bestCollectionModel
                                 offerBooksModel: offerBooksModel
                             }
-                        }
-
-                        Item {
-                            RegistrationForm{
-                                anchors.fill: parent
-//                                anchors.topMargin: parent.height * 0.05
-                                anchors.leftMargin: parent.width * 0.3
-                                anchors.rightMargin: parent.width * 0.3
-
-                                onGetMessage: {
-                                    alarmRegisteWin.msg = signalmsg
-                                }
-                            }
-                            //-- Alarm --//
-                            Rectangle{
-                                id: alarmRegisteWin
-
-                                property string msg: ""
-
-                                width: parent.width
-                                height: lblAlarm2.implicitHeight * 2.5
-                                anchors.bottom: parent.bottom
-
-                                color: msg === "" ? "transparent" : color6
-
-                                Label{
-                                    id: lblAlarm2
-                                    text: alarmRegisteWin.msg
-                                    anchors.centerIn: parent
-                                    color: "#ffffff"
-
-                                }
-                            }
-
                         }
 
                         Item {
@@ -233,6 +265,40 @@ Rectangle{
                                 Label{
                                     id: lblAlarm3
                                     text: alarmLoginWin.msg
+                                    anchors.centerIn: parent
+                                    color: "#ffffff"
+
+                                }
+                            }
+
+                        }
+
+                        Item {
+                            RegistrationForm{
+                                anchors.fill: parent
+//                                anchors.topMargin: parent.height * 0.05
+                                anchors.leftMargin: parent.width * 0.3
+                                anchors.rightMargin: parent.width * 0.3
+
+                                onGetMessage: {
+                                    alarmRegisteWin.msg = signalmsg
+                                }
+                            }
+                            //-- Alarm --//
+                            Rectangle{
+                                id: alarmRegisteWin
+
+                                property string msg: ""
+
+                                width: parent.width
+                                height: lblAlarm2.implicitHeight * 2.5
+                                anchors.bottom: parent.bottom
+
+                                color: msg === "" ? "transparent" : color6
+
+                                Label{
+                                    id: lblAlarm2
+                                    text: alarmRegisteWin.msg
                                     anchors.centerIn: parent
                                     color: "#ffffff"
 
@@ -272,65 +338,6 @@ Rectangle{
 
                         }
 
-                        Item {
-
-                        }
-
-                        Item {
-                            SerialBook{
-                                anchors.fill: parent
-                                specialBooksModel: specialBooksModel
-                                writersModel: writersModel
-                                prepurchaseModel: prepurchaseModel
-                            }
-                        }
-
-                        Item {
-                            AudioBook{
-                                anchors.fill: parent
-                            }
-
-                        }
-
-                        Item {
-                            MyLibrary{
-                                anchors.fill: parent
-                            }
-                        }
-
-                        Item {
-                            MoreBooksPage{
-                                id: morebooks
-                                anchors.fill: parent
-                                anchors.topMargin: 20
-                            }
-                        }
-
-                        Item {
-                            Book{
-                                id: bookpage
-                                anchors.fill: parent
-                            }
-                        }
-
-                        Item {
-                            SearchPage{
-                                id: searchpage
-                                anchors.fill: parent
-                                anchors.topMargin: 20
-                                itemModel: searchModelBottom
-                            }
-                        }
-
-                        Item{
-                            BasketPage{
-                                id: basketpage
-                                anchors.fill: parent
-                                anchors.leftMargin: 10
-                                anchors.rightMargin: 10
-                                anchors.topMargin: 10
-                            }
-                        }
                     }
                 }
                 //-- FOOTER --//

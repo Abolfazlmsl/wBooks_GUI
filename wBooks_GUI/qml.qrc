@@ -127,5 +127,7 @@
         <file>Codes/Modules/Pages/BasketPage.qml</file>
         <file>Images/Emptybasket.png</file>
         <file>Functions/Funcs.js</file>
+        <file>Codes/Modules/Items/MembershipItem.qml</file>
+        <file>Codes/Modules/Pages/MembershipPage.qml</file>
     </qresource>
 </RCC>
