@@ -12,6 +12,8 @@ import "./../MainModules/Ui_Module"
 
 Item {
 
+    property bool bookDataPanel: true
+
     RowLayout{
         anchors.fill: parent
         layoutDirection: Qt.RightToLeft
@@ -20,6 +22,7 @@ Item {
             Layout.fillHeight: true
             Layout.preferredWidth: parent.width * 0.25
             color: color1
+            visible: bookDataPanel
 
             ColumnLayout{
                 anchors.fill: parent
@@ -146,6 +149,10 @@ Item {
             isTopToolsVisible: false
             isIgnoreOffset: false
             clip: true
+
+            onMaximizeSignal: {
+                bookDataPanel = !bookDataPanel
+            }
         }
     }
 }

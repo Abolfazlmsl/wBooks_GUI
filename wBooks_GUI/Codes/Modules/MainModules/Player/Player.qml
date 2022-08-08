@@ -75,10 +75,13 @@ Item {
         }
     }
 
+    signal maximizeSignal()
+
     Pane {
         id: popup
 
         Rectangle{
+            id: rec
             anchors.fill: parent; color:  "#000000"
         }
 
@@ -97,41 +100,11 @@ Item {
             horizontalAlignment: Image.AlignHCenter
         }
 
-//        MediaPlayer {
-//            id: player
-//            //notifyInterval: 100
-//            source: playerSource
-//            onSourceChanged: player.play()
-
-//            onPositionChanged: {
-//                var min = Math.floor(player.position/60000)
-//                var sec = ((player.position - (min*60000))/1000).toFixed(0)
-
-//                var total_min = Math.floor(player.duration/60000)
-//                var total_sec = ((player.duration - (total_min*60000))/1000).toFixed(0)
-
-//                lblTimeSpend.text = (min<10 ? "0"+min : min) + ":" + (sec<10 ? "0"+sec : sec) + " / " + (total_min) + ":" + (total_sec)
-
-//                var lackTime = player.duration - player.position
-//                min = Math.floor(lackTime/60000)
-//                sec = ((lackTime - (min*60000))/1000).toFixed(0)
-
-//                lblTimeLack.text = (min<10 ? "0"+min : min) + ":" + (sec<10 ? "0"+sec : sec)
-//                if (player.position === player.duration){
-//                    topGroup.visible = true
-//                    toolsGroup.visible = true
-//                }
-//            }
-
-//        }
-
-        VideoOutput {
+        ShaderEffectSource {
             id: vidOut
-
             anchors.fill: parent
-            source: player
+            sourceItem: vidOutmain
         }
-
 
         MouseArea{
             anchors.fill: parent
@@ -151,6 +124,9 @@ Item {
                     topGroup.visible = true
                 }
 
+            }
+            onDoubleClicked: {
+                play_pause()
             }
 
         }
@@ -256,8 +232,9 @@ Item {
                                     anchors.centerIn: parent
 
                                     from: 1
-                                    value: 1
+                                    value: playerSpeed
                                     onValueChanged: {
+                                        playerSpeed = value
                                         player.playbackRate = value
                                     }
 
@@ -414,34 +391,34 @@ Item {
                                 anchors.rightMargin: implicitWidth * 2
                                 font.family: "Material Design Icons"
                                 font.pixelSize: Qt.application.font.pixelSize * 2
-                                text: Icons.volume_medium
-
-                                property bool state: true
+                                text: {if (mutePlayer){
+                                          return Icons.volume_off
+                                      }else{
+                                          if (slider_vol.value > 75) {
+                                              return Icons.volume_high
+                                          }
+                                          else if (slider_vol.value >= 25 && slider_vol.value <= 75){
+                                              return Icons.volume_medium
+                                          }
+                                          else if (slider_vol.value === 0){
+                                              return Icons.volume_mute
+                                          }
+                                          else {
+                                              return Icons.volume_low
+                                          }
+                                      }
+                                }
 
                                 MouseArea{
                                     anchors.fill: parent
                                     cursorShape: Qt.PointingHandCursor
                                     onClicked: {
-                                        if (btn_soundLevel.state === true){
-                                            btn_soundLevel.text = Icons.volume_off
+                                        mutePlayer = !mutePlayer
+                                        if (mutePlayer){
                                             player.volume = 0
-                                            btn_soundLevel.state = false
                                         }
                                         else {
-                                            if (slider_vol.value > 75) {
-                                                btn_soundLevel.text = Icons.volume_high
-                                            }
-                                            else if (slider_vol.value >= 25 && slider_vol.value <= 75){
-                                                btn_soundLevel.text = Icons.volume_medium
-                                            }
-                                            else if (slider_vol.value === 0){
-                                                btn_soundLevel.text = Icons.volume_mute
-                                            }
-                                            else {
-                                                btn_soundLevel.text = Icons.volume_low
-                                            }
                                             player.volume = slider_vol.value / 100
-                                            btn_soundLevel.state = true
                                         }
                                     }
 
@@ -456,24 +433,12 @@ Item {
                                 width: 60
                                 height: btn_soundLevel.height
                                 from: 0
-                                value: 50
+                                value: playerVolume
                                 to: 100
                                 orientation: Qt.Horizontal
                                 onValueChanged: {
+                                    playerVolume = value
                                     player.volume = value/100
-                                    if (slider_vol.value > 75){
-                                        btn_soundLevel.text = Icons.volume_high
-                                    }
-                                    else if (slider_vol.value >= 25 && slider_vol.value <= 75) {
-                                        btn_soundLevel.text = Icons.volume_medium
-                                    }
-                                    else if (slider_vol.value === 0){
-                                        btn_soundLevel.text = Icons.volume_mute
-                                    }
-                                    else if (slider_vol.value > 0 && slider_vol.value < 25){
-                                        btn_soundLevel.text = Icons.volume_low
-                                    }
-
                                 }
 
                                 MouseArea{
@@ -555,6 +520,7 @@ Item {
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
                                 onClicked: {
+                                    maximizeSignal()
                                     max_min()
                                 }
                             }

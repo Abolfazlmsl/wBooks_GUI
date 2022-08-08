@@ -50,6 +50,13 @@ Item {
             clip: true
             Rectangle{
                 anchors.fill: parent; color:  "#000000"
+                MouseArea{
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        mainPage.state = "Media Page"
+                    }
+                }
             }
 
             Material.theme: Material.Dark
@@ -59,11 +66,17 @@ Item {
                 visible: (playerMediaType === "Video") ? player.playbackState === MediaPlayer.PlayingState ? false : true : true
                 anchors.centerIn: parent
                 source: (playerMediaType === "Video") ? 'qrc:/Images/Wbooks1.png' : 'qrc:/Images/music.png'
-                sourceSize: Qt.size(300,300)
+//                sourceSize: Qt.size(100,100)
                 verticalAlignment: Image.AlignVCenter
                 horizontalAlignment: Image.AlignHCenter
+                fillMode: Image.PreserveAspectFit
             }
 
+            ShaderEffectSource {
+                id: vidOut
+                anchors.fill: parent
+                sourceItem: vidOutmain
+            }
 //            VideoOutput{
 //                id: vidOutmain
 
@@ -230,8 +243,9 @@ Item {
                             anchors.centerIn: parent
 
                             from: 1
-                            value: 1
+                            value: playerSpeed
                             onValueChanged: {
+                                playerSpeed = value
                                 player.playbackRate = value
                             }
 
@@ -273,37 +287,37 @@ Item {
                         anchors.rightMargin: implicitWidth * 2
                         font.family: webfont.name
                         font.pixelSize: Qt.application.font.pixelSize * 2
-                        text: Icons.volume_medium
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
                         color: color4
-
-                        property bool state: true
+                        text: {if (mutePlayer){
+                                  return Icons.volume_off
+                              }else{
+                                  if (slider_vol.value > 75) {
+                                      return Icons.volume_high
+                                  }
+                                  else if (slider_vol.value >= 25 && slider_vol.value <= 75){
+                                      return Icons.volume_medium
+                                  }
+                                  else if (slider_vol.value === 0){
+                                      return Icons.volume_mute
+                                  }
+                                  else {
+                                      return Icons.volume_low
+                                  }
+                              }
+                        }
 
                         MouseArea{
                             anchors.fill: parent
                             cursorShape: Qt.PointingHandCursor
                             onClicked: {
-                                if (btn_soundLevel.state === true){
-                                    btn_soundLevel.text = Icons.volume_off
+                                mutePlayer = !mutePlayer
+                                if (mutePlayer){
                                     player.volume = 0
-                                    btn_soundLevel.state = false
                                 }
                                 else {
-                                    if (slider_vol.value > 75) {
-                                        btn_soundLevel.text = Icons.volume_high
-                                    }
-                                    else if (slider_vol.value >= 25 && slider_vol.value <= 75){
-                                        btn_soundLevel.text = Icons.volume_medium
-                                    }
-                                    else if (slider_vol.value === 0){
-                                        btn_soundLevel.text = Icons.volume_mute
-                                    }
-                                    else {
-                                        btn_soundLevel.text = Icons.volume_low
-                                    }
                                     player.volume = slider_vol.value / 100
-                                    btn_soundLevel.state = true
                                 }
                             }
 
@@ -318,24 +332,12 @@ Item {
                         width: 60
                         height: parent.height
                         from: 0
-                        value: 50
+                        value: playerVolume
                         to: 100
                         orientation: Qt.Horizontal
                         onValueChanged: {
+                            playerVolume = value
                             player.volume = value/100
-                            if (slider_vol.value > 75){
-                                btn_soundLevel.text = Icons.volume_high
-                            }
-                            else if (slider_vol.value >= 25 && slider_vol.value <= 75) {
-                                btn_soundLevel.text = Icons.volume_medium
-                            }
-                            else if (slider_vol.value === 0){
-                                btn_soundLevel.text = Icons.volume_mute
-                            }
-                            else if (slider_vol.value > 0 && slider_vol.value < 25){
-                                btn_soundLevel.text = Icons.volume_low
-                            }
-
                         }
 
                         MouseArea{
@@ -364,6 +366,7 @@ Item {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            player.stop()
                             smallPlayer.visible = false
                         }
                     }

@@ -35,6 +35,7 @@ Window {
     property bool lightTheme: true
     property bool accountPopEnabled: false
     property bool inHomeMode: true
+    property bool smallPlayerVis: true
     property int mainView: 8 // Home page
     property int myBooksView: 0
     property int rightView: 0
@@ -364,15 +365,15 @@ Window {
     property string lblTimeLackmain: "00:00"
     property bool topVisibility: true
     property bool toolsVisibility: true
+    property int playerVolume: 100
+    property int playerSpeed: 1
+    property bool mutePlayer: false
 
     MediaPlayer {
         id: player
         //notifyInterval: 100
         source: playerSource
-        onSourceChanged: {
-            smallPlayer.visible = true
-            player.play()
-        }
+        onSourceChanged: player.play()
 
         onPositionChanged: {
             var min = Math.floor(player.position/60000)
@@ -381,7 +382,7 @@ Window {
             var total_min = Math.floor(player.duration/60000)
             var total_sec = ((player.duration - (total_min*60000))/1000).toFixed(0)
 
-            lblTimeSpendmain = (min<10 ? "0"+min : min) + ":" + (sec<10 ? "0"+sec : sec) + " / " + (total_min) + ":" + (total_sec)
+            lblTimeSpendmain = (min<10 ? "0"+min : min) + ":" + (sec<10 ? "0"+sec : sec) + " / " + (total_min<10 ? "0"+total_min : total_min) + ":" + (total_sec<10 ? "0"+total_sec : total_sec)
 
             var lackTime = player.duration - player.position
             min = Math.floor(lackTime/60000)
@@ -393,6 +394,13 @@ Window {
                 toolsVisibility = true
             }
         }
+    }
+
+    VideoOutput{
+        id: vidOutmain
+        anchors.fill: parent
+        visible: false
+        source: player
     }
 
     Page{
@@ -416,6 +424,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -432,6 +441,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -448,6 +458,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -464,6 +475,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -480,6 +492,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -496,6 +509,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -512,6 +526,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -528,6 +543,7 @@ Window {
                     yourLibraryClick: true
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -544,6 +560,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -560,6 +577,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -576,6 +594,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -592,6 +611,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: true
+                    smallPlayerVis: true
                 }
             },
             State{
@@ -608,6 +628,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: false
                 }
             },
             State{
@@ -624,6 +645,7 @@ Window {
                     yourLibraryClick: false
                     accountPopEnabled: false
                     searchClick: false
+                    smallPlayerVis: true
                 }
             }
 
@@ -1053,7 +1075,7 @@ Window {
 
             PlayerSmallPanel{
                 id: smallPlayer
-                visible: false
+                visible: (smallPlayerVis && player.playbackState!=0)
                 width: parent.width
                 height: 100
                 clip: true
