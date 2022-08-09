@@ -567,6 +567,7 @@ Item {
         Shortcut{
             sequence: "Enter"
             onActivated:{
+                maximizeSignal()
                 max_min()
             }
         }
@@ -574,6 +575,7 @@ Item {
         Shortcut{
             sequence: "Return"
             onActivated:{
+                maximizeSignal()
                 max_min()
             }
         }
