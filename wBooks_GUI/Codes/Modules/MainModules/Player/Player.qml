@@ -73,6 +73,7 @@ Item {
             toolsGroup.visible = true
             topGroup.visible = true
         }
+        maximizeSignal()
     }
 
     signal maximizeSignal()
@@ -520,7 +521,6 @@ Item {
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
                                 onClicked: {
-                                    maximizeSignal()
                                     max_min()
                                 }
                             }
@@ -567,7 +567,6 @@ Item {
         Shortcut{
             sequence: "Enter"
             onActivated:{
-                maximizeSignal()
                 max_min()
             }
         }
@@ -575,7 +574,6 @@ Item {
         Shortcut{
             sequence: "Return"
             onActivated:{
-                maximizeSignal()
                 max_min()
             }
         }
