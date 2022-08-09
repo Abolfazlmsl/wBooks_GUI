@@ -137,5 +137,8 @@
         <file>Codes/Modules/MainModules/AudioBookModule/AudioBookPropsCol.qml</file>
         <file>Codes/Modules/Pages/MediaPlayerPage.qml</file>
         <file>Codes/Modules/MainModules/Player/PlayerSmallPanel.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/MyWallet.qml</file>
+        <file>Codes/Modules/Items/WalletItem.qml</file>
+        <file>Codes/Modules/Items/IncreaseAmountItem.qml</file>
     </qresource>
 </RCC>

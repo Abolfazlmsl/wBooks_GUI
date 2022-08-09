@@ -66,7 +66,10 @@ Item{
         }
 
         Item {
-
+            MyWallet{
+                anchors.fill: parent
+                anchors.topMargin: parent.height * 0.1
+            }
         }
 
         Item {

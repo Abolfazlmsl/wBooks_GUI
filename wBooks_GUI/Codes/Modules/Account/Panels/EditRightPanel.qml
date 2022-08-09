@@ -273,7 +273,7 @@ Rectangle{
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            editRightPanel.state = "Wallet"
                         }
                     }
                 }
