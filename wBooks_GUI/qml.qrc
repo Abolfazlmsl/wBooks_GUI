@@ -140,5 +140,6 @@
         <file>Codes/Modules/MainModules/Ui_Module/MyWallet.qml</file>
         <file>Codes/Modules/Items/WalletItem.qml</file>
         <file>Codes/Modules/Items/IncreaseAmountItem.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/TicketItem.qml</file>
     </qresource>
 </RCC>

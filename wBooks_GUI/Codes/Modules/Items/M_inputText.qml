@@ -20,6 +20,8 @@ Rectangle{
     property string borderColor: color12
     property bool enterAsAccept: false
     property int itemRadius: 10
+    property bool acceptInput: false
+    property double fontSize: 1
 
     signal acceptedLogin()
 
@@ -50,6 +52,7 @@ Rectangle{
             TextInput{
                 id:txf_main
                 anchors.fill: parent
+                readOnly: acceptInput
                 clip: true
 
                 //            width: parent.width - lbl_icon.implicitWidth - lbl_clear.implicitWidth  // Width of Rect - Width of Magnify
@@ -60,7 +63,7 @@ Rectangle{
 //                            leftPadding: 10 * ratio
 
                 font.family: iranSans.name
-                font.pixelSize: Qt.application.font.pixelSize
+                font.pixelSize: Qt.application.font.pixelSize * fontSize
                 selectedTextColor: color14
                 color: color4
 

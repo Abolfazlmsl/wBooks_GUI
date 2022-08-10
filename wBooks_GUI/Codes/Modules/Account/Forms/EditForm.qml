@@ -91,6 +91,9 @@ Item{
         }
 
         Item {
+            TicketItem{
+                anchors.fill: parent
+            }
 
         }
 
