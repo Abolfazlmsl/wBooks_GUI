@@ -1,32 +1,18 @@
-import QtQuick 2.14
-import QtQuick.Window 2.2
-import QtQuick.Controls 2.14
-import QtQuick.Layouts 1.12
-import QtQuick.Controls.Material 2.12
-import QtGraphicalEffects 1.0
+import QtQuick 2.15
+import QtQuick.Controls 2.5
+import QtQuick.Layouts 1.15
+
+import "./../../../Modules/Items"
 
 import "./../../../../Fonts/Icon.js" as Icons
-import "./../../../../REST/apiService.js" as Service
-
-import "./../../Items"
 
 Item{
-    id: root_register
+    id: root_password
 
-    property alias name               : input_name.inputText
-    property alias phone              : input_phone.inputText
-    property alias email              : input_Email.inputText
-    property alias password           : input_password.inputText
-    property alias password_repeat    : input_password_repeat.inputText
 
-//    function isEmailExist(data, email){
-//        for(var i=0; i<data.length; i++){
-//            if(data[i].email===email && data[i].licenseType==="trial"){
-//                return true
-//            }
-//        }
-//        return false
-//    }
+    property alias prePassword        : input_pre_pass.inputText
+    property alias password           : input_new_pass.inputText
+    property alias password_repeat    : input_new_pass_repeat.inputText
 
     signal getMessage(var signalmsg)
     signal trialFinished()
@@ -47,7 +33,7 @@ Item{
 
     }
 
-    objectName: "Registration"
+    objectName: "ForgotPassword"
 
     MouseArea {
         //            anchors.fill: parent
@@ -58,8 +44,8 @@ Item{
         property real lastMouseX: 0
         property real lastMouseY: 0
         acceptedButtons: Qt.LeftButton
-        onMouseXChanged: root_register.x += (mouseX - lastMouseX)
-        onMouseYChanged: root_register.y += (mouseY - lastMouseY)
+        onMouseXChanged: root_password.x += (mouseX - lastMouseX)
+        onMouseYChanged: root_password.y += (mouseY - lastMouseY)
         onPressed: {
             if(mouse.button == Qt.LeftButton){
                 parent.forceActiveFocus()
@@ -75,7 +61,7 @@ Item{
 
 
     SwipeView{
-        id: swipe_register
+        id: swipe_pass
         anchors.fill: parent
         clip: true
         interactive: false
@@ -119,7 +105,7 @@ Item{
                         width: Text.contentWidth
                         height: parent.height
                         anchors.centerIn: parent
-                        text: "لطفا اطلاعات خود را وارد کنید"
+                        text: "اطلاعات را به منظور تغییر رمز عبور خود وارد کنید"
                         font.family: iranSans.name
                         color: color8
                         font.pixelSize: Qt.application.font.pixelSize * 1.5
@@ -131,16 +117,48 @@ Item{
                 //-- spacer --//
                 Item{Layout.preferredHeight: 10}
 
-                //-- Email --//
+                //-- previous pass --//
                 M_inputText{
-                    id: input_name
+                    id: input_pre_pass
                     Layout.rightMargin: 0
-                    label: "نام"
-                    icon: Icons.account
-                    placeholder: "نام"
+                    label: "رمز عبور قبلی"
+                    icon: Icons.key
+                    placeholder: "رمز عبور قبلی"
+                    echoMode: TextInput.Password
+                    Label{
+                        id: lbl_eyeIcon_prepass
+                        width: implicitWidth
+                        height: parent.height
+                        anchors.left: parent.left
+                        anchors.leftMargin: 10 * ratio
+                        verticalAlignment: Qt.AlignVCenter
+                        text: Icons.eye_off
+                        font.family: webfont.name
+                        font.pixelSize: Qt.application.font.pixelSize * 2
 
+                        MouseArea{
+
+                            property bool passViewHandler: false
+
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+
+
+                            onClicked: {
+                                if(passViewHandler){
+                                    lbl_eyeIcon_prepass.text = Icons.eye_off
+                                    input_pre_pass.echoMode = TextInput.Password
+                                }
+                                else{
+                                    lbl_eyeIcon_prepass.text = Icons.eye
+                                    input_pre_pass.echoMode = TextInput.Normal
+                                }
+                                passViewHandler = !passViewHandler
+                            }
+                        }
+                    }
                     Keys.onTabPressed: {
-                        input_phone.inputText.forceActiveFocus()
+                        input_new_pass.inputText.forceActiveFocus()
                     }
 
                     //                                    inputText.validator: RegularExpressionValidator { regularExpression: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ }
@@ -151,44 +169,10 @@ Item{
 
                 //-- Email --//
                 M_inputText{
-                    id: input_phone
+                    id: input_new_pass
                     Layout.rightMargin: 0
-                    label: "شماره تماس"
-                    icon: Icons.cellphone
-                    placeholder: "09xxxxxxxxx"
-                    Keys.onTabPressed: {
-                        input_Email.inputText.forceActiveFocus()
-                    }
-                    inputText.validator: RegularExpressionValidator { regularExpression: /^([0]{1})([9]{1})([0-9]{3,9})$/ }
-                }
-
-                //-- spacer --//
-                Item{Layout.preferredHeight: 5}
-
-                //-- Email --//
-                M_inputText{
-                    id: input_Email
-                    Layout.rightMargin: 0
-                    label: "ایمیل"
-                    icon: Icons.email_outline
-                    placeholder: "ایمیل"
-                    Keys.onTabPressed: {
-                        input_password.inputText.forceActiveFocus()
-                    }
-
-                    //            inputText.validator: RegularExpressionValidator { regularExpression: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ }
-                }
-
-                //-- spacer --//
-                Item{Layout.preferredHeight: 10}
-
-                //-- password --//
-                M_inputText{
-                    id: input_password
-                    Layout.rightMargin: 0
-                    label: "رمز عبور"
-                    icon: Icons.lock_outline
-                    placeholder: "رمز عبور (حداقل 8 حرف)"
+                    label: "رمز عبور جدید"
+                    icon: Icons.key
                     echoMode: TextInput.Password
                     clearEnable: false
                     inputText.maximumLength: 16
@@ -215,49 +199,46 @@ Item{
                             onClicked: {
                                 if(passViewHandler){
                                     lbl_eyeIcon.text = Icons.eye_off
-                                    input_password.echoMode = TextInput.Password
-                                    input_password_repeat.echoMode = TextInput.Password
+                                    input_new_pass.echoMode = TextInput.Password
+                                    input_new_pass_repeat.echoMode = TextInput.Password
                                 }
                                 else{
                                     lbl_eyeIcon.text = Icons.eye
-                                    input_password.echoMode = TextInput.Normal
-                                    input_password_repeat.echoMode = TextInput.Normal
+                                    input_new_pass.echoMode = TextInput.Normal
+                                    input_new_pass_repeat.echoMode = TextInput.Normal
                                 }
                                 passViewHandler = !passViewHandler
                             }
                         }
                     }
 
-
                     Keys.onTabPressed: {
-                        input_password_repeat.inputText.forceActiveFocus()
+                        input_new_pass_repeat.inputText.forceActiveFocus()
                     }
-
                 }
 
                 //-- spacer --//
-                Item{Layout.preferredHeight: 10}
+                Item{Layout.preferredHeight: 5}
 
-                //-- Confirm password --//
+                //-- Email --//
                 M_inputText{
-                    id: input_password_repeat
+                    id: input_new_pass_repeat
                     Layout.rightMargin: 0
-                    label: "تایید رمز عبور"
-                    icon: Icons.lock
-                    placeholder: "تایید رمز عبور"
+                    label: "تکرار رمز عبور جدید"
+                    icon: Icons.key
+                    placeholder: "تکرار رمز عبور جدید"
+                    Keys.onTabPressed: {
+                        changepassBtn.forceActiveFocus()
+                    }
                     echoMode: TextInput.Password
                     clearEnable: false
                     inputText.maximumLength: 16
 
-                    Keys.onTabPressed: {
-                        regist.forceActiveFocus()
-                    }
-
                     Label{
                         id: lbl_confirmIcon
 
-                        visible: (input_password.inputText.text === input_password_repeat.inputText.text) &&
-                                 (input_password.inputText.text !== "" && input_password_repeat.inputText.text !== "") ? true : false
+                        visible: (input_new_pass.inputText.text === input_new_pass_repeat.inputText.text) &&
+                                 (input_new_pass.inputText.text !== "" && input_new_pass_repeat.inputText.text !== "") ? true : false
                         width: implicitWidth
                         height: parent.height
                         anchors.left: parent.left
@@ -269,39 +250,33 @@ Item{
                         font.pixelSize: Qt.application.font.pixelSize * 2
 
                     }
-
-
                 }
 
                 //-- spacer --//
                 Item{Layout.preferredHeight: 10}
 
-                //-- Button registe --//
+                //-- Button change pass --//
                 ButtonShadow{
-                    id: regist
+                    id: changepassBtn
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50
-                    btnText: "ثبت نام"
+                    btnText: "تغییر رمز عبور"
                     btnRadius: 10
                     onDashboard_btnClicked: {
-                        if (parseInt(email.length) === 0){
-                            getMessage("ایمیل خود را وارد کنید")
+                        if (parseInt(prePassword.length) === 0){
+                            getMessage("رمز عبور قبلی خود را وارد کنید")
                             //                                spinner.visible = false
-                        }else if (parseInt(name.length) === 0){
-                            getMessage("نام خود را وارد کنید")
-                        }else if (parseInt(phone.length) === 0){
-                            getMessage("شماره تماس خود را وارد کنید")
+                        }else if (prePassword.text !== setting.password){
+                            getMessage("رمز عبور قبلی خود را اشتباه وارد کرده اید")
                         }else if (parseInt(password.length) === 0){
-                            getMessage("رمز عبور خود را وارد کنید")
-                        }else if (parseInt(password_repeat.length) === 0){
-                            getMessage("تایی رمز عبور خود را وارد نمایید")
+                            getMessage("رمز عبور جدید خود را وارد کنید")
                         }else if (password.text != password_repeat.text){
-                            getMessage("رمز عبور و تایید رمز عبور یکی نمی باشد")
+                            getMessage("رمز عبور و تکرار رمز عبور یکسان نمی باشد")
                         }else{
 //                                MainPython.sendSMS(phone.text)
                             timer_confirmSMS.visible = true
                             lbl_SendAgain.visible = false
-                            swipe_register.currentIndex = 1
+                            swipe_pass.currentIndex = 1
                         }
                     }
                 }
@@ -366,7 +341,7 @@ Item{
                             Label{
                                 Layout.preferredWidth: implicitWidth
                                 Layout.preferredHeight: implicitHeight
-                                text: input_phone.inputText.text
+                                text: setting.userPhone
                                 font.family: iranSans.name
                                 color: color12
 
@@ -375,27 +350,24 @@ Item{
 
                             }
 
-                            //-- "Phone number correction" text --//
+                            //-- "phoneNumber" text --//
                             Label{
                                 Layout.preferredWidth: implicitWidth
                                 Layout.preferredHeight: implicitHeight
-                                text: "تغییر شماره همراه"
-                                color: color8
+                                text: "بازگشت"
                                 font.family: iranSans.name
+                                color: color8
 
-                                font.pixelSize: Qt.application.font.pixelSize * 1.1
+                                font.pixelSize: Qt.application.font.pixelSize * 1.5
                                 horizontalAlignment: Qt.AlignHCenter
 
                                 MouseArea{
                                     anchors.fill: parent
                                     cursorShape: Qt.PointingHandCursor
                                     onClicked: {
-                                        swipe_register.currentIndex = 0
-                                        input_phone.inputText.forceActiveFocus()
-                                        input_phone.inputText.selectAll()
+                                        swipe_pass.currentIndex = 0
                                     }
                                 }
-
                             }
 
                             //-- spacer --//
@@ -512,9 +484,9 @@ Item{
 
                             onClicked: {
                                 var data = {
-                                    "name": name.text,
-                                    "email": email.text,
-                                    "phone": phone.text,
+                                    "name": setting.userName,
+                                    "email": setting.userEmail,
+                                    "phone": setting.userPhone,
                                     "password": password.text,
                                     "gender": "",
                                     "mybooks": "",
@@ -530,12 +502,8 @@ Item{
                                 db.addTable("users", true)
                                 db.storeData("users", data, "")
 
-                                setting.userName = name.text
-                                setting.userPhone = phone.text
-                                setting.userEmail = email.text
                                 setting.password = password.text
-                                setting.isLogined = true
-                                mainPage.state = "Home"
+                                mainPage.state = "Edit"
 //                                if (txf_confirm.text === smsCode){
 //                                    spinner.visible = true
 ////                                    MainPython.makeTrialData(15, setting.tokenAccess, Service.BASE, Service.url_license, Service.url_device)
@@ -560,9 +528,9 @@ Item{
 
                             Keys.onEnterPressed: {
                                 var data = {
-                                    "name": name.text,
-                                    "email": email.text,
-                                    "phone": phone.text,
+                                    "name": setting.userName,
+                                    "email": setting.userEmail,
+                                    "phone": setting.userPhone,
                                     "password": password.text,
                                     "gender": "",
                                     "mybooks": "",
@@ -578,22 +546,8 @@ Item{
                                 db.addTable("users", true)
                                 db.storeData("users", data, "")
 
-                                var obj = db.readAllData("users")
-                                var data2
-                                for(var i=0 ; i< obj.length ; i++){
-                                    data2 = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
-                                    if (data2.phone === phone.text){
-                                        break;
-                                    }
-                                }
-
-                                setting.user_id = data2.id
-                                setting.userName = name.text
-                                setting.userPhone = phone.text
-                                setting.userEmail = email.text
                                 setting.password = password.text
-                                setting.isLogined = true
-                                mainPage.state = "Home"
+                                mainPage.state = "Edit"
 //                                if (txf_confirm.text === smsCode){
 //                                    spinner.visible = true
 ////                                    MainPython.makeTrialData(15, setting.tokenAccess, Service.BASE, Service.url_license, Service.url_device)
@@ -673,4 +627,3 @@ Item{
 
     }
 }
-

@@ -60,7 +60,27 @@ Item{
                 anchors.leftMargin: parent.width * 0.3
                 anchors.rightMargin: parent.width * 0.3
                 onGetMessage: {
-                    getMessage(signalmsg)
+                    alarmLoginWin1.msg = signalmsg
+                }
+            }
+            //-- Alarm --//
+            Rectangle{
+                id: alarmLoginWin1
+
+                property string msg: ""
+
+                width: parent.width
+                height: lblAlarm1.implicitHeight * 2.5
+                anchors.bottom: parent.bottom
+
+                color: msg === "" ? "transparent" : color6
+
+                Label{
+                    id: lblAlarm1
+                    text: alarmLoginWin1.msg
+                    anchors.centerIn: parent
+                    color: "#ffffff"
+
                 }
             }
         }
@@ -87,13 +107,45 @@ Item{
         }
 
         Item {
+            ForgotPasswordItem{
+                anchors.fill: parent
+                anchors.topMargin: parent.height * 0.1
+                anchors.leftMargin: parent.width * 0.3
+                anchors.rightMargin: parent.width * 0.3
+                onGetMessage: {
+                    alarmLoginWin2.msg = signalmsg
+                }
+            }
+            //-- Alarm --//
+            Rectangle{
+                id: alarmLoginWin2
 
+                property string msg: ""
+
+                width: parent.width
+                height: lblAlarm2.implicitHeight * 2.5
+                anchors.bottom: parent.bottom
+
+                color: msg === "" ? "transparent" : color6
+
+                Label{
+                    id: lblAlarm2
+                    text: alarmLoginWin2.msg
+                    anchors.centerIn: parent
+                    color: "#ffffff"
+
+                }
+            }
         }
 
         Item {
             TicketItem{
                 anchors.fill: parent
             }
+
+        }
+
+        Item {
 
         }
 

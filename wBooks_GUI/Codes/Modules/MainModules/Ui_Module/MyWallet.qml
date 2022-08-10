@@ -1,14 +1,11 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
-import QtQuick.Controls.Styles 1.4
-import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 
 import "./../../../../Fonts/Icon.js" as Icons
 
 import "./../../../Modules/Items"
-import "./../../MainModules/Ui_Module"
 
 Item{
 
@@ -160,71 +157,14 @@ Item{
 
                 Item{Layout.preferredHeight: 50}
 
-                Rectangle{
+                ButtonShadow{
                     id: purchase
                     Layout.fillWidth: true
                     Layout.preferredHeight: 80
                     Layout.leftMargin: 50
                     Layout.rightMargin: 70
-
-                    color: "transparent"
-
-                    radius: 20
-
-                    //-- Shadow of btnPurchase --//
-                    DropShadow {
-                        anchors.fill: purchaseInner
-                        transparentBorder: true
-                        horizontalOffset: 0
-                        verticalOffset: 3
-                        spread: btn_ShadowSpread
-                        radius: btn_ShadowRadius
-                        samples: 14
-                        color: addOpacity(color4, 40)
-                        source: purchaseInner
-                    }
-
-                    Rectangle{
-                        id: purchaseInner
-                        anchors.fill: parent
-
-                        color: color12
-
-                        radius: 20
-
-                        //-- Title of Square --//
-                        Label{
-                            id:lbl_Purchase
-                            anchors.centerIn: parent
-                            text: "پرداخت"
-                            font.family: iranSans.name
-                            font.pixelSize: 23 //* widthRatio
-                            font.bold: true
-
-                            color: "#ffffff"
-
-                        }
-
-                        MouseArea{
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            cursorShape: Qt.PointingHandCursor
-
-                            onEntered: {
-                                btn_ShadowSpread = 0.5
-                                btn_ShadowRadius = 12
-                            }
-
-                            onExited: {
-                                btn_ShadowSpread = 0.0
-                                btn_ShadowRadius = 9
-                            }
-
-                            onClicked: {
-                                dashboard_btnClicked()
-                            }
-                        }
-                    }
+                    fontSize: 2
+                    btnText: "پرداخت"
                 }
 
                 Item{Layout.preferredHeight: 50}

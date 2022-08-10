@@ -214,53 +214,36 @@ Item {
         Item{Layout.preferredHeight: 10}
 
         //-- Button edit --//
-        Rectangle{
+        ButtonShadow{
             id: edit
             Layout.fillWidth: true
-            Layout.preferredHeight: 38
-
-            radius: height / 2
-
-            color: "#211D1D"
-            border.color: color8
-
-            Label{
-                anchors.centerIn: parent
-                text: "ثبت تغییرات"
-                font.family: iranSans.name
-                font.pixelSize: Qt.application.font.pixelSize * 1.5
-                color: "#ffffff"
-            }
-
-            MouseArea{
-                id: btn_register
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-
-                onClicked: {
-                    if (parseInt(email.length) === 0){
-                        getMessage("ایمیل خود را وارد کنید")
-                        //                                spinner.visible = false
-                    }else if (parseInt(name.length) === 0){
-                        getMessage("نام خود را وارد کنید")
-                    }else if (parseInt(phone.length) === 0){
-                        getMessage("شماره تماس خود را وارد کنید")
-                    }else{
-                        var data = {
-                            "id": setting.user_id,
-                            "name": name.text,
-                            "email": email.text,
-                            "phone": phone.text,
-                            "password": password.text,
-                            "gender": gender
+            Layout.preferredHeight: 50
+            btnText: "ثبت تغییرات"
+            btnRadius: 10
+            onDashboard_btnClicked: {
+                if (parseInt(email.length) === 0){
+                    getMessage("ایمیل خود را وارد کنید")
+                    //                                spinner.visible = false
+                }else if (parseInt(name.length) === 0){
+                    getMessage("نام خود را وارد کنید")
+                }else if (parseInt(phone.length) === 0){
+                    getMessage("شماره تماس خود را وارد کنید")
+                }else{
+                    var data = {
+                        "id": setting.user_id,
+                        "name": name.text,
+                        "email": email.text,
+                        "phone": phone.text,
+                        "password": setting.password,
+                        "gender": gender
 //                            "mybooks": setting.mybooks
-                        }
-                        db.storeData("users", data, setting.profile)
+                    }
+                    db.storeData("users", data, setting.profile)
 
-                        setting.userName = name.text
-                        setting.userEmail = email.text
-                        setting.userPhone = phone.text
-                        setting.gender = gender
+                    setting.userName = name.text
+                    setting.userEmail = email.text
+                    setting.userPhone = phone.text
+                    setting.gender = gender
 
 //                        var endpoint = Service.url_user
 
@@ -273,7 +256,6 @@ Item {
 
 
 //                        })
-                    }
                 }
             }
         }

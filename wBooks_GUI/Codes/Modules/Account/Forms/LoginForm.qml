@@ -159,63 +159,46 @@ Item{
             Item{Layout.preferredHeight: 10}
 
             //-- Button login --//
-            Rectangle{
+            ButtonShadow{
                 id: login
                 Layout.fillWidth: true
-                Layout.preferredHeight: 38
-
-                radius: height / 2
-
-                color: "#211D1D"
-                border.color: color8
-
-                Label{
-                    anchors.centerIn: parent
-                    text: "ورود"
-                    font.family: iranSans.name
-                    font.pixelSize: Qt.application.font.pixelSize * 1.5
-                    color: "#ffffff"
-                }
-
-                MouseArea{
-                    id: btn_login
-                    anchors.fill: parent
-                    cursorShape: Qt.PointingHandCursor
-
-                    onClicked: {
-                        if (parseInt(phone.length) === 0){
-                            getMessage("شماره تماس خود را وارد کنید")
-                        }else if (parseInt(password.length) === 0){
-                            getMessage("رمز عبور خود را وارد کنید")
-                        }else{
-                            var obj = db.readAllData("users")
-                            var data
-                            var isUser = false
-                            for(var i=0 ; i< obj.length ; i++){
-                                data = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
-                                if (data.phone === phone.text){
-                                    isUser = true
-                                    break;
-                                }
+                Layout.preferredHeight: 50
+                btnText: "ورود"
+                btnRadius: 10
+                onDashboard_btnClicked: {
+                    if (parseInt(phone.length) === 0){
+                        getMessage("شماره تماس خود را وارد کنید")
+                    }else if (parseInt(password.length) === 0){
+                        getMessage("رمز عبور خود را وارد کنید")
+                    }else{
+                        var obj = db.readAllData("users")
+                        var data
+                        var isUser = false
+                        for(var i=0 ; i< obj.length ; i++){
+                            data = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
+                            if (data.phone === phone.text){
+                                isUser = true
+                                break;
                             }
+                        }
 
-                            if (isUser){
-                                if (data.password === password.text){
-                                    setting.isLogined = true
-                                    setting.userName = data.name
-                                    setting.userEmail = data.email
-                                    setting.userPhone = data.phone
-                                    setting.gender = data.gender
-                                    setting.profile = JSON.parse(JSON.stringify(obj[i])).image
-                                    setting.user_id = JSON.parse(JSON.stringify(obj[i])).id
-                                    setting.password = data.password
-                                    mainPage.state = "Home"
-                                }else{
-                                    getMessage("رمز عبور اشتباه است")
-                                }
+                        if (isUser){
+                            if (data.password === password.text){
+                                setting.isLogined = true
+                                setting.userName = data.name
+                                setting.userEmail = data.email
+                                setting.userPhone = data.phone
+                                setting.gender = data.gender
+                                setting.profile = JSON.parse(JSON.stringify(obj[i])).image
+                                setting.user_id = JSON.parse(JSON.stringify(obj[i])).id
+                                setting.password = data.password
+                                mainPage.state = "Home"
                             }else{
-                                getMessage("کاربری با این مشخصات یافت نشد")
+                                getMessage("رمز عبور اشتباه است")
                             }
+                        }else{
+                            getMessage("کاربری با این مشخصات یافت نشد")
+                        }
 
 //                            var d  = Service.get_all(Service.url_user , function(data){
 //                                for(var i=0 ; i< data.length ; i++){
@@ -233,7 +216,7 @@ Item{
 //                                        setting.userPhone = data[i].phone
 //                                        setting.gender = data[i].gender
 //                                          setting.mybooks = data[i].mybooks
-                                          //اضافه کردن بقیه
+                                      //اضافه کردن بقیه
 //                                        setting.profile = JSON.parse(JSON.stringify(obj[i])).image
 //                                        setting.user_id = JSON.parse(JSON.stringify(obj[i])).id
 //                                        setting.password = data.password
@@ -246,7 +229,6 @@ Item{
 //                                }
 //                            })
 
-                        }
                     }
                 }
             }

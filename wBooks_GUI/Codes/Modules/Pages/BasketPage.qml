@@ -430,28 +430,16 @@ Rectangle {
 
                         Item{Layout.preferredHeight: 20}
 
-                        Rectangle{
-                            Layout.preferredHeight: 50
+                        ButtonShadow{
+                            id: regist
                             Layout.fillWidth: true
-                            Layout.rightMargin: 10
+                            Layout.preferredHeight: 50
                             Layout.leftMargin: 10
-                            color: color12
-                            radius: 10
-                            Label{
-                                anchors.fill: parent
-                                font.family: iranSans.name
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Qt.AlignHCenter
-                                font.pixelSize: Qt.application.font.pixelSize * 1.3
-                                text: "پرداخت"
-                                color: color4
-                            }
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
+                            Layout.rightMargin: 10
+                            btnText: "پرداخت"
+                            btnRadius: 10
+                            onDashboard_btnClicked: {
 
-                                }
                             }
                         }
 
