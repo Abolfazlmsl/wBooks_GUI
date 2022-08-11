@@ -143,5 +143,7 @@
         <file>Codes/Modules/MainModules/Ui_Module/TicketItem.qml</file>
         <file>Codes/Modules/MainModules/Ui_Module/ForgotPasswordItem.qml</file>
         <file>Codes/Modules/Items/ButtonShadow.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/AboutUsItem.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/SupportItem.qml</file>
     </qresource>
 </RCC>
