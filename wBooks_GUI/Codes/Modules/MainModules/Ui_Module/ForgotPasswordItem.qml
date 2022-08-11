@@ -173,6 +173,7 @@ Item{
                     Layout.rightMargin: 0
                     label: "رمز عبور جدید"
                     icon: Icons.key
+                    placeholder: "رمز عبور جدید"
                     echoMode: TextInput.Password
                     clearEnable: false
                     inputText.maximumLength: 16

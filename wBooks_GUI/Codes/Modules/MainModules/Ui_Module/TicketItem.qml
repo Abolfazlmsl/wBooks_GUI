@@ -141,68 +141,57 @@ Item {
                     border.color: "#ffffff"
                     radius: 10
 
-                    //-- TextField --//
-                    TextInput{
-                        id:txf_main
+                    ScrollView{
                         anchors.fill: parent
                         clip: true
+                        //-- TextField --//
+                        TextArea{
+                            id:txf_main
 
-                        padding: 30 * ratio
-                        wrapMode: TextInput.WordWrap
-        //                            leftPadding: 10 * ratio
+                            padding: 30 * ratio
+                            wrapMode: TextArea.WordWrap
+                            //                            leftPadding: 10 * ratio
 
-                        font.family: iranSansFAnum.name
-                        font.pixelSize: Qt.application.font.pixelSize * 2
-                        selectedTextColor: color14
-                        color: color4
+                            font.family: iranSansFAnum.name
+                            font.pixelSize: Qt.application.font.pixelSize * 2
+                            selectedTextColor: color14
+                            color: color4
 
-                        selectByMouse: true
-                        horizontalAlignment: TextInput.AlignRight
+                            selectByMouse: true
+                            horizontalAlignment: TextArea.AlignRight
 
 
-                        //-- placeholder --//
-                        Label{
-                            id: lbl_placeholder
+                            //-- placeholder --//
+                            Label{
+                                id: lbl_placeholder
 
-                            visible: (txf_main.length >= 1) ? false : true
+                                visible: (txf_main.length >= 1) ? false : true
 
-                            text: "متن پیام"
+                                text: "متن پیام"
 
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.horizontalCenter: parent.horizontalCenter
+                                anchors.verticalCenter: parent.verticalCenter
+                                anchors.horizontalCenter: parent.horizontalCenter
 
-                            font.family: iranSans.name
-                            font.pixelSize: Qt.application.font.pixelSize * 3
+                                font.family: iranSans.name
+                                font.pixelSize: Qt.application.font.pixelSize * 3
 
-                            color: color18
+                                color: color18
 
-                            background: Rectangle{
-                                color: "transparent"
+                                background: Rectangle{
+                                    color: "transparent"
+                                }
+
                             }
 
-                        }
 
+                            //-- Cut Copy Paste => MouseArea --//
+                            MouseArea {
+                                anchors.fill: parent
+                                acceptedButtons: Qt.RightButton
+                                hoverEnabled: true
 
-                        //-- Cut Copy Paste => MouseArea --//
-                        MouseArea {
-                            anchors.fill: parent
-                            acceptedButtons: Qt.RightButton
-                            hoverEnabled: true
+                                onClicked: {
 
-                            onClicked: {
-
-                                selectStart = txf_main.selectionStart
-                                selectEnd = txf_main.selectionEnd
-                                curPos = txf_main.positionAt(mouse.x)
-                                copyPaste_Menu.x = mouse.x
-                                copyPaste_Menu.y = mouse.y
-                                txf_main.cursorPosition = curPos
-                                copyPaste_Menu.open()
-
-                                txf_main.select(selectStart,selectEnd)
-                            }
-                            onPressAndHold: {
-                                if (mouse.source === Qt.MouseEventNotSynthesized) {
                                     selectStart = txf_main.selectionStart
                                     selectEnd = txf_main.selectionEnd
                                     curPos = txf_main.positionAt(mouse.x)
@@ -213,89 +202,93 @@ Item {
 
                                     txf_main.select(selectStart,selectEnd)
                                 }
-                            }
+                                onPressAndHold: {
+                                    if (mouse.source === Qt.MouseEventNotSynthesized) {
+                                        selectStart = txf_main.selectionStart
+                                        selectEnd = txf_main.selectionEnd
+                                        curPos = txf_main.positionAt(mouse.x)
+                                        copyPaste_Menu.x = mouse.x
+                                        copyPaste_Menu.y = mouse.y
+                                        txf_main.cursorPosition = curPos
+                                        copyPaste_Menu.open()
 
-                            //-- Cut Copy Paste => Menu --//
-                            Menu {
-                                id: copyPaste_Menu
-                                topPadding: 0
-                                bottomPadding: 0
-                                width: 150 * ratio
-                                height: 150 * ratio
-                                MenuItem {
-                                    text: "Cut"
-
-                                    font.pixelSize: 15 * ratio
-
-                                    enabled: (selectEnd - selectStart !== 0) ? true : false
-
-                                    width: 150 * ratio
-                                    height: 50 * ratio
-
-                                    onTriggered: {
                                         txf_main.select(selectStart,selectEnd)
-                                        txf_main.cut()
                                     }
                                 }
-                                MenuItem {
-                                    text: "Copy"
 
-                                    font.pixelSize: 15 * ratio
-
-                                    enabled: (selectEnd - selectStart !== 0) ? true : false
-
+                                //-- Cut Copy Paste => Menu --//
+                                Menu {
+                                    id: copyPaste_Menu
+                                    topPadding: 0
+                                    bottomPadding: 0
                                     width: 150 * ratio
-                                    height: 50 * ratio
+                                    height: 150 * ratio
+                                    MenuItem {
+                                        text: "Cut"
 
-                                    onTriggered: {
+                                        font.pixelSize: 15 * ratio
+
+                                        enabled: (selectEnd - selectStart !== 0) ? true : false
+
+                                        width: 150 * ratio
+                                        height: 50 * ratio
+
+                                        onTriggered: {
+                                            txf_main.select(selectStart,selectEnd)
+                                            txf_main.cut()
+                                        }
+                                    }
+                                    MenuItem {
+                                        text: "Copy"
+
+                                        font.pixelSize: 15 * ratio
+
+                                        enabled: (selectEnd - selectStart !== 0) ? true : false
+
+                                        width: 150 * ratio
+                                        height: 50 * ratio
+
+                                        onTriggered: {
+                                            txf_main.select(selectStart,selectEnd)
+                                            txf_main.copy()
+                                        }
+                                    }
+                                    MenuItem {
+                                        text: "Paste"
+
+
+                                        font.pixelSize: Qt.application.font.pixelSize
+                                        enabled:txtTemp.text != "" ? true : false
+
+                                        width : 150 * ratio
+                                        height : 50 * ratio
+
+                                        onTriggered: {
+                                            txf_main.paste()
+                                        }
+
+                                        TextInput {
+                                            id: txtTemp
+                                            visible: false
+                                        }
+                                    }
+                                    onOpened: {
+
                                         txf_main.select(selectStart,selectEnd)
-                                        txf_main.copy()
-                                    }
-                                }
-                                MenuItem {
-                                    text: "Paste"
+                                        txf_main.cursorPosition = curPos
 
-
-                                    font.pixelSize: Qt.application.font.pixelSize
-                                    enabled:txtTemp.text != "" ? true : false
-
-                                    width : 150 * ratio
-                                    height : 50 * ratio
-
-                                    onTriggered: {
-                                        txf_main.paste()
+                                        //console.log(txf_Search.cursorPosition)
                                     }
 
-                                    TextInput {
-                                        id: txtTemp
-                                        visible: false
+                                    onAboutToShow: {
+                                        //-- paste enable check --//
+                                        txtTemp.text = ""
+                                        txtTemp.paste()
                                     }
                                 }
-                                onOpened: {
-
-                                    txf_main.select(selectStart,selectEnd)
-                                    txf_main.cursorPosition = curPos
-
-                                    //console.log(txf_Search.cursorPosition)
-                                }
-
-                                onAboutToShow: {
-                                    //-- paste enable check --//
-                                    txtTemp.text = ""
-                                    txtTemp.paste()
-                                }
-                            }
-                        }
-
-                        onAccepted: {
-
-                            if(enterAsAccept){
-                                acceptedLogin()
-
                             }
 
                         }
-
                     }
                 }
 
