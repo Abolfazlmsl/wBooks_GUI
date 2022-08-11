@@ -54,7 +54,7 @@ Item{
         clip: true
         ParallelAnimation {
             id: increseAmountClicked
-            NumberAnimation { target: flick; property: "contentY"; to: 500; duration: 300 }
+            NumberAnimation { target: flick; property: "contentY"; to: 450; duration: 300 }
         }
 
         Item{
