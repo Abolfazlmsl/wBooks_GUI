@@ -225,7 +225,7 @@ ApplicationWindow{
                 Layout.fillWidth: true
                 Layout.preferredHeight: parent.height * 0.2
 //                color: (setting.lightMode) ? "#00FF0000" : "#201918"
-                color: color3
+                color: color1
 
                 Image {
                     id: img_intro
@@ -242,7 +242,7 @@ ApplicationWindow{
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 //                color: (setting.lightMode) ? "#00FF0000" : "#201918"
-                color: color3
+                color: color1
 
                 ColumnLayout{
                     anchors.fill: parent
@@ -270,7 +270,7 @@ ApplicationWindow{
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 //                        color: (setting.lightMode) ? "#00FF0000" : "#201918"
-                        color: color3
+                        color: color1
 
                         //                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                         clip: true
@@ -304,7 +304,7 @@ ApplicationWindow{
                                 Layout.leftMargin: 20
                                 Layout.rightMargin: 20
 //                                border.color: (setting.lightMode) ? "transparent" : "white"
-                                color: color3
+                                color: color1
 
                             }
 

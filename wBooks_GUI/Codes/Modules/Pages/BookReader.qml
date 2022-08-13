@@ -350,7 +350,7 @@ Window {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 //                        color: (setting.lightMode) ? "white":"black"
-                        color: color3
+                        color: color1
 
                         Label{
                             anchors.fill: parent

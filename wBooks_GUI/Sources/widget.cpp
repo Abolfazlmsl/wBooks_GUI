@@ -142,9 +142,13 @@ void Widget::scrollPage(int amount)
 void Widget::paint(QPainter *painter)
 {
     if (themeMode == "Light"){
-            painter->fillRect(boundingRect(), Qt::white);
-        }else if (themeMode == "Dark"){
-            painter->fillRect(boundingRect(), Qt::black);
+        painter->fillRect(boundingRect(), Qt::white);
+    }else if (themeMode == "SemiLight"){
+        painter->fillRect(boundingRect(), Qt::gray);
+    }else if (themeMode == "SemiDark"){
+        painter->fillRect(boundingRect(), Qt::darkGray);
+    }else if (themeMode == "Dark"){
+        painter->fillRect(boundingRect(), Qt::black);
     }
     painter->setRenderHint(QPainter::Antialiasing, true);
     if (!m_document->loaded()) {
@@ -192,16 +196,34 @@ void Widget::paint(QPainter *painter)
             paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Background, Qt::white);
             paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Window, Qt::white);
             paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Button, Qt::white);
+        }else if (themeMode == "SemiLight"){
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::WindowText, Qt::black);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Light, Qt::black);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Text, Qt::black);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Base, Qt::black);
+
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Background, Qt::gray);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Window, Qt::gray);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Button, Qt::gray);
+        }else if (themeMode == "SemiDark"){
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::WindowText, Qt::white);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Light, Qt::white);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Text, Qt::white);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Base, Qt::white);
+
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Background, Qt::darkGray);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Window, Qt::darkGray);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Button, Qt::darkGray);
         }else if (themeMode == "Dark"){
             paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::WindowText, Qt::white);
-                    paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Light, Qt::white);
-                    paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Text, Qt::white);
-                    paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Base, Qt::white);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Light, Qt::white);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Text, Qt::white);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Base, Qt::white);
 
-                    paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Background, Qt::black);
-                    paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Window, Qt::black);
-                    paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Button, Qt::black);
-                }
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Background, Qt::black);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Window, Qt::black);
+            paintContext.palette.setColor(QPalette::ColorGroup(group), QPalette::Button, Qt::black);
+        }
     }
 
     painter->translate(0, -m_yOffset);
