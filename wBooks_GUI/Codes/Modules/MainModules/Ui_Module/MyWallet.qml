@@ -165,6 +165,7 @@ Item{
                     Layout.rightMargin: 70
                     fontSize: 2
                     btnText: "پرداخت"
+                    textColor: "#ffffff"
                 }
 
                 Item{Layout.preferredHeight: 50}

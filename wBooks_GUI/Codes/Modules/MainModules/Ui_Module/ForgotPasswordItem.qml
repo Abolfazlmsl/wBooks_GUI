@@ -262,6 +262,7 @@ Item{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50
                     btnText: "تغییر رمز عبور"
+                    textColor: "#ffffff"
                     btnRadius: 10
                     onDashboard_btnClicked: {
                         if (parseInt(prePassword.length) === 0){

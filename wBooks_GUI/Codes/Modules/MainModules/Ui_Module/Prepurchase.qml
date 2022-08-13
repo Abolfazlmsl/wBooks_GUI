@@ -244,32 +244,21 @@ Item {
                         anchors.top: title3Rec.bottom
                     }
 
-                    Rectangle{
+                    ButtonShadow{
                         id: btnpurchase
                         width: parent.width
                         height: parent.height * 0.15
                         anchors.top: spacer.bottom
-                        color: color2
-                        Label{
-                            id: txt4
-                            anchors.fill: parent
-                            text: "پیش خرید"
-                            font.family: iranSans.name
-                            color: "#ffffff"
-                            verticalAlignment: Qt.AlignVCenter
-                            horizontalAlignment: Qt.AlignHCenter
-                            font.pixelSize: Qt.application.font.pixelSize
-                        }
-                        MouseArea{
-                            anchors.fill: parent
-                            cursorShape: Qt.PointingHandCursor
-                            onClicked: {
-                                mainPage.state = "Book Page"
-                            }
+                        btnText: "پیش خرید"
+                        textColor: "#ffffff"
+                        fontSize: 1
+                        btnRadius: 0
+                        btnColor: color2
+                        onDashboard_btnClicked: {
+                            mainPage.state = "Book Page"
                         }
                     }
                 }
-
             }
         }
 

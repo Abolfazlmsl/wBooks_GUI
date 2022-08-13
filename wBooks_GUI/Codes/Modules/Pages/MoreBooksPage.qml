@@ -197,30 +197,17 @@ Item {
                         layoutDirection: Qt.RightToLeft
 
                         //-- Button purchase --//
-                        Rectangle{
+                        ButtonShadow{
                             id: purchase
                             Layout.fillHeight: true
                             Layout.preferredWidth: parent.width * 0.5
+                            btnText: "خرید کتاب"
+                            textColor: color3
+                            fontSize: 1
+                            btnRadius: 0
+                            btnColor: color8
+                            onDashboard_btnClicked: {
 
-                            color: color8
-
-                            Label{
-                                anchors.centerIn: parent
-                                anchors.margins: 5
-                                text: "خرید کتاب"
-                                font.family: iranSans.name
-                                font.pixelSize: Qt.application.font.pixelSize * 1
-                                color: color3
-                            }
-
-                            MouseArea{
-                                id: btn_purchase
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-
-                                onClicked: {
-
-                                }
                             }
                         }
 

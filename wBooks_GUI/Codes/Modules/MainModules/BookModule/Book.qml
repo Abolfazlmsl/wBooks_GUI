@@ -171,51 +171,31 @@ Flickable {
                                         anchors.fill: parent
                                         layoutDirection: Qt.RightToLeft
 
-                                        Rectangle{
+                                        ButtonShadow{
                                             id: btnview
-                                            Layout.preferredWidth: parent.width * 0.25
                                             Layout.fillHeight: true
-                                            color: color2
-                                            Label{
-                                                id: txtview
-                                                anchors.fill: parent
-                                                text: "مشاهده کتاب"
-                                                font.family: iranSans.name
-                                                color: "#ffffff"
-                                                verticalAlignment: Qt.AlignVCenter
-                                                horizontalAlignment: Qt.AlignHCenter
-                                                font.pixelSize: Qt.application.font.pixelSize
-                                            }
-                                            MouseArea{
-                                                anchors.fill: parent
-                                                cursorShape: Qt.PointingHandCursor
-                                                onClicked: {
-                                                    bookreader.visible = true
-                                                }
+                                            Layout.preferredWidth: parent.width * 0.25
+                                            btnText: "مشاهده کتاب"
+                                            textColor: "#ffffff"
+                                            fontSize: 1
+                                            btnRadius: 0
+                                            btnColor: color2
+                                            onDashboard_btnClicked: {
+                                                bookreader.visible = true
                                             }
                                         }
 
-                                        Rectangle{
+                                        ButtonShadow{
                                             id: btnpurchase
-                                            Layout.preferredWidth: parent.width * 0.25
                                             Layout.fillHeight: true
-                                            color: color2
-                                            Label{
-                                                id: txt5
-                                                anchors.fill: parent
-                                                text: "خرید کتاب"
-                                                font.family: iranSans.name
-                                                color: "#ffffff"
-                                                verticalAlignment: Qt.AlignVCenter
-                                                horizontalAlignment: Qt.AlignHCenter
-                                                font.pixelSize: Qt.application.font.pixelSize
-                                            }
-                                            MouseArea{
-                                                anchors.fill: parent
-                                                cursorShape: Qt.PointingHandCursor
-                                                onClicked: {
+                                            Layout.preferredWidth: parent.width * 0.25
+                                            btnText: "خرید کتاب"
+                                            textColor: "#ffffff"
+                                            fontSize: 1
+                                            btnRadius: 0
+                                            btnColor: color2
+                                            onDashboard_btnClicked: {
 
-                                                }
                                             }
                                         }
 

@@ -164,6 +164,7 @@ Item{
                 Layout.fillWidth: true
                 Layout.preferredHeight: 50
                 btnText: "ورود"
+                textColor: "#ffffff"
                 btnRadius: 10
                 onDashboard_btnClicked: {
                     if (parseInt(phone.length) === 0){

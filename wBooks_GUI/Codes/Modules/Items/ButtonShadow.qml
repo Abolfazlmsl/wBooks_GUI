@@ -7,6 +7,7 @@ import "./../../../Fonts/Icon.js" as Icons
 
 Rectangle{
     property alias btnText: lbl_btn.text
+    property alias textColor: lbl_btn.color
     property string btnColor: color12
     property int btnRadius: 20
     property double fontSize: 1.3

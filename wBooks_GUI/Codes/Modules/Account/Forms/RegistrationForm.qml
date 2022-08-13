@@ -282,6 +282,7 @@ Item{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50
                     btnText: "ثبت نام"
+                    textColor: "#ffffff"
                     btnRadius: 10
                     onDashboard_btnClicked: {
                         if (parseInt(email.length) === 0){

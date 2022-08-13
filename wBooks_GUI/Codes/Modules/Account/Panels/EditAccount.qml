@@ -219,6 +219,7 @@ Item {
             Layout.fillWidth: true
             Layout.preferredHeight: 50
             btnText: "ثبت تغییرات"
+            textColor: "#ffffff"
             btnRadius: 10
             onDashboard_btnClicked: {
                 if (parseInt(email.length) === 0){

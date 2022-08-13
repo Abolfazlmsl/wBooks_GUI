@@ -437,6 +437,7 @@ Rectangle {
                             Layout.leftMargin: 10
                             Layout.rightMargin: 10
                             btnText: "پرداخت"
+                            textColor: "#ffffff"
                             btnRadius: 10
                             onDashboard_btnClicked: {
 

@@ -368,6 +368,7 @@ Item {
                                 Layout.rightMargin: 100
                                 fontSize: 2
                                 btnText: "ارسال پیام"
+                                textColor: "#ffffff"
                             }
 
                             Item{Layout.preferredHeight: 50}
