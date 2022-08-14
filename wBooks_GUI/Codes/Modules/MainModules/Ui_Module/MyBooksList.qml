@@ -11,6 +11,15 @@ Item {
 
     property bool back: true
 
+    ParallelAnimation {
+        id: showReturnAnim
+        NumberAnimation { target: iconReturn; property: "Layout.preferredWidth"; to: 100; duration: 300 }
+    }
+    ParallelAnimation {
+        id: hideReturnAnim
+        NumberAnimation { target: iconReturn; property: "Layout.preferredWidth"; to: 50; duration: 300 }
+    }
+
     ColumnLayout{
         anchors.fill: parent
         anchors.margins: 20
@@ -20,27 +29,41 @@ Item {
             layoutDirection: Qt.RightToLeft
             visible: back
             Rectangle{
-                Layout.preferredWidth: 30
-                Layout.preferredHeight: width
-                radius: width / 2
+                id: iconReturn
+                property bool isHover: false
+
+                Layout.preferredWidth: 50
+                Layout.preferredHeight: 50
+                radius: 10
                 color: color2
                 Label{
+                    id: icon
                     anchors.fill: parent
+                    text: (iconReturn.isHover) ? "بازگشت":Icons.arrow_right
+                    font.family: (iconReturn.isHover) ? mainFont.name:webfont.name
+                    font.pixelSize: (iconReturn.isHover) ? Qt.application.font.pixelSize*1.5:Qt.application.font.pixelSize * 2
+                    color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: color4
-                    font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
-                    text: Icons.arrow_right
                 }
                 MouseArea{
                     anchors.fill: parent
                     cursorShape: Qt.PointingHandCursor
+                    hoverEnabled: true
                     onClicked: {
                         myBooksView = 0
                     }
+                    onEntered: {
+                        showReturnAnim.restart()
+                        iconReturn.isHover = true
+                    }
+                    onExited: {
+                        hideReturnAnim.restart()
+                        iconReturn.isHover = false
+                    }
                 }
             }
+
             Item{Layout.fillWidth: true}
         }
 

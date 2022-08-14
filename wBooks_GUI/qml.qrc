@@ -153,5 +153,7 @@
         <file>Fonts/Kalameh(FaNum)-Bold.ttf</file>
         <file>Fonts/Kalameh(FaNum)-Regular.ttf</file>
         <file>Fonts/Kalameh(FaNum)-Thin.ttf</file>
+        <file>Codes/Modules/Pages/MembershipBooksPage.qml</file>
+        <file>Codes/Modules/Items/MembershipBookItem.qml</file>
     </qresource>
 </RCC>
