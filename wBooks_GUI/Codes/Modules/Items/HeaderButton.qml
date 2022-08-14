@@ -25,7 +25,7 @@ Rectangle{
         width: Text.width
         text: "عنوان"
         minimumPointSize: 10
-        font.family: iranSans.name
+        font.family: mainFont.name
         fontSizeMode: Text.Fit
         font.pixelSize: Qt.application.font.pixelSize * 1.3
 

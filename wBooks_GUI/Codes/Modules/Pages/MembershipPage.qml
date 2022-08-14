@@ -41,7 +41,7 @@ Item{
                         color: "transparent"
                         Label{
                             anchors.fill: parent
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             color: color4
                             text: "اشتراک من"
                             font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -60,7 +60,7 @@ Item{
                         color: "transparent"
                         Label{
                             anchors.fill: parent
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             color: color4
                             text: "شما اشتراک فعالی ندارید."
                             font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -85,7 +85,7 @@ Item{
                             color: "green"
                             Label{
                                 anchors.centerIn: parent
-                                font.family: iranSansFAnum.name
+                                font.family: mainFaNumFont.name
                                 color: "white"
                                 text: myMembershipModel.get(0).time + " ماهه"
                                 font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -100,7 +100,7 @@ Item{
                             color: "transparent"
                             Label{
                                 anchors.centerIn: parent
-                                font.family: iranSansFAnum.name
+                                font.family: mainFaNumFont.name
                                 color: color4
                                 text: myMembershipModel.get(0).remaining + " روز باقی مانده است"
                                 font.pixelSize: Qt.application.font.pixelSize * 1.5

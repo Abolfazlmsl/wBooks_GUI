@@ -3,10 +3,10 @@
         <file>main.qml</file>
         <file>Fonts/Fonts.js</file>
         <file>Fonts/Icon.js</file>
-        <file>Fonts/IRANSans_Medium.ttf</file>
-        <file>Fonts/IRANSansMobile(FaNum).ttf</file>
-        <file>Fonts/IRANSansMobile.ttf</file>
-        <file>Fonts/IRANSansMobile_Bold.ttf</file>
+        <file>Fonts/iranSans_Medium.ttf</file>
+        <file>Fonts/iranSansMobile(FaNum).ttf</file>
+        <file>Fonts/iranSansMobile.ttf</file>
+        <file>Fonts/iranSansMobile_Bold.ttf</file>
         <file>Fonts/IRYekan.ttf</file>
         <file>Fonts/materialdesignicons-webfont.ttf</file>
         <file>Fonts/OpenSans-Regular.ttf</file>
@@ -145,5 +145,13 @@
         <file>Codes/Modules/Items/ButtonShadow.qml</file>
         <file>Codes/Modules/MainModules/Ui_Module/AboutUsItem.qml</file>
         <file>Codes/Modules/MainModules/Ui_Module/SupportItem.qml</file>
+        <file>Fonts/Kalameh-Black.ttf</file>
+        <file>Fonts/Kalameh-Bold.ttf</file>
+        <file>Fonts/Kalameh-Regular.ttf</file>
+        <file>Fonts/Kalameh-Thin.ttf</file>
+        <file>Fonts/Kalameh(FaNum)-Black.ttf</file>
+        <file>Fonts/Kalameh(FaNum)-Bold.ttf</file>
+        <file>Fonts/Kalameh(FaNum)-Regular.ttf</file>
+        <file>Fonts/Kalameh(FaNum)-Thin.ttf</file>
     </qresource>
 </RCC>

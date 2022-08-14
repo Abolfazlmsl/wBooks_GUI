@@ -68,7 +68,7 @@ Item {
                         Layout.preferredWidth: titletxt.contentWidth + 20
                         Layout.fillHeight: true
                         text: ""
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: color4
                         font.pixelSize: Qt.application.font.pixelSize * 1.7
                         verticalAlignment: Qt.AlignVCenter
@@ -79,7 +79,7 @@ Item {
                         id: moretxt
                         Layout.preferredWidth: moretxt.contentWidth
                         Layout.fillHeight: true
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: color2
                         text: "(مشاهده بیشتر)"
                         font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -191,7 +191,7 @@ Item {
                                     Label{
                                         anchors.fill: parent
                                         text: "(" + itemModel.get(index).rate + " رای)"
-                                        font.family: iranSansFAnum.name
+                                        font.family: mainFaNumFont.name
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
                                         font.pixelSize: Qt.application.font.pixelSize * 0.7
@@ -212,7 +212,7 @@ Item {
                             id: txt2
                             anchors.fill: parent
                             text: itemModel.get(index).text1
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             color: color4
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
@@ -229,7 +229,7 @@ Item {
                             id: txt3
                             anchors.fill: parent
                             text: itemModel.get(index).text2
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             color: color9
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter

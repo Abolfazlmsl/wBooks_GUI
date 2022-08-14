@@ -106,7 +106,7 @@ Item{
                         height: parent.height
                         anchors.centerIn: parent
                         text: "اطلاعات را به منظور تغییر رمز عبور خود وارد کنید"
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: color8
                         font.pixelSize: Qt.application.font.pixelSize * 1.5
                         horizontalAlignment: Qt.AlignHCenter
@@ -319,7 +319,7 @@ Item{
                         Layout.fillWidth: true
                         Layout.preferredHeight: implicitHeight
                         text: "پیامک فعالسازی به شماره زیر ارسال شده است:"
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: color8
                         font.pixelSize: Qt.application.font.pixelSize * 1.3
                         horizontalAlignment: Qt.AlignHCenter
@@ -344,7 +344,7 @@ Item{
                                 Layout.preferredWidth: implicitWidth
                                 Layout.preferredHeight: implicitHeight
                                 text: setting.userPhone
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 color: color12
 
                                 font.pixelSize: Qt.application.font.pixelSize * 1.5
@@ -357,7 +357,7 @@ Item{
                                 Layout.preferredWidth: implicitWidth
                                 Layout.preferredHeight: implicitHeight
                                 text: "بازگشت"
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 color: color8
 
                                 font.pixelSize: Qt.application.font.pixelSize * 1.5
@@ -458,7 +458,7 @@ Item{
                         Label{
                             anchors.centerIn: parent
                             text: "تایید"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1
                             color: "#ffffff"
                         }
@@ -600,7 +600,7 @@ Item{
                         Layout.fillWidth: true
                         Layout.preferredHeight: implicitHeight
                         text: "ارسال مجدد کد"
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: color8
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.1

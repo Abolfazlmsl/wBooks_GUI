@@ -72,7 +72,7 @@ Flickable {
                                         id: txt1
                                         anchors.fill: parent
                                         text: "من پیش از تو"
-                                        font.family: iranSans.name
+                                        font.family: mainFont.name
                                         font.bold: true
                                         color: color4
                                         verticalAlignment: Qt.AlignVCenter
@@ -88,7 +88,7 @@ Flickable {
                                         id: txt2
                                         anchors.fill: parent
                                         text: "نویسنده: جوجو مویز"
-                                        font.family: iranSans.name
+                                        font.family: mainFont.name
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
                                         font.pixelSize: Qt.application.font.pixelSize
@@ -103,7 +103,7 @@ Flickable {
                                         id: txt3
                                         anchors.fill: parent
                                         text: "مترجم: غزال حیدری"
-                                        font.family: iranSans.name
+                                        font.family: mainFont.name
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
                                         font.pixelSize: Qt.application.font.pixelSize
@@ -119,7 +119,7 @@ Flickable {
                                         id: txt4
                                         anchors.fill: parent
                                         text: "ناشر: نشر ترنگ"
-                                        font.family: iranSans.name
+                                        font.family: mainFont.name
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
                                         font.pixelSize: Qt.application.font.pixelSize
@@ -152,7 +152,7 @@ Flickable {
                                             Label{
                                                 anchors.fill: parent
                                                 text: "(" + "27" + " رای)"
-                                                font.family: iranSansFAnum.name
+                                                font.family: mainFaNumFont.name
                                                 color: color9
                                                 verticalAlignment: Qt.AlignVCenter
                                                 font.pixelSize: Qt.application.font.pixelSize * 0.9
@@ -206,7 +206,7 @@ Flickable {
                                             Label{
                                                 anchors.fill: parent
                                                 text: "قیمت: 26000 تومان"
-                                                font.family: iranSansFAnum.name
+                                                font.family: mainFaNumFont.name
                                                 color: color2
                                                 verticalAlignment: Qt.AlignVCenter
                                                 horizontalAlignment: Qt.AlignHCenter
@@ -370,7 +370,7 @@ Flickable {
                             text: "کتاب های مرتبط"
                             font.bold: section1.checked ? true : false
                             font.pixelSize: section1.checked ? Qt.application.font.pixelSize * 1.3 : Qt.application.font.pixelSize * 1.2
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             color: section1.checked ? color4 : "#aaaaaa"
                             anchors.centerIn: parent
                         }
@@ -394,7 +394,7 @@ Flickable {
                             text: "فهرست"
                             font.bold: section4.checked ? true : false
                             font.pixelSize: section4.checked ? Qt.application.font.pixelSize * 1.3 : Qt.application.font.pixelSize * 1.2
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             color: section4.checked ? color4 : "#aaaaaa"
                             anchors.centerIn: parent
                         }
@@ -419,7 +419,7 @@ Flickable {
                             text: "معرفی"
                             font.bold: section5.checked ? true : false
                             font.pixelSize: section5.checked ? Qt.application.font.pixelSize * 1.3 : Qt.application.font.pixelSize * 1.2
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             color: section5.checked ? color4 : "#aaaaaa"
                             anchors.centerIn: parent
                         }

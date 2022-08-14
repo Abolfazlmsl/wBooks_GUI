@@ -286,7 +286,7 @@ ApplicationWindow{
                                 text: "آدرس دانلود را وارد کنید"
 //                                color: (setting.lightMode) ? "darkblue" : "white"
                                 color: color5
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 font.pixelSize: Qt.application.font.pixelSize * 1.3
                                 horizontalAlignment: Qt.AlignHCenter
 
@@ -406,7 +406,7 @@ ApplicationWindow{
                                         Label{
                                             anchors.centerIn: parent
                                             text: "باز کردن فایل"
-                                            font.family: iranSans.name
+                                            font.family: mainFont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.5
                                             color: "#ffffff"
                                         }
@@ -462,7 +462,7 @@ ApplicationWindow{
                                         Label{
                                             anchors.centerIn: parent
                                             text: "ادامه دانلود"
-                                            font.family: iranSans.name
+                                            font.family: mainFont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.5
                                             color: "#ffffff"
                                         }
@@ -492,7 +492,7 @@ ApplicationWindow{
                                         Label{
                                             anchors.centerIn: parent
                                             text: "توقف دانلود"
-                                            font.family: iranSans.name
+                                            font.family: mainFont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.5
                                             color: "#ffffff"
                                         }
@@ -520,7 +520,7 @@ ApplicationWindow{
                                         Label{
                                             anchors.centerIn: parent
                                             text: "شروع دانلود"
-                                            font.family: iranSans.name
+                                            font.family: mainFont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.5
                                             color: "#ffffff"
                                         }

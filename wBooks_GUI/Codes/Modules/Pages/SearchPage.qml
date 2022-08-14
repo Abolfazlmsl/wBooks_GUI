@@ -68,7 +68,7 @@ Rectangle {
                                 id: headertxt
                                 anchors.fill: parent
                                 text: "نتایج جستجو به دنبال: سلام"
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 color: color2
                                 verticalAlignment: Qt.AlignVCenter
                                 font.pixelSize: Qt.application.font.pixelSize * 1.5
@@ -91,7 +91,7 @@ Rectangle {
                                 id: txt
                                 text: searchModelTop.get(index).text
                                 anchors.left: icon.right
-                                font.family: iranSansFAnum.name
+                                font.family: mainFaNumFont.name
                                 verticalAlignment: Qt.AlignVCenter
                                 font.pixelSize: Qt.application.font.pixelSize
                                 color: color9
@@ -134,7 +134,7 @@ Rectangle {
                             id: resulttxt
                             anchors.fill: parent
                             text: "تعداد نتایج جستجو: " + totalPages
-                            font.family: iranSansFAnum.name
+                            font.family: mainFaNumFont.name
                             color: color2
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
@@ -153,7 +153,7 @@ Rectangle {
                         Label{
                             anchors.fill: parent
                             text: "موردی برای نمایش موجود نیست"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             color: color9
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
@@ -214,7 +214,7 @@ Rectangle {
                                     id: txt2
                                     anchors.fill: parent
                                     text:itemModel.get(index+currentPage*21).text1
-                                    font.family: iranSans.name
+                                    font.family: mainFont.name
                                     color: color4
                                     verticalAlignment: Qt.AlignVCenter
                                 }
@@ -230,7 +230,7 @@ Rectangle {
                                     id: txt3
                                     anchors.fill: parent
                                     text: itemModel.get(index+currentPage*21).text2
-                                    font.family: iranSans.name
+                                    font.family: mainFont.name
                                     color: color9
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize
@@ -266,7 +266,7 @@ Rectangle {
                                         Label{
                                             anchors.fill: parent
                                             text: "(" + itemModel.get(index+currentPage*21).rate + " رای)"
-                                            font.family: iranSansFAnum.name
+                                            font.family: mainFaNumFont.name
                                             color: color9
                                             verticalAlignment: Qt.AlignVCenter
                                             font.pixelSize: Qt.application.font.pixelSize * 0.7
@@ -309,7 +309,7 @@ Rectangle {
                                             width: parent.width
                                             height: parent.height / 2
                                             text: "تاریخ انتشار"
-                                            font.family: iranSans.name
+                                            font.family: mainFont.name
                                             color: color9
                                             verticalAlignment: Qt.AlignVCenter
                                             horizontalAlignment: Qt.AlignHCenter
@@ -329,7 +329,7 @@ Rectangle {
                                             height: parent.height / 2
                                             anchors.top: recspacer.bottom
                                             text: itemModel.get(index+currentPage*21).date
-                                            font.family: iranSansFAnum.name
+                                            font.family: mainFaNumFont.name
                                             color: color9
                                             verticalAlignment: Qt.AlignVCenter
                                             horizontalAlignment: Qt.AlignHCenter
@@ -394,7 +394,7 @@ Rectangle {
                                         horizontalAlignment: Qt.AlignHCenter
                                         font.pixelSize: Qt.application.font.pixelSize * 1.5
                                         text: index+1
-                                        font.family: iranSansFAnum.name
+                                        font.family: mainFaNumFont.name
                                         color: color2
                                     }
                                     MouseArea{

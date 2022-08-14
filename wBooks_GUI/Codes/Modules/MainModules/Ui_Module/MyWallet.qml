@@ -134,7 +134,7 @@ Item{
                             Layout.preferredWidth: contentWidth
                             Layout.fillHeight: true
                             text: "مبلغ قابل پرداخت:"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: 23 //* widthRatio
                             font.bold: true
                             horizontalAlignment: Qt.AlignHCenter
@@ -145,7 +145,7 @@ Item{
                             Layout.fillWidth: true
                             Layout.fillHeight: true
                             text: increseAmount + " تومان"
-                            font.family: iranSansFAnum.name
+                            font.family: mainFaNumFont.name
                             font.pixelSize: 23 //* widthRatio
                             font.bold: true
                             horizontalAlignment: Qt.AlignHCenter

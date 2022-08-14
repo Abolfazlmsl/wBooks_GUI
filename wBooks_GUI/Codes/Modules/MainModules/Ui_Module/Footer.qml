@@ -37,7 +37,7 @@ Rectangle {
                     Layout.preferredHeight: parent.height * 0.3
                     Layout.rightMargin: 20
                     text: "وی بوکس"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -48,7 +48,7 @@ Rectangle {
                     Layout.preferredHeight: 40
                     Layout.rightMargin: 20
                     text: "وی بوکس سایت و اپلیکیشن دانلود کتاب الکترونیکی و دانلود کتاب صوتی است."
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -61,7 +61,7 @@ Rectangle {
                     Layout.preferredHeight: 40
                     Layout.rightMargin: 20
                     text: "در وی بوکس کتاب های روانشناسی، رمان و داستان، کتاب های تاریخی، کتاب فلسفی و هزاران کنتب رایگان برای دانلود وجود دارد."
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     wrapMode: Text.WordWrap
                     color: color4
@@ -86,7 +86,7 @@ Rectangle {
                     Layout.preferredHeight: parent.height * 0.3
                     Layout.rightMargin: 20
                     text: "طاقچه"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -97,7 +97,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "تماس با ما"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -116,7 +116,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "درباره ی طاقچه"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -136,7 +136,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "وبلاگ طاقچه"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -156,7 +156,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "سوال های متداول"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -176,7 +176,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "فرصت های شغلی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -207,7 +207,7 @@ Rectangle {
                     Layout.preferredHeight: parent.height * 0.3
                     Layout.rightMargin: 20
                     text: "کتاب های پیشنهادی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -219,7 +219,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "دنیای سوفی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -239,7 +239,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "شازده کوچولو"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -260,7 +260,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "غرور و تعصب"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -281,7 +281,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "مغازه خودکشی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -302,7 +302,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "کتاب اثر مرکب"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -333,7 +333,7 @@ Rectangle {
                     Layout.preferredHeight: parent.height * 0.3
                     Layout.rightMargin: 20
                     text: "دسته بندی پیشنهادی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -345,7 +345,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "رمان عاشقانه"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -365,7 +365,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "کتاب های علمی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -386,7 +386,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "کتاب های صوتی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -407,7 +407,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "کتاب های پزشکی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4
@@ -428,7 +428,7 @@ Rectangle {
                     Layout.preferredHeight: 20
                     Layout.rightMargin: 20
                     text: "کتاب صوتی رایگان"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.bold: true
                     color: color4
                     font.pixelSize: Qt.application.font.pixelSize * 1.4

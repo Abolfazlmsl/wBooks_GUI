@@ -50,7 +50,7 @@ Rectangle{
         anchors.verticalCenter: parent.verticalCenter
 
         text: "عنوان"
-        font.family: iranSans.name
+        font.family: mainFont.name
         minimumPointSize: 10
         fontSizeMode: Text.Fit
         font.pixelSize: Qt.application.font.pixelSize * 1.3

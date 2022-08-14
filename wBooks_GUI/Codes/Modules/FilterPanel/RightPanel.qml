@@ -29,7 +29,7 @@ Rectangle{
                 Layout.preferredHeight: 50
                 Layout.rightMargin: 20
                 text: "فیلتر دسته بندی ها"
-                font.family: iranSans.name
+                font.family: mainFont.name
                 font.pixelSize: Qt.application.font.pixelSize * 1.3
                 verticalAlignment: Qt.AlignVCenter
                 color: color9

@@ -78,7 +78,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.bold: true
                             color: color4
                             text: "نام اثر"
@@ -97,7 +97,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.bold: true
                             color: color4
                             text: "نام نویسنده"
@@ -116,7 +116,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.bold: true
                             color: color4
                             text: "نام گوینده"
@@ -135,7 +135,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.bold: true
                             color: color4
                             text: "حذف اثر"
@@ -182,7 +182,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.bold: true
                             color: color4
                             text: model.title
@@ -208,7 +208,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.bold: true
                             color: color4
                             text: model.author
@@ -234,7 +234,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.bold: true
                             color: color4
                             text: model.speaker

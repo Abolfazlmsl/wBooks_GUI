@@ -207,7 +207,7 @@ Rectangle{
                                 width: parent.width
                                 height: parent.height / 3
                                 text: setting.userName
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 color: color4
 
                                 font.pixelSize: Qt.application.font.pixelSize * 1
@@ -221,7 +221,7 @@ Rectangle{
                                 height: parent.height / 3
                                 anchors.top: txt1.bottom
                                 text: "شماره کاربری: 145625"
-                                font.family: iranSansFAnum.name
+                                font.family: mainFaNumFont.name
                                 color: color4
 
                                 font.pixelSize: Qt.application.font.pixelSize * 1
@@ -234,7 +234,7 @@ Rectangle{
                                 height: parent.height / 3
                                 anchors.top: txt2.bottom
                                 text: setting.userPhone
-                                font.family: iranSansFAnum.name
+                                font.family: mainFaNumFont.name
                                 color: color4
 
                                 font.pixelSize: Qt.application.font.pixelSize * 1
@@ -261,7 +261,7 @@ Rectangle{
                         id: txt_exit
                         anchors.fill: parent
                         text: "افزایش اعتبار"
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: color7
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.3

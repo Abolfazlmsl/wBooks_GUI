@@ -65,7 +65,7 @@ Rectangle {
                         width: parent.width
                         height: parent.height / 2
                         text: setting.userName
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: "#ffffff"
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -76,7 +76,7 @@ Rectangle {
                         height: parent.height / 2
                         anchors.top: txt1.bottom
                         text: "شماره کاربری: 145625"
-                        font.family: iranSansFAnum.name
+                        font.family: mainFaNumFont.name
                         color: "#ffffff"
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -95,7 +95,7 @@ Rectangle {
                         id: txt_exit
                         anchors.fill: parent
                         text: "خروج"
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: "#ffffff"
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -200,7 +200,7 @@ Rectangle {
                     anchors.topMargin: 10
                     color: "#ffffff"
                     text: (myMembershipModel.count > 0)? myMembershipModel.get(0).remaining + " روز از اشتراک شما باقی مانده است" : "شما اشتراک فعالی ندارید"
-                    font.family: iranSansFAnum.name
+                    font.family: mainFaNumFont.name
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                 }
@@ -221,7 +221,7 @@ Rectangle {
                         anchors.fill: parent
                         color: "#000000"
                         text: "تغییر و تمدید طرح"
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
                     }

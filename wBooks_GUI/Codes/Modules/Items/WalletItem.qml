@@ -96,7 +96,7 @@ Rectangle{
                                 id:lbl_Title
                                 anchors.centerIn: parent
                                 text: "تمرین"
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 font.pixelSize: 23 //* widthRatio
                                 font.bold: true
 
@@ -128,7 +128,7 @@ Rectangle{
                                 id:lbl_Title2
                                 anchors.centerIn: parent
                                 text: "موجودی کیف پول:"
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 font.pixelSize: 23 //* widthRatio
 //                                font.bold: true
 
@@ -151,7 +151,7 @@ Rectangle{
                                 id:lbl_Price
                                 anchors.centerIn: parent
                                 text: price + " تومان"
-                                font.family: iranSansFAnum.name
+                                font.family: mainFaNumFont.name
                                 font.pixelSize: 60 //* widthRatio
                                 font.bold: true
 
@@ -201,7 +201,7 @@ Rectangle{
                             id:lbl_Purchase
                             anchors.centerIn: parent
                             text: "افزایش اعتبار"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: 23 //* widthRatio
                             font.bold: true
 

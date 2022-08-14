@@ -18,7 +18,7 @@ Rectangle{
         width: parent.width
         height: parent.height / 3
         text: "تعداد صفحات"
-        font.family: iranSans.name
+        font.family: mainFont.name
         font.bold: true
         color: color9
         verticalAlignment: Qt.AlignVCenter
@@ -31,7 +31,7 @@ Rectangle{
         height: parent.height / 3
         anchors.top: txt2.bottom
         text: "224"
-        font.family: iranSansFAnum.name
+        font.family: mainFaNumFont.name
         font.bold: true
         color: color4
         verticalAlignment: Qt.AlignVCenter
@@ -44,7 +44,7 @@ Rectangle{
         height: parent.height / 3
         anchors.top: txt3.bottom
         text: ""
-        font.family: iranSans.name
+        font.family: mainFont.name
         font.bold: true
         color: color9
         verticalAlignment: Qt.AlignVCenter
