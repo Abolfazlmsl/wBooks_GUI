@@ -33,7 +33,7 @@ Flickable {
                         Layout.fillWidth: true
                         Layout.preferredHeight: 50
                         text: "دسته بندی های ویژه"
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         font.pixelSize: Qt.application.font.pixelSize * 2
                         renderType: Text.NativeRendering
 

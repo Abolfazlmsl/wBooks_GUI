@@ -20,7 +20,7 @@ Item {
             anchors.right: parent.right
             anchors.rightMargin: 15
             text: ""
-            font.family: iranSans.name
+            font.family: mainFont.name
             color: color2
 
             font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -82,7 +82,7 @@ Item {
                     Label{
                         anchors.fill: parent
                         text: model.text
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
                     }
@@ -112,7 +112,7 @@ Item {
                                 height: Text.contentHeight
                                 text: (index===3)? "...":title3Rec.itemArray[index]
                                 color: color9
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 LayoutMirroring.enabled: true

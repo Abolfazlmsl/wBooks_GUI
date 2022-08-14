@@ -138,7 +138,7 @@ Rectangle{
                             id:lbl_Title
                             anchors.centerIn: parent
                             text: "تمرین"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: 23 //* widthRatio
                             font.bold: true
 

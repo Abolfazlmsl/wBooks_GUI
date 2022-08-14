@@ -337,20 +337,32 @@ Window {
         property string themeState: "Light"
     }
 
+    // mainFont ----> Font of Farsi
+    // mainFaNumFont ----> Font of Farsi Numbers
+
     //flags: Qt.WindowCloseButtonHint
     FontLoader{ id: segoeUI; source: "qrc:/Fonts/segoeui.ttf"}                          // segoeUI FONT
-    FontLoader{ id: iranSans; source: "qrc:/Fonts/IRANSansMobile.ttf"}                  // iransans FONT
-    FontLoader{ id: iranSansFAnum; source: "qrc:/Fonts/IRANSansMobile(FaNum).ttf"}                  // iranSans FARSI number FONT
-    FontLoader{ id: iranSansMedium; source: "qrc:/Fonts/IRANSans_Medium.ttf"}           // iransans Medium FONT
+//    FontLoader{ id: mainFont; source: "qrc:/Fonts/mainFontMobile.ttf"}                  // iranSans FONT
+//    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/iranSansMobile(FaNum).ttf"}                  // iranSans FARSI number FONT
+    FontLoader{ id: mainFontMedium; source: "qrc:/Fonts/iranSans_Medium.ttf"}           // iranSans Medium FONT
     FontLoader{ id: webfont; source: "qrc:/Fonts/materialdesignicons-webfont.ttf"}      //ICONS FONT
     FontLoader{ id: nunito; source: "qrc:/Fonts/Nunito/Nunito-Regular.ttf"}      //ICONS FONT
     FontLoader{ id: nunito_italic; source: "qrc:/Fonts/Nunito/Nunito-Italic.ttf"}      //ICONS FONT
     FontLoader{ id: awesome; source: "qrc:/Fonts/fontawesome-webfont.ttf"}
+//    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Black.ttf"}                //Kalameh Black Font
+//    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Bold.ttf"}               //Kalameh Bold Font
+    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Regular.ttf"}            //Kalameh Regular Font
+//    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Thin.ttf"}               //Kalameh Thin Font
+    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Black.ttf"}        //Kalameh Farsi Number Thin Font
+//    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Bold.ttf"}       //Kalameh Farsi Number Thin Font
+//    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Regular.ttf"}    //Kalameh Farsi Number Thin Font
+//    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Thin.ttf"}       //Kalameh Farsi Number Thin Font
+
 
     //-- font metric for size porpose --//
     FontMetrics{
         id: fontMetric
-        font.family: iranSans.name
+        font.family: mainFont.name
         font.pixelSize: Qt.application.font.pixelSize
     }
 
@@ -872,7 +884,7 @@ Window {
 
 //                            text: userInfo.name
                             text: setting.userName
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.5 //Qt.application.font.pixelSize
                             renderType: Text.NativeRendering
 
@@ -963,7 +975,7 @@ Window {
                                 Label{
                                     anchors.fill: parent
                                     text: basketModel.count
-                                    font.family: iranSansFAnum.name
+                                    font.family: mainFaNumFont.name
                                     font.pixelSize: Qt.application.font.pixelSize * 1.2 //Qt.application.font.pixelSize
 
                                     verticalAlignment: Qt.AlignVCenter
@@ -991,7 +1003,7 @@ Window {
 
                             visible: !setting.isLogined
                             text: "ورود کاربر"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.4 //Qt.application.font.pixelSize
                             renderType: Text.NativeRendering
 
@@ -1034,7 +1046,7 @@ Window {
                             Layout.bottomMargin: 10
                             visible: !setting.isLogined
                             text: "همین حالا ثبت نام کنید"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.4 //Qt.application.font.pixelSize
                             renderType: Text.NativeRendering
 
@@ -1230,7 +1242,7 @@ Window {
                         Label{
                             id:nasheran
                             text: "ورود ناشران"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.1
 
                             color: "#ffffff"
@@ -1245,7 +1257,7 @@ Window {
 
                         Label{
                             text: "|"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.1
 
                             color: "#ffffff"
@@ -1255,7 +1267,7 @@ Window {
                             id:conditions
 
                             text: "شرایط استفاده"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.1
 
                             color: "#ffffff"
@@ -1270,7 +1282,7 @@ Window {
 
                         Label{
                             text: "|"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.1
 
                             color: "#ffffff"
@@ -1280,7 +1292,7 @@ Window {
                             id:questions
 
                             text: "سوالات متداول"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.1
 
                             color: "#ffffff"
@@ -1295,7 +1307,7 @@ Window {
 
                         Label{
                             text: "|"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.1
 
                             color: "#ffffff"
@@ -1305,7 +1317,7 @@ Window {
                             id:contantus
 
                             text: "تماس با پشتیبانی"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.1
 
                             color: "#ffffff"

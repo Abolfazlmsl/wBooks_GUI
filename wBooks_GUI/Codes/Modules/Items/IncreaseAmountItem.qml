@@ -19,7 +19,7 @@ Rectangle {
         id: txt
         anchors.fill: parent
         text: amount + " تومان"
-        font.family: iranSansFAnum.name
+        font.family: mainFaNumFont.name
         font.pixelSize: 23 //* widthRatio
         font.bold: true
         horizontalAlignment: Qt.AlignHCenter

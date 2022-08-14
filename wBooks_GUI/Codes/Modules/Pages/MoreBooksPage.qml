@@ -23,7 +23,7 @@ Item {
             anchors.right: parent.right
             anchors.rightMargin: parent.width * 0.05
             text: "برترین کتاب های ماه"
-            font.family: iranSans.name
+            font.family: mainFont.name
             color: color2
 
             font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -75,7 +75,7 @@ Item {
                         //                        fillMode: Image.PreserveAspectFit
                         Canvas{
                             anchors.fill:parent
-                            property string nameFont: iranSansFAnum.name
+                            property string nameFont: mainFaNumFont.name
 
                             onPaint:{
                                 var context = getContext("2d")
@@ -105,7 +105,7 @@ Item {
 //                                id: text1
 //                                anchors.fill: parent
 //                                text: "رتبه " + (index+1)
-//                                font.family: iranSansFAnum.name
+//                                font.family: mainFaNumFont.name
 //                                color: "#ffffff"
 //                                verticalAlignment: Qt.AlignVCenter
 //                                horizontalAlignment: Qt.AlignHCenter
@@ -125,7 +125,7 @@ Item {
                         id: txt2
                         anchors.fill: parent
                         text: model.text1
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
                     }
@@ -141,7 +141,7 @@ Item {
                         id: txt3
                         anchors.fill: parent
                         text: model.text2
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         color: color9
                         verticalAlignment: Qt.AlignVCenter
                         font.pixelSize: Qt.application.font.pixelSize
@@ -177,7 +177,7 @@ Item {
                             Label{
                                 anchors.fill: parent
                                 text: "(" + model.rate + " رای)"
-                                font.family: iranSansFAnum.name
+                                font.family: mainFaNumFont.name
                                 color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 font.pixelSize: Qt.application.font.pixelSize * 0.7
@@ -208,7 +208,7 @@ Item {
                                 anchors.centerIn: parent
                                 anchors.margins: 5
                                 text: "خرید کتاب"
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 font.pixelSize: Qt.application.font.pixelSize * 1
                                 color: color3
                             }
@@ -233,7 +233,7 @@ Item {
                                 width: parent.width
                                 height: parent.height / 2
                                 text: "تاریخ انتشار"
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
@@ -253,7 +253,7 @@ Item {
                                 height: parent.height / 2
                                 anchors.top: recspacer.bottom
                                 text: model.date
-                                font.family: iranSansFAnum.name
+                                font.family: mainFaNumFont.name
                                 color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter

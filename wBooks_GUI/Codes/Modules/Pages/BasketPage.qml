@@ -31,7 +31,7 @@ Rectangle {
                         id: icontxt
                         Layout.preferredWidth: 200
                         Layout.preferredHeight: 200
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         text: "سبد خرید شما خالی است."
                         font.pixelSize: Qt.application.font.pixelSize * 2
                         color: color4
@@ -69,7 +69,7 @@ Rectangle {
                                     Label{
                                         Layout.preferredWidth: contentWidth
                                         Layout.fillHeight: true
-                                        font.family: iranSans.name
+                                        font.family: mainFont.name
                                         verticalAlignment: Qt.AlignVCenter
                                         horizontalAlignment: Qt.AlignHCenter
                                         font.pixelSize: Qt.application.font.pixelSize * 2
@@ -84,7 +84,7 @@ Rectangle {
                                         color: color12
                                         Label{
                                             anchors.fill: parent
-                                            font.family: iranSansFAnum.name
+                                            font.family: mainFaNumFont.name
                                             verticalAlignment: Qt.AlignVCenter
                                             horizontalAlignment: Qt.AlignHCenter
                                             font.pixelSize: Qt.application.font.pixelSize * 2
@@ -140,7 +140,7 @@ Rectangle {
                                                 Layout.fillWidth: true
                                                 Layout.preferredHeight: contentHeight
                                                 text: "کتاب اثر مرکب"
-                                                font.family: iranSans.name
+                                                font.family: mainFont.name
                                                 color: color4
                                                 font.pixelSize: Qt.application.font.pixelSize * 1.5
                                                 verticalAlignment: Qt.AlignVCenter
@@ -150,7 +150,7 @@ Rectangle {
                                                 Layout.fillWidth: true
                                                 Layout.preferredHeight: contentHeight
                                                 text: "نویسنده: دارن هاردی"
-                                                font.family: iranSans.name
+                                                font.family: mainFont.name
                                                 color: color4
                                                 font.pixelSize: Qt.application.font.pixelSize * 1.2
                                                 verticalAlignment: Qt.AlignVCenter
@@ -160,7 +160,7 @@ Rectangle {
                                                 Layout.fillWidth: true
                                                 Layout.preferredHeight: contentHeight
                                                 text: "مترجم: لطیف احمدپور"
-                                                font.family: iranSans.name
+                                                font.family: mainFont.name
                                                 color: color4
                                                 font.pixelSize: Qt.application.font.pixelSize * 1.2
                                                 verticalAlignment: Qt.AlignVCenter
@@ -170,7 +170,7 @@ Rectangle {
                                                 Layout.fillWidth: true
                                                 Layout.preferredHeight: contentHeight
                                                 text: "ناشر: انتشارات نگاه نوین"
-                                                font.family: iranSans.name
+                                                font.family: mainFont.name
                                                 color: color4
                                                 font.pixelSize: Qt.application.font.pixelSize * 1.2
                                                 verticalAlignment: Qt.AlignVCenter
@@ -223,7 +223,7 @@ Rectangle {
                                                 Layout.preferredWidth: contentWidth
                                                 Layout.preferredHeight: contentHeight
                                                 text: "10000 تومان"
-                                                font.family: iranSansFAnum.name
+                                                font.family: mainFaNumFont.name
                                                 color: color4
                                                 font.pixelSize: Qt.application.font.pixelSize * 2
                                                 verticalAlignment: Qt.AlignVCenter
@@ -261,7 +261,7 @@ Rectangle {
                             color: "transparent"
                             Label{
                                 anchors.fill: parent
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
                                 font.pixelSize: Qt.application.font.pixelSize * 2
@@ -300,7 +300,7 @@ Rectangle {
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter
                                     text: "تایید کد"
-                                    font.family: iranSans.name
+                                    font.family: mainFont.name
                                     color: color4
                                 }
                                 MouseArea{
@@ -338,7 +338,7 @@ Rectangle {
                                     id: checkbox
                                     Layout.preferredWidth: parent.width * 0.8
                                     Layout.fillHeight: true
-                                    font.family: iranSans.name
+                                    font.family: mainFont.name
                                     font.pixelSize: Qt.application.font.pixelSize* 1.3
                                     checked: false
 
@@ -359,7 +359,7 @@ Rectangle {
                                 Label{
                                     Layout.fillWidth: true
                                     Layout.fillHeight: true
-                                    font.family: iranSansFAnum.name
+                                    font.family: mainFaNumFont.name
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -375,7 +375,7 @@ Rectangle {
                             Layout.preferredHeight: 40
                             Layout.rightMargin: 10
                             Layout.leftMargin: 10
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize* 1.3
                             checked: true
 
@@ -408,7 +408,7 @@ Rectangle {
                                 Label{
                                     Layout.preferredWidth: parent.width * 0.8
                                     Layout.fillHeight: true
-                                    font.family: iranSans.name
+                                    font.family: mainFont.name
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.3
                                     text: "قابل پرداخت:"
@@ -418,7 +418,7 @@ Rectangle {
                                 Label{
                                     Layout.fillWidth: true
                                     Layout.fillHeight: true
-                                    font.family: iranSansFAnum.name
+                                    font.family: mainFaNumFont.name
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.3

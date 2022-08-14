@@ -37,7 +37,7 @@ Item {
             Layout.preferredHeight: implicitHeight
             Layout.rightMargin: 5
             text: "نام"
-            font.family: iranSans.name
+            font.family: mainFont.name
             color: color11
 
             font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -67,7 +67,7 @@ Item {
             Layout.preferredHeight: implicitHeight
             Layout.rightMargin: 5
             text: "شماره تماس"
-            font.family: iranSans.name
+            font.family: mainFont.name
             color: color11
 
             font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -95,7 +95,7 @@ Item {
             Layout.preferredHeight: implicitHeight
             Layout.rightMargin: 5
             text: "ایمیل"
-            font.family: iranSans.name
+            font.family: mainFont.name
             color: color11
 
             font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -136,7 +136,7 @@ Item {
 
                 text: "جنسیت: "
                 color: color11
-                font.family: iranSans.name
+                font.family: mainFont.name
                 font.pixelSize: Qt.application.font.pixelSize * 1.3
             }
 
@@ -146,7 +146,7 @@ Item {
                 anchors.right: lbl_Gender.left
                 width: implicitWidth
                 height: implicitHeight
-                font.family: iranSans.name
+                font.family: mainFont.name
                 font.pixelSize: Qt.application.font.pixelSize* 1.3
                 anchors.verticalCenter: parent.verticalCenter
                 Material.accent: color11
@@ -160,7 +160,7 @@ Item {
                         color: color11
                         leftPadding: radio_Male.indicator.width + radio_Male.spacing
                         verticalAlignment: Text.AlignVCenter
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         font.pixelSize: Qt.application.font.pixelSize* 1.3
                     }
 
@@ -179,7 +179,7 @@ Item {
                 anchors.right: radio_Male.left
                 width: implicitWidth
                 height: implicitHeight
-                font.family: iranSans.name
+                font.family: mainFont.name
                 font.pixelSize: Qt.application.font.pixelSize* 1.3
 
                 anchors.verticalCenter: parent.verticalCenter
@@ -194,7 +194,7 @@ Item {
                         color: color11
                         leftPadding: radio_Female.indicator.width + radio_Female.spacing
                         verticalAlignment: Text.AlignVCenter
-                        font.family: iranSans.name
+                        font.family: mainFont.name
                         font.pixelSize: Qt.application.font.pixelSize* 1.3
                     }
 

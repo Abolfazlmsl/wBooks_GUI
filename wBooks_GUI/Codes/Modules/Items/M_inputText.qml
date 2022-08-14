@@ -62,7 +62,7 @@ Rectangle{
                 rightPadding: 30 * ratio
 //                            leftPadding: 10 * ratio
 
-                font.family: iranSans.name
+                font.family: mainFont.name
                 font.pixelSize: Qt.application.font.pixelSize * fontSize
                 selectedTextColor: color14
                 color: color4
@@ -83,7 +83,7 @@ Rectangle{
                     anchors.rightMargin: 30 * ratio
                     anchors.verticalCenter: parent.verticalCenter
 
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.pixelSize: Qt.application.font.pixelSize
 
                     color: color18

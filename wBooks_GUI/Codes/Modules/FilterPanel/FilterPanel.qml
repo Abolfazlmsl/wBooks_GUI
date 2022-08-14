@@ -46,7 +46,7 @@ Item {
                     Layout.fillHeight: true
                     Layout.rightMargin: 20
                     text: lview.headerTitle
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.pixelSize: Qt.application.font.pixelSize * 1.3
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -66,7 +66,7 @@ Item {
                     visible: showAll
                     Layout.fillHeight: true
                     text: (isShowAll) ? "نمایش کمتر" : "نمایش همه"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.pixelSize: Qt.application.font.pixelSize
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -152,7 +152,7 @@ Item {
 
             contentItem: Label {
                 text: control.text
-                font.family: iranSansFAnum.name
+                font.family: mainFaNumFont.name
                 font.bold: true
                 font.pixelSize: Qt.application.font.pixelSize * 1.6
                 color: color9

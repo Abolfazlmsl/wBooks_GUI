@@ -19,7 +19,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "کامپیوتر"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -36,7 +36,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "ادبیات"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -53,7 +53,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "آموزش زبان"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -70,7 +70,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "ادبیات"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -97,7 +97,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "حقوق"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -114,7 +114,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "داستان و رمان"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -131,7 +131,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "کمیک"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -148,7 +148,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "داستان و رمان"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -175,7 +175,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "رمان"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -192,7 +192,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "روانشناسی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -209,7 +209,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "سلامتی و بهداشت"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -226,7 +226,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "روانشناسی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -253,7 +253,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "کامپیوتر"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -270,7 +270,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "عمومی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -287,7 +287,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "اقتصاد و مدیریت"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -304,7 +304,7 @@ Rectangle{
                     Layout.preferredWidth: parent.width / 4
                     Layout.fillHeight: true
                     text: "فنی و مهندسی"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter

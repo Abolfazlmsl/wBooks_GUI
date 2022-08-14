@@ -90,7 +90,7 @@ Rectangle{
                                 anchors.right: parent.right
                                 anchors.rightMargin: 20
                                 text: "1000 کتاب موجود"
-                                font.family: iranSansFAnum.name
+                                font.family: mainFaNumFont.name
                                 font.pixelSize: Qt.application.font.pixelSize * 1.3
                                 verticalAlignment: Qt.AlignVCenter
                                 color: color5
@@ -121,7 +121,7 @@ Rectangle{
                             Layout.topMargin: 2
                             Layout.bottomMargin: 2
                             LayoutMirroring.enabled: true
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             background: Rectangle {
                                 color: color1
                             }
@@ -390,7 +390,7 @@ Rectangle{
                             Layout.leftMargin: 5 * ratio
 
                             text: "خروج از نرم افزار"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 0.9
                             renderType: Text.NativeRendering
 

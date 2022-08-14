@@ -93,7 +93,7 @@ Item {
                             Label{
                                 anchors.fill: parent
                                 text: "(" + rate + " رای)"
-                                font.family: iranSansFAnum.name
+                                font.family: mainFaNumFont.name
                                 color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 font.pixelSize: Qt.application.font.pixelSize * 0.9
@@ -122,7 +122,7 @@ Item {
                                 id: text1
                                 anchors.fill: parent
                                 text: rightText
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 color: "#ffffff"
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
@@ -145,7 +145,7 @@ Item {
                                 id: text2
                                 anchors.fill: parent
                                 text: leftText
-                                font.family: iranSans.name
+                                font.family: mainFont.name
                                 color: color2
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter

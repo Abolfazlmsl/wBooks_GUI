@@ -203,7 +203,7 @@ Item {
                             anchors.bottomMargin: 5
                             text: lblTimeSpendmain
                             font.pixelSize: Qt.application.font.pixelSize * 1.3
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             horizontalAlignment: Qt.AlignHCenter
                             color: color4
                         }

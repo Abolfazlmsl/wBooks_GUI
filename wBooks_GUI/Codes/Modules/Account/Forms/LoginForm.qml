@@ -85,8 +85,8 @@ Item{
                     width: Text.contentWidth
                     height: parent.height
                     anchors.centerIn: parent
-                    text: "به wBooks خوش آمدید"
-                    font.family: iranSans.name
+                    text: "به وی بوکس خوش آمدید"
+                    font.family: mainFont.name
                     color: color8
                     font.pixelSize: Qt.application.font.pixelSize * 1.5
                     horizontalAlignment: Qt.AlignHCenter
@@ -142,7 +142,7 @@ Item{
                     anchors.right: parent.right
                     anchors.rightMargin: 10
                     text: "رمز عبور خود را فراموش کرده ام"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.pixelSize: Qt.application.font.pixelSize
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
@@ -248,7 +248,7 @@ Item{
                     Layout.preferredWidth: Text.contentWidth + 10
                     Layout.preferredHeight: 38
                     text: "یا"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.pixelSize: Qt.application.font.pixelSize * 1.5
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
@@ -304,7 +304,7 @@ Item{
                             anchors.right: gmailIcon.left
                             anchors.rightMargin: 5
                             text: "ورود با جیمیل"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.2
                             color: "#ffffff"
                             verticalAlignment: Qt.AlignVCenter
@@ -353,7 +353,7 @@ Item{
                             anchors.right: githubIcon.left
                             anchors.rightMargin: 5
                             text: "ورود با گیت هاب"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.2
                             color: "#ffffff"
                             verticalAlignment: Qt.AlignVCenter
@@ -402,7 +402,7 @@ Item{
                             anchors.right: facebookIcon.left
                             anchors.rightMargin: 5
                             text: "ورود با فیس بوک"
-                            font.family: iranSans.name
+                            font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.2
                             color: "#ffffff"
                             verticalAlignment: Qt.AlignVCenter
@@ -437,7 +437,7 @@ Item{
                     anchors.right: parent.right
                     anchors.rightMargin: 10
                     text: "آیا تا به حال ثبت نام نکرده اید؟"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.pixelSize: Qt.application.font.pixelSize * 1.2
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
@@ -449,7 +449,7 @@ Item{
                     anchors.right: txtregiste.left
                     anchors.rightMargin: 10
                     text: "ثبت نام کنید"
-                    font.family: iranSans.name
+                    font.family: mainFont.name
                     font.underline: true
                     font.pixelSize: Qt.application.font.pixelSize * 1.2
                     color: color14
