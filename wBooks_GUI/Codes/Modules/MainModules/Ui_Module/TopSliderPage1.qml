@@ -9,8 +9,8 @@ Item {
     id: topSliderItem
     property alias source: image.source
     property int rate: 30
-    property alias rightText: text1.text
-    property alias leftText: text2.text
+    property string rightText: ""
+    property string leftText: ""
     property int factor: 12
     property alias position: topSliderItem.state // "Right", "Left", "Center", "None
 
@@ -114,56 +114,34 @@ Item {
                         layoutDirection: Qt.RightToLeft
                         spacing: 10
 
-                        Rectangle{
+                        ButtonShadow{
                             Layout.fillHeight: true
                             Layout.preferredWidth: parent.width * 0.45
-                            color: color2
-                            Label{
-                                id: text1
-                                anchors.fill: parent
-                                text: rightText
-                                font.family: mainFont.name
-                                color: "#ffffff"
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Qt.AlignHCenter
-                                font.pixelSize: Qt.application.font.pixelSize
-                            }
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
+                            btnText: rightText
+                            textColor: "#ffffff"
+                            fontSize: 1
+                            btnRadius: 0
+                            btnColor: color2
+                            onDashboard_btnClicked: {
 
-                                }
                             }
                         }
 
-                        Rectangle{
+                        ButtonShadow{
                             Layout.fillHeight: true
                             Layout.preferredWidth: parent.width * 0.45
-                            color: "#ffffff"
-                            Label{
-                                id: text2
-                                anchors.fill: parent
-                                text: leftText
-                                font.family: mainFont.name
-                                color: color2
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Qt.AlignHCenter
-                                font.pixelSize: Qt.application.font.pixelSize
-                            }
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
+                            btnText: leftText
+                            textColor: color2
+                            fontSize: 1
+                            btnRadius: 0
+                            btnColor: "#ffffff"
+                            onDashboard_btnClicked: {
 
-                                }
                             }
                         }
                     }
                 }
-
             }
-
         }
     }
 }
