@@ -423,6 +423,23 @@ Window {
         state: "Home"
         states: [
             State{
+                name: "Category"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: true
+                    mainView: 14
+                    rightView: 0
+                    homeClick: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                    smallPlayerVis: true
+                }
+            },
+            State{
                 name: "Login"
                 PropertyChanges {
                     target: win
@@ -2246,5 +2263,116 @@ Window {
                 date: "1399/02/14"
             }
         }
+
+        ListModel{
+            id:bestSellCatModel
+            ListElement{
+                source: "qrc:/Images/book.png"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/book.png"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/book.png"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/time.jpg"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/book.png"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+        }
+
+        ListModel{
+            id: newBooksCatModel
+            ListElement{
+                source: "qrc:/Images/book.png"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/book.png"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/book.png"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/time.jpg"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+            ListElement{
+                source: "qrc:/Images/book.png"
+                text1: "داستان و رمان"
+                text2: "داستان و رمان"
+                rate: 37
+                date: "1399/02/14"
+            }
+        }
+
+        ListModel{
+            id: bestCollectionCatModel
+            ListElement{
+                source: "qrc:/Images/lordofrings.jpg"
+                text1: "ارباب حلقه ها"
+                booksNumber: 15
+                rate: 37
+                off: "off35"
+            }
+            ListElement{
+                source: "qrc:/Images/finalfantasy.jpg"
+                text1: "تصور نهایی"
+                booksNumber: 17
+                rate: 25
+                off: "T6032"
+            }
+        }
+
     }
 }

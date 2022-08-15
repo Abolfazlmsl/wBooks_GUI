@@ -157,10 +157,10 @@ Rectangle{
                     color: color0
 
                     //-- Pages --//
-                    SwipeView {
+                    StackLayout {
                         id: sView
                         anchors.fill: parent
-                        interactive: false
+//                        interactive: false
                         clip: true
                         currentIndex: mainView
 
@@ -173,7 +173,6 @@ Rectangle{
                                 anchors.topMargin: 10
                             }
                         }
-
 
                         Item{
                             MediaPlayerPage{
@@ -358,6 +357,15 @@ Rectangle{
 
                         }
 
+                        Item {
+                            CategoryPage{
+                                id: categorypage
+                                anchors.fill: parent
+                                bestCollectionModel: bestCollectionCatModel
+                                bestSellModel: bestSellCatModel
+                                newBooksModel: newBooksCatModel
+                            }
+                        }
                     }
                 }
                 //-- FOOTER --//
@@ -862,7 +870,6 @@ Rectangle{
             date: "1399/02/14"
         }
     }
-
 
     ListModel{
         id: speakerAudioBooksModel

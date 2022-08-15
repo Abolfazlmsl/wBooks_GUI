@@ -71,6 +71,13 @@ Item {
                             horizontalAlignment: Qt.AlignHCenter
                         }
                     }
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: {
+                            itemRec.isClicked = !itemRec.isClicked
+                        }
+                    }
                 }
 
                 Rectangle{
@@ -85,6 +92,13 @@ Item {
                         font.family: mainFont.name
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: {
+                            mainPage.state = "Category"
+                        }
                     }
                 }
 
@@ -121,14 +135,15 @@ Item {
 
                         }
                     }
-                }
-                MouseArea{
-                    anchors.fill: parent
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: {
-                        itemRec.isClicked = !itemRec.isClicked
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: {
+                            mainPage.state = "Category"
+                        }
                     }
                 }
+
             }
 
         }
