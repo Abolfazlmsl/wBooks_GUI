@@ -43,7 +43,7 @@ Rectangle {
                     }
                 }
 
-                AudioBookList{
+                BooksList{
                     id: newBooks
                     Layout.fillWidth: true
                     Layout.preferredHeight: 300
@@ -51,13 +51,14 @@ Rectangle {
                     Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "تازه های صوتی"
+                    fileType: "Audio"
 
                     onMoreBtnClicked: {
 
                     }
                 }
 
-                AudioBookList{
+                BooksList{
                     id: mostSell
                     Layout.fillWidth: true
                     Layout.preferredHeight: 300
@@ -65,6 +66,7 @@ Rectangle {
                     Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "پرفروش ترین ها"
+                    fileType: "Audio"
 
                     onMoreBtnClicked: {
 
@@ -84,7 +86,7 @@ Rectangle {
                     }
                 }
 
-                AudioBookList{
+                BooksList{
                     id: speaker
                     Layout.fillWidth: true
                     Layout.preferredHeight: 300
@@ -92,6 +94,7 @@ Rectangle {
                     Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "با صدای عادل فردوسی پور"
+                    fileType: "Audio"
 
                     onMoreBtnClicked: {
 

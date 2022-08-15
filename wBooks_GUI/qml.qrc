@@ -131,7 +131,6 @@
         <file>Codes/Modules/Pages/MembershipPage.qml</file>
         <file>Images/Adver4.jpg</file>
         <file>Images/Adver5.jpg</file>
-        <file>Codes/Modules/MainModules/Ui_Module/AudioBookList.qml</file>
         <file>Codes/Modules/MainModules/AudioBookModule/AudioBookIntroduction.qml</file>
         <file>Codes/Modules/MainModules/AudioBookModule/AudioBookPage.qml</file>
         <file>Codes/Modules/MainModules/AudioBookModule/AudioBookPropsCol.qml</file>
@@ -155,5 +154,10 @@
         <file>Fonts/Kalameh(FaNum)-Thin.ttf</file>
         <file>Codes/Modules/Pages/MembershipBooksPage.qml</file>
         <file>Codes/Modules/Items/MembershipBookItem.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/BasketMembership.qml</file>
+        <file>Images/bronze-medal.png</file>
+        <file>Images/gold-medal.png</file>
+        <file>Images/shield.png</file>
+        <file>Images/silver-medal.png</file>
     </qresource>
 </RCC>

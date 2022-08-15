@@ -251,6 +251,7 @@ Item {
                                 text2: audioBookModel.get(index).text2
                                 rate: audioBookModel.get(index).rate
                                 date: audioBookModel.get(index).date
+                                fileType: "Audio"
                             }
                         }
                     }
@@ -298,6 +299,7 @@ Item {
                                 text2: documentBookModel.get(index).text2
                                 rate: documentBookModel.get(index).rate
                                 date: documentBookModel.get(index).date
+                                fileType: "Document"
                             }
                         }
                     }

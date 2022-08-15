@@ -73,6 +73,7 @@ Rectangle{
                     Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
                     title: "پیشنهادی برای شما"
+                    fileType: "Document"
 
                     onMoreBtnClicked: {
 //                        morebooks.itemModel = offerBooksModel

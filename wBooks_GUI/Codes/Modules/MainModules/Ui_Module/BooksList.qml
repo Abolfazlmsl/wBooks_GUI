@@ -10,6 +10,7 @@ import "./../../Items"
 Item {
     id: list_item
     property alias title: titletxt.text
+    property string fileType: "Document"
     property var itemModel: []
 
     signal moreBtnClicked()
@@ -141,11 +142,40 @@ Item {
 
                             //                        }
 
+                            Rectangle{
+                                anchors.left: parent.left
+                                anchors.top: parent.top
+                                width: 25
+                                height: width
+                                radius: width/2
+                                color: "#90990000"
+                                Label{
+                                    id: typeIcon
+                                    anchors.fill: parent
+                                    text: if (fileType === "Document"){
+                                              return Icons.file_document_box
+                                          }else if (fileType === "Audio"){
+                                              return Icons.headphones
+                                          }else if (fileType === "Document"){
+                                              return Icons.video
+                                          }
+                                    font.family: webfont.name
+                                    color: "#ffffff"
+                                    verticalAlignment: Qt.AlignVCenter
+                                    horizontalAlignment: Qt.AlignHCenter
+                                    font.pixelSize: Qt.application.font.pixelSize*1.5
+                                }
+                            }
+
                             MouseArea{
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
                                 onClicked: {
-                                    mainPage.state = "Book Page"
+                                    if (fileType === "Document"){
+                                        mainPage.state = "Book Page"
+                                    }else if (fileType === "Audio"){
+                                        mainPage.state = "Audio Book Page"
+                                    }
                                 }
                             }
                         }
@@ -243,7 +273,11 @@ Item {
                                 btnRadius: 0
                                 btnColor: color8
                                 onDashboard_btnClicked: {
-                                    mainPage.state = "Book Page"
+                                    if (fileType === "Document"){
+                                        mainPage.state = "Book Page"
+                                    }else if (fileType === "Audio"){
+                                        mainPage.state = "Audio Book Page"
+                                    }
                                 }
                             }
 

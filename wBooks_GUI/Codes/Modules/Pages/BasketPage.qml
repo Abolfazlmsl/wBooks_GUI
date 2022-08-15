@@ -6,6 +6,7 @@ import QtQuick.Controls.Styles 1.4
 import "./../../../Fonts/Icon.js" as Icons
 
 import "./../Items"
+import "./../MainModules/Ui_Module"
 
 Rectangle {
     color: "transparent"
@@ -104,6 +105,11 @@ Rectangle {
                             Item{Layout.fillHeight: true}
                         }
                     }
+
+//                    delegate: BasketMembership{
+//                        width: lview.width
+//                        height: 180
+//                    }
 
                     delegate: Rectangle{
                         width: lview.width
@@ -244,6 +250,7 @@ Rectangle {
                             Item{Layout.preferredHeight: 20}
                         }
                     }
+
                 }
 
                 Rectangle{
