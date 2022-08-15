@@ -19,14 +19,14 @@ Item{
     property alias password           : input_password.inputText
     property alias password_repeat    : input_password_repeat.inputText
 
-//    function isEmailExist(data, email){
-//        for(var i=0; i<data.length; i++){
-//            if(data[i].email===email && data[i].licenseType==="trial"){
-//                return true
-//            }
-//        }
-//        return false
-//    }
+    //    function isEmailExist(data, email){
+    //        for(var i=0; i<data.length; i++){
+    //            if(data[i].email===email && data[i].licenseType==="trial"){
+    //                return true
+    //            }
+    //        }
+    //        return false
+    //    }
 
     signal getMessage(var signalmsg)
     signal trialFinished()
@@ -91,235 +91,249 @@ Item{
 
         //-- User data --//
         Item{
-            ColumnLayout{
-                width: parent.width
-                height: parent.height * 0.5
+
+            Flickable{
+                anchors.fill: parent
+                contentHeight: homeItem.height
+                contentWidth: parent.width
+                boundsBehavior: Flickable.StopAtBounds
+                ScrollBar.vertical: ScrollBar {}
+
+                Item{
+                    id: homeItem
+                    implicitHeight: childrenRect.height
+                    implicitWidth: parent.width
+                    ColumnLayout{
+                        width: parent.width
+                        spacing: 0
 
 
-                //-- spacer --//
-                Item{Layout.preferredHeight: 10}
+                        //-- spacer --//
+                        Item{Layout.preferredHeight: 10}
 
-                Rectangle{
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 50
-                    color: "transparent"
-                    Image{
-                        id: image
-                        width: 50
-                        height: parent.height
-                        anchors.left: titletxt.right
-                        anchors.leftMargin: 10
-                        source: "qrc:/Images/Wbooks1.png"
-                        mipmap: true
-                        fillMode: Image.PreserveAspectFit
-                    }
+                        Rectangle{
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 50
+                            color: "transparent"
+                            Image{
+                                id: image
+                                width: 50
+                                height: parent.height
+                                anchors.left: titletxt.right
+                                anchors.leftMargin: 10
+                                source: "qrc:/Images/Wbooks1.png"
+                                mipmap: true
+                                fillMode: Image.PreserveAspectFit
+                            }
 
-                    Label{
-                        id: titletxt
-                        width: Text.contentWidth
-                        height: parent.height
-                        anchors.centerIn: parent
-                        text: "لطفا اطلاعات خود را وارد کنید"
-                        font.family: mainFont.name
-                        color: color8
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5
-                        horizontalAlignment: Qt.AlignHCenter
-                        verticalAlignment: Qt.AlignVCenter
-                    }
-                }
-
-                //-- spacer --//
-                Item{Layout.preferredHeight: 10}
-
-                //-- Email --//
-                M_inputText{
-                    id: input_name
-                    Layout.rightMargin: 0
-                    label: "نام"
-                    icon: Icons.account
-                    placeholder: "نام"
-
-                    Keys.onTabPressed: {
-                        input_phone.inputText.forceActiveFocus()
-                    }
-
-                    //                                    inputText.validator: RegularExpressionValidator { regularExpression: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ }
-                }
-
-                //-- spacer --//
-                Item{Layout.preferredHeight: 5}
-
-                //-- Email --//
-                M_inputText{
-                    id: input_phone
-                    Layout.rightMargin: 0
-                    label: "شماره تماس"
-                    icon: Icons.cellphone
-                    placeholder: "09xxxxxxxxx"
-                    Keys.onTabPressed: {
-                        input_Email.inputText.forceActiveFocus()
-                    }
-                    inputText.validator: RegularExpressionValidator { regularExpression: /^([0]{1})([9]{1})([0-9]{3,9})$/ }
-                }
-
-                //-- spacer --//
-                Item{Layout.preferredHeight: 5}
-
-                //-- Email --//
-                M_inputText{
-                    id: input_Email
-                    Layout.rightMargin: 0
-                    label: "ایمیل"
-                    icon: Icons.email_outline
-                    placeholder: "ایمیل"
-                    Keys.onTabPressed: {
-                        input_password.inputText.forceActiveFocus()
-                    }
-
-                    //            inputText.validator: RegularExpressionValidator { regularExpression: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ }
-                }
-
-                //-- spacer --//
-                Item{Layout.preferredHeight: 10}
-
-                //-- password --//
-                M_inputText{
-                    id: input_password
-                    Layout.rightMargin: 0
-                    label: "رمز عبور"
-                    icon: Icons.lock_outline
-                    placeholder: "رمز عبور (حداقل 8 حرف)"
-                    echoMode: TextInput.Password
-                    clearEnable: false
-                    inputText.maximumLength: 16
-
-                    Label{
-                        id: lbl_eyeIcon
-                        width: implicitWidth
-                        height: parent.height
-                        anchors.left: parent.left
-                        anchors.leftMargin: 10 * ratio
-                        verticalAlignment: Qt.AlignVCenter
-                        text: Icons.eye_off
-                        font.family: webfont.name
-                        font.pixelSize: Qt.application.font.pixelSize * 2
-
-                        MouseArea{
-
-                            property bool passViewHandler: false
-
-                            anchors.fill: parent
-                            cursorShape: Qt.PointingHandCursor
-
-
-                            onClicked: {
-                                if(passViewHandler){
-                                    lbl_eyeIcon.text = Icons.eye_off
-                                    input_password.echoMode = TextInput.Password
-                                    input_password_repeat.echoMode = TextInput.Password
-                                }
-                                else{
-                                    lbl_eyeIcon.text = Icons.eye
-                                    input_password.echoMode = TextInput.Normal
-                                    input_password_repeat.echoMode = TextInput.Normal
-                                }
-                                passViewHandler = !passViewHandler
+                            Label{
+                                id: titletxt
+                                width: Text.contentWidth
+                                height: parent.height
+                                anchors.centerIn: parent
+                                text: "لطفا اطلاعات خود را وارد کنید"
+                                font.family: mainFont.name
+                                color: color8
+                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                horizontalAlignment: Qt.AlignHCenter
+                                verticalAlignment: Qt.AlignVCenter
                             }
                         }
-                    }
 
+                        //-- spacer --//
+                        Item{Layout.preferredHeight: 10}
 
-                    Keys.onTabPressed: {
-                        input_password_repeat.inputText.forceActiveFocus()
-                    }
+                        //-- Email --//
+                        M_inputText{
+                            id: input_name
+                            Layout.rightMargin: 0
+                            label: "نام"
+                            icon: Icons.account
+                            placeholder: "نام"
 
-                }
+                            Keys.onTabPressed: {
+                                input_phone.inputText.forceActiveFocus()
+                            }
 
-                //-- spacer --//
-                Item{Layout.preferredHeight: 10}
-
-                //-- Confirm password --//
-                M_inputText{
-                    id: input_password_repeat
-                    Layout.rightMargin: 0
-                    label: "تایید رمز عبور"
-                    icon: Icons.lock
-                    placeholder: "تایید رمز عبور"
-                    echoMode: TextInput.Password
-                    clearEnable: false
-                    inputText.maximumLength: 16
-
-                    Keys.onTabPressed: {
-                        regist.forceActiveFocus()
-                    }
-
-                    Label{
-                        id: lbl_confirmIcon
-
-                        visible: (input_password.inputText.text === input_password_repeat.inputText.text) &&
-                                 (input_password.inputText.text !== "" && input_password_repeat.inputText.text !== "") ? true : false
-                        width: implicitWidth
-                        height: parent.height
-                        anchors.left: parent.left
-                        anchors.leftMargin: 10 * ratio
-                        verticalAlignment: Qt.AlignVCenter
-                        text: Icons.check
-                        color: color21
-                        font.family: webfont.name
-                        font.pixelSize: Qt.application.font.pixelSize * 2
-
-                    }
-
-
-                }
-
-                //-- spacer --//
-                Item{Layout.preferredHeight: 10}
-
-                //-- Button registe --//
-                ButtonShadow{
-                    id: regist
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 50
-                    btnText: "ثبت نام"
-                    textColor: "#ffffff"
-                    btnRadius: 10
-                    onDashboard_btnClicked: {
-                        if (parseInt(email.length) === 0){
-                            getMessage("ایمیل خود را وارد کنید")
-                            //                                spinner.visible = false
-                        }else if (parseInt(name.length) === 0){
-                            getMessage("نام خود را وارد کنید")
-                        }else if (parseInt(phone.length) === 0){
-                            getMessage("شماره تماس خود را وارد کنید")
-                        }else if (parseInt(password.length) === 0){
-                            getMessage("رمز عبور خود را وارد کنید")
-                        }else if (parseInt(password_repeat.length) === 0){
-                            getMessage("تایی رمز عبور خود را وارد نمایید")
-                        }else if (password.text != password_repeat.text){
-                            getMessage("رمز عبور و تایید رمز عبور یکی نمی باشد")
-                        }else{
-//                                MainPython.sendSMS(phone.text)
-                            timer_confirmSMS.visible = true
-                            lbl_SendAgain.visible = false
-                            swipe_register.currentIndex = 1
+                            //                                    inputText.validator: RegularExpressionValidator { regularExpression: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ }
                         }
+
+                        //-- spacer --//
+                        Item{Layout.preferredHeight: 5}
+
+                        //-- Email --//
+                        M_inputText{
+                            id: input_phone
+                            Layout.rightMargin: 0
+                            label: "شماره تماس"
+                            icon: Icons.cellphone
+                            placeholder: "09xxxxxxxxx"
+                            Keys.onTabPressed: {
+                                input_Email.inputText.forceActiveFocus()
+                            }
+                            inputText.validator: RegularExpressionValidator { regularExpression: /^([0]{1})([9]{1})([0-9]{3,9})$/ }
+                        }
+
+                        //-- spacer --//
+                        Item{Layout.preferredHeight: 5}
+
+                        //-- Email --//
+                        M_inputText{
+                            id: input_Email
+                            Layout.rightMargin: 0
+                            label: "ایمیل"
+                            icon: Icons.email_outline
+                            placeholder: "ایمیل"
+                            Keys.onTabPressed: {
+                                input_password.inputText.forceActiveFocus()
+                            }
+
+                            //            inputText.validator: RegularExpressionValidator { regularExpression: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ }
+                        }
+
+                        //-- spacer --//
+                        Item{Layout.preferredHeight: 10}
+
+                        //-- password --//
+                        M_inputText{
+                            id: input_password
+                            Layout.rightMargin: 0
+                            label: "رمز عبور"
+                            icon: Icons.lock_outline
+                            placeholder: "رمز عبور (حداقل 8 حرف)"
+                            echoMode: TextInput.Password
+                            clearEnable: false
+                            inputText.maximumLength: 16
+
+                            Label{
+                                id: lbl_eyeIcon
+                                width: implicitWidth
+                                height: parent.height
+                                anchors.left: parent.left
+                                anchors.leftMargin: 10 * ratio
+                                verticalAlignment: Qt.AlignVCenter
+                                text: Icons.eye_off
+                                font.family: webfont.name
+                                font.pixelSize: Qt.application.font.pixelSize * 2
+
+                                MouseArea{
+
+                                    property bool passViewHandler: false
+
+                                    anchors.fill: parent
+                                    cursorShape: Qt.PointingHandCursor
+
+
+                                    onClicked: {
+                                        if(passViewHandler){
+                                            lbl_eyeIcon.text = Icons.eye_off
+                                            input_password.echoMode = TextInput.Password
+                                            input_password_repeat.echoMode = TextInput.Password
+                                        }
+                                        else{
+                                            lbl_eyeIcon.text = Icons.eye
+                                            input_password.echoMode = TextInput.Normal
+                                            input_password_repeat.echoMode = TextInput.Normal
+                                        }
+                                        passViewHandler = !passViewHandler
+                                    }
+                                }
+                            }
+
+
+                            Keys.onTabPressed: {
+                                input_password_repeat.inputText.forceActiveFocus()
+                            }
+
+                        }
+
+                        //-- spacer --//
+                        Item{Layout.preferredHeight: 10}
+
+                        //-- Confirm password --//
+                        M_inputText{
+                            id: input_password_repeat
+                            Layout.rightMargin: 0
+                            label: "تایید رمز عبور"
+                            icon: Icons.lock
+                            placeholder: "تایید رمز عبور"
+                            echoMode: TextInput.Password
+                            clearEnable: false
+                            inputText.maximumLength: 16
+
+                            Keys.onTabPressed: {
+                                regist.forceActiveFocus()
+                            }
+
+                            Label{
+                                id: lbl_confirmIcon
+
+                                visible: (input_password.inputText.text === input_password_repeat.inputText.text) &&
+                                         (input_password.inputText.text !== "" && input_password_repeat.inputText.text !== "") ? true : false
+                                width: implicitWidth
+                                height: parent.height
+                                anchors.left: parent.left
+                                anchors.leftMargin: 10 * ratio
+                                verticalAlignment: Qt.AlignVCenter
+                                text: Icons.check
+                                color: color21
+                                font.family: webfont.name
+                                font.pixelSize: Qt.application.font.pixelSize * 2
+
+                            }
+
+
+                        }
+
+                        //-- spacer --//
+                        Item{Layout.preferredHeight: 10}
+
+                        //-- Button registe --//
+                        ButtonShadow{
+                            id: regist
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 50
+                            btnText: "ثبت نام"
+                            textColor: "#ffffff"
+                            btnRadius: 10
+                            onDashboard_btnClicked: {
+                                if (parseInt(email.length) === 0){
+                                    getMessage("ایمیل خود را وارد کنید")
+                                    //                                spinner.visible = false
+                                }else if (parseInt(name.length) === 0){
+                                    getMessage("نام خود را وارد کنید")
+                                }else if (parseInt(phone.length) === 0){
+                                    getMessage("شماره تماس خود را وارد کنید")
+                                }else if (parseInt(password.length) === 0){
+                                    getMessage("رمز عبور خود را وارد کنید")
+                                }else if (parseInt(password_repeat.length) === 0){
+                                    getMessage("تایی رمز عبور خود را وارد نمایید")
+                                }else if (password.text != password_repeat.text){
+                                    getMessage("رمز عبور و تایید رمز عبور یکی نمی باشد")
+                                }else{
+                                    //                                MainPython.sendSMS(phone.text)
+                                    timer_confirmSMS.visible = true
+                                    lbl_SendAgain.visible = false
+                                    swipe_register.currentIndex = 1
+                                }
+                            }
+                        }
+
+                        //-- spacer --//
+                        Item{Layout.preferredHeight: 15}
+
+                        LoadingSpinner{
+                            id: spinner
+                            visible: false
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: implicitHeight
+                            leftMarg: 60
+                        }
+
+                        //-- filler --//
+                        Item{Layout.fillHeight: true}
                     }
                 }
-
-                //-- spacer --//
-                Item{Layout.preferredHeight: 15}
-
-                LoadingSpinner{
-                    id: spinner
-                    visible: false
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: implicitHeight
-                    leftMarg: 60
-                }
-
-                //-- filler --//
-                Item{Layout.fillHeight: true}
             }
         }
 
@@ -537,26 +551,26 @@ Item{
                                 setting.password = password.text
                                 setting.isLogined = true
                                 mainPage.state = "Home"
-//                                if (txf_confirm.text === smsCode){
-//                                    spinner.visible = true
-////                                    MainPython.makeTrialData(15, setting.tokenAccess, Service.BASE, Service.url_license, Service.url_device)
-//                                }else{
-//                                    getMessage("کد وارد شده اشتباه است")
-//                                    spinner.visible = false
-//                                }
+                                //                                if (txf_confirm.text === smsCode){
+                                //                                    spinner.visible = true
+                                ////                                    MainPython.makeTrialData(15, setting.tokenAccess, Service.BASE, Service.url_license, Service.url_device)
+                                //                                }else{
+                                //                                    getMessage("کد وارد شده اشتباه است")
+                                //                                    spinner.visible = false
+                                //                                }
 
-//                                var endpoint = Service.url_user
+                                //                                var endpoint = Service.url_user
 
-//                                Service.create_item(_token_access, endpoint, data, function(resp, http) {
+                                //                                Service.create_item(_token_access, endpoint, data, function(resp, http) {
 
-//                                    setting.userName = name.text
-//                                    setting.userPhone = phone.text
-//                                    setting.userEmail = email.text
-//                                    setting.password = password.text
-//                                    setting.isLogined = true
-//                                    mainPage.state = "Home"
+                                //                                    setting.userName = name.text
+                                //                                    setting.userPhone = phone.text
+                                //                                    setting.userEmail = email.text
+                                //                                    setting.password = password.text
+                                //                                    setting.isLogined = true
+                                //                                    mainPage.state = "Home"
 
-//                                })
+                                //                                })
                             }
 
                             Keys.onEnterPressed: {
@@ -595,26 +609,26 @@ Item{
                                 setting.password = password.text
                                 setting.isLogined = true
                                 mainPage.state = "Home"
-//                                if (txf_confirm.text === smsCode){
-//                                    spinner.visible = true
-////                                    MainPython.makeTrialData(15, setting.tokenAccess, Service.BASE, Service.url_license, Service.url_device)
-//                                }else{
-//                                    getMessage("کد وارد شده اشتباه است")
-//                                    spinner.visible = false
-//                                }
+                                //                                if (txf_confirm.text === smsCode){
+                                //                                    spinner.visible = true
+                                ////                                    MainPython.makeTrialData(15, setting.tokenAccess, Service.BASE, Service.url_license, Service.url_device)
+                                //                                }else{
+                                //                                    getMessage("کد وارد شده اشتباه است")
+                                //                                    spinner.visible = false
+                                //                                }
 
-//                                var endpoint = Service.url_user
+                                //                                var endpoint = Service.url_user
 
-//                                Service.create_item(_token_access, endpoint, data, function(resp, http) {
+                                //                                Service.create_item(_token_access, endpoint, data, function(resp, http) {
 
-//                                    setting.userName = name.text
-//                                    setting.userPhone = phone.text
-//                                    setting.userEmail = email.text
-//                                    setting.password = password.text
-//                                    setting.isLogined = true
-//                                    mainPage.state = "Home"
+                                //                                    setting.userName = name.text
+                                //                                    setting.userPhone = phone.text
+                                //                                    setting.userEmail = email.text
+                                //                                    setting.password = password.text
+                                //                                    setting.isLogined = true
+                                //                                    mainPage.state = "Home"
 
-//                                })
+                                //                                })
                             }
 
                         }

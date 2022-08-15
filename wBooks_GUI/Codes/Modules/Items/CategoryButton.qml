@@ -20,10 +20,10 @@ Rectangle{
 
     signal dashboard_btnClicked
 
-    width: 280 //* widthRatio
+    width: 280 * ratio
     height: width
 
-    radius: 20 //* widthRatio
+    radius: 20 * ratio
 
     color: "transparent"
 
@@ -46,7 +46,7 @@ Rectangle{
         width: parent.width
         height: width
 
-        radius: 20 //* widthRatio
+        radius: 20 * ratio
 
         color: "transparent"
 
@@ -76,7 +76,7 @@ Rectangle{
             //-- Inner Rect --//
             Rectangle{
                 id: innerRect
-                width: 249 //* widthRatio
+                width: 249 * ratio
                 height: width
 
                 anchors.centerIn: parent
@@ -139,7 +139,7 @@ Rectangle{
                             anchors.centerIn: parent
                             text: "تمرین"
                             font.family: mainFont.name
-                            font.pixelSize: 23 //* widthRatio
+                            font.pixelSize: 23 * ratio
                             font.bold: true
 
                             color: "#ffffff"

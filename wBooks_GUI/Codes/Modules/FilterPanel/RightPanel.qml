@@ -30,7 +30,7 @@ Rectangle{
                 Layout.rightMargin: 20
                 text: "فیلتر دسته بندی ها"
                 font.family: mainFont.name
-                font.pixelSize: Qt.application.font.pixelSize * 1.3
+                font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                 verticalAlignment: Qt.AlignVCenter
                 color: color9
             }

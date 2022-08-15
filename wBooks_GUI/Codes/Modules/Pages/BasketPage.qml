@@ -14,6 +14,7 @@ Rectangle {
         anchors.fill: parent
         currentIndex: (basketModel.count === 0)? 0:1
 
+        // Empty basket
         Item{
             Rectangle{
                 anchors.fill: parent
@@ -41,6 +42,7 @@ Rectangle {
             }
         }
 
+        // Not Empty basket
         Item{
             RowLayout{
                 anchors.fill: parent
@@ -262,7 +264,7 @@ Rectangle {
                         spacing: 0
                         Rectangle{
                             Layout.fillWidth: true
-                            Layout.preferredHeight: 80
+                            Layout.preferredHeight: 80 * ratio
                             Layout.rightMargin: 10
                             Layout.leftMargin: 10
                             color: "transparent"
@@ -271,7 +273,7 @@ Rectangle {
                                 font.family: mainFont.name
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
-                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
                                 text: "صورت حساب"
                                 color: color4
                             }
@@ -354,7 +356,7 @@ Rectangle {
 
                                     contentItem: Text {
                                         text: checkbox.text
-                                        font.pixelSize: Qt.application.font.pixelSize* 1.3
+                                        font.pixelSize: Qt.application.font.pixelSize* 1.3 * ratio
                                         rightPadding: checkbox.indicator.width
                                         color: color4
                                         verticalAlignment: Text.AlignVCenter
@@ -369,7 +371,7 @@ Rectangle {
                                     font.family: mainFaNumFont.name
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.3
+                                    font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                                     text: "0 تومان"
                                     color: color4
                                 }
@@ -391,7 +393,7 @@ Rectangle {
 
                             contentItem: Text {
                                 text: checkbox2.text
-                                font.pixelSize: Qt.application.font.pixelSize* 1.3
+                                font.pixelSize: Qt.application.font.pixelSize* 1.3 * ratio
                                 rightPadding: checkbox2.indicator.width
                                 color: color4
                                 verticalAlignment: Text.AlignVCenter
@@ -417,7 +419,7 @@ Rectangle {
                                     Layout.fillHeight: true
                                     font.family: mainFont.name
                                     verticalAlignment: Qt.AlignVCenter
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.3
+                                    font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                                     text: "قابل پرداخت:"
                                     color: color4
                                 }
@@ -428,7 +430,7 @@ Rectangle {
                                     font.family: mainFaNumFont.name
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.3
+                                    font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                                     text: "20000 تومان"
                                     color: color4
                                 }

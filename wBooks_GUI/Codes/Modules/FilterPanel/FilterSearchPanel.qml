@@ -73,8 +73,8 @@ Item {
             RowLayout{
 
                 anchors.fill: parent
-                anchors.rightMargin: 15 * ratio
-                anchors.leftMargin: 5 * ratio
+                anchors.rightMargin: 15
+                anchors.leftMargin: 5
                 layoutDirection: Qt.RightToLeft
 
                 //-- TextField --//
@@ -86,7 +86,7 @@ Item {
                     Layout.fillWidth: true
 
                     verticalAlignment: Qt.AlignVCenter
-                    rightPadding: 10 * ratio
+                    rightPadding: 10
 
                     font.pixelSize: Qt.application.font.pixelSize
                     selectedTextColor: color14
@@ -108,7 +108,7 @@ Item {
                         anchors.verticalCenter: parent.verticalCenter
 
 
-                        font.pixelSize: Qt.application.font.pixelSize
+                        font.pixelSize: Qt.application.font.pixelSize * ratio
 
                         color: color18
 
@@ -271,7 +271,7 @@ Item {
                 text: Icons.key
 
                 font.family: webfont.name
-                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
 
                 verticalAlignment: Qt.AlignVCenter
             }

@@ -29,7 +29,7 @@ Window {
     visibility: Qt.WindowFullScreen
     title: qsTr("wBooks_GUI")
 
-    property double ratio: 1
+    property double ratio: win.width / 1366
 
     // Theme props
     property bool lightTheme: true
@@ -930,7 +930,7 @@ Window {
 
                             text: Icons.account_circle_outline
                             font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize *3 //Qt.application.font.pixelSize
+                            font.pixelSize: Qt.application.font.pixelSize *3  //Qt.application.font.pixelSize
                             renderType: Text.NativeRendering
 
                             verticalAlignment: Qt.AlignVCenter
@@ -952,7 +952,7 @@ Window {
 
                         Rectangle{
                             visible: (setting.isLogined)
-                            Layout.preferredWidth: 40
+                            Layout.preferredWidth: 40 * ratio
                             Layout.fillHeight: true
                             Layout.topMargin: 10
                             Layout.bottomMargin: 10
@@ -1021,7 +1021,7 @@ Window {
                             visible: !setting.isLogined
                             text: "ورود کاربر"
                             font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.4 //Qt.application.font.pixelSize
+                            font.pixelSize: Qt.application.font.pixelSize * 1.4 * ratio //Qt.application.font.pixelSize
                             renderType: Text.NativeRendering
 
                             verticalAlignment: Qt.AlignVCenter
@@ -1064,7 +1064,7 @@ Window {
                             visible: !setting.isLogined
                             text: "همین حالا ثبت نام کنید"
                             font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.4 //Qt.application.font.pixelSize
+                            font.pixelSize: Qt.application.font.pixelSize * 1.4  * ratio//Qt.application.font.pixelSize
                             renderType: Text.NativeRendering
 
                             verticalAlignment: Qt.AlignVCenter
@@ -1156,10 +1156,10 @@ Window {
                     Layout.preferredWidth: parent.width * 0.15
                     RowLayout{
                         anchors.fill: parent
-                        anchors.rightMargin: 50
-                        anchors.leftMargin: 50
                         spacing: 0
                         layoutDirection: Qt.RightToLeft
+
+                        Item{Layout.fillWidth: true}
 
                         Rectangle{
                             Layout.preferredWidth: 20
@@ -1179,6 +1179,8 @@ Window {
                             }
                         }
 
+                        Item{Layout.preferredWidth: 5}
+
                         Rectangle{
                             Layout.preferredWidth: 20
                             Layout.preferredHeight: width
@@ -1196,6 +1198,8 @@ Window {
                                 }
                             }
                         }
+
+                        Item{Layout.preferredWidth: 5}
 
                         Rectangle{
                             Layout.preferredWidth: 20
@@ -1215,6 +1219,8 @@ Window {
                             }
                         }
 
+                        Item{Layout.preferredWidth: 5}
+
                         Rectangle{
                             Layout.preferredWidth: 20
                             Layout.preferredHeight: width
@@ -1233,6 +1239,7 @@ Window {
                             }
                         }
 
+                        Item{Layout.fillWidth: true}
                     }
                 }
 
@@ -1260,7 +1267,7 @@ Window {
                             id:nasheran
                             text: "ورود ناشران"
                             font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1
+                            font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
 
                             color: "#ffffff"
                             MouseArea{
@@ -1275,7 +1282,7 @@ Window {
                         Label{
                             text: "|"
                             font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1
+                            font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
 
                             color: "#ffffff"
                         }
@@ -1285,7 +1292,7 @@ Window {
 
                             text: "شرایط استفاده"
                             font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1
+                            font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
 
                             color: "#ffffff"
                             MouseArea{
@@ -1300,7 +1307,7 @@ Window {
                         Label{
                             text: "|"
                             font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1
+                            font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
 
                             color: "#ffffff"
                         }
@@ -1310,7 +1317,7 @@ Window {
 
                             text: "سوالات متداول"
                             font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1
+                            font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
 
                             color: "#ffffff"
                             MouseArea{
@@ -1325,7 +1332,7 @@ Window {
                         Label{
                             text: "|"
                             font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1
+                            font.pixelSize: Qt.application.font.pixelSize * 1.1* ratio
 
                             color: "#ffffff"
                         }
@@ -1335,7 +1342,7 @@ Window {
 
                             text: "تماس با پشتیبانی"
                             font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1
+                            font.pixelSize: Qt.application.font.pixelSize * 1.1* ratio
 
                             color: "#ffffff"
                             MouseArea{
@@ -1352,7 +1359,7 @@ Window {
                         Rectangle{
                             radius: width * 0.5
                             color: "#ffffff"
-                            Layout.preferredWidth: parent.height * 0.75
+                            Layout.preferredWidth: parent.height * 0.75 * ratio
                             Layout.preferredHeight: width
 
                             Label{
@@ -1362,7 +1369,7 @@ Window {
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
 
                                 color: "#000000"
                             }
@@ -1377,7 +1384,7 @@ Window {
                         Rectangle{
                             radius: width * 0.5
                             color: "#ffffff"
-                            Layout.preferredWidth: parent.height * 0.75
+                            Layout.preferredWidth: parent.height * 0.75 * ratio
                             Layout.preferredHeight: width
 
                             Label{
@@ -1387,7 +1394,7 @@ Window {
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
 
                                 color: "#000000"
                             }
@@ -1403,7 +1410,7 @@ Window {
                         Rectangle{
                             radius: width * 0.5
                             color: "#ffffff"
-                            Layout.preferredWidth: parent.height * 0.75
+                            Layout.preferredWidth: parent.height * 0.75 * ratio
                             Layout.preferredHeight: width
 
                             Label{
@@ -1413,7 +1420,7 @@ Window {
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
 
                                 color: "#000000"
                             }
@@ -1429,7 +1436,7 @@ Window {
                         Rectangle{
                             radius: width * 0.5
                             color: "#ffffff"
-                            Layout.preferredWidth: parent.height * 0.75
+                            Layout.preferredWidth: parent.height * 0.75 * ratio
                             Layout.preferredHeight: width
 
                             Label{
@@ -1440,7 +1447,7 @@ Window {
                                 text: Icons.twitter
 
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
 
                                 color: "#000000"
                             }
@@ -1456,7 +1463,7 @@ Window {
                         Rectangle{
                             radius: width * 0.5
                             color: "#ffffff"
-                            Layout.preferredWidth: parent.height * 0.75
+                            Layout.preferredWidth: parent.height * 0.75 * ratio
                             Layout.preferredHeight: width
 
                             Label{
@@ -1467,7 +1474,7 @@ Window {
                                 text: Icons.telegram
 
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
 
                                 color: "#000000"
                             }

@@ -40,7 +40,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.7
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.7
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -51,7 +51,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     wrapMode: Text.WordWrap
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
@@ -65,7 +65,7 @@ Rectangle {
                     font.bold: true
                     wrapMode: Text.WordWrap
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                 }
@@ -89,7 +89,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.7
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.7
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -100,7 +100,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -119,7 +119,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -139,7 +139,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -159,7 +159,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -179,7 +179,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -210,7 +210,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.7
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.7
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -222,7 +222,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -242,7 +242,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -263,7 +263,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -284,7 +284,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -305,7 +305,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -336,7 +336,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.7
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.7
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -348,7 +348,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -368,7 +368,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -389,7 +389,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -410,7 +410,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -431,7 +431,7 @@ Rectangle {
                     font.family: mainFont.name
                     font.bold: true
                     color: color4
-                    font.pixelSize: Qt.application.font.pixelSize * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{

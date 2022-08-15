@@ -47,7 +47,7 @@ Item {
                     Layout.rightMargin: 20
                     text: lview.headerTitle
                     font.family: mainFont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 1.3
+                    font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: color4
@@ -67,7 +67,7 @@ Item {
                     Layout.fillHeight: true
                     text: (isShowAll) ? "نمایش کمتر" : "نمایش همه"
                     font.family: mainFont.name
-                    font.pixelSize: Qt.application.font.pixelSize
+                    font.pixelSize: Qt.application.font.pixelSize * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: color9
@@ -89,7 +89,7 @@ Item {
                     }
 
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 1.6
+                    font.pixelSize: Qt.application.font.pixelSize * 1.6 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: color9
@@ -154,7 +154,7 @@ Item {
                 text: control.text
                 font.family: mainFaNumFont.name
                 font.bold: true
-                font.pixelSize: Qt.application.font.pixelSize * 1.6
+                font.pixelSize: Qt.application.font.pixelSize * 1.6 * ratio
                 color: color9
 
             }

@@ -66,7 +66,7 @@ Item {
                     Layout.rightMargin: 20
                     text: "تیتر اصلی"
                     font.family: mainFont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 1.3
+                    font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: color4
@@ -86,7 +86,7 @@ Item {
                     Layout.fillHeight: true
                     text: (isShowAll) ? "نمایش کمتر" : "نمایش همه"
                     font.family: mainFont.name
-                    font.pixelSize: Qt.application.font.pixelSize
+                    font.pixelSize: Qt.application.font.pixelSize * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: color9
@@ -107,7 +107,7 @@ Item {
                         NumberAnimation{duration: 300}
                     }
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 1.6
+                    font.pixelSize: Qt.application.font.pixelSize * 1.6 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: color9
@@ -141,7 +141,7 @@ Item {
                     Layout.rightMargin: 20
                     text: Icons.page_layout_header
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: color9
@@ -165,7 +165,7 @@ Item {
                     Layout.fillHeight: true
                     text: Icons.page_layout_body
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: color9
@@ -189,7 +189,7 @@ Item {
                     Layout.fillHeight: true
                     text: Icons.page_layout_footer
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: color9

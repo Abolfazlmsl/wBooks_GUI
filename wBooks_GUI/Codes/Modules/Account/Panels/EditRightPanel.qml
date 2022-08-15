@@ -166,7 +166,6 @@ Rectangle{
                                 visible: (setting.profile === "")?true:false
                                 font.family: webfont.name
                                 color: color7
-
                                 font.pixelSize: Qt.application.font.pixelSize * 3
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
@@ -209,8 +208,7 @@ Rectangle{
                                 text: setting.userName
                                 font.family: mainFont.name
                                 color: color4
-
-                                font.pixelSize: Qt.application.font.pixelSize * 1
+                                font.pixelSize: Qt.application.font.pixelSize * ratio
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 LayoutMirroring.enabled: true
@@ -224,7 +222,7 @@ Rectangle{
                                 font.family: mainFaNumFont.name
                                 color: color4
 
-                                font.pixelSize: Qt.application.font.pixelSize * 1
+                                font.pixelSize: Qt.application.font.pixelSize * ratio
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 LayoutMirroring.enabled: true
@@ -237,7 +235,7 @@ Rectangle{
                                 font.family: mainFaNumFont.name
                                 color: color4
 
-                                font.pixelSize: Qt.application.font.pixelSize * 1
+                                font.pixelSize: Qt.application.font.pixelSize * ratio
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 LayoutMirroring.enabled: true

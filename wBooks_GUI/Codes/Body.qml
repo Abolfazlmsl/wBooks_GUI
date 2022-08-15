@@ -122,6 +122,7 @@ Rectangle{
                             Layout.bottomMargin: 2
                             LayoutMirroring.enabled: true
                             font.family: mainFont.name
+                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
                             background: Rectangle {
                                 color: color1
                             }
@@ -132,6 +133,33 @@ Rectangle{
                                 ListElement { text: "فیلتر بر اساس محبوب ترین" }
                                 ListElement { text: "فیلتر بر اساس پرفروش ترین" }
                             }
+                            delegate: ItemDelegate {
+                                id:itemDlgt
+                                width: cbox.width
+                                height:40
+                                padding:0
+
+                                contentItem: Text {
+                                    id:textItem
+                                    text: model.text
+                                    color: itemDlgt.hovered?color1:color4
+                                    font.family: mainFont.name
+                                    font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
+                                    LayoutMirroring.enabled: true
+                                    verticalAlignment: Text.AlignVCenter
+                                    horizontalAlignment: Text.AlignLeft
+                                    rightPadding: 20
+                                }
+
+                                background: Rectangle {
+                                  color:itemDlgt.hovered?color4:color1;
+                                  anchors.left: itemDlgt.left
+                                  anchors.leftMargin: 0
+                                  width:itemDlgt.width
+                                }
+
+                              }
+
                             onActivated: {
 
                             }

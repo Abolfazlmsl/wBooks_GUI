@@ -59,7 +59,7 @@ Rectangle{
                 //            height: parent.height
 
                 verticalAlignment: Qt.AlignVCenter
-                rightPadding: 30 * ratio
+                rightPadding: 30
 //                            leftPadding: 10 * ratio
 
                 font.family: mainFont.name
@@ -80,7 +80,7 @@ Rectangle{
                     text: "متن پیش فرض"
 
                     anchors.right: parent.right
-                    anchors.rightMargin: 30 * ratio
+                    anchors.rightMargin: 30
                     anchors.verticalCenter: parent.verticalCenter
 
                     font.family: mainFont.name

@@ -34,7 +34,7 @@ Item {
                     }
 
                     CategoryButton{
-                        Layout.preferredWidth: 280 //* widthRatio
+                        Layout.preferredWidth: 280 * ratio //* widthRatio
                         Layout.fillHeight: true
                         picSource: "qrc:/Images/MyBooks.png"
                         title: "کتاب های من"
@@ -46,7 +46,7 @@ Item {
                     }
 
                     CategoryButton{
-                        Layout.preferredWidth: 280 //* widthRatio
+                        Layout.preferredWidth: 280 * ratio //* widthRatio
                         Layout.fillHeight: true
                         picSource: "qrc:/Images/music2.png"
                         title: "کتاب های صوتی من"
@@ -58,7 +58,7 @@ Item {
                     }
 
                     CategoryButton{
-                        Layout.preferredWidth: 280 //* widthRatio
+                        Layout.preferredWidth: 280 * ratio //* widthRatio
                         Layout.fillHeight: true
                         picSource: "qrc:/Images/video.jpg"
                         title: "ویدیوهای من"

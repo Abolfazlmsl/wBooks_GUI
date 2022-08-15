@@ -196,23 +196,35 @@ Window {
                     enabled: fileUploaded
                     Layout.preferredWidth: parent.width * 0.13
                     clip: true
+                    font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
                     background: Rectangle {
-                        radius: 5
-                        color: "transparent"
-//                        border.color: (setting.lightMode) ? "black" : "white"
-                        border.color: color4
+                        color: color12
                     }
+                    delegate: ItemDelegate {
+                        id:itemDlgt
+                        width: fontButton.width
+                        height:40
+                        padding:0
 
-                    contentItem: Label{
-                        text: fontButton.editText
-                        font.pixelSize: Qt.application.font.pixelSize
-//                        color: (setting.lightMode) ? "black" : "white"
-                        color: color4
+                        contentItem: Text {
+                            id:textItem
+                            text: model.text
+                            color: itemDlgt.hovered?color1:color4
+                            font.family: mainFont.name
+                            font.pixelSize: Qt.application.font.pixelSize * 1.2* ratio
+                            verticalAlignment: Text.AlignVCenter
+                            horizontalAlignment: Text.AlignLeft
+                            rightPadding: 20
+                        }
 
-                        verticalAlignment: Qt.AlignVCenter
-                        horizontalAlignment: Qt.AlignHCenter
+                        background: Rectangle {
+                          color:itemDlgt.hovered?color4:color1;
+                          anchors.left: itemDlgt.left
+                          anchors.leftMargin: 0
+                          width:itemDlgt.width
+                        }
 
-                    }
+                      }
 
                     model: ListModel {
                         id: model

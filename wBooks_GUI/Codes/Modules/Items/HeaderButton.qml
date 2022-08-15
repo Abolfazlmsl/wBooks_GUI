@@ -27,7 +27,7 @@ Rectangle{
         minimumPointSize: 10
         font.family: mainFont.name
         fontSizeMode: Text.Fit
-        font.pixelSize: Qt.application.font.pixelSize * 1.3
+        font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
 
         color: (isClick) ? "#ffffff" : color15
         clip: true
@@ -52,7 +52,7 @@ Rectangle{
         color: (isClick) ? "#ffffff" : color15
 
         font.family: webfont.name
-        font.pixelSize: Qt.application.font.pixelSize * 2
+        font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
 
     }
 
