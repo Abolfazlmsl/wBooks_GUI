@@ -232,6 +232,14 @@ Window {
                         ListElement { text: "Calibri" }
                         ListElement { text: "Arial" }
                         ListElement { text: "Courier"}
+                        ListElement { text: "Kalameh(FaNum)-Black"}
+                        ListElement { text: "Kalameh(FaNum)-Bold"}
+                        ListElement { text: "Kalameh(FaNum)-Regular"}
+                        ListElement { text: "Kalameh(FaNum)-Thin"}
+                        ListElement { text: "Kalameh-Black"}
+                        ListElement { text: "Kalameh-Bold"}
+                        ListElement { text: "Kalameh-Regular"}
+                        ListElement { text: "Kalameh-Thin"}
                     }
                     onActivated: {
                         if (setting.font !== fontButton.currentText){

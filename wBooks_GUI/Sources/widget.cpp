@@ -8,6 +8,14 @@ Widget::Widget(QQuickItem *parent)
       m_currentChapter(0)
 {
     m_document = new EPubDocument(this);
+
+    newFonts.clear();
+    for (int i=0; i<newFontsPath.length(); i++){
+        int id = QFontDatabase::addApplicationFont(newFontsPath[i]);
+        newFonts.append(QFontDatabase::applicationFontFamilies(id).at(0));
+    }
+
+
     connect(m_document, &EPubDocument::loadCompleted, this, [&]() {
         update();
     });
@@ -28,10 +36,12 @@ Widget::~Widget()
 void Widget::setFont(QString font, int fontSize)
 {
     m_document->setLoaded(false);
-    m_font = font;
+    if (isDefaultFont(font)){
+        m_font = font;
+    }else{
+        m_font = getFontFamily(font);
+    }
     m_fontSize = fontSize;
-//    int id = QFontDatabase::addApplicationFont(":/Fonts/Kalameh-Regular.ttf");
-//    m_font = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont serifFont(m_font, m_fontSize);
     m_document->setDefaultFont(serifFont);
 //    if (type=="fontsize") {m_document->setpdfLoaded(false);}
@@ -80,6 +90,9 @@ bool Widget::loadFile(const QString &path)
     m_yOffset = 0;
     m_document->openDocument(path);
     m_document->setPageSize(size());
+    if (!isDefaultFont(m_font)){
+        m_font = getFontFamily(m_font);
+    }
     QFont serifFont(m_font, m_fontSize);
     m_document->setDefaultFont(serifFont);
 

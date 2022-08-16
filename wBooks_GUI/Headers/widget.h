@@ -90,6 +90,35 @@ public:
 
     QString pdfPath() const { return m_pdfPath; }
 
+    bool isDefaultFont(QString font){
+        if (font=="Times New Roman" || font=="Calibri" || font=="Arial" || font=="Courier"){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    QString getFontFamily(QString font){
+        if (font=="Kalameh(FaNum)-Black"){
+            return newFonts[0];
+        }else if (font=="Kalameh(FaNum)-Bold"){
+            return newFonts[1];
+        }else if (font=="Kalameh(FaNum)-Regular"){
+            return newFonts[2];
+        }else if (font=="Kalameh(FaNum)-Thin"){
+            return newFonts[3];
+        }else if (font=="Kalameh-Black"){
+            return newFonts[4];
+        }else if (font=="Kalameh-Bold"){
+            return newFonts[5];
+        }else if (font=="Kalameh-Regular"){
+            return newFonts[6];
+        }else if (font=="Kalameh-Thin"){
+            return newFonts[7];
+        }
+        return "";
+    }
+
 public slots:
     void setFont(QString font, int fontSize);
     void changeTheme(QString mode);
@@ -138,6 +167,17 @@ private:
     float pageSize;
     int addHeight;
     QString themeMode;
+    QStringList newFontsPath
+    {":/Fonts/Kalameh(FaNum)-Black.ttf",
+    ":/Fonts/Kalameh(FaNum)-Bold.ttf",
+    ":/Fonts/Kalameh(FaNum)-Regular.ttf",
+    ":/Fonts/Kalameh(FaNum)-Thin.ttf",
+    ":/Fonts/Kalameh-Black.ttf",
+    ":/Fonts/Kalameh-Bold.ttf",
+    ":/Fonts/Kalameh-Regular.ttf",
+    ":/Fonts/Kalameh-Thin.ttf"};
+
+    QStringList newFonts;
 
 signals:
     void contentsChanged(TreeModel *model);
