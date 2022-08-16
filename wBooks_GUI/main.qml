@@ -31,6 +31,17 @@ Window {
 
     property double ratio: win.width / 1366
 
+    //Account Page props
+    property int editFormIndex: 0 //Edit Page
+    property string editAccountColor: ""
+    property string walletColor: ""
+    property string myBookColor: ""
+    property string audioBookColor: ""
+    property string changePassColor: ""
+    property string commentsColor: ""
+    property string aboutUsColor: ""
+    property string supportColor: ""
+
     // Theme props
     property bool lightTheme: true
     property bool accountPopEnabled: false
@@ -223,6 +234,136 @@ Window {
                     color23: "#1B1B1B" //
                     color_input: "#211D1D" //
                     Material.theme: Material.Dark //
+                }
+            }
+        ]
+
+    }
+
+    property var accountpage: Item{
+        id: accountObj
+        visible: false
+
+        state: "Account"
+        states: [
+            State{
+                name: "Account"
+                PropertyChanges {
+                    target: win
+                    editFormIndex: 0
+                    editAccountColor: color7
+                    walletColor: color4
+                    myBookColor: color4
+                    audioBookColor: color4
+                    changePassColor: color4
+                    commentsColor: color4
+                    aboutUsColor: color4
+                    supportColor: color4
+                }
+            },
+            State{
+                name: "Wallet"
+                PropertyChanges {
+                    target: win
+                    editFormIndex: 1
+                    editAccountColor: color4
+                    walletColor: color7
+                    myBookColor: color4
+                    audioBookColor: color4
+                    changePassColor: color4
+                    commentsColor: color4
+                    aboutUsColor: color4
+                    supportColor: color4
+                }
+            },
+            State{
+                name: "My Books"
+                PropertyChanges {
+                    target: win
+                    editFormIndex: 2
+                    editAccountColor: color4
+                    walletColor: color4
+                    myBookColor: color7
+                    audioBookColor: color4
+                    changePassColor: color4
+                    commentsColor: color4
+                    aboutUsColor: color4
+                    supportColor: color4
+                }
+            },
+            State{
+                name: "Audio Books"
+                PropertyChanges {
+                    target: win
+                    editFormIndex: 3
+                    editAccountColor: color4
+                    walletColor: color4
+                    myBookColor: color4
+                    audioBookColor: color7
+                    changePassColor: color4
+                    commentsColor: color4
+                    aboutUsColor: color4
+                    supportColor: color4
+                }
+            },
+            State{
+                name: "Change Password"
+                PropertyChanges {
+                    target: win
+                    editFormIndex: 4
+                    editAccountColor: color4
+                    walletColor: color4
+                    myBookColor: color4
+                    audioBookColor: color4
+                    changePassColor: color7
+                    commentsColor: color4
+                    aboutUsColor: color4
+                    supportColor: color4
+                }
+            },
+            State{
+                name: "Comments"
+                PropertyChanges {
+                    target: win
+                    editFormIndex: 5
+                    editAccountColor: color4
+                    walletColor: color4
+                    myBookColor: color4
+                    audioBookColor: color4
+                    changePassColor: color4
+                    commentsColor: color7
+                    aboutUsColor: color4
+                    supportColor: color4
+                }
+            },
+            State{
+                name: "About us"
+                PropertyChanges {
+                    target: win
+                    editFormIndex: 6
+                    editAccountColor: color4
+                    walletColor: color4
+                    myBookColor: color4
+                    audioBookColor: color4
+                    changePassColor: color4
+                    commentsColor: color4
+                    aboutUsColor: color7
+                    supportColor: color4
+                }
+            },
+            State{
+                name: "Support"
+                PropertyChanges {
+                    target: win
+                    editFormIndex: 7
+                    editAccountColor: color4
+                    walletColor: color4
+                    myBookColor: color4
+                    audioBookColor: color4
+                    changePassColor: color4
+                    commentsColor: color4
+                    aboutUsColor: color4
+                    supportColor: color7
                 }
             }
         ]
@@ -1349,7 +1490,9 @@ Window {
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
                                 onClicked: {
-
+                                    accountObj.state = "Support"
+                                    mainPage.state = "Edit"
+                                    accountPopEnabled = false
                                 }
                             }
                         }

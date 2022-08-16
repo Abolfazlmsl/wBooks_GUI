@@ -21,16 +21,6 @@ Rectangle{
     id: mainBody
     anchors.fill: parent
 
-    property int editFormIndex: 0
-    property string editAccountColor: ""
-    property string walletColor: ""
-    property string myBookColor: ""
-    property string audioBookColor: ""
-    property string changePassColor: ""
-    property string commentsColor: ""
-    property string aboutUsColor: ""
-    property string supportColor: ""
-
     RowLayout{
         anchors.fill: parent
         spacing: 0

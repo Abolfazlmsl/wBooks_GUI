@@ -30,6 +30,8 @@ void Widget::setFont(QString font, int fontSize)
     m_document->setLoaded(false);
     m_font = font;
     m_fontSize = fontSize;
+//    int id = QFontDatabase::addApplicationFont(":/Fonts/Kalameh-Regular.ttf");
+//    m_font = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont serifFont(m_font, m_fontSize);
     m_document->setDefaultFont(serifFont);
 //    if (type=="fontsize") {m_document->setpdfLoaded(false);}

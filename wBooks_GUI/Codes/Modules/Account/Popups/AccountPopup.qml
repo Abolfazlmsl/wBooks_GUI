@@ -134,6 +134,7 @@ Rectangle {
             text: "مشاهده پنل کاربری"
             counter: false
             onShowClick: {
+                accountObj.state = "Account"
                 mainPage.state = "Edit"
                 accountPopEnabled = false
             }
@@ -154,6 +155,11 @@ Rectangle {
             icon: Icons.wallet
             text: "کیف پول شما"
             counter: false
+            onShowClick: {
+                accountObj.state = "Wallet"
+                mainPage.state = "Edit"
+                accountPopEnabled = false
+            }
         }
 
         Rectangle{
@@ -171,6 +177,11 @@ Rectangle {
             text: "کتاب های من"
             counter: true
             recText: "13"
+            onShowClick: {
+                accountObj.state = "My Books"
+                mainPage.state = "Edit"
+                accountPopEnabled = false
+            }
 
         }
 
@@ -181,6 +192,11 @@ Rectangle {
             text: "کتاب های صوتی من"
             counter: true
             recText: "9"
+            onShowClick: {
+                accountObj.state = "Audio Books"
+                mainPage.state = "Edit"
+                accountPopEnabled = false
+            }
         }
 
         Rectangle{

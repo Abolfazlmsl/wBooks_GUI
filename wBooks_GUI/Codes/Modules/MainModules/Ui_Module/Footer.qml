@@ -107,7 +107,9 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            accountObj.state = "Support"
+                            mainPage.state = "Edit"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -126,7 +128,9 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            accountObj.state = "About us"
+                            mainPage.state = "Edit"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -229,7 +233,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Book Page"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -249,7 +254,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Book Page"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -270,7 +276,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Book Page"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -291,7 +298,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Book Page"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -312,7 +320,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Book Page"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -355,7 +364,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Category"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -375,7 +385,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Category"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -396,7 +407,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Audio Book"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -417,7 +429,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Category"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -438,15 +451,14 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Audio Book"
+                            accountPopEnabled = false
                         }
                     }
                 }
 
                 Item{Layout.fillHeight: true}
-
             }
         }
-
     }
 }
