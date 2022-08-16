@@ -5,20 +5,13 @@ import QtQuick.Controls.Styles 1.4
 import QtQuick.Shapes 1.15
 import QtGraphicalEffects 1.15
 
+import "./../../Items"
+
 import "./../../../../Fonts/Icon.js" as Icons
 
 Item {
 
     property bool back: true
-
-    ParallelAnimation {
-        id: showReturnAnim
-        NumberAnimation { target: iconReturn; property: "Layout.preferredWidth"; to: 100; duration: 300 }
-    }
-    ParallelAnimation {
-        id: hideReturnAnim
-        NumberAnimation { target: iconReturn; property: "Layout.preferredWidth"; to: 50; duration: 300 }
-    }
 
     ColumnLayout{
         anchors.fill: parent
@@ -26,41 +19,19 @@ Item {
         RowLayout{
             Layout.fillWidth: true
             Layout.preferredHeight: 40
-            layoutDirection: Qt.RightToLeft
             visible: back
-            Rectangle{
-                id: iconReturn
-                property bool isHover: false
 
+            HoverButton{
                 Layout.preferredWidth: 50
                 Layout.preferredHeight: 50
-                radius: 10
-                color: color2
-                Label{
-                    id: icon
-                    anchors.fill: parent
-                    text: (iconReturn.isHover) ? "بازگشت":Icons.arrow_right
-                    font.family: (iconReturn.isHover) ? mainFont.name:webfont.name
-                    font.pixelSize: (iconReturn.isHover) ? Qt.application.font.pixelSize*1.5:Qt.application.font.pixelSize * 2
-                    color: color4
-                    verticalAlignment: Qt.AlignVCenter
-                    horizontalAlignment: Qt.AlignHCenter
-                }
-                MouseArea{
-                    anchors.fill: parent
-                    cursorShape: Qt.PointingHandCursor
-                    hoverEnabled: true
-                    onClicked: {
-                        myBooksView = 0
-                    }
-                    onEntered: {
-                        showReturnAnim.restart()
-                        iconReturn.isHover = true
-                    }
-                    onExited: {
-                        hideReturnAnim.restart()
-                        iconReturn.isHover = false
-                    }
+                btnRadius: 10
+                backgroundColor: color2
+                btnIcon: Icons.arrow_left
+                btnText: "بازگشت"
+                textColor: color4
+
+                onBtnClicked: {
+                    myBooksView = 0
                 }
             }
 

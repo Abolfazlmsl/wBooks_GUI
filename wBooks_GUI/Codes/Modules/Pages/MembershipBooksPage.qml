@@ -131,47 +131,21 @@ Item {
                 }
             }
 
-            Rectangle{
-                id: iconReturn
-                property bool isHover: false
-
+            HoverButton{
                 width: 50
-                Behavior on width {
-                    NumberAnimation{duration: 300}
-                }
-
                 height: parent.height
                 anchors.right: parent.right
                 anchors.rightMargin: 10
-                radius: 10
-                border.width: 1
-                border.color: color4
-                color: "transparent"
-                Label{
-                    id: icon
-                    anchors.fill: parent
-                    text: (iconReturn.isHover) ? "بازگشت":Icons.diamond_stone
-                    font.family: (iconReturn.isHover) ? mainFont.name:webfont.name
-                    font.pixelSize: (iconReturn.isHover) ? Qt.application.font.pixelSize*1.5:Qt.application.font.pixelSize * 2
-                    color: color4
-                    verticalAlignment: Qt.AlignVCenter
-                    horizontalAlignment: Qt.AlignHCenter
-                }
-                MouseArea{
-                    anchors.fill: parent
-                    cursorShape: Qt.PointingHandCursor
-                    hoverEnabled: true
-                    onClicked: {
-                        memView.currentIndex = 0
-                    }
-                    onEntered: {
-                        iconReturn.width = 100
-                        iconReturn.isHover = true
-                    }
-                    onExited: {
-                        iconReturn.width = 50
-                        iconReturn.isHover = false
-                    }
+                btnRadius: 10
+                borderWidth: 1
+                borderColor: color4
+                backgroundColor: "transparent"
+                btnIcon: Icons.diamond_stone
+                btnText: "بازگشت"
+                textColor: color4
+
+                onBtnClicked: {
+                    memView.currentIndex = 0
                 }
             }
         }

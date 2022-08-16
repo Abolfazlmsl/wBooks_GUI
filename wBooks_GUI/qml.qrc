@@ -161,5 +161,6 @@
         <file>Images/silver-medal.png</file>
         <file>Codes/Modules/Pages/CategoryPage.qml</file>
         <file>Codes/Modules/MainModules/Ui_Module/BasketBook.qml</file>
+        <file>Codes/Modules/Items/HoverButton.qml</file>
     </qresource>
 </RCC>
