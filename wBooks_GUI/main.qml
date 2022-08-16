@@ -1673,9 +1673,15 @@ Window {
             id: basketModel
             ListElement{
                 book: 1 //the id of book in database
+                type: "Audio Book"
             }
             ListElement{
                 book: 1
+                type: "Document Book"
+            }
+            ListElement{
+                book: 1
+                type: "Membership"
             }
         }
 

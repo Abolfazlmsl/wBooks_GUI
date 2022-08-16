@@ -27,7 +27,7 @@ Rectangle {
                         Layout.preferredHeight: 200
                         source: "qrc:/Images/Emptybasket.png"
                         mipmap: true
-                        fillMode: Qt.PreserveAspectFit
+                        fillMode: Image.PreserveAspectFit
                     }
                     Label{
                         id: icontxt
@@ -108,148 +108,19 @@ Rectangle {
                         }
                     }
 
-//                    delegate: BasketMembership{
-//                        width: lview.width
-//                        height: 180
-//                    }
+                    delegate: Loader{
 
-                    delegate: Rectangle{
+                        property string modelType: model.type
+
                         width: lview.width
                         height: 180
-                        color: "transparent"
-                        ColumnLayout{
-                            anchors.fill: parent
-                            spacing: 0
-                            Item{
-                                Layout.fillWidth: true
-                                Layout.preferredHeight: 140
-                                RowLayout{
-                                    anchors.fill: parent
-                                    spacing: 0
-                                    layoutDirection: Qt.RightToLeft
 
-                                    Image{
-                                        id: image
-                                        Layout.preferredWidth: 150
-                                        Layout.fillHeight: true
-                                        source: "qrc:/Images/warriorqueen.jpg"
-                                        mipmap: true
-                                    }
-
-                                    Item{Layout.preferredWidth: 30}
-
-                                    Item{
-                                        Layout.fillWidth: true
-                                        Layout.fillHeight: true
-                                        ColumnLayout{
-                                            anchors.fill: parent
-                                            spacing: 2
-                                            Label{
-                                                Layout.fillWidth: true
-                                                Layout.preferredHeight: contentHeight
-                                                text: "کتاب اثر مرکب"
-                                                font.family: mainFont.name
-                                                color: color4
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.5
-                                                verticalAlignment: Qt.AlignVCenter
-                                                elide: Text.ElideRight
-                                            }
-                                            Label{
-                                                Layout.fillWidth: true
-                                                Layout.preferredHeight: contentHeight
-                                                text: "نویسنده: دارن هاردی"
-                                                font.family: mainFont.name
-                                                color: color4
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.2
-                                                verticalAlignment: Qt.AlignVCenter
-                                                elide: Text.ElideRight
-                                            }
-                                            Label{
-                                                Layout.fillWidth: true
-                                                Layout.preferredHeight: contentHeight
-                                                text: "مترجم: لطیف احمدپور"
-                                                font.family: mainFont.name
-                                                color: color4
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.2
-                                                verticalAlignment: Qt.AlignVCenter
-                                                elide: Text.ElideRight
-                                            }
-                                            Label{
-                                                Layout.fillWidth: true
-                                                Layout.preferredHeight: contentHeight
-                                                text: "ناشر: انتشارات نگاه نوین"
-                                                font.family: mainFont.name
-                                                color: color4
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.2
-                                                verticalAlignment: Qt.AlignVCenter
-                                                elide: Text.ElideRight
-                                            }
-                                            Item{Layout.fillHeight: true}
-
-                                            Label{
-                                                Layout.fillWidth: true
-                                                Layout.preferredHeight: 40
-                                                text: Icons.file_document_box
-                                                font.family: webfont.name
-                                                color: color4
-                                                font.pixelSize: Qt.application.font.pixelSize * 2.5
-                                                verticalAlignment: Qt.AlignVCenter
-                                                horizontalAlignment: Qt.AlignLeft
-                                                LayoutMirroring.enabled: true
-                                                elide: Text.ElideRight
-                                            }
-                                        }
-                                    }
-
-                                    Item{
-                                        Layout.preferredWidth: parent.width * 0.2
-                                        Layout.fillHeight: true
-                                        Layout.leftMargin: 20
-                                        ColumnLayout{
-                                            anchors.fill: parent
-                                            spacing: 2
-                                            Label{
-                                                Layout.preferredWidth: 60
-                                                Layout.preferredHeight: 60
-                                                text: Icons.trash_can
-                                                font.family: webfont.name
-                                                color: color4
-                                                font.pixelSize: Qt.application.font.pixelSize * 2.5
-                                                verticalAlignment: Qt.AlignVCenter
-                                                elide: Text.ElideRight
-                                                MouseArea{
-                                                    anchors.fill: parent
-                                                    cursorShape: Qt.PointingHandCursor
-                                                    onClicked: {
-                                                        basketModel.remove(index)
-                                                    }
-                                                }
-                                            }
-                                            Item{Layout.fillHeight: true}
-
-                                            Label{
-                                                Layout.preferredWidth: contentWidth
-                                                Layout.preferredHeight: contentHeight
-                                                text: "10000 تومان"
-                                                font.family: mainFaNumFont.name
-                                                color: color4
-                                                font.pixelSize: Qt.application.font.pixelSize * 2
-                                                verticalAlignment: Qt.AlignVCenter
-                                                elide: Text.ElideRight
-                                            }
-                                        }
-                                    }
-                                }
+                        sourceComponent: {
+                            if(model.type === "Audio Book" || model.type === "Document Book"){
+                                return basketBookCom
+                            }else{
+                                return basketMembershipCom
                             }
-                            Item{Layout.preferredHeight: 19}
-                            Rectangle{
-                                Layout.fillWidth: true
-                                Layout.preferredHeight: 1
-                                Layout.rightMargin: 30
-                                Layout.leftMargin: 30
-                                color: color4
-                            }
-                            Item{Layout.preferredHeight: 20}
                         }
                     }
 
@@ -431,7 +302,7 @@ Rectangle {
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
-                                    text: "20000 تومان"
+                                    text: "35000 تومان"
                                     color: color4
                                 }
                             }
@@ -457,6 +328,23 @@ Rectangle {
                     }
                 }
             }
+        }
+    }
+
+    Component{
+        id: basketMembershipCom
+        BasketMembership{
+            width: parent.width
+            height: 180
+        }
+    }
+
+    Component{
+        id: basketBookCom
+        BasketBook{
+            width: parent.width
+            height: 180
+            bookFileType: modelType
         }
     }
 }
