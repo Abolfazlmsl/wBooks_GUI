@@ -6,7 +6,7 @@ import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.15
 
 import "./../../../Fonts/Icon.js" as Icons
-
+import "./../../../Functions/Funcs.js" as Functions
 
 //-- Practice Square --//
 Rectangle{
@@ -150,7 +150,7 @@ Rectangle{
                             Label{
                                 id:lbl_Price
                                 anchors.centerIn: parent
-                                text: price + " تومان"
+                                text: Functions.numberWithCommas(price) + " تومان"
                                 font.family: mainFaNumFont.name
                                 font.pixelSize: 60 //* widthRatio
                                 font.bold: true

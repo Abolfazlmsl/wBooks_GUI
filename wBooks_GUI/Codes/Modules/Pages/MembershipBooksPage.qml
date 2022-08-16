@@ -134,8 +134,8 @@ Item {
             HoverButton{
                 width: 50
                 height: parent.height
-                anchors.right: parent.right
-                anchors.rightMargin: 10
+                anchors.left: parent.left
+                anchors.leftMargin: 20
                 btnRadius: 10
                 borderWidth: 1
                 borderColor: color4

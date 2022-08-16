@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.15
 
 import "./../../../../Fonts/Icon.js" as Icons
+import "./../../../../Functions/Funcs.js" as Functions
 
 import "./../../../Modules/Items"
 
@@ -144,7 +145,7 @@ Item{
                         Label{
                             Layout.fillWidth: true
                             Layout.fillHeight: true
-                            text: increseAmount + " تومان"
+                            text: Functions.numberWithCommas(increseAmount) + " تومان"
                             font.family: mainFaNumFont.name
                             font.pixelSize: 23 //* widthRatio
                             font.bold: true

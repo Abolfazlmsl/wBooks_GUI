@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls.Styles 1.4
 
 import "./../../../Fonts/Icon.js" as Icons
+import "./../../../../Functions/Funcs.js" as Functions
 
 import "./../Items"
 import "./../MainModules/Ui_Module"
@@ -243,7 +244,7 @@ Rectangle {
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
-                                    text: "0 تومان"
+                                    text: Functions.numberWithCommas("0") + " تومان"
                                     color: color4
                                 }
                             }
@@ -302,7 +303,7 @@ Rectangle {
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
-                                    text: "35000 تومان"
+                                    text: Functions.numberWithCommas("35000") + " تومان"
                                     color: color4
                                 }
                             }

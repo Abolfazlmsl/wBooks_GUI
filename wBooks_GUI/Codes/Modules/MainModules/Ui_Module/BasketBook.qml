@@ -3,6 +3,7 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.15
 
 import "./../../../../Fonts/Icon.js" as Icons
+import "./../../../../Functions/Funcs.js" as Functions
 
 Rectangle{
     property string bookFileType: "Document Book"
@@ -121,7 +122,7 @@ Rectangle{
                         Label{
                             Layout.preferredWidth: contentWidth
                             Layout.preferredHeight: contentHeight
-                            text: "10000 تومان"
+                            text: Functions.numberWithCommas("10000") + " تومان"
                             font.family: mainFaNumFont.name
                             color: color4
                             font.pixelSize: Qt.application.font.pixelSize * 2

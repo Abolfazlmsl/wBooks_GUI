@@ -5,6 +5,7 @@ import QtQuick.Controls.Material 2.12
 import QtQuick.Controls.Styles 1.4
 
 import "./../../../../Fonts/Icon.js" as Icons
+import "./../../../../Functions/Funcs.js" as Functions
 
 import "./../../Items"
 import "./../Ui_Module"
@@ -205,7 +206,7 @@ Flickable {
                                             color: "transparent"
                                             Label{
                                                 anchors.fill: parent
-                                                text: "قیمت: 26000 تومان"
+                                                text: "قیمت: " + Functions.numberWithCommas("26000") + " تومان"
                                                 font.family: mainFaNumFont.name
                                                 color: color2
                                                 verticalAlignment: Qt.AlignVCenter

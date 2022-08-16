@@ -2,6 +2,8 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
+import "./../../../Functions/Funcs.js" as Functions
+
 Rectangle {
 
     property int amount: 100000
@@ -18,7 +20,7 @@ Rectangle {
     Label{
         id: txt
         anchors.fill: parent
-        text: amount + " تومان"
+        text: Functions.numberWithCommas(amount) + " تومان"
         font.family: mainFaNumFont.name
         font.pixelSize: 23 //* widthRatio
         font.bold: true

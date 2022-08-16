@@ -5,6 +5,7 @@ import QtQuick.Controls.Material 2.12
 import QtQuick.Controls.Styles 1.4
 
 import "./../../../../Fonts/Icon.js" as Icons
+import "./../../../../Functions/Funcs.js" as Functions
 
 import "./../Ui_Module"
 
@@ -72,7 +73,7 @@ Rectangle {
                     Layout.preferredWidth: parent.width /6
 //                    Layout.fillHeight: true
                     text1: "قیمت نسخه چاپی"
-                    text2: "18500"
+                    text2: Functions.numberWithCommas("26000")
                     text3: "تومان"
                 }
                 Rectangle{
