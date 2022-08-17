@@ -189,7 +189,7 @@ Item {
                     id: myFlowAudioBook
 
                     visible: btn_AudioBook.isSelected
-
+                    layoutDirection: Qt.RightToLeft
                     width: (flick_Result.width % 255 === 0) ? (255 * ((flick_Result.width / 255)) + ((Math.floor(flick_Result.width / 255) - 1) * spacing))
                                                             : ((255 * Math.floor(flick_Result.width / 255)) + ((Math.floor(flick_Result.width / 255) - 1) * spacing))
                     height: implicitHeight
@@ -234,7 +234,7 @@ Item {
                 //-- Document Books Result --//
                 Flow {
                     id: myFlowDocument
-
+                    layoutDirection: Qt.RightToLeft
                     visible: !btn_AudioBook.isSelected
 
                     width: (flick_Result.width % 255 === 0) ? (255 * ((flick_Result.width / 255)) + ((Math.floor(flick_Result.width / 255) - 1) * spacing))

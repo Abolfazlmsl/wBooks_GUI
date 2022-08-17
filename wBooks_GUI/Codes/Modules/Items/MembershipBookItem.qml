@@ -45,7 +45,7 @@ Rectangle{
                               return Icons.file_document_box
                           }else if (fileType === "Audio"){
                               return Icons.headphones
-                          }else if (fileType === "Document"){
+                          }else if (fileType === "Video"){
                               return Icons.video
                           }
                     font.family: webfont.name

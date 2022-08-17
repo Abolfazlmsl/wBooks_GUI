@@ -12,6 +12,7 @@ import "./../../../../Fonts/Icon.js" as Icons
 Item {
 
     property bool back: true
+    property bool showList: true
 
     ColumnLayout{
         anchors.fill: parent
@@ -36,12 +37,66 @@ Item {
             }
 
             Item{Layout.fillWidth: true}
+
+            Rectangle{
+                Layout.preferredHeight: 50
+                Layout.preferredWidth: 50
+                radius: 10
+                color: "transparent"
+                Label{
+                    anchors.fill: parent
+                    text: Icons.apps
+                    font.family: webfont.name
+                    color: (showList)? color4:color2
+                    verticalAlignment: Qt.AlignVCenter
+                    horizontalAlignment: Qt.AlignHCenter
+                    font.pixelSize: Qt.application.font.pixelSize * 3
+                }
+                MouseArea{
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        if (showList){
+                            showList = false
+                        }
+                    }
+                }
+            }
+
+            Item{Layout.preferredWidth: 10}
+
+            Rectangle{
+                Layout.preferredHeight: 50
+                Layout.preferredWidth: 50
+                color: "transparent"
+                radius: 10
+                Label{
+                    anchors.fill: parent
+                    text: Icons.format_list_bulleted
+                    rotation: 180
+                    font.family: webfont.name
+                    color: (showList)? color2:color4
+                    verticalAlignment: Qt.AlignVCenter
+                    horizontalAlignment: Qt.AlignHCenter
+                    font.pixelSize: Qt.application.font.pixelSize * 3
+                }
+                MouseArea{
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        if (!showList){
+                            showList = true
+                        }
+                    }
+                }
+            }
         }
 
         ListView{
             id: lView
             Layout.fillHeight: true
             Layout.fillWidth: true
+            visible: showList
             clip: true
             spacing: 0
             model: myBooksModel
@@ -236,6 +291,65 @@ Item {
                     }
                     onExited: {
                         rec.color = "transparent"
+                    }
+                }
+            }
+        }
+
+        Rectangle{
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            visible: !showList
+            color: "transparent"
+
+            Flickable{
+                id: flick_Result
+                anchors.fill: parent
+                contentHeight: myFlowDocument.height
+                clip: true
+
+                //anchors.margins: 10
+
+                ScrollBar.vertical: ScrollBar {
+                    width: 10 * ratio
+                    parent: flick_Result.parent
+                    anchors.top: flick_Result.top
+                    anchors.right: flick_Result.right
+                    anchors.bottom: flick_Result.bottom
+                }
+
+                //-- Document Books Result --//
+                Flow {
+                    id: myFlowDocument
+
+                    layoutDirection: Qt.RightToLeft
+
+                    width: (flick_Result.width % 255 === 0) ? (255 * ((flick_Result.width / 255)) + ((Math.floor(flick_Result.width / 255) - 1) * spacing))
+                                                            : ((255 * Math.floor(flick_Result.width / 255)) + ((Math.floor(flick_Result.width / 255) - 1) * spacing))
+                    height: implicitHeight
+                    spacing: 10
+
+                    anchors.horizontalCenter: parent.horizontalCenter
+
+                    Repeater {
+                        model: myBooksModel
+
+
+                        Rectangle{
+
+                            width: 250
+                            height: 285
+                            color: "transparent"
+                            clip: true
+
+                            MyBookItem{
+                                id: documentItem
+                                anchors.centerIn: parent
+                                imageSource: "qrc:/Images/mebeforeyou.jpg"
+                                text1: myBooksModel.get(index).title
+                                text2: myBooksModel.get(index).author
+                            }
+                        }
                     }
                 }
             }

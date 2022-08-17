@@ -162,5 +162,8 @@
         <file>Codes/Modules/Pages/CategoryPage.qml</file>
         <file>Codes/Modules/MainModules/Ui_Module/BasketBook.qml</file>
         <file>Codes/Modules/Items/HoverButton.qml</file>
+        <file>Codes/Modules/Items/MyBookItem.qml</file>
+        <file>Codes/Modules/Items/MyAudioBookItem.qml</file>
+        <file>Codes/Modules/Items/MyVideoItem.qml</file>
     </qresource>
 </RCC>
