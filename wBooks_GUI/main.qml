@@ -494,9 +494,9 @@ Window {
 //    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Bold.ttf"}               //Kalameh Bold Font
     FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Regular.ttf"}            //Kalameh Regular Font
 //    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Thin.ttf"}               //Kalameh Thin Font
-    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Black.ttf"}        //Kalameh Farsi Number Thin Font
+//    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Black.ttf"}        //Kalameh Farsi Number Thin Font
 //    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Bold.ttf"}       //Kalameh Farsi Number Thin Font
-//    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Regular.ttf"}    //Kalameh Farsi Number Thin Font
+    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Regular.ttf"}    //Kalameh Farsi Number Thin Font
 //    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Thin.ttf"}       //Kalameh Farsi Number Thin Font
 
 

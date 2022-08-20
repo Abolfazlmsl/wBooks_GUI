@@ -534,6 +534,9 @@ Rectangle{
     ListModel{
         id: bookTypeModel
         ListElement{
+            text: "همه"
+        }
+        ListElement{
             text: "کتاب صوتی"
         }
         ListElement{

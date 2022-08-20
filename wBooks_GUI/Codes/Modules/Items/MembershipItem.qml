@@ -68,6 +68,7 @@ Rectangle{
                             text: Functions.numberWithCommas(price)
                             font.family: mainFaNumFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 2.5
+                            font.bold: true
                             horizontalAlignment: Qt.AlignHCenter
                             verticalAlignment: Qt.AlignVCenter
                         }
@@ -85,6 +86,7 @@ Rectangle{
                             text: "تومان"
                             font.family: mainFont.name
                             font.pixelSize: Qt.application.font.pixelSize * 1.5
+                            font.bold: true
                             verticalAlignment: Qt.AlignVCenter
                         }
                     }

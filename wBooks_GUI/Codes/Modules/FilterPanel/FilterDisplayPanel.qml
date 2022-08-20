@@ -69,7 +69,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: color4
+                    color: "#a2a2a2"
                 }
 
                 Rectangle {
@@ -89,7 +89,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: color9
+                    color: "#a2a2a2"
                 }
 
                 Rectangle {
@@ -110,7 +110,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 1.6 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: color9
+                    color: "#a2a2a2"
                     MouseArea{
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
@@ -139,7 +139,7 @@ Item {
                     id: lbl_lay1
                     Layout.fillHeight: true
                     Layout.rightMargin: 20
-                    text: Icons.page_layout_header
+                    text: Icons.format_align_right
                     font.family: webfont.name
                     font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter
@@ -155,7 +155,7 @@ Item {
                 }
 
                 Rectangle {
-                    Layout.preferredWidth: 5
+                    Layout.preferredWidth: 15
                     Layout.fillHeight: true
                     color: "transparent"
                 }
@@ -163,12 +163,12 @@ Item {
                 Label {
                     id: lbl_lay2
                     Layout.fillHeight: true
-                    text: Icons.page_layout_body
+                    text: Icons.format_align_center
                     font.family: webfont.name
                     font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: color9
+                    color: "#a2a2a2"
                     MouseArea{
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
@@ -179,7 +179,7 @@ Item {
                 }
 
                 Rectangle {
-                    Layout.preferredWidth: 5
+                    Layout.preferredWidth: 15
                     Layout.fillHeight: true
                     color: "transparent"
                 }
@@ -187,7 +187,7 @@ Item {
                 Label {
                     id: lbl_lay3
                     Layout.fillHeight: true
-                    text: Icons.page_layout_footer
+                    text: Icons.format_align_left
                     font.family: webfont.name
                     font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter

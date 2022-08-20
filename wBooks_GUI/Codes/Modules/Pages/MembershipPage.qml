@@ -55,7 +55,6 @@ Item{
                                         anchors.fill: parent
                                         font.family: mainFont.name
                                         font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
-                                        font.bold: true
                                         text: "اشتراک من"
                                         color: "#ffffff"
                                         verticalAlignment: Qt.AlignVCenter
@@ -100,7 +99,7 @@ Item{
                                             }
                                         }
 
-                                        Item{Layout.preferredWidth: 20}
+                                        Item{Layout.preferredWidth: 20 * ratio}
 
                                         Rectangle{
                                             Layout.preferredWidth: 150
@@ -112,7 +111,7 @@ Item{
                                                 font.family: mainFaNumFont.name
                                                 color: "#a0a0a0"
                                                 text: "(صورتحساب 935756)"
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                                font.pixelSize: Qt.application.font.pixelSize * 1.4
                                                 verticalAlignment: Qt.AlignVCenter
                                             }
                                         }
@@ -209,7 +208,6 @@ Item{
                                         anchors.fill: parent
                                         font.family: mainFaNumFont.name
                                         font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
-                                        font.bold: true
                                         text: (myMembershipModel.count > 0)? myMembershipModel.get(0).remaining + " روز باقی مانده است":"-"
                                         color: "#ffffff"
                                         verticalAlignment: Qt.AlignVCenter
@@ -233,6 +231,7 @@ Item{
                                 color: "#d43460"
                                 text: "خرید اشتراک ویژه ی وی بوکس"
                                 font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.bold: true
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 LayoutMirroring.enabled: true

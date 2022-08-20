@@ -12,12 +12,13 @@ Rectangle{
     property alias inputText: txf_main
     property alias icon: iconLabel.text
     property string label: ""
-    property string iconColor: ""
+    property string iconColor: color4
     property bool isClearIcon: true
     property alias placeholder: lbl_placeholder.text
     property alias echoMode: txf_main.echoMode
     property alias clearEnable: lbl_clear.visible
-    property string borderColor: color12
+    property string borderColor: "#ffffff"
+    property string bgColor: color_input
     property bool enterAsAccept: false
     property int itemRadius: 10
     property bool acceptInput: false
@@ -44,8 +45,8 @@ Rectangle{
             Layout.fillHeight: true
             Layout.fillWidth: true
 
-            color: color_input
-            border.color: "#ffffff"
+            color: bgColor
+            border.color: borderColor
             radius: itemRadius
 
             //-- TextField --//
@@ -247,7 +248,7 @@ Rectangle{
         anchors.rightMargin: 15
 
         text: Icons.key
-        color: color4
+        color: iconColor
         font.family: webfont.name
         font.pixelSize: Qt.application.font.pixelSize * 1.5
 

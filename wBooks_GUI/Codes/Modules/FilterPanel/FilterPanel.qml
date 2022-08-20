@@ -50,7 +50,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: color4
+                    color: "#a2a2a2"
                 }
 
                 Rectangle {
@@ -70,7 +70,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: color9
+                    color: "#a2a2a2"
                 }
 
                 Rectangle {
@@ -92,7 +92,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 1.6 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: color9
+                    color: "#a2a2a2"
                     MouseArea{
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
@@ -127,17 +127,18 @@ Item {
                 anchors.left: parent.right
                 implicitWidth: 20
                 implicitHeight: 20
-                y: parent.height / 2
+                y: parent.height / 2 + 7
                 radius: 10
-                color: "#ffffff"
-                border.color: color1
+                color: addOpacity("#c4c4c4", 30)
+                border.color: "#c4c4c4"
+                border.width: 2
 
                 Rectangle {
                     width: parent.width
                     height: parent.height
                     radius: width/2
                     color: "transparent"
-                    border.color: color5
+                    border.color: "#d43460"
                     border.width: 3
                     visible: control.checked
                 }
@@ -153,9 +154,8 @@ Item {
             contentItem: Label {
                 text: control.text
                 font.family: mainFaNumFont.name
-                font.bold: true
                 font.pixelSize: Qt.application.font.pixelSize * 1.6 * ratio
-                color: color9
+                color: "black"
 
             }
 
