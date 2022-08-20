@@ -10,7 +10,6 @@ Rectangle {
     color: "transparent"
     property var itemModel: []
 
-    property int totalPages: 31
     property int maxPages: 9
     property int currentPage: 0
 
@@ -26,6 +25,9 @@ Rectangle {
             icon: Icons.magnify
             placeholder: "جستجو بر اساس کتاب، ناشر، نویسنده و ..."
             inputText.text: ""
+            bgColor: color1
+            Layout.rightMargin: 150
+            Layout.leftMargin: 150
         }
 
 
@@ -36,8 +38,10 @@ Rectangle {
         Flickable{
             Layout.fillWidth: true
             Layout.fillHeight: true
+            Layout.rightMargin: 150
+            Layout.leftMargin: 150
             contentHeight: homeItem.height - 20 - input_phone.height
-            contentWidth: parent.width
+            contentWidth: parent.width - 300
             boundsBehavior: Flickable.StopAtBounds
             ScrollBar.vertical: ScrollBar {}
             clip: true
@@ -110,7 +114,6 @@ Rectangle {
                         Layout.fillWidth: true
                         Layout.preferredHeight: 300
                         visible: true
-
                     }
 
                     Item{Layout.preferredHeight: 20}
@@ -133,7 +136,7 @@ Rectangle {
                         Label{
                             id: resulttxt
                             anchors.fill: parent
-                            text: "تعداد نتایج جستجو: " + totalPages
+                            text: "تعداد نتایج جستجو: " + searchModelBottom.count
                             font.family: mainFaNumFont.name
                             color: color2
                             verticalAlignment: Qt.AlignVCenter
@@ -147,7 +150,7 @@ Rectangle {
                     Rectangle{
                         Layout.fillWidth: true
                         Layout.preferredHeight: 200
-                        visible: (totalPages===0) ? true:false
+                        visible: (searchModelBottom.count===0) ? true:false
                         color: color1
 
                         Label{
@@ -164,7 +167,7 @@ Rectangle {
                     Rectangle{
                         Layout.fillWidth: true
                         Layout.preferredHeight: 100
-                        visible: (totalPages===0) ? true:false
+                        visible: (searchModelBottom.count===0) ? true:false
                         color: "transparent"
                     }
 
@@ -176,17 +179,17 @@ Rectangle {
                         Layout.leftMargin: 50
                         clip: true
                         focus: true
-                        cellWidth: 160
-                        cellHeight: 250
+                        cellWidth: 190
+                        cellHeight: 280
                         interactive: true
                         layoutDirection: Qt.RightToLeft
                         model: (itemModel.count >= (currentPage+1)*21) ? 21:itemModel.count-currentPage*21
-                        visible: (totalPages===0) ? false:true
+                        visible: (searchModelBottom.count===0) ? false:true
 
                         delegate: Rectangle{
                             id: itemRec
-                            width: 130
-                            height: 220
+                            width: 140
+                            height: 230
                             color: "transparent"
                             Rectangle{
                                 id: iconRec
@@ -346,7 +349,7 @@ Rectangle {
                         Layout.preferredHeight: 150
                         Layout.rightMargin: 70
                         Layout.leftMargin: 50
-                        visible: (totalPages===0) ? false:true
+                        visible: (searchModelBottom.count===0) ? false:true
                         RowLayout{
                             anchors.fill: parent
                             spacing: 0

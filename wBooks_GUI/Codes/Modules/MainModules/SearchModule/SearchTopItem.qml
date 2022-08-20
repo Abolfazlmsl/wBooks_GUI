@@ -7,13 +7,15 @@ Rectangle{
     color: color1
     ColumnLayout{
         anchors.fill: parent
-        spacing: 5
+        anchors.rightMargin: 80
+        anchors.leftMargin: 80
+        spacing: 0
         Item{
             Layout.fillWidth: true
             Layout.preferredHeight: parent.height / 4
             RowLayout{
                 anchors.fill: parent
-                spacing: 5
+                spacing: 0
                 layoutDirection: Qt.RightToLeft
                 Label{
                     Layout.preferredWidth: parent.width / 4
@@ -91,7 +93,7 @@ Rectangle{
             Layout.preferredHeight: parent.height / 4
             RowLayout{
                 anchors.fill: parent
-                spacing: 5
+                spacing: 0
                 layoutDirection: Qt.RightToLeft
                 Label{
                     Layout.preferredWidth: parent.width / 4
@@ -169,7 +171,7 @@ Rectangle{
             Layout.preferredHeight: parent.height / 4
             RowLayout{
                 anchors.fill: parent
-                spacing: 5
+                spacing: 0
                 layoutDirection: Qt.RightToLeft
                 Label{
                     Layout.preferredWidth: parent.width / 4
@@ -247,7 +249,7 @@ Rectangle{
             Layout.preferredHeight: parent.height / 4
             RowLayout{
                 anchors.fill: parent
-                spacing: 5
+                spacing: 0
                 layoutDirection: Qt.RightToLeft
                 Label{
                     Layout.preferredWidth: parent.width / 4

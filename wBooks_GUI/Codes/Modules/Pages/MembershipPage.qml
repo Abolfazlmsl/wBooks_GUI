@@ -54,7 +54,7 @@ Item{
                                     Label{
                                         anchors.fill: parent
                                         font.family: mainFont.name
-                                        font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
+                                        font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
                                         text: "اشتراک من"
                                         color: "#ffffff"
                                         verticalAlignment: Qt.AlignVCenter
@@ -94,7 +94,7 @@ Item{
                                                 font.family: mainFaNumFont.name
                                                 color: "black"
                                                 text: (myMembershipModel.count > 0)? "اشتراک ویژه " + myMembershipModel.get(0).time + " روزه":"اشتراک ویژه ی شما به پایان رسیده است"
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.7
+                                                font.pixelSize: Qt.application.font.pixelSize * 1.7* ratio
                                                 verticalAlignment: Qt.AlignVCenter
                                             }
                                         }
@@ -111,7 +111,7 @@ Item{
                                                 font.family: mainFaNumFont.name
                                                 color: "#a0a0a0"
                                                 text: "(صورتحساب 935756)"
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.4
+                                                font.pixelSize: Qt.application.font.pixelSize * 1.4* ratio
                                                 verticalAlignment: Qt.AlignVCenter
                                             }
                                         }
@@ -131,7 +131,7 @@ Item{
                                                 font.family: webfont.name
 //                                                color: color4
                                                 text: Icons.eye
-                                                font.pixelSize: Qt.application.font.pixelSize * 2.5
+                                                font.pixelSize: Qt.application.font.pixelSize * 2.5* ratio
                                             }
                                             MouseArea{
                                                 id: watchArea
@@ -157,7 +157,7 @@ Item{
                                                 font.family: webfont.name
 //                                                color: color4
                                                 text: Icons.repeat
-                                                font.pixelSize: Qt.application.font.pixelSize * 2.5
+                                                font.pixelSize: Qt.application.font.pixelSize * 2.5* ratio
                                             }
                                             MouseArea{
                                                 id: extensionArea
@@ -183,7 +183,7 @@ Item{
                                                 enabled: (myMembershipModel.count > 0)? true:false
 //                                                color: color4
                                                 text: Icons.trash_can
-                                                font.pixelSize: Qt.application.font.pixelSize * 2.5
+                                                font.pixelSize: Qt.application.font.pixelSize * 2.5* ratio
                                             }
                                             MouseArea{
                                                 id: deleteArea
@@ -207,7 +207,7 @@ Item{
                                     Label{
                                         anchors.fill: parent
                                         font.family: mainFaNumFont.name
-                                        font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
+                                        font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
                                         text: (myMembershipModel.count > 0)? myMembershipModel.get(0).remaining + " روز باقی مانده است":"-"
                                         color: "#ffffff"
                                         verticalAlignment: Qt.AlignVCenter

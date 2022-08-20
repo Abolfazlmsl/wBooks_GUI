@@ -2018,6 +2018,7 @@ Window {
                 rate: 37
                 date: "1399/02/14"
             }
+
         }
 
         ListModel{
