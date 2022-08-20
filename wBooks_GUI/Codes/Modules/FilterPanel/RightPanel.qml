@@ -14,7 +14,10 @@ Rectangle{
         contentHeight: rightPanelItem.height
         contentWidth: parent.width
         boundsBehavior: Flickable.StopAtBounds
-        ScrollBar.vertical: ScrollBar {}
+        ScrollBar.vertical: ScrollBar {
+            width: 12*ratio
+            anchors.right: parent.right
+        }
 
         Item{
             id: rightPanelItem
