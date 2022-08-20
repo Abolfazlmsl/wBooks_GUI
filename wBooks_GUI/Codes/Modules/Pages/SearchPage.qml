@@ -13,6 +13,8 @@ Rectangle {
     property int maxPages: 9
     property int currentPage: 0
 
+    property int pageItemCount: 21
+
     ColumnLayout{
         anchors.fill: parent
         anchors.rightMargin: 50
@@ -26,6 +28,7 @@ Rectangle {
             placeholder: "جستجو بر اساس کتاب، ناشر، نویسنده و ..."
             inputText.text: ""
             bgColor: color1
+            borderColor: color1
             Layout.rightMargin: 150
             Layout.leftMargin: 150
         }
@@ -136,7 +139,7 @@ Rectangle {
                         Label{
                             id: resulttxt
                             anchors.fill: parent
-                            text: "تعداد نتایج جستجو: " + searchModelBottom.count
+                            text: "تعداد نتایج جستجو: " + itemModel.count
                             font.family: mainFaNumFont.name
                             color: color2
                             verticalAlignment: Qt.AlignVCenter
@@ -150,7 +153,7 @@ Rectangle {
                     Rectangle{
                         Layout.fillWidth: true
                         Layout.preferredHeight: 200
-                        visible: (searchModelBottom.count===0) ? true:false
+                        visible: (itemModel.count===0) ? true:false
                         color: color1
 
                         Label{
@@ -167,7 +170,7 @@ Rectangle {
                     Rectangle{
                         Layout.fillWidth: true
                         Layout.preferredHeight: 100
-                        visible: (searchModelBottom.count===0) ? true:false
+                        visible: (itemModel.count===0) ? true:false
                         color: "transparent"
                     }
 
@@ -183,8 +186,8 @@ Rectangle {
                         cellHeight: 280
                         interactive: true
                         layoutDirection: Qt.RightToLeft
-                        model: (itemModel.count >= (currentPage+1)*21) ? 21:itemModel.count-currentPage*21
-                        visible: (searchModelBottom.count===0) ? false:true
+                        model: (itemModel.count >= (currentPage+1)*pageItemCount) ? pageItemCount:itemModel.count-currentPage*pageItemCount
+                        visible: (itemModel.count===0) ? false:true
 
                         delegate: Rectangle{
                             id: itemRec
@@ -202,7 +205,7 @@ Rectangle {
                                     anchors.verticalCenter: parent.verticalCenter
                                     anchors.horizontalCenter: parent.horizontalCenter
                                     anchors.margins: 8
-                                    source: itemModel.get(index+currentPage*21).source
+                                    source: itemModel.get(index+currentPage*pageItemCount).source
                                     mipmap: true
                                 }
                             }
@@ -216,7 +219,7 @@ Rectangle {
                                 Label{
                                     id: txt2
                                     anchors.fill: parent
-                                    text:itemModel.get(index+currentPage*21).text1
+                                    text:itemModel.get(index+currentPage*pageItemCount).text1
                                     font.family: mainFont.name
                                     color: color4
                                     verticalAlignment: Qt.AlignVCenter
@@ -232,7 +235,7 @@ Rectangle {
                                 Label{
                                     id: txt3
                                     anchors.fill: parent
-                                    text: itemModel.get(index+currentPage*21).text2
+                                    text: itemModel.get(index+currentPage*pageItemCount).text2
                                     font.family: mainFont.name
                                     color: color9
                                     verticalAlignment: Qt.AlignVCenter
@@ -268,7 +271,7 @@ Rectangle {
                                         color: "transparent"
                                         Label{
                                             anchors.fill: parent
-                                            text: "(" + itemModel.get(index+currentPage*21).rate + " رای)"
+                                            text: "(" + itemModel.get(index+currentPage*pageItemCount).rate + " رای)"
                                             font.family: mainFaNumFont.name
                                             color: color9
                                             verticalAlignment: Qt.AlignVCenter
@@ -331,7 +334,7 @@ Rectangle {
                                             width: parent.width
                                             height: parent.height / 2
                                             anchors.top: recspacer.bottom
-                                            text: itemModel.get(index+currentPage*21).date
+                                            text: itemModel.get(index+currentPage*pageItemCount).date
                                             font.family: mainFaNumFont.name
                                             color: color9
                                             verticalAlignment: Qt.AlignVCenter
@@ -349,7 +352,7 @@ Rectangle {
                         Layout.preferredHeight: 150
                         Layout.rightMargin: 70
                         Layout.leftMargin: 50
-                        visible: (searchModelBottom.count===0) ? false:true
+                        visible: (itemModel.count===0) ? false:true
                         RowLayout{
                             anchors.fill: parent
                             spacing: 0
