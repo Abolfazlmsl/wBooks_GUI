@@ -1640,32 +1640,53 @@ Window {
         ListModel{
             id: myMembershipModel
             ListElement{
-                time: 3
-                remaining: 32
+                time: 15
+                remaining: 8
+                source: "qrc:/Images/bronze-medal.png"
             }
         }
 
         ListModel{
             id: membershipModel
             ListElement{
-                time: 1
-                price: 100000
-                color: "#00adb3"
+                time: 15
+                price: 15000
+                source: "qrc:/Images/bronze-medal.png"
+                text1: "دسترسی به پنج میلیون نسخه"
+                text2: "مشاهده و دانلود بر روی کامپیوتر"
+                text3: "امکان دانلود کتاب های صوتی"
+                text4: "مشاهده و دانلود بدون محدودیت"
+                text5: "پشتیبانی 7 روزه و 24 ساعته"
             }
             ListElement{
-                time: 3
-                price: 300000
-                color: "#D5D739"
+                time: 30
+                price: 30000
+                source: "qrc:/Images/silver-medal.png"
+                text1: "دسترسی به پنج میلیون نسخه"
+                text2: "مشاهده و دانلود بر روی موبایل و کامپیوتر"
+                text3: "امکان دانلود کتاب های صوتی"
+                text4: "مشاهده و دانلود بدون محدودیت"
+                text5: "پشتیبانی 7 روزه و 24 ساعته"
             }
             ListElement{
-                time: 6
-                price: 600000
-                color: "#25B767"
+                time: 60
+                price: 55000
+                source: "qrc:/Images/gold-medal.png"
+                text1: "دسترسی به پنج میلیون نسخه"
+                text2: "مشاهده و دانلود بر روی موبایل و کامپیوتر"
+                text3: "امکان دانلود کتاب های صوتی"
+                text4: "مشاهده و دانلود بدون محدودیت"
+                text5: "پشتیبانی 7 روزه و 24 ساعته"
             }
             ListElement{
-                time: 12
-                price: 1200000
-                color: "#D65524"
+                time: 180
+                price: 95000
+                source: "qrc:/Images/shield.png"
+                text1: "دسترسی به پنج میلیون نسخه"
+                text2: "مشاهده و دانلود بر روی موبایل و کامپیوتر"
+                text3: "امکان دانلود کتاب های صوتی"
+                text4: "مشاهده و دانلود بدون محدودیت"
+                text5: "پشتیبانی 7 روزه و 24 ساعته"
             }
         }
 
