@@ -1283,7 +1283,7 @@ Window {
             width: parent.width
             height: 80
 
-            color: "#444444"
+            color: "#292929"
 
             //-- Right Menu Items --//
             RowLayout{
@@ -1292,348 +1292,127 @@ Window {
                 spacing: 0
                 layoutDirection: Qt.RightToLeft
 
-                Item{
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.15
-                    RowLayout{
-                        anchors.fill: parent
-                        spacing: 0
-                        layoutDirection: Qt.RightToLeft
-
-                        Item{Layout.fillWidth: true}
-
-                        Rectangle{
-                            Layout.preferredWidth: 20
-                            Layout.preferredHeight: width
-                            radius: width / 2
-                            color: "black"
-                            ToolTip.text: "تاریک"
-                            ToolTip.visible: "تاریک" ? theme1.containsMouse : false
-                            MouseArea{
-                                id: theme1
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                hoverEnabled: true
-                                onClicked: {
-                                    setting.themeState = "Dark"
-                                }
-                            }
-                        }
-
-                        Item{Layout.preferredWidth: 5}
-
-                        Rectangle{
-                            Layout.preferredWidth: 20
-                            Layout.preferredHeight: width
-                            radius: width / 2
-                            color: "#25252C"
-                            ToolTip.text: "نیمه تاریک"
-                            ToolTip.visible: "نیمه تاریک" ? theme2.containsMouse : false
-                            MouseArea{
-                                id: theme2
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                hoverEnabled: true
-                                onClicked: {
-                                    setting.themeState = "SemiDark"
-                                }
-                            }
-                        }
-
-                        Item{Layout.preferredWidth: 5}
-
-                        Rectangle{
-                            Layout.preferredWidth: 20
-                            Layout.preferredHeight: width
-                            radius: width / 2
-                            ToolTip.text: "نیمه روشن"
-                            ToolTip.visible: "نیمه روشن" ? theme3.containsMouse : false
-                            color: "#B2B2B2"
-                            MouseArea{
-                                id: theme3
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                hoverEnabled: true
-                                onClicked: {
-                                    setting.themeState = "SemiLight"
-                                }
-                            }
-                        }
-
-                        Item{Layout.preferredWidth: 5}
-
-                        Rectangle{
-                            Layout.preferredWidth: 20
-                            Layout.preferredHeight: width
-                            radius: width / 2
-                            ToolTip.text: "روشن"
-                            ToolTip.visible: "روشن" ? theme4.containsMouse : false
-                            color: "white"
-                            MouseArea{
-                                id: theme4
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                hoverEnabled: true
-                                onClicked: {
-                                    setting.themeState = "Light"
-                                }
-                            }
-                        }
-
-                        Item{Layout.fillWidth: true}
-                    }
-                }
+                Item{Layout.preferredWidth: 70}
 
                 Rectangle{
-                    Layout.preferredWidth: 1
+                    Layout.preferredWidth: 130 * ratio
                     Layout.fillHeight: true
-                    Layout.topMargin: 20
-                    Layout.bottomMargin: 20
-                    color: "#ffffff"
-                }
-
-                //-- social media icons --//
-                Item{
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 40
-                    Layout.rightMargin: 10 * ratio
-
-                    RowLayout{
+                    color: "transparent"
+                    Image{
+                        id: image
                         anchors.fill: parent
-                        layoutDirection: Qt.RightToLeft
-                        anchors.bottom: parent.bottom
-                        anchors.bottomMargin: -5
-
-                        Label{
-                            id:nasheran
-                            text: "ورود ناشران"
-                            font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
-
-                            color: "#ffffff"
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-
-                                }
-                            }
-                        }
-
-                        Label{
-                            text: "|"
-                            font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
-
-                            color: "#ffffff"
-                        }
-
-                        Label{
-                            id:conditions
-
-                            text: "شرایط استفاده"
-                            font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
-
-                            color: "#ffffff"
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-
-                                }
-                            }
-                        }
-
-                        Label{
-                            text: "|"
-                            font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
-
-                            color: "#ffffff"
-                        }
-
-                        Label{
-                            id:questions
-
-                            text: "سوالات متداول"
-                            font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
-
-                            color: "#ffffff"
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-
-                                }
-                            }
-                        }
-
-                        Label{
-                            text: "|"
-                            font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1* ratio
-
-                            color: "#ffffff"
-                        }
-
-                        Label{
-                            id:contantus
-
-                            text: "تماس با پشتیبانی"
-                            font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.1* ratio
-
-                            color: "#ffffff"
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-                                    accountObj.state = "Support"
-                                    mainPage.state = "Edit"
-                                    accountPopEnabled = false
-                                }
-                            }
-                        }
-
-                        Item{Layout.fillWidth: true} //-- filler --//
-
-                        Rectangle{
-                            radius: width * 0.5
-                            color: "#ffffff"
-                            Layout.preferredWidth: parent.height * 0.75 * ratio
-                            Layout.preferredHeight: width
-
-                            Label{
-                                id:lbl_youtube
-                                anchors.fill: parent
-                                text: Icons.youtube
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Qt.AlignHCenter
-                                font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
-
-                                color: "#000000"
-                            }
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-
-                                }
-                            }
-                        }
-                        Rectangle{
-                            radius: width * 0.5
-                            color: "#ffffff"
-                            Layout.preferredWidth: parent.height * 0.75 * ratio
-                            Layout.preferredHeight: width
-
-                            Label{
-                                id:lbl_linkedin
-                                anchors.fill: parent
-                                text: Icons.linkedin
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Qt.AlignHCenter
-                                font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
-
-                                color: "#000000"
-                            }
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-
-                                }
-                            }
-                        }
-
-                        Rectangle{
-                            radius: width * 0.5
-                            color: "#ffffff"
-                            Layout.preferredWidth: parent.height * 0.75 * ratio
-                            Layout.preferredHeight: width
-
-                            Label{
-                                id:lbl_facebook
-                                anchors.fill: parent
-                                text: Icons.facebook
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Qt.AlignHCenter
-                                font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
-
-                                color: "#000000"
-                            }
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-
-                                }
-                            }
-                        }
-
-                        Rectangle{
-                            radius: width * 0.5
-                            color: "#ffffff"
-                            Layout.preferredWidth: parent.height * 0.75 * ratio
-                            Layout.preferredHeight: width
-
-                            Label{
-                                id:lbl_twitter
-                                anchors.fill: parent
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Qt.AlignHCenter
-                                text: Icons.twitter
-
-                                font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
-
-                                color: "#000000"
-                            }
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-
-                                }
-                            }
-                        }
-
-                        Rectangle{
-                            radius: width * 0.5
-                            color: "#ffffff"
-                            Layout.preferredWidth: parent.height * 0.75 * ratio
-                            Layout.preferredHeight: width
-
-                            Label{
-                                id:lbl_telegram
-                                anchors.fill: parent
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Qt.AlignHCenter
-                                text: Icons.telegram
-
-                                font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
-
-                                color: "#000000"
-                            }
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-
-                                }
-                            }
-                        }
-
-                        Item{Layout.preferredWidth: 20}
-
+                        source: "qrc:/Images/Logo Footer2.png"
+                        mipmap: true
+                        fillMode: Image.PreserveAspectFit
                     }
                 }
+
+                Item{Layout.preferredWidth: 50}
+
+                Rectangle{
+                    Layout.preferredWidth: 20 * ratio
+                    Layout.preferredHeight: width
+                    radius: width / 2
+                    border.width: 3
+                    border.color: "white"
+                    ToolTip.text: "روشن"
+                    ToolTip.visible: "روشن" ? theme4.containsMouse : false
+                    color: "white"
+                    MouseArea{
+                        id: theme4
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        hoverEnabled: true
+                        onClicked: {
+                            setting.themeState = "Light"
+                        }
+                    }
+                }
+
+                Item{Layout.preferredWidth: 10}
+
+                Rectangle{
+                    Layout.preferredWidth: 20* ratio
+                    Layout.preferredHeight: width
+                    radius: width / 2
+                    border.width: 3
+                    border.color: "#B2B2B2"
+                    ToolTip.text: "نیمه روشن"
+                    ToolTip.visible: "نیمه روشن" ? theme3.containsMouse : false
+                    color: "#B2B2B2"
+                    MouseArea{
+                        id: theme3
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        hoverEnabled: true
+                        onClicked: {
+                            setting.themeState = "SemiLight"
+                        }
+                    }
+                }
+
+                Item{Layout.preferredWidth: 10}
+
+                Rectangle{
+                    Layout.preferredWidth: 20* ratio
+                    Layout.preferredHeight: width
+                    radius: width / 2
+                    border.width: 3
+                    border.color: "white"
+//                    color: "#25252C"
+                    color: "transparent"
+                    ToolTip.text: "نیمه تاریک"
+                    ToolTip.visible: "نیمه تاریک" ? theme2.containsMouse : false
+                    MouseArea{
+                        id: theme2
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        hoverEnabled: true
+                        onClicked: {
+                            setting.themeState = "SemiDark"
+                        }
+                    }
+                }
+
+                Item{Layout.preferredWidth: 10}
+
+                Rectangle{
+                    Layout.preferredWidth: 20* ratio
+                    Layout.preferredHeight: width
+                    radius: width / 2
+                    border.width: 3
+                    border.color: "#B2B2B2"
+                    color: "transparent"
+//                    color: "black"
+                    ToolTip.text: "تاریک"
+                    ToolTip.visible: "تاریک" ? theme1.containsMouse : false
+                    MouseArea{
+                        id: theme1
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        hoverEnabled: true
+                        onClicked: {
+                            setting.themeState = "Dark"
+                        }
+                    }
+                }
+
+                Item{Layout.fillWidth: true}
+
+                Rectangle{
+                    Layout.preferredWidth: footertxt.contentWidth
+                    Layout.fillHeight: true
+                    color: "transparent"
+                    Label{
+                        id: footertxt
+                        anchors.centerIn: parent
+                        text: "تمامی حقوق این وبسایت متعلق به کمپانی وی بوکس می باشد"
+                        font.family: mainFont.name
+                        font.pixelSize: Qt.application.font.pixelSize * 1.2  * ratio
+                        color: "white"
+                    }
+                }
+                Item{Layout.preferredWidth: 50}
             }
         }
 

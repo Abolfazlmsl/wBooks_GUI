@@ -13,8 +13,9 @@ Rectangle{
     property alias icon: iconLabel.text
     property string label: ""
     property string iconColor: color4
+    property bool iconVisible: true
     property bool isClearIcon: true
-    property alias placeholder: lbl_placeholder.text
+    property string placeholder: ""
     property alias echoMode: txf_main.echoMode
     property alias clearEnable: lbl_clear.visible
     property string borderColor: "#ffffff"
@@ -23,6 +24,7 @@ Rectangle{
     property int itemRadius: 10
     property bool acceptInput: false
     property double fontSize: 1
+    property string placeHolderPosition: "Right" //Center
 
     signal acceptedLogin()
 
@@ -76,13 +78,33 @@ Rectangle{
                 Label{
                     id: lbl_placeholder
 
-                    visible: (txf_main.length >= 1) ? false : true
+                    visible: (placeHolderPosition==="Right")?(txf_main.length >= 1) ? false : true : false
 
-                    text: "متن پیش فرض"
+                    text: placeholder
 
                     anchors.right: parent.right
                     anchors.rightMargin: 30
                     anchors.verticalCenter: parent.verticalCenter
+
+                    font.family: mainFont.name
+                    font.pixelSize: Qt.application.font.pixelSize
+
+                    color: color18
+
+                    background: Rectangle{
+                        color: "transparent"
+                    }
+
+                }
+
+                Label{
+                    id: lbl_placeholder_center
+
+                    visible: (placeHolderPosition==="Center")?(txf_main.length >= 1) ? false : true : false
+
+                    text: placeholder
+
+                    anchors.centerIn: parent
 
                     font.family: mainFont.name
                     font.pixelSize: Qt.application.font.pixelSize
@@ -246,6 +268,7 @@ Rectangle{
         height: parent.height
         anchors.right: parent.right
         anchors.rightMargin: 15
+        visible: iconVisible
 
         text: Icons.key
         color: iconColor

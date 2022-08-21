@@ -13,6 +13,7 @@ Rectangle{
     property double fontSize: 1.3
     property real btn_ShadowSpread: 0.0
     property real btn_ShadowRadius: 9
+    property string shadowColor: color4
 
     signal dashboard_btnClicked
     color: "transparent"
@@ -28,7 +29,7 @@ Rectangle{
         spread: btn_ShadowSpread
         radius: btn_ShadowRadius
         samples: 14
-        color: addOpacity(color4, 40)
+        color: addOpacity(shadowColor, 40)
         source: sendBtnInner
     }
 
