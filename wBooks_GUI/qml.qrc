@@ -165,5 +165,6 @@
         <file>Codes/Modules/Items/MyBookItem.qml</file>
         <file>Codes/Modules/Items/MyAudioBookItem.qml</file>
         <file>Codes/Modules/Items/MyVideoItem.qml</file>
+        <file>Images/Test22.png</file>
     </qresource>
 </RCC>

@@ -280,8 +280,8 @@ Rectangle{
                             LoginForm{
                                 anchors.fill: parent
 //                                anchors.topMargin: parent.height * 0.05
-                                anchors.leftMargin: parent.width * 0.3
-                                anchors.rightMargin: parent.width * 0.3
+                                rMargin: parent.width * 0.3
+                                lMargin: parent.width * 0.3
 
                                 onGetMessage: {
                                     alarmLoginWin.msg = signalmsg

@@ -17,6 +17,9 @@ Item{
     property alias password    : input_password.inputText
     property string gender  : ""
 
+    property double rMargin: 0
+    property double lMargin: 0
+
     signal getMessage(var signalmsg)
     signal trialFinished()
 
@@ -73,46 +76,59 @@ Item{
                 width: parent.width
                 spacing: 0
 
-
                 //-- spacer --//
                 Item{Layout.preferredHeight: 10}
 
                 Rectangle{
                     Layout.fillWidth: true
-                    Layout.preferredHeight: 50
+                    Layout.preferredHeight: 200
+                    Layout.rightMargin: rMargin
+                    Layout.leftMargin: lMargin
                     color: "transparent"
                     Image{
                         id: image
-                        width: 50
-                        height: parent.height
-                        anchors.left: titletxt.right
-                        anchors.leftMargin: 10
-                        source: "qrc:/Images/Wbooks1.png"
+                        anchors.fill: parent
+                        source: "qrc:/Images/Test22.png"
                         mipmap: true
                         fillMode: Image.PreserveAspectFit
-                    }
-
-                    Label{
-                        id: titletxt
-                        width: Text.contentWidth
-                        height: parent.height
-                        anchors.centerIn: parent
-                        text: "به وی بوکس خوش آمدید"
-                        font.family: mainFont.name
-                        color: color8
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5
-                        horizontalAlignment: Qt.AlignHCenter
-                        verticalAlignment: Qt.AlignVCenter
                     }
                 }
 
                 //-- spacer --//
                 Item{Layout.preferredHeight: 5}
 
-                //-- Email --//
+                Rectangle{
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 50
+                    Layout.rightMargin: rMargin
+                    Layout.leftMargin: lMargin
+                    color: "#474749"
+                    Label{
+                        anchors.centerIn: parent
+                        text: "به وی بوکس خوش آمدید"
+                        font.family: mainFont.name
+                        font.pixelSize: Qt.application.font.pixelSize * 2
+                        color: "#ffffff"
+                    }
+                }
+
+//                Rectangle{
+//                    Layout.fillWidth: true
+//                    Layout.preferredHeight: 250
+//                    color: "#e2e2e2"
+//                    ColumnLayout{
+//                        anchors.fill: parent
+//                        anchors.rightMargin: 20
+//                        anchors.leftMargin: 20
+//                    }
+//                }
+
+
+                //-- Phone --//
                 M_inputText{
                     id: input_phone
-                    Layout.rightMargin: 0
+                    Layout.rightMargin: rMargin
+                    Layout.leftMargin: lMargin
                     label: "شماره تماس"
                     icon: Icons.cellphone
                     placeholder: "09xxxxxxxxx"
@@ -129,7 +145,8 @@ Item{
                 //-- Email --//
                 M_inputText{
                     id: input_password
-                    Layout.rightMargin: 0
+                    Layout.rightMargin: rMargin
+                    Layout.leftMargin: lMargin
                     label: "پسورد"
                     icon: Icons.email_outline
                     placeholder: "پسورد"
@@ -147,6 +164,8 @@ Item{
                 Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 20
+                    Layout.rightMargin: rMargin
+                    Layout.leftMargin: lMargin
                     color: "transparent"
                     Label{
                         id: forgotPassword
@@ -175,6 +194,8 @@ Item{
                     id: login
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50
+                    Layout.rightMargin: rMargin
+                    Layout.leftMargin: lMargin
                     btnText: "ورود"
                     textColor: "#ffffff"
                     btnRadius: 10
@@ -252,6 +273,8 @@ Item{
                 RowLayout{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 38
+                    Layout.rightMargin: rMargin
+                    Layout.leftMargin: lMargin
                     Rectangle{
                         Layout.fillWidth: true
                         Layout.preferredHeight: 1
@@ -280,6 +303,8 @@ Item{
                 Item{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 38
+                    Layout.rightMargin: rMargin
+                    Layout.leftMargin: lMargin
                     RowLayout{
                         anchors.fill: parent
                         spacing: 10
@@ -442,6 +467,8 @@ Item{
                 Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 38
+                    Layout.rightMargin: rMargin
+                    Layout.leftMargin: lMargin
                     color: "transparent"
                     Label{
                         id: txtregiste
@@ -483,11 +510,13 @@ Item{
                     visible: false
                     Layout.fillWidth: true
                     Layout.preferredHeight: implicitHeight
-                    leftMarg: 60
+                    Layout.rightMargin: rMargin
+                    Layout.leftMargin: lMargin
+//                    leftMarg: 60
                 }
 
                 //-- filler --//
-                Item{Layout.fillHeight: true}
+                Item{Layout.preferredHeight: 100}
             }
         }
     }

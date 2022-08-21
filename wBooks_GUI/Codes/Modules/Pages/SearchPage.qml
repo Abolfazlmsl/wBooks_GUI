@@ -13,7 +13,9 @@ Rectangle {
     property int maxPages: 9
     property int currentPage: 0
 
-    property int pageItemCount: 21
+    property int columnItemCount: Math.floor((flick.width-120)/190)
+    property int rowItemCount: Math.ceil(lview.count/columnItemCount)
+    property int pageItemCount: 20
 
     ColumnLayout{
         anchors.fill: parent
@@ -39,6 +41,7 @@ Rectangle {
         }
 
         Flickable{
+            id: flick
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.rightMargin: 150
@@ -177,7 +180,7 @@ Rectangle {
                     GridView{
                         id: lview
                         Layout.fillWidth: true
-                        Layout.preferredHeight: Math.ceil(lview.count/Math.floor((parent.width-120)/cellWidth)) * cellHeight + 20
+                        Layout.preferredHeight: rowItemCount * cellHeight + 20
                         Layout.rightMargin: 70
                         Layout.leftMargin: 50
                         clip: true
