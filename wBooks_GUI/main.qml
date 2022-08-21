@@ -489,7 +489,9 @@ Window {
     FontLoader{ id: webfont; source: "qrc:/Fonts/materialdesignicons-webfont.ttf"}      //ICONS FONT
     FontLoader{ id: nunito; source: "qrc:/Fonts/Nunito/Nunito-Regular.ttf"}      //ICONS FONT
     FontLoader{ id: nunito_italic; source: "qrc:/Fonts/Nunito/Nunito-Italic.ttf"}      //ICONS FONT
-    FontLoader{ id: awesome; source: "qrc:/Fonts/fontawesome-webfont.ttf"}
+//    FontLoader{ id: awesome; source: "qrc:/Fonts/fontawesome-webfont.ttf"}
+    FontLoader{ id: awesome; source: "qrc:/Fonts/fa-regular-400.ttf"}
+    FontLoader{ id: flaticon; source: "qrc:/Fonts/Flaticon.ttf"}
 //    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Black.ttf"}                //Kalameh Black Font
 //    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Bold.ttf"}               //Kalameh Bold Font
     FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Regular.ttf"}            //Kalameh Regular Font
@@ -828,7 +830,7 @@ Window {
             width: parent.width
             height: 60 //* ratio
 
-            color: "#000000"
+            color: "#292929"
 
             RowLayout{
                 anchors.fill: parent
@@ -836,38 +838,36 @@ Window {
                 spacing: 0
 
                 Image {
+                    id: mainLogo
                     Layout.margins: 10
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.07
+                    Layout.preferredWidth: parent.width * 0.1
                     Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-                    source: "qrc:/Images/Wbooks1.png"
+                    source: "qrc:/Images/Logo Footer2.png"
                     fillMode: Image.PreserveAspectFit
                     mipmap: true
+//                    ColorOverlay {
+//                        anchors.fill: mainLogo
+//                        source: mainLogo
+//                        color: "#ff0000"
+//                    }
                 }
 
-                //-- Vertical Line After Profile Name --//
-                Rectangle{
-                    Layout.preferredHeight: parent.height * 0.7
-                    Layout.preferredWidth: 1
-
-                    color: "#ffffff"
-
-                    Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-                }
 
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
                     Layout.preferredWidth: parent.width * 0.015
 
-                    color: "#000000"
+                    color: "transparent"
                 }
 
                 //- navbar --//
                 HeaderButton{
-                    icon: Icons.home_outline
+                    icon: Icons.account
                     isClick: homeClick
                     text: "خانه"
+                    iconFont: webfont.name
 
                     onBtnClicked: {
                         mainPage.state = "Home"
@@ -943,33 +943,6 @@ Window {
                     }
                 }
 
-                //-- spacer --//
-                Rectangle{
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.015
-
-                    color: "transparent"
-                }
-
-                HeaderButton{
-                    icon: Icons.magnify
-                    text: "جستجو"
-                    isClick: searchClick
-                    onBtnClicked: {
-                        mainPage.state = "Search Page"
-                    }
-                }
-
-//                //-- Vertical Line After Profile Name --//
-//                Rectangle{
-//                    Layout.fillHeight: true
-//                    Layout.preferredWidth: (setting.isLogined)? parent.width * 0.28 * ratio:parent.width * 0.1 * ratio
-
-//                    color: "transparent"
-
-//                    Layout.alignment: Qt.AlignVCenter
-//                }
-
                 Item { Layout.fillWidth: true }
 
                 //-- account / login/ register --//
@@ -1002,7 +975,7 @@ Window {
                             visible: (setting.isLogined)
                             id: header_AccountICONArrow
                             Layout.fillHeight: true
-                            Layout.preferredWidth: contentWidth
+                            Layout.preferredWidth: 40
                             Layout.topMargin: 10
                             Layout.bottomMargin: 10
                             rotation: accountPopEnabled * 180
@@ -1012,7 +985,7 @@ Window {
                                 NumberAnimation{duration: 300}
                             }
                             font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize *3 //Qt.application.font.pixelSize
+                            font.pixelSize: Qt.application.font.pixelSize *3 * ratio //Qt.application.font.pixelSize
                             renderType: Text.NativeRendering
 
                             verticalAlignment: Qt.AlignVCenter
@@ -1065,13 +1038,13 @@ Window {
                             visible: (setting.isLogined)
                             id: header_AccountICON
                             Layout.fillHeight: true
-                            Layout.preferredWidth: contentWidth
+                            Layout.preferredWidth: 40
                             Layout.topMargin: 10
                             Layout.bottomMargin: 10
 
                             text: Icons.account_circle_outline
                             font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize *3  //Qt.application.font.pixelSize
+                            font.pixelSize: Qt.application.font.pixelSize *3 * ratio  //Qt.application.font.pixelSize
                             renderType: Text.NativeRendering
 
                             verticalAlignment: Qt.AlignVCenter
@@ -1091,6 +1064,7 @@ Window {
 
                         Item { Layout.preferredWidth: 10 } //-- filler --//
 
+                        //-- Basket Icon --//
                         Rectangle{
                             visible: (setting.isLogined)
                             Layout.preferredWidth: 40 * ratio
@@ -1103,7 +1077,7 @@ Window {
                                 anchors.fill: parent
                                 text: Icons.basket
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize *3 //Qt.application.font.pixelSize
+                                font.pixelSize: Qt.application.font.pixelSize *3 * ratio //Qt.application.font.pixelSize
 
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
@@ -1122,19 +1096,19 @@ Window {
 
                             Rectangle{
                                 visible: (basketModel.count > 0)
-                                width: 22
+                                width: 22 * ratio
                                 height: width
                                 radius: width / 2
                                 anchors.right: parent.right
                                 anchors.top: parent.top
-                                anchors.topMargin: -3
+                                anchors.topMargin: -3 * ratio
                                 anchors.rightMargin: -3
                                 color: color15
                                 Label{
                                     anchors.fill: parent
                                     text: basketModel.count
                                     font.family: mainFaNumFont.name
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.2 //Qt.application.font.pixelSize
+                                    font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //Qt.application.font.pixelSize
 
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter
@@ -1151,38 +1125,26 @@ Window {
                                 }
                             }
                         }
-                        //-- Account login --//
-                        Label{
-                            id: header_AccountLogin
+
+                        //-- Account register --//
+                        ButtonIcon{
+                            id: header_AccountRegister
                             Layout.fillHeight: true
-                            Layout.preferredWidth: parent.width * 0.35
+                            Layout.preferredWidth: parent.width * 0.85
                             Layout.topMargin: 10
                             Layout.bottomMargin: 10
-
                             visible: !setting.isLogined
-                            text: "ورود کاربر"
-                            font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.4 * ratio //Qt.application.font.pixelSize
-                            renderType: Text.NativeRendering
-
-                            verticalAlignment: Qt.AlignVCenter
-                            horizontalAlignment: Qt.AlignHCenter
-                            background: Rectangle{
-                                radius: 20
-                                color: color22
-                                width: parent.width
-                                height: parent.height
-                            }
-                            color: "#000000"
-                            clip: true
-                            elide: Text.ElideRight
-
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked:{
-                                    mainPage.state = "Login"
-                                }
+                            radius: 15
+                            iconSize: 2 * ratio
+                            textSize: 1.4 * ratio
+                            color: "#ffffff"
+                            icon: "\uf007"
+                            iconFont: awesome.name
+                            iconColor: "#000000"
+                            text: "همین حالا ثبت نام کن"
+                            textColor: "#000000"
+                            onBtnClicked: {
+                                mainPage.state = "Registration"
                             }
                         }
 
@@ -1195,45 +1157,60 @@ Window {
                             Layout.alignment: Qt.AlignVCenter
                         }
 
-                        //-- Account register --//
-                        Label{
-                            id: header_AccountRegister
+                        //-- Account login --//
+                        ButtonIcon{
+                            id: header_AccountLogin
                             Layout.fillHeight: true
-                            Layout.preferredWidth: parent.width * 0.6
+                            Layout.preferredWidth: parent.width * 0.5
                             Layout.topMargin: 10
                             Layout.bottomMargin: 10
                             visible: !setting.isLogined
-                            text: "همین حالا ثبت نام کنید"
-                            font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.4  * ratio//Qt.application.font.pixelSize
-                            renderType: Text.NativeRendering
-
-                            verticalAlignment: Qt.AlignVCenter
-                            horizontalAlignment: Qt.AlignHCenter
-                            background: Rectangle{
-                                radius: 20
-                                color: color16
-                                width: parent.width
-                                height: parent.height
+                            radius: 15
+                            iconSize: 2 * ratio
+                            textSize: 1.4 * ratio
+                            color: "#d43460"
+                            icon: Icons.login
+                            iconColor: "#ffffff"
+                            text: "ورود کاربر"
+                            textColor: "#ffffff"
+                            onBtnClicked: {
+                                mainPage.state = "Login"
                             }
-                            color: "#ffffff"
-                            clip: true
-                            elide: Text.ElideRight
+                        }
+
+                        Item { Layout.preferredWidth: 20 }
+
+                        //-- Search Icon --//
+                        Rectangle{
+                            Layout.preferredWidth: 40 * ratio
+                            Layout.fillHeight: true
+                            Layout.topMargin: 10
+                            Layout.bottomMargin: 10
+                            color: "transparent"
+                            Label{
+                                id: searchHeaderIcon
+                                anchors.centerIn: parent
+                                text: Icons.magnify
+                                rotation: 90
+                                font.family: webfont.name
+                                font.pixelSize: Qt.application.font.pixelSize *2.5*ratio //Qt.application.font.pixelSize
+
+                                color: "#ffffff"
+                                clip: true
+                            }
 
                             MouseArea{
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
-                                onClicked:{
-                                    mainPage.state = "Registration"
+                                onClicked: {
+                                    mainPage.state = "Search Page"
                                 }
                             }
                         }
-
                     }
-
                 }
 
-                Item { Layout.preferredWidth: parent.width * 0.05 } //-- filler --//
+                Item { Layout.preferredWidth: 10 } //-- filler --//
 
             }
         }

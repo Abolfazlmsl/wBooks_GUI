@@ -167,5 +167,8 @@
         <file>Codes/Modules/Items/MyVideoItem.qml</file>
         <file>Images/Test22.png</file>
         <file>Images/Logo Footer2.png</file>
+        <file>Codes/Modules/Items/ButtonIcon.qml</file>
+        <file>Fonts/fa-regular-400.ttf</file>
+        <file>Fonts/Flaticon.ttf</file>
     </qresource>
 </RCC>

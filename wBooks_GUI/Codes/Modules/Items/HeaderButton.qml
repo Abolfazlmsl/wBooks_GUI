@@ -6,6 +6,7 @@ Rectangle{
 
     property alias icon: rightMenu_DashboardIcon.text
     property alias text: rightMenu_DashboardLabel.text
+    property string iconFont: webfont.name
 
     property bool isClick: false
     property string itemColor: color15
@@ -29,7 +30,7 @@ Rectangle{
         fontSizeMode: Text.Fit
         font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
 
-        color: (isClick) ? "#ffffff" : color15
+        color: "#ffffff"
         clip: true
         elide: Text.ElideRight
     }
@@ -49,9 +50,9 @@ Rectangle{
         anchors.left: spacer.right
         anchors.verticalCenter: parent.verticalCenter
         width: Text.width
-        color: (isClick) ? "#ffffff" : color15
+        color: color15
 
-        font.family: webfont.name
+        font.family: iconFont
         font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
 
     }
@@ -67,4 +68,11 @@ Rectangle{
         }
     }
 
+    Rectangle{
+        width: parent.width
+        height: 2
+        color: "#d43460"
+        anchors.bottom: parent.bottom
+        visible: isClick
+    }
 }

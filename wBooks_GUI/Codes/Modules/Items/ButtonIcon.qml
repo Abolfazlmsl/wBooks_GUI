@@ -1,0 +1,66 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.5
+import QtQuick.Layouts 1.15
+import QtGraphicalEffects 1.15
+
+Rectangle{
+    id: btnIcon
+
+    property alias icon: iconTxt.text
+    property string iconFont: webfont.name
+    property string iconColor: "#ffffff"
+    property double iconSize: 2
+    property alias text: btnTxt.text
+    property string textColor: "#ffffff"
+    property double textSize: 1
+
+    signal btnClicked()
+
+    RowLayout{
+        anchors.fill: parent
+        spacing: 0
+        layoutDirection: Qt.RightToLeft
+        Item{Layout.preferredWidth: 20}
+
+        Rectangle{
+            Layout.preferredWidth: 20
+            Layout.fillHeight: true
+            color: "transparent"
+            Label{
+                id: iconTxt
+                anchors.centerIn: parent
+                text: ""
+                font.family: iconFont
+                font.pixelSize: Qt.application.font.pixelSize * iconSize //* widthRatio
+                font.bold: true
+
+                color: iconColor
+            }
+        }
+
+        Rectangle{
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            color: "transparent"
+            Label{
+                id: btnTxt
+                anchors.centerIn: parent
+                text: ""
+                font.family: mainFaNumFont.name
+                font.pixelSize: Qt.application.font.pixelSize * textSize //* widthRatio
+                font.bold: true
+
+                color: textColor
+            }
+        }
+
+        Item{Layout.preferredWidth: 20}
+    }
+    MouseArea{
+        anchors.fill: parent
+        cursorShape: Qt.PointingHandCursor
+        onClicked: {
+            btnClicked()
+        }
+    }
+}
