@@ -157,7 +157,7 @@ Rectangle {
                     text: "وی بوکس"
                     font.family: mainFont.name
                     color: "#a2a2a2"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.7
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -174,8 +174,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            accountObj.state = "Support"
-                            mainPage.state = "Edit"
+                            mainPage.state = "Home"
                             accountPopEnabled = false
                         }
                     }
@@ -194,8 +193,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            accountObj.state = "Support"
-                            mainPage.state = "Edit"
+                            mainPage.state = "Membership"
                             accountPopEnabled = false
                         }
                     }
@@ -214,8 +212,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            accountObj.state = "Support"
-                            mainPage.state = "Edit"
+                            mainPage.state = "Serial Book"
                             accountPopEnabled = false
                         }
                     }
@@ -234,8 +231,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            accountObj.state = "Support"
-                            mainPage.state = "Edit"
+                            mainPage.state = "Audio Book"
                             accountPopEnabled = false
                         }
                     }
@@ -261,7 +257,7 @@ Rectangle {
                     text: "دسته بندی"
                     font.family: mainFont.name
                     color: "#a2a2a2"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.7
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -278,8 +274,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            accountObj.state = "Support"
-                            mainPage.state = "Edit"
+                            mainPage.state = "Category"
                             accountPopEnabled = false
                         }
                     }
@@ -298,8 +293,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            accountObj.state = "About us"
-                            mainPage.state = "Edit"
+                            mainPage.state = "Category"
                             accountPopEnabled = false
                         }
                     }
@@ -319,7 +313,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Category"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -338,7 +333,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-
+                            mainPage.state = "Category"
+                            accountPopEnabled = false
                         }
                     }
                 }
@@ -362,7 +358,7 @@ Rectangle {
                     text: "کتاب های شما"
                     font.family: mainFont.name
                     color: "#a2a2a2"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.7
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -380,7 +376,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            mainPage.state = "Book Page"
+                            mainPage.state = "Home"
                             accountPopEnabled = false
                         }
                     }
@@ -390,7 +386,7 @@ Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 30
                     Layout.rightMargin: 20
-                    text: "کتای های صوتی"
+                    text: "کتاب های صوتی"
                     font.family: mainFont.name
                     color: "white"
                     font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
@@ -400,7 +396,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            mainPage.state = "Book Page"
+                            mainPage.state = "Audio Book"
                             accountPopEnabled = false
                         }
                     }
@@ -421,7 +417,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            mainPage.state = "Book Page"
+                            myBooksView = 3
+                            mainPage.state = "My Library"
                             accountPopEnabled = false
                         }
                     }
@@ -442,7 +439,8 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            mainPage.state = "Book Page"
+                            myBooksView = 0
+                            mainPage.state = "My Library"
                             accountPopEnabled = false
                         }
                     }
@@ -468,7 +466,7 @@ Rectangle {
                     text: "سایر"
                     font.family: mainFont.name
                     color: "#a2a2a2"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.7
+                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -486,8 +484,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            mainPage.state = "Category"
-                            accountPopEnabled = false
+
                         }
                     }
                 }
@@ -506,8 +503,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            mainPage.state = "Category"
-                            accountPopEnabled = false
+
                         }
                     }
                 }
@@ -527,8 +523,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            mainPage.state = "Audio Book"
-                            accountPopEnabled = false
+
                         }
                     }
                 }
@@ -548,8 +543,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            mainPage.state = "Category"
-                            accountPopEnabled = false
+
                         }
                     }
                 }

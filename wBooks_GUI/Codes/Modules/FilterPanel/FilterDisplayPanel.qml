@@ -144,7 +144,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: color9
+                    color: "#a2a2a2"
                     MouseArea{
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
@@ -192,7 +192,7 @@ Item {
                     font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    color: color9
+                    color: "#a2a2a2"
 
                     MouseArea{
                         anchors.fill: parent
