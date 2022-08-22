@@ -20,7 +20,7 @@ Rectangle{
         anchors.fill: parent
         spacing: 0
         layoutDirection: Qt.RightToLeft
-        Item{Layout.preferredWidth: 20}
+        Item{Layout.fillWidth: true}
 
         Rectangle{
             Layout.preferredWidth: 20
@@ -38,8 +38,10 @@ Rectangle{
             }
         }
 
+        Item{Layout.preferredWidth: 10}
+
         Rectangle{
-            Layout.fillWidth: true
+            Layout.preferredWidth: btnTxt.contentWidth
             Layout.fillHeight: true
             color: "transparent"
             Label{
@@ -54,7 +56,7 @@ Rectangle{
             }
         }
 
-        Item{Layout.preferredWidth: 20}
+        Item{Layout.fillWidth: true}
     }
     MouseArea{
         anchors.fill: parent

@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     engine.load(url);
 
     //-- windows icon --//
-    app.setWindowIcon(QIcon(":/Images/Wbooks1.png"));
+    app.setWindowIcon(QIcon(":/Images/Logo3.png"));
 
     return app.exec();
 }

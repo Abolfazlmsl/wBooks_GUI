@@ -65,7 +65,7 @@ Rectangle{
                 rightPadding: 30
 //                            leftPadding: 10 * ratio
 
-                font.family: mainFont.name
+                font.family: mainFaNumFont.name
                 font.pixelSize: Qt.application.font.pixelSize * fontSize
                 selectedTextColor: color14
                 color: color4

@@ -162,7 +162,6 @@
         <file>Codes/Modules/Items/MyBookItem.qml</file>
         <file>Codes/Modules/Items/MyAudioBookItem.qml</file>
         <file>Codes/Modules/Items/MyVideoItem.qml</file>
-        <file>Images/Test22.png</file>
         <file>Images/Logo Footer2.png</file>
         <file>Codes/Modules/Items/ButtonIcon.qml</file>
         <file>Fonts/fa-regular-400.ttf</file>
@@ -172,5 +171,7 @@
         <file>Images/myAudioBooks.jpg</file>
         <file>Images/myBooks.jpg</file>
         <file>Images/myVideos.jpg</file>
+        <file>Images/Logo2.png</file>
+        <file>Images/Logo3.png</file>
     </qresource>
 </RCC>
