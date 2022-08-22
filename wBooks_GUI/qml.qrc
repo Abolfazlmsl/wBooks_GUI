@@ -118,12 +118,9 @@
         <file>Codes/Modules/MainModules/Ui_Module/Writers.qml</file>
         <file>Codes/Modules/Items/CategoryButton.qml</file>
         <file>Codes/Modules/Pages/MyLibrary.qml</file>
-        <file>Images/MyBooks.png</file>
         <file>Codes/Modules/MainModules/Ui_Module/MyBooksList.qml</file>
         <file>Codes/Modules/MainModules/Ui_Module/MyAudioBooksList.qml</file>
         <file>Codes/Modules/MainModules/Ui_Module/MyVideos.qml</file>
-        <file>Images/music2.png</file>
-        <file>Images/video.jpg</file>
         <file>Codes/Modules/Pages/BasketPage.qml</file>
         <file>Images/Emptybasket.png</file>
         <file>Functions/Funcs.js</file>
@@ -170,5 +167,10 @@
         <file>Codes/Modules/Items/ButtonIcon.qml</file>
         <file>Fonts/fa-regular-400.ttf</file>
         <file>Fonts/Flaticon.ttf</file>
+        <file>Codes/Modules/Items/MyLibraryItem.qml</file>
+        <file>Codes/Modules/Items/CircularProgressbar.qml</file>
+        <file>Images/myAudioBooks.jpg</file>
+        <file>Images/myBooks.jpg</file>
+        <file>Images/myVideos.jpg</file>
     </qresource>
 </RCC>
