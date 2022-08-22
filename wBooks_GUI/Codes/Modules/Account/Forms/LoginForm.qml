@@ -445,19 +445,11 @@ Item{
 
                         Item{Layout.fillWidth: true}
 
-                        Rectangle{
+                        ImageIcon{
                             Layout.preferredWidth: 20
                             Layout.fillHeight: true
-                            color: "transparent"
-                            Label{
-                                anchors.centerIn: parent
-                                text: Icons.account
-                                font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2 //* widthRatio
-                                font.bold: true
-
-                                color: "#000000"
-                            }
+                            imgSource: "qrc:/Icons/add-user.png"
+                            imgColor: color4
                         }
 
                         Item{Layout.preferredWidth: 10}

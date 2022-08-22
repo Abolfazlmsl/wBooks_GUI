@@ -173,5 +173,41 @@
         <file>Images/myVideos.jpg</file>
         <file>Images/Logo2.png</file>
         <file>Images/Logo3.png</file>
+        <file>Codes/Modules/Items/ImageIcon.qml</file>
+        <file>Icons/add-user.png</file>
+        <file>Icons/arroba.png</file>
+        <file>Icons/audio-book(1).png</file>
+        <file>Icons/audio-book.png</file>
+        <file>Icons/book(2).png</file>
+        <file>Icons/buy-button.png</file>
+        <file>Icons/cart.png</file>
+        <file>Icons/category.png</file>
+        <file>Icons/certificate.png</file>
+        <file>Icons/circular-line-with-word-age-in-the-center.png</file>
+        <file>Icons/clipboard.png</file>
+        <file>Icons/education.png</file>
+        <file>Icons/filter.png</file>
+        <file>Icons/forgot.png</file>
+        <file>Icons/home.png</file>
+        <file>Icons/id-card.png</file>
+        <file>Icons/idea.png</file>
+        <file>Icons/info.png</file>
+        <file>Icons/key.png</file>
+        <file>Icons/login.png</file>
+        <file>Icons/next.png</file>
+        <file>Icons/open-book(1).png</file>
+        <file>Icons/open-book.png</file>
+        <file>Icons/phone-call.png</file>
+        <file>Icons/proposal.png</file>
+        <file>Icons/questions.png</file>
+        <file>Icons/search.png</file>
+        <file>Icons/subscribe(1).png</file>
+        <file>Icons/subscribe.png</file>
+        <file>Icons/subscriber.png</file>
+        <file>Icons/ticket.png</file>
+        <file>Icons/time.png</file>
+        <file>Icons/user(1).png</file>
+        <file>Icons/user.png</file>
+        <file>Icons/view.png</file>
     </qresource>
 </RCC>
