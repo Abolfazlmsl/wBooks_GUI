@@ -32,6 +32,7 @@ Rectangle {
             Layout.fillWidth: true
 //            Layout.preferredHeight: parent.height * 0.025
             Layout.preferredHeight: txt1.contentHeight
+            Layout.rightMargin: 70
             color: "transparent"
             Label{
                 id: txt1
@@ -124,6 +125,7 @@ Rectangle {
             Layout.fillWidth: true
 //            Layout.preferredHeight: parent.height * 0.025
             Layout.preferredHeight: txt2.contentHeight
+            Layout.rightMargin: 70
             color: "transparent"
             Label{
                 id: txt2
@@ -142,6 +144,7 @@ Rectangle {
             Layout.fillWidth: true
 //            Layout.preferredHeight: parent.height * 0.05
             Layout.preferredHeight: txt3.contentHeight
+            Layout.rightMargin: 70
             color: "transparent"
 
             Label{
@@ -169,6 +172,7 @@ Rectangle {
                 font.family: mainFaNumFont.name
                 color: color4
                 wrapMode: Text.WordWrap
+                lineHeight: 1.15
             }
         }
 
@@ -188,11 +192,14 @@ Rectangle {
             }
         }
 
+        Item{Layout.preferredHeight: 20}
+
         Rectangle{
             id: title4Rec
             Layout.fillWidth: true
 //            Layout.preferredHeight: parent.height * 0.025
             Layout.preferredHeight: txt4.contentHeight
+            Layout.rightMargin: 70
             color: "transparent"
             Label{
                 id: txt4
@@ -206,206 +213,225 @@ Rectangle {
             }
         }
 
-        Rectangle{
-            id: commentRec
-            Layout.fillWidth: true
+        Item{Layout.preferredHeight: 20}
+
+        Item{
+            Layout.preferredWidth: parent.width
             Layout.fillHeight: true
-            color: "transparent"
-            ListView{
-                id: commentView
+            Layout.rightMargin: 70
+            RowLayout{
                 anchors.fill: parent
-                spacing: 20
-                clip: true
-                model: (allComment)? commentModel.count:5
-                delegate: Rectangle{
-                    width: commentView.width
-                    height: commenttxt.contentHeight + 90
-                    color: color1
-
-                    ColumnLayout{
+                spacing: 0
+                layoutDirection: Qt.RightToLeft
+                Rectangle{
+                    id: commentRec
+                    Layout.preferredWidth: parent.width * 0.75
+                    Layout.fillHeight: true
+                    color: "transparent"
+                    ListView{
+                        id: commentView
                         anchors.fill: parent
-                        spacing: 0
-                        Item{
-                            Layout.preferredHeight: parent.height * 0.3
-                            Layout.fillWidth: true
-                            RowLayout{
+                        spacing: 20
+                        clip: true
+                        model: (allComment)? commentModel.count:5
+                        delegate: Rectangle{
+                            width: commentView.width
+                            height: commenttxt.contentHeight + 120
+                            color: color1
+
+                            ColumnLayout{
                                 anchors.fill: parent
-                                spacing: 5
-                                layoutDirection: Qt.RightToLeft
-                                Label{
-                                    id: iconLabel
-                                    Layout.preferredWidth: 20
-                                    Layout.fillHeight: true
+                                spacing: 0
+                                Item{
+                                    Layout.preferredHeight: 60
+                                    Layout.fillWidth: true
+                                    Layout.topMargin: 5
+                                    Layout.bottomMargin: 5
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        spacing: 5
+                                        layoutDirection: Qt.RightToLeft
+                                        Label{
+                                            id: iconLabel
+                                            Layout.preferredWidth: 20
+                                            Layout.fillHeight: true
 
-                                    Layout.rightMargin: 30
+                                            Layout.rightMargin: 30
 
-                                    text: (commentModel.get(index).profile === "")? Icons.account:model.profile
-                                    color: color2
-                                    font.family: webfont.name
-                                    font.pixelSize: Qt.application.font.pixelSize * 3
-                                    verticalAlignment: Qt.AlignVCenter
-                                    horizontalAlignment: Qt.AlignHCenter
+                                            text: (commentModel.get(index).profile === "")? Icons.account:model.profile
+                                            color: color2
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 3
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Label{
+                                            id: nameLabel
+                                            Layout.preferredWidth: 100
+                                            Layout.fillHeight: true
+
+                                            Layout.rightMargin: 15
+
+                                            text: commentModel.get(index).name
+                                            color: color2
+                                            font.family: mainFont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+
+                                            verticalAlignment: Qt.AlignVCenter
+                                        }
+
+                                        Label{
+                                            id: dateLabel
+                                            Layout.preferredWidth: 50
+                                            Layout.fillHeight: true
+
+                                            Layout.rightMargin: 30
+
+                                            text: commentModel.get(index).date
+                                            color: color15
+                                            font.family: mainFaNumFont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            verticalAlignment: Qt.AlignVCenter
+                                        }
+
+                                        Item{Layout.fillWidth: true}
+
+                                        Rectangle{
+                                            id: likeRec
+                                            Layout.preferredWidth: 30
+                                            Layout.preferredHeight: width
+                                            radius: width / 2
+
+                                            Layout.rightMargin: 15
+                                            color: color14
+                                            Label{
+                                                id: likeLabel
+                                                anchors.fill: parent
+                                                text: Icons.thumb_up
+                                                color: "#ffffff"
+                                                font.family: webfont.name
+                                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                                horizontalAlignment: Qt.AlignHCenter
+                                                verticalAlignment: Qt.AlignVCenter
+                                            }
+                                            MouseArea{
+                                                anchors.fill: parent
+                                                cursorShape: Qt.PointingHandCursor
+                                                onClicked: {
+
+                                                }
+                                            }
+                                        }
+
+                                        Label{
+                                            id: likeNumber
+                                            Layout.preferredWidth: 10
+                                            Layout.fillHeight: true
+
+                                            Layout.rightMargin: 5
+
+                                            text: commentModel.get(index).like
+                                            color: color4
+                                            font.family: mainFaNumFont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+
+                                            verticalAlignment: Qt.AlignVCenter
+                                        }
+
+                                        Label{
+                                            id: dislikeNumber
+                                            Layout.preferredWidth: 10
+                                            Layout.fillHeight: true
+
+                                            Layout.rightMargin: 15
+
+                                            text: commentModel.get(index).dislike
+                                            color: color4
+                                            font.family: mainFaNumFont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+
+                                            verticalAlignment: Qt.AlignVCenter
+                                        }
+
+                                        Rectangle{
+                                            id: dislikeRec
+                                            Layout.preferredWidth: 30
+                                            Layout.preferredHeight: width
+                                            radius: width / 2
+
+                                            Layout.rightMargin: 5
+                                            color: color2
+                                            Label{
+                                                id: dislikeLabel
+                                                anchors.fill: parent
+                                                text: Icons.thumb_down
+                                                color: "#ffffff"
+                                                font.family: webfont.name
+                                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                                horizontalAlignment: Qt.AlignHCenter
+                                                verticalAlignment: Qt.AlignVCenter
+                                            }
+                                            MouseArea{
+                                                anchors.fill: parent
+                                                cursorShape: Qt.PointingHandCursor
+                                                onClicked: {
+
+                                                }
+                                            }
+                                        }
+
+                                        Item{Layout.preferredWidth: 20}
+                                    }
                                 }
 
-                                Label{
-                                    id: nameLabel
-                                    Layout.preferredWidth: 100
-                                    Layout.fillHeight: true
-
-                                    Layout.rightMargin: 15
-
-                                    text: commentModel.get(index).name
-                                    color: color2
-                                    font.family: mainFont.name
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
-
-                                    verticalAlignment: Qt.AlignVCenter
-                                }
-
-                                Label{
-                                    id: dateLabel
-                                    Layout.preferredWidth: 50
-                                    Layout.fillHeight: true
-
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
                                     Layout.rightMargin: 30
-
-                                    text: commentModel.get(index).date
+                                    Layout.leftMargin: 20
                                     color: color15
-                                    font.family: mainFaNumFont.name
-                                    font.pixelSize: Qt.application.font.pixelSize * 1
-                                    horizontalAlignment: Qt.AlignHCenter
-                                    verticalAlignment: Qt.AlignVCenter
-                                }
-
-                                Item{Layout.fillWidth: true}
-
-                                Rectangle{
-                                    id: likeRec
-                                    Layout.preferredWidth: 30
-                                    Layout.preferredHeight: width
-                                    radius: width / 2
-
-                                    Layout.rightMargin: 15
-                                    color: color14
-                                    Label{
-                                        id: likeLabel
-                                        anchors.fill: parent
-                                        text: Icons.thumb_up
-                                        color: "#ffffff"
-                                        font.family: webfont.name
-                                        font.pixelSize: Qt.application.font.pixelSize * 1.5
-                                        horizontalAlignment: Qt.AlignHCenter
-                                        verticalAlignment: Qt.AlignVCenter
-                                    }
-                                    MouseArea{
-                                        anchors.fill: parent
-                                        cursorShape: Qt.PointingHandCursor
-                                        onClicked: {
-
-                                        }
-                                    }
-                                }
-
-                                Label{
-                                    id: likeNumber
-                                    Layout.preferredWidth: 10
-                                    Layout.fillHeight: true
-
-                                    Layout.rightMargin: 5
-
-                                    text: commentModel.get(index).like
-                                    color: color4
-                                    font.family: mainFaNumFont.name
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
-
-                                    verticalAlignment: Qt.AlignVCenter
-                                }
-
-                                Label{
-                                    id: dislikeNumber
-                                    Layout.preferredWidth: 10
-                                    Layout.fillHeight: true
-
-                                    Layout.rightMargin: 15
-
-                                    text: commentModel.get(index).dislike
-                                    color: color4
-                                    font.family: mainFaNumFont.name
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
-
-                                    verticalAlignment: Qt.AlignVCenter
                                 }
 
                                 Rectangle{
-                                    id: dislikeRec
-                                    Layout.preferredWidth: 30
-                                    Layout.preferredHeight: width
-                                    radius: width / 2
+                                    id: commentItem
+                                    Layout.fillWidth: true
+                                    Layout.fillHeight: true
+                                    Layout.topMargin: 20
+                                    color: "transparent"
+                                    property bool fullText: false
 
-                                    Layout.rightMargin: 5
-                                    color: color2
                                     Label{
-                                        id: dislikeLabel
+                                        id: commenttxt
                                         anchors.fill: parent
-                                        text: Icons.thumb_down
-                                        color: "#ffffff"
-                                        font.family: webfont.name
-                                        font.pixelSize: Qt.application.font.pixelSize * 1.5
-                                        horizontalAlignment: Qt.AlignHCenter
-                                        verticalAlignment: Qt.AlignVCenter
-                                    }
-                                    MouseArea{
-                                        anchors.fill: parent
-                                        cursorShape: Qt.PointingHandCursor
-                                        onClicked: {
-
-                                        }
+                                        anchors.rightMargin: 30
+                                        anchors.leftMargin: 50
+                                        text: (commentItem.fullText) ? commentModel.get(index).comment:
+                                                                       substring(commentModel.get(index).comment, 350) + "  " +
+                                                                       '<html><style type="text/css">
+                                                                            a:link, a:visited {
+                                                                              color: #3399ff;
+                                                                            }
+                                                                            a:hover {
+                                                                              cursor:pointer;
+                                                                             }
+                                                                            </style><a href="بیشتر">بیشتر</a></html>'
+                                        font.family: mainFaNumFont.name
+                                        textFormat: Text.RichText
+                                        color: color4
+                                        lineHeight: 1.15
+                                        wrapMode: Text.WordWrap
+                                        onLinkActivated: commentItem.fullText = true
                                     }
                                 }
-
-                                Item{Layout.preferredWidth: 20}
-                            }
-                        }
-
-                        Rectangle{
-                            Layout.preferredHeight: 1
-                            Layout.fillWidth: true
-                            Layout.rightMargin: 30
-                            Layout.leftMargin: 20
-                            color: color15
-                        }
-
-                        Rectangle{
-                            id: commentItem
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true
-                            Layout.topMargin: 20
-                            color: "transparent"
-                            property bool fullText: false
-
-                            Label{
-                                id: commenttxt
-                                anchors.fill: parent
-                                anchors.rightMargin: 30
-                                anchors.leftMargin: 50
-                                text: (commentItem.fullText) ? commentModel.get(index).comment:
-                                                               substring(commentModel.get(index).comment, 350) + "  " +
-                                                               '<html><style type="text/css">
-                                                                        a:link, a:visited {
-                                                                          color: #3399ff;
-                                                                        }
-                                                                        a:hover {
-                                                                          cursor:pointer;
-                                                                         }
-                                                                        </style><a href="بیشتر">بیشتر</a></html>'
-                                font.family: mainFaNumFont.name
-                                textFormat: Text.RichText
-                                color: color4
-                                wrapMode: Text.WordWrap
-                                onLinkActivated: commentItem.fullText = true
                             }
                         }
                     }
+                }
+                Item{
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
                 }
             }
         }
