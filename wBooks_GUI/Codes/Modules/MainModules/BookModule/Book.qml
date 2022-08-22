@@ -437,7 +437,7 @@ Flickable {
 
             Rectangle{
                 Layout.fillWidth: true
-                Layout.preferredHeight: 2500
+                Layout.preferredHeight: 3000
 //                Layout.preferredHeight: childrenRect.height
                 color: color0
                 SwipeView {
