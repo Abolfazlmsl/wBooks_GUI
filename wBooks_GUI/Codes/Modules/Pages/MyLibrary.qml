@@ -23,9 +23,31 @@ Item {
                 anchors.fill: parent
                 color: "transparent"
 
+                Rectangle{
+                    id: titleRec
+                    width: parent.width
+                    height: 10
+                    anchors.top: parent.top
+                    anchors.topMargin: 60
+                    color: "transparent"
+                    Label{
+                        id: txt1
+                        anchors.fill: parent
+                        anchors.leftMargin: 120 * ratio
+                        text: "کتابخانه ی من"
+                        font.family: mainFont.name
+                        color: color4
+                        font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
+                        verticalAlignment: Qt.AlignVCenter
+                        horizontalAlignment: Text.AlignLeft
+                        LayoutMirroring.enabled: true
+                    }
+                }
+
                 RowLayout{
-                    anchors.fill: parent
-                    anchors.topMargin: 100
+                    width: parent.width
+                    height: parent.height - titleRec.height - 80
+                    anchors.top: titleRec.bottom
                     spacing: 40
                     layoutDirection: Qt.RightToLeft
 
@@ -33,38 +55,62 @@ Item {
                         Layout.fillWidth: true
                     }
 
-                    CategoryButton{
+                    MyLibraryItem{
                         Layout.preferredWidth: 280 * ratio //* widthRatio
-                        Layout.fillHeight: true
-                        picSource: "qrc:/Images/MyBooks.png"
-                        title: "کتاب های من"
-                        bgColor: "#00adb3"
+                        Layout.preferredHeight: 350 * ratio
+                        title: "کتاب های متنی من"
+                        btnTitle: "مشاهده مجموعه"
+                        imgSource: "qrc:/Images/myBooks.jpg"
+                        btnTextColor: color3
+                        radiusBtn: 0
+                        colorBtn: color8
+                        percent: 57
+                        firstColor: color4
+                        progressThickness: 10
+                        secondColor: "#2cbbb9"
+                        itemModel: myBooksModel
 
-                        onDashboard_btnClicked: {
+                        onBtnClicked: {
                             myBooksView = 1
                         }
                     }
 
-                    CategoryButton{
+                    MyLibraryItem{
                         Layout.preferredWidth: 280 * ratio //* widthRatio
-                        Layout.fillHeight: true
-                        picSource: "qrc:/Images/music2.png"
+                        Layout.preferredHeight: 350 * ratio
                         title: "کتاب های صوتی من"
-                        bgColor: "#6c88b7"
+                        btnTitle: "مشاهده مجموعه"
+                        imgSource: "qrc:/Images/myAudioBooks.jpg"
+                        btnTextColor: color3
+                        radiusBtn: 0
+                        colorBtn: color8
+                        percent: 34
+                        firstColor: color4
+                        progressThickness: 10
+                        secondColor: "#2cbbb9"
+                        itemModel: myAudioBooksModel
 
-                        onDashboard_btnClicked: {
+                        onBtnClicked: {
                             myBooksView = 2
                         }
                     }
 
-                    CategoryButton{
+                    MyLibraryItem{
                         Layout.preferredWidth: 280 * ratio //* widthRatio
-                        Layout.fillHeight: true
-                        picSource: "qrc:/Images/video.jpg"
-                        title: "ویدیوهای من"
-                        bgColor: "#2384b6"
+                        Layout.preferredHeight: 350 * ratio
+                        title: "ویدئوهای من"
+                        btnTitle: "مشاهده مجموعه"
+                        imgSource: "qrc:/Images/myVideos.jpg"
+                        btnTextColor: color3
+                        radiusBtn: 0
+                        colorBtn: color8
+                        percent: 21
+                        firstColor: color4
+                        progressThickness: 10
+                        secondColor: "#2cbbb9"
+                        itemModel: myVideosModel
 
-                        onDashboard_btnClicked: {
+                        onBtnClicked: {
                             myBooksView = 3
                         }
                     }
