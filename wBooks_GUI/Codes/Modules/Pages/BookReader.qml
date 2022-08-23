@@ -176,7 +176,7 @@ Window {
 
                 M_inputText{
                     id: input_search
-                    Layout.preferredWidth: parent.width * 0.35
+                    Layout.fillWidth: true
                     Layout.fillHeight: true
                     label: "Search page number"
                     icon: Icons.magnify

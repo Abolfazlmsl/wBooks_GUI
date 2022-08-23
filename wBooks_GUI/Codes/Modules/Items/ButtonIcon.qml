@@ -13,13 +13,14 @@ Rectangle{
     property alias text: btnTxt.text
     property string textColor: "#ffffff"
     property double textSize: 1
+    property string direction: "Right_Left" //"Left_Right"
 
     signal btnClicked()
 
     RowLayout{
         anchors.fill: parent
         spacing: 0
-        layoutDirection: Qt.RightToLeft
+        layoutDirection: (direction === "Right_Left") ? Qt.RightToLeft : Qt.LeftToRight
         Item{Layout.fillWidth: true}
 
         Rectangle{

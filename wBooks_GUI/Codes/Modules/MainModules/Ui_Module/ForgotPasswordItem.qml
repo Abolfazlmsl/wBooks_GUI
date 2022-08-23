@@ -120,6 +120,7 @@ Item{
                 //-- previous pass --//
                 M_inputText{
                     id: input_pre_pass
+                    Layout.fillWidth: true
                     Layout.rightMargin: 0
                     label: "رمز عبور قبلی"
                     icon: Icons.key
@@ -170,6 +171,7 @@ Item{
                 //-- Email --//
                 M_inputText{
                     id: input_new_pass
+                    Layout.fillWidth: true
                     Layout.rightMargin: 0
                     label: "رمز عبور جدید"
                     icon: Icons.key
@@ -224,6 +226,7 @@ Item{
                 //-- Email --//
                 M_inputText{
                     id: input_new_pass_repeat
+                    Layout.fillWidth: true
                     Layout.rightMargin: 0
                     label: "تکرار رمز عبور جدید"
                     icon: Icons.key

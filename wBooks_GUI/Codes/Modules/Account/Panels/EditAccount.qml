@@ -60,6 +60,7 @@ Item {
                 M_inputText{
                     id: input_name
                     Layout.rightMargin: 0
+                    Layout.fillWidth: true
                     label: "نام"
                     icon: Icons.account
                     placeholder: "نام"
@@ -89,6 +90,7 @@ Item {
                 M_inputText{
                     id: input_phone
                     Layout.rightMargin: 0
+                    Layout.fillWidth: true
                     label: "شماره تماس"
                     icon: Icons.cellphone
                     placeholder: "09xxxxxxxxx"
@@ -117,6 +119,7 @@ Item {
                 M_inputText{
                     id: input_Email
                     Layout.rightMargin: 0
+                    Layout.fillWidth: true
                     label: "ایمیل"
                     icon: Icons.email_outline
                     placeholder: "ایمیل"

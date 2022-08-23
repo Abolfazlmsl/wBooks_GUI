@@ -12,7 +12,7 @@ Item {
     property string rightText: ""
     property string leftText: ""
     property int factor: 12
-    property alias position: topSliderItem.state // "Right", "Left", "Center", "None
+    property alias position: topSliderItem.state // "Right", "Left", "Center", "None"
 
     state: "Right"
     states: [

@@ -136,6 +136,7 @@ Item{
                             Layout.rightMargin: 50
                             Layout.leftMargin: 50
                             Layout.preferredHeight: 45
+                            Layout.fillWidth: true
                             label: "شماره همراه"
                             icon: Icons.phone
                             itemRadius: 0
@@ -159,6 +160,7 @@ Item{
                             Layout.rightMargin: 50
                             Layout.leftMargin: 50
                             Layout.preferredHeight: 45
+                            Layout.fillWidth: true
                             label: "رمز عبور"
                             icon: Icons.key
                             placeholder: "رمز عبور"

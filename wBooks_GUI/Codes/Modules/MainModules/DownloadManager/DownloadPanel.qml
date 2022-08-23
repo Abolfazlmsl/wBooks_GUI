@@ -298,6 +298,7 @@ ApplicationWindow{
                             //-- url --//
                             M_inputText{
                                 id: input_address
+                                Layout.fillWidth: true
                                 label: "Download address"
                                 icon: Icons.web
                                 placeholder: "Download address"

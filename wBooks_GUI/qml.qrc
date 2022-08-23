@@ -209,5 +209,6 @@
         <file>Icons/user(1).png</file>
         <file>Icons/user.png</file>
         <file>Icons/view.png</file>
+        <file>Codes/Modules/Account/Forms/PhoneConfirmForm.qml</file>
     </qresource>
 </RCC>

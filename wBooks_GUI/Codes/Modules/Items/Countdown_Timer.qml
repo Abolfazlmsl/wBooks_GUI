@@ -12,6 +12,9 @@ Rectangle{
     property alias second: lbl_Timer.seconds
     property alias lblTimer : lbl_Timer
 
+    property bool timerIconVisible: false
+    property string textColor: color3
+
     //-- Signal for Start Timer --//
     signal startTimer
     onStartTimer: {
@@ -27,7 +30,7 @@ Rectangle{
     //-- Signal for Reset Timer --//
     signal resetTimer
     onResetTimer: {
-        lbl_Timer.hour = 60
+        lbl_Timer.hour = minutes
         lbl_Timer.seconds = 0
     }
 
@@ -77,7 +80,7 @@ Rectangle{
                 }
             }
 
-            property int hour: 60
+            property int hour: 0
             property int seconds: 0
 
             //-- set 1Digit to 2Digit for Hour --//
@@ -107,12 +110,13 @@ Rectangle{
             Layout.fillHeight: true
 
             verticalAlignment: Qt.AlignVCenter
+            font.family: mainFaNumFont.name
 
             text: stringHour + " : " + stringSeconds
-            font.pixelSize: Qt.application.font.pixelSize * 1.4 * timerScale
+            font.pixelSize: Qt.application.font.pixelSize * 1.1 * timerScale
             //font.bold: true
 
-            color: color3
+            color: textColor
 
         }
 
@@ -124,10 +128,11 @@ Rectangle{
 
             Layout.preferredWidth: implicitWidth
             Layout.fillHeight: true
+            visible: timerIconVisible
 
             text: Icons.timer
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * 1.7
+            font.pixelSize: Qt.application.font.pixelSize * 1.3
 
             verticalAlignment: Qt.AlignVCenter
 

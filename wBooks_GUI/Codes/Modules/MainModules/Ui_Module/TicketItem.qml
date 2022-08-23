@@ -160,6 +160,7 @@ Item {
                                     layoutDirection: Qt.RightToLeft
                                     M_inputText{
                                         id: input_name
+                                        Layout.fillWidth: true
                                         label: "نام"
                                         icon: Icons.account
                                         placeholder: "نام"
@@ -170,6 +171,7 @@ Item {
 
                                     M_inputText{
                                         id: input_email
+                                        Layout.fillWidth: true
                                         label: "ایمیل"
                                         icon: Icons.email
                                         placeholder: "ایمیل"

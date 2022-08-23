@@ -18,6 +18,7 @@ Rectangle{
     property string placeholder: ""
     property alias echoMode: txf_main.echoMode
     property alias clearEnable: lbl_clear.visible
+    property int borderWidth: 1
     property string borderColor: "#ffffff"
     property string bgColor: color_input
     property bool enterAsAccept: false
@@ -25,7 +26,7 @@ Rectangle{
     property bool acceptInput: false
     property double fontSize: 1
     property string placeHolderPosition: "Right" //Center
-
+    property alias textPosition: root_txf.state // "Right", "Left", "Center"
     signal acceptedLogin()
 
     property int selectStart
@@ -34,9 +35,34 @@ Rectangle{
 
     color: "transparent"
 
-    Layout.fillWidth: true
+//    Layout.fillWidth: true
     Layout.preferredHeight: 45 * ratio
     Layout.rightMargin: 10 * ratio
+
+    state: "Right"
+    states: [
+        State{
+            name: "Right"
+            PropertyChanges {
+                target: txf_main
+                horizontalAlignment: TextInput.AlignRight
+            }
+        },
+        State{
+            name: "Center"
+            PropertyChanges {
+                target: txf_main
+                horizontalAlignment: TextInput.AlignHCenter
+            }
+        },
+        State{
+            name: "Left"
+            PropertyChanges {
+                target: txf_main
+                horizontalAlignment: TextInput.AlignLeft
+            }
+        }
+    ]
 
 
     RowLayout{
@@ -48,6 +74,7 @@ Rectangle{
             Layout.fillWidth: true
 
             color: bgColor
+            border.width: borderWidth
             border.color: borderColor
             radius: itemRadius
 
@@ -61,8 +88,9 @@ Rectangle{
                 //            width: parent.width - lbl_icon.implicitWidth - lbl_clear.implicitWidth  // Width of Rect - Width of Magnify
                 //            height: parent.height
 
-                verticalAlignment: Qt.AlignVCenter
+                verticalAlignment: TextInput.AlignVCenter
                 rightPadding: 30
+                leftPadding: 30
 //                            leftPadding: 10 * ratio
 
                 font.family: mainFaNumFont.name
@@ -71,7 +99,7 @@ Rectangle{
                 color: color4
 
                 selectByMouse: true
-                horizontalAlignment: TextInput.AlignRight
+//                horizontalAlignment: TextInput.AlignRight
 
 
                 //-- placeholder --//

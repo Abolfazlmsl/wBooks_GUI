@@ -25,6 +25,7 @@ Rectangle {
 
         M_inputText{
             id: input_phone
+            Layout.fillWidth: true
             label: "جستجو بر اساس کتاب، ناشر، نویسنده و ..."
             icon: Icons.magnify
             placeholder: "جستجو بر اساس کتاب، ناشر، نویسنده و ..."
