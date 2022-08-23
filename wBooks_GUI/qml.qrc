@@ -210,5 +210,7 @@
         <file>Icons/user.png</file>
         <file>Icons/view.png</file>
         <file>Codes/Modules/Account/Forms/PhoneConfirmForm.qml</file>
+        <file>Codes/Modules/Account/Forms/WelcomePage.qml</file>
+        <file>Codes/Modules/Items/ButtonImageIcon.qml</file>
     </qresource>
 </RCC>

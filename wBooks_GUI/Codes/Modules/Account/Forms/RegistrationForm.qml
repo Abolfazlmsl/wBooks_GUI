@@ -551,31 +551,34 @@ Item{
             }
 
             onConfirmBtnClicked: {
-                var data = {
-                    "name": name.text,
-                    "email": email.text,
-                    "phone": phone.text,
-                    "password": password.text,
-                    "gender": "",
-                    "mybooks": "",
-                    "myaudiobooks": "",
-                    "myvideos": "",
-                    "mywallet": "",
-                    "mylicense": "",
-                    "profile": "",
-                    "user_id": "",
-                    "basket": ""
-                }
+//                var data = {
+//                    "name": firstname.text + " " + lastname.text,
+//                    "email": email.text,
+//                    "phone": phone.text,
+//                    "password": password.text,
+//                    "gender": "",
+//                    "mybooks": "",
+//                    "myaudiobooks": "",
+//                    "myvideos": "",
+//                    "mywallet": "",
+//                    "mylicense": "",
+//                    "profile": "",
+//                    "user_id": "",
+//                    "basket": ""
+//                }
 
-                db.addTable("users", true)
-                db.storeData("users", data, "")
+//                db.addTable("users", true)
+//                db.storeData("users", data, "")
 
-                setting.userName = name.text
+                setting.userName = firstname.text + " " + lastname.text
                 setting.userPhone = phone.text
                 setting.userEmail = email.text
                 setting.password = password.text
                 setting.isLogined = true
-                mainPage.state = "Home"
+                confirmItem.timer = false
+                confirmItem.sendAgain = true
+                swipe_register.currentIndex = 2
+//                mainPage.state = "Home"
                 //                                if (txf_confirm.text === smsCode){
                 //                                    spinner.visible = true
                 ////                                    MainPython.makeTrialData(15, setting.tokenAccess, Service.BASE, Service.url_license, Service.url_device)
@@ -596,6 +599,18 @@ Item{
                 //                                    mainPage.state = "Home"
 
                 //                                })
+            }
+        }
+
+        WelcomePage{
+            id: welcomeItem
+
+            onTopBtnClicked: {
+                mainPage.state = "Edit"
+            }
+
+            onBottomBtnClicked: {
+                mainPage.state = "Membership"
             }
         }
     }

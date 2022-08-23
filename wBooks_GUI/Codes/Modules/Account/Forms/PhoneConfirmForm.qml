@@ -55,14 +55,14 @@ Item {
                     Layout.leftMargin: lMargin
                     color: "transparent"
                     Image{
-                        id: image2
+                        id: image
                         anchors.fill: parent
                         source: "qrc:/Images/Logo2.png"
                         mipmap: true
                         fillMode: Image.PreserveAspectFit
                         ColorOverlay {
-                            anchors.fill: image2
-                            source: image2
+                            anchors.fill: image
+                            source: image
                             color: color4
                         }
                     }
