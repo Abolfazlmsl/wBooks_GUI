@@ -216,5 +216,9 @@
         <file>Images/Banner Home.jpg</file>
         <file>Codes/Modules/MainModules/Ui_Module/ChangePasswordItem.qml</file>
         <file>Codes/Modules/Items/SuccessItem.qml</file>
+        <file>Icons/facebook.png</file>
+        <file>Icons/github(1).png</file>
+        <file>Icons/gmail.png</file>
+        <file>Images/Ticket1-2.png</file>
     </qresource>
 </RCC>

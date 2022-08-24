@@ -390,15 +390,16 @@ Item{
                                 layoutDirection: Qt.RightToLeft
 
                                 //-- Button login gmail --//
-                                ButtonIcon{
+                                ButtonImageIcon{
                                     id: logingmail
                                     Layout.preferredWidth: parent.width * 0.3
                                     Layout.fillHeight: parent
-                                    icon: Icons.email
-                                    iconFont: webfont.name
-                                    iconColor: "#000000"
-                                    iconSize: 2
+                                    iconColor: "transparent"
+                                    icon: "qrc:/Icons/gmail.png"
+                                    iconSize: 20
                                     text: "ورود با جیمیل"
+                                    tooltipEnable: true
+                                    tooltipText: "به زودی"
                                     textColor: "#000000"
                                     color: "#d6d6d6"
                                     textSize: 1
@@ -410,15 +411,16 @@ Item{
                                 Item{Layout.fillWidth: true}
 
                                 //-- Button login github --//
-                                ButtonIcon{
+                                ButtonImageIcon{
                                     id: logingithub
                                     Layout.preferredWidth: parent.width * 0.3
                                     Layout.fillHeight: parent
-                                    icon: Icons.github_box
-                                    iconFont: webfont.name
-                                    iconColor: "#000000"
-                                    iconSize: 2
+                                    iconColor: "transparent"
+                                    icon: "qrc:/Icons/github(1).png"
+                                    iconSize: 20
                                     text: "ورود با گیت هاب"
+                                    tooltipEnable: true
+                                    tooltipText: "به زودی"
                                     textColor: "#000000"
                                     color: "#d6d6d6"
                                     textSize: 1
@@ -430,14 +432,15 @@ Item{
                                 Item{Layout.fillWidth: true}
 
                                 //-- Button login facebook --//
-                                ButtonIcon{
+                                ButtonImageIcon{
                                     id: loginfacebook
                                     Layout.preferredWidth: parent.width * 0.3
                                     Layout.fillHeight: parent
-                                    icon: Icons.facebook
-                                    iconFont: webfont.name
-                                    iconColor: "#000000"
-                                    iconSize: 2
+                                    iconColor: "transparent"
+                                    icon: "qrc:/Icons/facebook.png"
+                                    iconSize: 20
+                                    tooltipEnable: true
+                                    tooltipText: "به زودی"
                                     text: "ورود با فیس بوک"
                                     textColor: "#000000"
                                     color: "#d6d6d6"

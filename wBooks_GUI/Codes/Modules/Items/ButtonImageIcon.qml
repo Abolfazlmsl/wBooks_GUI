@@ -16,7 +16,13 @@ Rectangle{
     property int iconRotation: 0
     property int iconSize: 20
 
+    property bool tooltipEnable: false
+    property string tooltipText: ""
+
     signal btnClicked()
+
+    ToolTip.text: tooltipText
+    ToolTip.visible: (area.containsMouse && tooltipEnable)
 
     RowLayout{
         anchors.fill: parent
@@ -69,7 +75,9 @@ Rectangle{
         Item{Layout.fillWidth: true}
     }
     MouseArea{
+        id: area
         anchors.fill: parent
+        hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
         onClicked: {
             btnClicked()
