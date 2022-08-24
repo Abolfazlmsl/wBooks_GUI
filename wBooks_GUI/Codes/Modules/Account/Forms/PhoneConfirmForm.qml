@@ -16,11 +16,23 @@ Item {
     property alias sendAgain: lbl_SendAgain.visible
     property string phoneNumber: ""
     property double timeMinutes: 1
+    property string btnText: ""
+
+    property double rightMargin: 0
+    property double leftMargin: 0
 
     property bool bottomText: true
 
+    function clearCodes(){
+        txf_confirm_1.inputText.text = ""
+        txf_confirm_2.inputText.text = ""
+        txf_confirm_3.inputText.text = ""
+        txf_confirm_4.inputText.text = ""
+    }
+
     signal timerStart()
     onTimerStart: {
+        clearCodes()
         timer_confirmSMS.resetTimer()
         timer_confirmSMS.minutes = timeMinutes
         timer_confirmSMS.startTimer()
@@ -51,8 +63,8 @@ Item {
                 Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 100
-                    Layout.rightMargin: rMargin
-                    Layout.leftMargin: lMargin
+                    Layout.rightMargin: rightMargin
+                    Layout.leftMargin: leftMargin
                     color: "transparent"
                     Image{
                         id: image
@@ -60,11 +72,12 @@ Item {
                         source: "qrc:/Images/Logo2.png"
                         mipmap: true
                         fillMode: Image.PreserveAspectFit
-                        ColorOverlay {
-                            anchors.fill: image
-                            source: image
-                            color: color4
-                        }
+                        visible: false
+                    }
+                    ColorOverlay {
+                        anchors.fill: image
+                        source: image
+                        color: color4
                     }
                 }
 
@@ -74,8 +87,8 @@ Item {
                 Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50
-                    Layout.rightMargin: rMargin
-                    Layout.leftMargin: lMargin
+                    Layout.rightMargin: rightMargin
+                    Layout.leftMargin: leftMargin
                     color: "#474749"
                     Label{
                         anchors.centerIn: parent
@@ -89,8 +102,8 @@ Item {
                 Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 360
-                    Layout.rightMargin: rMargin
-                    Layout.leftMargin: lMargin
+                    Layout.rightMargin: rightMargin
+                    Layout.leftMargin: leftMargin
                     color: "#e2e2e2"
                     ColumnLayout{
                         anchors.fill: parent
@@ -372,24 +385,24 @@ Item {
                         Item{Layout.preferredHeight: 20}
 
                         //-- Button regist --//
-                        ButtonIcon{
+                        ButtonImageIcon{
                             id: btn_Confirm
                             Layout.fillWidth: true
                             Layout.preferredHeight: 50
                             Layout.rightMargin: 50
                             Layout.leftMargin: 50
-                            icon: Icons.account
-                            iconFont: webfont.name
+                            icon: "qrc:/Icons/add-user.png"
                             iconColor: "#ffffff"
-                            iconSize: 2
-                            text: "تکمیل ثبت نام"
+                            text: btnText
                             textColor: "#ffffff"
                             color: "#d43460"
                             textSize: 1
                             onBtnClicked: {
+                                clearCodes()
                                 confirmBtnClicked()
                             }
                             Keys.onEnterPressed:{
+                                clearCodes()
                                 confirmBtnClicked()
                             }
                         }
@@ -401,8 +414,8 @@ Item {
                 Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 2
-                    Layout.rightMargin: rMargin
-                    Layout.leftMargin: lMargin
+                    Layout.rightMargin: rightMargin
+                    Layout.leftMargin: leftMargin
                     color: "#d43460"
                 }
 
@@ -413,8 +426,8 @@ Item {
                 Item{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 38
-                    Layout.rightMargin: rMargin
-                    Layout.leftMargin: lMargin
+                    Layout.rightMargin: rightMargin
+                    Layout.leftMargin: leftMargin
                     visible: bottomText
                     RowLayout{
                         anchors.fill: parent
@@ -428,7 +441,7 @@ Item {
                             Layout.fillHeight: true
                             imgSource: "qrc:/Icons/user.png"
                             imgColor: color4
-                            imgFlip: true
+                            flip: true
                         }
 
                         Item{Layout.preferredWidth: 10}
@@ -460,6 +473,7 @@ Item {
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
                                 onClicked: {
+                                    clearCodes()
                                     bottomBtnClicked()
                                 }
                             }

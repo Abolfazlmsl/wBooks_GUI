@@ -137,7 +137,6 @@
         <file>Codes/Modules/Items/WalletItem.qml</file>
         <file>Codes/Modules/Items/IncreaseAmountItem.qml</file>
         <file>Codes/Modules/MainModules/Ui_Module/TicketItem.qml</file>
-        <file>Codes/Modules/MainModules/Ui_Module/ForgotPasswordItem.qml</file>
         <file>Codes/Modules/Items/ButtonShadow.qml</file>
         <file>Codes/Modules/MainModules/Ui_Module/AboutUsItem.qml</file>
         <file>Codes/Modules/MainModules/Ui_Module/SupportItem.qml</file>
@@ -212,5 +211,10 @@
         <file>Codes/Modules/Account/Forms/PhoneConfirmForm.qml</file>
         <file>Codes/Modules/Account/Forms/WelcomePage.qml</file>
         <file>Codes/Modules/Items/ButtonImageIcon.qml</file>
+        <file>Codes/Modules/Account/Forms/EnterPhoneItem.qml</file>
+        <file>Codes/Modules/Account/Forms/ChangePasswordForm.qml</file>
+        <file>Images/Banner Home.jpg</file>
+        <file>Codes/Modules/MainModules/Ui_Module/ChangePasswordItem.qml</file>
+        <file>Codes/Modules/Items/SuccessItem.qml</file>
     </qresource>
 </RCC>

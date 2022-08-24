@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Styles 1.4
+import QtGraphicalEffects 1.15
 
 import "./../../../Fonts/Icon.js" as Icons
 
@@ -27,6 +28,10 @@ Rectangle{
     property double fontSize: 1
     property string placeHolderPosition: "Right" //Center
     property alias textPosition: root_txf.state // "Right", "Left", "Center"
+
+    property alias imgIcon: iconTxt.source
+    property bool iconAsImage: false
+    property int iconRotation: 0
     signal acceptedLogin()
 
     property int selectStart
@@ -296,7 +301,8 @@ Rectangle{
         height: parent.height
         anchors.right: parent.right
         anchors.rightMargin: 15
-        visible: iconVisible
+        visible: (iconVisible && !iconAsImage)
+        rotation: iconRotation
 
         text: Icons.key
         color: iconColor
@@ -304,6 +310,28 @@ Rectangle{
         font.pixelSize: Qt.application.font.pixelSize * 1.5
 
         verticalAlignment: Qt.AlignVCenter
+    }
+    Rectangle{
+        width: 20
+        height: parent.height
+        anchors.right: parent.right
+        anchors.rightMargin: 5
+        visible: (iconVisible && iconAsImage)
+        rotation: iconRotation
+        color: "transparent"
+        Image{
+            id: iconTxt
+            anchors.fill: parent
+            source: ""
+            mipmap: true
+            fillMode: Image.PreserveAspectFit
+            visible: false
+        }
+        ColorOverlay {
+            anchors.fill: iconTxt
+            source: iconTxt
+            color: iconColor
+        }
     }
 }
 

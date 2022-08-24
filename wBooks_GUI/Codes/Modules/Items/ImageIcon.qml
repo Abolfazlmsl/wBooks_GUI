@@ -7,7 +7,7 @@ Rectangle{
 
     property alias imgSource: image.source
     property string imgColor: color4
-    property bool imgFlip: false
+    property bool flip: false
 
     color: "transparent"
     Image{
@@ -16,13 +16,15 @@ Rectangle{
         source: ""
         mipmap: true
         fillMode: Image.PreserveAspectFit
-        transform: Matrix4x4 {
-              matrix: (imgFlip)?Qt.matrix4x4( -1, 0, 0, image.width, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1):""
-            }
-        ColorOverlay {
-            anchors.fill: image
-            source: image
-            color: imgColor
-        }
+//        transform: Matrix4x4 {
+//              matrix: (flip)?Qt.matrix4x4( -1, 0, 0, image.width, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1):""
+//            }
+        mirror: flip
+        visible: false
+    }
+    ColorOverlay {
+        anchors.fill: image
+        source: image
+        color: imgColor
     }
 }

@@ -125,11 +125,12 @@ Item{
                                 source: "qrc:/Images/Logo2.png"
                                 mipmap: true
                                 fillMode: Image.PreserveAspectFit
-                                ColorOverlay {
-                                    anchors.fill: image
-                                    source: image
-                                    color: color4
-                                }
+                                visible: false
+                            }
+                            ColorOverlay {
+                                anchors.fill: image
+                                source: image
+                                color: color4
                             }
                         }
 
@@ -181,7 +182,8 @@ Item{
                                             Layout.preferredHeight: 45
                                             Layout.fillWidth: true
                                             label: "نام"
-                                            icon: Icons.account
+                                            iconAsImage: true
+                                            imgIcon: "qrc:/Icons/id-card.png"
                                             itemRadius: 0
                                             placeholder: "نام"
                                             placeHolderPosition: "Center"
@@ -204,7 +206,8 @@ Item{
                                             Layout.preferredHeight: 45
                                             Layout.fillWidth: true
                                             label: "نام خانوادگی"
-                                            icon: Icons.account
+                                            iconAsImage: true
+                                            imgIcon: "qrc:/Icons/id-card.png"
                                             itemRadius: 0
                                             placeholder: "نام خانوادگی"
                                             placeHolderPosition: "Center"
@@ -229,7 +232,9 @@ Item{
                                     Layout.preferredHeight: 45
                                     Layout.fillWidth: true
                                     label: "شماره همراه"
-                                    icon: Icons.phone
+                                    iconAsImage: true
+                                    imgIcon: "qrc:/Icons/phone-call.png"
+                                    iconRotation: 270
                                     itemRadius: 0
                                     placeholder: "شماره همراه"
                                     placeHolderPosition: "Center"
@@ -253,7 +258,8 @@ Item{
                                     Layout.preferredHeight: 45
                                     Layout.fillWidth: true
                                     label: "ایمیل"
-                                    icon: Icons.email
+                                    iconAsImage: true
+                                    imgIcon: "qrc:/Icons/arroba.png"
                                     itemRadius: 0
                                     placeholder: "ایمیل"
                                     placeHolderPosition: "Center"
@@ -286,7 +292,8 @@ Item{
                                             Layout.preferredHeight: 45
                                             Layout.fillWidth: true
                                             label: "رمز عبور"
-                                            icon: Icons.key
+                                            iconAsImage: true
+                                            imgIcon: "qrc:/Icons/key.png"
                                             placeholder: "رمز عبور"
                                             echoMode: TextInput.Password
                                             itemRadius: 0
@@ -348,7 +355,8 @@ Item{
                                             Layout.preferredHeight: 45
                                             Layout.fillWidth: true
                                             label: "تکرار رمز عبور"
-                                            icon: Icons.key
+                                            iconAsImage: true
+                                            imgIcon: "qrc:/Icons/key.png"
                                             placeholder: "تکرار رمز عبور"
                                             echoMode: TextInput.Password
                                             itemRadius: 0
@@ -402,22 +410,36 @@ Item{
                                 Item{Layout.preferredHeight: 20}
 
                                 //-- Button regist --//
-                                ButtonIcon{
+                                ButtonImageIcon{
                                     id: regist
                                     Layout.fillWidth: true
                                     Layout.preferredHeight: 50
                                     Layout.rightMargin: 50
                                     Layout.leftMargin: 50
-                                    icon: Icons.arrow_left
-                                    iconFont: webfont.name
+                                    icon: "qrc:/Icons/next.png"
+                                    iconRotation: 180
                                     iconColor: "#ffffff"
-                                    iconSize: 2
                                     text: "مرحله بعد"
                                     textColor: "#ffffff"
                                     color: "#d43460"
                                     textSize: 1
                                     direction: "Left_Right"
                                     onBtnClicked: {
+                                        var obj = db.readAllData("users")
+                                        var data
+                                        var phoneExist = false
+                                        var emailExist = false
+                                        for(var i=0 ; i< obj.length ; i++){
+                                            data = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
+                                            if (data.phone === phone.text){
+                                                phoneExist = true
+                                                break;
+                                            }else if (data.email === email.text){
+                                                emailExist = true
+                                                break;
+                                            }
+                                        }
+
                                         if (parseInt(firstname.length) === 0){
                                             getMessage("نام خود را وارد کنید")
                                         }else if (parseInt(lastname.length) === 0){
@@ -433,10 +455,15 @@ Item{
                                             getMessage("تکرار رمز عبور خود را وارد نمایید")
                                         }else if (password.text != password_repeat.text){
                                             getMessage("رمز عبور و تکرار رمز عبور یکی نمی باشد")
+                                        }else if (phoneExist){
+                                            getMessage("کاربری با شماره همراه وارد شده قبلا ثبت نام کرده است")
+                                        }else if (emailExist){
+                                            getMessage("کاربری با ایمیل وارد شده قبلا ثبت نام کرده است")
                                         }else{
                                             //                                MainPython.sendSMS(phone.text)
                                             confirmItem.timer = true
                                             confirmItem.sendAgain = false
+                                            getMessage("")
                                             swipe_register.currentIndex = 1
                                         }
                                     }
@@ -473,9 +500,9 @@ Item{
                                 ImageIcon{
                                     Layout.preferredWidth: 20
                                     Layout.fillHeight: true
-                                    imgSource: "qrc:/Icons/add-user.png"
+                                    imgSource: "qrc:/Icons/user.png"
                                     imgColor: color4
-                                    imgFlip: true
+                                    flip: true
                                 }
 
                                 Item{Layout.preferredWidth: 10}
@@ -507,6 +534,7 @@ Item{
                                         anchors.fill: parent
                                         cursorShape: Qt.PointingHandCursor
                                         onClicked: {
+                                            getMessage("")
                                             mainPage.state = "Login"
                                         }
                                     }
@@ -536,10 +564,14 @@ Item{
             id: confirmItem
             phoneNumber: phone.text
             timeMinutes: 2
+            rightMargin: rMargin
+            leftMargin: lMargin
+            btnText: "تکمیل ثبت نام"
 
             onPhoneClicked: {
                 confirmItem.timer = false
                 confirmItem.sendAgain = true
+                getMessage("")
                 swipe_register.currentIndex = 0
             }
 
@@ -547,28 +579,29 @@ Item{
                 confirmItem.timer = false
                 confirmItem.sendAgain = true
                 mainPage.state = "Login"
+                getMessage("")
                 swipe_register.currentIndex = 0
             }
 
             onConfirmBtnClicked: {
-//                var data = {
-//                    "name": firstname.text + " " + lastname.text,
-//                    "email": email.text,
-//                    "phone": phone.text,
-//                    "password": password.text,
-//                    "gender": "",
-//                    "mybooks": "",
-//                    "myaudiobooks": "",
-//                    "myvideos": "",
-//                    "mywallet": "",
-//                    "mylicense": "",
-//                    "profile": "",
-//                    "user_id": "",
-//                    "basket": ""
-//                }
+                var data = {
+                    "name": firstname.text + " " + lastname.text,
+                    "email": email.text,
+                    "phone": phone.text,
+                    "password": password.text,
+                    "gender": "",
+                    "mybooks": "",
+                    "myaudiobooks": "",
+                    "myvideos": "",
+                    "mywallet": "",
+                    "mylicense": "",
+                    "profile": "",
+                    "user_id": "",
+                    "basket": ""
+                }
 
-//                db.addTable("users", true)
-//                db.storeData("users", data, "")
+                db.addTable("users", true)
+                db.storeData("users", data, "")
 
                 setting.userName = firstname.text + " " + lastname.text
                 setting.userPhone = phone.text
@@ -577,6 +610,7 @@ Item{
                 setting.isLogined = true
                 confirmItem.timer = false
                 confirmItem.sendAgain = true
+                getMessage("")
                 swipe_register.currentIndex = 2
 //                mainPage.state = "Home"
                 //                                if (txf_confirm.text === smsCode){
@@ -604,12 +638,15 @@ Item{
 
         WelcomePage{
             id: welcomeItem
-
+            rightMargin: rMargin
+            leftMargin: lMargin
             onTopBtnClicked: {
+                getMessage("")
                 mainPage.state = "Edit"
             }
 
             onBottomBtnClicked: {
+                getMessage("")
                 mainPage.state = "Membership"
             }
         }

@@ -12,6 +12,7 @@ Item {
     property string rightText: ""
     property string leftText: ""
     property int factor: 12
+    property bool itemVisible: true
     property alias position: topSliderItem.state // "Right", "Left", "Center", "None"
 
     state: "Right"
@@ -58,11 +59,13 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.margins: 8
             source: source
+//            fillMode: Image.PreserveAspectFit
 
             ColumnLayout{
                 width: parent.width * 0.3
                 height: parent.height * 0.2
                 clip: true
+                visible: itemVisible
                 x: factor * parent.width / 20
                 y: 9 * parent.height / 14
 

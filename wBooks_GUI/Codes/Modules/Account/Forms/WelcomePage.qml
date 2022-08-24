@@ -14,6 +14,9 @@ Item {
     signal topBtnClicked()
     signal bottomBtnClicked()
 
+    property double rightMargin: 0
+    property double leftMargin: 0
+
     Flickable{
         anchors.fill: parent
         contentHeight: homeItem.height
@@ -35,8 +38,8 @@ Item {
                 Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 100
-                    Layout.rightMargin: rMargin
-                    Layout.leftMargin: lMargin
+                    Layout.rightMargin: rightMargin
+                    Layout.leftMargin: leftMargin
                     color: "transparent"
                     Image{
                         id: image
@@ -44,11 +47,12 @@ Item {
                         source: "qrc:/Images/Logo2.png"
                         mipmap: true
                         fillMode: Image.PreserveAspectFit
-                        ColorOverlay {
-                            anchors.fill: image
-                            source: image
-                            color: color4
-                        }
+                        visible: false
+                    }
+                    ColorOverlay {
+                        anchors.fill: image
+                        source: image
+                        color: color4
                     }
                 }
 
@@ -58,8 +62,8 @@ Item {
                 Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50
-                    Layout.rightMargin: rMargin
-                    Layout.leftMargin: lMargin
+                    Layout.rightMargin: rightMargin
+                    Layout.leftMargin: leftMargin
                     color: "#474749"
                     Label{
                         anchors.centerIn: parent
@@ -73,8 +77,8 @@ Item {
                 Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 360
-                    Layout.rightMargin: rMargin
-                    Layout.leftMargin: lMargin
+                    Layout.rightMargin: rightMargin
+                    Layout.leftMargin: leftMargin
                     color: "#e2e2e2"
                     ColumnLayout{
                         anchors.fill: parent
@@ -237,8 +241,8 @@ Item {
                 Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 2
-                    Layout.rightMargin: rMargin
-                    Layout.leftMargin: lMargin
+                    Layout.rightMargin: rightMargin
+                    Layout.leftMargin: leftMargin
                     color: "#d43460"
                 }
 

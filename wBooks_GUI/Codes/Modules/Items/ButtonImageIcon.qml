@@ -12,6 +12,9 @@ Rectangle{
     property string textColor: "#ffffff"
     property double textSize: 1
     property string direction: "Right_Left" //"Left_Right"
+    property bool flip: false
+    property int iconRotation: 0
+    property int iconSize: 20
 
     signal btnClicked()
 
@@ -22,8 +25,9 @@ Rectangle{
         Item{Layout.fillWidth: true}
 
         Rectangle{
-            Layout.preferredWidth: 20
+            Layout.preferredWidth: iconSize
             Layout.fillHeight: true
+            rotation: iconRotation
             color: "transparent"
             Image{
                 id: iconTxt
@@ -31,11 +35,16 @@ Rectangle{
                 source: ""
                 mipmap: true
                 fillMode: Image.PreserveAspectFit
-                ColorOverlay {
-                    anchors.fill: iconTxt
-                    source: iconTxt
-                    color: iconColor
-                }
+//                transform: Matrix4x4 {
+//                      matrix: (flip)?Qt.matrix4x4( -1, 0, 0, iconTxt.width, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1):""
+//                    }
+                mirror: flip
+                visible: false
+            }
+            ColorOverlay {
+                anchors.fill: iconTxt
+                source: iconTxt
+                color: iconColor
             }
         }
 

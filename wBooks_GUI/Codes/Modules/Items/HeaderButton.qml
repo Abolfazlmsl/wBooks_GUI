@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
+import QtGraphicalEffects 1.15
 
 Rectangle{
 
@@ -9,15 +10,23 @@ Rectangle{
     property string iconFont: webfont.name
 
     property bool isClick: false
-    property string itemColor: color15
 
     property real iconWidth: rightMenu_DashboardIcon.width + (24 * ratio)
+
+    property bool iconAsImage: false
+    property alias imgIcon: iconTxt.source
+    property int imageSize: 20
+    property bool flip: false
+    property int iconRotation: 0
+    property string iconColor: color15
 
     signal btnClicked
 
     color: "transparent"
     Layout.fillHeight: true
-    Layout.preferredWidth: 5 + rightMenu_DashboardLabel.contentWidth + rightMenu_DashboardIcon.contentWidth
+    Layout.preferredWidth: (iconAsImage)?
+                               5 + rightMenu_DashboardLabel.contentWidth + iconImage.width:
+                               5 + rightMenu_DashboardLabel.contentWidth + rightMenu_DashboardIcon.contentWidth
 
     //-- Dashboard Label --//
     Label{
@@ -50,11 +59,40 @@ Rectangle{
         anchors.left: spacer.right
         anchors.verticalCenter: parent.verticalCenter
         width: Text.width
-        color: color15
+        color: iconColor
+        visible: !iconAsImage
 
         font.family: iconFont
         font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
 
+    }
+
+    Rectangle{
+        id: iconImage
+        anchors.left: spacer.right
+        anchors.verticalCenter: parent.verticalCenter
+        width: imageSize
+        height: parent.height
+        rotation: iconRotation
+        visible: iconAsImage
+        color: "transparent"
+        Image{
+            id: iconTxt
+            anchors.fill: parent
+            source: ""
+            mipmap: true
+            fillMode: Image.PreserveAspectFit
+//            transform: Matrix4x4 {
+//                  matrix: (flip)?Qt.matrix4x4( -1, 0, 0, iconTxt.width, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1):""
+//                }
+            mirror: flip
+            visible: false
+        }
+        ColorOverlay {
+            anchors.fill: iconTxt
+            source: iconTxt
+            color: iconColor
+        }
     }
 
     //-- on Click Dashboard --//

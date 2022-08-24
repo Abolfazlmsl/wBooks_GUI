@@ -846,11 +846,6 @@ Window {
                     source: "qrc:/Images/Logo Footer2.png"
                     fillMode: Image.PreserveAspectFit
                     mipmap: true
-//                    ColorOverlay {
-//                        anchors.fill: mainLogo
-//                        source: mainLogo
-//                        color: "#ff0000"
-//                    }
                 }
 
 
@@ -864,10 +859,11 @@ Window {
 
                 //- navbar --//
                 HeaderButton{
-                    icon: Icons.account
+
                     isClick: homeClick
                     text: "خانه"
-                    iconFont: webfont.name
+                    iconAsImage: true
+                    imgIcon: "qrc:/Icons/home.png"
 
                     onBtnClicked: {
                         mainPage.state = "Home"
@@ -883,8 +879,10 @@ Window {
                 }
 
                 HeaderButton{
-                    icon: Icons.diamond_stone
+                    iconAsImage: true
+                    imgIcon: "qrc:/Icons/subscribe.png"
                     isClick: membershipClick
+                    imageSize: 30
                     text: "اشتراک"
                     onBtnClicked: {
                         mainPage.state = "Membership"
@@ -900,7 +898,8 @@ Window {
                 }
 
                 HeaderButton{
-                    icon: Icons.bookshelf
+                    iconAsImage: true
+                    imgIcon: "qrc:/Icons/education.png"
                     text: "کتاب های سریالی"
                     isClick: serialBookClick
                     onBtnClicked: {
@@ -917,7 +916,8 @@ Window {
                 }
 
                 HeaderButton{
-                    icon: Icons.headphones
+                    iconAsImage: true
+                    imgIcon: "qrc:/Icons/audio-book.png"
                     text: "کتاب های صوتی"
                     isClick: audioBookClick
                     onBtnClicked: {
@@ -934,7 +934,8 @@ Window {
                 }
 
                 HeaderButton{
-                    icon: Icons.library
+                    iconAsImage: true
+                    imgIcon: "qrc:/Icons/education.png"
                     text: "کتابخانه ی شما"
                     isClick: yourLibraryClick
                     onBtnClicked: {
@@ -1127,7 +1128,7 @@ Window {
                         }
 
                         //-- Account register --//
-                        ButtonIcon{
+                        ButtonImageIcon{
                             id: header_AccountRegister
                             Layout.fillHeight: true
                             Layout.preferredWidth: parent.width * 0.85
@@ -1135,11 +1136,10 @@ Window {
                             Layout.bottomMargin: 10
                             visible: !setting.isLogined
                             radius: 15
-                            iconSize: 2 * ratio
                             textSize: 1.4 * ratio
                             color: "#ffffff"
-                            icon: "\uf007"
-                            iconFont: awesome.name
+                            icon: "qrc:/Icons/login.png"
+                            iconSize: 30
                             iconColor: "#000000"
                             text: "همین حالا ثبت نام کن"
                             textColor: "#000000"
@@ -1158,7 +1158,7 @@ Window {
                         }
 
                         //-- Account login --//
-                        ButtonIcon{
+                        ButtonImageIcon{
                             id: header_AccountLogin
                             Layout.fillHeight: true
                             Layout.preferredWidth: parent.width * 0.5
@@ -1166,10 +1166,10 @@ Window {
                             Layout.bottomMargin: 10
                             visible: !setting.isLogined
                             radius: 15
-                            iconSize: 2 * ratio
                             textSize: 1.4 * ratio
                             color: "#d43460"
-                            icon: Icons.login
+                            icon: "qrc:/Icons/user.png"
+                            flip: true
                             iconColor: "#ffffff"
                             text: "ورود کاربر"
                             textColor: "#ffffff"

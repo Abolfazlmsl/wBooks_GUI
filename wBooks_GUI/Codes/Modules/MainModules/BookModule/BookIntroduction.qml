@@ -266,34 +266,44 @@ Rectangle {
                                             horizontalAlignment: Qt.AlignHCenter
                                         }
 
-                                        Label{
-                                            id: nameLabel
+                                        Item{
                                             Layout.preferredWidth: 100
                                             Layout.fillHeight: true
-
                                             Layout.rightMargin: 15
+                                            ColumnLayout{
+                                                anchors.fill: parent
+                                                spacing: 0
 
-                                            text: commentModel.get(index).name
-                                            color: color2
-                                            font.family: mainFont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                                Label{
+                                                    id: nameLabel
+                                                    Layout.fillWidth: true
+                                                    Layout.preferredHeight: contentHeight
 
-                                            verticalAlignment: Qt.AlignVCenter
-                                        }
+                                                    text: commentModel.get(index).name
+                                                    color: color2
+                                                    font.family: mainFont.name
+                                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                                    horizontalAlignment: Text.AlignLeft
+                                                    LayoutMirroring.enabled: true
+                                                    verticalAlignment: Qt.AlignVCenter
+                                                }
 
-                                        Label{
-                                            id: dateLabel
-                                            Layout.preferredWidth: 50
-                                            Layout.fillHeight: true
+                                                Item{Layout.preferredHeight: 2}
+                                                Label{
+                                                    id: dateLabel
+                                                    Layout.fillWidth: true
+                                                    Layout.preferredHeight: contentHeight
 
-                                            Layout.rightMargin: 30
+                                                    text: commentModel.get(index).date
+                                                    color: color15
+                                                    font.family: mainFaNumFont.name
+                                                    font.pixelSize: Qt.application.font.pixelSize * 1
+                                                    horizontalAlignment: Text.AlignLeft
+                                                    LayoutMirroring.enabled: true
+                                                    verticalAlignment: Qt.AlignVCenter
+                                                }
 
-                                            text: commentModel.get(index).date
-                                            color: color15
-                                            font.family: mainFaNumFont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 1
-                                            horizontalAlignment: Qt.AlignHCenter
-                                            verticalAlignment: Qt.AlignVCenter
+                                            }
                                         }
 
                                         Item{Layout.fillWidth: true}

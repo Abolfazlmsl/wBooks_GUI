@@ -40,7 +40,8 @@ Item {
                 id: firstPage
                 TopSliderPage1{
                     anchors.fill: parent
-                    source: "qrc:/Images/callofduty.jpg"
+                    source: "qrc:/Images/Banner Home.jpg"
+                    itemVisible: false
                     rate: 80
                     leftText: "بخوانید"
                     rightText: "اطلاعات بیشتر"
