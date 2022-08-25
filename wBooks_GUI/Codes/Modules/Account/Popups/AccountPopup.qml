@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.15
 
 import "./../../../../Fonts/Icon.js" as Icons
+import "./../../../../Functions/Funcs.js" as Functions
 
 Rectangle {
 
@@ -75,7 +76,7 @@ Rectangle {
                         width: parent.width
                         height: parent.height / 2
                         anchors.top: txt1.bottom
-                        text: "شماره کاربری: 145625"
+                        text: "شماره کاربری: " + setting.user_number
                         font.family: mainFaNumFont.name
                         color: "#ffffff"
 
@@ -215,7 +216,7 @@ Rectangle {
                     anchors.rightMargin: 10
                     anchors.topMargin: 10
                     color: "#ffffff"
-                    text: (myMembershipModel.count > 0)? myMembershipModel.get(0).remaining + " روز از اشتراک شما باقی مانده است" : "شما اشتراک فعالی ندارید"
+                    text: (setting.isLicense)? Functions.remainingLicenseTime(setting.licenseExpiredTime) + " روز از اشتراک شما باقی مانده است" : "شما اشتراک فعالی ندارید"
                     font.family: mainFaNumFont.name
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter

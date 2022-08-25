@@ -16,7 +16,6 @@ Rectangle{
 
     property alias title: lbl_Title.text
     property alias bgColor: innerRect.color
-    property int price: 1
 
     signal dashboard_btnClicked
 
@@ -150,7 +149,7 @@ Rectangle{
                             Label{
                                 id:lbl_Price
                                 anchors.centerIn: parent
-                                text: Functions.numberWithCommas(price) + " تومان"
+                                text: Functions.numberWithCommas(setting.mywallet) + " تومان"
                                 font.family: mainFaNumFont.name
                                 font.pixelSize: 60 //* widthRatio
                                 font.bold: true

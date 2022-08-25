@@ -94,7 +94,7 @@ Rectangle{
                                 width: parent.width
                                 height: parent.height / 3
                                 anchors.top: txt1.bottom
-                                text: "شماره کاربری: 145625"
+                                text: "شماره کاربری: " + setting.user_number
                                 font.family: mainFaNumFont.name
                                 color: color4
 
@@ -383,13 +383,22 @@ Rectangle{
             var fileName = path.slice(path.lastIndexOf("/")+1)
             var cPath = desktopfunctions.copyImagetoDb(path, offlineStoragePath, fileName)
             setting.profile = cPath
+            var licenseData = {
+                "image": setting.licenseImage,
+                "purchase_id": setting.licensePurchaseNumber,
+                "time": setting.licenseTime,
+                "expiredTime": setting.licenseExpiredTime
+            }
             var data = {
                 "id": setting.user_id,
                 "name": setting.userName,
                 "email": setting.userEmail,
                 "phone": setting.userPhone,
                 "password": setting.password,
-                "gender": setting.gender
+                "gender": setting.gender,
+                "mywallet": setting.mywallet,
+                "user_number": setting.user_number,
+                "mylicense": licenseData
             }
             db.storeData("users", data, cPath)
         }

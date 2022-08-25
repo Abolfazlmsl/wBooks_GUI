@@ -4,12 +4,29 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls.Styles 1.4
 
 import "./../../../Fonts/Icon.js" as Icons
+import "./../../../Functions/Funcs.js" as Functions
 
 import "./../../Modules/Items"
 import "./../MainModules/Ui_Module"
 
 Item{
     anchors.fill: parent
+
+    function resetLicense(){
+        setting.isLicense = false
+        setting.licenseExpiredTime = ""
+        setting.licenseImage = ""
+        setting.licensePurchaseNumber = 0
+        setting.licenseTime = 0
+    }
+
+    Component.onCompleted: {
+        if (setting.isLicense){
+            if (Functions.remainingLicenseTime(setting.licenseExpiredTime) === 0){
+                resetLicense()
+            }
+        }
+    }
 
     SwipeView{
         id: memView
@@ -77,7 +94,7 @@ Item{
                                             id: image
                                             Layout.preferredWidth: 50
                                             Layout.fillHeight: true
-                                            source: myMembershipModel.get(0).source
+                                            source: setting.licenseImage
                                             mipmap: true
                                             fillMode: Image.PreserveAspectFit
                                         }
@@ -93,7 +110,7 @@ Item{
                                                 anchors.centerIn: parent
                                                 font.family: mainFaNumFont.name
                                                 color: "black"
-                                                text: (myMembershipModel.count > 0)? "اشتراک ویژه " + myMembershipModel.get(0).time + " روزه":"اشتراک ویژه ی شما به پایان رسیده است"
+                                                text: (setting.isLicense)? "اشتراک ویژه " + setting.licenseTime + " روزه":"اشتراک ویژه ی شما به پایان رسیده است"
                                                 font.pixelSize: Qt.application.font.pixelSize * 1.7* ratio
                                                 verticalAlignment: Qt.AlignVCenter
                                             }
@@ -104,13 +121,13 @@ Item{
                                         Rectangle{
                                             Layout.preferredWidth: 150
                                             Layout.fillHeight: true
-                                            visible: (myMembershipModel.count > 0)?true:false
+                                            visible: setting.isLicense
                                             color: "transparent"
                                             Label{
                                                 anchors.centerIn: parent
                                                 font.family: mainFaNumFont.name
                                                 color: "#a0a0a0"
-                                                text: "(صورتحساب 935756)"
+                                                text: "(صورتحساب " + setting.licensePurchaseNumber + ")"
                                                 font.pixelSize: Qt.application.font.pixelSize * 1.4* ratio
                                                 verticalAlignment: Qt.AlignVCenter
                                             }
@@ -121,13 +138,13 @@ Item{
                                         Rectangle{
                                             Layout.preferredWidth: parent.width * 0.05
                                             Layout.preferredHeight: width
-                                            enabled: (myMembershipModel.count > 0)? true:false
+                                            enabled: setting.isLicense
                                             color: "transparent"
                                             ToolTip.text: "مشاهده کتاب ها"
                                             ToolTip.visible: "مشاهده کتاب ها" ? watchArea.containsMouse : false
                                             Label{
                                                 anchors.centerIn: parent
-                                                enabled: (myMembershipModel.count > 0)? true:false
+                                                enabled: setting.isLicense
                                                 font.family: webfont.name
 //                                                color: color4
                                                 text: Icons.eye
@@ -147,13 +164,13 @@ Item{
                                         Rectangle{
                                             Layout.preferredWidth: parent.width * 0.05
                                             Layout.preferredHeight: width
-                                            enabled: (myMembershipModel.count > 0)? true:false
+                                            enabled: setting.isLicense
                                             color: "transparent"
                                             ToolTip.text: "تمدید"
                                             ToolTip.visible: "تمدید" ? extensionArea.containsMouse : false
                                             Label{
                                                 anchors.centerIn: parent
-                                                enabled: (myMembershipModel.count > 0)? true:false
+                                                enabled: setting.isLicense
                                                 font.family: webfont.name
 //                                                color: color4
                                                 text: Icons.repeat
@@ -173,14 +190,14 @@ Item{
                                         Rectangle{
                                             Layout.preferredWidth: parent.width * 0.05
                                             Layout.preferredHeight: width
-                                            enabled: (myMembershipModel.count > 0)? true:false
+                                            enabled: setting.isLicense
                                             color: "transparent"
                                             ToolTip.text: "حذف"
                                             ToolTip.visible: "حذف" ? deleteArea.containsMouse : false
                                             Label{
                                                 anchors.centerIn: parent
                                                 font.family: webfont.name
-                                                enabled: (myMembershipModel.count > 0)? true:false
+                                                enabled: setting.isLicense
 //                                                color: color4
                                                 text: Icons.trash_can
                                                 font.pixelSize: Qt.application.font.pixelSize * 2.5* ratio
@@ -191,7 +208,26 @@ Item{
                                                 cursorShape: Qt.PointingHandCursor
                                                 hoverEnabled: true
                                                 onClicked: {
-                                                    myMembershipModel.clear()
+                                                    resetLicense()
+                                                    var licenseData = {
+                                                        "image": "",
+                                                        "purchase_id": 0,
+                                                        "time": 0,
+                                                        "expiredTime": ""
+                                                    }
+
+                                                    var data = {
+                                                        "id": setting.user_id,
+                                                        "name": setting.userName,
+                                                        "email": setting.userEmail,
+                                                        "phone": setting.userPhone,
+                                                        "password": setting.password,
+                                                        "gender": setting.gender,
+                                                        "mywallet": setting.mywallet,
+                                                        "user_number": setting.user_number,
+                                                        "mylicense": licenseData
+                                                    }
+                                                    db.storeData("users", data, setting.profile)
                                                 }
                                             }
                                         }
@@ -208,7 +244,7 @@ Item{
                                         anchors.fill: parent
                                         font.family: mainFaNumFont.name
                                         font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
-                                        text: (myMembershipModel.count > 0)? myMembershipModel.get(0).remaining + " روز باقی مانده است":"-"
+                                        text: (setting.isLicense)? Functions.remainingLicenseTime(setting.licenseExpiredTime) + " روز باقی مانده است":"-"
                                         color: "#ffffff"
                                         verticalAlignment: Qt.AlignVCenter
                                         horizontalAlignment: Qt.AlignHCenter
@@ -290,7 +326,34 @@ Item{
                                 text5: model.text5
 
                                 onDashboard_btnClicked: {
+                                    if (setting.isLogined){
+                                        setting.licenseExpiredTime = Functions.computeDate(model.time)
+                                        setting.licenseTime = model.time
+                                        setting.licensePurchaseNumber = Functions.getRandomNumber(100000,1000000)
+                                        setting.licenseImage = model.source
+                                        setting.isLicense = true
+                                        var licenseData = {
+                                            "image": setting.licenseImage,
+                                            "purchase_id": setting.licensePurchaseNumber,
+                                            "time": setting.licenseTime,
+                                            "expiredTime": setting.licenseExpiredTime
+                                        }
 
+                                        var data = {
+                                            "id": setting.user_id,
+                                            "name": setting.userName,
+                                            "email": setting.userEmail,
+                                            "phone": setting.userPhone,
+                                            "password": setting.password,
+                                            "gender": setting.gender,
+                                            "mywallet": setting.mywallet,
+                                            "user_number": setting.user_number,
+                                            "mylicense": licenseData
+                                        }
+                                        db.storeData("users", data, setting.profile)
+                                    }else{
+                                        mainPage.state = "Login"
+                                    }
                                 }
                             }
 

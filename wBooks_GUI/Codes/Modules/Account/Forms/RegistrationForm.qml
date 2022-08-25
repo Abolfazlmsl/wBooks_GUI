@@ -7,6 +7,7 @@ import QtGraphicalEffects 1.0
 
 import "./../../../../Fonts/Icon.js" as Icons
 import "./../../../../REST/apiService.js" as Service
+import "./../../../../Functions/Funcs.js" as Functions
 
 import "./../../Items"
 
@@ -584,7 +585,43 @@ Item{
             }
 
             onConfirmBtnClicked: {
+                var obj = db.readAllData("users")
+                var isNumber = true
+                while(isNumber){
+                    var uNumber = Functions.getRandomNumber(100000, 1000000)
+                    var dbData
+                    isNumber = false
+                    for(var i=0 ; i< obj.length ; i++){
+                        dbData = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
+                        if (dbData.user_number === uNumber){
+                            isNumber = true
+                            break;
+                        }
+                    }
+                }
+
+                var rand_id = Functions.getRandomNumber(1, 10000000)
+                var is_id = true
+                while(is_id){
+                    is_id = false
+                    for(var j=0 ; j< obj.length ; j++){
+                        dbData = JSON.parse(JSON.parse(JSON.stringify(obj[j])).VALUE)
+                        if (dbData.id === rand_id){
+                            is_id = true
+                            break;
+                        }
+                    }
+                }
+
+
+                var licenseData = {
+                    "image": "",
+                    "purchase_id": 0,
+                    "time": 0,
+                    "expiredTime": ""
+                }
                 var data = {
+                    "id": rand_id,
                     "name": firstname.text + " " + lastname.text,
                     "email": email.text,
                     "phone": phone.text,
@@ -593,20 +630,23 @@ Item{
                     "mybooks": "",
                     "myaudiobooks": "",
                     "myvideos": "",
-                    "mywallet": "",
-                    "mylicense": "",
+                    "mywallet": 0,
+                    "mylicense": licenseData,
                     "profile": "",
-                    "user_id": "",
+                    "user_number": uNumber,
                     "basket": ""
                 }
 
                 db.addTable("users", true)
                 db.storeData("users", data, "")
 
+                setting.user_id = rand_id
                 setting.userName = firstname.text + " " + lastname.text
                 setting.userPhone = phone.text
                 setting.userEmail = email.text
                 setting.password = password.text
+                setting.mywallet = 0
+                setting.user_number = uNumber
                 setting.isLogined = true
                 confirmItem.timer = false
                 confirmItem.sendAgain = true

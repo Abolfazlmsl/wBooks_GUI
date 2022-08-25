@@ -38,3 +38,27 @@ function numberWithCommas(nStr) {
     }
     return x1 + x2;
 }
+
+function getRandomNumber(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function remainingLicenseTime(expiredTime){
+    var today = new Date();
+    var expiredTimeDate = new Date(expiredTime)
+    var milisec_diff = expiredTimeDate - today;
+
+    var days = Math.floor(milisec_diff / 1000 / 60 / (60 * 24));
+
+    return days;
+
+    //        print(days + " Days "+ date_diff.getHours() + " Hours " + date_diff.getMinutes() + " Minutes " + date_diff.getSeconds() + " Seconds")
+}
+
+function computeDate(time) {
+    var date = new Date();
+    date.setDate(date.getDate() + time);
+    return date.toString();
+}

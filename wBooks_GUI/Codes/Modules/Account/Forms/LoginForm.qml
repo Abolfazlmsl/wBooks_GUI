@@ -26,7 +26,13 @@ Item{
     property string genderUser: ""
     property string imageUser: ""
     property string idUser: ""
+    property int wallletUser: 0
+    property int numberUser: 0
     property string passwordUser: ""
+    property string licenseExpiredTimeUser: ""
+    property int licenseTimeUser: 0
+    property int licensePurchaseNumberUser: 0
+    property string licenseImageUser: ""
 
     signal getMessage(var signalmsg)
     signal trialFinished()
@@ -275,9 +281,19 @@ Item{
                                                     setting.userEmail = data.email
                                                     setting.userPhone = data.phone
                                                     setting.gender = data.gender
+                                                    setting.mywallet = data.mywallet
+                                                    setting.user_number = data.user_number
                                                     setting.profile = JSON.parse(JSON.stringify(obj[i])).image
                                                     setting.user_id = JSON.parse(JSON.stringify(obj[i])).id
                                                     setting.password = data.password
+                                                    setting.licenseExpiredTime = JSON.parse(JSON.stringify(data.mylicense)).expiredTime
+                                                    setting.licenseImage = JSON.parse(JSON.stringify(data.mylicense)).image
+                                                    setting.licensePurchaseNumber = JSON.parse(JSON.stringify(data.mylicense)).purchase_id
+                                                    setting.licenseTime = JSON.parse(JSON.stringify(data.mylicense)).time
+                                                    if (setting.licenseExpiredTime !== ""){
+                                                        setting.isLicense = true
+                                                    }
+
                                                     mainPage.state = "Home"
                                                 }else{
                                                     getMessage("رمز عبور اشتباه است")
@@ -545,6 +561,12 @@ Item{
                 imageUser = image
                 idUser = id
                 passwordUser = password
+                wallletUser = wallet
+                numberUser = uNumber
+                licenseExpiredTimeUser = lcnExpTime
+                licenseTimeUser = lcnTime
+                licensePurchaseNumberUser = lcnPurchaseNumber
+                licenseImageUser = lcnImage
                 confirmItem.timer = true
                 confirmItem.sendAgain = false
                 getMessage("")
@@ -588,13 +610,22 @@ Item{
             }
 
             onChangePassBtnClicked: {
+                var licenseData = {
+                    "image": licenseImageUser,
+                    "purchase_id": licensePurchaseNumberUser,
+                    "time": licenseTimeUser,
+                    "expiredTime": licenseExpiredTimeUser
+                }
                 var data = {
                     "id": idUser,
                     "name": nameUser,
                     "email": emailUser,
                     "phone": phoneUser,
                     "password": newPassword,
-                    "gender": genderUser
+                    "gender": genderUser,
+                    "mywallet": wallletUser,
+                    "user_number": numberUser,
+                    "mylicense": licenseData
                 }
                 db.storeData("users", data, imageUser)
                 getMessage("")

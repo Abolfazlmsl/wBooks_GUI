@@ -23,7 +23,13 @@ Item {
                              var gender,
                              var image,
                              var id,
-                             var password)
+                             var password,
+                             var wallet,
+                             var uNumber,
+                             var lcnExpTime,
+                             var lcnTime,
+                             var lcnImage,
+                             var lcnPurchaseNumber)
     signal bottomBtnClicked()
 
     Flickable{
@@ -158,7 +164,14 @@ Item {
                                         data.gender,
                                         JSON.parse(JSON.stringify(obj[i])).image,
                                         JSON.parse(JSON.stringify(obj[i])).id,
-                                        data.password)
+                                        data.password,
+                                        data.mywallet,
+                                        data.user_number,
+                                        JSON.parse(JSON.stringify(data.mylicense)).expiredTime,
+                                        JSON.parse(JSON.stringify(data.mylicense)).time,
+                                        JSON.parse(JSON.stringify(data.mylicense)).image,
+                                        JSON.parse(JSON.stringify(data.mylicense)).purchase_id)
+
                                     }else{
                                         sendWarning("کاربری با این شماره همراه یافت نشد")
                                     }

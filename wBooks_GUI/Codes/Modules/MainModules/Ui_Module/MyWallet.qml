@@ -72,7 +72,6 @@ Item{
                     Layout.rightMargin: 50
                     Layout.topMargin: 50
                     title: "کیف پول"
-                    price: 100000
                     bgColor: "#25B767"
 
                     onDashboard_btnClicked: {
@@ -167,6 +166,28 @@ Item{
                     fontSize: 2
                     btnText: "پرداخت"
                     textColor: "#ffffff"
+
+                    onDashboard_btnClicked: {
+                        setting.mywallet = setting.mywallet + increseAmount
+                        var licenseData = {
+                            "image": setting.licenseImage,
+                            "purchase_id": setting.licensePurchaseNumber,
+                            "time": setting.licenseTime,
+                            "expiredTime": setting.licenseExpiredTime
+                        }
+                        var data = {
+                            "id": setting.user_id,
+                            "name": setting.userName,
+                            "email": setting.userEmail,
+                            "phone": setting.userPhone,
+                            "password": setting.password,
+                            "gender": setting.gender,
+                            "mywallet": setting.mywallet,
+                            "user_number": setting.user_number,
+                            "mylicense": licenseData
+                        }
+                        db.storeData("users", data, setting.profile)
+                    }
                 }
 
                 Item{Layout.preferredHeight: 50}

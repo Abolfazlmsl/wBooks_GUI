@@ -437,6 +437,13 @@ Window {
         setting.user_id = 0
         setting.profile = ""
         setting.gender = ""
+        setting.user_number = 0
+        setting.mywallet = 0
+        setting.licenseExpiredTime = ""
+        setting.licenseTime = 0
+        setting.licensePurchaseNumber = 0
+        setting.licenseImage = ""
+        setting.isLicense = false
     }
 
     //-- save app setting --//
@@ -469,10 +476,13 @@ Window {
 //        property string mybooks: ""
 //        property string myaudiobooks: ""
 //        property string myvideos: ""
-//        property string mywallet: ""
-//        property string mylicense: ""
-//        property string profile: ""
-//        property string user_id: ""
+        property int mywallet: 0
+        property bool isLicense: false
+        property string licenseExpiredTime: ""
+        property int licenseTime: 0
+        property int licensePurchaseNumber: 0
+        property string licenseImage: ""
+        property int user_number: 0
 //        property string basket: ""
         property bool isLogined: false
         property string themeState: "Light"
@@ -1390,15 +1400,6 @@ Window {
                     }
                 }
                 Item{Layout.preferredWidth: 50}
-            }
-        }
-
-        ListModel{
-            id: myMembershipModel
-            ListElement{
-                time: 15
-                remaining: 8
-                source: "qrc:/Images/bronze-medal.png"
             }
         }
 

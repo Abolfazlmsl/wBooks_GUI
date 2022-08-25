@@ -244,7 +244,7 @@ Rectangle {
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
-                                    text: Functions.numberWithCommas("0") + " تومان"
+                                    text: Functions.numberWithCommas(setting.mywallet) + " تومان"
                                     color: color4
                                 }
                             }

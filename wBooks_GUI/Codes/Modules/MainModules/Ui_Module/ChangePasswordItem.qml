@@ -356,15 +356,25 @@ Item{
                                         }else if (password.text === setting.password){
                                             getMessage("رمز عبور جدید با رمز عبور فعلی یکسان است")
                                         }else{
+                                            var licenseData = {
+                                                "image": setting.licenseImage,
+                                                "purchase_id": setting.licensePurchaseNumber,
+                                                "time": setting.licenseTime,
+                                                "expiredTime": setting.licenseExpiredTime
+                                            }
                                             var data = {
                                                 "id": setting.user_id,
                                                 "name": setting.userName,
                                                 "email": setting.userEmail,
                                                 "phone": setting.userPhone,
                                                 "password": password.text,
-                                                "gender": setting.gender
+                                                "gender": setting.gender,
+                                                "mywallet": setting.mywallet,
+                                                "user_number": setting.user_number,
+                                                "mylicense": licenseData
                                             }
                                             db.storeData("users", data, setting.profile)
+                                            setting.password = password.text
                                             clearInputs()
                                             getMessage("")
                                             swipe_pass.currentIndex = 1
