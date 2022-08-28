@@ -177,7 +177,7 @@ Rectangle {
             icon: Icons.library_books
             text: "کتاب های من"
             counter: true
-            recText: "13"
+            recText: myBooksModel.count
             onShowClick: {
                 accountObj.state = "My Books"
                 mainPage.state = "Edit"
@@ -192,7 +192,7 @@ Rectangle {
             icon: Icons.audiobook
             text: "کتاب های صوتی من"
             counter: true
-            recText: "9"
+            recText: myAudioBooksModel.count
             onShowClick: {
                 accountObj.state = "Audio Books"
                 mainPage.state = "Edit"
