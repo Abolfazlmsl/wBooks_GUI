@@ -10,12 +10,22 @@ Rectangle {
     color: "transparent"
     property var itemModel: []
 
-    property int maxPages: 9
+    property int rowItemCount: 5
+    property int columnItemCount: Math.floor((flick.width-120)/190)
+    property int pageItemCount: columnItemCount * rowItemCount
+
+    property int maxPages: if (Math.floor(itemModel.count / pageItemCount) === (itemModel.count / pageItemCount)){
+                               return Math.floor(itemModel.count / pageItemCount)
+                           }else{
+                               return Math.floor(itemModel.count / pageItemCount) + 1
+                           }
+
     property int currentPage: 0
 
-    property int columnItemCount: Math.floor((flick.width-120)/190)
-    property int rowItemCount: Math.ceil(lview.count/columnItemCount)
-    property int pageItemCount: 20
+    ParallelAnimation {
+        id: searchAnim
+        NumberAnimation { target: flick; property: "contentY"; to: 350; duration: 300 }
+    }
 
     ColumnLayout{
         anchors.fill: parent
@@ -411,8 +421,11 @@ Rectangle {
                                         anchors.fill: parent
                                         cursorShape: Qt.PointingHandCursor
                                         onClicked: {
-                                            nView.currentIndex = index
-                                            currentPage = index
+                                            if (currentPage !== index){
+                                                nView.currentIndex = index
+                                                currentPage = index
+                                                searchAnim.restart()
+                                            }
                                         }
                                     }
                                 }
