@@ -10,17 +10,23 @@ Rectangle {
     color: "transparent"
     property var itemModel: []
 
-    property int rowItemCount: 5
+    property int currentPage: 0
+
     property int columnItemCount: Math.floor((flick.width-120)/190)
+    property int maxInPage: columnItemCount * 5
+    property int rowItemCount: if ((itemModel.count-currentPage*maxInPage) >= maxInPage){
+                                   return 5
+                               }else{
+                                   return (Math.floor((itemModel.count-currentPage*maxInPage)/columnItemCount) + 1)
+                               }
+
     property int pageItemCount: columnItemCount * rowItemCount
 
-    property int maxPages: if (Math.floor(itemModel.count / pageItemCount) === (itemModel.count / pageItemCount)){
-                               return Math.floor(itemModel.count / pageItemCount)
+    property int maxPages: if (Math.floor(itemModel.count / maxInPage) === (itemModel.count / maxInPage)){
+                               return Math.floor(itemModel.count / maxInPage)
                            }else{
-                               return Math.floor(itemModel.count / pageItemCount) + 1
+                               return Math.floor(itemModel.count / maxInPage) + 1
                            }
-
-    property int currentPage: 0
 
     ParallelAnimation {
         id: searchAnim
@@ -391,6 +397,7 @@ Rectangle {
                                     onClicked: {
                                         currentPage -= 1
                                         nView.decrementCurrentIndex()
+                                        searchAnim.restart()
                                     }
                                 }
                             }
@@ -450,6 +457,7 @@ Rectangle {
                                     onClicked: {
                                         currentPage += 1
                                         nView.incrementCurrentIndex()
+                                        searchAnim.restart()
                                     }
                                 }
                             }
