@@ -20,11 +20,11 @@ Item {
         RowLayout{
             Layout.fillWidth: true
             Layout.preferredHeight: 40
-            visible: back
 
             HoverButton{
                 Layout.preferredWidth: 50
                 Layout.preferredHeight: 50
+                visible: back
                 btnRadius: 10
                 backgroundColor: color2
                 btnIcon: Icons.arrow_left

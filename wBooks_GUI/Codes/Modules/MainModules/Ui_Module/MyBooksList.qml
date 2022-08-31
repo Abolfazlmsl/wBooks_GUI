@@ -20,7 +20,6 @@ Item {
         RowLayout{
             Layout.fillWidth: true
             Layout.preferredHeight: 40
-            visible: back
 
             HoverButton{
                 Layout.preferredWidth: 50
@@ -30,6 +29,7 @@ Item {
                 btnIcon: Icons.arrow_left
                 btnText: "بازگشت"
                 textColor: color4
+                visible: back
 
                 onBtnClicked: {
                     myBooksView = 0
