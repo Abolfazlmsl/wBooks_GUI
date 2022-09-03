@@ -7,6 +7,9 @@ import "./../../../Utils/Enum.js" as Enum
 import "./../../../Utils/Utils.js" as Util
 
 Rectangle{
+    id: filterPop
+
+    signal btnClicked()
 
     color: "#e0e0e0"
     Flickable{
@@ -31,17 +34,58 @@ Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50
                     color: "#d43460"
-                    Label {
+                    RowLayout{
                         anchors.fill: parent
-                        anchors.leftMargin: 20
-                        text: "فیلتر دسته بندی ها"
-                        font.family: mainFont.name
-                        font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
-                        font.bold: true
-                        verticalAlignment: Qt.AlignVCenter
-                        horizontalAlignment: Text.AlignLeft
-                        LayoutMirroring.enabled: true
-                        color: "#ffffff"
+                        layoutDirection: Qt.RightToLeft
+                        spacing: 0
+                        Item{Layout.preferredWidth: 5}
+
+                        Rectangle{
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+                            color: "transparent"
+                            Label {
+                                id: txtTitle
+                                anchors.fill: parent
+                                text: "فیلتر دسته بندی ها"
+                                font.family: mainFont.name
+                                font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
+                                font.bold: true
+                                verticalAlignment: Qt.AlignVCenter
+                                horizontalAlignment: Text.AlignLeft
+                                LayoutMirroring.enabled: true
+                                color: "#ffffff"
+                            }
+                        }
+
+                        Item{Layout.preferredWidth: 5}
+
+                        Rectangle{
+                            Layout.preferredHeight: width
+                            Layout.preferredWidth: 30
+                            Layout.topMargin: 10
+                            Layout.bottomMargin: 10
+                            radius: width / 2
+                            color: "#ffffff"
+                            Label{
+                                anchors.centerIn: parent
+                                text: Icons.arrow_right
+                                font.family: webfont.name
+                                font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
+
+                                color: "#d43460"
+                            }
+
+                            MouseArea{
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                onClicked: {
+                                    btnClicked()
+                                }
+                            }
+                        }
+
+                        Item{Layout.preferredWidth: 15}
                     }
                 }
 

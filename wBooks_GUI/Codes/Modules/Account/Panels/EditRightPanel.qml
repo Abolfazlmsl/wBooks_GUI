@@ -13,13 +13,53 @@ Rectangle{
     id: accountObjPage
     color: color1
 
+    signal btnClicked()
+
     ColumnLayout{
         anchors.fill: parent
         spacing: 0
 
+        Item{Layout.preferredHeight: 10}
+
+        Item{
+            Layout.preferredHeight: 20
+            Layout.fillWidth: true
+            RowLayout{
+                Item{Layout.preferredWidth: 10}
+                Rectangle{
+                    height: width
+                    width: 20
+                    radius: width / 2
+                    color: "transparent"
+                    border.width: 1
+                    border.color: color4
+                    Label{
+                        anchors.centerIn: parent
+                        text: Icons.arrow_right
+                        font.family: webfont.name
+                        font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
+
+                        color: color4
+                    }
+
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: {
+                            btnClicked()
+                        }
+                    }
+                }
+
+                Item{Layout.fillWidth: true}
+            }
+        }
+
+        Item{Layout.preferredHeight: 5}
+
         Item{
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.3
+            Layout.preferredHeight: parent.height * 0.25
             clip: true
             ColumnLayout{
                 anchors.fill: parent

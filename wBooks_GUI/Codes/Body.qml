@@ -21,14 +21,39 @@ Rectangle{
     id: mainBody
     anchors.fill: parent
 
+    property bool showRightPop: true
+
+    SequentialAnimation{
+        id: rightFilterHideAnim
+        NumberAnimation{
+            target: rightFilters; property: "Layout.preferredWidth"; to: 0; duration: 300
+        }
+        PropertyAnimation{
+            target: mainBody; property: "showRightPop"; to: false; duration: 100
+        }
+    }
+
+    SequentialAnimation{
+        id: rightFilterShowAnim
+        PropertyAnimation{
+            target: mainBody; property: "showRightPop"; to: true; duration: 100
+        }
+        NumberAnimation{
+            target: rightFilters; property: "Layout.preferredWidth"; to: parent.width * 0.15; duration: 300
+        }
+    }
+
     RowLayout{
         anchors.fill: parent
         spacing: 0
         layoutDirection: Qt.RightToLeft
 
         Item{
-            Layout.preferredWidth: inHomeMode * parent.width * 0.15
+            id: rightFilters
+            Layout.preferredWidth: parent.width * 0.15
             Layout.fillHeight: true
+            visible: (inHomeMode) ? showRightPop:false
+
             StackLayout {
                 id: barMainStack
                 anchors.fill: parent
@@ -37,11 +62,18 @@ Rectangle{
                 RightPanel{
                     Layout.fillWidth: true
                     Layout.fillHeight: true
+
+                    onBtnClicked: {
+                        rightFilterHideAnim.restart()
+                    }
                 }
 
                 EditRightPanel{
                     Layout.fillWidth: true
                     Layout.fillHeight: true
+                    onBtnClicked: {
+                        rightFilterHideAnim.restart()
+                    }
                 }
             }
         }
@@ -68,17 +100,49 @@ Rectangle{
                         spacing: 0
                         layoutDirection: Qt.RightToLeft
 
+                        Item{Layout.preferredWidth: 15}
+
+                        Rectangle{
+                            Layout.preferredHeight: width
+                            Layout.preferredWidth: 30
+                            Layout.topMargin: 10
+                            Layout.bottomMargin: 10
+                            radius: width / 2
+                            color: "#ffffff"
+                            visible: (inHomeMode) ? !showRightPop:false
+                            Label{
+                                anchors.centerIn: parent
+                                text: Icons.arrow_left
+                                font.family: webfont.name
+                                font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
+
+                                color: "#d43460"
+                            }
+
+                            MouseArea{
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                onClicked: {
+                                    rightFilterShowAnim.restart()
+                                }
+                            }
+                        }
+
+                        Item{
+                            Layout.preferredWidth: 15
+                            visible: (inHomeMode) ? !showRightPop:false
+                        }
+
                         Rectangle{
                             Layout.fillHeight: true
-                            Layout.preferredWidth: parent.width * 0.75
+                            Layout.preferredWidth: lbl_book_number.contentWidth
                             color: "transparent"
                             clip: true
                             Label {
                                 id: lbl_book_number
                                 height: parent.height - 1
-                                width: Text.contentWidth
+                                width: parent.width
                                 anchors.right: parent.right
-                                anchors.rightMargin: 20
                                 text: "1000 کتاب موجود"
                                 font.family: mainFaNumFont.name
                                 font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -90,7 +154,6 @@ Rectangle{
                                 width: lbl_book_number.width
                                 anchors.top: lbl_book_number.bottom
                                 anchors.right: parent.right
-                                anchors.rightMargin: 20
                                 anchors.bottomMargin: 2
                                 height: 2
                                 color: color5
@@ -103,6 +166,8 @@ Rectangle{
                                 color: "transparent"
                             }
                         }
+
+                        Item{Layout.fillWidth: true}
 
                         ComboBox{
                             id: cbox
@@ -155,10 +220,8 @@ Rectangle{
                             }
                         }
 
-                        Rectangle {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 2
-                            color: "transparent"
+                        Item {
+                            Layout.preferredWidth: 30
                         }
                     }
                 }
