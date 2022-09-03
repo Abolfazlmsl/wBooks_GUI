@@ -10,7 +10,7 @@ import "./../MainModules/Ui_Module"
 
 Rectangle{
 
-    property alias specialCatModel: special_cat.itemModel
+//    property alias specialCatModel: special_cat.itemModel
     property alias bestCatModel: best_cat.itemModel
     property alias bestCollectionModel: best_collect.itemModel
     property alias offerBooksModel: offer_books.itemModel

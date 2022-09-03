@@ -8,7 +8,7 @@ import "./../../../../Fonts/Icon.js" as Icons
 Item {
     id: cat_item
     property alias title: titletxt.text
-    property alias itemModel: lview.model
+//    property alias itemModel: lview.model
 
     Rectangle{
         anchors.fill: parent
@@ -39,23 +39,23 @@ Item {
             cellHeight: 200
             interactive: false
             layoutDirection: Qt.RightToLeft
-            model: itemModel
+            model: specialCatModel
 
             delegate: Rectangle{
                 id: itemRec
                 width: 130
                 height: 180
                 color: "transparent"
-                property bool isClicked: false
+//                property bool isClicked: false
                 Rectangle{
                     id: iconRec
                     width: parent.width
-                    height: (isClicked) ? parent.height * 0.5:parent.height * 0.8
+                    height: (model.isClicked) ? parent.height * 0.5:parent.height * 0.8
                     Behavior on height {
                         NumberAnimation{duration:300}
                     }
 
-                    color: (isClicked) ? color2:color1
+                    color: (model.isClicked) ? color2:color1
                     Rectangle{
                         anchors.fill: parent
                         anchors.margins: 8
@@ -75,7 +75,17 @@ Item {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            itemRec.isClicked = !itemRec.isClicked
+                            for (var i=0; i<specialCatModel.count; i++){
+                                if (i !== index){
+                                    specialCatModel.setProperty(i, "isClicked", false)
+                                }
+                            }
+                            if (model.isClicked){
+                                specialCatModel.setProperty(index, "isClicked", false)
+                            }else{
+                                specialCatModel.setProperty(index, "isClicked", true)
+                            }
+//                            itemRec.isClicked = !itemRec.isClicked
                         }
                     }
                 }
@@ -107,8 +117,8 @@ Item {
                     property var itemArray: model.items.split(",")
 
                     width: parent.width
-                    visible: (isClicked) ? true :false
-                    height: (isClicked) ? parent.height * 0.3:0
+                    visible: (model.isClicked) ? true :false
+                    height: (model.isClicked) ? parent.height * 0.3:0
                     anchors.top: title2Rec.bottom
                     color: "transparent"
                     Behavior on height {

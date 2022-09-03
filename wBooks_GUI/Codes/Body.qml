@@ -332,7 +332,7 @@ Rectangle{
                         Item {
                             Home{
                                 anchors.fill: parent
-                                specialCatModel: specialCatModel
+//                                specialCatModel: specialCatModel
                                 bestCatModel: bestCatModel
                                 bestCollectionModel: bestCollectionModel
                                 offerBooksModel: offerBooksModel
@@ -612,51 +612,61 @@ Rectangle{
         ListElement{
             items: "خانواده, ایران شناسی, آشپزی"
             text: "داستان و رمان"
+            isClicked: false
 //            icon: "Icons.book_open_page_variant"
         }
         ListElement{
             items: "خانواده, ایران شناسی, آشپزی"
             text: "سبک زندگی"
+            isClicked: false
 //            icon: "Icons.heart_box"
         }
         ListElement{
             items: "خانواده, ایران شناسی, آشپزی"
             text: "مدیریت بازاریابی"
+            isClicked: false
 //            icon: "Icons.heart_box"
         }
         ListElement{
             items: "خانواده, ایران شناسی, آشپزی"
             text: "روانشناسی"
+            isClicked: false
 //            icon: "Icons.heart_box"
         }
         ListElement{
             items: "خانواده, ایران شناسی, آشپزی"
             text: "هنر"
+            isClicked: false
 //            icon: "Icons.heart_box"
         }
         ListElement{
             items: "خانواده, ایران شناسی, آشپزی"
             text: "علوم تجربی"
+            isClicked: false
 //            icon: "Icons.heart_box"
         }
         ListElement{
             items: "خانواده, ایران شناسی, آشپزی"
             text: "دین و عرفان"
+            isClicked: false
 //            icon: "Icons.heart_box"
         }
         ListElement{
             items: "خانواده, ایران شناسی, آشپزی"
             text: "فلسفه و هنر"
+            isClicked: false
 //            icon: "Icons.heart_box"
         }
         ListElement{
             items: "خانواده, ایران شناسی, آشپزی"
             text: "علم و فناوری"
+            isClicked: false
 //            icon: "Icons.heart_box"
         }
         ListElement{
             items: "خانواده, ایران شناسی, آشپزی"
             text: "کودک و نوجوان"
+            isClicked: false
 //            icon: "Icons.heart_box"
         }
 
