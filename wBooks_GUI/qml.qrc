@@ -220,5 +220,6 @@
         <file>Icons/github(1).png</file>
         <file>Icons/gmail.png</file>
         <file>Images/Ticket1-2.png</file>
+        <file>Codes/Modules/MainModules/Popup/Quit_Popup.qml</file>
     </qresource>
 </RCC>

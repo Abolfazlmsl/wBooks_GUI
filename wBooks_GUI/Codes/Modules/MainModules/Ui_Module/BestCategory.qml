@@ -40,11 +40,12 @@ Item {
                 id: rightChevron
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
+
                 SmoothedAnimation {
                     target: lview
                     property: "contentX"
                     running: rightChevron.pressed
-                    velocity: 2000
+                    velocity: 1000
                     to: -lview.width
                 }
             }
@@ -392,14 +393,12 @@ Item {
                     target: lview
                     property: "contentX"
                     running: leftChevron.pressed
-                    velocity: 2000
+                    velocity: 1000
                     to: -lview.contentWidth
                 }
-
             }
         }
     }
-
 }
 
 

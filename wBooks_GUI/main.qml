@@ -15,6 +15,7 @@ import "./Utils/Utils.js" as Util
 
 import "./Codes/Modules/Account/Popups"
 import "./Codes/Modules/Items"
+import "./Codes/Modules/MainModules/Popup"
 import "./Codes/LocalDatabase"
 import "./Codes"
 import "./Codes/Modules/Pages"
@@ -999,6 +1000,39 @@ Window {
                     RowLayout{
                         anchors.fill: parent
                         spacing: 0
+
+                        Rectangle{
+                            Layout.preferredHeight: width
+                            Layout.preferredWidth: 40
+                            Layout.topMargin: 10
+                            Layout.bottomMargin: 10
+                            radius: width / 2
+                            color: "#d43460"
+                            Label{
+                                anchors.centerIn: parent
+                                text: Icons.power
+                                font.family: webfont.name
+                                font.pixelSize: Qt.application.font.pixelSize * 2 //* widthRatio
+
+                                color: "#ffffff"
+                            }
+
+//                            SoundEffect{
+//                                id: powerplaysound
+//                                source: "soundeffect.wav"
+//                            }
+
+                            MouseArea{
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                                onClicked: {
+//                                    powerplaysound.play()
+                                    quitPop.visible = true
+                                }
+                            }
+                        }
+
+                        Item{Layout.preferredWidth: 15}
 
                         //-- chevron Icon --//
                         Label{
@@ -2434,5 +2468,29 @@ Window {
             }
         }
 
+    }
+
+    onClosing: {
+        close.accepted = false
+        quitPop.visible = true
+    }
+
+    Quit_Popup{
+        id: quitPop
+        visible: false
+        width: 350 * ratio
+        height: 181 * ratio
+
+        bodyText_Dialog: "آیا مطمئن هستید که می خواهید خارج شوید؟"
+
+        x: (win.width / 2) -(width / 2) - 10
+        y: (win.height / 2) - (height / 2) - 30
+        onAccept: {
+            quitPop.visible = false
+            Qt.quit()
+        }
+        onCancel: {
+            quitPop.visible = false
+        }
     }
 }
