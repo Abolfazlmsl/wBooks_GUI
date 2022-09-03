@@ -203,7 +203,7 @@ Item {
                         Rectangle{
 
                             width: 250
-                            height: 285
+                            height: 385
                             color: "transparent"
                             clip: true
 
@@ -223,6 +223,7 @@ Item {
                                 imageSource: audioBookModel.get(index).source
                                 text1: audioBookModel.get(index).text1
                                 text2: audioBookModel.get(index).text2
+                                price: audioBookModel.get(index).price
                                 rate: audioBookModel.get(index).rate
                                 date: audioBookModel.get(index).date
                                 fileType: "Audio"
@@ -251,7 +252,7 @@ Item {
                         Rectangle{
 
                             width: 250
-                            height: 285
+                            height: 385
                             color: "transparent"
                             clip: true
 
@@ -271,6 +272,7 @@ Item {
                                 imageSource: documentBookModel.get(index).source
                                 text1: documentBookModel.get(index).text1
                                 text2: documentBookModel.get(index).text2
+                                price: documentBookModel.get(index).price
                                 rate: documentBookModel.get(index).rate
                                 date: documentBookModel.get(index).date
                                 fileType: "Document"

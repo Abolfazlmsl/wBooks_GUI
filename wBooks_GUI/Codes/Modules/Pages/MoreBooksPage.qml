@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls.Styles 1.4
 
 import "./../../../Fonts/Icon.js" as Icons
+import "./../../../Functions/Funcs.js" as Functions
 
 import "./../MainModules/Ui_Module"
 import "./../Items"
@@ -83,7 +84,7 @@ Item {
                     clip: true
                     focus: true
                     cellWidth: 190
-                    cellHeight: 280
+                    cellHeight: 380
                     interactive: true
                     layoutDirection: Qt.RightToLeft
                     model: (itemModel.count >= (currentPage+1)*pageItemCount) ? pageItemCount:itemModel.count-currentPage*pageItemCount
@@ -97,7 +98,7 @@ Item {
                     delegate: Rectangle{
                         id: itemRec
                         width: 130
-                        height: 220
+                        height: 320
                         color: "transparent"
                         Rectangle{
                             id: iconRec
@@ -160,7 +161,7 @@ Item {
                         Rectangle{
                             id: title2Rec
                             width: parent.width
-                            height: parent.height * 0.1
+                            height: parent.height * 0.075
                             anchors.top: iconRec.bottom
                             color: "transparent"
                             Label{
@@ -174,10 +175,26 @@ Item {
                         }
 
                         Rectangle{
+                            id: titlePrice
+                            width: parent.width
+                            height: parent.height * 0.075
+                            anchors.top: title2Rec.bottom
+                            color: "transparent"
+                            Label{
+                                id: txtPrice
+                                anchors.fill: parent
+                                text: (itemModel.get(index).price === "0") ? "رایگان" : Functions.numberWithCommas(itemModel.get(index).price) + " تومان"
+                                font.family: mainFaNumFont.name
+                                color: color4
+                                verticalAlignment: Qt.AlignVCenter
+                            }
+                        }
+
+                        Rectangle{
                             id: title3Rec
                             width: parent.width
-                            height: parent.height * 0.1
-                            anchors.top: title2Rec.bottom
+                            height: parent.height * 0.05
+                            anchors.top: titlePrice.bottom
                             color: "transparent"
                             Label{
                                 id: txt3

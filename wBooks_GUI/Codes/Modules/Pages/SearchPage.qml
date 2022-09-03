@@ -3,6 +3,8 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 
 import "./../../../Fonts/Icon.js" as Icons
+import "./../../../Functions/Funcs.js" as Functions
+
 import "./../Items"
 import "./../MainModules/SearchModule"
 
@@ -39,17 +41,43 @@ Rectangle {
         anchors.leftMargin: 50
         spacing: 0
 
-        M_inputText{
-            id: input_phone
+        Item{
             Layout.fillWidth: true
-            label: "جستجو بر اساس کتاب، ناشر، نویسنده و ..."
-            icon: Icons.magnify
-            placeholder: "جستجو بر اساس کتاب، ناشر، نویسنده و ..."
-            inputText.text: ""
-            bgColor: color1
-            borderColor: color1
+            Layout.preferredHeight: 45 * ratio
             Layout.rightMargin: 150
             Layout.leftMargin: 150
+            RowLayout{
+                anchors.fill: parent
+                layoutDirection: Qt.RightToLeft
+                spacing: 0
+                M_inputText{
+                    id: input_phone
+                    Layout.fillWidth: true
+                    Layout.rightMargin: 0
+                    label: "جستجو بر اساس کتاب، ناشر، نویسنده و ..."
+                    icon: Icons.magnify
+                    placeholder: "جستجو بر اساس کتاب، ناشر، نویسنده و ..."
+                    inputText.text: ""
+                    bgColor: color1
+                    borderColor: color1
+
+                }
+
+                Item{Layout.preferredWidth: 15}
+
+                ButtonShadow{
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: 100
+                    btnText: "جستجو"
+                    textColor: "#ffffff"
+                    btnRadius: 10
+                    btnColor: "#d43460"
+                    shadowColor: "#d43460"
+                    onDashboard_btnClicked: {
+
+                    }
+                }
+            }
         }
 
 
@@ -203,7 +231,7 @@ Rectangle {
                         clip: true
                         focus: true
                         cellWidth: 190
-                        cellHeight: 280
+                        cellHeight: 380
                         interactive: true
                         layoutDirection: Qt.RightToLeft
                         model: (itemModel.count >= (currentPage+1)*pageItemCount) ? pageItemCount:itemModel.count-currentPage*pageItemCount
@@ -212,7 +240,7 @@ Rectangle {
                         delegate: Rectangle{
                             id: itemRec
                             width: 140
-                            height: 230
+                            height: 330
                             color: "transparent"
                             Rectangle{
                                 id: iconRec
@@ -233,7 +261,7 @@ Rectangle {
                             Rectangle{
                                 id: title2Rec
                                 width: parent.width
-                                height: parent.height * 0.1
+                                height: parent.height * 0.075
                                 anchors.top: iconRec.bottom
                                 color: "transparent"
                                 Label{
@@ -247,10 +275,26 @@ Rectangle {
                             }
 
                             Rectangle{
+                                id: titlePrice
+                                width: parent.width
+                                height: parent.height * 0.075
+                                anchors.top: title2Rec.bottom
+                                color: "transparent"
+                                Label{
+                                    id: txtPrice
+                                    anchors.fill: parent
+                                    text: (itemModel.get(index).price === "0") ? "رایگان" : Functions.numberWithCommas(itemModel.get(index).price) + " تومان"
+                                    font.family: mainFaNumFont.name
+                                    color: color4
+                                    verticalAlignment: Qt.AlignVCenter
+                                }
+                            }
+
+                            Rectangle{
                                 id: title3Rec
                                 width: parent.width
-                                height: parent.height * 0.1
-                                anchors.top: title2Rec.bottom
+                                height: parent.height * 0.05
+                                anchors.top: titlePrice.bottom
                                 color: "transparent"
                                 Label{
                                     id: txt3

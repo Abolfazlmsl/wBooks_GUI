@@ -847,22 +847,41 @@ Window {
                 layoutDirection: Qt.RightToLeft
                 spacing: 0
 
-                Image {
-                    id: mainLogo
-                    Layout.margins: 10
+                //-- spacer --//
+                Rectangle{
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: parent.width * 0.01
+
+                    color: "transparent"
+                }
+
+                Rectangle{
+                    Layout.topMargin: 10
+                    Layout.bottomMargin: 10
                     Layout.fillHeight: true
                     Layout.preferredWidth: parent.width * 0.1
                     Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-                    source: "qrc:/Images/Logo Footer2.png"
-                    fillMode: Image.PreserveAspectFit
-                    mipmap: true
-                }
+                    color: "transparent"
+                    Image {
+                        id: mainLogo
+                        anchors.fill: parent
+                        source: "qrc:/Images/Logo Footer2.png"
+                        fillMode: Image.PreserveAspectFit
+                        mipmap: true
+                        visible: false
+                    }
 
+                    ColorOverlay {
+                        anchors.fill: mainLogo
+                        source: mainLogo
+                        color: "#d43460"
+                    }
+                }
 
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.015
+                    Layout.preferredWidth: parent.width * 0.04
 
                     color: "transparent"
                 }
@@ -1268,7 +1287,7 @@ Window {
             id: mainFooter
 
             width: parent.width
-            height: 80
+            height: 40
 
             color: "#292929"
 
@@ -1283,6 +1302,8 @@ Window {
 
                 Rectangle{
                     Layout.preferredWidth: 130 * ratio
+                    Layout.topMargin: 5
+                    Layout.bottomMargin: 5
                     Layout.fillHeight: true
                     color: "transparent"
                     Image{
@@ -1291,12 +1312,20 @@ Window {
                         source: "qrc:/Images/Logo Footer2.png"
                         mipmap: true
                         fillMode: Image.PreserveAspectFit
+                        visible: false
+                    }
+                    ColorOverlay {
+                        anchors.fill: image
+                        source: image
+                        color: "#d43460"
                     }
                 }
 
                 Item{Layout.preferredWidth: 50}
 
                 Rectangle{
+                    Layout.topMargin: 5
+                    Layout.bottomMargin: 5
                     Layout.preferredWidth: 20 * ratio
                     Layout.preferredHeight: width
                     radius: width / 2
@@ -1319,6 +1348,8 @@ Window {
                 Item{Layout.preferredWidth: 10}
 
                 Rectangle{
+                    Layout.topMargin: 5
+                    Layout.bottomMargin: 5
                     Layout.preferredWidth: 20* ratio
                     Layout.preferredHeight: width
                     radius: width / 2
@@ -1341,6 +1372,8 @@ Window {
                 Item{Layout.preferredWidth: 10}
 
                 Rectangle{
+                    Layout.topMargin: 5
+                    Layout.bottomMargin: 5
                     Layout.preferredWidth: 20* ratio
                     Layout.preferredHeight: width
                     radius: width / 2
@@ -1364,6 +1397,8 @@ Window {
                 Item{Layout.preferredWidth: 10}
 
                 Rectangle{
+                    Layout.topMargin: 5
+                    Layout.bottomMargin: 5
                     Layout.preferredWidth: 20* ratio
                     Layout.preferredHeight: width
                     radius: width / 2
@@ -1562,6 +1597,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "تلاش در مسیر"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1569,6 +1605,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "مروری بر خاطرات"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1576,6 +1613,7 @@ Window {
                 source: "qrc:/Images/mebeforeyou.jpg"
                 text1: "رمان حکومت نظامی"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1583,6 +1621,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "خوشه های خشم"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1590,6 +1629,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "سفرهای گالیور"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1597,6 +1637,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1604,6 +1645,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "سفرهای گالیور"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1611,6 +1653,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1618,6 +1661,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1625,6 +1669,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1632,6 +1677,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1639,6 +1685,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1646,6 +1693,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1653,6 +1701,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1660,6 +1709,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1667,6 +1717,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1674,6 +1725,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1681,6 +1733,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1688,6 +1741,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1695,6 +1749,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1702,6 +1757,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1709,6 +1765,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1716,6 +1773,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1723,6 +1781,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1730,6 +1789,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1737,6 +1797,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1744,6 +1805,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1751,6 +1813,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1758,6 +1821,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1765,6 +1829,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1772,6 +1837,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1784,6 +1850,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "تلاش در مسیر"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1791,6 +1858,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "مروری بر خاطرات"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1798,6 +1866,7 @@ Window {
                 source: "qrc:/Images/mebeforeyou.jpg"
                 text1: "رمان حکومت نظامی"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1805,6 +1874,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "خوشه های خشم"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1812,6 +1882,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "سفرهای گالیور"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1819,6 +1890,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1826,6 +1898,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "سفرهای گالیور"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1833,6 +1906,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1840,6 +1914,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1847,6 +1922,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1854,6 +1930,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1861,6 +1938,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1868,6 +1946,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1875,6 +1954,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1882,6 +1962,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1889,6 +1970,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1896,6 +1978,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1903,6 +1986,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1910,6 +1994,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1917,6 +2002,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1924,6 +2010,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1931,6 +2018,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1938,6 +2026,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1945,6 +2034,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1952,6 +2042,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1959,6 +2050,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1966,6 +2058,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1973,6 +2066,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1980,6 +2074,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1987,6 +2082,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -1994,6 +2090,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2005,6 +2102,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "تلاش در مسیر"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2012,6 +2110,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "مروری بر خاطرات"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2019,6 +2118,7 @@ Window {
                 source: "qrc:/Images/mebeforeyou.jpg"
                 text1: "رمان حکومت نظامی"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2026,6 +2126,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "خوشه های خشم"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2033,6 +2134,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "سفرهای گالیور"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2040,6 +2142,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2047,6 +2150,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "سفرهای گالیور"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2054,6 +2158,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2061,6 +2166,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2068,6 +2174,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2075,6 +2182,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2082,6 +2190,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2089,6 +2198,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2096,6 +2206,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2103,6 +2214,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2110,6 +2222,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2117,6 +2230,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2124,6 +2238,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2131,6 +2246,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2138,6 +2254,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2145,6 +2262,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2152,6 +2270,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2159,6 +2278,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2166,6 +2286,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2173,6 +2294,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2180,6 +2302,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2187,6 +2310,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -2194,6 +2318,7 @@ Window {
                 source: "qrc:/Images/warriorqueen.jpg"
                 text1: "ولورانت گیمز"
                 text2: "نوشته کیگو هیکاشینو"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }

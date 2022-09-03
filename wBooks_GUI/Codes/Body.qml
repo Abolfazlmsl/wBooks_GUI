@@ -605,6 +605,7 @@ Rectangle{
             source: "qrc:/Images/mebeforeyou.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -612,6 +613,7 @@ Rectangle{
             source: "qrc:/Images/callofduty.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -619,6 +621,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -626,6 +629,15 @@ Rectangle{
             source: "qrc:/Images/time.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
+            rate: 37
+            date: "1399/02/14"
+        }
+        ListElement{
+            source: "qrc:/Images/book.png"
+            text1: "داستان و رمان"
+            text2: "داستان و رمان"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -640,6 +652,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -647,6 +660,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -654,6 +668,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -661,6 +676,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -668,6 +684,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -675,6 +692,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -682,6 +700,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -689,6 +708,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -696,6 +716,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -703,6 +724,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -710,6 +732,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -717,6 +740,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -724,13 +748,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
-            rate: 37
-            date: "1399/02/14"
-        }
-        ListElement{
-            source: "qrc:/Images/book.png"
-            text1: "داستان و رمان"
-            text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -760,6 +778,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -767,6 +786,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -774,6 +794,7 @@ Rectangle{
             source: "qrc:/Images/mebeforeyou.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -781,6 +802,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -788,6 +810,7 @@ Rectangle{
             source: "qrc:/Images/time.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -795,6 +818,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -806,6 +830,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -813,6 +838,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -820,6 +846,7 @@ Rectangle{
             source: "qrc:/Images/mebeforeyou.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -827,6 +854,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -834,6 +862,7 @@ Rectangle{
             source: "qrc:/Images/time.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -841,6 +870,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -852,6 +882,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -859,6 +890,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -866,6 +898,7 @@ Rectangle{
             source: "qrc:/Images/mebeforeyou.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -873,6 +906,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -880,6 +914,7 @@ Rectangle{
             source: "qrc:/Images/time.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -887,6 +922,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -898,6 +934,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -905,6 +942,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -912,6 +950,7 @@ Rectangle{
             source: "qrc:/Images/mebeforeyou.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -919,6 +958,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -926,6 +966,7 @@ Rectangle{
             source: "qrc:/Images/time.jpg"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -933,6 +974,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "داستان و رمان"
             text2: "داستان و رمان"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -944,6 +986,7 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "تلاش در مسیر"
             text2: "نوشته کیگو هیکاشینو"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -951,6 +994,7 @@ Rectangle{
             source: "qrc:/Images/warriorqueen.jpg"
             text1: "مروری بر خاطرات"
             text2: "نوشته کیگو هیکاشینو"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -958,6 +1002,7 @@ Rectangle{
             source: "qrc:/Images/mebeforeyou.jpg"
             text1: "رمان حکومت نظامی"
             text2: "نوشته کیگو هیکاشینو"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -965,6 +1010,7 @@ Rectangle{
             source: "qrc:/Images/warriorqueen.jpg"
             text1: "خوشه های خشم"
             text2: "نوشته کیگو هیکاشینو"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -972,6 +1018,7 @@ Rectangle{
             source: "qrc:/Images/warriorqueen.jpg"
             text1: "سفرهای گالیور"
             text2: "نوشته کیگو هیکاشینو"
+            price: "25000"
             rate: 37
             date: "1399/02/14"
         }
@@ -979,6 +1026,7 @@ Rectangle{
             source: "qrc:/Images/warriorqueen.jpg"
             text1: "ولورانت گیمز"
             text2: "نوشته کیگو هیکاشینو"
+            price: "0"
             rate: 37
             date: "1399/02/14"
         }
@@ -1018,36 +1066,42 @@ Rectangle{
             source: "qrc:/Images/book.png"
             text1: "تلاش در مسیر"
             text2: "نوشته کیگو هیکاشینو"
+            price: "25000"
             rate: 37
         }
         ListElement{
             source: "qrc:/Images/warriorqueen.jpg"
             text1: "مروری بر خاطرات"
             text2: "نوشته کیگو هیکاشینو"
+            price: "25000"
             rate: 37
         }
         ListElement{
             source: "qrc:/Images/mebeforeyou.jpg"
             text1: "رمان حکومت نظامی"
             text2: "نوشته کیگو هیکاشینو"
+            price: "25000"
             rate: 37
         }
         ListElement{
             source: "qrc:/Images/warriorqueen.jpg"
             text1: "خوشه های خشم"
             text2: "نوشته کیگو هیکاشینو"
+            price: "0"
             rate: 37
         }
         ListElement{
             source: "qrc:/Images/warriorqueen.jpg"
             text1: "سفرهای گالیور"
             text2: "نوشته کیگو هیکاشینو"
+            price: "25000"
             rate: 37
         }
         ListElement{
             source: "qrc:/Images/warriorqueen.jpg"
             text1: "ولورانت گیمز"
             text2: "نوشته کیگو هیکاشینو"
+            price: "25000"
             rate: 37
         }
     }

@@ -38,6 +38,7 @@ Rectangle{
         font.family: mainFont.name
         fontSizeMode: Text.Fit
         font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
+        font.bold: isClick
 
         color: "#ffffff"
         clip: true
@@ -59,7 +60,7 @@ Rectangle{
         anchors.left: spacer.right
         anchors.verticalCenter: parent.verticalCenter
         width: Text.width
-        color: iconColor
+        color: (isClick) ? "#ffffff":iconColor
         visible: !iconAsImage
 
         font.family: iconFont
@@ -91,7 +92,7 @@ Rectangle{
         ColorOverlay {
             anchors.fill: iconTxt
             source: iconTxt
-            color: iconColor
+            color: (isClick) ? "#ffffff":iconColor
         }
     }
 

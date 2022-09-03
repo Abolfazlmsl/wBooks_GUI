@@ -44,7 +44,7 @@ Rectangle{
                 BestCategory{
                     id: best_cat
                     Layout.fillWidth: true
-                    Layout.preferredHeight: 300
+                    Layout.preferredHeight: 400
                     Layout.topMargin: 50
                     Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05
@@ -68,7 +68,7 @@ Rectangle{
                 BooksList{
                     id: offer_books
                     Layout.fillWidth: true
-                    Layout.preferredHeight: 300
+                    Layout.preferredHeight: 400
                     Layout.topMargin: 50
                     Layout.leftMargin: parent.width * 0.05
                     Layout.rightMargin: parent.width * 0.05

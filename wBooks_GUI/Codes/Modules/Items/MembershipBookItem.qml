@@ -3,16 +3,18 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
 import "./../../../Fonts/Icon.js" as Icons
+import "./../../../Functions/Funcs.js" as Functions
 
 Rectangle{
     id: itemRec
     width: 130
-    height: 220
+    height: 320
     color: "transparent"
 
     property alias imageSource: img.source
     property alias text1: txt2.text
     property alias text2: txt3.text
+    property string price: ""
     property string rate: "1"
     property alias date: dateTxt.text
     property string fileType: "Document"
@@ -72,7 +74,7 @@ Rectangle{
     Rectangle{
         id: title2Rec
         width: parent.width
-        height: parent.height * 0.1
+        height: parent.height * 0.075
         anchors.top: iconRec.bottom
         color: "transparent"
         Label{
@@ -86,10 +88,26 @@ Rectangle{
     }
 
     Rectangle{
+        id: titlePrice
+        width: parent.width
+        height: parent.height * 0.075
+        anchors.top: title2Rec.bottom
+        color: "transparent"
+        Label{
+            id: txtPrice
+            anchors.fill: parent
+            text: (price === "0") ? "رایگان" : Functions.numberWithCommas(price) + " تومان"
+            font.family: mainFaNumFont.name
+            color: color4
+            verticalAlignment: Qt.AlignVCenter
+        }
+    }
+
+    Rectangle{
         id: title3Rec
         width: parent.width
-        height: parent.height * 0.1
-        anchors.top: title2Rec.bottom
+        height: parent.height * 0.05
+        anchors.top: titlePrice.bottom
         color: "transparent"
         Label{
             id: txt3
