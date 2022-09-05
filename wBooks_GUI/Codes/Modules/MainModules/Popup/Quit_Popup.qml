@@ -104,7 +104,7 @@ Dialog{
 
                     text: bodyText_Dialog
                     font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
-                    font.family: mainFont.name
+                    font.family: setting.activeFont
                     wrapMode: Text.WordWrap
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -160,7 +160,7 @@ Dialog{
 
                         text: "بله"
                         font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         color: "#ffffff"
                     }
 
@@ -208,7 +208,7 @@ Dialog{
 
                         text: "خیر"
                         font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         color: "#ffffff"
                     }
 

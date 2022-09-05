@@ -65,7 +65,7 @@ Item {
                     Layout.fillHeight: true
                     Layout.rightMargin: 20
                     text: "تیتر اصلی"
-                    font.family: mainFont.name
+                    font.family: setting.activeFont
                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -85,7 +85,7 @@ Item {
                     visible: showAll
                     Layout.fillHeight: true
                     text: (isShowAll) ? "نمایش کمتر" : "نمایش همه"
-                    font.family: mainFont.name
+                    font.family: setting.activeFont
                     font.pixelSize: Qt.application.font.pixelSize * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter

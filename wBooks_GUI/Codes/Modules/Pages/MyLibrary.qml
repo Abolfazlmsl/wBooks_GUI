@@ -35,7 +35,7 @@ Item {
                         anchors.fill: parent
                         anchors.leftMargin: 120 * ratio
                         text: "کتابخانه ی من"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         color: color4
                         font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
                         verticalAlignment: Qt.AlignVCenter

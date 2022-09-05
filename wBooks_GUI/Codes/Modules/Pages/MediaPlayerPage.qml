@@ -54,7 +54,7 @@ Item {
                         id: txt1
                         anchors.fill: parent
                         text: "من پیش از تو"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         font.bold: true
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
@@ -72,7 +72,7 @@ Item {
                         id: txt2
                         anchors.fill: parent
                         text: "نویسنده: جوجو مویز"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         font.bold: true
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
@@ -89,7 +89,7 @@ Item {
                         id: txt3
                         anchors.fill: parent
                         text: "گوینده: رضا عمرانی"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         font.bold: true
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
@@ -107,7 +107,7 @@ Item {
                         id: txt4
                         anchors.fill: parent
                         text: "ناشر: ماه آوا"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         font.bold: true
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
@@ -127,7 +127,7 @@ Item {
                         id: timetxt
                         anchors.fill: parent
                         text: "مدت زمان:   5:43"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         font.bold: true
                         color: color4
                         verticalAlignment: Qt.AlignVCenter

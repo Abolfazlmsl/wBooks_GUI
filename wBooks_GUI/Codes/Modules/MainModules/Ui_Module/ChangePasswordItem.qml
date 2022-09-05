@@ -134,7 +134,7 @@ Item{
                             Label{
                                 anchors.centerIn: parent
                                 text: "اطلاعات را وارد کنید"
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 font.pixelSize: Qt.application.font.pixelSize * 1.5
                                 color: "#ffffff"
                             }

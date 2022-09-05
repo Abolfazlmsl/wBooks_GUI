@@ -487,6 +487,9 @@ Window {
 //        property string basket: ""
         property bool isLogined: false
         property string themeState: "Light"
+
+        property string activeFont: kalameh_Regular.name
+        property string activeNumFont: kalameh_Regular_Fa_Num.name
     }
 
     // mainFont ----> Font of Farsi
@@ -494,9 +497,9 @@ Window {
 
     //flags: Qt.WindowCloseButtonHint
     FontLoader{ id: segoeUI; source: "qrc:/Fonts/segoeui.ttf"}                          // segoeUI FONT
-//    FontLoader{ id: mainFont; source: "qrc:/Fonts/mainFontMobile.ttf"}                  // iranSans FONT
-//    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/iranSansMobile(FaNum).ttf"}                  // iranSans FARSI number FONT
-    FontLoader{ id: mainFontMedium; source: "qrc:/Fonts/iranSans_Medium.ttf"}           // iranSans Medium FONT
+    FontLoader{ id: iransans; source: "qrc:/Fonts/IRANSansMobile.ttf"}                  // iranSans FONT
+    FontLoader{ id: iransansFaNum; source: "qrc:/Fonts/IRANSansMobile(FaNum).ttf"}                  // iranSans FARSI number FONT
+    FontLoader{ id: mainFontMedium; source: "qrc:/Fonts/IRANSans_Medium.ttf"}           // iranSans Medium FONT
     FontLoader{ id: webfont; source: "qrc:/Fonts/materialdesignicons-webfont.ttf"}      //ICONS FONT
     FontLoader{ id: nunito; source: "qrc:/Fonts/Nunito/Nunito-Regular.ttf"}      //ICONS FONT
     FontLoader{ id: nunito_italic; source: "qrc:/Fonts/Nunito/Nunito-Italic.ttf"}      //ICONS FONT
@@ -504,19 +507,18 @@ Window {
     FontLoader{ id: awesome; source: "qrc:/Fonts/fa-regular-400.ttf"}
     FontLoader{ id: flaticon; source: "qrc:/Fonts/Flaticon.ttf"}
 //    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Black.ttf"}                //Kalameh Black Font
-//    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Bold.ttf"}               //Kalameh Bold Font
-    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Regular.ttf"}            //Kalameh Regular Font
-//    FontLoader{ id: mainFont; source: "qrc:/Fonts/Kalameh-Thin.ttf"}               //Kalameh Thin Font
+    FontLoader{ id: kalameh_Bold; source: "qrc:/Fonts/Kalameh-Bold.ttf"}               //Kalameh Bold Font
+    FontLoader{ id: kalameh_Regular; source: "qrc:/Fonts/Kalameh-Regular.ttf"}            //Kalameh Regular Font
+    FontLoader{ id: kalameh_Thin; source: "qrc:/Fonts/Kalameh-Thin.ttf"}               //Kalameh Thin Font
 //    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Black.ttf"}        //Kalameh Farsi Number Thin Font
-//    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Bold.ttf"}       //Kalameh Farsi Number Thin Font
-    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Regular.ttf"}    //Kalameh Farsi Number Thin Font
-//    FontLoader{ id: mainFaNumFont; source: "qrc:/Fonts/Kalameh(FaNum)-Thin.ttf"}       //Kalameh Farsi Number Thin Font
-
+    FontLoader{ id: kalameh_Bold_Fa_Num; source: "qrc:/Fonts/Kalameh(FaNum)-Bold.ttf"}       //Kalameh Farsi Number Thin Font
+    FontLoader{ id: kalameh_Regular_Fa_Num; source: "qrc:/Fonts/Kalameh(FaNum)-Regular.ttf"}    //Kalameh Farsi Number Thin Font
+    FontLoader{ id: kalameh_Thin_Fa_Num; source: "qrc:/Fonts/Kalameh(FaNum)-Thin.ttf"}       //Kalameh Farsi Number Thin Font
 
     //-- font metric for size porpose --//
     FontMetrics{
         id: fontMetric
-        font.family: mainFont.name
+        font.family: setting.activeFont
         font.pixelSize: Qt.application.font.pixelSize
     }
 
@@ -1032,7 +1034,7 @@ Window {
                             }
                         }
 
-                        Item{Layout.preferredWidth: 15}
+                        Item{Layout.preferredWidth: 15*ratio}
 
                         //-- chevron Icon --//
                         Label{
@@ -1079,15 +1081,12 @@ Window {
 
 //                            text: userInfo.name
                             text: setting.userName
-                            font.family: mainFont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.5 //Qt.application.font.pixelSize
-                            renderType: Text.NativeRendering
+                            font.family: setting.activeFont
+                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio//Qt.application.font.pixelSize
 
                             verticalAlignment: Qt.AlignVCenter
 
                             color: color16
-                            clip: true
-                            elide: Text.ElideRight
                             MouseArea{
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
@@ -1126,7 +1125,7 @@ Window {
                             }
                         }
 
-                        Item { Layout.preferredWidth: 10 } //-- filler --//
+                        Item { Layout.preferredWidth: 10 * ratio} //-- filler --//
 
                         //-- Basket Icon --//
                         Rectangle{
@@ -1171,7 +1170,7 @@ Window {
                                 Label{
                                     anchors.fill: parent
                                     text: basketModel.count
-                                    font.family: mainFaNumFont.name
+                                    font.family: setting.activeNumFont
                                     font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //Qt.application.font.pixelSize
 
                                     verticalAlignment: Qt.AlignVCenter
@@ -1355,103 +1354,652 @@ Window {
                     }
                 }
 
-                Item{Layout.preferredWidth: 50}
+                Item{Layout.preferredWidth: 25}
 
                 Rectangle{
+                    id: btn_theme
+                    Layout.topMargin: 5
+                    Layout.bottomMargin: 5
+                    Layout.preferredWidth: 50 * ratio
+                    Layout.preferredHeight: 20 * ratio
+                    radius: 10
+                    border.width: 3
+                    border.color: if (setting.themeState === "Light"){
+                                      return "white"
+                                  }else if (setting.themeState === "SemiLight"){
+                                      return "#B2B2B2"
+                                  }else if (setting.themeState === "SemiDark"){
+                                      return "white"
+                                  }else if (setting.themeState === "Dark"){
+                                      return "#B2B2B2"
+                                  }
+
+                    color: if (setting.themeState === "Light"){
+                               return "white"
+                           }else if (setting.themeState === "SemiLight"){
+                               return "#B2B2B2"
+                           }else if (setting.themeState === "SemiDark"){
+                               return "transparent"
+                           }else if (setting.themeState === "Dark"){
+                               return "transparent"
+                           }
+
+                    Popup{
+                        id: popuptheme
+                        width: 150
+                        height: 250
+//                        padding: 0
+                        y: -height
+                        x: -width*0.35
+
+                        background: Rectangle{
+                            color: "#292929"
+                        }
+
+                        focus: true
+                        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+
+                        property bool state: false
+
+                        Rectangle{
+                            anchors.fill: parent
+                            color: "transparent"
+                            ColumnLayout{
+                                anchors.fill: parent
+                                spacing: 0
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.themeState === "Light") ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Rectangle{
+                                            Layout.preferredWidth: 20 * ratio
+                                            Layout.preferredHeight: width
+                                            radius: width / 2
+                                            border.width: 3
+                                            border.color: "white"
+                                            color: "white"
+                                        }
+
+                                        Item{Layout.preferredWidth: 10}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeFont
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            text: "روشن"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                    }
+                                    MouseArea{
+                                        id: theme4
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.themeState = "Light"
+                                        }
+                                    }
+                                }
+
+                                Item{Layout.preferredHeight: 5}
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
+                                    Layout.rightMargin: 5
+                                    Layout.leftMargin: 5
+                                    color: "white"
+                                }
+                                Item{Layout.preferredHeight: 5}
+
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.themeState === "SemiLight") ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Rectangle{
+                                            Layout.preferredWidth: 20* ratio
+                                            Layout.preferredHeight: width
+                                            radius: width / 2
+                                            border.width: 3
+                                            border.color: "#B2B2B2"
+                                            color: "#B2B2B2"
+                                        }
+
+                                        Item{Layout.preferredWidth: 10}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeFont
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            text: "نیمه روشن"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                    }
+                                    MouseArea{
+                                        id: theme3
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.themeState = "SemiLight"
+                                        }
+                                    }
+                                }
+
+                                Item{Layout.preferredHeight: 5}
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
+                                    Layout.rightMargin: 5
+                                    Layout.leftMargin: 5
+                                    color: "white"
+                                }
+                                Item{Layout.preferredHeight: 5}
+
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.themeState === "SemiDark") ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Rectangle{
+                                            Layout.preferredWidth: 20* ratio
+                                            Layout.preferredHeight: width
+                                            radius: width / 2
+                                            border.width: 3
+                                            border.color: "white"
+                        //                    color: "#25252C"
+                                            color: "transparent"
+                                        }
+
+                                        Item{Layout.preferredWidth: 10}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeFont
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            text: "نیمه تاریک"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                    }
+                                    MouseArea{
+                                        id: theme2
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.themeState = "SemiDark"
+                                        }
+                                    }
+                                }
+
+                                Item{Layout.preferredHeight: 5}
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
+                                    Layout.rightMargin: 5
+                                    Layout.leftMargin: 5
+                                    color: "white"
+                                }
+                                Item{Layout.preferredHeight: 5}
+
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.themeState === "Dark") ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Rectangle{
+                                            Layout.preferredWidth: 20* ratio
+                                            Layout.preferredHeight: width
+                                            radius: width / 2
+                                            border.width: 3
+                                            border.color: "#B2B2B2"
+                                            color: "transparent"
+                        //                    color: "black"
+                                        }
+
+                                        Item{Layout.preferredWidth: 10}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeFont
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            text: "تاریک"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+                                    }
+                                    MouseArea{
+                                        id: theme1
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.themeState = "Dark"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        hoverEnabled: true
+
+                        onClicked: {
+                            if (popuptheme.state === false){
+                                popuptheme.open()
+                                popuptheme.state = true
+                            }
+                            else {
+                                popuptheme.close()
+                                popuptheme.state = false
+                            }
+                        }
+
+                        onEntered: {
+                            popupfont.close()
+                            popuptheme.open()
+                        }
+                    }
+
+                }
+
+                Item{Layout.preferredWidth: 25}
+
+                Rectangle{
+                    id: btn_font
                     Layout.topMargin: 5
                     Layout.bottomMargin: 5
                     Layout.preferredWidth: 20 * ratio
                     Layout.preferredHeight: width
-                    radius: width / 2
+                    radius: width/2
                     border.width: 3
                     border.color: "white"
-                    ToolTip.text: "روشن"
-                    ToolTip.visible: "روشن" ? theme4.containsMouse : false
-                    color: "white"
-                    MouseArea{
-                        id: theme4
-                        anchors.fill: parent
-                        cursorShape: Qt.PointingHandCursor
-                        hoverEnabled: true
-                        onClicked: {
-                            setting.themeState = "Light"
-                        }
-                    }
-                }
 
-                Item{Layout.preferredWidth: 10}
-
-                Rectangle{
-                    Layout.topMargin: 5
-                    Layout.bottomMargin: 5
-                    Layout.preferredWidth: 20* ratio
-                    Layout.preferredHeight: width
-                    radius: width / 2
-                    border.width: 3
-                    border.color: "#B2B2B2"
-                    ToolTip.text: "نیمه روشن"
-                    ToolTip.visible: "نیمه روشن" ? theme3.containsMouse : false
-                    color: "#B2B2B2"
-                    MouseArea{
-                        id: theme3
-                        anchors.fill: parent
-                        cursorShape: Qt.PointingHandCursor
-                        hoverEnabled: true
-                        onClicked: {
-                            setting.themeState = "SemiLight"
-                        }
-                    }
-                }
-
-                Item{Layout.preferredWidth: 10}
-
-                Rectangle{
-                    Layout.topMargin: 5
-                    Layout.bottomMargin: 5
-                    Layout.preferredWidth: 20* ratio
-                    Layout.preferredHeight: width
-                    radius: width / 2
-                    border.width: 3
-                    border.color: "white"
-//                    color: "#25252C"
                     color: "transparent"
-                    ToolTip.text: "نیمه تاریک"
-                    ToolTip.visible: "نیمه تاریک" ? theme2.containsMouse : false
+                    Label{
+                        anchors.centerIn: parent
+                        text: "F"
+                        font.family: setting.activeFont
+                        color: "white"
+                        font.pixelSize: Qt.application.font.pixelSize * 1 * ratio
+                    }
+
+                    Popup{
+                        id: popupfont
+                        width: 150
+                        height: 250
+//                        padding: 0
+                        y: -height
+                        x: -width*0.5 + btn_changefont.implicitWidth*0.5
+
+                        background: Rectangle{
+                            color: "#292929"
+                        }
+
+                        focus: true
+                        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+
+                        property bool state: false
+
+                        Rectangle{
+                            id: btn_changefont
+                            anchors.fill: parent
+                            color: "transparent"
+                            ColumnLayout{
+                                anchors.fill: parent
+                                spacing: 0
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.activeFont === iransans.name) ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeFont
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            text: "ایران سانس"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                    }
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.activeFont = iransans.name
+                                            setting.activeNumFont = iransansFaNum.name
+                                        }
+                                    }
+                                }
+
+                                Item{Layout.preferredHeight: 5}
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
+                                    Layout.rightMargin: 5
+                                    Layout.leftMargin: 5
+                                    color: "white"
+                                }
+                                Item{Layout.preferredHeight: 5}
+
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.activeFont === kalameh_Regular.name) ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeFont
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            text: "کلمه (عادی)"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                    }
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.activeFont = kalameh_Regular.name
+                                            setting.activeNumFont = kalameh_Regular_Fa_Num.name
+                                        }
+                                    }
+                                }
+
+                                Item{Layout.preferredHeight: 5}
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
+                                    Layout.rightMargin: 5
+                                    Layout.leftMargin: 5
+                                    color: "white"
+                                }
+                                Item{Layout.preferredHeight: 5}
+
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.activeFont === kalameh_Bold.name) ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeFont
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            text: "کلمه (بولد)"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                    }
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.activeFont = kalameh_Bold.name
+                                            setting.activeNumFont = kalameh_Bold_Fa_Num.name
+                                        }
+                                    }
+                                }
+
+                                Item{Layout.preferredHeight: 5}
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
+                                    Layout.rightMargin: 5
+                                    Layout.leftMargin: 5
+                                    color: "white"
+                                }
+                                Item{Layout.preferredHeight: 5}
+
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.activeFont === kalameh_Thin.name) ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeFont
+                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            text: "کلمه (نازک)"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+                                    }
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.activeFont = kalameh_Thin.name
+                                            setting.activeNumFont = kalameh_Thin_Fa_Num.name
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     MouseArea{
-                        id: theme2
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         hoverEnabled: true
+
                         onClicked: {
-                            setting.themeState = "SemiDark"
+                            if (popupfont.state === false){
+                                popupfont.open()
+                                popupfont.state = true
+                            }
+                            else {
+                                popupfont.close()
+                                popupfont.state = false
+                            }
+                        }
+
+                        onEntered: {
+                            popuptheme.close()
+                            popupfont.open()
                         }
                     }
+
                 }
 
-                Item{Layout.preferredWidth: 10}
-
-                Rectangle{
-                    Layout.topMargin: 5
-                    Layout.bottomMargin: 5
-                    Layout.preferredWidth: 20* ratio
-                    Layout.preferredHeight: width
-                    radius: width / 2
-                    border.width: 3
-                    border.color: "#B2B2B2"
-                    color: "transparent"
-//                    color: "black"
-                    ToolTip.text: "تاریک"
-                    ToolTip.visible: "تاریک" ? theme1.containsMouse : false
-                    MouseArea{
-                        id: theme1
-                        anchors.fill: parent
-                        cursorShape: Qt.PointingHandCursor
-                        hoverEnabled: true
-                        onClicked: {
-                            setting.themeState = "Dark"
-                        }
-                    }
-                }
 
                 Item{Layout.fillWidth: true}
 
@@ -1463,11 +2011,12 @@ Window {
                         id: footertxt
                         anchors.centerIn: parent
                         text: "تمامی حقوق این وبسایت متعلق به کمپانی وی بوکس می باشد"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         font.pixelSize: Qt.application.font.pixelSize * 1.2  * ratio
                         color: "white"
                     }
                 }
+
                 Item{Layout.preferredWidth: 50}
             }
         }

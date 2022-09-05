@@ -74,7 +74,7 @@ Item{
                     Label{
                         anchors.centerIn: parent
                         text: "رمز عبور خود را تغییر دهید"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         font.pixelSize: Qt.application.font.pixelSize * 1.5
                         color: "#ffffff"
                     }

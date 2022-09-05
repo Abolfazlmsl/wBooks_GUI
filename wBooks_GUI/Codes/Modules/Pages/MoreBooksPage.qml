@@ -63,7 +63,7 @@ Item {
 //                    anchors.right: parent.right
                     Layout.rightMargin: 70
                     text: "برترین کتاب های ماه"
-                    font.family: mainFont.name
+                    font.family: setting.activeFont
                     color: color2
 
                     font.pixelSize: Qt.application.font.pixelSize * 1.7
@@ -118,7 +118,7 @@ Item {
                                 //                        fillMode: Image.PreserveAspectFit
                                 Canvas{
                                     anchors.fill:parent
-                                    property string nameFont: mainFaNumFont.name
+                                    property string nameFont: setting.activeNumFont
 
                                     onPaint:{
                                         var context = getContext("2d")
@@ -148,7 +148,7 @@ Item {
         //                                id: text1
         //                                anchors.fill: parent
         //                                text: "رتبه " + (index+1)
-        //                                font.family: mainFaNumFont.name
+        //                                font.family: setting.activeNumFont
         //                                color: "#ffffff"
         //                                verticalAlignment: Qt.AlignVCenter
         //                                horizontalAlignment: Qt.AlignHCenter
@@ -168,7 +168,7 @@ Item {
                                 id: txt2
                                 anchors.fill: parent
                                 text: itemModel.get(index+currentPage*pageItemCount).text1
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 color: color4
                                 verticalAlignment: Qt.AlignVCenter
                             }
@@ -184,7 +184,7 @@ Item {
                                 id: txtPrice
                                 anchors.fill: parent
                                 text: (itemModel.get(index).price === "0") ? "رایگان" : Functions.numberWithCommas(itemModel.get(index).price) + " تومان"
-                                font.family: mainFaNumFont.name
+                                font.family: setting.activeNumFont
                                 color: color4
                                 verticalAlignment: Qt.AlignVCenter
                             }
@@ -200,7 +200,7 @@ Item {
                                 id: txt3
                                 anchors.fill: parent
                                 text: itemModel.get(index+currentPage*pageItemCount).text2
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 font.pixelSize: Qt.application.font.pixelSize
@@ -236,7 +236,7 @@ Item {
                                     Label{
                                         anchors.fill: parent
                                         text: "(" + itemModel.get(index+currentPage*pageItemCount).rate + " رای)"
-                                        font.family: mainFaNumFont.name
+                                        font.family: setting.activeNumFont
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
                                         font.pixelSize: Qt.application.font.pixelSize * 0.7
@@ -279,7 +279,7 @@ Item {
                                         width: parent.width
                                         height: parent.height / 2
                                         text: "تاریخ انتشار"
-                                        font.family: mainFont.name
+                                        font.family: setting.activeFont
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
                                         horizontalAlignment: Qt.AlignHCenter
@@ -299,7 +299,7 @@ Item {
                                         height: parent.height / 2
                                         anchors.top: recspacer.bottom
                                         text: itemModel.get(index+currentPage*pageItemCount).date
-                                        font.family: mainFaNumFont.name
+                                        font.family: setting.activeNumFont
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
                                         horizontalAlignment: Qt.AlignHCenter
@@ -367,7 +367,7 @@ Item {
                                     horizontalAlignment: Qt.AlignHCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.5
                                     text: index+1
-                                    font.family: mainFaNumFont.name
+                                    font.family: setting.activeNumFont
                                     color: color2
                                 }
                                 MouseArea{

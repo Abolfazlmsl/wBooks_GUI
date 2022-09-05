@@ -65,7 +65,7 @@ Item {
                             Layout.rightMargin: rMargin
                             Layout.leftMargin: lMargin
                             text: "نام"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             color: color11
 
                             font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -98,7 +98,7 @@ Item {
                             Layout.rightMargin: rMargin
                             Layout.leftMargin: lMargin
                             text: "شماره تماس"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             color: color11
 
                             font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -129,7 +129,7 @@ Item {
                             Layout.rightMargin: rMargin
                             Layout.leftMargin: lMargin
                             text: "ایمیل"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             color: color11
 
                             font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -173,7 +173,7 @@ Item {
 
                                 text: "جنسیت: "
                                 color: color11
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 font.pixelSize: Qt.application.font.pixelSize * 1.3
                             }
 
@@ -183,7 +183,7 @@ Item {
                                 anchors.right: lbl_Gender.left
                                 width: implicitWidth
                                 height: implicitHeight
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 font.pixelSize: Qt.application.font.pixelSize* 1.3
                                 anchors.verticalCenter: parent.verticalCenter
                                 Material.accent: color11
@@ -197,7 +197,7 @@ Item {
                                     color: color11
                                     leftPadding: radio_Male.indicator.width + radio_Male.spacing
                                     verticalAlignment: Text.AlignVCenter
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     font.pixelSize: Qt.application.font.pixelSize* 1.3
                                 }
 
@@ -216,7 +216,7 @@ Item {
                                 anchors.right: radio_Male.left
                                 width: implicitWidth
                                 height: implicitHeight
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 font.pixelSize: Qt.application.font.pixelSize* 1.3
 
                                 anchors.verticalCenter: parent.verticalCenter
@@ -231,7 +231,7 @@ Item {
                                     color: color11
                                     leftPadding: radio_Female.indicator.width + radio_Female.spacing
                                     verticalAlignment: Text.AlignVCenter
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     font.pixelSize: Qt.application.font.pixelSize* 1.3
                                 }
 

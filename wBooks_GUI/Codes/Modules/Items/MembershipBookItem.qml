@@ -81,7 +81,7 @@ Rectangle{
             id: txt2
             anchors.fill: parent
             text: ""
-            font.family: mainFont.name
+            font.family: setting.activeFont
             color: color4
             verticalAlignment: Qt.AlignVCenter
         }
@@ -97,7 +97,7 @@ Rectangle{
             id: txtPrice
             anchors.fill: parent
             text: (price === "0") ? "رایگان" : Functions.numberWithCommas(price) + " تومان"
-            font.family: mainFaNumFont.name
+            font.family: setting.activeNumFont
             color: color4
             verticalAlignment: Qt.AlignVCenter
         }
@@ -113,7 +113,7 @@ Rectangle{
             id: txt3
             anchors.fill: parent
             text: ""
-            font.family: mainFont.name
+            font.family: setting.activeFont
             color: color9
             verticalAlignment: Qt.AlignVCenter
             font.pixelSize: Qt.application.font.pixelSize
@@ -149,7 +149,7 @@ Rectangle{
                 Label{
                     anchors.fill: parent
                     text: "(" + rate + " رای)"
-                    font.family: mainFaNumFont.name
+                    font.family: setting.activeNumFont
                     color: color9
                     verticalAlignment: Qt.AlignVCenter
                     font.pixelSize: Qt.application.font.pixelSize * 0.7
@@ -196,7 +196,7 @@ Rectangle{
                     width: parent.width
                     height: parent.height / 2
                     text: "تاریخ انتشار"
-                    font.family: mainFont.name
+                    font.family: setting.activeFont
                     color: color9
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -217,7 +217,7 @@ Rectangle{
                     height: parent.height / 2
                     anchors.top: recspacer.bottom
                     text: ""
-                    font.family: mainFaNumFont.name
+                    font.family: setting.activeNumFont
                     color: color9
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter

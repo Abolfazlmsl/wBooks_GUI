@@ -122,7 +122,7 @@ Rectangle{
                                 width: parent.width
                                 height: parent.height / 3
                                 text: setting.userName
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 color: color4
                                 font.pixelSize: Qt.application.font.pixelSize * ratio
                                 verticalAlignment: Qt.AlignVCenter
@@ -135,7 +135,7 @@ Rectangle{
                                 height: parent.height / 3
                                 anchors.top: txt1.bottom
                                 text: "شماره کاربری: " + setting.user_number
-                                font.family: mainFaNumFont.name
+                                font.family: setting.activeNumFont
                                 color: color4
 
                                 font.pixelSize: Qt.application.font.pixelSize * ratio
@@ -148,7 +148,7 @@ Rectangle{
                                 height: parent.height / 3
                                 anchors.top: txt2.bottom
                                 text: setting.userPhone
-                                font.family: mainFaNumFont.name
+                                font.family: setting.activeNumFont
                                 color: color4
 
                                 font.pixelSize: Qt.application.font.pixelSize * ratio
@@ -175,7 +175,7 @@ Rectangle{
                         id: txt_exit
                         anchors.fill: parent
                         text: "افزایش اعتبار"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         color: color7
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.3

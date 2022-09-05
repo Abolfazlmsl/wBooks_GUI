@@ -128,7 +128,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.bold: true
                             color: color4
                             text: "نام اثر"
@@ -147,7 +147,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.bold: true
                             color: color4
                             text: "نام نویسنده"
@@ -166,7 +166,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.bold: true
                             color: color4
                             text: "حذف اثر"
@@ -213,7 +213,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.bold: true
                             color: color4
                             text: model.title
@@ -239,7 +239,7 @@ Item {
                             anchors.fill: parent
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.bold: true
                             color: color4
                             text: model.author

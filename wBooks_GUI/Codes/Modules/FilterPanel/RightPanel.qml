@@ -48,7 +48,7 @@ Rectangle{
                                 id: txtTitle
                                 anchors.fill: parent
                                 text: "فیلتر دسته بندی ها"
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                                 font.bold: true
                                 verticalAlignment: Qt.AlignVCenter

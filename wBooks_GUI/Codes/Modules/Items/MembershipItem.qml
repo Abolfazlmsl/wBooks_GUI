@@ -66,7 +66,7 @@ Rectangle{
                             anchors.fill: parent
                             color: color4
                             text: Functions.numberWithCommas(price)
-                            font.family: mainFaNumFont.name
+                            font.family: setting.activeNumFont
                             font.pixelSize: Qt.application.font.pixelSize * 2.5
                             font.bold: true
                             horizontalAlignment: Qt.AlignHCenter
@@ -84,7 +84,7 @@ Rectangle{
                             anchors.rightMargin: 20
                             color: color4
                             text: "تومان"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.pixelSize: Qt.application.font.pixelSize * 1.5
                             font.bold: true
                             verticalAlignment: Qt.AlignVCenter
@@ -137,7 +137,7 @@ Rectangle{
                             Layout.preferredWidth: lbl_Title.contentWidth
                             Layout.fillHeight: true
                             Layout.rightMargin: 20
-                            font.family: mainFaNumFont.name
+                            font.family: setting.activeNumFont
                             font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
                             font.bold: true
                             text: "اشتراک ویژه " + time + " روزه"
@@ -202,7 +202,7 @@ Rectangle{
                                    Layout.fillHeight: true
                                    color: color4
                                    text: text1
-                                   font.family: mainFaNumFont.name
+                                   font.family: setting.activeNumFont
                                    font.pixelSize: Qt.application.font.pixelSize * 1
                                    verticalAlignment: Qt.AlignVCenter
                                }
@@ -232,7 +232,7 @@ Rectangle{
                                    Layout.fillHeight: true
                                    color: color4
                                    text: text2
-                                   font.family: mainFaNumFont.name
+                                   font.family: setting.activeNumFont
                                    font.pixelSize: Qt.application.font.pixelSize * 1
                                    verticalAlignment: Qt.AlignVCenter
                                }
@@ -262,7 +262,7 @@ Rectangle{
                                    Layout.fillHeight: true
                                    color: color4
                                    text: text3
-                                   font.family: mainFaNumFont.name
+                                   font.family: setting.activeNumFont
                                    font.pixelSize: Qt.application.font.pixelSize * 1
                                    verticalAlignment: Qt.AlignVCenter
                                }
@@ -292,7 +292,7 @@ Rectangle{
                                    Layout.fillHeight: true
                                    color: color4
                                    text: text4
-                                   font.family: mainFaNumFont.name
+                                   font.family: setting.activeNumFont
                                    font.pixelSize: Qt.application.font.pixelSize * 1
                                    verticalAlignment: Qt.AlignVCenter
                                }
@@ -322,7 +322,7 @@ Rectangle{
                                    Layout.fillHeight: true
                                    color: color4
                                    text: text5
-                                   font.family: mainFaNumFont.name
+                                   font.family: setting.activeNumFont
                                    font.pixelSize: Qt.application.font.pixelSize * 1
                                    verticalAlignment: Qt.AlignVCenter
                                }
@@ -385,7 +385,7 @@ Rectangle{
                                 Layout.preferredWidth: 100
                                 Layout.rightMargin: 20
                                 text: "خرید اشتراک ویژه " + time + " روزه"
-                                font.family: mainFaNumFont.name
+                                font.family: setting.activeNumFont
                                 font.pixelSize: Qt.application.font.pixelSize * 1 //* widthRatio
                                 verticalAlignment: Qt.AlignVCenter
                                 color: "#ffffff"

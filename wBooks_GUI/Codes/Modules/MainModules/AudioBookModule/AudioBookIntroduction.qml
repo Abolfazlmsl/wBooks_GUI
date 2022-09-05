@@ -38,7 +38,7 @@ Rectangle {
                 id: txt1
                 anchors.fill: parent
                 text: "مشخصات کتاب الکترونیک"
-                font.family: mainFont.name
+                font.family: setting.activeFont
                 font.bold: true
                 color: color4
                 verticalAlignment: Qt.AlignVCenter
@@ -131,7 +131,7 @@ Rectangle {
                 id: txt2
                 anchors.fill: parent
                 text: "معرفی کتاب من پیش از تو"
-                font.family: mainFont.name
+                font.family: setting.activeFont
                 font.bold: true
                 color: color4
                 verticalAlignment: Qt.AlignVCenter
@@ -169,7 +169,7 @@ Rectangle {
 نویسنده تفسیر تازه‌ای از داستان‌های عاشقانه در سطوح رایجش را ارائه می‌دهد و از حساسیت‌های بی‌مورد بر مخاطب جلوگیری می‌کند. شخصیت‌ها فوراً در دام عشق نمی‌افتند، اما نخست دوستی و اعتماد را پرورش می‌دهند؛ زیرا آنها ناامیدی و سختی‌های زندگی را درک کرده‌اند. لوئیزا در بخشی از کتاب می‌گوید: «شما خوشحالی مرا می‌سازید، حتی زمانی که خیلی بداخلاق می‌شوید. من ترجیح می‌دهم با شما باشم، نسبت به هر کس دیگری در جهان.»
 
 با خواندن کتاب، گاهی ممکن است از سر خنده، دیوانه‌وار شاد شوید و یا گاهی سیل‌آسا اشک ریزید. جادوی کلمات از سوی نویسنده نه تنها قدرتمند، بلکه زیبا هستند و می‌توانند خواننده را با عمیق‌ترین احساسات درونی‌اش مواجه کند. به طور کلی، کتاب بسیار غیر منتظره و با حالتی بسیار دلهره‌آور به پایانش نزدیک می‌شود. قسمت‌های نخستین تا میانه‌های رمان روایتی ساده و مستقیم دارد، اما در نهایت، شما به نقطه‌ای می‌رسید که نمی‌توانید کتاب را به کنار بگذارید."
-                font.family: mainFaNumFont.name
+                font.family: setting.activeNumFont
                 color: color4
                 wrapMode: Text.WordWrap
                 lineHeight: 1.15
@@ -205,7 +205,7 @@ Rectangle {
                 id: txt4
                 anchors.fill: parent
                 text: "نقد، بررسی و نظرات"
-                font.family: mainFont.name
+                font.family: setting.activeFont
                 font.bold: true
                 color: color4
                 verticalAlignment: Qt.AlignVCenter
@@ -275,7 +275,7 @@ Rectangle {
 
                                             text: commentModel.get(index).name
                                             color: color2
-                                            font.family: mainFont.name
+                                            font.family: setting.activeFont
                                             font.pixelSize: Qt.application.font.pixelSize * 1.5
 
                                             verticalAlignment: Qt.AlignVCenter
@@ -290,7 +290,7 @@ Rectangle {
 
                                             text: commentModel.get(index).date
                                             color: color15
-                                            font.family: mainFaNumFont.name
+                                            font.family: setting.activeNumFont
                                             font.pixelSize: Qt.application.font.pixelSize * 1
                                             horizontalAlignment: Qt.AlignHCenter
                                             verticalAlignment: Qt.AlignVCenter
@@ -334,7 +334,7 @@ Rectangle {
 
                                             text: commentModel.get(index).like
                                             color: color4
-                                            font.family: mainFaNumFont.name
+                                            font.family: setting.activeNumFont
                                             font.pixelSize: Qt.application.font.pixelSize * 1.2
 
                                             verticalAlignment: Qt.AlignVCenter
@@ -349,7 +349,7 @@ Rectangle {
 
                                             text: commentModel.get(index).dislike
                                             color: color4
-                                            font.family: mainFaNumFont.name
+                                            font.family: setting.activeNumFont
                                             font.pixelSize: Qt.application.font.pixelSize * 1.2
 
                                             verticalAlignment: Qt.AlignVCenter
@@ -417,7 +417,7 @@ Rectangle {
                                                                               cursor:pointer;
                                                                              }
                                                                             </style><a href="بیشتر">بیشتر</a></html>'
-                                        font.family: mainFaNumFont.name
+                                        font.family: setting.activeNumFont
                                         textFormat: Text.RichText
                                         color: color4
                                         lineHeight: 1.15
@@ -456,7 +456,7 @@ Rectangle {
                         Layout.preferredWidth: 100
                         Layout.fillHeight: true
                         text: "مشاهده همه نظرات (" + (commentModel.count - 5) + ")"
-                        font.family: mainFaNumFont.name
+                        font.family: setting.activeNumFont
                         color: color5
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter

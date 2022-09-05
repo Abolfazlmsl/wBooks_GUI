@@ -40,7 +40,7 @@ Item{
                     Layout.fillHeight: true
                     Layout.preferredWidth: contentWidth
                     text: "عنوان"
-                    font.family: mainFaNumFont.name
+                    font.family: setting.activeNumFont
                     font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
                     font.bold: true
                     verticalAlignment: Qt.AlignVCenter
@@ -55,7 +55,7 @@ Item{
                     Layout.fillHeight: true
                     Layout.preferredWidth: contentWidth
                     text: "عنوان"
-                    font.family: mainFaNumFont.name
+                    font.family: setting.activeNumFont
                     font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
                     verticalAlignment: Qt.AlignVCenter
                     color: "#d43460"

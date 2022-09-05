@@ -56,7 +56,7 @@ Item {
                         id: typeIcon
                         anchors.centerIn: parent
                         text: itemModel.count + " کتاب موجود"
-                        font.family: mainFaNumFont.name
+                        font.family: setting.activeNumFont
                         color: "#ffffff"
                         font.pixelSize: Qt.application.font.pixelSize*1
                     }
@@ -82,7 +82,7 @@ Item {
                         id: txt2
                         anchors.fill: parent
                         text: ""
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         font.pixelSize: Qt.application.font.pixelSize*1.2 * ratio
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
@@ -158,7 +158,7 @@ Item {
                                         id: txt3
                                         anchors.fill: parent
                                         text: "تعداد کل کتاب ها"
-                                        font.family: mainFont.name
+                                        font.family: setting.activeFont
                                         color: firstColor
                                         font.pixelSize: Qt.application.font.pixelSize*1
                                         verticalAlignment: Qt.AlignVCenter
@@ -190,7 +190,7 @@ Item {
                                         id: txt4
                                         anchors.fill: parent
                                         text: "کتاب های خوانده شده"
-                                        font.family: mainFont.name
+                                        font.family: setting.activeFont
                                         color: secondColor
                                         font.pixelSize: Qt.application.font.pixelSize*1
                                         verticalAlignment: Qt.AlignVCenter

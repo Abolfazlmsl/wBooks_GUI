@@ -96,7 +96,7 @@ Item {
                             Label{
                                 anchors.fill: parent
                                 text: "(" + rate + " رای)"
-                                font.family: mainFaNumFont.name
+                                font.family: setting.activeNumFont
                                 color: color9
                                 verticalAlignment: Qt.AlignVCenter
                                 font.pixelSize: Qt.application.font.pixelSize * 0.9

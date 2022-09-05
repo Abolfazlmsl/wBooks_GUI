@@ -108,7 +108,7 @@ Item {
                 Label{
                     text: "پشتیبانی"
                     color: color1
-                    font.family: mainFont.name
+                    font.family: setting.activeFont
                     font.pixelSize: Qt.application.font.pixelSize * 2
                     renderType: Text.NativeRendering
 
@@ -147,7 +147,7 @@ Item {
                             Label{
                                 id: lbl_phone
                                 text: "09166546412"
-                                font.family: mainFaNumFont.name
+                                font.family: setting.activeNumFont
                                 font.pixelSize: Qt.application.font.pixelSize * 1.5
                                 color: color4
                             }
@@ -178,7 +178,7 @@ Item {
                             Label{
                                 id: lbl_emailAddress
                                 text: "seyedmaziarmousavi@gmail.com"
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 font.pixelSize: Qt.application.font.pixelSize * 1.5
                                 color: color4
                             }
@@ -209,7 +209,7 @@ Item {
                             Label{
                                 id: lbl_whatsapp
                                 text: "09166546412"
-                                font.family: mainFaNumFont.name
+                                font.family: setting.activeNumFont
                                 font.pixelSize: Qt.application.font.pixelSize * 1.5
                                 color: color4
                             }

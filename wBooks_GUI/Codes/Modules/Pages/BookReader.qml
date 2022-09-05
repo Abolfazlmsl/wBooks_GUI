@@ -210,7 +210,7 @@ Window {
                             id:textItem
                             text: model.text
                             color: itemDlgt.hovered?color1:color4
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.pixelSize: Qt.application.font.pixelSize * 1.2* ratio
                             verticalAlignment: Text.AlignVCenter
                             horizontalAlignment: Text.AlignLeft

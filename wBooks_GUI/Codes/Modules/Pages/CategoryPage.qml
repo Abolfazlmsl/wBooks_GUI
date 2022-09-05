@@ -38,7 +38,7 @@ Item {
                     Label{
                         anchors.fill: parent
                         text: "داستان و رمان"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         color: color5
                         font.pixelSize: Qt.application.font.pixelSize * 2
                         verticalAlignment: Qt.AlignVCenter

@@ -35,7 +35,7 @@ Rectangle{
         width: Text.width
         text: "عنوان"
         minimumPointSize: 10
-        font.family: mainFont.name
+        font.family: setting.activeFont
         fontSizeMode: Text.Fit
         font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
         font.bold: isClick

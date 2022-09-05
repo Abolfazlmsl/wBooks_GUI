@@ -144,7 +144,7 @@ Rectangle{
                                 width: parent.width
                                 anchors.right: parent.right
                                 text: "1000 کتاب موجود"
-                                font.family: mainFaNumFont.name
+                                font.family: setting.activeNumFont
                                 font.pixelSize: Qt.application.font.pixelSize * 1.3
                                 verticalAlignment: Qt.AlignVCenter
                                 color: color5
@@ -176,7 +176,7 @@ Rectangle{
                             Layout.topMargin: 2
                             Layout.bottomMargin: 2
                             LayoutMirroring.enabled: true
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
                             background: Rectangle {
                                 color: color1
@@ -198,7 +198,7 @@ Rectangle{
                                     id:textItem
                                     text: model.text
                                     color: itemDlgt.hovered?color1:color4
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
                                     LayoutMirroring.enabled: true
                                     verticalAlignment: Text.AlignVCenter
@@ -479,7 +479,7 @@ Rectangle{
                             Layout.leftMargin: 5 * ratio
 
                             text: "خروج از نرم افزار"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.pixelSize: Qt.application.font.pixelSize * 0.9
                             renderType: Text.NativeRendering
 

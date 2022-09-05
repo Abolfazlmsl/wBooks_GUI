@@ -139,7 +139,7 @@ Item{
                             Label{
                                 anchors.centerIn: parent
                                 text: "به وی بوکس خوش آمدید"
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 font.pixelSize: Qt.application.font.pixelSize * 1.5
                                 color: "#ffffff"
                             }
@@ -363,7 +363,7 @@ Item{
                                             Layout.preferredWidth: contentWidth
                                             Layout.fillHeight: true
                                             text: "رمز عبور خود را فراموش کرده اید؟"
-                                            font.family: mainFont.name
+                                            font.family: setting.activeFont
                                             font.pixelSize: Qt.application.font.pixelSize
                                             color: color4
                                             MouseArea{
@@ -497,7 +497,7 @@ Item{
                                     Layout.preferredWidth: contentWidth
                                     Layout.fillHeight: true
                                     text: "آیا تا به حال ثبت نام نکرده اید؟"
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     font.pixelSize: Qt.application.font.pixelSize * 1.2
                                     color: color4
                                     verticalAlignment: Qt.AlignVCenter
@@ -510,7 +510,7 @@ Item{
                                     Layout.preferredWidth: contentWidth
                                     Layout.fillHeight: true
                                     text: "ثبت نام کنید"
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     font.pixelSize: Qt.application.font.pixelSize * 1.2
                                     color: "#d43460"
                                     verticalAlignment: Qt.AlignVCenter

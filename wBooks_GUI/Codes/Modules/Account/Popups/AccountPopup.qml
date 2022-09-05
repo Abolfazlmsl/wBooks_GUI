@@ -66,7 +66,7 @@ Rectangle {
                         width: parent.width
                         height: parent.height / 2
                         text: setting.userName
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         color: "#ffffff"
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -77,7 +77,7 @@ Rectangle {
                         height: parent.height / 2
                         anchors.top: txt1.bottom
                         text: "شماره کاربری: " + setting.user_number
-                        font.family: mainFaNumFont.name
+                        font.family: setting.activeNumFont
                         color: "#ffffff"
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -96,7 +96,7 @@ Rectangle {
                         id: txt_exit
                         anchors.fill: parent
                         text: "خروج"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         color: "#ffffff"
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -217,7 +217,7 @@ Rectangle {
                     anchors.topMargin: 10
                     color: "#ffffff"
                     text: (setting.isLicense)? Functions.remainingLicenseTime(setting.licenseExpiredTime) + " روز از اشتراک شما باقی مانده است" : "شما اشتراک فعالی ندارید"
-                    font.family: mainFaNumFont.name
+                    font.family: setting.activeNumFont
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                 }
@@ -238,7 +238,7 @@ Rectangle {
                         anchors.fill: parent
                         color: "#000000"
                         text: "تغییر و تمدید طرح"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
                     }

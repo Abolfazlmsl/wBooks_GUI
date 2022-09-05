@@ -48,7 +48,7 @@ Rectangle{
             id: txt2
             anchors.fill: parent
             text: ""
-            font.family: mainFont.name
+            font.family: setting.activeFont
             color: color4
             verticalAlignment: Qt.AlignVCenter
             wrapMode: Text.WordWrap
@@ -65,7 +65,7 @@ Rectangle{
             id: txt3
             anchors.fill: parent
             text: ""
-            font.family: mainFont.name
+            font.family: setting.activeFont
             color: color9
             verticalAlignment: Qt.AlignVCenter
             font.pixelSize: Qt.application.font.pixelSize

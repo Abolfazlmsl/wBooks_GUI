@@ -34,7 +34,7 @@ Rectangle{
                     Label{
                         anchors.fill: parent
                         text: "اشتراک ویژه 15 روزه"
-                        font.family: mainFaNumFont.name
+                        font.family: setting.activeNumFont
                         color: color4
                         font.pixelSize: Qt.application.font.pixelSize * 1.5
                         verticalAlignment: Qt.AlignVCenter
@@ -72,7 +72,7 @@ Rectangle{
                             Layout.preferredWidth: contentWidth
                             Layout.preferredHeight: contentHeight
                             text: Functions.numberWithCommas("15000") + " تومان"
-                            font.family: mainFaNumFont.name
+                            font.family: setting.activeNumFont
                             color: color4
                             font.pixelSize: Qt.application.font.pixelSize * 2
                             verticalAlignment: Qt.AlignVCenter

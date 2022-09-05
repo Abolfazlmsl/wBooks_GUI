@@ -70,7 +70,7 @@ Item{
                                     color: "#474749"
                                     Label{
                                         anchors.fill: parent
-                                        font.family: mainFont.name
+                                        font.family: setting.activeFont
                                         font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
                                         text: "اشتراک من"
                                         color: "#ffffff"
@@ -108,7 +108,7 @@ Item{
                                             Label{
                                                 id: modelTxt
                                                 anchors.centerIn: parent
-                                                font.family: mainFaNumFont.name
+                                                font.family: setting.activeNumFont
                                                 color: "black"
                                                 text: (setting.isLicense)? "اشتراک ویژه " + setting.licenseTime + " روزه":"اشتراک ویژه ی شما به پایان رسیده است"
                                                 font.pixelSize: Qt.application.font.pixelSize * 1.7* ratio
@@ -125,7 +125,7 @@ Item{
                                             color: "transparent"
                                             Label{
                                                 anchors.centerIn: parent
-                                                font.family: mainFaNumFont.name
+                                                font.family: setting.activeNumFont
                                                 color: "#a0a0a0"
                                                 text: "(صورتحساب " + setting.licensePurchaseNumber + ")"
                                                 font.pixelSize: Qt.application.font.pixelSize * 1.4* ratio
@@ -242,7 +242,7 @@ Item{
                                     color: "#d43460"
                                     Label{
                                         anchors.fill: parent
-                                        font.family: mainFaNumFont.name
+                                        font.family: setting.activeNumFont
                                         font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
                                         text: (setting.isLicense)? Functions.remainingLicenseTime(setting.licenseExpiredTime) + " روز باقی مانده است":"-"
                                         color: "#ffffff"
@@ -263,7 +263,7 @@ Item{
                             color: "transparent"
                             Label{
                                 anchors.fill: parent
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 color: "#d43460"
                                 text: "خرید اشتراک ویژه ی وی بوکس"
                                 font.pixelSize: Qt.application.font.pixelSize * 2
@@ -291,7 +291,7 @@ Item{
                                 text: "این روزها به ندرت رمان عاشقانه‌ای خواهید یافت که درس زندگی دهد، یا اینکه قهرمانان کتاب در پایان با قلب مخاطب همراه شوند. اثر پرفروش من پیش از تو نوشته رمان‌نویس مشهور انگلیسی جوجو مویز از این دست کتاب‌ها است.
 
                 کتاب با لوئیزا کلارک که دختری جوان و 26 ساله است شروع می‌شود. او که جاه طلب و موفق نیست، مدام در داشتن شغلی پایدار و همیشگی شکست می‌خورد. لوئیزا با سمت پیشخدمت در کافه‌ای محلی مشغول به کار است و شغلش به عنوان کمک درآمدی برای خانواده‌ فقیرش است. در ادامه داستان، دیری نمی‌گذرد که کارش را از دست می‌دهد."
-                                font.family: mainFaNumFont.name
+                                font.family: setting.activeNumFont
                                 color: color4
                                 wrapMode: Text.WordWrap
                             }

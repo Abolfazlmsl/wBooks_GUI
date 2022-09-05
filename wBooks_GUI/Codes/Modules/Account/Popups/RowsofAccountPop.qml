@@ -37,7 +37,7 @@ Rectangle {
                 Layout.preferredWidth: contentWidth
                 Layout.fillHeight: true
                 text: setting.userName
-                font.family: mainFont.name
+                font.family: setting.activeFont
                 color: "#ffffff"
 
                 font.pixelSize: Qt.application.font.pixelSize * 1.3
@@ -64,7 +64,7 @@ Rectangle {
                     anchors.fill: parent
                     color: color16
                     text: ""
-                    font.family: mainFaNumFont.name
+                    font.family: setting.activeNumFont
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                 }
@@ -92,7 +92,7 @@ Rectangle {
                     height: parent.height * 0.9
                     color: "#ffffff"
                     text: "مشاهده"
-                    font.family: mainFont.name
+                    font.family: setting.activeFont
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Rectangle{

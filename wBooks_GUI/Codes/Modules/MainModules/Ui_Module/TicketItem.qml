@@ -110,7 +110,7 @@ Item {
                 Label{
                     text: "ارسال بازخورد"
                     color: color1
-                    font.family: mainFont.name
+                    font.family: setting.activeFont
                     font.pixelSize: Qt.application.font.pixelSize * 2
                     renderType: Text.NativeRendering
 
@@ -220,7 +220,7 @@ Item {
                                         wrapMode: TextArea.WordWrap
                                         //                            leftPadding: 10 * ratio
 
-                                        font.family: mainFaNumFont.name
+                                        font.family: setting.activeNumFont
                                         font.pixelSize: Qt.application.font.pixelSize * 2
                                         selectedTextColor: color14
                                         color: color4
@@ -240,7 +240,7 @@ Item {
                                             anchors.verticalCenter: parent.verticalCenter
                                             anchors.horizontalCenter: parent.horizontalCenter
 
-                                            font.family: mainFont.name
+                                            font.family: setting.activeFont
                                             font.pixelSize: Qt.application.font.pixelSize * 3
 
                                             color: color18

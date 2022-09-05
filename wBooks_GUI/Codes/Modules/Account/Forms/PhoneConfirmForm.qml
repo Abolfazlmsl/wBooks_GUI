@@ -93,7 +93,7 @@ Item {
                     Label{
                         anchors.centerIn: parent
                         text: "کد تایید را وارد کنید"
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         font.pixelSize: Qt.application.font.pixelSize * 1.5
                         color: "#ffffff"
                     }
@@ -127,7 +127,7 @@ Item {
                                     Layout.fillHeight: true
                                     Layout.preferredWidth: contentWidth
                                     text: "کد تایید برای شماره "
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     font.pixelSize: Qt.application.font.pixelSize * 1.5
                                     color: "#000000"
                                 }
@@ -135,7 +135,7 @@ Item {
                                     Layout.fillHeight: true
                                     Layout.preferredWidth: contentWidth
                                     text: phoneNumber
-                                    font.family: mainFaNumFont.name
+                                    font.family: setting.activeNumFont
                                     font.pixelSize: Qt.application.font.pixelSize * 1.5
                                     color: "#d43460"
                                     MouseArea{
@@ -150,7 +150,7 @@ Item {
                                     Layout.fillHeight: true
                                     Layout.preferredWidth: contentWidth
                                     text: " ارسال شد"
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     font.pixelSize: Qt.application.font.pixelSize * 1.5
                                     color: "#000000"
                                 }
@@ -340,7 +340,7 @@ Item {
                                     Layout.preferredWidth: contentWidth
                                     Layout.fillHeight: true
                                     text: "ارسال مجدد کد"
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     color: "#d43460"
 
                                     font.pixelSize: Qt.application.font.pixelSize * 1.1
@@ -370,7 +370,7 @@ Item {
                                     Layout.preferredWidth: contentWidth
                                     Layout.fillHeight: true
                                     text: "تا پایان اعتبار کد تایید"
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     color: "#d43460"
 
                                     font.pixelSize: Qt.application.font.pixelSize * 1.1
@@ -451,7 +451,7 @@ Item {
                             Layout.preferredWidth: contentWidth
                             Layout.fillHeight: true
                             text: "آیا حساب کاربری دارید؟"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.pixelSize: Qt.application.font.pixelSize * 1.2
                             color: color4
                             verticalAlignment: Qt.AlignVCenter
@@ -464,7 +464,7 @@ Item {
                             Layout.preferredWidth: contentWidth
                             Layout.fillHeight: true
                             text: "وارد شوید"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.pixelSize: Qt.application.font.pixelSize * 1.2
                             color: "#d43460"
                             verticalAlignment: Qt.AlignVCenter

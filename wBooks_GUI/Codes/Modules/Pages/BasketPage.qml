@@ -34,7 +34,7 @@ Rectangle {
                         id: icontxt
                         Layout.preferredWidth: 200
                         Layout.preferredHeight: 200
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         text: "سبد خرید شما خالی است."
                         font.pixelSize: Qt.application.font.pixelSize * 2
                         color: color4
@@ -73,7 +73,7 @@ Rectangle {
                                     Label{
                                         Layout.preferredWidth: contentWidth
                                         Layout.fillHeight: true
-                                        font.family: mainFont.name
+                                        font.family: setting.activeFont
                                         verticalAlignment: Qt.AlignVCenter
                                         horizontalAlignment: Qt.AlignHCenter
                                         font.pixelSize: Qt.application.font.pixelSize * 2
@@ -88,7 +88,7 @@ Rectangle {
                                         color: color12
                                         Label{
                                             anchors.fill: parent
-                                            font.family: mainFaNumFont.name
+                                            font.family: setting.activeNumFont
                                             verticalAlignment: Qt.AlignVCenter
                                             horizontalAlignment: Qt.AlignHCenter
                                             font.pixelSize: Qt.application.font.pixelSize * 2
@@ -142,7 +142,7 @@ Rectangle {
                             color: "transparent"
                             Label{
                                 anchors.fill: parent
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
                                 font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
@@ -181,7 +181,7 @@ Rectangle {
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter
                                     text: "تایید کد"
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     color: color4
                                 }
                                 MouseArea{
@@ -219,7 +219,7 @@ Rectangle {
                                     id: checkbox
                                     Layout.preferredWidth: parent.width * 0.8
                                     Layout.fillHeight: true
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     font.pixelSize: Qt.application.font.pixelSize* 1.3
                                     checked: false
 
@@ -240,7 +240,7 @@ Rectangle {
                                 Label{
                                     Layout.fillWidth: true
                                     Layout.fillHeight: true
-                                    font.family: mainFaNumFont.name
+                                    font.family: setting.activeNumFont
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
@@ -256,7 +256,7 @@ Rectangle {
                             Layout.preferredHeight: 40
                             Layout.rightMargin: 10
                             Layout.leftMargin: 10
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.pixelSize: Qt.application.font.pixelSize* 1.3
                             checked: true
 
@@ -289,7 +289,7 @@ Rectangle {
                                 Label{
                                     Layout.preferredWidth: parent.width * 0.8
                                     Layout.fillHeight: true
-                                    font.family: mainFont.name
+                                    font.family: setting.activeFont
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
                                     text: "قابل پرداخت:"
@@ -299,7 +299,7 @@ Rectangle {
                                 Label{
                                     Layout.fillWidth: true
                                     Layout.fillHeight: true
-                                    font.family: mainFaNumFont.name
+                                    font.family: setting.activeNumFont
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
                                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio

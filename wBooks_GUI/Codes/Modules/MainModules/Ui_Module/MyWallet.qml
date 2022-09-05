@@ -134,7 +134,7 @@ Item{
                             Layout.preferredWidth: contentWidth
                             Layout.fillHeight: true
                             text: "مبلغ قابل پرداخت:"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.pixelSize: 23 //* widthRatio
                             font.bold: true
                             horizontalAlignment: Qt.AlignHCenter
@@ -145,7 +145,7 @@ Item{
                             Layout.fillWidth: true
                             Layout.fillHeight: true
                             text: Functions.numberWithCommas(increseAmount) + " تومان"
-                            font.family: mainFaNumFont.name
+                            font.family: setting.activeNumFont
                             font.pixelSize: 23 //* widthRatio
                             font.bold: true
                             horizontalAlignment: Qt.AlignHCenter

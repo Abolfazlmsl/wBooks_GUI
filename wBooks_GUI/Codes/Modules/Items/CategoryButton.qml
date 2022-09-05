@@ -138,7 +138,7 @@ Rectangle{
                             id:lbl_Title
                             anchors.centerIn: parent
                             text: "تمرین"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.pixelSize: 23 * ratio
                             font.bold: true
 

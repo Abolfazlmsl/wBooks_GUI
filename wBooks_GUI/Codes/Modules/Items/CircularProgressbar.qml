@@ -97,7 +97,7 @@ Canvas {
     Text {
         anchors.centerIn: parent
         font.pixelSize: Qt.application.font.pixelSize*1.4
-        font.family: mainFaNumFont.name
+        font.family: setting.activeNumFont
         text: "%" + canvas.text
         color: canvas.primaryColor
     }

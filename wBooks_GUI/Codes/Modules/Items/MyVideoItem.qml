@@ -47,7 +47,7 @@ Rectangle{
             id: txt2
             anchors.fill: parent
             text: ""
-            font.family: mainFont.name
+            font.family: setting.activeFont
             color: color4
             verticalAlignment: Qt.AlignVCenter
             wrapMode: Text.WordWrap

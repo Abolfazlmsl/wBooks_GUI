@@ -95,7 +95,7 @@ Rectangle{
                                 id:lbl_Title
                                 anchors.centerIn: parent
                                 text: "تمرین"
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 font.pixelSize: 23 //* widthRatio
                                 font.bold: true
 
@@ -127,7 +127,7 @@ Rectangle{
                                 id:lbl_Title2
                                 anchors.centerIn: parent
                                 text: "موجودی کیف پول:"
-                                font.family: mainFont.name
+                                font.family: setting.activeFont
                                 font.pixelSize: 23 //* widthRatio
 //                                font.bold: true
 
@@ -150,7 +150,7 @@ Rectangle{
                                 id:lbl_Price
                                 anchors.centerIn: parent
                                 text: Functions.numberWithCommas(setting.mywallet) + " تومان"
-                                font.family: mainFaNumFont.name
+                                font.family: setting.activeNumFont
                                 font.pixelSize: 60 //* widthRatio
                                 font.bold: true
 
@@ -200,7 +200,7 @@ Rectangle{
                             id:lbl_Purchase
                             anchors.centerIn: parent
                             text: "افزایش اعتبار"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             font.pixelSize: 23 //* widthRatio
                             font.bold: true
 

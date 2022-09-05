@@ -41,7 +41,7 @@ Rectangle{
         anchors.fill: parent
         visible: iconReturn.isHover
         text: ""
-        font.family: mainFont.name
+        font.family: setting.activeFont
         font.pixelSize: Qt.application.font.pixelSize*1.5
         color: color4
         verticalAlignment: Qt.AlignVCenter

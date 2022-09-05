@@ -46,7 +46,7 @@ Rectangle{
             id:lbl_btn
             anchors.centerIn: parent
             text: "ارسال پیام"
-            font.family: mainFont.name
+            font.family: setting.activeFont
             font.pixelSize: Qt.application.font.pixelSize * fontSize //* widthRatio
             font.bold: true
 

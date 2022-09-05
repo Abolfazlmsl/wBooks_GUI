@@ -63,7 +63,7 @@ Item {
                         horizontalAlignment: Qt.AlignHCenter
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.9
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         minimumPixelSize: 1
                         fontSizeMode: Text.Fit
                     }
@@ -111,7 +111,7 @@ Item {
                         horizontalAlignment: Qt.AlignHCenter
 
                         font.pixelSize: Qt.application.font.pixelSize * 1.9
-                        font.family: mainFont.name
+                        font.family: setting.activeFont
                         minimumPixelSize: 1
                         fontSizeMode: Text.Fit
                     }

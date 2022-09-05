@@ -21,7 +21,7 @@ Rectangle {
         id: txt
         anchors.fill: parent
         text: Functions.numberWithCommas(amount) + " تومان"
-        font.family: mainFaNumFont.name
+        font.family: setting.activeNumFont
         font.pixelSize: 23 //* widthRatio
         font.bold: true
         horizontalAlignment: Qt.AlignHCenter

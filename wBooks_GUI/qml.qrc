@@ -3,10 +3,6 @@
         <file>main.qml</file>
         <file>Fonts/Fonts.js</file>
         <file>Fonts/Icon.js</file>
-        <file>Fonts/iranSans_Medium.ttf</file>
-        <file>Fonts/iranSansMobile(FaNum).ttf</file>
-        <file>Fonts/iranSansMobile.ttf</file>
-        <file>Fonts/iranSansMobile_Bold.ttf</file>
         <file>Fonts/IRYekan.ttf</file>
         <file>Fonts/materialdesignicons-webfont.ttf</file>
         <file>Fonts/OpenSans-Regular.ttf</file>
@@ -221,5 +217,9 @@
         <file>Icons/gmail.png</file>
         <file>Images/Ticket1-2.png</file>
         <file>Codes/Modules/MainModules/Popup/Quit_Popup.qml</file>
+        <file>Fonts/IRANSans_Medium.ttf</file>
+        <file>Fonts/IRANSansMobile(FaNum).ttf</file>
+        <file>Fonts/IRANSansMobile.ttf</file>
+        <file>Fonts/IRANSansMobile_Bold.ttf</file>
     </qresource>
 </RCC>

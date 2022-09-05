@@ -110,7 +110,7 @@ Rectangle{
             Layout.fillHeight: true
 
             verticalAlignment: Qt.AlignVCenter
-            font.family: mainFaNumFont.name
+            font.family: setting.activeNumFont
 
             text: stringHour + " : " + stringSeconds
             font.pixelSize: Qt.application.font.pixelSize * 1.1 * timerScale

@@ -40,7 +40,7 @@ Rectangle{
                             Layout.fillWidth: true
                             Layout.preferredHeight: contentHeight
                             text: "کتاب اثر مرکب"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             color: color4
                             font.pixelSize: Qt.application.font.pixelSize * 1.5
                             verticalAlignment: Qt.AlignVCenter
@@ -50,7 +50,7 @@ Rectangle{
                             Layout.fillWidth: true
                             Layout.preferredHeight: contentHeight
                             text: "نویسنده: دارن هاردی"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             color: color4
                             font.pixelSize: Qt.application.font.pixelSize * 1.2
                             verticalAlignment: Qt.AlignVCenter
@@ -60,7 +60,7 @@ Rectangle{
                             Layout.fillWidth: true
                             Layout.preferredHeight: contentHeight
                             text: "مترجم: لطیف احمدپور"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             color: color4
                             font.pixelSize: Qt.application.font.pixelSize * 1.2
                             verticalAlignment: Qt.AlignVCenter
@@ -70,7 +70,7 @@ Rectangle{
                             Layout.fillWidth: true
                             Layout.preferredHeight: contentHeight
                             text: "ناشر: انتشارات نگاه نوین"
-                            font.family: mainFont.name
+                            font.family: setting.activeFont
                             color: color4
                             font.pixelSize: Qt.application.font.pixelSize * 1.2
                             verticalAlignment: Qt.AlignVCenter
@@ -123,7 +123,7 @@ Rectangle{
                             Layout.preferredWidth: contentWidth
                             Layout.preferredHeight: contentHeight
                             text: Functions.numberWithCommas("10000") + " تومان"
-                            font.family: mainFaNumFont.name
+                            font.family: setting.activeNumFont
                             color: color4
                             font.pixelSize: Qt.application.font.pixelSize * 2
                             verticalAlignment: Qt.AlignVCenter

@@ -98,7 +98,7 @@ Rectangle{
                 leftPadding: 30
 //                            leftPadding: 10 * ratio
 
-                font.family: mainFaNumFont.name
+                font.family: setting.activeNumFont
                 font.pixelSize: Qt.application.font.pixelSize * fontSize
                 selectedTextColor: color14
                 color: color4
@@ -119,7 +119,7 @@ Rectangle{
                     anchors.rightMargin: 30
                     anchors.verticalCenter: parent.verticalCenter
 
-                    font.family: mainFont.name
+                    font.family: setting.activeFont
                     font.pixelSize: Qt.application.font.pixelSize
 
                     color: color18
@@ -139,7 +139,7 @@ Rectangle{
 
                     anchors.centerIn: parent
 
-                    font.family: mainFont.name
+                    font.family: setting.activeFont
                     font.pixelSize: Qt.application.font.pixelSize
 
                     color: color18

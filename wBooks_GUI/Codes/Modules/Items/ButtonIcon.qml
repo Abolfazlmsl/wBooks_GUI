@@ -49,7 +49,7 @@ Rectangle{
                 id: btnTxt
                 anchors.centerIn: parent
                 text: ""
-                font.family: mainFaNumFont.name
+                font.family: setting.activeNumFont
                 font.pixelSize: Qt.application.font.pixelSize * textSize //* widthRatio
                 font.bold: true
 
