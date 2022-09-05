@@ -46,6 +46,7 @@ Item {
                     text: "تیتر اصلی"
                     font.family: setting.activeFont
                     font.pixelSize: Qt.application.font.pixelSize * 1.3
+                    font.bold: true
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: "#a2a2a2"
@@ -63,6 +64,8 @@ Item {
             Layout.preferredHeight: parent.height * 0.4
             Layout.leftMargin: 15
             Layout.rightMargin: 15
+            placeholderSize: 1.2
+            fontSize: 1.2
             label: "جستجو در ناشران"
             icon: Icons.magnify
             placeholder: "جستجو در ناشران"

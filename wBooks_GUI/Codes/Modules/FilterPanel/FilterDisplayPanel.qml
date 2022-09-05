@@ -67,6 +67,7 @@ Item {
                     text: "تیتر اصلی"
                     font.family: setting.activeFont
                     font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
+                    font.bold: true
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: "#a2a2a2"
@@ -87,6 +88,7 @@ Item {
                     text: (isShowAll) ? "نمایش کمتر" : "نمایش همه"
                     font.family: setting.activeFont
                     font.pixelSize: Qt.application.font.pixelSize * ratio
+                    font.bold: true
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: "#a2a2a2"
@@ -108,6 +110,7 @@ Item {
                     }
                     font.family: webfont.name
                     font.pixelSize: Qt.application.font.pixelSize * 1.6 * ratio
+                    font.bold: true
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: "#a2a2a2"

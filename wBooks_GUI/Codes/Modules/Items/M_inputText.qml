@@ -26,6 +26,7 @@ Rectangle{
     property int itemRadius: 10
     property bool acceptInput: false
     property double fontSize: 1
+    property double placeholderSize: 1
     property string placeHolderPosition: "Right" //Center
     property alias textPosition: root_txf.state // "Right", "Left", "Center"
 
@@ -120,7 +121,7 @@ Rectangle{
                     anchors.verticalCenter: parent.verticalCenter
 
                     font.family: setting.activeFont
-                    font.pixelSize: Qt.application.font.pixelSize
+                    font.pixelSize: Qt.application.font.pixelSize * placeholderSize
 
                     color: color18
 

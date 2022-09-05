@@ -493,6 +493,8 @@ Window {
 
         property string activeFont: kalameh_Regular.name
         property string activeNumFont: kalameh_Regular_Fa_Num.name
+
+        property double fontRatio: 1
     }
 
     // mainFont ----> Font of Farsi
@@ -1240,7 +1242,7 @@ Window {
                             Layout.bottomMargin: 10
                             visible: !setting.isLogined
                             radius: 15
-                            textSize: 1.4 * ratio
+                            textSize: 1.2 * ratio
                             color: "#ffffff"
                             icon: "qrc:/Icons/login.png"
                             iconSize: 30
@@ -1270,7 +1272,7 @@ Window {
                             Layout.bottomMargin: 10
                             visible: !setting.isLogined
                             radius: 15
-                            textSize: 1.4 * ratio
+                            textSize: 1.2 * ratio
                             color: "#d43460"
                             icon: "qrc:/Icons/user.png"
                             flip: true
