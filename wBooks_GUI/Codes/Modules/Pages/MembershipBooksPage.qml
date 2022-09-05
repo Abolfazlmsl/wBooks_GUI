@@ -145,6 +145,8 @@ Item {
                 textColor: color4
 
                 onBtnClicked: {
+                    secondHeaderTitle = "اشتراک"
+                    topFilterVis = false
                     memView.currentIndex = 0
                 }
             }

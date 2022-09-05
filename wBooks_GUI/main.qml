@@ -48,7 +48,9 @@ Window {
     property bool accountPopEnabled: false
     property bool inHomeMode: true
     property bool smallPlayerVis: true
+    property bool secondHeaderVis: true
     property bool topFilterVis: false
+    property string secondHeaderTitle: "خانه"
     property int mainView: 8 // Home page
     property int myBooksView: 0
     property int rightView: 0
@@ -588,6 +590,8 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: false
+                    secondHeaderVis: true
+                    secondHeaderTitle: "دسته بندی"
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -606,6 +610,7 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: false
+                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -624,6 +629,7 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: false
+                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -641,6 +647,8 @@ Window {
                     mainView: 13
                     rightView: 1
                     homeClick: false
+                    secondHeaderVis: true
+                    secondHeaderTitle: "پنل کاربری"
                     topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
@@ -660,6 +668,8 @@ Window {
                     rightView: 0
                     homeClick: true
                     topFilterVis: false
+                    secondHeaderVis: true
+                    secondHeaderTitle: "خانه"
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -678,6 +688,8 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: false
+                    secondHeaderVis: true
+                    secondHeaderTitle: "اشتراک"
                     membershipClick: true
                     serialBookClick: false
                     audioBookClick: false
@@ -696,6 +708,8 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: false
+                    secondHeaderVis: true
+                    secondHeaderTitle: "کتاب های سریالی"
                     membershipClick: false
                     serialBookClick: true
                     audioBookClick: false
@@ -714,6 +728,8 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: false
+                    secondHeaderVis: true
+                    secondHeaderTitle: "کتاب های صوتی"
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: true
@@ -731,6 +747,8 @@ Window {
                     mainView: 6
                     rightView: 0
                     homeClick: false
+                    secondHeaderVis: true
+                    secondHeaderTitle: "کتابخانه"
                     topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
@@ -750,6 +768,8 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: true
+                    secondHeaderVis: true
+                    secondHeaderTitle: "کتاب های بیشتر"
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -768,6 +788,7 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: false
+                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -786,6 +807,7 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: false
+                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -804,6 +826,8 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: true
+                    secondHeaderVis: true
+                    secondHeaderTitle: "جستجو"
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -822,6 +846,7 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: false
+                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -840,6 +865,7 @@ Window {
                     rightView: 0
                     homeClick: false
                     topFilterVis: false
+                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false

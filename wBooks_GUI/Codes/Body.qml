@@ -95,6 +95,7 @@ Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50
                     color: color0
+                    visible: secondHeaderVis
                     RowLayout{
                         anchors.fill: parent
                         spacing: 0
@@ -143,7 +144,7 @@ Rectangle{
                                 height: parent.height - 1
                                 width: parent.width
                                 anchors.right: parent.right
-                                text: "1000 کتاب موجود"
+                                text: secondHeaderTitle
                                 font.family: setting.activeNumFont
                                 font.pixelSize: Qt.application.font.pixelSize * 1.3
                                 verticalAlignment: Qt.AlignVCenter
@@ -230,6 +231,7 @@ Rectangle{
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 2
+                    visible: secondHeaderVis
                     color: color1
                 }
 

@@ -156,6 +156,8 @@ Item{
                                                 cursorShape: Qt.PointingHandCursor
                                                 hoverEnabled: true
                                                 onClicked: {
+                                                    secondHeaderTitle = "کتاب های اشتراکی"
+                                                    topFilterVis = true
                                                     memView.currentIndex = 1
                                                 }
                                             }
