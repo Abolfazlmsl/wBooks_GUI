@@ -100,7 +100,7 @@ Rectangle{
 //                            leftPadding: 10 * ratio
 
                 font.family: setting.activeNumFont
-                font.pixelSize: Qt.application.font.pixelSize * fontSize
+                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * fontSize
                 selectedTextColor: color14
                 color: color4
 
@@ -121,7 +121,7 @@ Rectangle{
                     anchors.verticalCenter: parent.verticalCenter
 
                     font.family: setting.activeFont
-                    font.pixelSize: Qt.application.font.pixelSize * placeholderSize
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * placeholderSize
 
                     color: color18
 
@@ -141,7 +141,7 @@ Rectangle{
                     anchors.centerIn: parent
 
                     font.family: setting.activeFont
-                    font.pixelSize: Qt.application.font.pixelSize
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
 
                     color: color18
 
@@ -225,7 +225,7 @@ Rectangle{
                             text: "Paste"
 
 
-                            font.pixelSize: Qt.application.font.pixelSize
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                             enabled:txtTemp.text != "" ? true : false
 
                             width : 150 * ratio
@@ -276,7 +276,7 @@ Rectangle{
             visible: false
             text: (isClearIcon) ? Icons.close:Icons.star
             font.family: webfont.name
-            font.pixelSize: (isClearIcon) ? Qt.application.font.pixelSize * 1.5:Qt.application.font.pixelSize * 0.5
+            font.pixelSize: (isClearIcon) ? Qt.application.font.pixelSize * setting.fontRatio * 1.5:Qt.application.font.pixelSize * setting.fontRatio * 0.5
 
             //            color: Util.color_RightMenu
 
@@ -308,7 +308,7 @@ Rectangle{
         text: Icons.key
         color: iconColor
         font.family: webfont.name
-        font.pixelSize: Qt.application.font.pixelSize * 1.5
+        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
 
         verticalAlignment: Qt.AlignVCenter
     }

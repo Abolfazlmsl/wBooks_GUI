@@ -50,7 +50,7 @@ Item {
                     color: (showList)? color4:color2
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    font.pixelSize: Qt.application.font.pixelSize * 3
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
                 }
                 MouseArea{
                     anchors.fill: parent
@@ -78,7 +78,7 @@ Item {
                     color: (showList)? color2:color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    font.pixelSize: Qt.application.font.pixelSize * 3
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
                 }
                 MouseArea{
                     anchors.fill: parent
@@ -224,7 +224,7 @@ Item {
                             font.bold: true
                             color: color4
                             text: Icons.trash_can_outline
-                            font.pixelSize: Qt.application.font.pixelSize * 2.5
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2.5
                         }
                         MouseArea{
                             anchors.fill: parent

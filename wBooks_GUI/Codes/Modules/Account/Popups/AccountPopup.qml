@@ -33,7 +33,7 @@ Rectangle {
                         font.family: webfont.name
                         color: color7
 
-                        font.pixelSize: Qt.application.font.pixelSize * 3
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
                     }
@@ -69,7 +69,7 @@ Rectangle {
                         font.family: setting.activeFont
                         color: "#ffffff"
 
-                        font.pixelSize: Qt.application.font.pixelSize * 1.3
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                         verticalAlignment: Qt.AlignVCenter
                     }
                     Label{
@@ -80,7 +80,7 @@ Rectangle {
                         font.family: setting.activeNumFont
                         color: "#ffffff"
 
-                        font.pixelSize: Qt.application.font.pixelSize * 1.3
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                         verticalAlignment: Qt.AlignVCenter
                     }
                 }
@@ -99,7 +99,7 @@ Rectangle {
                         font.family: setting.activeFont
                         color: "#ffffff"
 
-                        font.pixelSize: Qt.application.font.pixelSize * 1.3
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
                     }

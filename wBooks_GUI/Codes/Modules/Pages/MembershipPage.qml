@@ -71,7 +71,7 @@ Item{
                                     Label{
                                         anchors.fill: parent
                                         font.family: setting.activeFont
-                                        font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                                         text: "اشتراک من"
                                         color: "#ffffff"
                                         verticalAlignment: Qt.AlignVCenter
@@ -111,7 +111,7 @@ Item{
                                                 font.family: setting.activeNumFont
                                                 color: "black"
                                                 text: (setting.isLicense)? "اشتراک ویژه " + setting.licenseTime + " روزه":"اشتراک ویژه ی شما به پایان رسیده است"
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.7* ratio
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7* ratio
                                                 verticalAlignment: Qt.AlignVCenter
                                             }
                                         }
@@ -128,7 +128,7 @@ Item{
                                                 font.family: setting.activeNumFont
                                                 color: "#a0a0a0"
                                                 text: "(صورتحساب " + setting.licensePurchaseNumber + ")"
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.4* ratio
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.4* ratio
                                                 verticalAlignment: Qt.AlignVCenter
                                             }
                                         }
@@ -148,7 +148,7 @@ Item{
                                                 font.family: webfont.name
 //                                                color: color4
                                                 text: Icons.eye
-                                                font.pixelSize: Qt.application.font.pixelSize * 2.5* ratio
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2.5* ratio
                                             }
                                             MouseArea{
                                                 id: watchArea
@@ -176,7 +176,7 @@ Item{
                                                 font.family: webfont.name
 //                                                color: color4
                                                 text: Icons.repeat
-                                                font.pixelSize: Qt.application.font.pixelSize * 2.5* ratio
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2.5* ratio
                                             }
                                             MouseArea{
                                                 id: extensionArea
@@ -202,7 +202,7 @@ Item{
                                                 enabled: setting.isLicense
 //                                                color: color4
                                                 text: Icons.trash_can
-                                                font.pixelSize: Qt.application.font.pixelSize * 2.5* ratio
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2.5* ratio
                                             }
                                             MouseArea{
                                                 id: deleteArea
@@ -245,7 +245,7 @@ Item{
                                     Label{
                                         anchors.fill: parent
                                         font.family: setting.activeNumFont
-                                        font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                                         text: (setting.isLicense)? Functions.remainingLicenseTime(setting.licenseExpiredTime) + " روز باقی مانده است":"-"
                                         color: "#ffffff"
                                         verticalAlignment: Qt.AlignVCenter
@@ -268,7 +268,7 @@ Item{
                                 font.family: setting.activeFont
                                 color: "#d43460"
                                 text: "خرید اشتراک ویژه ی وی بوکس"
-                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                                 font.bold: true
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft

@@ -23,7 +23,7 @@ Item {
             font.family: setting.activeFont
             color: color2
 
-            font.pixelSize: Qt.application.font.pixelSize * 1.7
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
             verticalAlignment: Qt.AlignVCenter
             elide: Text.ElideRight
         }
@@ -66,7 +66,7 @@ Item {
                             color: "#ffffff"
 
                             font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 3
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
                         }
@@ -140,7 +140,7 @@ Item {
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 LayoutMirroring.enabled: true
-                                font.pixelSize: Qt.application.font.pixelSize
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                             }
 
                         }

@@ -102,7 +102,7 @@ Item {
                     verticalAlignment: Qt.AlignVCenter
                     text: Icons.email
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 6
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 6
                     color: color1
                 }
 
@@ -111,7 +111,7 @@ Item {
                     text: "ارسال بازخورد"
                     color: color1
                     font.family: setting.activeFont
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                     renderType: Text.NativeRendering
 
                     anchors.right: lbl_Icon.left
@@ -221,7 +221,7 @@ Item {
                                         //                            leftPadding: 10 * ratio
 
                                         font.family: setting.activeNumFont
-                                        font.pixelSize: Qt.application.font.pixelSize * 2
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                                         selectedTextColor: color14
                                         color: color4
 
@@ -241,7 +241,7 @@ Item {
                                             anchors.horizontalCenter: parent.horizontalCenter
 
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 3
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
 
                                             color: color18
 
@@ -325,7 +325,7 @@ Item {
                                                     text: "Paste"
 
 
-                                                    font.pixelSize: Qt.application.font.pixelSize
+                                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                                                     enabled:txtTemp.text != "" ? true : false
 
                                                     width : 150 * ratio

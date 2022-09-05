@@ -40,7 +40,7 @@ Item {
                         text: "داستان و رمان"
                         font.family: setting.activeFont
                         color: color5
-                        font.pixelSize: Qt.application.font.pixelSize * 2
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                         verticalAlignment: Qt.AlignVCenter
                         elide: Text.ElideRight
                     }

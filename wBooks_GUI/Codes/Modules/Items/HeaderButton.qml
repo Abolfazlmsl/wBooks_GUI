@@ -37,7 +37,7 @@ Rectangle{
         minimumPointSize: 10
         font.family: setting.activeFont
         fontSizeMode: Text.Fit
-        font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
+        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3 * ratio
         font.bold: isClick
 
         color: "#ffffff"
@@ -64,7 +64,7 @@ Rectangle{
         visible: !iconAsImage
 
         font.family: iconFont
-        font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
+        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2 * ratio
 
     }
 

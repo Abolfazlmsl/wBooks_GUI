@@ -41,7 +41,7 @@ Item{
                     Layout.preferredWidth: contentWidth
                     text: "عنوان"
                     font.family: setting.activeNumFont
-                    font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                     font.bold: true
                     verticalAlignment: Qt.AlignVCenter
 
@@ -56,7 +56,7 @@ Item{
                     Layout.preferredWidth: contentWidth
                     text: "عنوان"
                     font.family: setting.activeNumFont
-                    font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                     verticalAlignment: Qt.AlignVCenter
                     color: "#d43460"
                     MouseArea{

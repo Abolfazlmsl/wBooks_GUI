@@ -259,7 +259,7 @@ ApplicationWindow{
 
                     //                        Label{
                     //                            text: "wBooks downloader"
-                    //                            font.pixelSize: Qt.application.font.pixelSize * 1.3
+                    //                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                     //                            color: (setting.lightMode) ? "black":"white"
                     //                            anchors.centerIn: parent
                     //                        }
@@ -287,7 +287,7 @@ ApplicationWindow{
 //                                color: (setting.lightMode) ? "darkblue" : "white"
                                 color: color5
                                 font.family: setting.activeFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1.3
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                                 horizontalAlignment: Qt.AlignHCenter
 
                             }
@@ -408,7 +408,7 @@ ApplicationWindow{
                                             anchors.centerIn: parent
                                             text: "باز کردن فایل"
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                             color: "#ffffff"
                                         }
 
@@ -464,7 +464,7 @@ ApplicationWindow{
                                             anchors.centerIn: parent
                                             text: "ادامه دانلود"
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                             color: "#ffffff"
                                         }
 
@@ -494,7 +494,7 @@ ApplicationWindow{
                                             anchors.centerIn: parent
                                             text: "توقف دانلود"
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                             color: "#ffffff"
                                         }
 
@@ -522,7 +522,7 @@ ApplicationWindow{
                                             anchors.centerIn: parent
                                             text: "شروع دانلود"
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                             color: "#ffffff"
                                         }
 

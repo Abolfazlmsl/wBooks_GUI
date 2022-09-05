@@ -28,7 +28,7 @@ Rectangle {
                 color: "#ffffff"
 
                 font.family: webfont.name
-                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
 
                 verticalAlignment: Qt.AlignVCenter
             }
@@ -40,7 +40,7 @@ Rectangle {
                 font.family: setting.activeFont
                 color: "#ffffff"
 
-                font.pixelSize: Qt.application.font.pixelSize * 1.3
+                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
 

@@ -113,7 +113,7 @@ Rectangle{
             font.family: setting.activeNumFont
 
             text: stringHour + " : " + stringSeconds
-            font.pixelSize: Qt.application.font.pixelSize * 1.1 * timerScale
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.1 * timerScale
             //font.bold: true
 
             color: textColor
@@ -132,7 +132,7 @@ Rectangle{
 
             text: Icons.timer
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * 1.3
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
 
             verticalAlignment: Qt.AlignVCenter
 

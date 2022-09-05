@@ -29,7 +29,7 @@ Rectangle{
         text: "/u1212" //Icons.home_outline
 
         font.family: webfont.name
-        font.pixelSize: 72//Qt.application.font.pixelSize
+        font.pixelSize: 72//Qt.application.font.pixelSize * setting.fontRatio
         minimumPixelSize: 10
         fontSizeMode: Text.Fit
 
@@ -53,7 +53,7 @@ Rectangle{
         font.family: setting.activeFont
         minimumPointSize: 10
         fontSizeMode: Text.Fit
-        font.pixelSize: Qt.application.font.pixelSize * 1.3
+        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
 
         horizontalAlignment: Qt.AlignRight
         verticalAlignment: Qt.AlignVCenter

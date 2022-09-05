@@ -34,7 +34,7 @@ Flickable {
                         Layout.preferredHeight: 50
                         text: "دسته بندی های ویژه"
                         font.family: setting.activeFont
-                        font.pixelSize: Qt.application.font.pixelSize * 2
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                         renderType: Text.NativeRendering
 
                         verticalAlignment: Qt.AlignVCenter

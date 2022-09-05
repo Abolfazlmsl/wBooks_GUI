@@ -37,7 +37,7 @@ Item {
                         text: "کتابخانه ی من"
                         font.family: setting.activeFont
                         color: color4
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Text.AlignLeft
                         LayoutMirroring.enabled: true

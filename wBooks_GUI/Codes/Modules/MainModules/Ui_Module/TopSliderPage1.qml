@@ -99,7 +99,7 @@ Item {
                                 font.family: setting.activeNumFont
                                 color: color9
                                 verticalAlignment: Qt.AlignVCenter
-                                font.pixelSize: Qt.application.font.pixelSize * 0.9
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 0.9
                                 elide: Text.ElideRight
                             }
                         }

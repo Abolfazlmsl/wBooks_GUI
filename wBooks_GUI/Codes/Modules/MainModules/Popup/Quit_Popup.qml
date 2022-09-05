@@ -89,7 +89,7 @@ Dialog{
                     text: Icons.logout
 
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
 
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -103,7 +103,7 @@ Dialog{
                     Layout.preferredWidth: implicitWidth * 1.1
 
                     text: bodyText_Dialog
-                    font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio
                     font.family: setting.activeFont
                     wrapMode: Text.WordWrap
                     verticalAlignment: Qt.AlignVCenter
@@ -159,7 +159,7 @@ Dialog{
                         anchors.centerIn: parent
 
                         text: "بله"
-                        font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio
                         font.family: setting.activeFont
                         color: "#ffffff"
                     }
@@ -207,7 +207,7 @@ Dialog{
                         anchors.centerIn: parent
 
                         text: "خیر"
-                        font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio
                         font.family: setting.activeFont
                         color: "#ffffff"
                     }

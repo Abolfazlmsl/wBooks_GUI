@@ -69,7 +69,7 @@ Rectangle{
             font.family: setting.activeFont
             color: color9
             verticalAlignment: Qt.AlignVCenter
-            font.pixelSize: Qt.application.font.pixelSize
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
         }
     }
 
@@ -86,7 +86,7 @@ Rectangle{
             font.family: setting.activeFont
             color: color9
             verticalAlignment: Qt.AlignVCenter
-            font.pixelSize: Qt.application.font.pixelSize
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
         }
     }
 
@@ -125,7 +125,7 @@ Rectangle{
                     color: color4
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                 }
                 MouseArea{
                     anchors.fill: parent

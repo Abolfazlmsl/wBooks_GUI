@@ -67,7 +67,7 @@ Rectangle{
                             color: color4
                             text: Functions.numberWithCommas(price)
                             font.family: setting.activeNumFont
-                            font.pixelSize: Qt.application.font.pixelSize * 2.5
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2.5
                             font.bold: true
                             horizontalAlignment: Qt.AlignHCenter
                             verticalAlignment: Qt.AlignVCenter
@@ -85,7 +85,7 @@ Rectangle{
                             color: color4
                             text: "تومان"
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                             font.bold: true
                             verticalAlignment: Qt.AlignVCenter
                         }
@@ -138,7 +138,7 @@ Rectangle{
                             Layout.fillHeight: true
                             Layout.rightMargin: 20
                             font.family: setting.activeNumFont
-                            font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 //* widthRatio
                             font.bold: true
                             text: "اشتراک ویژه " + time + " روزه"
                             color: "#ffffff"
@@ -203,7 +203,7 @@ Rectangle{
                                    color: color4
                                    text: text1
                                    font.family: setting.activeNumFont
-                                   font.pixelSize: Qt.application.font.pixelSize * 1
+                                   font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
                                    verticalAlignment: Qt.AlignVCenter
                                }
                                Item{Layout.fillWidth: true}
@@ -233,7 +233,7 @@ Rectangle{
                                    color: color4
                                    text: text2
                                    font.family: setting.activeNumFont
-                                   font.pixelSize: Qt.application.font.pixelSize * 1
+                                   font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
                                    verticalAlignment: Qt.AlignVCenter
                                }
                                Item{Layout.fillWidth: true}
@@ -263,7 +263,7 @@ Rectangle{
                                    color: color4
                                    text: text3
                                    font.family: setting.activeNumFont
-                                   font.pixelSize: Qt.application.font.pixelSize * 1
+                                   font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
                                    verticalAlignment: Qt.AlignVCenter
                                }
                                Item{Layout.fillWidth: true}
@@ -293,7 +293,7 @@ Rectangle{
                                    color: color4
                                    text: text4
                                    font.family: setting.activeNumFont
-                                   font.pixelSize: Qt.application.font.pixelSize * 1
+                                   font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
                                    verticalAlignment: Qt.AlignVCenter
                                }
                                Item{Layout.fillWidth: true}
@@ -323,7 +323,7 @@ Rectangle{
                                    color: color4
                                    text: text5
                                    font.family: setting.activeNumFont
-                                   font.pixelSize: Qt.application.font.pixelSize * 1
+                                   font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
                                    verticalAlignment: Qt.AlignVCenter
                                }
                                Item{Layout.fillWidth: true}
@@ -386,7 +386,7 @@ Rectangle{
                                 Layout.rightMargin: 20
                                 text: "خرید اشتراک ویژه " + time + " روزه"
                                 font.family: setting.activeNumFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1 //* widthRatio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1 //* widthRatio
                                 verticalAlignment: Qt.AlignVCenter
                                 color: "#ffffff"
                             }
@@ -399,7 +399,7 @@ Rectangle{
                                 Layout.leftMargin: 20
                                 text: Icons.arrow_left
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 //* widthRatio
                                 color: "#ffffff"
                                 verticalAlignment: Qt.AlignVCenter
                             }

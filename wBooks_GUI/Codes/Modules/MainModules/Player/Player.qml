@@ -175,14 +175,14 @@ Item {
                         id: lblTimeSpend
 
                         text: lblTimeSpendmain
-                        font.pixelSize: Qt.application.font.pixelSize * 1
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
                     }
 
                     Label{
                         id: lblTimeLack
 
                         text: lblTimeLackmain
-                        font.pixelSize: Qt.application.font.pixelSize * 1
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
                         anchors.right: parent.right
                     }
 
@@ -211,7 +211,7 @@ Item {
                             width: 50
 
                             font.family: "Material Design Icons"
-                            font.pixelSize: Qt.application.font.pixelSize * 2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                             text: Icons.speedometer
 
                             Popup{
@@ -271,7 +271,7 @@ Item {
                             id: btn_playList
 
                             font.family: "Material Design Icons"
-                            font.pixelSize: Qt.application.font.pixelSize * 2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                             text: Icons.playlist_play
 
                             MouseArea{
@@ -314,7 +314,7 @@ Item {
                         //-- skip backward --//
                         Label{
                             font.family: "Material Design Icons"
-                            font.pixelSize: Qt.application.font.pixelSize * 2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                             text: Icons.skip_backward
 
                             MouseArea{
@@ -329,7 +329,7 @@ Item {
                         //-- play --//
                         Label{
                             font.family: "Material Design Icons"
-                            font.pixelSize: Qt.application.font.pixelSize * 2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                             text: player.playbackState === 1 ? Icons.pause: Icons.play
 
                             MouseArea{
@@ -346,7 +346,7 @@ Item {
                         //-- skip forward --//
                         Label{
                             font.family: "Material Design Icons"
-                            font.pixelSize: Qt.application.font.pixelSize * 2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                             text: Icons.skip_forward
 
                             MouseArea{
@@ -360,7 +360,7 @@ Item {
                         //-- stop --//
                         Label{
                             font.family: "Material Design Icons"
-                            font.pixelSize: Qt.application.font.pixelSize * 2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                             text: Icons.stop
 
                             MouseArea{
@@ -391,7 +391,7 @@ Item {
                                 //anchors.right: parent.right;
                                 anchors.rightMargin: implicitWidth * 2
                                 font.family: "Material Design Icons"
-                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                                 text: {if (mutePlayer){
                                           return Icons.volume_off
                                       }else{
@@ -493,7 +493,7 @@ Item {
 
                         text:"wBooks Player"
                         color: "#88FFFFFF"
-                        font.pixelSize: Qt.application.font.pixelSize
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                     }
 
                     Label{
@@ -502,7 +502,7 @@ Item {
 //                        text:fileDialog.lURL
                         text: player.metaData.title
                         color: "#88FFFFFF"
-                        font.pixelSize: Qt.application.font.pixelSize
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                     }
                     //-- top tools button --//
                     Row{
@@ -515,7 +515,7 @@ Item {
 
                             property bool state: false
                             font.family: "Material Design Icons"
-                            font.pixelSize: Qt.application.font.pixelSize * 1.4
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.4
                             text: Icons.window_maximize
                             MouseArea{
                                 anchors.fill: parent

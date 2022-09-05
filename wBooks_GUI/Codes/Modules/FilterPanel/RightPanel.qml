@@ -49,7 +49,7 @@ Rectangle{
                                 anchors.fill: parent
                                 text: "فیلتر دسته بندی ها"
                                 font.family: setting.activeFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3 * ratio
                                 font.bold: true
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
@@ -71,7 +71,7 @@ Rectangle{
                                 anchors.centerIn: parent
                                 text: Icons.arrow_right
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 //* widthRatio
 
                                 color: "#d43460"
                             }

@@ -91,7 +91,7 @@ Window {
                     rotation: 180
                     text: Icons.table_of_contents
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 3
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
 
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -119,7 +119,7 @@ Window {
                     Layout.preferredWidth: parent.width * 0.05 / 2
                     text: Icons.download
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 3
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
 
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -196,7 +196,7 @@ Window {
                     enabled: fileUploaded
                     Layout.preferredWidth: parent.width * 0.13
                     clip: true
-                    font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio
                     background: Rectangle {
                         color: color12
                     }
@@ -211,7 +211,7 @@ Window {
                             text: model.text
                             color: itemDlgt.hovered?color1:color4
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * 1.2* ratio
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2* ratio
                             verticalAlignment: Text.AlignVCenter
                             horizontalAlignment: Text.AlignLeft
                             rightPadding: 20
@@ -271,7 +271,7 @@ Window {
 
 //                    contentItem: Label{
 //                        text: fontSizeButton.displayText
-//                        font.pixelSize: Qt.application.font.pixelSize * 1
+//                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
 //                        color: "black"
 //                        clip: true
 
@@ -292,7 +292,7 @@ Window {
                     Layout.preferredWidth: parent.width * 0.05 / 2
                     text: Icons.view_sequential
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 3
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
 
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -376,7 +376,7 @@ Window {
                             anchors.fill: parent
                             horizontalAlignment: Qt.AlignHCenter
                             verticalAlignment: Qt.AlignVCenter
-                            font.pixelSize: Qt.application.font.pixelSize * 3
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
 //                            color: (setting.lightMode) ? "black":"white"
                             color: color4
                             text: "Books of the database will be shown in this section"
@@ -640,7 +640,7 @@ Window {
                             enabled: (fileUploaded) ? (epubslider.value==1)? false:true : false
                             text: Icons.chevron_left
                             font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 3
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
 
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
@@ -681,7 +681,7 @@ Window {
 
                             minimumPointSize: 10
                             fontSizeMode: Text.Fit
-                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
 
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
@@ -709,7 +709,7 @@ Window {
                             enabled: (fileUploaded) ? (epubslider.value==pagesNumber)?false:true : false
                             text: Icons.chevron_right
                             font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 3
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
 
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
@@ -775,7 +775,7 @@ Window {
                     id: browseText
                     Layout.fillHeight: true
                     Layout.preferredWidth: parent.width * 0.8
-                    font.pixelSize: Qt.application.font.pixelSize * 1.2
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     selectByMouse: true

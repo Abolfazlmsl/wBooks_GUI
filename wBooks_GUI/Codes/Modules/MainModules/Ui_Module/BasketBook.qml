@@ -42,7 +42,7 @@ Rectangle{
                             text: "کتاب اثر مرکب"
                             font.family: setting.activeFont
                             color: color4
-                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                             verticalAlignment: Qt.AlignVCenter
                             elide: Text.ElideRight
                         }
@@ -52,7 +52,7 @@ Rectangle{
                             text: "نویسنده: دارن هاردی"
                             font.family: setting.activeFont
                             color: color4
-                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                             verticalAlignment: Qt.AlignVCenter
                             elide: Text.ElideRight
                         }
@@ -62,7 +62,7 @@ Rectangle{
                             text: "مترجم: لطیف احمدپور"
                             font.family: setting.activeFont
                             color: color4
-                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                             verticalAlignment: Qt.AlignVCenter
                             elide: Text.ElideRight
                         }
@@ -72,7 +72,7 @@ Rectangle{
                             text: "ناشر: انتشارات نگاه نوین"
                             font.family: setting.activeFont
                             color: color4
-                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                             verticalAlignment: Qt.AlignVCenter
                             elide: Text.ElideRight
                         }
@@ -84,7 +84,7 @@ Rectangle{
                             text: (bookFileType==="Document Book")?Icons.file_document_box:Icons.headphones
                             font.family: webfont.name
                             color: color4
-                            font.pixelSize: Qt.application.font.pixelSize * 2.5
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2.5
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignLeft
                             LayoutMirroring.enabled: true
@@ -106,7 +106,7 @@ Rectangle{
                             text: Icons.trash_can
                             font.family: webfont.name
                             color: color4
-                            font.pixelSize: Qt.application.font.pixelSize * 2.5
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2.5
                             verticalAlignment: Qt.AlignVCenter
                             elide: Text.ElideRight
                             MouseArea{
@@ -125,7 +125,7 @@ Rectangle{
                             text: Functions.numberWithCommas("10000") + " تومان"
                             font.family: setting.activeNumFont
                             color: color4
-                            font.pixelSize: Qt.application.font.pixelSize * 2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                             verticalAlignment: Qt.AlignVCenter
                             elide: Text.ElideRight
                         }

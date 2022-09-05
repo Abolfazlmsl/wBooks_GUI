@@ -135,7 +135,7 @@ Item{
                                 anchors.centerIn: parent
                                 text: "اطلاعات را وارد کنید"
                                 font.family: setting.activeFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                 color: "#ffffff"
                             }
                         }
@@ -179,7 +179,7 @@ Item{
                                         verticalAlignment: Qt.AlignVCenter
                                         text: Icons.eye_off
                                         font.family: webfont.name
-                                        font.pixelSize: Qt.application.font.pixelSize * 2
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                                         color: "#989898"
                                         MouseArea{
 
@@ -240,7 +240,7 @@ Item{
                                         verticalAlignment: Qt.AlignVCenter
                                         text: Icons.eye_off
                                         font.family: webfont.name
-                                        font.pixelSize: Qt.application.font.pixelSize * 2
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                                         color: "#989898"
                                         MouseArea{
 
@@ -302,7 +302,7 @@ Item{
                                         verticalAlignment: Qt.AlignVCenter
                                         text: Icons.eye_off
                                         font.family: webfont.name
-                                        font.pixelSize: Qt.application.font.pixelSize * 2
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                                         color: "#989898"
                                         MouseArea{
 

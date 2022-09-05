@@ -58,7 +58,7 @@ Item {
                         text: itemModel.count + " کتاب موجود"
                         font.family: setting.activeNumFont
                         color: "#ffffff"
-                        font.pixelSize: Qt.application.font.pixelSize*1
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio*1
                     }
                 }
             }
@@ -83,7 +83,7 @@ Item {
                         anchors.fill: parent
                         text: ""
                         font.family: setting.activeFont
-                        font.pixelSize: Qt.application.font.pixelSize*1.2 * ratio
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio*1.2 * ratio
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
                     }
@@ -160,7 +160,7 @@ Item {
                                         text: "تعداد کل کتاب ها"
                                         font.family: setting.activeFont
                                         color: firstColor
-                                        font.pixelSize: Qt.application.font.pixelSize*1
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio*1
                                         verticalAlignment: Qt.AlignVCenter
                                     }
                                 }
@@ -192,7 +192,7 @@ Item {
                                         text: "کتاب های خوانده شده"
                                         font.family: setting.activeFont
                                         color: secondColor
-                                        font.pixelSize: Qt.application.font.pixelSize*1
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio*1
                                         verticalAlignment: Qt.AlignVCenter
                                     }
                                 }

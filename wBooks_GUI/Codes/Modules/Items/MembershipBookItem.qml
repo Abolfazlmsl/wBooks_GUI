@@ -54,7 +54,7 @@ Rectangle{
                     color: "#ffffff"
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    font.pixelSize: Qt.application.font.pixelSize*1.5
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio*1.5
                 }
             }
             MouseArea{
@@ -116,7 +116,7 @@ Rectangle{
             font.family: setting.activeFont
             color: color9
             verticalAlignment: Qt.AlignVCenter
-            font.pixelSize: Qt.application.font.pixelSize
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
         }
     }
 
@@ -152,7 +152,7 @@ Rectangle{
                     font.family: setting.activeNumFont
                     color: color9
                     verticalAlignment: Qt.AlignVCenter
-                    font.pixelSize: Qt.application.font.pixelSize * 0.7
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 0.7
                     elide: Text.ElideRight
                 }
             }
@@ -200,7 +200,7 @@ Rectangle{
                     color: color9
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    font.pixelSize: Qt.application.font.pixelSize
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                 }
 
                 Rectangle{
@@ -221,7 +221,7 @@ Rectangle{
                     color: color9
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
-                    font.pixelSize: Qt.application.font.pixelSize
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                 }
             }
         }

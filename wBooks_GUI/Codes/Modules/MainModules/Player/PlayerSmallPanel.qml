@@ -98,7 +98,7 @@ Item {
                     Layout.preferredWidth: 50
                     Layout.fillHeight: true
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                     text: Icons.skip_backward
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -132,7 +132,7 @@ Item {
                         Label{
                             anchors.fill: parent
                             font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                             text: player.playbackState === 1 ? Icons.pause: Icons.play
                             color: color4
                             verticalAlignment: Qt.AlignVCenter
@@ -155,7 +155,7 @@ Item {
                     Layout.preferredWidth: 50
                     Layout.fillHeight: true
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                     text: Icons.skip_forward
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -202,7 +202,7 @@ Item {
                             anchors.bottom: sli_timer.bottom
                             anchors.bottomMargin: 5
                             text: lblTimeSpendmain
-                            font.pixelSize: Qt.application.font.pixelSize * 1.3
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                             font.family: setting.activeFont
                             horizontalAlignment: Qt.AlignHCenter
                             color: color4
@@ -218,7 +218,7 @@ Item {
                     Layout.fillHeight: true
 
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                     text: Icons.speedometer
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -286,7 +286,7 @@ Item {
                         height: parent.height
                         anchors.rightMargin: implicitWidth * 2
                         font.family: webfont.name
-                        font.pixelSize: Qt.application.font.pixelSize * 2
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
                         color: color4
@@ -357,7 +357,7 @@ Item {
                     Layout.preferredWidth: 50
                     Layout.fillHeight: true
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                     text: Icons.close
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter

@@ -42,7 +42,7 @@ Rectangle {
                 font.bold: true
                 color: color4
                 verticalAlignment: Qt.AlignVCenter
-                font.pixelSize: Qt.application.font.pixelSize * 1.7
+                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
             }
         }
 
@@ -135,7 +135,7 @@ Rectangle {
                 font.bold: true
                 color: color4
                 verticalAlignment: Qt.AlignVCenter
-                font.pixelSize: Qt.application.font.pixelSize * 1.7
+                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
             }
         }
 
@@ -209,7 +209,7 @@ Rectangle {
                 font.bold: true
                 color: color4
                 verticalAlignment: Qt.AlignVCenter
-                font.pixelSize: Qt.application.font.pixelSize * 1.7
+                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
             }
         }
 
@@ -261,7 +261,7 @@ Rectangle {
                                             text: (commentModel.get(index).profile === "")? Icons.account:model.profile
                                             color: color2
                                             font.family: webfont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 3
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
                                             verticalAlignment: Qt.AlignVCenter
                                             horizontalAlignment: Qt.AlignHCenter
                                         }
@@ -276,7 +276,7 @@ Rectangle {
                                             text: commentModel.get(index).name
                                             color: color2
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
 
                                             verticalAlignment: Qt.AlignVCenter
                                         }
@@ -291,7 +291,7 @@ Rectangle {
                                             text: commentModel.get(index).date
                                             color: color15
                                             font.family: setting.activeNumFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
                                             horizontalAlignment: Qt.AlignHCenter
                                             verticalAlignment: Qt.AlignVCenter
                                         }
@@ -312,7 +312,7 @@ Rectangle {
                                                 text: Icons.thumb_up
                                                 color: "#ffffff"
                                                 font.family: webfont.name
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                                 horizontalAlignment: Qt.AlignHCenter
                                                 verticalAlignment: Qt.AlignVCenter
                                             }
@@ -335,7 +335,7 @@ Rectangle {
                                             text: commentModel.get(index).like
                                             color: color4
                                             font.family: setting.activeNumFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
 
                                             verticalAlignment: Qt.AlignVCenter
                                         }
@@ -350,7 +350,7 @@ Rectangle {
                                             text: commentModel.get(index).dislike
                                             color: color4
                                             font.family: setting.activeNumFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
 
                                             verticalAlignment: Qt.AlignVCenter
                                         }
@@ -369,7 +369,7 @@ Rectangle {
                                                 text: Icons.thumb_down
                                                 color: "#ffffff"
                                                 font.family: webfont.name
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                                 horizontalAlignment: Qt.AlignHCenter
                                                 verticalAlignment: Qt.AlignVCenter
                                             }
@@ -460,7 +460,7 @@ Rectangle {
                         color: color5
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
-                        font.pixelSize: Qt.application.font.pixelSize * 1.7
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
 
                         MouseArea{
                             anchors.fill: parent

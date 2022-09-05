@@ -68,7 +68,7 @@ Item {
                             font.family: setting.activeFont
                             color: color11
 
-                            font.pixelSize: Qt.application.font.pixelSize * 1.3
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
 
                         }
 
@@ -101,7 +101,7 @@ Item {
                             font.family: setting.activeFont
                             color: color11
 
-                            font.pixelSize: Qt.application.font.pixelSize * 1.3
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
 
                         }
                         //-- Phone --//
@@ -132,7 +132,7 @@ Item {
                             font.family: setting.activeFont
                             color: color11
 
-                            font.pixelSize: Qt.application.font.pixelSize * 1.3
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
 
                         }
                         //-- Email --//
@@ -174,7 +174,7 @@ Item {
                                 text: "جنسیت: "
                                 color: color11
                                 font.family: setting.activeFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1.3
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                             }
 
                             ButtonGroup {id: genderRadios}
@@ -184,7 +184,7 @@ Item {
                                 width: implicitWidth
                                 height: implicitHeight
                                 font.family: setting.activeFont
-                                font.pixelSize: Qt.application.font.pixelSize* 1.3
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio* 1.3
                                 anchors.verticalCenter: parent.verticalCenter
                                 Material.accent: color11
                                 checked: (setting.gender === "آقا")?true:false
@@ -198,7 +198,7 @@ Item {
                                     leftPadding: radio_Male.indicator.width + radio_Male.spacing
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize* 1.3
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio* 1.3
                                 }
 
                                 onCheckedChanged: {
@@ -217,7 +217,7 @@ Item {
                                 width: implicitWidth
                                 height: implicitHeight
                                 font.family: setting.activeFont
-                                font.pixelSize: Qt.application.font.pixelSize* 1.3
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio* 1.3
 
                                 anchors.verticalCenter: parent.verticalCenter
                                 Material.accent: color11
@@ -232,7 +232,7 @@ Item {
                                     leftPadding: radio_Female.indicator.width + radio_Female.spacing
                                     verticalAlignment: Text.AlignVCenter
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize* 1.3
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio* 1.3
                                 }
 
                                 onCheckedChanged: {

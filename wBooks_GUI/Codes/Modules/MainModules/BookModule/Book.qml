@@ -92,7 +92,7 @@ Flickable {
                                         font.family: setting.activeFont
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
-                                        font.pixelSize: Qt.application.font.pixelSize
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                                     }
                                 }
                                 Rectangle{
@@ -107,7 +107,7 @@ Flickable {
                                         font.family: setting.activeFont
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
-                                        font.pixelSize: Qt.application.font.pixelSize
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                                     }
                                 }
 
@@ -123,7 +123,7 @@ Flickable {
                                         font.family: setting.activeFont
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
-                                        font.pixelSize: Qt.application.font.pixelSize
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                                     }
                                 }
 
@@ -156,7 +156,7 @@ Flickable {
                                                 font.family: setting.activeNumFont
                                                 color: color9
                                                 verticalAlignment: Qt.AlignVCenter
-                                                font.pixelSize: Qt.application.font.pixelSize * 0.9
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 0.9
                                                 elide: Text.ElideRight
                                             }
                                         }
@@ -211,7 +211,7 @@ Flickable {
                                                 color: color2
                                                 verticalAlignment: Qt.AlignVCenter
                                                 horizontalAlignment: Qt.AlignHCenter
-                                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                                 elide: Text.ElideRight
                                             }
                                         }
@@ -260,7 +260,7 @@ Flickable {
                                                     verticalAlignment: Qt.AlignVCenter
                                                     horizontalAlignment: Qt.AlignHCenter
                                                     font.family: webfont.name
-                                                    font.pixelSize: Qt.application.font.pixelSize * 2
+                                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
 
                                                     color:color4
                                                 }
@@ -287,7 +287,7 @@ Flickable {
                                                     verticalAlignment: Qt.AlignVCenter
                                                     horizontalAlignment: Qt.AlignHCenter
                                                     font.family: webfont.name
-                                                    font.pixelSize: Qt.application.font.pixelSize * 2
+                                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
 
                                                     color:color4
                                                 }
@@ -313,7 +313,7 @@ Flickable {
                                                     verticalAlignment: Qt.AlignVCenter
                                                     horizontalAlignment: Qt.AlignHCenter
                                                     font.family: webfont.name
-                                                    font.pixelSize: Qt.application.font.pixelSize * 2
+                                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
 
                                                     color:color4
                                                 }
@@ -350,7 +350,7 @@ Flickable {
                     width: 600
                     anchors.right: parent.right
 
-                    font.pixelSize: Qt.application.font.pixelSize
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                     Material.accent: color4
                     currentIndex: 2
                     background: Rectangle{
@@ -370,7 +370,7 @@ Flickable {
                         Label{
                             text: "کتاب های مرتبط"
                             font.bold: section1.checked ? true : false
-                            font.pixelSize: section1.checked ? Qt.application.font.pixelSize * 1.3 : Qt.application.font.pixelSize * 1.2
+                            font.pixelSize: section1.checked ? Qt.application.font.pixelSize * setting.fontRatio * 1.3 : Qt.application.font.pixelSize * setting.fontRatio * 1.2
                             font.family: setting.activeFont
                             color: section1.checked ? color4 : "#aaaaaa"
                             anchors.centerIn: parent
@@ -394,7 +394,7 @@ Flickable {
                         Label{
                             text: "فهرست"
                             font.bold: section4.checked ? true : false
-                            font.pixelSize: section4.checked ? Qt.application.font.pixelSize * 1.3 : Qt.application.font.pixelSize * 1.2
+                            font.pixelSize: section4.checked ? Qt.application.font.pixelSize * setting.fontRatio * 1.3 : Qt.application.font.pixelSize * setting.fontRatio * 1.2
                             font.family: setting.activeFont
                             color: section4.checked ? color4 : "#aaaaaa"
                             anchors.centerIn: parent
@@ -419,7 +419,7 @@ Flickable {
                         Label{
                             text: "معرفی"
                             font.bold: section5.checked ? true : false
-                            font.pixelSize: section5.checked ? Qt.application.font.pixelSize * 1.3 : Qt.application.font.pixelSize * 1.2
+                            font.pixelSize: section5.checked ? Qt.application.font.pixelSize * setting.fontRatio * 1.3 : Qt.application.font.pixelSize * setting.fontRatio * 1.2
                             font.family: setting.activeFont
                             color: section5.checked ? color4 : "#aaaaaa"
                             anchors.centerIn: parent

@@ -94,7 +94,7 @@ Item {
                         anchors.centerIn: parent
                         text: "کد تایید را وارد کنید"
                         font.family: setting.activeFont
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                         color: "#ffffff"
                     }
                 }
@@ -128,7 +128,7 @@ Item {
                                     Layout.preferredWidth: contentWidth
                                     text: "کد تایید برای شماره "
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                     color: "#000000"
                                 }
                                 Label{
@@ -136,7 +136,7 @@ Item {
                                     Layout.preferredWidth: contentWidth
                                     text: phoneNumber
                                     font.family: setting.activeNumFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                     color: "#d43460"
                                     MouseArea{
                                         anchors.fill: parent
@@ -151,7 +151,7 @@ Item {
                                     Layout.preferredWidth: contentWidth
                                     text: " ارسال شد"
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                     color: "#000000"
                                 }
                                 Item{Layout.fillWidth: true}
@@ -343,7 +343,7 @@ Item {
                                     font.family: setting.activeFont
                                     color: "#d43460"
 
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.1
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.1
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
 
@@ -373,7 +373,7 @@ Item {
                                     font.family: setting.activeFont
                                     color: "#d43460"
 
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.1
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.1
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
                                 }
@@ -452,7 +452,7 @@ Item {
                             Layout.fillHeight: true
                             text: "آیا حساب کاربری دارید؟"
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                             color: color4
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
@@ -465,7 +465,7 @@ Item {
                             Layout.fillHeight: true
                             text: "وارد شوید"
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                             color: "#d43460"
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter

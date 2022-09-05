@@ -115,7 +115,7 @@ Rectangle{
                                 anchors.centerIn: parent
                                 text: Icons.arrow_left
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 //* widthRatio
 
                                 color: "#d43460"
                             }
@@ -146,7 +146,7 @@ Rectangle{
                                 anchors.right: parent.right
                                 text: secondHeaderTitle
                                 font.family: setting.activeNumFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1.3
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                                 verticalAlignment: Qt.AlignVCenter
                                 color: color5
                             }
@@ -178,7 +178,7 @@ Rectangle{
                             Layout.bottomMargin: 2
                             LayoutMirroring.enabled: true
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio
                             visible: topFilterVis
                             background: Rectangle {
                                 color: color1
@@ -201,7 +201,7 @@ Rectangle{
                                     text: model.text
                                     color: itemDlgt.hovered?color1:color4
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio
                                     LayoutMirroring.enabled: true
                                     verticalAlignment: Text.AlignVCenter
                                     horizontalAlignment: Text.AlignLeft
@@ -483,7 +483,7 @@ Rectangle{
 
                             text: "خروج از نرم افزار"
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * 0.9
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 0.9
                             renderType: Text.NativeRendering
 
                             verticalAlignment: Qt.AlignBottom
@@ -505,7 +505,7 @@ Rectangle{
 
                             text: Icons.logout_variant
                             font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                             color: "#ffffff"
 
                             verticalAlignment: Qt.AlignVCenter

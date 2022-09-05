@@ -36,7 +36,7 @@ Rectangle {
                         Layout.preferredHeight: 200
                         font.family: setting.activeFont
                         text: "سبد خرید شما خالی است."
-                        font.pixelSize: Qt.application.font.pixelSize * 2
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                         color: color4
                     }
                 }
@@ -76,7 +76,7 @@ Rectangle {
                                         font.family: setting.activeFont
                                         verticalAlignment: Qt.AlignVCenter
                                         horizontalAlignment: Qt.AlignHCenter
-                                        font.pixelSize: Qt.application.font.pixelSize * 2
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                                         text: "سبد خرید"
                                         color: color4
                                     }
@@ -91,7 +91,7 @@ Rectangle {
                                             font.family: setting.activeNumFont
                                             verticalAlignment: Qt.AlignVCenter
                                             horizontalAlignment: Qt.AlignHCenter
-                                            font.pixelSize: Qt.application.font.pixelSize * 2
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                                             text: basketModel.count
                                             color: color3
                                         }
@@ -145,7 +145,7 @@ Rectangle {
                                 font.family: setting.activeFont
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
-                                font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2 * ratio
                                 text: "صورت حساب"
                                 color: color4
                             }
@@ -220,7 +220,7 @@ Rectangle {
                                     Layout.preferredWidth: parent.width * 0.8
                                     Layout.fillHeight: true
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize* 1.3
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio* 1.3
                                     checked: false
 
                                     text: "استفاده از اعتبار"
@@ -228,7 +228,7 @@ Rectangle {
 
                                     contentItem: Text {
                                         text: checkbox.text
-                                        font.pixelSize: Qt.application.font.pixelSize* 1.3 * ratio
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio* 1.3 * ratio
                                         rightPadding: checkbox.indicator.width
                                         color: color4
                                         verticalAlignment: Text.AlignVCenter
@@ -243,7 +243,7 @@ Rectangle {
                                     font.family: setting.activeNumFont
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3 * ratio
                                     text: Functions.numberWithCommas(setting.mywallet) + " تومان"
                                     color: color4
                                 }
@@ -257,7 +257,7 @@ Rectangle {
                             Layout.rightMargin: 10
                             Layout.leftMargin: 10
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize* 1.3
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio* 1.3
                             checked: true
 
                             text: "قوانین wBooks را میپذیرم."
@@ -265,7 +265,7 @@ Rectangle {
 
                             contentItem: Text {
                                 text: checkbox2.text
-                                font.pixelSize: Qt.application.font.pixelSize* 1.3 * ratio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio* 1.3 * ratio
                                 rightPadding: checkbox2.indicator.width
                                 color: color4
                                 verticalAlignment: Text.AlignVCenter
@@ -291,7 +291,7 @@ Rectangle {
                                     Layout.fillHeight: true
                                     font.family: setting.activeFont
                                     verticalAlignment: Qt.AlignVCenter
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3 * ratio
                                     text: "قابل پرداخت:"
                                     color: color4
                                 }
@@ -302,7 +302,7 @@ Rectangle {
                                     font.family: setting.activeNumFont
                                     horizontalAlignment: Qt.AlignHCenter
                                     verticalAlignment: Qt.AlignVCenter
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3 * ratio
                                     text: Functions.numberWithCommas("35000") + " تومان"
                                     color: color4
                                 }

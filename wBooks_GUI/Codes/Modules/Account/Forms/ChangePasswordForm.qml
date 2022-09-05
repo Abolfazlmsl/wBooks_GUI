@@ -75,7 +75,7 @@ Item{
                         anchors.centerIn: parent
                         text: "رمز عبور خود را تغییر دهید"
                         font.family: setting.activeFont
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                         color: "#ffffff"
                     }
                 }
@@ -122,7 +122,7 @@ Item{
                                 text: Icons.eye_off
                                 color: "#989898"
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
 
                                 MouseArea{
 
@@ -180,7 +180,7 @@ Item{
                                 text: Icons.eye_off
                                 color: "#989898"
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
 
                                 MouseArea{
 

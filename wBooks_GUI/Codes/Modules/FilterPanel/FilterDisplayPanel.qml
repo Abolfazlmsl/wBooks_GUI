@@ -66,7 +66,7 @@ Item {
                     Layout.rightMargin: 20
                     text: "تیتر اصلی"
                     font.family: setting.activeFont
-                    font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3 * ratio
                     font.bold: true
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -87,7 +87,7 @@ Item {
                     Layout.fillHeight: true
                     text: (isShowAll) ? "نمایش کمتر" : "نمایش همه"
                     font.family: setting.activeFont
-                    font.pixelSize: Qt.application.font.pixelSize * ratio
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio
                     font.bold: true
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -109,7 +109,7 @@ Item {
                         NumberAnimation{duration: 300}
                     }
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 1.6 * ratio
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.6 * ratio
                     font.bold: true
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
@@ -144,7 +144,7 @@ Item {
                     Layout.rightMargin: 20
                     text: Icons.format_align_right
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: "#a2a2a2"
@@ -168,7 +168,7 @@ Item {
                     Layout.fillHeight: true
                     text: Icons.format_align_center
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: "#a2a2a2"
@@ -192,7 +192,7 @@ Item {
                     Layout.fillHeight: true
                     text: Icons.format_align_left
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 2 * ratio
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2 * ratio
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter
                     color: "#a2a2a2"

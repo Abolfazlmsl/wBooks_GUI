@@ -46,7 +46,7 @@ Rectangle {
                         font.family: setting.activeFont
                         color: "#d43460"
                         text: "وی بوکس تحولی نو در صنعت نشر دیجیتال"
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio
                         font.bold: true
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Text.AlignLeft
@@ -64,7 +64,7 @@ Rectangle {
                         font.family: setting.activeFont
                         color: "white"
                         text: "برای عضویت در خبرنامه اطلاعات خود را وارد کنید"
-                        font.pixelSize: Qt.application.font.pixelSize * 1.3 * ratio
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3 * ratio
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Text.AlignLeft
                         LayoutMirroring.enabled: true
@@ -81,7 +81,7 @@ Rectangle {
                         font.family: setting.activeFont
                         color: "#a2a2a2"
                         text: "اطلاع از آخرین کتاب ها، آپدیت ها و ..."
-                        font.pixelSize: Qt.application.font.pixelSize * 1.1 * ratio
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.1 * ratio
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Text.AlignLeft
                         LayoutMirroring.enabled: true
@@ -157,7 +157,7 @@ Rectangle {
                     text: "وی بوکس"
                     font.family: setting.activeFont
                     color: "#a2a2a2"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -167,7 +167,7 @@ Rectangle {
                     text: "خانه"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -186,7 +186,7 @@ Rectangle {
                     text: "اشتراک"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -205,7 +205,7 @@ Rectangle {
                     text: "کتاب های سریالی"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -224,7 +224,7 @@ Rectangle {
                     text: "کتاب های صوتی"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -257,7 +257,7 @@ Rectangle {
                     text: "دسته بندی"
                     font.family: setting.activeFont
                     color: "#a2a2a2"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -267,7 +267,7 @@ Rectangle {
                     text: "ادبیات و هنر"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -286,7 +286,7 @@ Rectangle {
                     text: "درسی و کمک درسی"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -306,7 +306,7 @@ Rectangle {
                     text: "ریاضی و فیزیک"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -326,7 +326,7 @@ Rectangle {
                     text: "تاریخی و دین"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -358,7 +358,7 @@ Rectangle {
                     text: "کتاب های شما"
                     font.family: setting.activeFont
                     color: "#a2a2a2"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -369,7 +369,7 @@ Rectangle {
                     text: "کتاب های متنی"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -389,7 +389,7 @@ Rectangle {
                     text: "کتاب های صوتی"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -410,7 +410,7 @@ Rectangle {
                     text: "ویدئوهای من"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -432,7 +432,7 @@ Rectangle {
                     text: "ویرایش کتابخانه"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -466,7 +466,7 @@ Rectangle {
                     text: "سایر"
                     font.family: setting.activeFont
                     color: "#a2a2a2"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     verticalAlignment: Qt.AlignVCenter
                 }
                 Label{
@@ -477,7 +477,7 @@ Rectangle {
                     text: "پرسش های رایج"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -496,7 +496,7 @@ Rectangle {
                     text: "راهنمای محصولات"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -516,7 +516,7 @@ Rectangle {
                     text: "مستندهای فنی"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{
@@ -536,7 +536,7 @@ Rectangle {
                     text: "وبینارها"
                     font.family: setting.activeFont
                     color: "white"
-                    font.pixelSize: Qt.application.font.pixelSize * ratio * 1.4
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.4
                     LayoutMirroring.enabled: true
                     Layout.alignment: Qt.AlignLeft
                     MouseArea{

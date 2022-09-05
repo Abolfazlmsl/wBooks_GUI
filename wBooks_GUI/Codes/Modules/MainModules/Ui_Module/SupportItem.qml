@@ -100,7 +100,7 @@ Item {
                     verticalAlignment: Qt.AlignVCenter
                     text: Icons.phone
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 6
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 6
                     color: color1
                 }
 
@@ -109,7 +109,7 @@ Item {
                     text: "پشتیبانی"
                     color: color1
                     font.family: setting.activeFont
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                     renderType: Text.NativeRendering
 
                     anchors.right: lbl_Icon.left
@@ -148,7 +148,7 @@ Item {
                                 id: lbl_phone
                                 text: "09166546412"
                                 font.family: setting.activeNumFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                 color: color4
                             }
 
@@ -156,7 +156,7 @@ Item {
                             Label{
                                 text: Icons.phone
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2.0
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2.0
                                 color: color4
                             }
 
@@ -179,7 +179,7 @@ Item {
                                 id: lbl_emailAddress
                                 text: "seyedmaziarmousavi@gmail.com"
                                 font.family: setting.activeFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                 color: color4
                             }
 
@@ -187,7 +187,7 @@ Item {
                             Label{
                                 text: Icons.email
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2.0
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2.0
                                 color: color4
                             }
 
@@ -210,7 +210,7 @@ Item {
                                 id: lbl_whatsapp
                                 text: "09166546412"
                                 font.family: setting.activeNumFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                 color: color4
                             }
 
@@ -218,7 +218,7 @@ Item {
                             Label{
                                 text: Icons.whatsapp
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2.0
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2.0
                                 color: color4
                             }
 

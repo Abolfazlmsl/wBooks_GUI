@@ -524,7 +524,7 @@ Window {
     FontMetrics{
         id: fontMetric
         font.family: setting.activeFont
-        font.pixelSize: Qt.application.font.pixelSize
+        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
     }
 
     BookReader{
@@ -1058,7 +1058,7 @@ Window {
                                 anchors.centerIn: parent
                                 text: Icons.power
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * 2 //* widthRatio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2 //* widthRatio
 
                                 color: "#ffffff"
                             }
@@ -1095,7 +1095,7 @@ Window {
                                 NumberAnimation{duration: 300}
                             }
                             font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize *3 * ratio //Qt.application.font.pixelSize
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio *3 * ratio //Qt.application.font.pixelSize * setting.fontRatio
                             renderType: Text.NativeRendering
 
                             verticalAlignment: Qt.AlignVCenter
@@ -1126,7 +1126,7 @@ Window {
 //                            text: userInfo.name
                             text: setting.userName
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio//Qt.application.font.pixelSize
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio//Qt.application.font.pixelSize * setting.fontRatio
 
                             verticalAlignment: Qt.AlignVCenter
 
@@ -1151,7 +1151,7 @@ Window {
 
                             text: Icons.account_circle_outline
                             font.family: webfont.name
-                            font.pixelSize: Qt.application.font.pixelSize *3 * ratio  //Qt.application.font.pixelSize
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio *3 * ratio  //Qt.application.font.pixelSize * setting.fontRatio
                             renderType: Text.NativeRendering
 
                             verticalAlignment: Qt.AlignVCenter
@@ -1184,7 +1184,7 @@ Window {
                                 anchors.fill: parent
                                 text: Icons.basket
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize *3 * ratio //Qt.application.font.pixelSize
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio *3 * ratio //Qt.application.font.pixelSize * setting.fontRatio
 
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
@@ -1215,7 +1215,7 @@ Window {
                                     anchors.fill: parent
                                     text: basketModel.count
                                     font.family: setting.activeNumFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //Qt.application.font.pixelSize
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //Qt.application.font.pixelSize * setting.fontRatio
 
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter
@@ -1299,7 +1299,7 @@ Window {
                                 text: Icons.magnify
                                 rotation: 90
                                 font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize *2.5*ratio //Qt.application.font.pixelSize
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio *2.5*ratio //Qt.application.font.pixelSize * setting.fontRatio
 
                                 color: "#ffffff"
                                 clip: true
@@ -1464,7 +1464,7 @@ Window {
                                             Layout.preferredWidth: 5
                                             Layout.fillHeight: true
                                             font.family: webfont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
                                             font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
@@ -1491,7 +1491,7 @@ Window {
                                             Layout.fillWidth: true
                                             Layout.fillHeight: true
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                                             text: "روشن"
                                             color: "#ffffff"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1535,7 +1535,7 @@ Window {
                                             Layout.preferredWidth: 5
                                             Layout.fillHeight: true
                                             font.family: webfont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
                                             font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
@@ -1562,7 +1562,7 @@ Window {
                                             Layout.fillWidth: true
                                             Layout.fillHeight: true
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                                             text: "نیمه روشن"
                                             color: "#ffffff"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1606,7 +1606,7 @@ Window {
                                             Layout.preferredWidth: 5
                                             Layout.fillHeight: true
                                             font.family: webfont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
                                             font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
@@ -1634,7 +1634,7 @@ Window {
                                             Layout.fillWidth: true
                                             Layout.fillHeight: true
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                                             text: "نیمه تاریک"
                                             color: "#ffffff"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1678,7 +1678,7 @@ Window {
                                             Layout.preferredWidth: 5
                                             Layout.fillHeight: true
                                             font.family: webfont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
                                             font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
@@ -1706,7 +1706,7 @@ Window {
                                             Layout.fillWidth: true
                                             Layout.fillHeight: true
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                                             text: "تاریک"
                                             color: "#ffffff"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1745,6 +1745,7 @@ Window {
                         }
 
                         onEntered: {
+                            popupfontsize.close()
                             popupfont.close()
                             popuptheme.open()
                         }
@@ -1761,7 +1762,7 @@ Window {
                     Layout.preferredWidth: 20 * ratio
                     Layout.preferredHeight: width
                     radius: width/2
-                    border.width: 3
+                    border.width: 1
                     border.color: "white"
 
                     color: "transparent"
@@ -1770,7 +1771,7 @@ Window {
                         text: "F"
                         font.family: setting.activeFont
                         color: "white"
-                        font.pixelSize: Qt.application.font.pixelSize * 1 * ratio
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1 * ratio
                     }
 
                     Popup{
@@ -1810,7 +1811,7 @@ Window {
                                             Layout.preferredWidth: 5
                                             Layout.fillHeight: true
                                             font.family: webfont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
                                             font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
@@ -1826,7 +1827,7 @@ Window {
                                             Layout.fillWidth: true
                                             Layout.fillHeight: true
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                                             text: "ایران سانس"
                                             color: "#ffffff"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1870,7 +1871,7 @@ Window {
                                             Layout.preferredWidth: 5
                                             Layout.fillHeight: true
                                             font.family: webfont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
                                             font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
@@ -1886,7 +1887,7 @@ Window {
                                             Layout.fillWidth: true
                                             Layout.fillHeight: true
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                                             text: "کلمه (عادی)"
                                             color: "#ffffff"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1930,7 +1931,7 @@ Window {
                                             Layout.preferredWidth: 5
                                             Layout.fillHeight: true
                                             font.family: webfont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
                                             font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
@@ -1946,7 +1947,7 @@ Window {
                                             Layout.fillWidth: true
                                             Layout.fillHeight: true
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                                             text: "کلمه (بولد)"
                                             color: "#ffffff"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1990,7 +1991,7 @@ Window {
                                             Layout.preferredWidth: 5
                                             Layout.fillHeight: true
                                             font.family: webfont.name
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
                                             font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
@@ -2006,7 +2007,7 @@ Window {
                                             Layout.fillWidth: true
                                             Layout.fillHeight: true
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
                                             text: "کلمه (نازک)"
                                             color: "#ffffff"
                                             verticalAlignment: Qt.AlignVCenter
@@ -2045,6 +2046,7 @@ Window {
                         }
 
                         onEntered: {
+                            popupfontsize.close()
                             popuptheme.close()
                             popupfont.open()
                         }
@@ -2052,6 +2054,360 @@ Window {
 
                 }
 
+                Item{Layout.preferredWidth: 25}
+
+                Rectangle{
+                    id: btn_fontsize
+                    Layout.topMargin: 5
+                    Layout.bottomMargin: 5
+                    Layout.preferredWidth: 20 * ratio
+                    Layout.preferredHeight: width
+                    radius: width/2
+                    border.width: 1
+                    border.color: "white"
+
+                    color: "transparent"
+                    Label{
+                        anchors.centerIn: parent
+                        text: "S"
+                        font.family: setting.activeFont
+                        color: "white"
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1 * ratio
+                    }
+
+                    Popup{
+                        id: popupfontsize
+                        width: 150
+                        height: 300
+//                        padding: 0
+                        y: -height
+                        x: -width*0.5 + btn_changefontsize.implicitWidth*0.5
+
+                        background: Rectangle{
+                            color: "#292929"
+                        }
+
+                        focus: true
+                        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+
+                        property bool state: false
+
+                        Rectangle{
+                            id: btn_changefontsize
+                            anchors.fill: parent
+                            color: "transparent"
+                            ColumnLayout{
+                                anchors.fill: parent
+                                spacing: 0
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
+                                            font.bold: true
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.fontRatio === 1.2) ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeNumFont
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
+                                            text: "1.2"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                    }
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.fontRatio = 1.2
+                                        }
+                                    }
+                                }
+
+                                Item{Layout.preferredHeight: 5}
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
+                                    Layout.rightMargin: 5
+                                    Layout.leftMargin: 5
+                                    color: "white"
+                                }
+                                Item{Layout.preferredHeight: 5}
+
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
+                                            font.bold: true
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.fontRatio === 1.1) ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeNumFont
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
+                                            text: "1.1"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                    }
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.fontRatio = 1.1
+                                        }
+                                    }
+                                }
+
+                                Item{Layout.preferredHeight: 5}
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
+                                    Layout.rightMargin: 5
+                                    Layout.leftMargin: 5
+                                    color: "white"
+                                }
+                                Item{Layout.preferredHeight: 5}
+
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
+                                            font.bold: true
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.fontRatio === 1) ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeNumFont
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
+                                            text: "1"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                    }
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.fontRatio = 1
+                                        }
+                                    }
+                                }
+
+                                Item{Layout.preferredHeight: 5}
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
+                                    Layout.rightMargin: 5
+                                    Layout.leftMargin: 5
+                                    color: "white"
+                                }
+                                Item{Layout.preferredHeight: 5}
+
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
+                                            font.bold: true
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.fontRatio === 0.9) ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeNumFont
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
+                                            text: "0.9"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+                                    }
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.fontRatio = 0.9
+                                        }
+                                    }
+                                }
+
+                                Item{Layout.preferredHeight: 5}
+                                Rectangle{
+                                    Layout.preferredHeight: 1
+                                    Layout.fillWidth: true
+                                    Layout.rightMargin: 5
+                                    Layout.leftMargin: 5
+                                    color: "white"
+                                }
+                                Item{Layout.preferredHeight: 5}
+
+                                Item{
+                                    Layout.fillWidth: true
+                                    Layout.preferredHeight: 50
+                                    RowLayout{
+                                        anchors.fill: parent
+                                        layoutDirection: Qt.RightToLeft
+                                        spacing: 0
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.preferredWidth: 5
+                                            Layout.fillHeight: true
+                                            font.family: webfont.name
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
+                                            font.bold: true
+                                            text: Icons.check
+                                            color: "#d43460"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                            visible: (setting.fontRatio === 0.8) ? true:false
+                                        }
+
+
+                                        Item{Layout.preferredWidth: 5}
+
+                                        Label{
+                                            Layout.fillWidth: true
+                                            Layout.fillHeight: true
+                                            font.family: setting.activeNumFont
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio //* widthRatio
+                                            text: "0.8"
+                                            color: "#ffffff"
+                                            verticalAlignment: Qt.AlignVCenter
+                                            horizontalAlignment: Qt.AlignHCenter
+                                        }
+
+                                        Item{Layout.preferredWidth: 5}
+                                    }
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        hoverEnabled: true
+                                        onClicked: {
+                                            setting.fontRatio = 0.8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        hoverEnabled: true
+
+                        onClicked: {
+                            if (popupfontsize.state === false){
+                                popupfontsize.open()
+                                popupfontsize.state = true
+                            }
+                            else {
+                                popupfontsize.close()
+                                popupfontsize.state = false
+                            }
+                        }
+
+                        onEntered: {
+                            popuptheme.close()
+                            popupfont.close()
+                            popupfontsize.open()
+                        }
+                    }
+
+                }
 
                 Item{Layout.fillWidth: true}
 
@@ -2064,7 +2420,7 @@ Window {
                         anchors.centerIn: parent
                         text: "تمامی حقوق این وبسایت متعلق به کمپانی وی بوکس می باشد"
                         font.family: setting.activeFont
-                        font.pixelSize: Qt.application.font.pixelSize * 1.2  * ratio
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2  * ratio
                         color: "white"
                     }
                 }

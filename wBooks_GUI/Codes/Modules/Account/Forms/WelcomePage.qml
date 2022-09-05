@@ -69,7 +69,7 @@ Item {
                         anchors.centerIn: parent
                         text: "خوش آمدید"
                         font.family: setting.activeFont
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                         color: "#ffffff"
                     }
                 }
@@ -103,7 +103,7 @@ Item {
                                     Layout.preferredWidth: contentWidth
                                     text: "کاربر گرامی "
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                     color: "#000000"
                                 }
                                 Label{
@@ -111,7 +111,7 @@ Item {
                                     Layout.preferredWidth: contentWidth
                                     text: setting.userName
                                     font.family: setting.activeNumFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                     color: "#d43460"
                                 }
                                 Label{
@@ -119,7 +119,7 @@ Item {
                                     Layout.preferredWidth: contentWidth
                                     text: " ثبت نام شما با موفقیت انجام شد"
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                     color: "#000000"
                                 }
                                 Item{Layout.fillWidth: true}
@@ -216,7 +216,7 @@ Item {
                                                     Layout.preferredHeight: 20
                                                     text: "%15"
                                                     font.family: setting.activeNumFont
-                                                    font.pixelSize: Qt.application.font.pixelSize * 1.6 //* widthRatio
+                                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.6 //* widthRatio
                                                     font.bold: true
                                                     horizontalAlignment: Qt.AlignHCenter
                                                     verticalAlignment: Qt.AlignVCenter
@@ -228,7 +228,7 @@ Item {
                                                     Layout.preferredHeight: 10
                                                     text: "تخفیف"
                                                     font.family: setting.activeFont
-                                                    font.pixelSize: Qt.application.font.pixelSize * 1.3 //* widthRatio
+                                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3 //* widthRatio
                                                     horizontalAlignment: Qt.AlignHCenter
                                                     verticalAlignment: Qt.AlignVCenter
                                                     color: "#000000"
@@ -245,7 +245,7 @@ Item {
                                             Layout.fillHeight: true
                                             text: "4E56H"
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1.6 //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.6 //* widthRatio
                                             horizontalAlignment: Qt.AlignHCenter
                                             verticalAlignment: Qt.AlignVCenter
                                             color: "#000000"
@@ -268,7 +268,7 @@ Item {
                                             Layout.preferredHeight: contentHeight
                                             text: "برای تهیه اشتراک های ویژه"
                                             font.family: setting.activeNumFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1 //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1 //* widthRatio
                                             horizontalAlignment: Text.AlignLeft
                                             LayoutMirroring.enabled: true
                                             color: "#a7a7a7"
@@ -281,7 +281,7 @@ Item {
                                             Layout.preferredHeight: contentHeight
                                             text: "اعتبار کد هدیه: تا 1401/06/15"
                                             font.family: setting.activeNumFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1 //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1 //* widthRatio
                                             horizontalAlignment: Text.AlignLeft
                                             LayoutMirroring.enabled: true
                                             color: "#a7a7a7"
@@ -294,7 +294,7 @@ Item {
                                             Layout.preferredHeight: contentHeight
                                             text: "برای یک بار استفاده"
                                             font.family: setting.activeNumFont
-                                            font.pixelSize: Qt.application.font.pixelSize * 1 //* widthRatio
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1 //* widthRatio
                                             horizontalAlignment: Text.AlignLeft
                                             LayoutMirroring.enabled: true
                                             color: "#a7a7a7"

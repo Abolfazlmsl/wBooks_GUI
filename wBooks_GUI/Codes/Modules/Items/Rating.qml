@@ -39,7 +39,7 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             text: Icons.star_outline
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * scale
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * scale
             color: (isclicked) ? color10:color9
 
             MouseArea{
@@ -74,7 +74,7 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             text: Icons.star_outline
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * scale
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * scale
             color:(isclicked) ? color10:color9
 
             MouseArea{
@@ -109,7 +109,7 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             text: Icons.star_outline
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * scale
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * scale
             color: (isclicked) ? color10:color9
 
             MouseArea{
@@ -144,7 +144,7 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             text: Icons.star_outline
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * scale
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * scale
             color: (isclicked) ? color10:color9
 
             MouseArea{
@@ -179,7 +179,7 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             text: Icons.star_outline
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * scale
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * scale
             color: (isclicked) ? color10:color9
 
             MouseArea{
@@ -226,7 +226,7 @@ Item {
 
             text: selectedRate
             font.family: segoeUI.name
-            font.pixelSize: Qt.application.font.pixelSize * 1.3
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
             font.bold: true
             color: color20
         }
@@ -242,7 +242,7 @@ Item {
 
             text: Icons.star
             font.family: webfont.name
-            font.pixelSize: Qt.application.font.pixelSize * 1.8
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.8
             color: color20
         }
 

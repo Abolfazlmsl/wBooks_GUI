@@ -84,7 +84,7 @@ Item {
                         anchors.centerIn: parent
                         text: "شماره همراه را وارد کنید"
                         font.family: setting.activeFont
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                         color: "#ffffff"
                     }
                 }
@@ -224,7 +224,7 @@ Item {
                             Layout.fillHeight: true
                             text: "آیا می خواهید به صفحه ورود بروید؟"
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                             color: color4
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
@@ -237,7 +237,7 @@ Item {
                             Layout.fillHeight: true
                             text: "بازگشت"
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * 1.2
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                             color: "#d43460"
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter

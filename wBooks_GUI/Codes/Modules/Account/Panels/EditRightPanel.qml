@@ -37,7 +37,7 @@ Rectangle{
                         anchors.centerIn: parent
                         text: Icons.arrow_right
                         font.family: webfont.name
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5 //* widthRatio
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 //* widthRatio
 
                         color: color4
                     }
@@ -82,7 +82,7 @@ Rectangle{
                                 visible: (setting.profile === "")?true:false
                                 font.family: webfont.name
                                 color: color7
-                                font.pixelSize: Qt.application.font.pixelSize * 3
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
                             }
@@ -124,7 +124,7 @@ Rectangle{
                                 text: setting.userName
                                 font.family: setting.activeFont
                                 color: color4
-                                font.pixelSize: Qt.application.font.pixelSize * ratio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 LayoutMirroring.enabled: true
@@ -138,7 +138,7 @@ Rectangle{
                                 font.family: setting.activeNumFont
                                 color: color4
 
-                                font.pixelSize: Qt.application.font.pixelSize * ratio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 LayoutMirroring.enabled: true
@@ -151,7 +151,7 @@ Rectangle{
                                 font.family: setting.activeNumFont
                                 color: color4
 
-                                font.pixelSize: Qt.application.font.pixelSize * ratio
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Text.AlignLeft
                                 LayoutMirroring.enabled: true
@@ -178,7 +178,7 @@ Rectangle{
                         font.family: setting.activeFont
                         color: color7
 
-                        font.pixelSize: Qt.application.font.pixelSize * 1.3
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
                     }

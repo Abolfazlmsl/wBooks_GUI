@@ -59,7 +59,7 @@ Item {
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                     }
                 }
 
@@ -77,7 +77,7 @@ Item {
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
-                        font.pixelSize: Qt.application.font.pixelSize * 1.2
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                     }
                 }
                 Rectangle{
@@ -94,7 +94,7 @@ Item {
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
-                        font.pixelSize: Qt.application.font.pixelSize * 1.2
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                     }
                 }
 
@@ -112,7 +112,7 @@ Item {
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
-                        font.pixelSize: Qt.application.font.pixelSize * 1.2
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                     }
                 }
 
@@ -132,7 +132,7 @@ Item {
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
-                        font.pixelSize: Qt.application.font.pixelSize * 1.5
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                     }
                 }
 

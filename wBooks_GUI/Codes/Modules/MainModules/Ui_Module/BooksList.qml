@@ -31,7 +31,7 @@ Item {
                 font.family: webfont.name
                 verticalAlignment: Qt.AlignVCenter
                 horizontalAlignment: Qt.AlignHCenter
-                font.pixelSize: Qt.application.font.pixelSize * 3
+                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
                 text: Icons.chevron_right
                 color: color4
             }
@@ -70,7 +70,7 @@ Item {
                         text: ""
                         font.family: setting.activeFont
                         color: color4
-                        font.pixelSize: Qt.application.font.pixelSize * 1.7
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
                         verticalAlignment: Qt.AlignVCenter
                         elide: Text.ElideRight
                     }
@@ -82,7 +82,7 @@ Item {
                         font.family: setting.activeFont
                         color: color2
                         text: "(مشاهده بیشتر)"
-                        font.pixelSize: Qt.application.font.pixelSize * 1.7
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
                         verticalAlignment: Qt.AlignVCenter
                         elide: Text.ElideRight
                         MouseArea{
@@ -164,7 +164,7 @@ Item {
                                     color: "#ffffff"
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter
-                                    font.pixelSize: Qt.application.font.pixelSize*1.5
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio*1.5
                                 }
                             }
 
@@ -227,7 +227,7 @@ Item {
                             font.family: setting.activeFont
                             color: color9
                             verticalAlignment: Qt.AlignVCenter
-                            font.pixelSize: Qt.application.font.pixelSize
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                         }
                     }
 
@@ -263,7 +263,7 @@ Item {
                                     font.family: setting.activeNumFont
                                     color: color9
                                     verticalAlignment: Qt.AlignVCenter
-                                    font.pixelSize: Qt.application.font.pixelSize * 0.7
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 0.7
                                     elide: Text.ElideRight
                                 }
                             }
@@ -311,7 +311,7 @@ Item {
                                     color: color9
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter
-                                    font.pixelSize: Qt.application.font.pixelSize
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                                 }
 
                                 Rectangle{
@@ -331,7 +331,7 @@ Item {
                                     color: color9
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter
-                                    font.pixelSize: Qt.application.font.pixelSize
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                                 }
                             }
                         }
@@ -349,7 +349,7 @@ Item {
             Label{
                 anchors.fill: parent
                 font.family: webfont.name
-                font.pixelSize: Qt.application.font.pixelSize * 3
+                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
                 verticalAlignment: Qt.AlignVCenter
                 horizontalAlignment: Qt.AlignHCenter
                 text: Icons.chevron_left

@@ -47,7 +47,7 @@ Rectangle{
             anchors.centerIn: parent
             text: "ارسال پیام"
             font.family: setting.activeFont
-            font.pixelSize: Qt.application.font.pixelSize * fontSize //* widthRatio
+            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * fontSize //* widthRatio
             font.bold: true
 
             color: "#ffffff"

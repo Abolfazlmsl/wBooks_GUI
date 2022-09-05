@@ -45,7 +45,7 @@ Item {
                     Layout.rightMargin: 20
                     text: "تیتر اصلی"
                     font.family: setting.activeFont
-                    font.pixelSize: Qt.application.font.pixelSize * 1.3
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                     font.bold: true
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Qt.AlignHCenter

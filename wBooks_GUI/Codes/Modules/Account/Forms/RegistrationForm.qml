@@ -148,7 +148,7 @@ Item{
                                 anchors.centerIn: parent
                                 text: "لطفا اطلاعات کاربری خود را وارد کنید"
                                 font.family: setting.activeFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                 color: "#ffffff"
                             }
                         }
@@ -315,7 +315,7 @@ Item{
                                                 text: Icons.eye_off
                                                 color: "#989898"
                                                 font.family: webfont.name
-                                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
 
                                                 MouseArea{
 
@@ -381,7 +381,7 @@ Item{
                                                 text: Icons.eye_off
                                                 color: "#989898"
                                                 font.family: webfont.name
-                                                font.pixelSize: Qt.application.font.pixelSize * 2
+                                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
 
                                                 MouseArea{
 
@@ -514,7 +514,7 @@ Item{
                                     Layout.fillHeight: true
                                     text: "آیا حساب کاربری دارید؟"
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.2
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                                     color: color4
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter
@@ -527,7 +527,7 @@ Item{
                                     Layout.fillHeight: true
                                     text: "وارد شوید"
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.2
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                                     color: "#d43460"
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter

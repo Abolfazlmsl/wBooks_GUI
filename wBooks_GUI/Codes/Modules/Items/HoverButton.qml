@@ -31,7 +31,7 @@ Rectangle{
         visible: !iconReturn.isHover
         text: ""
         font.family: webfont.name
-        font.pixelSize: Qt.application.font.pixelSize * 2
+        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
         color: color4
         verticalAlignment: Qt.AlignVCenter
         horizontalAlignment: Qt.AlignHCenter
@@ -42,7 +42,7 @@ Rectangle{
         visible: iconReturn.isHover
         text: ""
         font.family: setting.activeFont
-        font.pixelSize: Qt.application.font.pixelSize*1.5
+        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio*1.5
         color: color4
         verticalAlignment: Qt.AlignVCenter
         horizontalAlignment: Qt.AlignHCenter

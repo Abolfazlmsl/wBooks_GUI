@@ -66,7 +66,7 @@ Item {
                     font.family: setting.activeFont
                     color: color2
 
-                    font.pixelSize: Qt.application.font.pixelSize * 1.7
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
                     verticalAlignment: Qt.AlignVCenter
                     horizontalAlignment: Text.AlignLeft
                     LayoutMirroring.enabled: true
@@ -152,7 +152,7 @@ Item {
         //                                color: "#ffffff"
         //                                verticalAlignment: Qt.AlignVCenter
         //                                horizontalAlignment: Qt.AlignHCenter
-        //                                font.pixelSize: Qt.application.font.pixelSize
+        //                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
         //                            }
                                 }
                             }
@@ -203,7 +203,7 @@ Item {
                                 font.family: setting.activeFont
                                 color: color9
                                 verticalAlignment: Qt.AlignVCenter
-                                font.pixelSize: Qt.application.font.pixelSize
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                             }
                         }
 
@@ -239,7 +239,7 @@ Item {
                                         font.family: setting.activeNumFont
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
-                                        font.pixelSize: Qt.application.font.pixelSize * 0.7
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 0.7
                                         elide: Text.ElideRight
                                     }
                                 }
@@ -283,7 +283,7 @@ Item {
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
                                         horizontalAlignment: Qt.AlignHCenter
-                                        font.pixelSize: Qt.application.font.pixelSize
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                                     }
 
                                     Rectangle{
@@ -303,7 +303,7 @@ Item {
                                         color: color9
                                         verticalAlignment: Qt.AlignVCenter
                                         horizontalAlignment: Qt.AlignHCenter
-                                        font.pixelSize: Qt.application.font.pixelSize
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                                     }
                                 }
                             }
@@ -334,7 +334,7 @@ Item {
                                 font.family: webfont.name
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
-                                font.pixelSize: Qt.application.font.pixelSize * 3.5
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3.5
                                 color: (currentPage===0)?color9:color2
                             }
                             MouseArea{
@@ -365,7 +365,7 @@ Item {
                                     anchors.fill: parent
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                     text: index+1
                                     font.family: setting.activeNumFont
                                     color: color2
@@ -394,7 +394,7 @@ Item {
                                 font.family: webfont.name
                                 verticalAlignment: Qt.AlignVCenter
                                 horizontalAlignment: Qt.AlignHCenter
-                                font.pixelSize: Qt.application.font.pixelSize * 3.5
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3.5
                                 color: (currentPage===maxPages-1)?color9:color2
                             }
                             MouseArea{

@@ -100,7 +100,7 @@ Item {
                     verticalAlignment: Qt.AlignVCenter
                     text: Icons.information_outline
                     font.family: webfont.name
-                    font.pixelSize: Qt.application.font.pixelSize * 6
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 6
                     color: color1
                 }
 
@@ -109,7 +109,7 @@ Item {
                     text: "درباره ی ما"
                     color: color1
                     font.family: setting.activeFont
-                    font.pixelSize: Qt.application.font.pixelSize * 2
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
                     renderType: Text.NativeRendering
 
                     anchors.right: lbl_Icon.left
@@ -163,7 +163,7 @@ Item {
         با خواندن کتاب، گاهی ممکن است از سر خنده، دیوانه‌وار شاد شوید و یا گاهی سیل‌آسا اشک ریزید. جادوی کلمات از سوی نویسنده نه تنها قدرتمند، بلکه زیبا هستند و می‌توانند خواننده را با عمیق‌ترین احساسات درونی‌اش مواجه کند. به طور کلی، کتاب بسیار غیر منتظره و با حالتی بسیار دلهره‌آور به پایانش نزدیک می‌شود. قسمت‌های نخستین تا میانه‌های رمان روایتی ساده و مستقیم دارد، اما در نهایت، شما به نقطه‌ای می‌رسید که نمی‌توانید کتاب را به کنار بگذارید."
                             font.family: setting.activeNumFont
                             color: color4
-                            font.pixelSize: Qt.application.font.pixelSize * 1.5
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                             wrapMode: Text.WordWrap
                             horizontalAlignment: Text.AlignLeft
                             LayoutMirroring.enabled: true

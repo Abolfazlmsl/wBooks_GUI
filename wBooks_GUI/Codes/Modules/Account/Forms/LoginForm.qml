@@ -140,7 +140,7 @@ Item{
                                 anchors.centerIn: parent
                                 text: "به وی بوکس خوش آمدید"
                                 font.family: setting.activeFont
-                                font.pixelSize: Qt.application.font.pixelSize * 1.5
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
                                 color: "#ffffff"
                             }
                         }
@@ -212,7 +212,7 @@ Item{
                                         text: Icons.eye_off
                                         color: "#989898"
                                         font.family: webfont.name
-                                        font.pixelSize: Qt.application.font.pixelSize * 2
+                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 2
 
                                         MouseArea{
 
@@ -364,7 +364,7 @@ Item{
                                             Layout.fillHeight: true
                                             text: "رمز عبور خود را فراموش کرده اید؟"
                                             font.family: setting.activeFont
-                                            font.pixelSize: Qt.application.font.pixelSize
+                                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
                                             color: color4
                                             MouseArea{
                                                 anchors.fill: parent
@@ -498,7 +498,7 @@ Item{
                                     Layout.fillHeight: true
                                     text: "آیا تا به حال ثبت نام نکرده اید؟"
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.2
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                                     color: color4
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter
@@ -511,7 +511,7 @@ Item{
                                     Layout.fillHeight: true
                                     text: "ثبت نام کنید"
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.2
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
                                     color: "#d43460"
                                     verticalAlignment: Qt.AlignVCenter
                                     horizontalAlignment: Qt.AlignHCenter

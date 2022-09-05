@@ -32,7 +32,7 @@ Rectangle{
                 anchors.centerIn: parent
                 text: ""
                 font.family: iconFont
-                font.pixelSize: Qt.application.font.pixelSize * iconSize //* widthRatio
+                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * iconSize //* widthRatio
                 font.bold: true
 
                 color: iconColor
@@ -50,7 +50,7 @@ Rectangle{
                 anchors.centerIn: parent
                 text: ""
                 font.family: setting.activeNumFont
-                font.pixelSize: Qt.application.font.pixelSize * textSize //* widthRatio
+                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * textSize //* widthRatio
                 font.bold: true
 
                 color: textColor
