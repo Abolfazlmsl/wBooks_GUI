@@ -172,12 +172,13 @@ Rectangle{
                         ComboBox{
                             id: cbox
                             Layout.fillHeight: true
-                            Layout.preferredWidth: parent.width * 0.2
+                            Layout.preferredWidth: parent.width * 0.18
                             Layout.topMargin: 2
                             Layout.bottomMargin: 2
                             LayoutMirroring.enabled: true
                             font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
+                            font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
+                            visible: topFilterVis
                             background: Rectangle {
                                 color: color1
                             }
@@ -199,7 +200,7 @@ Rectangle{
                                     text: model.text
                                     color: itemDlgt.hovered?color1:color4
                                     font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * 1.5 * ratio
+                                    font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio
                                     LayoutMirroring.enabled: true
                                     verticalAlignment: Text.AlignVCenter
                                     horizontalAlignment: Text.AlignLeft

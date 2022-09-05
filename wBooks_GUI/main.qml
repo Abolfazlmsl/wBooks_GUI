@@ -48,6 +48,7 @@ Window {
     property bool accountPopEnabled: false
     property bool inHomeMode: true
     property bool smallPlayerVis: true
+    property bool topFilterVis: false
     property int mainView: 8 // Home page
     property int myBooksView: 0
     property int rightView: 0
@@ -586,6 +587,7 @@ Window {
                     mainView: 14
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -603,6 +605,7 @@ Window {
                     mainView: 11
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -620,6 +623,7 @@ Window {
                     mainView: 12
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -637,6 +641,7 @@ Window {
                     mainView: 13
                     rightView: 1
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -654,6 +659,7 @@ Window {
                     mainView: 10
                     rightView: 0
                     homeClick: true
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -671,6 +677,7 @@ Window {
                     mainView: 9
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: true
                     serialBookClick: false
                     audioBookClick: false
@@ -688,6 +695,7 @@ Window {
                     mainView: 8
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: true
                     audioBookClick: false
@@ -705,6 +713,7 @@ Window {
                     mainView: 7
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: true
@@ -722,6 +731,7 @@ Window {
                     mainView: 6
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -739,6 +749,7 @@ Window {
                     mainView: 4
                     rightView: 0
                     homeClick: false
+                    topFilterVis: true
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -756,6 +767,7 @@ Window {
                     mainView: 2
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -773,6 +785,7 @@ Window {
                     mainView: 3
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -790,6 +803,7 @@ Window {
                     mainView: 5
                     rightView: 0
                     homeClick: false
+                    topFilterVis: true
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -807,6 +821,7 @@ Window {
                     mainView: 1
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -824,6 +839,7 @@ Window {
                     mainView: 0
                     rightView: 0
                     homeClick: false
+                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -1421,6 +1437,7 @@ Window {
                                             Layout.fillHeight: true
                                             font.family: webfont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1491,6 +1508,7 @@ Window {
                                             Layout.fillHeight: true
                                             font.family: webfont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1561,6 +1579,7 @@ Window {
                                             Layout.fillHeight: true
                                             font.family: webfont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1632,6 +1651,7 @@ Window {
                                             Layout.fillHeight: true
                                             font.family: webfont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1763,6 +1783,7 @@ Window {
                                             Layout.fillHeight: true
                                             font.family: webfont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1822,6 +1843,7 @@ Window {
                                             Layout.fillHeight: true
                                             font.family: webfont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1881,6 +1903,7 @@ Window {
                                             Layout.fillHeight: true
                                             font.family: webfont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
                                             verticalAlignment: Qt.AlignVCenter
@@ -1940,6 +1963,7 @@ Window {
                                             Layout.fillHeight: true
                                             font.family: webfont.name
                                             font.pixelSize: Qt.application.font.pixelSize * 1.2 * ratio //* widthRatio
+                                            font.bold: true
                                             text: Icons.check
                                             color: "#d43460"
                                             verticalAlignment: Qt.AlignVCenter
