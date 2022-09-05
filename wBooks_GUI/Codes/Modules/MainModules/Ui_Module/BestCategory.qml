@@ -74,7 +74,6 @@ Item {
                         color: color4
                         font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
                         verticalAlignment: Qt.AlignVCenter
-                        elide: Text.ElideRight
                     }
 
                     Label{
@@ -86,7 +85,6 @@ Item {
                         text: "(مشاهده بیشتر)"
                         font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
                         verticalAlignment: Qt.AlignVCenter
-                        elide: Text.ElideRight
                         MouseArea{
                             anchors.fill: parent
                             cursorShape: Qt.PointingHandCursor
@@ -222,6 +220,7 @@ Item {
                             anchors.fill: parent
                             text: itemModel.get(index).text1
                             font.family: setting.activeFont
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                             color: color4
                             verticalAlignment: Qt.AlignVCenter
                         }
@@ -238,6 +237,7 @@ Item {
                             anchors.fill: parent
                             text: (itemModel.get(index).price === "0") ? "رایگان" : Functions.numberWithCommas(itemModel.get(index).price) + " تومان"
                             font.family: setting.activeNumFont
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                             color: color4
                             verticalAlignment: Qt.AlignVCenter
                         }

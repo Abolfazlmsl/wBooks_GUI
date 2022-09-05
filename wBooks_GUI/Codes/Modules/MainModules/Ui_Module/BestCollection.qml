@@ -66,7 +66,6 @@ Item {
                         color: color4
                         font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
                         verticalAlignment: Qt.AlignVCenter
-                        elide: Text.ElideRight
                     }
 
                     Label{
@@ -78,7 +77,6 @@ Item {
                         text: "(مشاهده بیشتر)"
                         font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.7
                         verticalAlignment: Qt.AlignVCenter
-                        elide: Text.ElideRight
                         MouseArea{
                             anchors.fill: parent
                             cursorShape: Qt.PointingHandCursor

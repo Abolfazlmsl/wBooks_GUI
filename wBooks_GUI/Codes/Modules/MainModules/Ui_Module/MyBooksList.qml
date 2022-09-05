@@ -129,6 +129,7 @@ Item {
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
                             font.family: setting.activeFont
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                             font.bold: true
                             color: color4
                             text: "نام اثر"
@@ -148,6 +149,7 @@ Item {
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
                             font.family: setting.activeFont
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                             font.bold: true
                             color: color4
                             text: "نام نویسنده"
@@ -167,6 +169,7 @@ Item {
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
                             font.family: setting.activeFont
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                             font.bold: true
                             color: color4
                             text: "حذف اثر"
@@ -214,6 +217,7 @@ Item {
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
                             font.family: setting.activeFont
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                             font.bold: true
                             color: color4
                             text: model.title
@@ -240,6 +244,7 @@ Item {
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
                             font.family: setting.activeFont
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                             font.bold: true
                             color: color4
                             text: model.author

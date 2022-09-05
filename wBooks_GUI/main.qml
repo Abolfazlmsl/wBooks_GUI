@@ -1431,7 +1431,7 @@ Window {
                     Popup{
                         id: popuptheme
                         width: 150
-                        height: 250
+                        height: 270
 //                        padding: 0
                         y: -height
                         x: -width*0.35
@@ -1777,7 +1777,7 @@ Window {
                     Popup{
                         id: popupfont
                         width: 150
-                        height: 250
+                        height: 270
 //                        padding: 0
                         y: -height
                         x: -width*0.5 + btn_changefont.implicitWidth*0.5
@@ -2078,7 +2078,7 @@ Window {
                     Popup{
                         id: popupfontsize
                         width: 150
-                        height: 300
+                        height: 320
 //                        padding: 0
                         y: -height
                         x: -width*0.5 + btn_changefontsize.implicitWidth*0.5

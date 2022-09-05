@@ -100,6 +100,7 @@ Item {
                         anchors.fill: parent
                         text: model.text
                         font.family: setting.activeFont
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
                         color: color4
                         verticalAlignment: Qt.AlignVCenter
                     }
