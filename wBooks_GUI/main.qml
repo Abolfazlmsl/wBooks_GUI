@@ -827,9 +827,8 @@ Window {
                     mainView: 5
                     rightView: 0
                     homeClick: false
-                    topFilterVis: true
-                    secondHeaderVis: true
-                    secondHeaderTitle: "جستجو"
+                    topFilterVis: false
+                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -949,7 +948,7 @@ Window {
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.015
+                    Layout.preferredWidth: 20 * ratio
 
                     color: "transparent"
                 }
@@ -968,7 +967,7 @@ Window {
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.015
+                    Layout.preferredWidth: 20 * ratio
 
                     color: "transparent"
                 }
@@ -986,7 +985,7 @@ Window {
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.015
+                    Layout.preferredWidth: 20 * ratio
 
                     color: "transparent"
                 }
@@ -1004,7 +1003,7 @@ Window {
                 //-- spacer --//
                 Rectangle{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.015
+                    Layout.preferredWidth: 20 * ratio
 
                     color: "transparent"
                 }
@@ -1017,6 +1016,26 @@ Window {
                     onBtnClicked: {
                         myBooksView = 0
                         mainPage.state = "My Library"
+                    }
+                }
+
+                //-- spacer --//
+                Rectangle{
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: 20 * ratio
+
+                    color: "transparent"
+                }
+
+                HeaderButton{
+                    iconAsImage: true
+                    imgIcon: "qrc:/Icons/search.png"
+                    text: "جستجو"
+                    isClick: true
+                    visible: searchClick
+                    closeIconVis: true
+                    onCloseBtnClicked: {
+                        mainPage.state = "Home"
                     }
                 }
 
@@ -1049,12 +1068,13 @@ Window {
 
                         Rectangle{
                             Layout.preferredHeight: width
-                            Layout.preferredWidth: 40
+                            Layout.preferredWidth: 30
                             Layout.topMargin: 10
                             Layout.bottomMargin: 10
                             radius: width / 2
                             color: "#d43460"
                             Label{
+                                id: powerIcon
                                 anchors.centerIn: parent
                                 text: Icons.power
                                 font.family: webfont.name
@@ -1085,7 +1105,7 @@ Window {
                             visible: (setting.isLogined)
                             id: header_AccountICONArrow
                             Layout.fillHeight: true
-                            Layout.preferredWidth: 40
+                            Layout.preferredWidth: contentWidth
                             Layout.topMargin: 10
                             Layout.bottomMargin: 10
                             rotation: accountPopEnabled * 180
@@ -1096,14 +1116,12 @@ Window {
                             }
                             font.family: webfont.name
                             font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio *3 * ratio //Qt.application.font.pixelSize * setting.fontRatio
-                            renderType: Text.NativeRendering
 
                             verticalAlignment: Qt.AlignVCenter
                             horizontalAlignment: Qt.AlignHCenter
 
                             color: color16
                             clip: true
-                            elide: Text.ElideRight
 
                             MouseArea{
                                 anchors.fill: parent
@@ -1145,7 +1163,7 @@ Window {
                             visible: (setting.isLogined)
                             id: header_AccountICON
                             Layout.fillHeight: true
-                            Layout.preferredWidth: 40
+                            Layout.preferredWidth: contentWidth
                             Layout.topMargin: 10
                             Layout.bottomMargin: 10
 
@@ -1174,7 +1192,7 @@ Window {
                         //-- Basket Icon --//
                         Rectangle{
                             visible: (setting.isLogined)
-                            Layout.preferredWidth: 40 * ratio
+                            Layout.preferredWidth: header_basket.contentWidth
                             Layout.fillHeight: true
                             Layout.topMargin: 10
                             Layout.bottomMargin: 10
@@ -1284,11 +1302,11 @@ Window {
                             }
                         }
 
-                        Item { Layout.preferredWidth: 20 }
+                        Item { Layout.preferredWidth: 20 * ratio }
 
                         //-- Search Icon --//
                         Rectangle{
-                            Layout.preferredWidth: 40 * ratio
+                            Layout.preferredWidth: searchHeaderIcon.contentWidth
                             Layout.fillHeight: true
                             Layout.topMargin: 10
                             Layout.bottomMargin: 10
