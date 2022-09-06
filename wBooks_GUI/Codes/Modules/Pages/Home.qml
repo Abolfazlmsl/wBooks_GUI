@@ -81,6 +81,36 @@ Rectangle{
                     }
                 }
 
+                Writers{
+                    id: writers
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 250
+                    Layout.topMargin: 50
+                    Layout.leftMargin: parent.width * 0.05
+                    Layout.rightMargin: parent.width * 0.05
+                    title: "نویسندگان محبوب"
+                    itemModel: writersModel
+                    onMoreBtnClicked: {
+//                        morebooks.itemModel = writersModel
+//                        morebooks.title = writers.title
+                    }
+                }
+
+                Writers{
+                    id: speakers
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 250
+                    Layout.topMargin: 50
+                    Layout.leftMargin: parent.width * 0.05
+                    Layout.rightMargin: parent.width * 0.05
+                    title: "صداهای محبوب"
+                    itemModel: writersModel
+                    onMoreBtnClicked: {
+//                        morebooks.itemModel = writersModel
+//                        morebooks.title = writers.title
+                    }
+                }
+
                 Advertisement{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 220
@@ -102,6 +132,22 @@ Rectangle{
                     Layout.rightMargin: parent.width * 0.05
                     source: "qrc:/Images/Adver2.jpg"
                     selectable: false
+                }
+
+                BooksList{
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 400
+                    Layout.topMargin: 50
+                    Layout.leftMargin: parent.width * 0.05
+                    Layout.rightMargin: parent.width * 0.05
+                    title: "تازه های نشر ققنوس"
+                    itemModel: offerBooksModel
+                    fileType: "Document"
+
+                    onMoreBtnClicked: {
+//                        morebooks.itemModel = offerBooksModel
+//                        morebooks.title = offer_books.title
+                    }
                 }
 
                 Footer{

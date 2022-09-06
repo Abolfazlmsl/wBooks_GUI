@@ -217,7 +217,7 @@ Rectangle {
                                 spacing: 0
                                 CheckBox {
                                     id: checkbox
-                                    Layout.preferredWidth: parent.width * 0.8
+                                    Layout.preferredWidth: parent.width * 0.6
                                     Layout.fillHeight: true
                                     font.family: setting.activeFont
                                     font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio* 1.3
@@ -237,8 +237,10 @@ Rectangle {
                                     }
                                 }
 
+                                Item{Layout.fillWidth: true}
+
                                 Label{
-                                    Layout.fillWidth: true
+                                    Layout.preferredWidth: contentWidth
                                     Layout.fillHeight: true
                                     font.family: setting.activeNumFont
                                     horizontalAlignment: Qt.AlignHCenter
@@ -287,7 +289,7 @@ Rectangle {
                                 spacing: 0
 
                                 Label{
-                                    Layout.preferredWidth: parent.width * 0.8
+                                    Layout.preferredWidth: contentWidth
                                     Layout.fillHeight: true
                                     font.family: setting.activeFont
                                     verticalAlignment: Qt.AlignVCenter
@@ -296,8 +298,10 @@ Rectangle {
                                     color: color4
                                 }
 
+                                Item{Layout.fillWidth: true}
+
                                 Label{
-                                    Layout.fillWidth: true
+                                    Layout.preferredWidth: contentWidth
                                     Layout.fillHeight: true
                                     font.family: setting.activeNumFont
                                     horizontalAlignment: Qt.AlignHCenter
