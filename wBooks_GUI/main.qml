@@ -60,12 +60,15 @@ Window {
     property bool audioBookClick: false
     property bool yourLibraryClick: false
     property bool searchClick: false
+    property bool bookReaderClick: true
+    property bool bookReaderVis: false
     property string theme: "Light"
     property string playerSource: ""
     property string playerMediaType: "Video"
 
     onThemeChanged: {
-        bookreader.changeReaderTheme(win.theme)
+        mainBody.bookReaderChangeTheme()
+//        bookreader.changeReaderTheme(win.theme)
     }
 
     // Colors //
@@ -527,10 +530,10 @@ Window {
         font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
     }
 
-    BookReader{
-        id: bookreader
-        visible: false
-    }
+//    BookReader{
+//        id: bookreader
+//        visible: false
+//    }
 
 
     //Player props
@@ -601,6 +604,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -620,6 +624,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -639,6 +644,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -659,6 +665,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -679,6 +686,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -699,6 +707,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -719,6 +728,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -739,6 +749,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -759,6 +770,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -779,6 +791,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -798,6 +811,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -817,6 +831,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -836,6 +851,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: true
                     smallPlayerVis: true
+                    bookReaderClick: false
                 }
             },
             State{
@@ -855,6 +871,7 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: false
+                    bookReaderClick: false
                 }
             },
             State{
@@ -874,6 +891,27 @@ Window {
                     accountPopEnabled: false
                     searchClick: false
                     smallPlayerVis: true
+                    bookReaderClick: false
+                }
+            },
+            State{
+                name: "Book Reader"
+                PropertyChanges {
+                    target: win
+                    inHomeMode: false
+                    mainView: 15
+                    rightView: 0
+                    homeClick: false
+                    topFilterVis: false
+                    secondHeaderVis: false
+                    membershipClick: false
+                    serialBookClick: false
+                    audioBookClick: false
+                    yourLibraryClick: false
+                    accountPopEnabled: false
+                    searchClick: false
+                    smallPlayerVis: true
+                    bookReaderClick: true
                 }
             }
 
@@ -1023,6 +1061,7 @@ Window {
                 Rectangle{
                     Layout.fillHeight: true
                     Layout.preferredWidth: 20 * ratio
+                    visible: searchClick
 
                     color: "transparent"
                 }
@@ -1036,6 +1075,29 @@ Window {
                     closeIconVis: true
                     onCloseBtnClicked: {
                         mainPage.state = "Home"
+                    }
+                }
+
+                //-- spacer --//
+                Rectangle{
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: 20 * ratio
+                    visible: bookReaderVis
+                    color: "transparent"
+                }
+
+                HeaderButton{
+                    iconAsImage: true
+                    imgIcon: "qrc:/Icons/open-book(1).png"
+                    text: "کتابخوان"
+                    isClick: bookReaderClick
+                    visible: bookReaderVis
+                    closeIconVis: true
+                    onCloseBtnClicked: {
+                        quitReaderPop.visible = true
+                    }
+                    onBtnClicked: {
+                        mainPage.state = "Book Reader"
                     }
                 }
 
@@ -3466,6 +3528,26 @@ Window {
         }
         onCancel: {
             quitPop.visible = false
+        }
+    }
+
+    Quit_Popup{
+        id: quitReaderPop
+        visible: false
+        width: 350 * ratio
+        height: 181 * ratio
+
+        bodyText_Dialog: "آیا می خواهید از کتابخوان خارج شوید؟"
+
+        x: (win.width / 2) -(width / 2) - 10
+        y: (win.height / 2) - (height / 2) - 30
+        onAccept: {
+            quitReaderPop.visible = false
+            mainPage.state = "Home"
+            bookReaderVis = false
+        }
+        onCancel: {
+            quitReaderPop.visible = false
         }
     }
 }

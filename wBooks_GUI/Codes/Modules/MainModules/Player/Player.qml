@@ -5,6 +5,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Material 2.15
 import Qt.labs.platform 1.1
+import QtGraphicalEffects 1.0
 
 import "./../../../../Fonts/Icon.js" as Icons
 
@@ -95,10 +96,15 @@ Item {
             id: image
             visible: (playerMediaType === "Video") ? player.playbackState === MediaPlayer.PlayingState ? false : true : true
             anchors.centerIn: parent
-            source: (playerMediaType === "Video") ? 'qrc:/Images/Wbooks1.png' : 'qrc:/Images/music.png'
+            source: (playerMediaType === "Video") ? 'qrc:/Images/Logo Footer2.png' : 'qrc:/Images/music.png'
             sourceSize: Qt.size(300,300)
             verticalAlignment: Image.AlignVCenter
             horizontalAlignment: Image.AlignHCenter
+        }
+        ColorOverlay {
+            anchors.fill: image
+            source: image
+            color: "#d43460"
         }
 
         ShaderEffectSource {

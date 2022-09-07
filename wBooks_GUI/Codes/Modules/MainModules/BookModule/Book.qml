@@ -182,7 +182,9 @@ Flickable {
                                             btnRadius: 0
                                             btnColor: color2
                                             onDashboard_btnClicked: {
-                                                bookreader.visible = true
+//                                                bookreader.visible = true
+                                                mainPage.state = "Book Reader"
+                                                bookReaderVis = true
                                             }
                                         }
 

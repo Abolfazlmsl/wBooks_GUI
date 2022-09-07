@@ -23,6 +23,11 @@ Rectangle{
 
     property bool showRightPop: true
 
+    signal bookReaderChangeTheme()
+    onBookReaderChangeTheme: {
+        readerpage.changeReaderTheme(win.theme)
+    }
+
     SequentialAnimation{
         id: rightFilterHideAnim
         NumberAnimation{
@@ -448,6 +453,13 @@ Rectangle{
                                 bestCollectionModel: bestCollectionCatModel
                                 bestSellModel: bestSellCatModel
                                 newBooksModel: newBooksCatModel
+                            }
+                        }
+
+                        Item {
+                            BookReader{
+                                id: readerpage
+                                anchors.fill: parent
                             }
                         }
                     }

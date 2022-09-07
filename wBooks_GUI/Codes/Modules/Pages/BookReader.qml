@@ -4,6 +4,7 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 import Qt.labs.platform 1.1
 import Qt.labs.settings 1.1
+import QtGraphicalEffects 1.0
 
 import com.EpubWidget 1.0
 import org.pdfviewer.poppler 1.0
@@ -14,14 +15,7 @@ import "./../../Modules/Items"
 
 import "./../../../Fonts/Icon.js" as Icons
 
-Window {
-    id: win
-    width: 1000
-    height: 600
-//    visibility: Qt.WindowFullScreen
-    visible: true
-    title: qsTr("wBooks Reader")
-
+Item {
     property int ratio: 1
     property bool contentEnable: false
     property bool fileUploaded: false
@@ -34,7 +28,7 @@ Window {
 
     signal changeReaderTheme(var mode)
 
-    onVisibilityChanged: {
+    Component.onCompleted: {
         if (visible){
             epub.setSetting(setting.font, setting.fontSize, setting.themeState)
             if (setting.cPath !== ""){
@@ -55,6 +49,18 @@ Window {
 
     onChangeReaderTheme: {
         epub.changeTheme(mode)
+    }
+
+    function showWinFullScreen() {
+        mainHeader.visible = false
+        mainFooter.visible = false
+        win.showFullScreen()
+    }
+
+    function showWinMaximized() {
+        mainHeader.visible = true
+        mainFooter.visible = true
+        win.showMaximized()
     }
 
     MouseArea {
@@ -135,52 +141,46 @@ Window {
                     }
                 }
 
-//                Item{Layout.preferredWidth: 5}
-
-//                Rectangle{
-//                    Layout.preferredHeight: width
-//                    Layout.preferredWidth: 30
-//                    radius: width /2
-//                    color: "black"
-
-//                    MouseArea{
-//                        anchors.fill: parent
-//                        cursorShape: Qt.PointingHandCursor
-
-//                        onClicked: {
-////                            setting.lightMode = false
-//                            epub.changeTheme(setting.lightMode)
-//                        }
-//                    }
-//                }
-
-//                Rectangle{
-//                    Layout.preferredHeight: width
-//                    Layout.preferredWidth: 30
-//                    radius: width / 2
-//                    color: "white"
-
-//                    MouseArea{
-//                        anchors.fill: parent
-//                        cursorShape: Qt.PointingHandCursor
-
-//                        onClicked: {
-////                            setting.lightMode = true
-//                            epub.changeTheme(setting.lightMode)
-//                        }
-//                    }
-//                }
-
                 Item{Layout.preferredWidth: 10}
 
+                Label{
+                    id: fullscreenButton
+
+                    property bool state: false
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: parent.width * 0.05 / 2
+                    text: (fullscreenButton.state) ? Icons.arrow_collapse_all:Icons.arrow_expand_all
+                    font.family: webfont.name
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
+
+                    verticalAlignment: Qt.AlignVCenter
+                    horizontalAlignment: Qt.AlignHCenter
+
+//                    color: (setting.lightMode) ? "black":"white"
+                    color: color4
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: {
+                            fullscreenButton.state = !fullscreenButton.state
+                            if (fullscreenButton.state){
+                                showWinFullScreen()
+                            }else{
+                                showWinMaximized()
+                            }
+                        }
+                    }
+                }
+
+                Item{Layout.preferredWidth: 10}
 
                 M_inputText{
                     id: input_search
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    label: "Search page number"
+                    label: "جستجو بر اساس شماره صفحه"
                     icon: Icons.magnify
-                    placeholder: "Search page number"
+                    placeholder: "جستجو بر اساس شماره صفحه"
 
                     Keys.onEnterPressed: {
                         if (parseInt(input_search.inputText.text) > 0 && parseInt(input_search.inputText.text) <= pagesNumber){
@@ -260,6 +260,7 @@ Window {
                     from: 1
                     to: 40
                     value: setting.fontSize
+                    font.family: setting.activeNumFont
                     stepSize: 1
 
 
@@ -269,16 +270,14 @@ Window {
 //                        color: (setting.lightMode) ? "transparent" : "#f7f7f7"
                     }
 
-//                    contentItem: Label{
-//                        text: fontSizeButton.displayText
-//                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
-//                        color: "black"
-//                        clip: true
+                    contentItem: Label{
+                        text: fontSizeButton.displayText
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 * ratio
+                        color: color4
+                        verticalAlignment: Qt.AlignVCenter
+                        horizontalAlignment: Qt.AlignHCenter
 
-//                        verticalAlignment: Qt.AlignVCenter
-//                        horizontalAlignment: Qt.AlignHCenter
-
-//                    }
+                    }
 
                     onValueModified: {
                         setting.fontSize = fontSizeButton.value
@@ -372,14 +371,31 @@ Window {
 //                        color: (setting.lightMode) ? "white":"black"
                         color: color1
 
+                        Image{
+                            id: image
+                            anchors.centerIn: parent
+                            sourceSize: Qt.size(50,50)
+                            source: "qrc:/Images/Logo Footer2.png"
+                            mipmap: true
+                            fillMode: Image.PreserveAspectFit
+                            visible: false
+                        }
+                        ColorOverlay {
+                            anchors.fill: image
+                            source: image
+                            color: "#d43460"
+                        }
+
                         Label{
-                            anchors.fill: parent
+                            anchors.top: image.bottom
+                            width: parent.width
+                            height: 50
                             horizontalAlignment: Qt.AlignHCenter
                             verticalAlignment: Qt.AlignVCenter
-                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio *1.5
 //                            color: (setting.lightMode) ? "black":"white"
                             color: color4
-                            text: "Books of the database will be shown in this section"
+                            text: "کتابخوان وی بوکس"
                         }
                     }
 
@@ -675,12 +691,13 @@ Window {
                         clip: true
                         Label{
                             anchors.fill: parent
-                            text: thisPageNumber + "/" + pagesNumber
+                            text: thisPageNumber + " از " + pagesNumber
+//                            text: thisPageNumber + "/" + pagesNumber
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
 
                             minimumPointSize: 10
-                            fontSizeMode: Text.Fit
+                            font.family: setting.activeNumFont
                             font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5
 
                             verticalAlignment: Qt.AlignVCenter
@@ -689,7 +706,6 @@ Window {
 //                            color: setting.lightMode ? "black":"white"
                             color: color4
                             clip: true
-                            elide: Text.ElideRight
                         }
                     }
                 }
@@ -771,34 +787,21 @@ Window {
                 Layout.preferredHeight: parent.height * 0.075
                 Layout.margins: 5
                 spacing: 10
-                TextField{
-                    id: browseText
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.8
-                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
-                    verticalAlignment: Qt.AlignVCenter
-                    horizontalAlignment: Qt.AlignHCenter
-                    selectByMouse: true
-                    readOnly: true
-                    text: ""
-//                    color: setting.lightMode ? "black":"white"
-                    color: color4
-                }
-
                 Button{
                     id: browseButton
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-                    text: "Browse"
+                    text: "جستجوی فایل"
 
 //                    highlighted: setting.lightMode ? false:true
 
                     contentItem: Text {
                         text: browseButton.text
-                        font: browseButton.font
+//                        font: browseButton.font
                         color: "white"
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
+                        font.family: setting.activeFont
                     }
 
                     background: Rectangle {
@@ -817,6 +820,20 @@ Window {
                             fileDialog.open()
                         }
                     }
+                }
+
+                TextField{
+                    id: browseText
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: parent.width * 0.85
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2
+                    verticalAlignment: Qt.AlignVCenter
+                    horizontalAlignment: Qt.AlignHCenter
+                    selectByMouse: true
+                    readOnly: true
+                    text: ""
+//                    color: setting.lightMode ? "black":"white"
+                    color: color4
                 }
             }
         }
@@ -856,6 +873,7 @@ Window {
         nameFilters: ["Epub files (*.epub)", "Pdf files (*.pdf)"]
 
         onAccepted: {
+            epub.setSetting(setting.font, setting.fontSize, setting.themeState)
             if (fileDialog.selectedNameFilter.name === "Epub files"){
                 setting.isEpubViewer = true
                 var path = fileDialog.file.toString()
