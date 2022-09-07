@@ -179,9 +179,9 @@ Item {
                      onDoubleTapped: {
                          epubslider.value = epub.getContentPageNumber(_prop.currentIndex) + 1
                          _prop.toggle()
+                         contentpanel.close()
                      }
                      onSingleTapped: {
-
                         root.currentItem = _prop.currentItem
                         root.selectedIndex = _prop.currentIndex
                      }

@@ -243,7 +243,4 @@ Dialog{
     onOpened: {
         yesToExit.forceActiveFocus()
     }
-
-
-
 }

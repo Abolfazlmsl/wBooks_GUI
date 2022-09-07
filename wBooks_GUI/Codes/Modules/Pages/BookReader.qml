@@ -103,18 +103,20 @@ Item {
                     horizontalAlignment: Qt.AlignHCenter
 
 //                    color: (setting.lightMode) ? (contentEnable) ? "white":"black" : (contentEnable) ? "black":"white"
-                    color: (contentEnable) ? color3:color4
+                    color: color4
                     MouseArea{
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
-                            contentEnable = !contentEnable
+//                            contentEnable = !contentEnable
                             //                            contentpanel.visible = contentEnable
-                            if (contentEnable){
-                                contentpanel.width = content_panel_width*ratio
-                            }else{
-                                contentpanel.width = 0
-                            }
+//                            if (contentEnable){
+                              contentpanel.open()
+//                                contentpanel.width = content_panel_width*ratio
+//                            }else{
+//                                contentpanel.close()
+//                                contentpanel.width = 0
+//                            }
                         }
                     }
                 }
@@ -372,7 +374,7 @@ Item {
                         color: color1
 
                         Image{
-                            id: image
+                            id: image3
                             anchors.centerIn: parent
                             sourceSize: Qt.size(50,50)
                             source: "qrc:/Images/Logo Footer2.png"
@@ -381,13 +383,13 @@ Item {
                             visible: false
                         }
                         ColorOverlay {
-                            anchors.fill: image
-                            source: image
+                            anchors.fill: image3
+                            source: image3
                             color: "#d43460"
                         }
 
                         Label{
-                            anchors.top: image.bottom
+                            anchors.top: image3.bottom
                             width: parent.width
                             height: 50
                             horizontalAlignment: Qt.AlignHCenter
@@ -837,22 +839,6 @@ Item {
                 }
             }
         }
-
-        FilePanel{
-            id: contentpanel
-            anchors.left: parent.left
-            y: header.height + 10
-            //            visible: false
-            Behavior on width {
-                NumberAnimation { duration: 300 }
-            }
-
-            clip: true
-            width: 0
-            height: epub.height
-
-            color: "#444444"
-        }
     }
 
 
@@ -889,6 +875,9 @@ Item {
                     setting.cPath = cPath
                     setting.openFileName = fileName
                     mainStack.currentIndex = 1
+//                    contentEnable = false
+//                    contentpanel.close()
+//                    contentpanel.width = 0
                 }
             }else{
                 setting.isEpubViewer = false
@@ -915,6 +904,18 @@ Item {
     DownloadPanel{
         id: downloadpanel
         visible: false
+    }
+
+    FilePanel{
+        id: contentpanel
+        visible: false
+        width: content_panel_width*ratio
+        height: 450 * ratio
+
+        x: (win.width / 2) -(width / 2) - 10
+        y: (win.height / 2) - (height / 2) - 30
+
+        clip: true
     }
 
     function urlToPath(urlString) {
