@@ -99,139 +99,198 @@ Rectangle{
                     id: header2
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50
+                    Layout.rightMargin: 5
                     color: color0
                     visible: secondHeaderVis
-                    RowLayout{
+//                    RowLayout{
+//                        anchors.fill: parent
+//                        spacing: 0
+//                        layoutDirection: Qt.RightToLeft
+
+//                        Item{Layout.preferredWidth: 15}
+
+//                        Rectangle{
+//                            Layout.preferredHeight: width
+//                            Layout.preferredWidth: 30
+//                            Layout.topMargin: 10
+//                            Layout.bottomMargin: 10
+//                            radius: width / 2
+//                            color: "#ffffff"
+//                            visible: (inHomeMode) ? !showRightPop:false
+//                            Label{
+//                                anchors.centerIn: parent
+//                                text: Icons.arrow_left
+//                                font.family: webfont.name
+//                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 //* widthRatio
+
+//                                color: "#d43460"
+//                            }
+
+//                            MouseArea{
+//                                anchors.fill: parent
+//                                cursorShape: Qt.PointingHandCursor
+//                                onClicked: {
+//                                    rightFilterShowAnim.restart()
+//                                }
+//                            }
+//                        }
+
+//                        Item{
+//                            Layout.preferredWidth: 15
+//                            visible: (inHomeMode) ? !showRightPop:false
+//                        }
+
+//                        Rectangle{
+//                            Layout.fillHeight: true
+//                            Layout.preferredWidth: lbl_book_number.contentWidth
+//                            color: "transparent"
+//                            clip: true
+//                            Label {
+//                                id: lbl_book_number
+//                                height: parent.height - 1
+//                                width: parent.width
+//                                anchors.right: parent.right
+//                                text: secondHeaderTitle
+//                                font.family: setting.activeNumFont
+//                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
+//                                verticalAlignment: Qt.AlignVCenter
+//                                color: color5
+//                            }
+
+//                            Rectangle{
+//                                width: lbl_book_number.width
+//                                anchors.top: lbl_book_number.bottom
+//                                anchors.right: parent.right
+//                                anchors.bottomMargin: 2
+//                                height: 2
+//                                color: color5
+//                            }
+
+//                            Rectangle {
+//                                width: parent.width * 0.8
+//                                anchors.right: lbl_book_number.left
+//                                anchors.bottomMargin: 2
+//                                color: "transparent"
+//                            }
+//                        }
+
+//                        Item{Layout.fillWidth: true}
+
+//                        ComboBox{
+//                            id: cbox
+//                            Layout.fillHeight: true
+//                            Layout.preferredWidth: parent.width * 0.18
+//                            Layout.topMargin: 2
+//                            Layout.bottomMargin: 2
+//                            LayoutMirroring.enabled: true
+//                            font.family: setting.activeFont
+//                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio
+//                            visible: topFilterVis
+//                            background: Rectangle {
+//                                color: color1
+//                            }
+//                            model: ListModel {
+//                                id: model
+//                                ListElement { text: "فیلتر بر اساس گران ترین" }
+//                                ListElement { text: "فیلتر بر اساس ارزان ترین" }
+//                                ListElement { text: "فیلتر بر اساس محبوب ترین" }
+//                                ListElement { text: "فیلتر بر اساس پرفروش ترین" }
+//                            }
+//                            delegate: ItemDelegate {
+//                                id:itemDlgt
+//                                width: cbox.width
+//                                height:40
+//                                padding:0
+
+//                                contentItem: Text {
+//                                    id:textItem
+//                                    text: model.text
+//                                    color: itemDlgt.hovered?color1:color4
+//                                    font.family: setting.activeFont
+//                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio
+//                                    LayoutMirroring.enabled: true
+//                                    verticalAlignment: Text.AlignVCenter
+//                                    horizontalAlignment: Text.AlignLeft
+//                                    rightPadding: 20
+//                                }
+
+//                                background: Rectangle {
+//                                  color:itemDlgt.hovered?color4:color1;
+//                                  anchors.left: itemDlgt.left
+//                                  anchors.leftMargin: 0
+//                                  width:itemDlgt.width
+//                                }
+
+//                              }
+
+//                            onActivated: {
+
+//                            }
+//                        }
+
+//                        Item {
+//                            Layout.preferredWidth: 30
+//                        }
+//                    }
+
+                    ListView{
                         anchors.fill: parent
-                        spacing: 0
                         layoutDirection: Qt.RightToLeft
-
-                        Item{Layout.preferredWidth: 15}
-
-                        Rectangle{
-                            Layout.preferredHeight: width
-                            Layout.preferredWidth: 30
-                            Layout.topMargin: 10
-                            Layout.bottomMargin: 10
-                            radius: width / 2
-                            color: "#ffffff"
-                            visible: (inHomeMode) ? !showRightPop:false
-                            Label{
-                                anchors.centerIn: parent
-                                text: Icons.arrow_left
-                                font.family: webfont.name
-                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 //* widthRatio
-
-                                color: "#d43460"
-                            }
-
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-                                    rightFilterShowAnim.restart()
-                                }
-                            }
-                        }
-
-                        Item{
-                            Layout.preferredWidth: 15
-                            visible: (inHomeMode) ? !showRightPop:false
-                        }
-
-                        Rectangle{
-                            Layout.fillHeight: true
-                            Layout.preferredWidth: lbl_book_number.contentWidth
+                        interactive: false
+                        orientation: ListView.Horizontal
+                        spacing: 5
+                        model: topHeaderModel
+                        delegate: Rectangle{
+                            width: 120
+                            height: 30
+                            anchors.bottom: parent.bottom
                             color: "transparent"
-                            clip: true
-                            Label {
-                                id: lbl_book_number
-                                height: parent.height - 1
-                                width: parent.width
+                            radius: 5
+                            border.width: 1
+                            border.color: color4
+                            Rectangle{
+                                height: parent.height
+                                width: 100
                                 anchors.right: parent.right
-                                text: secondHeaderTitle
-                                font.family: setting.activeNumFont
-                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
-                                verticalAlignment: Qt.AlignVCenter
-                                color: color5
+                                color: "transparent"
+                                Label{
+                                    id: titletxt
+                                    anchors.centerIn: parent
+                                    color: color4
+                                    text: model.title
+                                    font.family: setting.activeNumFont
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1 //* widthRatio
+                                    horizontalAlignment: Text.AlignLeft
+                                    LayoutMirroring.enabled: true
+                                    elide: Text.ElideRight
+                                }
                             }
 
                             Rectangle{
-                                width: lbl_book_number.width
-                                anchors.top: lbl_book_number.bottom
-                                anchors.right: parent.right
-                                anchors.bottomMargin: 2
-                                height: 2
-                                color: color5
-                            }
-
-                            Rectangle {
-                                width: parent.width * 0.8
-                                anchors.right: lbl_book_number.left
-                                anchors.bottomMargin: 2
+                                height: parent.height
+                                width: 20
+                                anchors.right: titletxt.left
                                 color: "transparent"
-                            }
-                        }
-
-                        Item{Layout.fillWidth: true}
-
-                        ComboBox{
-                            id: cbox
-                            Layout.fillHeight: true
-                            Layout.preferredWidth: parent.width * 0.18
-                            Layout.topMargin: 2
-                            Layout.bottomMargin: 2
-                            LayoutMirroring.enabled: true
-                            font.family: setting.activeFont
-                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio
-                            visible: topFilterVis
-                            background: Rectangle {
-                                color: color1
-                            }
-                            model: ListModel {
-                                id: model
-                                ListElement { text: "فیلتر بر اساس گران ترین" }
-                                ListElement { text: "فیلتر بر اساس ارزان ترین" }
-                                ListElement { text: "فیلتر بر اساس محبوب ترین" }
-                                ListElement { text: "فیلتر بر اساس پرفروش ترین" }
-                            }
-                            delegate: ItemDelegate {
-                                id:itemDlgt
-                                width: cbox.width
-                                height:40
-                                padding:0
-
-                                contentItem: Text {
-                                    id:textItem
-                                    text: model.text
-                                    color: itemDlgt.hovered?color1:color4
-                                    font.family: setting.activeFont
-                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio
-                                    LayoutMirroring.enabled: true
-                                    verticalAlignment: Text.AlignVCenter
-                                    horizontalAlignment: Text.AlignLeft
-                                    rightPadding: 20
+                                Label{
+                                    id: closeIcon
+                                    anchors.centerIn: parent
+                                    font.family: webfont.name
+                                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1
+                                    color: color4
+                                    text: Icons.close
                                 }
+                                MouseArea{
+                                    anchors.fill: parent
+                                    cursorShape: Qt.PointingHandCursor
+                                    onClicked: {
 
-                                background: Rectangle {
-                                  color:itemDlgt.hovered?color4:color1;
-                                  anchors.left: itemDlgt.left
-                                  anchors.leftMargin: 0
-                                  width:itemDlgt.width
+                                    }
                                 }
-
-                              }
-
-                            onActivated: {
-
                             }
-                        }
-
-                        Item {
-                            Layout.preferredWidth: 30
                         }
                     }
                 }
+
 
                 Rectangle {
                     Layout.fillWidth: true

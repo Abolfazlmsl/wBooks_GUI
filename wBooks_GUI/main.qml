@@ -3401,6 +3401,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3408,6 +3409,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3415,6 +3417,7 @@ Window {
                 source: "qrc:/Images/mebeforeyou.jpg"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "0"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3422,6 +3425,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3429,6 +3433,7 @@ Window {
                 source: "qrc:/Images/time.jpg"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3436,6 +3441,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3447,6 +3453,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3454,6 +3461,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3461,6 +3469,7 @@ Window {
                 source: "qrc:/Images/mebeforeyou.jpg"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3468,6 +3477,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3475,6 +3485,7 @@ Window {
                 source: "qrc:/Images/time.jpg"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3482,6 +3493,7 @@ Window {
                 source: "qrc:/Images/book.png"
                 text1: "داستان و رمان"
                 text2: "داستان و رمان"
+                price: "25000"
                 rate: 37
                 date: "1399/02/14"
             }
@@ -3505,6 +3517,15 @@ Window {
             }
         }
 
+        ListModel{
+            id: topHeaderModel
+            ListElement{
+                title: "دسته بندی های ویژه"
+            }
+            ListElement{
+                title: "کتاب های برتر"
+            }
+        }
     }
 
     onClosing: {

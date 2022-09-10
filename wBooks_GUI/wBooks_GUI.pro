@@ -12,6 +12,7 @@ SOURCES += \
         $$files(Sources/PdfHandler/*.cpp)\
         $$files(Sources/EpubHandler/*.cpp)\
         $$files(Sources/TreeItem/*.cpp)\
+        Sources/Commands/commands.cpp \
         desktopfunctions.cpp \
         main.cpp
 
@@ -34,6 +35,7 @@ HEADERS += \
     $$files(Headers/PdfHandler/*.h)\
     $$files(Headers/EpubHandler/*.h)\
     $$files(Headers/TreeItem/*.h)\
+    Headers/Commands/commands.h \
     desktopfunctions.h
 
 win32: LIBS += $$PWD/libpoppler-qt5-1.dll
