@@ -20,6 +20,7 @@ import "./Codes/LocalDatabase"
 import "./Codes"
 import "./Codes/Modules/Pages"
 import "./Codes/Modules/MainModules/Player"
+import "./Codes/Modules/MainModules/Ui_Module"
 
 Window {
     id: win
@@ -963,11 +964,41 @@ Window {
                 }
 
                 //-- spacer --//
-                Rectangle{
+                Item{
                     Layout.fillHeight: true
-                    Layout.preferredWidth: parent.width * 0.04
+                    Layout.preferredWidth: parent.width * 0.01
+                }
 
+                Rectangle{
+                    Layout.preferredHeight: width
+                    Layout.preferredWidth: parent.width * 0.02
+                    radius: width/2
+                    Layout.topMargin: 10
+                    Layout.bottomMargin: 10
                     color: "transparent"
+                    border.width: 1
+                    border.color: "white"
+                    Label{
+                        anchors.centerIn: parent
+                        font.family: webfont.name
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.2 * ratio //* widthRatio
+                        text: Icons.redo
+                        color: "#d43460"
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: {
+                            var state = commander.undoPage()
+                            mainPage.state = state
+                        }
+                    }
+                }
+
+                //-- spacer --//
+                Item{
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: parent.width * 0.01
                 }
 
                 //- navbar --//
@@ -979,6 +1010,7 @@ Window {
                     imgIcon: "qrc:/Icons/home.png"
 
                     onBtnClicked: {
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Home"
                     }
                 }
@@ -998,6 +1030,7 @@ Window {
                     imageSize: 30
                     text: "اشتراک"
                     onBtnClicked: {
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Membership"
                     }
                 }
@@ -1016,6 +1049,7 @@ Window {
                     text: "کتاب های سریالی"
                     isClick: serialBookClick
                     onBtnClicked: {
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Serial Book"
                     }
                 }
@@ -1034,6 +1068,7 @@ Window {
                     text: "کتاب های صوتی"
                     isClick: audioBookClick
                     onBtnClicked: {
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Audio Book"
                     }
                 }
@@ -1053,6 +1088,7 @@ Window {
                     isClick: yourLibraryClick
                     onBtnClicked: {
                         myBooksView = 0
+                        commander.changePage(mainPage.state)
                         mainPage.state = "My Library"
                     }
                 }
@@ -1074,6 +1110,7 @@ Window {
                     visible: searchClick
                     closeIconVis: true
                     onCloseBtnClicked: {
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Home"
                     }
                 }
@@ -1097,6 +1134,7 @@ Window {
                         quitReaderPop.visible = true
                     }
                     onBtnClicked: {
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Book Reader"
                     }
                 }
@@ -1308,6 +1346,7 @@ Window {
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
                                 onClicked: {
+                                    commander.changePage(mainPage.state)
                                     mainPage.state = "Basket"
                                 }
                             }
@@ -1330,6 +1369,7 @@ Window {
                             text: "همین حالا ثبت نام کن"
                             textColor: "#000000"
                             onBtnClicked: {
+                                commander.changePage(mainPage.state)
                                 mainPage.state = "Registration"
                             }
                         }
@@ -1360,6 +1400,7 @@ Window {
                             text: "ورود کاربر"
                             textColor: "#ffffff"
                             onBtnClicked: {
+                                commander.changePage(mainPage.state)
                                 mainPage.state = "Login"
                             }
                         }
@@ -1389,6 +1430,7 @@ Window {
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
                                 onClicked: {
+                                    commander.changePage(mainPage.state)
                                     mainPage.state = "Search Page"
                                 }
                             }
@@ -3520,10 +3562,49 @@ Window {
         ListModel{
             id: topHeaderModel
             ListElement{
+                type: "SpecialCategory"
                 title: "دسته بندی های ویژه"
+                isClicked: true
             }
             ListElement{
-                title: "کتاب های برتر"
+                type: "BestCategory"
+                title: "برترین کتاب های ماه"
+                isClicked: false
+            }
+            ListElement{
+                type: "BestCollection"
+                title: "مجموعه های برتر"
+                isClicked: false
+            }
+            ListElement{
+                type: "BookList"
+                title: "پیشنهادی برای شما"
+                isClicked: false
+            }
+            ListElement{
+                type: "Writers"
+                title: "نویسندگان محبوب"
+                isClicked: false
+            }
+            ListElement{
+                type: "Writers"
+                title: "صداهای محبوب"
+                isClicked: false
+            }
+            ListElement{
+                type: "Advertisement"
+                title: "معرفی کتاب"
+                isClicked: false
+            }
+            ListElement{
+                type: "Advertisement"
+                title: "نمایشگاه کتاب"
+                isClicked: false
+            }
+            ListElement{
+                type: "BookList"
+                title: "تازه های نشر ققنوس"
+                isClicked: false
             }
         }
     }
@@ -3564,6 +3645,7 @@ Window {
         y: (win.height / 2) - (height / 2) - 30
         onAccept: {
             quitReaderPop.visible = false
+            commander.changePage(mainPage.state)
             mainPage.state = "Home"
             bookReaderVis = false
         }
@@ -3571,4 +3653,5 @@ Window {
             quitReaderPop.visible = false
         }
     }
+
 }

@@ -109,6 +109,7 @@ Rectangle {
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
                             resetSetting()
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Home"
                         }
                     }
@@ -136,6 +137,7 @@ Rectangle {
             counter: false
             onShowClick: {
                 accountObj.state = "Account"
+                commander.changePage(mainPage.state)
                 mainPage.state = "Edit"
                 accountPopEnabled = false
             }
@@ -158,6 +160,7 @@ Rectangle {
             counter: false
             onShowClick: {
                 accountObj.state = "Wallet"
+                commander.changePage(mainPage.state)
                 mainPage.state = "Edit"
                 accountPopEnabled = false
             }
@@ -180,6 +183,7 @@ Rectangle {
             recText: myBooksModel.count
             onShowClick: {
                 accountObj.state = "My Books"
+                commander.changePage(mainPage.state)
                 mainPage.state = "Edit"
                 accountPopEnabled = false
             }
@@ -195,6 +199,7 @@ Rectangle {
             recText: myAudioBooksModel.count
             onShowClick: {
                 accountObj.state = "Audio Books"
+                commander.changePage(mainPage.state)
                 mainPage.state = "Edit"
                 accountPopEnabled = false
             }
@@ -247,6 +252,7 @@ Rectangle {
                     anchors.fill: parent
                     cursorShape: Qt.PointingHandCursor
                     onClicked: {
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Membership"
                     }
                 }

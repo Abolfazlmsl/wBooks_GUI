@@ -153,6 +153,7 @@ Item {
                                     itemRec.isClicked = !itemRec.isClicked
                                 }
                                 onDoubleClicked: {
+                                    commander.changePage(mainPage.state)
                                     mainPage.state = "Book Page"
                                 }
                             }

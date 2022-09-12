@@ -34,8 +34,6 @@ Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 300
                     Layout.topMargin: 50
-                    Layout.leftMargin: parent.width * 0.05
-                    Layout.rightMargin: parent.width * 0.05
                     source: "qrc:/Images/Adver4.jpg"
                     selectable: true
                     onBtnClicked: {
@@ -48,8 +46,6 @@ Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 400
                     Layout.topMargin: 50
-                    Layout.leftMargin: parent.width * 0.05
-                    Layout.rightMargin: parent.width * 0.05
                     title: "تازه های صوتی"
                     fileType: "Audio"
 
@@ -63,8 +59,6 @@ Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 400
                     Layout.topMargin: 50
-                    Layout.leftMargin: parent.width * 0.05
-                    Layout.rightMargin: parent.width * 0.05
                     title: "پرفروش ترین ها"
                     fileType: "Audio"
 
@@ -77,8 +71,6 @@ Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 220
                     Layout.topMargin: 50
-                    Layout.leftMargin: parent.width * 0.05
-                    Layout.rightMargin: parent.width * 0.05
                     source: "qrc:/Images/Adver5.jpg"
                     selectable: true
                     onBtnClicked: {
@@ -91,8 +83,6 @@ Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 400
                     Layout.topMargin: 50
-                    Layout.leftMargin: parent.width * 0.05
-                    Layout.rightMargin: parent.width * 0.05
                     title: "با صدای عادل فردوسی پور"
                     fileType: "Audio"
 

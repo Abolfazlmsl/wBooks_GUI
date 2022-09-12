@@ -417,11 +417,13 @@ ApplicationWindow{
                                             cursorShape: Qt.PointingHandCursor
                                             onClicked: {
                                                 if (format == "mp3"){
+                                                    commander.changePage(mainPage.state)
                                                     mainPage.state = "Audio Book"
                                                     playerMediaType = "Audio"
                                                     playerSource = filePath
                                                     // downloader.openFile()
                                                 }else if (format == "mkv" || format == "mp4"){
+                                                    commander.changePage(mainPage.state)
                                                     mainPage.state = "Audio Book"
                                                     playerMediaType = "Video"
                                                     playerSource = filePath

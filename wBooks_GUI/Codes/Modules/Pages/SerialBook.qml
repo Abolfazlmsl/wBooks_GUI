@@ -40,8 +40,6 @@ Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 220
                     Layout.topMargin: 50
-                    Layout.leftMargin: parent.width * 0.05
-                    Layout.rightMargin: parent.width * 0.05
                     source: "qrc:/Images/Adver3.jpg"
                     selectable: true
                     onBtnClicked: {
@@ -68,8 +66,6 @@ Rectangle{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 250
                     Layout.topMargin: 50
-                    Layout.leftMargin: parent.width * 0.05
-                    Layout.rightMargin: parent.width * 0.05
                     title: "نویسندگان و مترجمین برتر"
                     onMoreBtnClicked: {
 //                        morebooks.itemModel = writersModel

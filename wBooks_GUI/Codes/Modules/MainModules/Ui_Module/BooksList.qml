@@ -18,6 +18,8 @@ Item {
 
     RowLayout{
         anchors.fill: parent
+        anchors.rightMargin: parent.width * 0.05
+        anchors.leftMargin: parent.width * 0.05
         layoutDirection: Qt.RightToLeft
         spacing: 0
 
@@ -171,8 +173,10 @@ Item {
                                 cursorShape: Qt.PointingHandCursor
                                 onClicked: {
                                     if (fileType === "Document"){
+                                        commander.changePage(mainPage.state)
                                         mainPage.state = "Book Page"
                                     }else if (fileType === "Audio"){
+                                        commander.changePage(mainPage.state)
                                         mainPage.state = "Audio Book Page"
                                     }
                                 }
@@ -291,8 +295,10 @@ Item {
                                 btnColor: color8
                                 onDashboard_btnClicked: {
                                     if (fileType === "Document"){
+                                        commander.changePage(mainPage.state)
                                         mainPage.state = "Book Page"
                                     }else if (fileType === "Audio"){
+                                        commander.changePage(mainPage.state)
                                         mainPage.state = "Audio Book Page"
                                     }
                                 }

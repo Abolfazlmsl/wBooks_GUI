@@ -33,6 +33,7 @@ Rectangle{
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
+                    commander.changePage(mainPage.state)
                     mainPage.state = "Audio Book Page"
                 }
             }
@@ -110,6 +111,7 @@ Rectangle{
                 btnRadius: 0
                 btnColor: color8
                 onDashboard_btnClicked: {
+                    commander.changePage(mainPage.state)
                     mainPage.state = "Audio Book Page"
                 }
             }

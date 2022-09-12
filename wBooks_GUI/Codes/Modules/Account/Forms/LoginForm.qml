@@ -294,6 +294,7 @@ Item{
                                                         setting.isLicense = true
                                                     }
 
+                                                    commander.changePage(mainPage.state)
                                                     mainPage.state = "Home"
                                                 }else{
                                                     getMessage("رمز عبور اشتباه است")
@@ -519,6 +520,7 @@ Item{
                                         anchors.fill: parent
                                         cursorShape: Qt.PointingHandCursor
                                         onClicked: {
+                                            commander.changePage(mainPage.state)
                                             mainPage.state = "Registration"
                                         }
                                     }

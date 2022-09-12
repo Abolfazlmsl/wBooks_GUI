@@ -7,6 +7,7 @@
 #include "desktopfunctions.h"
 #include <Headers/widget.h>
 #include <Headers/Downloader/downloadcontroller.h>
+#include <Headers/Commands/commandcontroller.h>
 #include <Headers/PdfHandler/pdfModel.h>
 
 int main(int argc, char *argv[])
@@ -25,6 +26,9 @@ int main(int argc, char *argv[])
 
     downloadcontroller downloader;
     engine.rootContext()->setContextProperty("downloader", &downloader);
+
+    CommandController commander;
+    engine.rootContext()->setContextProperty("commander", &commander);
 
     auto offlineStoragePath = engine.offlineStoragePath();
     engine.rootContext()->setContextProperty("offlineStoragePath", offlineStoragePath);

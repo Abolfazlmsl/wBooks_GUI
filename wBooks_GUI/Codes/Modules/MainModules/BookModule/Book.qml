@@ -183,6 +183,7 @@ Flickable {
                                             btnColor: color2
                                             onDashboard_btnClicked: {
 //                                                bookreader.visible = true
+                                                commander.changePage(mainPage.state)
                                                 mainPage.state = "Book Reader"
                                                 bookReaderVis = true
                                             }

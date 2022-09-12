@@ -536,6 +536,7 @@ Item{
                                         cursorShape: Qt.PointingHandCursor
                                         onClicked: {
                                             getMessage("")
+                                            commander.changePage(mainPage.state)
                                             mainPage.state = "Login"
                                         }
                                     }
@@ -579,6 +580,7 @@ Item{
             onBottomBtnClicked: {
                 confirmItem.timer = false
                 confirmItem.sendAgain = true
+                commander.changePage(mainPage.state)
                 mainPage.state = "Login"
                 getMessage("")
                 swipe_register.currentIndex = 0
@@ -682,11 +684,13 @@ Item{
             leftMargin: lMargin
             onTopBtnClicked: {
                 getMessage("")
+                commander.changePage(mainPage.state)
                 mainPage.state = "Edit"
             }
 
             onBottomBtnClicked: {
                 getMessage("")
+                commander.changePage(mainPage.state)
                 mainPage.state = "Membership"
             }
         }

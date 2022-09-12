@@ -62,8 +62,10 @@ Rectangle{
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
                     if (fileType === "Document"){
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Book Page"
                     }else if (fileType === "Audio"){
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Audio Book Page"
                     }
                 }
@@ -180,8 +182,10 @@ Rectangle{
                 btnColor: color8
                 onDashboard_btnClicked: {
                     if (fileType === "Document"){
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Book Page"
                     }else if (fileType === "Audio"){
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Audio Book Page"
                     }
                 }

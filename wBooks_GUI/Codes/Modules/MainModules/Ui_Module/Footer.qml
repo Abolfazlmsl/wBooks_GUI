@@ -10,6 +10,7 @@ import "./../../../../Fonts/Icon.js" as Icons
 Rectangle {
     id: footer
     color: "#333335"
+    anchors.topMargin: 50
 
     property alias suggestBook1: txt1.text
     property alias suggestBook2: txt2.text
@@ -174,6 +175,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Home"
                             accountPopEnabled = false
                         }
@@ -193,6 +195,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Membership"
                             accountPopEnabled = false
                         }
@@ -212,6 +215,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Serial Book"
                             accountPopEnabled = false
                         }
@@ -231,6 +235,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Audio Book"
                             accountPopEnabled = false
                         }
@@ -274,6 +279,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Category"
                             accountPopEnabled = false
                         }
@@ -293,6 +299,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Category"
                             accountPopEnabled = false
                         }
@@ -313,6 +320,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Category"
                             accountPopEnabled = false
                         }
@@ -333,6 +341,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Category"
                             accountPopEnabled = false
                         }
@@ -376,6 +385,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Home"
                             accountPopEnabled = false
                         }
@@ -396,6 +406,7 @@ Rectangle {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Audio Book"
                             accountPopEnabled = false
                         }
@@ -418,6 +429,7 @@ Rectangle {
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
                             myBooksView = 3
+                            commander.changePage(mainPage.state)
                             mainPage.state = "My Library"
                             accountPopEnabled = false
                         }
@@ -440,6 +452,7 @@ Rectangle {
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
                             myBooksView = 0
+                            commander.changePage(mainPage.state)
                             mainPage.state = "My Library"
                             accountPopEnabled = false
                         }

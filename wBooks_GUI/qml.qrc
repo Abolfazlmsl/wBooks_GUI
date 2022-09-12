@@ -221,5 +221,6 @@
         <file>Fonts/IRANSansMobile(FaNum).ttf</file>
         <file>Fonts/IRANSansMobile.ttf</file>
         <file>Fonts/IRANSansMobile_Bold.ttf</file>
+        <file>Codes/Modules/MainModules/Ui_Module/BodyHeader.qml</file>
     </qresource>
 </RCC>

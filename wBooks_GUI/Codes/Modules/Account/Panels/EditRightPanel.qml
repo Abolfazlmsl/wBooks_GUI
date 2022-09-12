@@ -389,6 +389,7 @@ Rectangle{
 
                         onBtnClicked: {
                             resetSetting()
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Home"
                         }
                     }

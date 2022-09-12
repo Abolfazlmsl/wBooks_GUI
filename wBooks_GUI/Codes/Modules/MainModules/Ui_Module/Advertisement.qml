@@ -8,8 +8,9 @@ Item {
 
     Rectangle{
         id: iconRec
-        width: parent.width
-        height: parent.height
+        anchors.fill: parent
+        anchors.rightMargin: parent.width * 0.05
+        anchors.leftMargin: parent.width * 0.05
         color: color8
         Image {
             id: image

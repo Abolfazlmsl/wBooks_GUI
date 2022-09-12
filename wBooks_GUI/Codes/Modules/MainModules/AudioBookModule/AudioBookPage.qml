@@ -182,6 +182,7 @@ Flickable {
                                             btnRadius: 0
                                             btnColor: color2
                                             onDashboard_btnClicked: {
+                                                commander.changePage(mainPage.state)
                                                 mainPage.state = "Media Page"
                                             }
                                         }

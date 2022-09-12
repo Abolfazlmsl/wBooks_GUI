@@ -12,6 +12,7 @@ Item {
 
     Rectangle{
         anchors.fill: parent
+        anchors.rightMargin: parent.width * 0.05
         color: "transparent"
         Label{
             id: titletxt
@@ -108,6 +109,7 @@ Item {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Category"
                         }
                     }
@@ -150,6 +152,7 @@ Item {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
                         onClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Category"
                         }
                     }

@@ -12,6 +12,7 @@ SOURCES += \
         $$files(Sources/PdfHandler/*.cpp)\
         $$files(Sources/EpubHandler/*.cpp)\
         $$files(Sources/TreeItem/*.cpp)\
+        Sources/Commands/commandcontroller.cpp \
         Sources/Commands/commands.cpp \
         desktopfunctions.cpp \
         main.cpp
@@ -35,6 +36,7 @@ HEADERS += \
     $$files(Headers/PdfHandler/*.h)\
     $$files(Headers/EpubHandler/*.h)\
     $$files(Headers/TreeItem/*.h)\
+    Headers/Commands/commandcontroller.h \
     Headers/Commands/commands.h \
     desktopfunctions.h
 

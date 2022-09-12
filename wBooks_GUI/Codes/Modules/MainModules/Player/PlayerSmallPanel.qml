@@ -54,6 +54,7 @@ Item {
                     anchors.fill: parent
                     cursorShape: Qt.PointingHandCursor
                     onClicked: {
+                        commander.changePage(mainPage.state)
                         mainPage.state = "Media Page"
                     }
                 }

@@ -153,6 +153,7 @@ Item {
                                     itemRec.isClicked = !itemRec.isClicked
                                 }
                                 onDoubleClicked: {
+                                    commander.changePage(mainPage.state)
                                     mainPage.state = "Book Page"
                                 }
                             }
@@ -273,6 +274,7 @@ Item {
                         btnRadius: 0
                         btnColor: color2
                         onDashboard_btnClicked: {
+                            commander.changePage(mainPage.state)
                             mainPage.state = "Book Page"
                         }
                     }

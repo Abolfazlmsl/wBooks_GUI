@@ -50,8 +50,6 @@ Item {
                     id: best_sell
                     Layout.fillWidth: true
                     Layout.preferredHeight: 400
-                    Layout.leftMargin: parent.width * 0.05
-                    Layout.rightMargin: parent.width * 0.05
                     title: "بیشترین فروش ها"
                     fileType: "Document"
 
@@ -66,8 +64,6 @@ Item {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 400
                     Layout.topMargin: 50
-                    Layout.leftMargin: parent.width * 0.05
-                    Layout.rightMargin: parent.width * 0.05
                     title: "نسخه های داغ جدید"
                     fileType: "Document"
 
@@ -82,8 +78,6 @@ Item {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 300
                     Layout.topMargin: 50
-                    Layout.leftMargin: parent.width * 0.05
-                    Layout.rightMargin: parent.width * 0.05
                     title: "مجموعه های برتر"
                 }
 
