@@ -95,6 +95,7 @@ Item {
                     Layout.fillHeight: true
                     Layout.preferredWidth: parent.width * 0.05
                     rotation: 180
+                    enabled: setting.isEpubViewer
                     text: Icons.table_of_contents
                     font.family: webfont.name
                     font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 3
@@ -180,14 +181,30 @@ Item {
                     id: input_search
                     Layout.fillWidth: true
                     Layout.fillHeight: true
+                    fontSize: 1.5
                     label: "جستجو بر اساس شماره صفحه"
                     icon: Icons.magnify
                     placeholder: "جستجو بر اساس شماره صفحه"
 
-                    Keys.onEnterPressed: {
-                        if (parseInt(input_search.inputText.text) > 0 && parseInt(input_search.inputText.text) <= pagesNumber){
-                            epubslider.value = parseInt(input_search.inputText.text)
+                    ButtonShadow{
+                        width: 80
+                        height: 35
+                        anchors.left: parent.left
+                        anchors.leftMargin: 10
+                        anchors.verticalCenter: parent.verticalCenter
+                        btnText: "برو"
+                        textColor: "#ffffff"
+                        btnRadius: 10
+                        btnColor: "#d43460"
+                        shadowColor: "#d43460"
+                        onDashboard_btnClicked: {
+                            if (parseInt(input_search.inputText.text) > 0 && parseInt(input_search.inputText.text) <= pagesNumber){
+                                epubslider.value = parseInt(input_search.inputText.text)
+                            }
                         }
+                    }
+                    Keys.onEnterPressed: {
+
                     }
                 }
 

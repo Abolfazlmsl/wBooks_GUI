@@ -381,9 +381,9 @@ void EPubDocument::exportPdf()
     QPrinter MyPrinter(QPrinter::HighResolution);
     MyPrinter.setOutputFormat(QPrinter::PdfFormat);
     MyPrinter.setOutputFileName("test.pdf");
-    MyPrinter.setPageSize(QPrinter::Letter);
+    MyPrinter.setPageSize(QPrinter::A5);
     MyPrinter.setColorMode(QPrinter::Color);
-    MyPrinter.setOrientation(QPrinter::Landscape);
+    MyPrinter.setOrientation(QPrinter::Portrait);
 
     this->print(&MyPrinter);
 }

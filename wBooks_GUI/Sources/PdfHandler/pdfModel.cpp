@@ -75,7 +75,7 @@ QString PdfModel::saveImages(int pageNumber, QString path)
     QSizeF pageSizePhys;
     float res = 0;
     Poppler::Page *page;
-    QSize requestedSize(300,300);
+    QSize requestedSize(300,1500);
 
     page = document->page(0);
 
