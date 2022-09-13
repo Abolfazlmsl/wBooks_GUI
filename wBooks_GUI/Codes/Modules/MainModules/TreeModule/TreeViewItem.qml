@@ -61,6 +61,24 @@ Item {
       }
    }
 
+   property Component pageNumber: Rectangle {
+      id: pageNumber
+
+      implicitWidth: 30
+      implicitHeight: 30
+      Layout.rightMargin: 30
+      color: "transparent"
+
+      Text {
+         anchors.centerIn: parent
+         text: currentRow.currentPageNumber
+         antialiasing: true
+         color: currentRow.isSelectedIndex ? root.selectedItemColor : root.handleColor
+         font.pixelSize: Qt.application.font.pixelSize * 1.3
+         font.family: setting.activeNumFont
+      }
+   }
+
    property Component contentItem: Text {
       id: contentData
 
@@ -69,7 +87,8 @@ Item {
 
       color: currentRow.isSelectedIndex ? root.selectedItemColor : root.color
       text: currentRow.currentData
-      font: root.font
+      font.pixelSize: Qt.application.font.pixelSize * 1.3
+      font.family: setting.activeFont
    }
 
    property Component hoverComponent: Rectangle {
@@ -100,6 +119,7 @@ Item {
 
                property var currentIndex: root.model.index(index, 0, parentIndex)
                property var currentData: root.model.data(currentIndex)
+               property int currentPageNumber: epub.getContentPageNumber(currentIndex) + 1
                property Item currentItem: repeater.itemAt(index)
                property bool expanded: false
                property bool selected: false
@@ -117,10 +137,10 @@ Item {
             Connections {
                target: root.model
                ignoreUnknownSignals: true
-               function onLayoutChanged() {
-                   const parent = root.model.index(index, 0, parentIndex)
-                  _prop.itemChildCount = root.model.rowCount(parent)
-               }
+//               function onLayoutChanged() {
+//                   const parent = root.model.index(index, 0, parentIndex)
+//                  _prop.itemChildCount = root.model.rowCount(parent)
+//               }
             }
 
             Item {
@@ -175,9 +195,20 @@ Item {
                      }
                   }
 
+                  // PageNumber
+                  Loader {
+                     id: pagenumberLoader
+                     sourceComponent: pageNumber
+
+                     Layout.rightMargin: 30
+                     Layout.preferredWidth: 30
+
+                     property QtObject currentRow: _prop
+                  }
+
                   TapHandler {
                      onDoubleTapped: {
-                         epubslider.value = epub.getContentPageNumber(_prop.currentIndex) + 1
+                         epubslider.value = (_prop.currentPageNumber)
                          _prop.toggle()
                          contentpanel.close()
                      }
@@ -234,10 +265,10 @@ Item {
                Connections {
                   target: root.model
                   ignoreUnknownSignals: true
-                  function onLayoutChanged() {
-                     const parent = root.model.index(index, 0, parentIndex)
-                     loader.item.childCount = root.model.rowCount(parent)
-                  }
+//                  function onLayoutChanged() {
+//                     const parent = root.model.index(index, 0, parentIndex)
+//                     loader.item.childCount = root.model.rowCount(parent)
+//                  }
                }
 
                Binding { target: loader.item; property: "model"; value: root.model; when: loader.status == Loader.Ready }

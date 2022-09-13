@@ -16,6 +16,7 @@ EPubDocument::EPubDocument(QObject *parent) : QTextDocument(parent),
         if (filetype == epub2 && m_page==1){
             m_page = newPage;
             emit loadPdfFile();
+            emit loadContents(tModel);
         }
         m_newpage = newPage;
         m_loaded = true;
@@ -143,8 +144,6 @@ void EPubDocument::readContents()
             i++;
         }
     }
-
-    emit loadContents(tModel);
 }
 
 QString EPubDocument::getModelSource(QModelIndex index)
@@ -219,8 +218,6 @@ void EPubDocument::loadDocument()
         m_page = 1;
     }
 
-    readContents();
-
     QDomDocument domDoc;
     QTextCursor textCursor(this);
     textCursor.beginEditBlock();
@@ -232,18 +229,11 @@ void EPubDocument::loadDocument()
     int start = 1;
     int end = items.length();
 
-//    if (filetype == epub1){
-//        start = 1;
-//        end = items.length();
-//    }else{
-//        start = 0;
-//        end = items.length();
-//    }
-
     int num = 0;
     itemsPath.clear();
     contentBlocks.clear();
     blockInEachIterate = 0;
+    readContents();
     for (int i=start; i<end;i++){
         const QString &chapter = items[i];
         m_currentItem = m_container->getEpubItem(chapter);
@@ -327,16 +317,17 @@ void EPubDocument::loadDocument()
 //        setTextWidth(w);
 //        qDebug() << "Final text width in" << timer.restart() << "ms";
     }
+
     qDebug() << "Adjust size done in" << timer.elapsed() << "ms";
 
     textCursor.endEditBlock();
 
     if (filetype == epub1){
         m_loaded = true;
+        emit loadContents(tModel);
         emit loadCompleted();
         emit loadPdfFile();
     }
-
 }
 
 void EPubDocument::updateDocument(int page)

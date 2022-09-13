@@ -69,7 +69,7 @@ Item {
         hoverEnabled: true
         propagateComposedEvents: true
         onClicked: {
-            contentpanel.width = 0
+//            contentpanel.width = 0
             contentEnable = false
         }
     }
@@ -861,6 +861,10 @@ Item {
         onAccepted: {
             epub.setSetting(setting.font, setting.fontSize, setting.themeState)
             if (fileDialog.selectedNameFilter.name === "Epub files"){
+                //---------------------------
+                // This is needed when change the file for type2 epub files content
+                contentModel = []
+                //---------------------------
                 setting.isEpubViewer = true
                 var path = fileDialog.file.toString()
                 path = path.replace(/^(file:\/{3})/,"")

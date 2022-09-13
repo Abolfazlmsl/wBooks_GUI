@@ -396,7 +396,6 @@ int Widget::getContentPageNumber(QModelIndex index)
 
         qsizetype idx = sources.indexOf(tag);
         QList<int> blockNum = m_document->getContentBlocks();
-
         int pos = m_document->documentLayout()->blockBoundingRect(m_document->findBlockByNumber(blockNum[idx])).y();
 
         result = qFloor(pos / m_document->pageSize().height())+1;
