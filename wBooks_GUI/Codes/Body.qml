@@ -170,9 +170,9 @@ Rectangle{
                         Item {
                             AudioBook{
                                 anchors.fill: parent
-                                newBooksModel: newAudioBooksModel
-                                mostSellModel: mostSellAudioBooksModel
-                                speakerModel: speakerAudioBooksModel
+//                                newBooksModel: newAudioBooksModel
+//                                mostSellModel: mostSellAudioBooksModel
+//                                speakerModel: speakerAudioBooksModel
                             }
 
                         }
@@ -181,9 +181,9 @@ Rectangle{
                         Item {
                             SerialBook{
                                 anchors.fill: parent
-                                specialBooksModel: specialBooksModel
-                                writersModel: writersModel
-                                prepurchaseModel: prepurchaseModel
+//                                specialBooksModel: specialBooksModel
+//                                writersModel: writersModel
+//                                prepurchaseModel: prepurchaseModel
                             }
                         }
 
@@ -1182,81 +1182,6 @@ Rectangle{
         id: video_booksModel
     }
 
-    ListModel{
-        id: homeModel
-        ListElement{
-            type: "SpecialCategory"
-            title: "دسته بندی های ویژه"
-            source: ""
-            fileType: ""
-            canSelect: false
-        }
-        ListElement{
-            type: "BestCategory"
-            title: "برترین کتاب های ماه"
-            source: ""
-            canSelect: false
-            fileType: ""
-        }
-        ListElement{
-            type: "BestCollection"
-            title: "مجموعه های برتر"
-            source: ""
-            canSelect: false
-            fileType: ""
-        }
-        ListElement{
-            type: "BooksList"
-            title: "پیشنهادی برای شما"
-            fileType: "Document"
-            source: ""
-            canSelect: false
-        }
-        ListElement{
-            type: "Writers"
-            title: "نویسندگان محبوب"
-            source: ""
-            canSelect: false
-            fileType: ""
-        }
-        ListElement{
-            type: "Writers"
-            title: "صداهای محبوب"
-            source: ""
-            canSelect: false
-            fileType: ""
-        }
-        ListElement{
-            type: "Advertisement"
-            title: ""
-            source: "qrc:/Images/Adver1.jpg"
-            canSelect: true
-            fileType: ""
-        }
-        ListElement{
-            type: "Advertisement"
-            title: ""
-            source: "qrc:/Images/Adver2.jpg"
-            canSelect: false
-            fileType: ""
-        }
-        ListElement{
-            type: "BooksList"
-            title: "تازه های نشر ققنوس"
-            source: ""
-            fileType: "Document"
-            canSelect: false
-        }
-        ListElement{
-            type: "Footer"
-            title: ""
-            source: ""
-            fileType: ""
-            canSelect: false
-        }
-    }
-
-
     Component.onCompleted:{
 //        var d  = Service.get_all(Service.document_books , function(data){
 //            var allbooks = data.length
@@ -1438,8 +1363,8 @@ Rectangle{
             itemModel: offerBooksModel
 
             onMoreBtnClicked: {
-                //                        morebooks.itemModel = offerBooksModel
-                //                        morebooks.title = offer_books.title
+                morebooks.itemModel = offerBooksModel
+                morebooks.title = modelTitle
             }
         }
     }
@@ -1453,8 +1378,8 @@ Rectangle{
             itemModel: writersModel
 
             onMoreBtnClicked: {
-                //                        morebooks.itemModel = writersModel
-                //                        morebooks.title = writers.title
+                morebooks.itemModel = writersModel
+                morebooks.title = modelTitle
             }
         }
     }
@@ -1466,6 +1391,42 @@ Rectangle{
             height: 220
             source: modelSource
             selectable: modelSelectable
+        }
+    }
+
+    Component{
+        id: specialofferCom
+        SpecialOffer{
+            width: parent.width
+            height: 400
+            title: modelTitle
+            itemModel: specialBooksModel
+            onMoreBtnClicked: {
+                morebooks.itemModel = specialBooksModel
+                morebooks.title = modelTitle
+            }
+        }
+    }
+
+    Component{
+        id: prepurchaseCom
+        Prepurchase{
+            width: parent.width
+            height: 450
+            title: modelTitle
+            itemModel: prepurchaseModel
+            onMoreBtnClicked: {
+                //                        morebooks.itemModel = prepurchaseModel
+                //                        morebooks.title = prepurchase.title
+            }
+        }
+    }
+
+    Component{
+        id: topsliderCom
+        TopSlider{
+            width: parent.width
+            height: 400
         }
     }
 

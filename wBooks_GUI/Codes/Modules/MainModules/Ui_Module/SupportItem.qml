@@ -13,9 +13,23 @@ Item {
 
         color: "#00ff0000"
 
+        BodyHeader{
+            id: header
+            width: parent.width
+            height: !showRightPop * 52
+            topFilterVis: false
+            listHeaderVis: false
+            bgColor: "transparent"
+            onItemClicked: {
+
+            }
+        }
+
         //-- container --//
         Rectangle{
-            anchors.fill: parent
+            width: parent.width
+            height: parent.height - header.height
+            anchors.top: header.bottom
 
             color: color1
 

@@ -58,7 +58,6 @@ Item{
                 anchors.fill: parent
                 lMargin: parent.width * 0.25
                 rMargin: parent.width * 0.25
-                anchors.topMargin: parent.height * 0.1
                 onGetMessage: {
                     alarmLoginWin1.msg = signalmsg
                 }
@@ -139,7 +138,6 @@ Item{
         Item {
             TicketItem{
                 anchors.fill: parent
-                anchors.topMargin: parent.height * 0.05
                 anchors.leftMargin: parent.width * 0.05
                 anchors.rightMargin: parent.width * 0.05
             }
@@ -149,7 +147,6 @@ Item{
         Item {
             AboutUsItem{
                 anchors.fill: parent
-                anchors.topMargin: parent.height * 0.05
                 anchors.leftMargin: parent.width * 0.05
                 anchors.rightMargin: parent.width * 0.05
             }
@@ -158,7 +155,6 @@ Item{
         Item {
             SupportItem{
                 anchors.fill: parent
-                anchors.topMargin: parent.height * 0.1
                 anchors.leftMargin: parent.width * 0.25
                 anchors.rightMargin: parent.width * 0.25
             }

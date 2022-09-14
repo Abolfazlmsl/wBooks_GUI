@@ -9,6 +9,10 @@ Item {
     signal itemClicked(var pos)
     signal indexChanged(var index)
 
+    property bool topFilterVis: true
+    property bool listHeaderVis: true
+    property string bgColor: color0
+
     onIndexChanged: {
         for (var i=0; i<topHeaderModel.count;i++){
             topHeaderModel.setProperty(i, "isClicked", false)
@@ -24,8 +28,7 @@ Item {
             id: header2
             Layout.fillWidth: true
             Layout.preferredHeight: 50
-            color: color0
-            visible: secondHeaderVis
+            color: bgColor
             RowLayout{
                 anchors.fill: parent
                 spacing: 0
@@ -39,6 +42,8 @@ Item {
                     Layout.topMargin: 10
                     Layout.bottomMargin: 10
                     radius: width / 2
+                    border.width: 1
+                    border.color: color4
                     color: "#ffffff"
                     visible: (inHomeMode) ? !showRightPop:false
                     Label{
@@ -74,48 +79,43 @@ Item {
                     spacing: 5
                     clip: true
                     model: topHeaderModel
+                    visible: listHeaderVis
                     delegate: Rectangle{
-                        width: 100
+                        width: titletxt.contentWidth + 40
                         height: 30
                         anchors.verticalCenter: parent.verticalCenter
                         color: "transparent"
                         radius: 5
                         border.width: 1
                         border.color: (model.isClicked)? "#d43460":color4
-                        Rectangle{
+                        Label{
                             id: titletxt
-                            height: parent.height
-                            width: parent.width
-                            anchors.right: parent.right
-                            color: "transparent"
-                            Label{
-                                anchors.centerIn: parent
-                                color: (model.isClicked)? "#d43460":color4
-                                text: model.title
-                                font.family: setting.activeNumFont
-                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1 //* widthRatio
-                                horizontalAlignment: Text.AlignLeft
-                                LayoutMirroring.enabled: true
-                                elide: Text.ElideRight
-                            }
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-                                    for (var i=0; i<topHeaderModel.count;i++){
-                                        topHeaderModel.setProperty(i, "isClicked", false)
-                                    }
-                                    topHeaderModel.setProperty(index, "isClicked", true)
-                                    itemClicked(index)
+                            anchors.centerIn: parent
+                            color: (model.isClicked)? "#d43460":color4
+                            text: model.title
+                            font.family: setting.activeNumFont
+                            font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1 //* widthRatio
+                            horizontalAlignment: Text.AlignLeft
+                            LayoutMirroring.enabled: true
+                            elide: Text.ElideRight
+                        }
+                        MouseArea{
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: {
+                                for (var i=0; i<topHeaderModel.count;i++){
+                                    topHeaderModel.setProperty(i, "isClicked", false)
                                 }
+                                topHeaderModel.setProperty(index, "isClicked", true)
+                                itemClicked(index)
                             }
                         }
                     }
                 }
 
                 Item {
-                    Layout.preferredWidth: 30
-                    visible: topFilterVis
+                    Layout.fillWidth: true
+                    visible: !listHeaderVis
                 }
 
                 ComboBox{
@@ -263,14 +263,5 @@ Item {
                 }
             }
         }
-
-
-        Rectangle {
-            Layout.fillWidth: true
-            Layout.preferredHeight: 2
-            visible: secondHeaderVis
-            color: color1
-        }
-
     }
 }

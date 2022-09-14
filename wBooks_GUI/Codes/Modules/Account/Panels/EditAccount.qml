@@ -10,6 +10,7 @@ import "./../../../../Utils/Utils.js" as Util
 import "./../../../../REST/apiService.js" as Service
 
 import "./../../Items"
+import "./../../MainModules/Ui_Module"
 
 Item {
 
@@ -55,9 +56,18 @@ Item {
                     ColumnLayout{
                         width: parent.width
                         spacing: 0
+                        BodyHeader{
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: !showRightPop * 52
+                            topFilterVis: false
+                            listHeaderVis: false
+                            bgColor: "transparent"
+                            onItemClicked: {
 
+                            }
+                        }
                         //-- spacer --//
-                        Item{Layout.preferredHeight: 20}
+                        Item{Layout.preferredHeight: 100}
 
                         Label{
                             Layout.fillWidth: true

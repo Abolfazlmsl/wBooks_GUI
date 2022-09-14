@@ -20,6 +20,8 @@ Item {
     RowLayout{
         anchors.fill: parent
         layoutDirection: Qt.RightToLeft
+        anchors.rightMargin: parent.width * 0.05
+        anchors.leftMargin: parent.width * 0.05
         spacing: 0
 
         Rectangle{

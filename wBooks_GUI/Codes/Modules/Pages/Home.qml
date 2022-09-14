@@ -25,6 +25,8 @@ Rectangle{
             id: homeHeader
             Layout.fillWidth: true
             Layout.preferredHeight: 52
+            topFilterVis: false
+            listHeaderVis: true
             onItemClicked: {
                 lview.positionViewAtIndex(pos, ListView.Beginning)
             }
@@ -59,6 +61,12 @@ Rectangle{
                         return bestCollectionCom
                     }else if (model.type === "Writers"){
                         return writersCom
+                    }else if (model.type === "SpecialOffer"){
+                        return specialofferCom
+                    }else if (model.type === "Prepurchase"){
+                        return prepurchaseCom
+                    }else if (model.type === "TopSlider"){
+                        return topsliderCom
                     }else if (model.type === "Advertisement"){
                         return advertisementCom
                     }else if (model.type === "Footer"){

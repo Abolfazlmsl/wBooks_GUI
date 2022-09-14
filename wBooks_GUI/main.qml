@@ -49,9 +49,6 @@ Window {
     property bool accountPopEnabled: false
     property bool inHomeMode: true
     property bool smallPlayerVis: true
-    property bool secondHeaderVis: true
-    property bool topFilterVis: false
-    property string secondHeaderTitle: "خانه"
     property int mainView: 8 // Home page
     property int myBooksView: 0
     property int rightView: 0
@@ -595,9 +592,6 @@ Window {
                     mainView: 14
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: true
-                    secondHeaderTitle: "دسته بندی"
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -616,8 +610,6 @@ Window {
                     mainView: 11
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -636,8 +628,6 @@ Window {
                     mainView: 12
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -656,9 +646,6 @@ Window {
                     mainView: 13
                     rightView: 1
                     homeClick: false
-                    secondHeaderVis: true
-                    secondHeaderTitle: "پنل کاربری"
-                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -677,9 +664,6 @@ Window {
                     mainView: 10
                     rightView: 0
                     homeClick: true
-                    topFilterVis: false
-                    secondHeaderVis: true
-                    secondHeaderTitle: "خانه"
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -698,9 +682,6 @@ Window {
                     mainView: 9
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: true
-                    secondHeaderTitle: "اشتراک"
                     membershipClick: true
                     serialBookClick: false
                     audioBookClick: false
@@ -719,9 +700,6 @@ Window {
                     mainView: 8
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: true
-                    secondHeaderTitle: "کتاب های سریالی"
                     membershipClick: false
                     serialBookClick: true
                     audioBookClick: false
@@ -740,9 +718,6 @@ Window {
                     mainView: 7
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: true
-                    secondHeaderTitle: "کتاب های صوتی"
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: true
@@ -757,13 +732,10 @@ Window {
                 name: "My Library"
                 PropertyChanges {
                     target: win
-                    inHomeMode: true
+                    inHomeMode: false
                     mainView: 6
                     rightView: 0
                     homeClick: false
-                    secondHeaderVis: true
-                    secondHeaderTitle: "کتابخانه"
-                    topFilterVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -782,9 +754,6 @@ Window {
                     mainView: 4
                     rightView: 0
                     homeClick: false
-                    topFilterVis: true
-                    secondHeaderVis: true
-                    secondHeaderTitle: "کتاب های بیشتر"
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -803,8 +772,6 @@ Window {
                     mainView: 2
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -823,8 +790,6 @@ Window {
                     mainView: 3
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -843,8 +808,6 @@ Window {
                     mainView: 5
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -863,8 +826,6 @@ Window {
                     mainView: 1
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -883,8 +844,6 @@ Window {
                     mainView: 0
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -903,8 +862,6 @@ Window {
                     mainView: 15
                     rightView: 0
                     homeClick: false
-                    topFilterVis: false
-                    secondHeaderVis: false
                     membershipClick: false
                     serialBookClick: false
                     audioBookClick: false
@@ -1011,6 +968,7 @@ Window {
 
                     onBtnClicked: {
                         commander.changePage(mainPage.state)
+                        changeHeaderModel("Home")
                         mainPage.state = "Home"
                     }
                 }
@@ -1050,6 +1008,7 @@ Window {
                     isClick: serialBookClick
                     onBtnClicked: {
                         commander.changePage(mainPage.state)
+                        changeHeaderModel("Serial Book")
                         mainPage.state = "Serial Book"
                     }
                 }
@@ -1069,6 +1028,7 @@ Window {
                     isClick: audioBookClick
                     onBtnClicked: {
                         commander.changePage(mainPage.state)
+                        changeHeaderModel("Audio Book")
                         mainPage.state = "Audio Book"
                     }
                 }
@@ -1111,6 +1071,7 @@ Window {
                     closeIconVis: true
                     onCloseBtnClicked: {
                         commander.changePage(mainPage.state)
+                        changeHeaderModel("Home")
                         mainPage.state = "Home"
                     }
                 }
@@ -3560,6 +3521,172 @@ Window {
         }
 
         ListModel{
+            id: homeModel
+            ListElement{
+                type: "SpecialCategory"
+                title: "دسته بندی های ویژه"
+                source: ""
+                fileType: ""
+                canSelect: false
+            }
+            ListElement{
+                type: "BestCategory"
+                title: "برترین کتاب های ماه"
+                source: ""
+                canSelect: false
+                fileType: ""
+            }
+            ListElement{
+                type: "BestCollection"
+                title: "مجموعه های برتر"
+                source: ""
+                canSelect: false
+                fileType: ""
+            }
+            ListElement{
+                type: "BooksList"
+                title: "پیشنهادی برای شما"
+                fileType: "Document"
+                source: ""
+                canSelect: false
+            }
+            ListElement{
+                type: "Writers"
+                title: "نویسندگان محبوب"
+                source: ""
+                canSelect: false
+                fileType: ""
+            }
+            ListElement{
+                type: "Writers"
+                title: "صداهای محبوب"
+                source: ""
+                canSelect: false
+                fileType: ""
+            }
+            ListElement{
+                type: "Advertisement"
+                title: ""
+                source: "qrc:/Images/Adver1.jpg"
+                canSelect: true
+                fileType: ""
+            }
+            ListElement{
+                type: "Advertisement"
+                title: ""
+                source: "qrc:/Images/Adver2.jpg"
+                canSelect: false
+                fileType: ""
+            }
+            ListElement{
+                type: "BooksList"
+                title: "تازه های نشر ققنوس"
+                source: ""
+                fileType: "Document"
+                canSelect: false
+            }
+            ListElement{
+                type: "Footer"
+                title: ""
+                source: ""
+                fileType: ""
+                canSelect: false
+            }
+        }
+
+        ListModel{
+            id: serialModel
+            ListElement{
+                type: "TopSlider"
+                title: ""
+                source: ""
+                fileType: ""
+                canSelect: false
+            }
+            ListElement{
+                type: "Advertisement"
+                title: ""
+                source: "qrc:/Images/Adver3.jpg"
+                canSelect: false
+                fileType: ""
+            }
+            ListElement{
+                type: "SpecialOffer"
+                title: "ویژه (پرفروش ها)"
+                source: ""
+                canSelect: false
+                fileType: ""
+            }
+            ListElement{
+                type: "Writers"
+                title: "نویسندگان و مترجمین برتر"
+                fileType: ""
+                source: ""
+                canSelect: false
+            }
+            ListElement{
+                type: "Prepurchase"
+                title: "آنچه شما خواسته اید"
+                source: ""
+                canSelect: false
+                fileType: ""
+            }
+            ListElement{
+                type: "Footer"
+                title: ""
+                source: ""
+                fileType: ""
+                canSelect: false
+            }
+        }
+
+        ListModel{
+            id: audioModel
+            ListElement{
+                type: "Advertisement"
+                title: ""
+                source: "qrc:/Images/Adver4.jpg"
+                fileType: ""
+                canSelect: true
+            }
+            ListElement{
+                type: "BooksList"
+                title: "تازه های صوتی"
+                source: ""
+                canSelect: false
+                fileType: "Audio"
+            }
+            ListElement{
+                type: "BooksList"
+                title: "پرفروش ترین ها"
+                source: ""
+                canSelect: false
+                fileType: "Audio"
+            }
+            ListElement{
+                type: "Advertisement"
+                title: ""
+                source: "qrc:/Images/Adver5.jpg"
+                fileType: ""
+                canSelect: true
+            }
+            ListElement{
+                type: "BooksList"
+                title: "با صدای عادل فردوسی پور"
+                source: ""
+                canSelect: false
+                fileType: "Audio"
+            }
+            ListElement{
+                type: "Footer"
+                title: ""
+                source: ""
+                fileType: ""
+                canSelect: false
+            }
+        }
+
+        ListModel{
             id: topHeaderModel
             ListElement{
                 type: "SpecialCategory"
@@ -3609,6 +3736,47 @@ Window {
         }
     }
 
+    function changeHeaderModel(pageName) {
+        topHeaderModel.clear()
+        var activeModel
+        if (pageName === "Home"){
+            activeModel = homeModel
+        }else if (pageName === "Serial Book"){
+            activeModel = serialModel
+        }else if (pageName === "Audio Book"){
+            activeModel = audioModel
+        }
+
+        for (var i=0;i<activeModel.count;i++){
+            var isClicked = false
+            if (i===0){isClicked = true}
+            else{isClicked = false}
+
+            if (activeModel.get(i).type === "SpecialCategory" || activeModel.get(i).type === "BestCategory" ||
+                activeModel.get(i).type === "BooksList" || activeModel.get(i).type === "BestCollection" ||
+                activeModel.get(i).type === "Writers" || activeModel.get(i).type === "SpecialOffer" ||
+                activeModel.get(i).type === "Prepurchase"){
+                topHeaderModel.append({
+                                        "type": activeModel.get(i).type,
+                                        "title" : activeModel.get(i).title,
+                                        "isClicked": isClicked
+                                      })
+            }else if (activeModel.get(i).type === "TopSlider"){
+                      topHeaderModel.append({
+                                              "type": activeModel.get(i).type,
+                                              "title" : "اطلاع رسانی",
+                                              "isClicked": isClicked
+                                            })
+            }else if (activeModel.get(i).type === "Advertisement"){
+                topHeaderModel.append({
+                                        "type": activeModel.get(i).type,
+                                        "title" : "تبلیغ",
+                                        "isClicked": isClicked
+                                      })
+            }
+        }
+    }
+
     onClosing: {
         close.accepted = false
         quitPop.visible = true
@@ -3646,6 +3814,7 @@ Window {
         onAccept: {
             quitReaderPop.visible = false
             commander.changePage(mainPage.state)
+            changeHeaderModel("Home")
             mainPage.state = "Home"
             bookReaderVis = false
         }
@@ -3653,5 +3822,4 @@ Window {
             quitReaderPop.visible = false
         }
     }
-
 }

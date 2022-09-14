@@ -65,6 +65,16 @@ Item{
             ColumnLayout{
                 width: parent.width
                 spacing: 0
+                BodyHeader{
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: !showRightPop * 52
+                    topFilterVis: false
+                    listHeaderVis: false
+                    bgColor: "transparent"
+                    onItemClicked: {
+
+                    }
+                }
                 WalletItem{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 350

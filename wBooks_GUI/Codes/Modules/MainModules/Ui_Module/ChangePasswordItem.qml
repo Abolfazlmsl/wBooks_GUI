@@ -98,8 +98,19 @@ Item{
                         width: parent.width
                         spacing: 0
 
+                        BodyHeader{
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: !showRightPop * 52
+                            topFilterVis: false
+                            listHeaderVis: false
+                            bgColor: "transparent"
+                            onItemClicked: {
+
+                            }
+                        }
+
                         //-- spacer --//
-                        Item{Layout.preferredHeight: 10}
+                        Item{Layout.preferredHeight: 100}
 
                         Rectangle{
                             Layout.fillWidth: true

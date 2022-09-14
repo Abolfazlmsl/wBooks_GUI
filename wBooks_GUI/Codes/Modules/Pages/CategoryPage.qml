@@ -30,6 +30,15 @@ Item {
             ColumnLayout{
                 width: parent.width
                 spacing: 0
+                BodyHeader{
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 52
+                    topFilterVis: true
+                    listHeaderVis: false
+                    onItemClicked: {
+
+                    }
+                }
                 Item{
                     Layout.fillWidth: true
                     Layout.preferredHeight: 50

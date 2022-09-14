@@ -17,6 +17,18 @@ Item {
     ColumnLayout{
         anchors.fill: parent
         anchors.margins: 20
+
+        BodyHeader{
+            Layout.fillWidth: true
+            Layout.preferredHeight: !showRightPop * 52
+            topFilterVis: false
+            listHeaderVis: false
+            bgColor: "transparent"
+            onItemClicked: {
+
+            }
+        }
+
         RowLayout{
             Layout.fillWidth: true
             Layout.preferredHeight: 40
