@@ -25,6 +25,7 @@ Item {
     property int sliderTotalHeight: 1
     property var contentModel
     property int content_panel_width: 500
+    property int imageHeightSize: 1
 
     signal changeReaderTheme(var mode)
 
@@ -471,11 +472,15 @@ Item {
                                     epubslider.value = currentPageNumber
                                 }
 
+                                onPdfPageBlocksChanged: {
+                                    imageHeightSize = pdfPageBlocks
+                                }
+
                                 onPdfPathChanged: {
                                     if (epub.getEpubType() === 0){
                                         popplerepub.path = pdfPath
                                         for (var i=0; i<popplerepub.numPages;i++){
-                                            var cPath = popplerepub.saveImages(epubModel.count+1, offlineStoragePath)
+                                            var cPath = popplerepub.saveImages(epubModel.count+1, imageHeightSize, offlineStoragePath)
                                             epubModel.append({
                                                              "url": "file:///"+cPath
                                                              })

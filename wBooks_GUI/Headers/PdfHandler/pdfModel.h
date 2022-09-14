@@ -35,7 +35,7 @@ public:
   bool loaded;
 
 public slots:
-  QString saveImages(int pageNumber, QString path);
+  QString saveImages(int pageNumber, int sizeHeight, QString path);
 
 private:
   int loadDocument(QString &pathNAme);

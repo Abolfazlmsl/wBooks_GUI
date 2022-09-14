@@ -410,6 +410,7 @@ void Widget::managePdfFile()
         if (getEpubType() == 1){
             m_document->exportPdf();
             m_document->setpdfLoaded(true);
+            setPdfPageBlocks(300);
             setPdfPath("test.pdf");
         }else{
             for (int i=1;i<=m_document->docPage();i++){
@@ -418,6 +419,7 @@ void Widget::managePdfFile()
                 m_document->clearCache();
                 m_document->updateDocument(i);
                 m_document->exportOnePagePdf();
+                setPdfPageBlocks(m_document->blockCount() * 50);
                 setPdfPath("test.pdf");
             }
             specificPage(1);

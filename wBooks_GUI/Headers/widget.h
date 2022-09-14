@@ -28,6 +28,7 @@ class Widget : public QQuickPaintedItem
     Q_PROPERTY(int blockNumber READ blockNumber WRITE setBlockNumber NOTIFY blockNumberChanged)
     Q_PROPERTY(int currentPageNumber READ currentPageNumber WRITE setCurrentPageNumber NOTIFY currentPageNumberChanged)
     Q_PROPERTY(QString pdfPath READ pdfPath WRITE setPdfPath NOTIFY pdfPathChanged)
+    Q_PROPERTY(int pdfPageBlocks READ pdfPageBlocks WRITE setPdfPageBlocks NOTIFY pdfPageBlocksChanged)
     Q_PROPERTY(TreeModel* contents READ contents WRITE setContents NOTIFY contentsChanged)
     QML_ELEMENT
 
@@ -90,6 +91,15 @@ public:
         }
 
     QString pdfPath() const { return m_pdfPath; }
+
+    void setPdfPageBlocks(int pdfPageBlocks)
+        {
+            m_pdfPageBlocks = pdfPageBlocks;
+            emit pdfPageBlocksChanged(pdfPageBlocks);
+        }
+
+    int pdfPageBlocks() const { return m_pdfPageBlocks; }
+
 
     bool isDefaultFont(QString font){
         if (font=="Times New Roman" || font=="Calibri" || font=="Arial" || font=="Courier"){
@@ -157,6 +167,7 @@ private:
     int m_blockNumber;
     int m_currentPageNumber;
     QString m_pdfPath;
+    int m_pdfPageBlocks;
 
     QString m_path;
 
@@ -188,6 +199,7 @@ signals:
     void blockNumberChanged(int);
     void currentPageNumberChanged(int);
     void pdfPathChanged(QString);
+    void pdfPageBlocksChanged(int);
 };
 
 #endif // WIDGET_H

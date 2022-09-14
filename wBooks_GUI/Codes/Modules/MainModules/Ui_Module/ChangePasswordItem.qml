@@ -110,7 +110,7 @@ Item{
                         }
 
                         //-- spacer --//
-                        Item{Layout.preferredHeight: 100}
+                        Item{Layout.preferredHeight: 20}
 
                         Rectangle{
                             Layout.fillWidth: true
