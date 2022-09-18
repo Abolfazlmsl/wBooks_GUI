@@ -503,6 +503,7 @@ Window {
         property string password: ""
         property string profile: ""
         property string gender: ""
+        property bool getEmail: true
 //        property string mybooks: ""
 //        property string myaudiobooks: ""
 //        property string myvideos: ""
@@ -3695,14 +3696,14 @@ Window {
                 canSelect: true
             }
             ListElement{
-                type: "BooksList"
+                type: "AudioBooksList"
                 title: "تازه های صوتی"
                 source: ""
                 canSelect: false
                 fileType: "Audio"
             }
             ListElement{
-                type: "BooksList"
+                type: "AudioBooksList"
                 title: "پرفروش ترین ها"
                 source: ""
                 canSelect: false
@@ -3716,7 +3717,7 @@ Window {
                 canSelect: true
             }
             ListElement{
-                type: "BooksList"
+                type: "AudioBooksList"
                 title: "با صدای عادل فردوسی پور"
                 source: ""
                 canSelect: false

@@ -56,8 +56,8 @@ Item{
         Item {
             EditAccount{
                 anchors.fill: parent
-                lMargin: parent.width * 0.25
-                rMargin: parent.width * 0.25
+                lMargin: parent.width * 0.4
+                rMargin: parent.width * 0.1
                 onGetMessage: {
                     alarmLoginWin1.msg = signalmsg
                 }

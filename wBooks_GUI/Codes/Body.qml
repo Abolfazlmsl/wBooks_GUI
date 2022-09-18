@@ -1370,6 +1370,22 @@ Rectangle{
     }
 
     Component{
+        id: audiobookListCom
+        BooksList{
+            width: parent.width
+            height: 450
+            title: modelTitle
+            fileType: "Audio"
+            itemModel: offerBooksModel
+
+            onMoreBtnClicked: {
+                morebooks.itemModel = offerBooksModel
+                morebooks.title = modelTitle
+            }
+        }
+    }
+
+    Component{
         id: writersCom
         Writers{
             width: parent.width

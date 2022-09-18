@@ -27,7 +27,7 @@ Rectangle{
     property bool acceptInput: false
     property double fontSize: 1
     property double placeholderSize: 1
-    property string placeHolderPosition: "Right" //Center
+    property string placeHolderPosition: "Right" //Center, "Right"
     property alias textPosition: root_txf.state // "Right", "Left", "Center"
 
     property alias imgIcon: iconTxt.source
@@ -112,12 +112,12 @@ Rectangle{
                 Label{
                     id: lbl_placeholder
 
-                    visible: (placeHolderPosition==="Right")?(txf_main.length >= 1) ? false : true : false
+                    visible: (placeHolderPosition==="Left")?(txf_main.length >= 1) ? false : true : false
 
                     text: placeholder
-
-                    anchors.right: parent.right
-                    anchors.rightMargin: 30
+                    width: contentWidth
+                    anchors.left: parent.left
+                    anchors.leftMargin: 30
                     anchors.verticalCenter: parent.verticalCenter
 
                     font.family: setting.activeFont
@@ -151,6 +151,28 @@ Rectangle{
 
                 }
 
+                //-- placeholder --//
+                Label{
+                    id: lbl_placeholder_left
+
+                    visible: (placeHolderPosition==="Right")?(txf_main.length >= 1) ? false : true : false
+
+                    text: placeholder
+
+                    width: contentWidth
+                    anchors.right: parent.right
+                    anchors.rightMargin: 30
+                    anchors.verticalCenter: parent.verticalCenter
+
+                    font.family: setting.activeFont
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * placeholderSize
+                    color: color18
+
+                    background: Rectangle{
+                        color: "transparent"
+                    }
+
+                }
 
                 //-- Cut Copy Paste => MouseArea --//
                 MouseArea {

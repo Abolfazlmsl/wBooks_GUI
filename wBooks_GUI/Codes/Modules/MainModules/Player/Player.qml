@@ -59,7 +59,7 @@ Item {
 //            win.showFullScreen()
             mainHeader.visible = false
             mainFooter.visible = false
-            header2.visible = false
+//            header2.visible = false
             maximize.state = true
             maximize.text = Icons.window_restore
             toolsGroup.visible = false
@@ -68,7 +68,7 @@ Item {
         else {
             mainHeader.visible = true
             mainFooter.visible = true
-            header2.visible = true
+//            header2.visible = true
             maximize.state = false
             maximize.text = Icons.window_maximize
             toolsGroup.visible = true

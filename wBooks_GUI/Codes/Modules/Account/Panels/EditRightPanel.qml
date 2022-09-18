@@ -434,41 +434,4 @@ Rectangle{
             }
         }
     }
-    //-- File dialog --//
-    FileDialog {
-        id: fileDialog
-        visible: false
-        title: "Please choose a file"
-        selectedNameFilter.index: 0
-        nameFilters: ["Image files (*.jpg *.jpeg *.png)"]
-
-        onAccepted: {
-            var path = fileDialog.file.toString()
-            path = path.replace(/^(file:\/{3})/,"")
-            var fileName = path.slice(path.lastIndexOf("/")+1)
-            var cPath = desktopfunctions.copyImagetoDb(path, offlineStoragePath, fileName)
-            setting.profile = cPath
-            var licenseData = {
-                "image": setting.licenseImage,
-                "purchase_id": setting.licensePurchaseNumber,
-                "time": setting.licenseTime,
-                "expiredTime": setting.licenseExpiredTime
-            }
-            var data = {
-                "id": setting.user_id,
-                "name": setting.userName,
-                "email": setting.userEmail,
-                "phone": setting.userPhone,
-                "password": setting.password,
-                "gender": setting.gender,
-                "mywallet": setting.mywallet,
-                "user_number": setting.user_number,
-                "mylicense": licenseData
-            }
-            db.storeData("users", data, cPath)
-        }
-        onRejected: {
-            console.log("Canceled")
-        }
-    }
 }

@@ -54,6 +54,8 @@ Rectangle {
                         return bestCategoryCom
                     }else if (model.type === "BooksList"){
                         return bookListCom
+                    }else if (model.type === "AudioBooksList"){
+                        return audiobookListCom
                     }else if (model.type === "BestCollection"){
                         return bestCollectionCom
                     }else if (model.type === "Writers"){
