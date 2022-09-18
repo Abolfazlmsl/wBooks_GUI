@@ -11,7 +11,7 @@ import "./../../Items"
 
 Rectangle{
     id: accountObjPage
-    color: color1
+    color: "#e6e5e3"
 
     signal btnClicked()
 
@@ -22,26 +22,23 @@ Rectangle{
         Item{Layout.preferredHeight: 10}
 
         Item{
-            Layout.preferredHeight: 20
+            Layout.preferredHeight: 52
             Layout.fillWidth: true
             RowLayout{
+                anchors.fill: parent
+                layoutDirection: Qt.RightToLeft
+                spacing: 0
                 Item{Layout.preferredWidth: 10}
-                Rectangle{
-                    height: width
-                    width: 20
-                    radius: width / 2
-                    color: "transparent"
-                    border.width: 1
-                    border.color: color4
-                    Label{
-                        anchors.centerIn: parent
-                        text: Icons.arrow_right
-                        font.family: webfont.name
-                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 //* widthRatio
 
-                        color: color4
-                    }
+                Label{
+                    Layout.preferredWidth: 10
+                    Layout.fillHeight: true
+                    text: Icons.close
+                    font.family: webfont.name
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 //* widthRatio
 
+                    verticalAlignment: Qt.AlignVCenter
+                    color: "#d43460"
                     MouseArea{
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
@@ -51,29 +48,55 @@ Rectangle{
                     }
                 }
 
+                Item{Layout.preferredWidth: 10}
+
+                Label{
+                    Layout.preferredWidth: contentWidth
+                    Layout.fillHeight: true
+                    text: "پنل کاربری"
+                    font.family: setting.activeFont
+                    font.bold: true
+                    font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.5 //* widthRatio
+                    verticalAlignment: Qt.AlignVCenter
+                    color: "#d43460"
+                }
+
+
                 Item{Layout.fillWidth: true}
             }
         }
 
-        Item{Layout.preferredHeight: 5}
+        Rectangle{
+            Layout.fillWidth: true
+            Layout.preferredHeight: 1
+            color: "#d8d9d7"
+        }
+
+        Item{Layout.preferredHeight: 10}
 
         Item{
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.25
+            Layout.preferredHeight: parent.height * 0.4
             clip: true
             ColumnLayout{
                 anchors.fill: parent
+                spacing: 0
+
+                Item{Layout.preferredHeight: 10}
+
                 Item{
                     Layout.fillWidth: true
-                    Layout.preferredHeight: parent.height * 0.6
+                    Layout.preferredHeight: parent.height * 0.4
                     RowLayout{
                         anchors.fill: parent
                         layoutDirection: Qt.RightToLeft
+
+                        Item{Layout.fillWidth: true}
+
                         Rectangle{
                             id: mask
-                            Layout.preferredWidth: parent.width * 0.3
-                            Layout.preferredHeight: width
-                            Layout.margins: 10
+                            Layout.preferredWidth: parent.width * 0.5
+                            Layout.fillHeight: true
                             radius: width/2
                             color: color3
                             Label{
@@ -101,84 +124,62 @@ Rectangle{
                                     maskSource: mask
                                 }
                             }
-
-                            MouseArea{
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: {
-                                    fileDialog.open()
-                                }
-                            }
                         }
 
-                        Rectangle{
-                            Layout.fillHeight: true
-                            Layout.preferredWidth: parent.width * 0.5
-                            Layout.topMargin: 20
-                            Layout.bottomMargin: 20
-                            color: "transparent"
-                            Label{
-                                id: txt1
-                                width: parent.width
-                                height: parent.height / 3
-                                text: setting.userName
-                                font.family: setting.activeFont
-                                color: color4
-                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Text.AlignLeft
-                                LayoutMirroring.enabled: true
-                            }
-                            Label{
-                                id: txt2
-                                width: parent.width
-                                height: parent.height / 3
-                                anchors.top: txt1.bottom
-                                text: "شماره کاربری: " + setting.user_number
-                                font.family: setting.activeNumFont
-                                color: color4
+                        Item{Layout.fillWidth: true}
+                    }
+                }
 
-                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Text.AlignLeft
-                                LayoutMirroring.enabled: true
-                            }
-                            Label{
-                                width: parent.width
-                                height: parent.height / 3
-                                anchors.top: txt2.bottom
-                                text: setting.userPhone
-                                font.family: setting.activeNumFont
-                                color: color4
+                Item{Layout.preferredHeight: 10}
 
-                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio
-                                verticalAlignment: Qt.AlignVCenter
-                                horizontalAlignment: Text.AlignLeft
-                                LayoutMirroring.enabled: true
-                            }
-                        }
-
-                        Item{
-                            Layout.preferredWidth: 10
-                        }
+                Rectangle{
+                    Layout.preferredHeight: 20
+                    Layout.fillWidth: true
+                    color: "transparent"
+                    Label{
+                        id: txt1
+                        anchors.centerIn: parent
+                        text: setting.userName
+                        font.family: setting.activeFont
+                        font.bold: true
+                        color: "#d43460"
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.3
                     }
                 }
 
                 Rectangle{
+                    Layout.preferredHeight: 20
+                    Layout.fillWidth: true
+                    color: "transparent"
+                    Label{
+                        id: txt2
+                        anchors.centerIn: parent
+                        text: "شماره کاربری: " + setting.user_number
+                        font.family: setting.activeNumFont
+                        color: "#646464"
+
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio
+                    }
+                }
+
+                Item{Layout.preferredHeight: 20}
+
+                Rectangle{
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-                    Layout.margins: 10
+                    Layout.leftMargin: 50
+                    Layout.rightMargin: 50
                     color: "transparent"
                     radius: 10
-                    border.color: color7
+                    border.color: "#d8d9d7"
                     Label{
                         id: txt_exit
                         anchors.fill: parent
-                        text: "افزایش اعتبار"
+                        text: "افزایش اعتبار شما"
                         font.family: setting.activeFont
-                        color: color7
+                        color: "#d43460"
 
-                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
+                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio
                         verticalAlignment: Qt.AlignVCenter
                         horizontalAlignment: Qt.AlignHCenter
                     }
@@ -196,14 +197,10 @@ Rectangle{
             }
         }
 
-        Item{Layout.preferredHeight: 10}
-
         Rectangle{
             Layout.fillWidth: true
             Layout.preferredHeight: 1
-            Layout.leftMargin: 10
-            Layout.rightMargin: 10
-            color: color4
+            color: "#d8d9d7"
         }
 
         Item{Layout.preferredHeight: 10}
@@ -229,11 +226,13 @@ Rectangle{
                         id: btnEdit
 
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 45 * ratio
+                        Layout.preferredHeight: 35 * ratio
 
                         icon: Icons.account
                         iconColor: editAccountColor
                         text: "ویرایش حساب کاربری"
+                        iconSize: 1.3
+                        textSize: 1.1
 
                         onBtnClicked: {
                             accountObj.state = "Account"
@@ -243,11 +242,13 @@ Rectangle{
                         id: btnWallet
 
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 45 * ratio
+                        Layout.preferredHeight: 35 * ratio
 
                         icon: Icons.wallet
                         iconColor: walletColor
                         text: "کیف پول"
+                        iconSize: 1.3
+                        textSize: 1.1
 
                         onBtnClicked: {
                             accountObj.state = "Wallet"
@@ -257,11 +258,13 @@ Rectangle{
                         id: btnBooks
 
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 45 * ratio
+                        Layout.preferredHeight: 35 * ratio
 
                         icon: Icons.library_books
                         iconColor: myBookColor
                         text: "کتاب های من"
+                        iconSize: 1.3
+                        textSize: 1.1
 
                         onBtnClicked: {
                             accountObj.state = "My Books"
@@ -271,37 +274,56 @@ Rectangle{
                         id: btnAudiobooks
 
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 45 * ratio
+                        Layout.preferredHeight: 35 * ratio
 
                         icon: Icons.audiobook
                         iconColor: audioBookColor
                         text: "کتاب های صوتی من"
+                        iconSize: 1.3
+                        textSize: 1.1
 
                         onBtnClicked: {
                             accountObj.state = "Audio Books"
                         }
                     }
+
+                    ButtonPanel{
+                        id: btnpurchases
+
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: 35 * ratio
+
+                        icon: Icons.bag_personal
+                        iconColor: purchasesColor
+                        text: "سوابق خرید"
+                        iconSize: 1.3
+                        textSize: 1.1
+
+                        onBtnClicked: {
+                            accountObj.state = "Purchases"
+                        }
+                    }
+
                     Item{Layout.preferredHeight: 10}
 
                     Rectangle{
                         Layout.fillWidth: true
                         Layout.preferredHeight: 1
-                        Layout.leftMargin: 10
-                        Layout.rightMargin: 10
-                        color: color4
+                        color: "#d8d9d7"
                     }
-
                     Item{Layout.preferredHeight: 10}
 
                     ButtonPanel{
                         id: btnChangePassword
 
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 45 * ratio
+                        Layout.preferredHeight: 35 * ratio
 
                         icon: Icons.account_key
                         iconColor: changePassColor
                         text: "تغییر رمز عبور"
+                        iconSize: 1.3
+                        textSize: 1.1
 
                         onBtnClicked: {
                             accountObj.state = "Change Password"
@@ -313,9 +335,7 @@ Rectangle{
                     Rectangle{
                         Layout.fillWidth: true
                         Layout.preferredHeight: 1
-                        Layout.leftMargin: 10
-                        Layout.rightMargin: 10
-                        color: color4
+                        color: "#d8d9d7"
                     }
 
                     Item{Layout.preferredHeight: 10}
@@ -324,11 +344,13 @@ Rectangle{
                         id: btnComments
 
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 45 * ratio
+                        Layout.preferredHeight: 35 * ratio
 
                         icon: Icons.comment
                         iconColor: commentsColor
                         text: "بازخورد"
+                        iconSize: 1.3
+                        textSize: 1.1
 
                         onBtnClicked: {
                             accountObj.state = "Comments"
@@ -339,11 +361,13 @@ Rectangle{
                         id: btnAboutUs
 
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 45 * ratio
+                        Layout.preferredHeight: 35 * ratio
 
                         icon: Icons.information_outline
                         iconColor: aboutUsColor
                         text: "درباره ی ما"
+                        iconSize: 1.3
+                        textSize: 1.1
 
                         onBtnClicked: {
                             accountObj.state = "About us"
@@ -354,11 +378,13 @@ Rectangle{
                         id: btnSupport
 
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 45 * ratio
+                        Layout.preferredHeight: 35 * ratio
 
                         icon: Icons.phone
                         iconColor: supportColor
-                        text: "پشتیبانی"
+                        text: "تماس با ما"
+                        iconSize: 1.3
+                        textSize: 1.1
 
                         onBtnClicked: {
                             accountObj.state = "Support"
@@ -370,9 +396,7 @@ Rectangle{
                     Rectangle{
                         Layout.fillWidth: true
                         Layout.preferredHeight: 1
-                        Layout.leftMargin: 10
-                        Layout.rightMargin: 10
-                        color: color4
+                        color: "#d8d9d7"
                     }
 
                     Item{Layout.preferredHeight: 10}
@@ -381,11 +405,13 @@ Rectangle{
                         id: btnExit
 
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 45 * ratio
+                        Layout.preferredHeight: 35 * ratio
 
                         icon: Icons.exit_to_app
                         iconColor: color2
-                        text: "خروج از حساب"
+                        text: "خروج از حساب کاربری"
+                        iconSize: 1.3
+                        textSize: 1.1
 
                         onBtnClicked: {
                             resetSetting()
@@ -399,9 +425,7 @@ Rectangle{
                     Rectangle{
                         Layout.fillWidth: true
                         Layout.preferredHeight: 1
-                        Layout.leftMargin: 10
-                        Layout.rightMargin: 10
-                        color: color4
+                        color: "#d8d9d7"
                     }
 
                     Item{Layout.preferredHeight: 10}

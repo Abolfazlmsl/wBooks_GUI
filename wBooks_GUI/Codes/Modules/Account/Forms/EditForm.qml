@@ -105,6 +105,11 @@ Item{
         }
 
         Item {
+
+        }
+
+
+        Item {
             ChangePasswordItem{
                 anchors.fill: parent
                 lMargin: parent.width * 0.25

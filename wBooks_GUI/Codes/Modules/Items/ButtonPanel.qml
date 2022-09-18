@@ -10,6 +10,9 @@ Rectangle{
 
     property real iconWidth: rightMenu_DashboardIcon.width + (24 * ratio)
 
+    property double iconSize: 1
+    property double textSize: 1.3
+
     signal btnClicked
 
     width: 100
@@ -29,7 +32,7 @@ Rectangle{
         text: "/u1212" //Icons.home_outline
 
         font.family: webfont.name
-        font.pixelSize: 72//Qt.application.font.pixelSize * setting.fontRatio
+        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * iconSize
         minimumPixelSize: 10
         fontSizeMode: Text.Fit
 
@@ -53,7 +56,7 @@ Rectangle{
         font.family: setting.activeFont
         minimumPointSize: 10
         fontSizeMode: Text.Fit
-        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * 1.3
+        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * textSize
 
         horizontalAlignment: Qt.AlignRight
         verticalAlignment: Qt.AlignVCenter

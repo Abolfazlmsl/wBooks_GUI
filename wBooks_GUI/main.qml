@@ -39,6 +39,7 @@ Window {
     property string walletColor: ""
     property string myBookColor: ""
     property string audioBookColor: ""
+    property string purchasesColor: ""
     property string changePassColor: ""
     property string commentsColor: ""
     property string aboutUsColor: ""
@@ -256,14 +257,15 @@ Window {
                 PropertyChanges {
                     target: win
                     editFormIndex: 0
-                    editAccountColor: color7
-                    walletColor: color4
-                    myBookColor: color4
-                    audioBookColor: color4
-                    changePassColor: color4
-                    commentsColor: color4
-                    aboutUsColor: color4
-                    supportColor: color4
+                    editAccountColor: "#d43460"
+                    walletColor: "#646464"
+                    myBookColor: "#646464"
+                    audioBookColor: "#646464"
+                    purchasesColor: "#646464"
+                    changePassColor: "#646464"
+                    commentsColor: "#646464"
+                    aboutUsColor: "#646464"
+                    supportColor: "#646464"
                 }
             },
             State{
@@ -271,14 +273,15 @@ Window {
                 PropertyChanges {
                     target: win
                     editFormIndex: 1
-                    editAccountColor: color4
-                    walletColor: color7
-                    myBookColor: color4
-                    audioBookColor: color4
-                    changePassColor: color4
-                    commentsColor: color4
-                    aboutUsColor: color4
-                    supportColor: color4
+                    editAccountColor: "#646464"
+                    walletColor: "#d43460"
+                    myBookColor: "#646464"
+                    audioBookColor: "#646464"
+                    purchasesColor: "#646464"
+                    changePassColor: "#646464"
+                    commentsColor: "#646464"
+                    aboutUsColor: "#646464"
+                    supportColor: "#646464"
                 }
             },
             State{
@@ -286,14 +289,15 @@ Window {
                 PropertyChanges {
                     target: win
                     editFormIndex: 2
-                    editAccountColor: color4
-                    walletColor: color4
-                    myBookColor: color7
-                    audioBookColor: color4
-                    changePassColor: color4
-                    commentsColor: color4
-                    aboutUsColor: color4
-                    supportColor: color4
+                    editAccountColor: "#646464"
+                    walletColor: "#646464"
+                    myBookColor: "#d43460"
+                    audioBookColor: "#646464"
+                    purchasesColor: "#646464"
+                    changePassColor: "#646464"
+                    commentsColor: "#646464"
+                    aboutUsColor: "#646464"
+                    supportColor: "#646464"
                 }
             },
             State{
@@ -301,74 +305,95 @@ Window {
                 PropertyChanges {
                     target: win
                     editFormIndex: 3
-                    editAccountColor: color4
-                    walletColor: color4
-                    myBookColor: color4
-                    audioBookColor: color7
-                    changePassColor: color4
-                    commentsColor: color4
-                    aboutUsColor: color4
-                    supportColor: color4
+                    editAccountColor: "#646464"
+                    walletColor: "#646464"
+                    myBookColor: "#646464"
+                    audioBookColor: "#d43460"
+                    purchasesColor: "#646464"
+                    changePassColor: "#646464"
+                    commentsColor: "#646464"
+                    aboutUsColor: "#646464"
+                    supportColor: "#646464"
+                }
+            },
+            State{
+                name: "Purchases"
+                PropertyChanges {
+                    target: win
+                    editFormIndex: 4
+                    editAccountColor: "#646464"
+                    walletColor: "#646464"
+                    myBookColor: "#646464"
+                    audioBookColor: "#646464"
+                    purchasesColor: "#d43460"
+                    changePassColor: "#646464"
+                    commentsColor: "#646464"
+                    aboutUsColor: "#646464"
+                    supportColor: "#646464"
                 }
             },
             State{
                 name: "Change Password"
                 PropertyChanges {
                     target: win
-                    editFormIndex: 4
-                    editAccountColor: color4
-                    walletColor: color4
-                    myBookColor: color4
-                    audioBookColor: color4
-                    changePassColor: color7
-                    commentsColor: color4
-                    aboutUsColor: color4
-                    supportColor: color4
+                    editFormIndex: 5
+                    editAccountColor: "#646464"
+                    walletColor: "#646464"
+                    myBookColor: "#646464"
+                    audioBookColor: "#646464"
+                    purchasesColor: "#646464"
+                    changePassColor: "#d43460"
+                    commentsColor: "#646464"
+                    aboutUsColor: "#646464"
+                    supportColor: "#646464"
                 }
             },
             State{
                 name: "Comments"
                 PropertyChanges {
                     target: win
-                    editFormIndex: 5
-                    editAccountColor: color4
-                    walletColor: color4
-                    myBookColor: color4
-                    audioBookColor: color4
-                    changePassColor: color4
-                    commentsColor: color7
-                    aboutUsColor: color4
-                    supportColor: color4
+                    editFormIndex: 6
+                    editAccountColor: "#646464"
+                    walletColor: "#646464"
+                    myBookColor: "#646464"
+                    audioBookColor: "#646464"
+                    purchasesColor: "#646464"
+                    changePassColor: "#646464"
+                    commentsColor: "#d43460"
+                    aboutUsColor: "#646464"
+                    supportColor: "#646464"
                 }
             },
             State{
                 name: "About us"
                 PropertyChanges {
                     target: win
-                    editFormIndex: 6
-                    editAccountColor: color4
-                    walletColor: color4
-                    myBookColor: color4
-                    audioBookColor: color4
-                    changePassColor: color4
-                    commentsColor: color4
-                    aboutUsColor: color7
-                    supportColor: color4
+                    editFormIndex: 7
+                    editAccountColor: "#646464"
+                    walletColor: "#646464"
+                    myBookColor: "#646464"
+                    audioBookColor: "#646464"
+                    purchasesColor: "#646464"
+                    changePassColor: "#646464"
+                    commentsColor: "#646464"
+                    aboutUsColor: "#d43460"
+                    supportColor: "#646464"
                 }
             },
             State{
                 name: "Support"
                 PropertyChanges {
                     target: win
-                    editFormIndex: 7
-                    editAccountColor: color4
-                    walletColor: color4
-                    myBookColor: color4
-                    audioBookColor: color4
-                    changePassColor: color4
-                    commentsColor: color4
-                    aboutUsColor: color4
-                    supportColor: color7
+                    editFormIndex: 8
+                    editAccountColor: "#646464"
+                    walletColor: "#646464"
+                    myBookColor: "#646464"
+                    audioBookColor: "#646464"
+                    purchasesColor: "#646464"
+                    changePassColor: "#646464"
+                    commentsColor: "#646464"
+                    aboutUsColor: "#646464"
+                    supportColor: "#d43460"
                 }
             }
         ]
@@ -2509,6 +2534,26 @@ Window {
                 }
 
                 Item{Layout.preferredWidth: 50}
+            }
+        }
+
+        ListModel{
+            id: paymentModel
+            ListElement{
+                date: "1399/05/23"
+                amount: "25000"
+            }
+            ListElement{
+                date: "1399/05/23"
+                amount: "10000"
+            }
+            ListElement{
+                date: "1399/05/23"
+                amount: "100000"
+            }
+            ListElement{
+                date: "1399/05/23"
+                amount: "50000"
             }
         }
 

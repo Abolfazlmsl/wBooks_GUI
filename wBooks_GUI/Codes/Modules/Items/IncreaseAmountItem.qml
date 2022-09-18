@@ -11,29 +11,52 @@ Rectangle {
 
     signal btnClicked()
 
-    width: 200
-    height: 100
-    color: (isClick) ? "#25B767":color1
-    border.color: "#F7F5F5"
+    width: 420
+    height: 50
+    color: color1
+    border.color: "#d8d9d7"
     radius: 20
 
-    Label{
-        id: txt
+    RowLayout{
         anchors.fill: parent
-        text: Functions.numberWithCommas(amount) + " تومان"
-        font.family: setting.activeNumFont
-        font.pixelSize: 23 //* widthRatio
-        font.bold: true
-        horizontalAlignment: Qt.AlignHCenter
-        verticalAlignment: Qt.AlignVCenter
-        color: color4
-    }
+        layoutDirection: Qt.RightToLeft
+        spacing: 0
+        Item{Layout.preferredWidth: 15}
 
-    MouseArea{
-        anchors.fill: parent
-        cursorShape: Qt.PointingHandCursor
-        onClicked: {
-            btnClicked()
+        Label{
+            id: txt
+            Layout.preferredWidth: contentWidth
+            Layout.fillHeight: true
+            text: Functions.numberWithCommas(amount) + " تومان"
+            font.family: setting.activeNumFont
+            font.pixelSize: 15 //* widthRatio
+            horizontalAlignment: Text.AlignLeft
+            LayoutMirroring.enabled: true
+            verticalAlignment: Qt.AlignVCenter
+            color: (isClick) ? "#d43460":"#14a085"
+        }
+
+        Item{Layout.fillWidth: true}
+
+        Rectangle{
+            Layout.preferredWidth: 150
+            Layout.fillHeight: true
+            color: "#14a085"
+            radius: 20
+            Label{
+                anchors.centerIn: parent
+                text: "انتخاب"
+                font.family: setting.activeNumFont
+                font.pixelSize: 15 //* widthRatio
+                color: "#ffffff"
+            }
+            MouseArea{
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: {
+                    btnClicked()
+                }
+            }
         }
     }
 

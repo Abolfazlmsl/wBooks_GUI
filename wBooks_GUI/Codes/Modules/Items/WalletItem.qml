@@ -15,221 +15,131 @@ Rectangle{
     property real btn_ShadowRadius: 9
 
     property alias title: lbl_Title.text
-    property alias bgColor: innerRect.color
-
-    signal dashboard_btnClicked
 
     width: 280 //* widthRatio
-    height: 350
+    height: 300
 
     radius: 20 //* widthRatio
 
-    color: "transparent"
+    color: "#3a3a3c"
 
-    //-- Shadow of btnPurchase --//
-    DropShadow {
-        anchors.fill: dashboard_btn
-        transparentBorder: true
-        horizontalOffset: 0
-        verticalOffset: 3
-        spread: 0.0
-        radius: 9.0
-        samples: 14
-        color: addOpacity(color4, 40)
-        source: dashboard_btn
-    }
-
-    //-- Practice Square --//
-    Rectangle{
-        id: dashboard_btn
-
+    ColumnLayout{
         anchors.fill: parent
+        anchors.margins: 15
+        spacing: 0
+        Item{Layout.fillHeight: true}
 
-        radius: 20 //* widthRatio
-
-        color: "transparent"
-
-        //-- Added this for "Shadow" --//
-        Rectangle{
-            anchors.fill: parent
-            radius: dashboard_btn.radius
-
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#ffffff" }
-                GradientStop { position: 1.0; color: "#e9eaea" }
-            }
-
-            ColumnLayout{
+        Item{
+            Layout.preferredHeight: 40
+            Layout.fillWidth: true
+            Layout.leftMargin: 20
+            Layout.rightMargin: 20
+            RowLayout{
                 anchors.fill: parent
-                anchors.margins: 15
+                layoutDirection: Qt.RightToLeft
                 spacing: 0
-                //-- Inner Rect --//
-                Rectangle{
-                    id: innerRect
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: parent.height * 0.75
-
-                    radius: dashboard_btn.radius
-
-                    border.width: 1
-                    border.color: "#ffffff"
-
-                    color: "#6c88b7"
-
-                    //-- Inner Items --//
-                    ColumnLayout{
-                        anchors.fill: parent
-                        spacing: 0
-
-                        //-- Title Rect --//
-                        Rectangle{
-
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: parent.height * 0.3
-                            color: "transparent"
-
-                            radius: dashboard_btn.radius
-
-                            //-- Title of Square --//
-                            Label{
-                                id:lbl_Title
-                                anchors.centerIn: parent
-                                text: "تمرین"
-                                font.family: setting.activeFont
-                                font.pixelSize: 23 //* widthRatio
-                                font.bold: true
-
-                                color: "#ffffff"
-
-                            }
-
-
-
-                        }
-
-                        //-- Separator --//
-                        Rectangle{
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 1
-                        }
-
-                        //-- Bottom Title Rect --//
-                        Rectangle{
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: parent.height * 0.2
-
-                            color: "transparent"
-
-                            radius: dashboard_btn.radius
-
-                            //-- Title of Square --//
-                            Label{
-                                id:lbl_Title2
-                                anchors.centerIn: parent
-                                text: "موجودی کیف پول:"
-                                font.family: setting.activeFont
-                                font.pixelSize: 23 //* widthRatio
-//                                font.bold: true
-
-                                color: "#ffffff"
-
-                            }
-                        }
-
-                        //-- Price Rect --//
-                        Rectangle{
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true  //-- 62 in 1080 or 249(Inner Rect) / 62 = 4 --//
-
-                            color: "transparent"
-
-                            radius: dashboard_btn.radius
-
-                            //-- Title of Square --//
-                            Label{
-                                id:lbl_Price
-                                anchors.centerIn: parent
-                                text: Functions.numberWithCommas(setting.mywallet) + " تومان"
-                                font.family: setting.activeNumFont
-                                font.pixelSize: 60 //* widthRatio
-                                font.bold: true
-
-                                color: "#ffffff"
-
-                            }
-                        }
-                    }
+                Label{
+                    id:lbl_Title
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: contentWidth
+                    text: "تمرین"
+                    font.family: setting.activeFont
+                    font.pixelSize: 15 //* widthRatio
+                    verticalAlignment: Qt.AlignVCenter
+                    color: "#ffffff"
                 }
+                Item{Layout.fillWidth: true}
 
-                Item{Layout.fillHeight: true}
+                Label{
+                    id:lbl_Price
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: contentWidth
+                    text: Functions.numberWithCommas(setting.mywallet) + " تومان"
+                    font.family: setting.activeNumFont
+                    font.pixelSize: 40 //* widthRatio
+                    font.bold: true
+                    verticalAlignment: Qt.AlignVCenter
+                    color: "#14a085"
+                }
+            }
+        }
 
+        Item{Layout.preferredHeight: 40}
 
-                //-- Bottom Purchase Rect --//
-                Rectangle{
-                    id: purchase
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: parent.height * 0.2
+        Item{
+            Layout.preferredHeight: 160
+            Layout.fillWidth: true
+            Layout.leftMargin: 20
+            Layout.rightMargin: 20
+            RowLayout{
+                anchors.fill: parent
+                layoutDirection: Qt.RightToLeft
+                spacing: 0
+                Label{
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: contentWidth
+                    text: "آخرین پرداخت"
+                    font.family: setting.activeFont
+                    font.pixelSize: 15 //* widthRatio
+                    color: "#ffffff"
+                }
+                Item{Layout.fillWidth: true}
 
-                    color: "transparent"
-
-                    radius: dashboard_btn.radius
-
-                    //-- Shadow of btnPurchase --//
-                    DropShadow {
-                        anchors.fill: purchaseInner
-                        transparentBorder: true
-                        horizontalOffset: 0
-                        verticalOffset: 3
-                        spread: btn_ShadowSpread
-                        radius: btn_ShadowRadius
-                        samples: 14
-                        color: "#40000000"
-                        source: purchaseInner
-                    }
-
-                    Rectangle{
-                        id: purchaseInner
-                        anchors.fill: parent
-
-                        color: color12
-
-                        radius: dashboard_btn.radius
-
-                        //-- Title of Square --//
-                        Label{
-                            id:lbl_Purchase
-                            anchors.centerIn: parent
-                            text: "افزایش اعتبار"
-                            font.family: setting.activeFont
-                            font.pixelSize: 23 //* widthRatio
-                            font.bold: true
-
-                            color: "#ffffff"
-
-                        }
-
-                        MouseArea{
+                ListView{
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: parent.width * 0.35
+                    spacing: 4
+                    clip: true
+                    interactive: false
+                    model: paymentModel
+                    delegate: Rectangle{
+                        width: parent.width
+                        height: 40
+                        color: "transparent"
+                        RowLayout{
                             anchors.fill: parent
-                            hoverEnabled: true
-                            cursorShape: Qt.PointingHandCursor
+                            layoutDirection: Qt.RightToLeft
+                            spacing: 0
+                            Label{
+                                Layout.preferredWidth: contentWidth
+                                Layout.fillHeight: true
+                                color: "#646464"
+                                text: model.date
+                                font.family: setting.activeNumFont
+                                verticalAlignment: Qt.AlignVCenter
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.3
+                            }
+                            Item{Layout.preferredWidth: 5}
 
-                            onEntered: {
-                                btn_ShadowSpread = 0.5
-                                btn_ShadowRadius = 12
+                            Label{
+                                Layout.preferredWidth: contentWidth
+                                Layout.fillHeight: true
+                                color: "#ffffff"
+                                text: "-"
+                                font.family: setting.activeFont
+                                verticalAlignment: Qt.AlignVCenter
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.3
                             }
 
-                            onExited: {
-                                btn_ShadowSpread = 0.0
-                                btn_ShadowRadius = 9
-                            }
+                            Item{Layout.preferredWidth: 5}
 
-                            onClicked: {
-                                dashboard_btnClicked()
+                            Label{
+                                Layout.preferredWidth: contentWidth
+                                Layout.fillHeight: true
+                                color: "#ffffff"
+                                text: Functions.numberWithCommas(model.amount) + " تومان"
+                                font.family: setting.activeNumFont
+                                verticalAlignment: Qt.AlignVCenter
+                                font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio * ratio * 1.3
                             }
                         }
                     }
                 }
             }
         }
+
+
+        Item{Layout.fillHeight: true}
+
     }
 }

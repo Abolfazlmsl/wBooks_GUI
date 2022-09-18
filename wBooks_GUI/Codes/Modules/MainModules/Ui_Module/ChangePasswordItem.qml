@@ -340,6 +340,33 @@ Item{
 
                                 Item{Layout.preferredHeight: 20}
 
+//                                Rectangle{
+//                                    id: forgotPassword
+//                                    Layout.fillWidth: true
+//                                    Layout.preferredHeight: 20
+//                                    Layout.rightMargin: 50
+//                                    Layout.leftMargin: 50
+//                                    color: "transparent"
+//                                    Label{
+//                                        anchors.fill: parent
+//                                        horizontalAlignment: Qt.AlignRight
+//                                        text: "آیا رمز عبور خود را فراموش کرده اید؟"
+//                                        font.family: setting.activeFont
+//                                        font.pixelSize: Qt.application.font.pixelSize * setting.fontRatio
+//                                        color: "#d43460"
+//                                        MouseArea{
+//                                            anchors.fill: parent
+//                                            cursorShape: Qt.PointingHandCursor
+//                                            onClicked: {
+//                                                getMessage("")
+//                                                //                                            swipe_login.currentIndex = 1
+//                                            }
+//                                        }
+//                                    }
+//                                }
+
+//                                Item{Layout.preferredHeight: 20}
+
                                 //-- Button login --//
                                 ButtonImageIcon{
                                     id: login
