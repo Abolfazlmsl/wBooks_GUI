@@ -105,7 +105,11 @@ Item{
         }
 
         Item {
-
+            PurchasesList{
+                anchors.fill: parent
+                lMargin: 70
+                rMargin: 70
+            }
         }
 
 

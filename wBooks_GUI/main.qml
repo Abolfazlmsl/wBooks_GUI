@@ -2539,6 +2539,90 @@ Window {
         }
 
         ListModel{
+            id: purchasesModel
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                date: "1400/01/16"
+                time: "05:16:43"
+                amount: "22500"
+                serial: "60586458"
+                book: "من پیش از تو"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                date: "1400/01/16"
+                time: "05:16:43"
+                amount: "22500"
+                serial: "60586458"
+                book: "من پیش از تو"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                date: "1400/01/16"
+                time: "05:16:43"
+                amount: "22500"
+                serial: "60586458"
+                book: "من پیش از تو"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                date: "1400/01/16"
+                time: "05:16:43"
+                amount: "22500"
+                serial: "60586458"
+                book: "من پیش از تو"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                date: "1400/01/16"
+                time: "05:16:43"
+                amount: "22500"
+                serial: "60586458"
+                book: "من پیش از تو"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                date: "1400/01/16"
+                time: "05:16:43"
+                amount: "22500"
+                serial: "60586458"
+                book: "من پیش از تو"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                date: "1400/01/16"
+                time: "05:16:43"
+                amount: "22500"
+                serial: "60586458"
+                book: "من پیش از تو"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                date: "1400/01/16"
+                time: "05:16:43"
+                amount: "22500"
+                serial: "60586458"
+                book: "من پیش از تو"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                date: "1400/01/16"
+                time: "05:16:43"
+                amount: "22500"
+                serial: "60586458"
+                book: "من پیش از تو"
+            }
+            ListElement{
+                source: "qrc:/Images/mebeforeyou.jpg"
+                date: "1400/01/16"
+                time: "05:16:43"
+                amount: "22500"
+                serial: "60586458"
+                book: "من پیش از تو"
+            }
+        }
+
+        ListModel{
             id: paymentModel
             ListElement{
                 date: "1399/05/23"

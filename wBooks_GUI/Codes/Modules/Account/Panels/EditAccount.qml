@@ -685,7 +685,7 @@ Item {
                         }
 
                         //-- spacer --//
-                        Item{Layout.preferredHeight: 15}
+                        Item{Layout.preferredHeight: 50}
 
                         LoadingSpinner{
                             id: spinner
@@ -694,9 +694,6 @@ Item {
                             Layout.preferredHeight: implicitHeight
                             leftMarg: 60
                         }
-
-                        //-- filler --//
-                        Item{Layout.fillHeight: true}
                     }
                 }
             }

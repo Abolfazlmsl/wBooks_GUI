@@ -222,5 +222,6 @@
         <file>Fonts/IRANSansMobile.ttf</file>
         <file>Fonts/IRANSansMobile_Bold.ttf</file>
         <file>Codes/Modules/MainModules/Ui_Module/BodyHeader.qml</file>
+        <file>Codes/Modules/MainModules/Ui_Module/PurchasesList.qml</file>
     </qresource>
 </RCC>
