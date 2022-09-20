@@ -2691,14 +2691,17 @@ Window {
             ListElement{
                 book: 1 //the id of book in database
                 type: "Audio Book"
+                description: "اگر یک روز لبخند زدن را فراموش کنیم، زندگی کردن دیگر چه ارزشی دارد؟دورانی را تصور کنید که به هر جا نگاه می کنید تلخی، بدبختی و افسردگی را می بینید"
             }
             ListElement{
                 book: 1
                 type: "Document Book"
+                description: "اگر یک روز لبخند زدن را فراموش کنیم، زندگی کردن دیگر چه ارزشی دارد؟دورانی را تصور کنید که به هر جا نگاه می کنید تلخی، بدبختی و افسردگی را می بینید"
             }
             ListElement{
                 book: 1
                 type: "Membership"
+                description: ""
             }
         }
 
