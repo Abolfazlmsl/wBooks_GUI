@@ -622,6 +622,13 @@ Item{
                     "time": 0,
                     "expiredTime": ""
                 }
+
+                var birthday = {
+                    "day": "",
+                    "month": "",
+                    "year": ""
+                }
+
                 var data = {
                     "id": rand_id,
                     "name": firstname.text + " " + lastname.text,
@@ -629,6 +636,8 @@ Item{
                     "phone": phone.text,
                     "password": password.text,
                     "gender": "",
+                    "birthday": birthday,
+                    "getEmail": true,
                     "mybooks": "",
                     "myaudiobooks": "",
                     "myvideos": "",

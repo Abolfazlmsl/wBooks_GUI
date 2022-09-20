@@ -16,6 +16,9 @@ import "./../../MainModules/Ui_Module"
 Item {
 
     property alias name     : input_name.inputText
+    property alias bDay: input_day.inputText
+    property alias bMonth: input_month.inputText
+    property alias bYear: input_year.inputText
     property string gender  : ""
 
     property double rMargin: 0
@@ -216,6 +219,7 @@ Item {
                                     fontSize: 1.2
                                     bgColor: "#d6d6d6"
                                     borderColor: "#d6d6d6"
+                                    inputText.text: setting.birthDay
                                     Keys.onTabPressed: {
                                         input_month.inputText.forceActiveFocus()
                                     }
@@ -234,6 +238,7 @@ Item {
                                     fontSize: 1.2
                                     bgColor: "#d6d6d6"
                                     borderColor: "#d6d6d6"
+                                    inputText.text: setting.birthMonth
                                     Keys.onTabPressed: {
                                         input_year.inputText.forceActiveFocus()
                                     }
@@ -253,6 +258,7 @@ Item {
                                     fontSize: 1.2
                                     bgColor: "#d6d6d6"
                                     borderColor: "#d6d6d6"
+                                    inputText.text: setting.birthYear
                                     Keys.onTabPressed: {
 //                                        input_password.inputText.forceActiveFocus()
                                     }
@@ -648,13 +654,20 @@ Item {
                                         "time": setting.licenseTime,
                                         "expiredTime": setting.licenseExpiredTime
                                     }
+                                    var birthday = {
+                                        "day": bDay.text,
+                                        "month": bMonth.text,
+                                        "year": bYear.text
+                                    }
                                     var data = {
                                         "id": setting.user_id,
                                         "name": name.text,
-                                        "email": email.text,
-                                        "phone": phone.text,
+                                        "email": setting.userEmail,
+                                        "phone": setting.userPhone,
                                         "password": setting.password,
                                         "gender": gender,
+                                        "getEmail": setting.getEmail,
+                                        "birthday": birthday,
                                         "mywallet": setting.mywallet,
                                         "user_number": setting.user_number,
                                         "mylicense": licenseData
@@ -663,8 +676,9 @@ Item {
                                     db.storeData("users", data, setting.profile)
 
                                     setting.userName = name.text
-                                    setting.userEmail = email.text
-                                    setting.userPhone = phone.text
+                                    setting.birthDay = bDay.text
+                                    setting.birthMonth = bMonth.text
+                                    setting.birthYear = bYear.text
                                     setting.gender = gender
                                     swipe_edit.currentIndex = 1
 
@@ -702,8 +716,8 @@ Item {
         //-- Success Page --//
         SuccessItem{
             id: success
-            rightMargin: rMargin
-            leftMargin: lMargin
+            rightMargin: 250
+            leftMargin: 250
             text: "تغییر اطلاعات با موفقیت اعمال شد"
             text2: "بازگشت"
             onLblClicked: {
@@ -733,6 +747,11 @@ Item {
                 "time": setting.licenseTime,
                 "expiredTime": setting.licenseExpiredTime
             }
+            var birthday = {
+                "day": setting.birthDay,
+                "month": setting.birthMonth,
+                "year": setting.birthYear
+            }
             var data = {
                 "id": setting.user_id,
                 "name": setting.userName,
@@ -740,6 +759,8 @@ Item {
                 "phone": setting.userPhone,
                 "password": setting.password,
                 "gender": setting.gender,
+                "getEmail": setting.getEmail,
+                "birthday": birthday,
                 "mywallet": setting.mywallet,
                 "user_number": setting.user_number,
                 "mylicense": licenseData

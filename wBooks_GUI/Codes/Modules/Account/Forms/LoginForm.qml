@@ -33,6 +33,10 @@ Item{
     property int licenseTimeUser: 0
     property int licensePurchaseNumberUser: 0
     property string licenseImageUser: ""
+    property string birthDay: ""
+    property string birthMonth: ""
+    property string birthYear: ""
+    property bool getEmail: true
 
     signal getMessage(var signalmsg)
     signal trialFinished()
@@ -290,6 +294,10 @@ Item{
                                                     setting.licenseImage = JSON.parse(JSON.stringify(data.mylicense)).image
                                                     setting.licensePurchaseNumber = JSON.parse(JSON.stringify(data.mylicense)).purchase_id
                                                     setting.licenseTime = JSON.parse(JSON.stringify(data.mylicense)).time
+                                                    setting.birthDay = JSON.parse(JSON.stringify(data.birthday)).day
+                                                    setting.birthMonth = JSON.parse(JSON.stringify(data.birthday)).month
+                                                    setting.birthYear = JSON.parse(JSON.stringify(data.birthday)).year
+                                                    setting.getEmail = data.getEmail
                                                     if (setting.licenseExpiredTime !== ""){
                                                         setting.isLicense = true
                                                     }
@@ -569,6 +577,10 @@ Item{
                 licenseTimeUser = lcnTime
                 licensePurchaseNumberUser = lcnPurchaseNumber
                 licenseImageUser = lcnImage
+                birthDay = mBirthDay
+                birthMonth = mBirthMonth
+                birthYear = mBirthYear
+                getEmail = mGetEmail
                 confirmItem.timer = true
                 confirmItem.sendAgain = false
                 getMessage("")
@@ -618,6 +630,12 @@ Item{
                     "time": licenseTimeUser,
                     "expiredTime": licenseExpiredTimeUser
                 }
+                var birthday = {
+                    "day": birthDay,
+                    "month": birthMonth,
+                    "year": birthYear
+                }
+
                 var data = {
                     "id": idUser,
                     "name": nameUser,
@@ -625,6 +643,8 @@ Item{
                     "phone": phoneUser,
                     "password": newPassword,
                     "gender": genderUser,
+                    "getEmail": getEmail,
+                    "birthday": birthday,
                     "mywallet": wallletUser,
                     "user_number": numberUser,
                     "mylicense": licenseData

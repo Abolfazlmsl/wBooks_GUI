@@ -412,6 +412,8 @@ Window {
     Component.onCompleted: {
         db.initDatabase();
 
+        updateDatabase()
+
         // Read My Audio Books
         var obj = db.readAllData("myAudioBooks")
         var data
@@ -476,6 +478,43 @@ Window {
         setting.isLicense = false
     }
 
+    function updateDatabase(){
+        var obj = db.readAllData("users")
+        var data
+        for(var i=0 ; i< obj.length ; i++){
+            data = JSON.parse(JSON.parse(JSON.stringify(obj[i])).VALUE)
+            var licenseData = {
+                "image": (typeof data.mylicense != "undefined")?JSON.parse(JSON.stringify(data.mylicense)).image:"",
+                "purchase_id": (typeof data.mylicense != "undefined")?JSON.parse(JSON.stringify(data.mylicense)).purchase_id:0,
+                "time": (typeof data.mylicense != "undefined")?JSON.parse(JSON.stringify(data.mylicense)).time:0,
+                "expiredTime": (typeof data.mylicense != "undefined")?JSON.parse(JSON.stringify(data.mylicense)).expiredTime:""
+            }
+            var birthday = {
+                "day": (typeof data.birthday != "undefined")?JSON.parse(JSON.stringify(data.birthday)).day:"",
+                "month": (typeof data.birthday != "undefined")?JSON.parse(JSON.stringify(data.birthday)).month:"",
+                "year": (typeof data.birthday != "undefined")?JSON.parse(JSON.stringify(data.birthday)).year:""
+            }
+            var dbData = {
+                "id": (typeof JSON.parse(JSON.stringify(obj[i])).id != "undefined")?JSON.parse(JSON.stringify(obj[i])).id:"",
+                "name": (typeof data.name != "undefined")?data.name:"",
+                "email": (typeof data.email != "undefined")?data.email:"",
+                "phone": (typeof data.phone != "undefined")?data.phone:"",
+                "password": (typeof data.password != "undefined")?data.password:"",
+                "gender": (typeof data.gender != "undefined")?data.gender:"",
+                "getEmail": (typeof data.getEmail != "undefined")?data.getEmail:true,
+                "birthday": birthday,
+                "mywallet": (typeof data.mywallet != "undefined")?data.mywallet:0,
+                "user_number": (typeof data.user_number != "undefined")?data.user_number:0,
+                "mylicense": licenseData
+            }
+
+            var profile = (typeof JSON.parse(JSON.stringify(obj[i])).image != "undefined")?JSON.parse(JSON.stringify(obj[i])).image:""
+
+            db.storeData("users", dbData, profile)
+
+        }
+    }
+
     //-- save app setting --//
     Settings{
         id: setting
@@ -503,7 +542,6 @@ Window {
         property string password: ""
         property string profile: ""
         property string gender: ""
-        property bool getEmail: true
 //        property string mybooks: ""
 //        property string myaudiobooks: ""
 //        property string myvideos: ""
@@ -513,6 +551,10 @@ Window {
         property int licenseTime: 0
         property int licensePurchaseNumber: 0
         property string licenseImage: ""
+        property string birthDay: ""
+        property string birthMonth: ""
+        property string birthYear: ""
+        property bool getEmail: true
         property int user_number: 0
 //        property string basket: ""
         property bool isLogined: false

@@ -400,6 +400,11 @@ Item{
                                                 "time": setting.licenseTime,
                                                 "expiredTime": setting.licenseExpiredTime
                                             }
+                                            var birthday = {
+                                                "day": setting.birthDay,
+                                                "month": setting.birthMonth,
+                                                "year": setting.birthYear
+                                            }
                                             var data = {
                                                 "id": setting.user_id,
                                                 "name": setting.userName,
@@ -407,6 +412,8 @@ Item{
                                                 "phone": setting.userPhone,
                                                 "password": password.text,
                                                 "gender": setting.gender,
+                                                "getEmail": setting.getEmail,
+                                                "birthday": birthday,
                                                 "mywallet": setting.mywallet,
                                                 "user_number": setting.user_number,
                                                 "mylicense": licenseData

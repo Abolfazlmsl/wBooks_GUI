@@ -29,7 +29,11 @@ Item {
                              var lcnExpTime,
                              var lcnTime,
                              var lcnImage,
-                             var lcnPurchaseNumber)
+                             var lcnPurchaseNumber,
+                             var mBirthDay,
+                             var mBirthMonth,
+                             var mBirthYear,
+                             var mGetEmail)
     signal bottomBtnClicked()
 
     Flickable{
@@ -170,7 +174,11 @@ Item {
                                         JSON.parse(JSON.stringify(data.mylicense)).expiredTime,
                                         JSON.parse(JSON.stringify(data.mylicense)).time,
                                         JSON.parse(JSON.stringify(data.mylicense)).image,
-                                        JSON.parse(JSON.stringify(data.mylicense)).purchase_id)
+                                        JSON.parse(JSON.stringify(data.mylicense)).purchase_id,
+                                        JSON.parse(JSON.stringify(data.birthday)).day,
+                                        JSON.parse(JSON.stringify(data.birthday)).month,
+                                        JSON.parse(JSON.stringify(data.birthday)).year,
+                                        data.getEmail)
 
                                     }else{
                                         sendWarning("کاربری با این شماره همراه یافت نشد")

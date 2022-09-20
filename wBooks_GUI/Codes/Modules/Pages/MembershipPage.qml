@@ -228,6 +228,12 @@ Item{
                                                         "expiredTime": ""
                                                     }
 
+                                                    var birthday = {
+                                                        "day": setting.birthDay,
+                                                        "month": setting.birthMonth,
+                                                        "year": setting.birthYear
+                                                    }
+
                                                     var data = {
                                                         "id": setting.user_id,
                                                         "name": setting.userName,
@@ -235,6 +241,8 @@ Item{
                                                         "phone": setting.userPhone,
                                                         "password": setting.password,
                                                         "gender": setting.gender,
+                                                        "getEmail": setting.getEmail,
+                                                        "birthday": birthday,
                                                         "mywallet": setting.mywallet,
                                                         "user_number": setting.user_number,
                                                         "mylicense": licenseData
@@ -352,6 +360,12 @@ Item{
                                             "expiredTime": setting.licenseExpiredTime
                                         }
 
+                                        var birthday = {
+                                            "day": setting.birthDay,
+                                            "month": setting.birthMonth,
+                                            "year": setting.birthYear
+                                        }
+
                                         var data = {
                                             "id": setting.user_id,
                                             "name": setting.userName,
@@ -359,6 +373,8 @@ Item{
                                             "phone": setting.userPhone,
                                             "password": setting.password,
                                             "gender": setting.gender,
+                                            "getEmail": setting.getEmail,
+                                            "birthday": birthday,
                                             "mywallet": setting.mywallet,
                                             "user_number": setting.user_number,
                                             "mylicense": licenseData
