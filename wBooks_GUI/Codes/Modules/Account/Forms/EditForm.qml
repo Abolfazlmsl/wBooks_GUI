@@ -164,8 +164,6 @@ Item{
         Item {
             SupportItem{
                 anchors.fill: parent
-                anchors.leftMargin: parent.width * 0.25
-                anchors.rightMargin: parent.width * 0.25
             }
         }
     }

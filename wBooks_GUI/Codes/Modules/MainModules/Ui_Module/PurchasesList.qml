@@ -36,12 +36,26 @@ Item {
         NumberAnimation { target: flick; property: "contentY"; to: 50; duration: 300 }
     }
 
+    BodyHeader{
+        id: header
+        width: parent.width
+        height: !showRightPop * 52
+        topFilterVis: false
+        listHeaderVis: false
+        bgColor: "transparent"
+        onItemClicked: {
+
+        }
+    }
+
 
     Flickable{
         id: flick
-        anchors.fill: parent
         contentHeight: homeItem.height
         contentWidth: parent.width
+        height: parent.height - header.height
+        width: parent.width
+        anchors.top: header.bottom
         boundsBehavior: Flickable.StopAtBounds
         ScrollBar.vertical: ScrollBar {}
         clip: true
