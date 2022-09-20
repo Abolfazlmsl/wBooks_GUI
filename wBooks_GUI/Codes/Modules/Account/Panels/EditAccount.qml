@@ -19,7 +19,6 @@ Item {
     property alias bDay: input_day.inputText
     property alias bMonth: input_month.inputText
     property alias bYear: input_year.inputText
-    property string gender  : ""
 
     property double rMargin: 0
     property double lMargin: 0
@@ -357,7 +356,7 @@ Item {
                                 }
 
                                 onCheckedChanged: {
-                                    if(checked) gender = "آقا"
+                                    if(checked) setting.gender = "آقا"
                                 }
 
                                 Keys.onTabPressed: {
@@ -430,7 +429,7 @@ Item {
                                 }
 
                                 onCheckedChanged: {
-                                    if(checked) gender = "خانم"
+                                    if(checked) setting.gender = "خانم"
                                 }
 
                                 Keys.onTabPressed: {
@@ -665,7 +664,7 @@ Item {
                                         "email": setting.userEmail,
                                         "phone": setting.userPhone,
                                         "password": setting.password,
-                                        "gender": gender,
+                                        "gender": setting.gender,
                                         "getEmail": setting.getEmail,
                                         "birthday": birthday,
                                         "mywallet": setting.mywallet,
@@ -679,7 +678,6 @@ Item {
                                     setting.birthDay = bDay.text
                                     setting.birthMonth = bMonth.text
                                     setting.birthYear = bYear.text
-                                    setting.gender = gender
                                     swipe_edit.currentIndex = 1
 
                                     //                        var endpoint = Service.url_user

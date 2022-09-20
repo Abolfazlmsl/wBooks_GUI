@@ -475,6 +475,10 @@ Window {
         setting.licenseTime = 0
         setting.licensePurchaseNumber = 0
         setting.licenseImage = ""
+        setting.birthDay = ""
+        setting.birthMonth = ""
+        setting.birthYear = ""
+        setting.getEmail = true
         setting.isLicense = false
     }
 
